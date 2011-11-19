@@ -270,7 +270,7 @@ class ArrayExtension {
 			 * don't leave the final parse to Parser::braceSubstitution() since there are some special cases where it
 			 * would produce unexpected output (it uses a new child frame and ignores whether the frame is a template!)
 			 */
-			$noparse = true;			
+			$noparse = true;
 
 			$output = $parser->preprocessToDom( $output, $frame->isTemplate() ? Parser::PTD_FOR_INCLUSION : 0 );
 			$output = trim( $frame->expand( $output ) );
@@ -580,8 +580,8 @@ class ArrayExtension {
 	*  merge values two arrayes identified by arrayid1 and arrayid2 into a new array identified by arrayid_new.
 	*  this merge differs from array_merge of php because it merges values.
 	*/
-    function arraymerge( Parser &$parser, $arrayId_new, $arrayId1 = '', $arrayId2 = '' ) {
-        if( !isset( $arrayId_new ) || !isset( $arrayId1 ) )
+    function arraymerge( Parser &$parser, $arrayId_new, $arrayId1 = null, $arrayId2 = null ) {
+        if( ! isset( $arrayId_new ) || ! isset( $arrayId1 ) || ! isset( $arrayId2 ) )
            return '';
 
         $ret = $this->validate_array_by_arrayId( $arrayId1 );
@@ -643,6 +643,9 @@ class ArrayExtension {
 		return '';
 	}
 
+	///////////////////////////////////////////////// /
+	// SET OPERATIONS: a set does not have duplicated element
+	
 	/**
 	* set operation, {red, white} = {red, white} union {red}
 	* usage:
@@ -666,10 +669,7 @@ class ArrayExtension {
 
         return '';
     }
-
-	///////////////////////////////////////////////// /
-	// SET OPERATIONS: a set does not have duplicated element
-
+	
 	/**
 	* set operation,    {red} = {red, white} intersect {red,black}
 	* usage:
@@ -700,7 +700,7 @@ class ArrayExtension {
 	*
 	* usage:
 	*    {{#arraydiff:arrayid_new|arrayid1|arrayid2}}
-
+	*
 	*    set operation,    {white} = {red, white}  -  {red}
 	*    see: http://www.php.net/manual/en/function.array-diff.php
 	*/
