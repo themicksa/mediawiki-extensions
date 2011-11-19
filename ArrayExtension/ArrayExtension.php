@@ -69,6 +69,8 @@ unset( $dir );
 /**
  * Full compatbility to versions before 1.4
  * 
+ * @since 1.4
+ * 
  * @var boolean
  */
 $egArrayExtensionCompatbilityMode = true;
@@ -304,15 +306,22 @@ class ArrayExtension {
 	* usage:
 	*   {{#arrayindex:arrayid|index}}
 	*/
-    function arrayindex( Parser &$parser, $arrayId , $index , $options = '' ) {
-        // now parse the options, and do posterior process on the created array
-        $ary_option = $this->parse_options( $options );
-        
+    function arrayindex( Parser &$parser, $arrayId , $index , $defaultOrOptions = '' ) {        
 		// index must exist, strict check, non-numeric will fail:
         if( true !== $this->validate_array_by_arrayId( $arrayId )			
 			|| ! $this->validate_array_index( $arrayId, $index, true )
 		) {
-            return $this->array_value( $ary_option, 'default' );
+			// index doesn't exist, return default
+			global $egArrayExtensionCompatbilityMode;
+			
+			if( $egArrayExtensionCompatbilityMode ) {
+				// COMPATBILITY-MODE
+				// now parse the options, and do posterior process on the created array
+				$ary_option = $this->parse_options( $defaultOrOptions );
+				return $this->array_value( $ary_option, 'default' );				
+			} else {
+				return $defaultOrOptions;
+			}
         }
 
         return $this->mArrayExtension[ $arrayId ][ $index ];
@@ -418,7 +427,10 @@ class ArrayExtension {
 			$transform = ''
 	) {	
 		if( $arrayId === null ) {
-			$this->setArray( $arrayId_new );
+			global $egArrayExtensionCompatbilityMode;
+			if( ! $egArrayExtensionCompatbilityMode ) { // COMPATBILITY-MODE
+				$this->setArray( $arrayId_new );
+			}
 			return '';
 		}		
 		// also takes care of negative index by calculating start index:
@@ -617,7 +629,10 @@ class ArrayExtension {
 	*/
 	function arrayslice( Parser &$parser, $arrayId_new, $arrayId = null , $offset = 0, $length = null ) {
 		if( $arrayId === null ) {
-			$this->setArray( $arrayId_new );
+			global $egArrayExtensionCompatbilityMode;
+			if( ! $egArrayExtensionCompatbilityMode ) { // COMPATBILITY-MODE
+				$this->setArray( $arrayId_new );
+			}
 			return '';
 		}
 		// get target array before overwriting it in any way
@@ -836,6 +851,30 @@ class ArrayExtension {
 	/* ============================ */
 	/* ============================ */
 
+	####################################
+	# Public functions for interaction #
+	####################################
+	#
+	# public non-parser functions, accessible for
+	# other extensions doing interactive stuff
+	# with the Array extension.
+	#
+	
+	/**
+	 * Convenience function to return the 'ArrayExtension' extensions array store connected
+	 * to a certain Parser object. Each parser has its own store which will be reset after
+	 * a parsing process [Parser::parse()] has finished.
+	 * 
+	 * @since 1.4
+	 * 
+	 * @param Parser &$parser
+	 * 
+	 * @return ExtHashTables by reference so we still have the right object after 'ParserClearState'
+	 */
+	public static function &get( Parser &$parser ) {
+		return $parser->mExtArrayExtension;
+	}
+	
 	/**
 	 * Returns an array identified by $arrayId. If it doesn't exist, null will be returned.
 	 * 

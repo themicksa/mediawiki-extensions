@@ -4,8 +4,14 @@
  * (trunk) -- Version 1.4
     - Configuration variable '$egArrayExtensionCompatbilityMode' for deactivating the following newly
       introduced breaking changes:
+      + '#arrayprint' no longer returns an error text in case the array doesn't exist.
       + '#arrayreset' now uses n parameters instead of ',' as separator for n arrays to reset
+      + '#arrayindex' options removed, instead third parameter simply is the default value (without
+        any 'default=' in front).
       + '#arraysearch' returns an empty string '' instead of '-1' in case nothing was found.
+      + '#arraysearcharray' and '#arrayslice' without all necessary parameters set will always create
+        a new empty array.
+      Compatbility mode is active by default, it will be disabled in version 2.0
     - '#arraysearch' will only expand 'yes' or 'no' if given, but never both.
     - negative indexes for '#arrayindex', '#arraysearch' and '#arraysearcharray' are possible now.
     - bugfix in '#arraysearcharray', index and limit working fine now.
