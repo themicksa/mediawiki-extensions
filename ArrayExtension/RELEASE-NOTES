@@ -1,7 +1,23 @@
  Changelog:
  ==========
 
- * (trunk) -- Version 1.4
+ * (trunk) -- Version 2.0
+   This release is built upon 1.4 alpha. See changes of 1.4 alpha as well.
+    - class 'ArrayExtension' renamed to 'ExtArrayExtension'
+    - '#arrayindex' will only expand options/default when required.
+    - Compatbility mode variable '$egArrayExtensionCompatbilityMode' is set to false by default. See
+      Version 1.4 alpha for further information. Further changes to the compatbility mode behavior
+      in version 2.0:
+      + '#arrayindex' will return its default also in case of existing index but empty value. This
+        makes the function consistent with Variables '#var' and hash tables '#hashvalue'.
+      + See 1.4 alpha for previous changes
+
+
+ * November 20, 2001 -- Version 1.4 alpha (r103716)
+    This release introduces some useful bugfixes and optional new behavior for various functionality.
+    This version never made it into a final stage because version 2.0 will introduce some rather
+    radical changes, so this alpha release allows to profit from bugfixes that might be quite useful
+    if you don't want to use Version 2.0 for some reason.
     - Configuration variable '$egArrayExtensionCompatbilityMode' for deactivating the following newly
       introduced breaking changes:
       + '#arrayprint' no longer returns an error text in case the array doesn't exist.
@@ -11,7 +27,7 @@
       + '#arraysearch' returns an empty string '' instead of '-1' in case nothing was found.
       + '#arraysearcharray' and '#arrayslice' without all necessary parameters set will always create
         a new empty array.
-      Compatbility mode is active by default, it will be disabled in version 2.0
+      Compatbility mode is active by default. In Version 2.0 it will be set to inactive by default.
     - '#arraysearch' will only expand 'yes' or 'no' if given, but never both.
     - negative indexes for '#arrayindex', '#arraysearch' and '#arraysearcharray' are possible now.
     - bugfix in '#arraysearcharray', index and limit working fine now.
