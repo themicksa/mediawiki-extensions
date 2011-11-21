@@ -66,6 +66,7 @@ $wgHooks['ParserClearState'   ][] = 'ExtArrayExtension::onParserClearState';
 /**
  * Full compatbility to versions before 1.4.
  * Set to true by default since version 2.0.
+ * Regretable, this one has a speclling error...
  * 
  * @since 1.4 alpha
  * 
@@ -368,13 +369,13 @@ class ExtArrayExtension {
 				
         if( $val === null || ( $val === '' && !$egArrayExtensionCompatbilityMode ) ) {
 			// index doesn't exist, return default (parameter 3)!			
-			// without compatbility, also return default in case of empty string ''
+			// without compatibility, also return default in case of empty string ''
 			
 			// only expand default when needed
 			$defaultOrOptions = trim( $frame->expand( $rawOptions ) );
 			
 			if( $egArrayExtensionCompatbilityMode ) {
-				// COMPATBILITY-MODE
+				// COMPATIBILITY-MODE
 				// now parse the options, and do posterior process on the created array
 				$options = self::parse_options( $defaultOrOptions );
 				$default = self::array_value( $options, 'default' );
@@ -467,7 +468,7 @@ class ExtArrayExtension {
 		// no match! (Expand only when needed!)
 		$no = isset( $args[4] )
 		      ? trim( $frame->expand( $args[4] ) )
-		      : $egArrayExtensionCompatbilityMode ? '-1' : ''; // COMPATBILITY-MODE
+		      : $egArrayExtensionCompatbilityMode ? '-1' : ''; // COMPATIBILITY-MODE
         return $no;
     }
 
@@ -492,7 +493,7 @@ class ExtArrayExtension {
 		
 		if( $arrayId === null ) {
 			global $egArrayExtensionCompatbilityMode;
-			if( ! $egArrayExtensionCompatbilityMode ) { // COMPATBILITY-MODE
+			if( ! $egArrayExtensionCompatbilityMode ) { // COMPATIBILITY-MODE
 				$store->setArray( $arrayId_new );
 			}
 			return '';
@@ -557,7 +558,7 @@ class ExtArrayExtension {
 		$store = self::get( $parser );
 		if( $arrayId === null ) {
 			global $egArrayExtensionCompatbilityMode;
-			if( ! $egArrayExtensionCompatbilityMode ) { // COMPATBILITY-MODE
+			if( ! $egArrayExtensionCompatbilityMode ) { // COMPATIBILITY-MODE
 				$store->setArray( $arrayId_new );
 			}
 			return '';
@@ -601,7 +602,7 @@ class ExtArrayExtension {
 				
 		if( $egArrayExtensionCompatbilityMode && count( $args ) == 1 ) {
 			/*
-			 * COMPATBILITY-MODE: before arrays were separated by ';' which is an bad idea since
+			 * COMPATIBILITY-MODE: before arrays were separated by ';' which is an bad idea since
 			 * the ',' is an allowed character in array names!
 			 */
 			$args = preg_split( '/\s*,\s*/', trim( $frame->expand( $args[0] ) ) );
@@ -821,7 +822,7 @@ class ExtArrayExtension {
 		global $egArrayExtensionCompatbilityMode;
 		
 		if( ! $operationRan && $egArrayExtensionCompatbilityMode ) {
-			// COMPATBILITY-MODE:
+			// COMPATIBILITY-MODE:
 			// Before version 2.0 we didn't create a new array in case only one array was given
 			return '';
 		}
@@ -898,7 +899,7 @@ class ExtArrayExtension {
 		) {
 			global $egArrayExtensionCompatbilityMode;
 			if( $egArrayExtensionCompatbilityMode ) {
-				return "undefined array: $arrayId"; // COMPATBILITY-MODE
+				return "undefined array: $arrayId"; // COMPATIBILITY-MODE
 			} else {
 				return '';
 			}
