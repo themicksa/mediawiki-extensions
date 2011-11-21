@@ -12,9 +12,9 @@
  *
  * @licence MIT License
  *
- * @author Li Ding (lidingpku@gmail.com)
+ * @author Li Ding < lidingpku@gmail.com >
  * @author Jie Bao
- * @author Daniel Werner (since version 1.3)
+ * @author Daniel Werner < danweetz@web.de > (since version 1.3)
  * 
  * @ToDo:
  * use $egArrayExtensionCompatbilityMode to finally get rid of unlogic behavior of certain functions
@@ -22,27 +22,6 @@
  * given, sometimes the new array will be created, sometimes not. It should always be created to make
  * things more consistent and clear.
  */
-
-/**
- * This documenation group collects source code files belonging to ArrayExtension.
- *
- * @defgroup ArrayExtension ArrayExtension
- */
-
-/* TODO:
-    - add experimental table (2 dimension array)  data structure
-       * table  = header, row+  (1,1....)
-       * sort_table_by_header (header)
-       * sort_table_by_col (col)
-       * print_table (format)   e.g. csv, ul, ol,
-       * add_table_row (array)
-       * get_table_row (row) to an array
-       * add_table_col(array)
-       * get_table_col (col) to an array
-       * get_table_header () to an array
-       * get_total_row
-       * get_total_col 
-*/
 
 if ( ! defined( 'MEDIAWIKI' ) ) { die(); }
 
@@ -297,7 +276,14 @@ class ExtArrayExtension {
 		$array = self::get( $parser )->getArray( $arrayId );
 		
 		if( $array === null ) {
-			return '';
+			// array we want to print doesn't exist!
+			global $egArrayExtensionCompatbilityMode;
+			if( ! $egArrayExtensionCompatbilityMode ) {
+				return '';
+			} else {
+				// COMPATIBILITY-MODE
+				return "undefined array: $arrayId";
+			}
 		}
 
 		$rendered_values = array();
@@ -821,9 +807,14 @@ class ExtArrayExtension {
 		
 		global $egArrayExtensionCompatbilityMode;
 		
-		if( ! $operationRan && $egArrayExtensionCompatbilityMode ) {
-			// COMPATIBILITY-MODE:
-			// Before version 2.0 we didn't create a new array in case only one array was given
+		if( ! $operationRan && $egArrayExtensionCompatbilityMode
+			&& $operationFunc !== 'multi_arraymerge' // only exception was 'arraymerge'
+		) {
+			/*
+			 * COMPATIBILITY-MODE:
+			 * Before version 2.0 we didn't create a new array in case only one array was given.
+			 * The only exception was 'arraymerge' which did duplicate the array.
+			 */
 			return '';
 		}
 		
