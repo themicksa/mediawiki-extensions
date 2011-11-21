@@ -126,6 +126,13 @@ $messages['hsb'] = array(
 	'arrayext-desc' => 'Pomjenowane polowe wariable składować a wobličić',
 );
 
+/** Hungarian (Magyar)
+ * @author Dj
+ */
+$messages['hu'] = array(
+	'arrayext-desc' => 'Nevesített tömbök tárolása és számítása',
+);
+
 /** Interlingua (Interlingua)
  * @author McDutchie
  */
