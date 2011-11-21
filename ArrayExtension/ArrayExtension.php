@@ -64,7 +64,8 @@ $wgHooks['ParserClearState'   ][] = 'ExtArrayExtension::onParserClearState';
 
 
 /**
- * Full compatbility to versions before 1.4
+ * Full compatbility to versions before 1.4.
+ * Set to true by default since version 2.0.
  * 
  * @since 1.4 alpha
  * 
@@ -120,10 +121,10 @@ class ExtArrayExtension {
 		self::initFunction( $parser, 'arrayreset', SFH_OBJECT_ARGS );
 		self::initFunction( $parser, 'arrayunique' );
 		self::initFunction( $parser, 'arraysort' );
-		self::initFunction( $parser, 'arraymerge' );
-		self::initFunction( $parser, 'arrayunion' );
-		self::initFunction( $parser, 'arraydiff' );
-		self::initFunction( $parser, 'arrayintersect' );
+		self::initFunction( $parser, 'arraymerge', SFH_OBJECT_ARGS );
+		self::initFunction( $parser, 'arrayunion', SFH_OBJECT_ARGS );
+		self::initFunction( $parser, 'arraydiff', SFH_OBJECT_ARGS );
+		self::initFunction( $parser, 'arrayintersect', SFH_OBJECT_ARGS );
 		
 		return true;
 	}
@@ -157,7 +158,7 @@ class ExtArrayExtension {
 	####################
 
 	///////////////////////////////////////////////////////////
-	// PART 1. constructor
+	// PART 1. Array Construction
 	///////////////////////////////////////////////////////////
 
 	/**
@@ -271,7 +272,7 @@ class ExtArrayExtension {
 
 
 	///////////////////////////////////////////////////////////
-	// PART 2. print
+	// PART 2. Extracting Information
 	///////////////////////////////////////////////////////////
 
 
@@ -543,11 +544,50 @@ class ExtArrayExtension {
 		$store->setArray( $arrayId_new, $newArr );
 		return '';
 	}
+	
+	/**
+	* extract a slice from an array
+	* usage:
+	*     {{#arrayslice:arrayid_new|arrayid|offset|length}}
+	*
+	*    extract a slice from an  array
+	*    see: http://www.php.net/manual/en/function.array-slice.php
+	*/
+	static function pf_arrayslice( Parser &$parser, $arrayId_new, $arrayId = null , $offset = 0, $length = null ) {
+		$store = self::get( $parser );
+		if( $arrayId === null ) {
+			global $egArrayExtensionCompatbilityMode;
+			if( ! $egArrayExtensionCompatbilityMode ) { // COMPATBILITY-MODE
+				$store->setArray( $arrayId_new );
+			}
+			return '';
+		}
+		// get target array before overwriting it in any way
+		$array = $store->getArray( $arrayId );
 
+		// make sure at least an empty array exists if we return early
+		$store->setArray( $arrayId_new );
+		
+		if( $array === null
+			|| ! is_numeric( $offset ) // don't ignore invalid offset
+		) {
+		   return '';
+		}
 
-
+		if( ! is_numeric( $length ) ) {
+			$length = null; // ignore invalid input, slice till end
+		}
+		
+		// array_slice will re-organize keys		
+		$newArray = array_slice( $array, $offset, $length );
+		$store->setArray( $arrayId_new, $newArray );
+		
+		return '';
+	}
+	
+		
 	///////////////////////////////////////////////////////////
-	// PART 3. alter an array
+	// PART 3. Array Alteration
 	///////////////////////////////////////////////////////////
 
 	/**
@@ -652,173 +692,150 @@ class ExtArrayExtension {
 
 
 	///////////////////////////////////////////////////////////
-	// PART 4. create an array
+	// PART 4. Array Interaction
 	///////////////////////////////////////////////////////////
-
+	
 	/**
-	* merge two arrays, keep duplicated values
-	* usage:
-	*   {{#arraymerge:arrayid_new|arrayid1|arrayid2}}
-	*
-	*  merge values two arrayes identified by arrayid1 and arrayid2 into a new array identified by arrayid_new.
-	*  this merge differs from array_merge of php because it merges values.
-	*/
-    static function pf_arraymerge( Parser &$parser, $arrayId_new, $arrayId1 = null, $arrayId2 = null ) {
-        if( ! isset( $arrayId_new ) || ! isset( $arrayId1 ) || ! isset( $arrayId2 ) ) {
-           return '';
-		}
-		$store = self::get( $parser );
-		
-        $ret = $store->validate_array_by_arrayId( $arrayId1 );
-        if( $ret !== true ) {
-           return '';
-        }
-
-        $temp_array = array();
-        foreach( $store->mArrays[ $arrayId1 ] as $entry ) {
-           array_push ( $temp_array, $entry );
-        }
-
-        if( isset( $arrayId2 ) && strlen( $arrayId2 ) > 0 ) {
-                $ret = $store->validate_array_by_arrayId( $arrayId2 );
-                if( $ret === true ) {
-                        foreach( $store->mArrays[ $arrayId2 ] as $entry ) {
-                           array_push ( $temp_array, $entry );
-                        }
-                }
-        }
-
-        $store->mArrays[$arrayId_new] = $temp_array;
-        return '';
-    }
-
-	/**
-	* extract a slice from an array
-	* usage:
-	*     {{#arrayslice:arrayid_new|arrayid|offset|length}}
-	*
-	*    extract a slice from an  array
-	*    see: http://www.php.net/manual/en/function.array-slice.php
-	*/
-	static function pf_arrayslice( Parser &$parser, $arrayId_new, $arrayId = null , $offset = 0, $length = null ) {
-		$store = self::get( $parser );
-		if( $arrayId === null ) {
-			global $egArrayExtensionCompatbilityMode;
-			if( ! $egArrayExtensionCompatbilityMode ) { // COMPATBILITY-MODE
-				$store->setArray( $arrayId_new );
-			}
-			return '';
-		}
-		// get target array before overwriting it in any way
-		$array = $store->getArray( $arrayId );
-
-		// make sure at least an empty array exists if we return early
-		$store->setArray( $arrayId_new );
-		
-		if( $array === null
-			|| ! is_numeric( $offset ) // don't ignore invalid offset
-		) {
-		   return '';
-		}
-
-		if( ! is_numeric( $length ) ) {
-			$length = null; // ignore invalid input, slice till end
-		}
-		
-		// array_slice will re-organize keys		
-		$newArray = array_slice( $array, $offset, $length );
-		$store->setArray( $arrayId_new, $newArray );
-		
+	 * Merge values two arrayes identified by arrayid1 and arrayid2 into a new array identified by arrayid_new.
+	 * This merge differs from array_merge of php because it merges values.
+	 * 
+	 * Usage:
+	 *    {{#arraymerge:arrayid_new |array1 |array2 |... |array n}}
+	 *    See: http://www.php.net/manual/en/function.array-merge.php
+	 */
+	static function pfObj_arraymerge( &$parser, $frame, $args) {
+		self::get( $parser )->multiArrayOperation( $frame, $args, __FUNCTION__, false );
 		return '';
 	}
-
-	///////////////////////////////////////////////// /
-	// SET OPERATIONS: a set does not have duplicated element
+	private function multi_arraymerge( $array1, $array2 ) {
+		// keys will not be re-organized
+		return array_merge( $array1, $array2 );
+	}
+	
+	/**	 
+	 * Usage:
+	 *    {{#arrayunion:arrayid_new|arrayid1|arrayid2}}
+	 * 
+     *    Set operation, {red, white} = {red, white} union {red}
+	 *    Similar to arraymerge but with unique values. This union works on values.
+	 */
+	static function pfObj_arrayunion( &$parser, $frame, $args) {
+		self::get( $parser )->multiArrayOperation( $frame, $args, __FUNCTION__, false );
+		return '';
+	}
+	private function multi_arrayunion( $array1, $array2 ) {
+		// keys will not be re-organized
+		return array_unique( array_merge( $array1, $array2 ) );
+	}
 	
 	/**
-	* set operation, {red, white} = {red, white} union {red}
-	* usage:
-	*    {{#arrayunion:arrayid_new|arrayid1|arrayid2}}
-
-	*    similar to arraymerge, this union works on values.
-	*/
-    static function pf_arrayunion( Parser &$parser, $arrayId_new, $arrayId1 = null , $arrayId2 = null ) {
-		$store = self::get( $parser );
-        if ( ! isset( $arrayId_new ) || ! isset( $arrayId1 ) || ! isset( $arrayId2 ) ) {
-           return '';
-		}
-        if( ! isset( $arrayId1 ) || ! $store->arrayExists( $arrayId1 ) ) {
-           return '';
-        }
-        if( ! isset( $arrayId2 ) || ! $store->arrayExists( $arrayId2 ) ) {
-           return '';
-        }
-
-        self::pf_arraymerge( $parser, $arrayId_new, $arrayId1, $arrayId2 );
-		$store->setArray( $arrayId_new, array_unique ( $store->getArray( $arrayId_new ) ) );
-		
-        return '';
-    }
-	
-	/**
-	* set operation,    {red} = {red, white} intersect {red,black}
-	* usage:
-	*    {{#arrayintersect:arrayid_new|arrayid1|arrayid2}}
-	*   See: http://www.php.net/manual/en/function.array-intersect.php
-	*/
-    static function pf_arrayintersect( Parser &$parser, $arrayId_new, $arrayId1 = null , $arrayId2 = null ) {
-		$store = self::get( $parser );
-        if ( ! isset( $arrayId_new ) || ! isset( $arrayId1 ) || ! isset( $arrayId2 ) ) {
-           return '';
-		}
-        if( ! isset( $arrayId1 ) || ! $store->arrayExists( $arrayId1 ) ) {
-           return '';
-        }
-        if( ! isset( $arrayId2 ) || ! $store->arrayExists( $arrayId2 ) ) {
-           return '';
-        }
-
-		// keys will be preserved...
-        $newArray = array_intersect( array_unique( $store->mArrays[$arrayId1] ), array_unique( $store->mArrays[$arrayId2] ) );
-
-		// ...so we have to reorganize the key order
-		$store->mArrays[$arrayId_new] = self::sanitizeArray( $newArray );
-
-        return '';
-    }
+	 * Usage:
+	 *    {{#arrayintersect:arrayid_new |array1 |array2 |... |array n}}
+	 * 
+	 *    Set operation, {red} = {red, white} intersect {red,black}
+	 *    See: http://www.php.net/manual/en/function.array-intersect.php
+	 */
+	static function pfObj_arrayintersect( &$parser, $frame, $args) {
+		self::get( $parser )->multiArrayOperation( $frame, $args, __FUNCTION__, false );
+		return '';
+	}
+	private function multi_arrayintersect( $array1, $array2 ) {
+		// keys will be preserved!
+		return array_intersect( $array1, $array2 );
+	}
 
 	/**
-	*
-	* usage:
-	*    {{#arraydiff:arrayid_new|arrayid1|arrayid2}}
-	*
-	*    set operation,    {white} = {red, white}  -  {red}
-	*    see: http://www.php.net/manual/en/function.array-diff.php
-	*/
-    static function pf_arraydiff( Parser &$parser, $arrayId_new, $arrayId1 = null , $arrayId2 = null ) {
-		$store = self::get( $parser );
-        if( ! isset( $arrayId_new ) || ! isset( $arrayId1 ) || ! isset( $arrayId2 ) ) {
-           return '';
-		}        
-        if( ! isset( $arrayId1 ) || ! $store->arrayExists( $arrayId1 ) ) {
-           return '';
-        }
-        if( ! isset( $arrayId2 ) || ! $store->arrayExists( $arrayId2 ) ) {
-           return '';
-        }		
-		// keys will be preserved...
-        $newArray = array_diff( array_unique( $store->mArrays[$arrayId1] ), array_unique( $store->mArrays[$arrayId2] ) );
-
-		// ...so we have to reorganize the key order
-		$store->mArrays[$arrayId_new] = self::sanitizeArray( $newArray );
-
-        return '';
-    }
+	 *
+	 * Usage:
+	 *    {{#arraydiff:arrayid_new |array1 |array2 |... |array n}}
+	 *
+	 *    Set operation, {white} = {red, white} - {red}
+	 *    See: http://www.php.net/manual/en/function.array-diff.php
+	 */
+	static function pfObj_arraydiff( &$parser, $frame, $args) {
+		self::get( $parser )->multiArrayOperation( $frame, $args, __FUNCTION__, false );
+		return '';
+	}
+	private function multi_arraydiff( $array1, $array2 ) {
+		// keys will be preserved!
+		return array_diff( $array1, $array2 );
+	}
 	
 	
 	##################
 	# Private helper #
 	##################
+	
+	/**
+	 * Base function for operations with multiple arrays given thru n parameters
+	 * $operationFunc expects a function name prefix (suffix 'multi_') with two parameters
+	 * $array1 and $array2 which will perform an action between $array1 and $array2 which
+	 * will result into a new $array1. There can be 1 to n $hash2 in the whole process.
+	 * 
+	 * Note: This function is similar to that of Extension:HashTables.
+	 * 
+	 * @since 2.0
+	 * 
+	 * @param $frame PPFrame
+	 * @param $args array
+	 * @param $operationFunc string name of the function calling this. There must be a counterpart
+	 *        function with prefix 'multi_' which should have two parameters. Both parameters
+	 *        will receive an array, the function must return the result array of the processing.
+	 * @param $runFuncOnSingleArray boolean whether the $operationFunc function should be run in case
+	 *        only one array id is given. If not, the original array will end up in the new array.
+	 */
+	protected function multiArrayOperation( PPFrame $frame, array $args, $operationFunc, $runFuncOnSingleArray = true ) {
+		$lastArray = null;
+		$operationRan = false;
+		$finalArrayId = trim( $frame->expand( $args[0] ) );
+		$operationFunc = 'multi_' . preg_replace( '/^pfObj_/', '', $operationFunc );
+		
+		// For all arrays given in parameters 2 to n (ignore 1 because this is the name of the new array)
+		for( $i = 1; $i < count( $args ); $i++ ) {
+			// just make sure we don't fall into gaps of given arguments:
+			if( ! array_key_exists( $i, $args ) )  {
+				continue;
+			}
+			$argArrayId = trim( $frame->expand( $args[ $i ] ) );
+			
+			// ignore all tables which do not exist
+			if( $this->arrayExists( $argArrayId ) ) {
+				$argArray = $this->getArray( $argArrayId );				
+				if( $lastArray === null ) {
+					// first valid array, process together with second...
+					$lastArray = $argArray;
+				}
+				else {
+					// second or later hash table, process with previous:
+					$lastArray = $this->{ $operationFunc }( $lastArray, $argArray ); // perform action between last and current array
+					$operationRan = true;
+				}
+			}
+		}
+		
+		// in case no array was given at all:
+		if( $lastArray === null ) {
+			$lastArray = array();
+		}
+		
+		global $egArrayExtensionCompatbilityMode;
+		
+		if( ! $operationRan && $egArrayExtensionCompatbilityMode ) {
+			// COMPATBILITY-MODE:
+			// Before version 2.0 we didn't create a new array in case only one array was given
+			return '';
+		}
+		
+		// if the operation didn't run because there was only one or no array:
+		if( ! $operationRan && $runFuncOnSingleArray ) {
+			$lastArray = $this->{ $operationFunc }( $lastArray );
+		}
+		
+		// re-organize all keys since some 'multi_' functions will preserve keys!
+		$lastArray = array_merge( $lastArray );
+		
+		$this->setArray( $finalArrayId, $lastArray );
+	}	
 
     /**
 	 * Validates an index for an array and returns true in case the index is a valid index within
