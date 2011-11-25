@@ -36,7 +36,7 @@ class SpecialSelection extends SpecialPage {
         global $wgOut, $wgRequest;
 
 		$name = $wgRequest->getVal( 'name' );
-		$format = $wgRequest->getVal( 'format' ); 		
+		$format = $wgRequest->getVal( 'format' );
 
 		if( $wgRequest->wasPosted() ) {
 			$wgOut->disable();
@@ -44,7 +44,7 @@ class SpecialSelection extends SpecialPage {
 			$article = $wgRequest->getVal( 'article' );
 
 			$action = $wgRequest->getVal( 'action' );
-			if( $action == 'setrevision' ) {			
+			if( $action == 'setrevision' ) {
 				$revision = $wgRequest->getVal( 'revision' );
 				$success = Selection::setRevision( $name, $namespace, $article, $revision );
 				$title = Title::makeTitle( $namespace, $article );
@@ -54,7 +54,7 @@ class SpecialSelection extends SpecialPage {
 					'revision' => $revision,
 					'revision_url' => $url
 				);
-			} else if ( $action == 'deletearticle') { 
+			} elseif ( $action == 'deletearticle') {
 				$success = Selection::deleteArticle( $name, $namespace, $article );
 				$return = array(
 					'status' => $success
@@ -78,7 +78,7 @@ class SpecialSelection extends SpecialPage {
 			$this->makeCSV( $entries, $name );
 		}
 
-		$csv_link = $this->getFullTitle()->getFullUrl( array( 
+		$csv_link = $this->getFullTitle()->getFullUrl( array(
 			'format' => 'csv',
 			'name' => $name
 		) );
