@@ -29,8 +29,10 @@ $wgExtensionCredits['other'][] = array(
 $dir = dirname( __FILE__ ) . '/';
 $wgExtensionMessagesFiles['SharedHelpNamespace'] = $dir . 'SharedHelpNamespace.i18n.php';
 
-// Help wikis where the help namespace is fetched from
-$wgSharedHelpNamespaceFetchingWikis = array();
+// Help wiki(s) where the help namespace is fetched from
+if( !isset($wgSharedHelpNamespaceFetchingWikis) ) {
+	$wgSharedHelpNamespaceFetchingWikis = array();
+}
 
 // Hooks
 $wgHooks['ShowMissingArticle'][] = 'wfSharedHelpNamespaceLoad';
@@ -145,16 +147,21 @@ function efSharedHelpNamespaceMakeBlueLinks( $skin, $target, &$text, &$customAtt
 
 
 function wfSharedHelpNamespaceChangeEditSectionLink( $skin, $title, $section, $tooltip, $result, $lang = false ) {
-	global $wgSharedHelpNamespaceFetchingWikis, $wgLanguageCode, $wgDBname;
+	global $wgTitle, $wgSharedHelpNamespaceFetchingWikis, $wgLanguageCode, $wgDBname;
 
-	foreach ( $wgSharedHelpNamespaceFetchingWikis as $language => $urls ) {
-		foreach ( $urls as $url => $wgSharedHelpNamespaceFetchingWiki ) {
-			if ( $wgLanguageCode == "$language" && $wgDBname != $wgSharedHelpNamespaceFetchingWiki ) {
-				$result = '<span class="editsection">[<a href="'.$url.'/index.php?title='.str_replace( ' ', '_', $title ).'&amp;action=edit&amp;section='.$section.'" title="'.wfMsg( 'editsectionhint', $tooltip ).'">'.wfMsg( 'editsection' ).'</a>]</span>';
+	if ( $wgTitle->getNamespace() == NS_HELP ) {
+		foreach ( $wgSharedHelpNamespaceFetchingWikis as $language => $urls ) {
+			foreach ( $urls as $url => $wgSharedHelpNamespaceFetchingWiki ) {
+				if ( $wgLanguageCode == "$language" && $wgDBname != $wgSharedHelpNamespaceFetchingWiki ) {
+					$result = '<span class="editsection">[<a href="'.$url.'/index.php?title='.str_replace( ' ', '_', $title ).'&amp;action=edit&amp;section='.$section.'" title="'.wfMsg( 'editsectionhint', $tooltip ).'">'.wfMsg( 'editsection' ).'</a>]</span>';
+				}
 			}
 		}
+		return true;
+	} else {
+		return false;
 	}
-	return true;
+
 }
 
 
