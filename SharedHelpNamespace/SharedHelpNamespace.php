@@ -17,7 +17,7 @@ if (!defined('MEDIAWIKI')) {
 	exit(1);
 }
 
-$wgExtensionCredits['specialpage'][] = array(
+$wgExtensionCredits['other'][] = array(
 	'name'           => 'SharedHelpNamespace',
 	'author'         => array( 'Tim Weyer' ),
 	'url'            => 'http://www.mediawiki.org/wiki/Extension:SharedHelpNamespace',
