@@ -21,16 +21,13 @@ class UploadLocalForm {
 		$name = $dir . $filename;
 		
 		$this->upload = new UploadFromFile();
-/** (CSN) 27 Oct 2011 - For 1.17.0, we need a request object */
 		$fileInfo = array(
 			'name' => $dest,
 			'size' => filesize( $name ),
 			'tmp_name' => $name,
 			'error' => 0
 		);
-		//$this->upload->initialize( $dest, $name, filesize( $name ) );
 		$this->upload->initialize( $name, new WebRequestUploadLocal( true, $fileInfo ) );
-/* (CSN) end mod **/
 	}
 		
 	function processUpload( $user ) {

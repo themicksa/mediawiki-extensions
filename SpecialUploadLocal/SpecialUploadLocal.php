@@ -26,9 +26,7 @@ $wgExtensionCredits['specialpage'][] = array(
 $wgSpecialPages['SpecialUploadLocal'] = 'SpecialUploadLocal';
 $wgExtensionMessagesFiles['SpecialUploadLocal'] = dirname( __FILE__ ) . '/SpecialUploadLocal.i18n.php';
 $wgAutoloadClasses[ 'SpecialUploadLocal' ] = dirname( __FILE__ ) . '/SpecialUploadLocal_body.php';
-/** (CSN) 27 Oct 2011 - Need to add new class for 1.17.0 */
 $wgAutoloadClasses[ 'WebRequestUploadLocal' ] = dirname( __FILE__ ) . '/WebRequestUploadLocal.php';
-/* (CSN) end mod **/
 
 $wgUploadLocalDirectory = $IP . '/extensions/SpecialUploadLocal/data';
 
