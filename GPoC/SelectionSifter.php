@@ -19,7 +19,7 @@ if( !defined( 'MEDIAWIKI' ) ) {
 // Set up the new special page
 $dir = dirname( __FILE__ ) . '/';
 
-$wgAutoloadClasses['GPoCHooks'] = $dir . 'GPoC.hooks.php';
+$wgAutoloadClasses['SelectionSifterHooks'] = $dir . 'SelectionSifter.hooks.php';
 $wgAutoloadClasses['Statistics'] = $dir . 'models/Statistics.php';
 $wgAutoloadClasses['Rating'] = $dir . 'models/Rating.php';
 $wgAutoloadClasses['AssessmentChangeLog'] = $dir . 'models/Log.php';
@@ -33,13 +33,13 @@ $wgAutoloadClasses['SpecialSelection'] = $dir . 'SpecialSelection.php';
 $wgAutoloadClasses['FilterRatingsTemplate'] = $dir . 'templates/FilterRatingsTemplate.php';
 $wgAutoloadClasses['SelectionTemplate'] = $dir . 'templates/SelectionTemplate.php';
 
-$wgHooks['ArticleSaveComplete'][] = 'GPoCHooks::ArticleSaveComplete';
-$wgHooks['LoadExtensionSchemaUpdates'][] = 'GPoCHooks::SetupSchema';
+$wgHooks['ArticleSaveComplete'][] = 'SelectionSifterHooks::ArticleSaveComplete';
+$wgHooks['LoadExtensionSchemaUpdates'][] = 'SelectionSifterHooks::SetupSchema';
 
 $wgHooks['ParserFirstCallInit'][] = 'TableDisplay::ParserFunctionInit';
 $wgHooks['LanguageGetMagic'][] = 'TableDisplay::LanguageGetMagic';
 
-$wgHooks['TitleMoveComplete'][] = 'GPoCHooks::TitleMoveComplete';
+$wgHooks['TitleMoveComplete'][] = 'SelectionSifterHooks::TitleMoveComplete';
 
 $wgSpecialPages['AssessmentLog'] = 'SpecialAssessmentLog';
 $wgSpecialPages['FilterRatings'] = 'SpecialFilterRatings';

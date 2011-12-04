@@ -12,7 +12,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 	exit( 1 );
 }
 
-class GPoCHooks {
+class SelectionSifterHooks {
 
 	private static function updateDatabase( $title, $assessments, $timestamp ) {
 		$main_title = Title::makeTitle( NS_MAIN, $title->getText() );
@@ -49,7 +49,7 @@ class GPoCHooks {
 			$preparedText = $article->prepareTextForEdit( $text )->output->getText();
 			$extractor = new AssessmentsExtractor( $preparedText );
 			$assessments = $extractor->extractAssessments();
-			GPoCHooks::updateDatabase( $title, $assessments, $revision );
+			SelectionSifterHooks::updateDatabase( $title, $assessments, $revision );
 		}
 		return true;
 	}
