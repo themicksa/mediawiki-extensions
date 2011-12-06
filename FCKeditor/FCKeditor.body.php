@@ -462,7 +462,7 @@ function onLoadFCKeditor(){
 
 			if ( !( typeof(oDoc.FCK) == "undefined" ) && !( typeof(oDoc.FCK.EditingArea) == "undefined" ) ){
 				txtarea = oDoc.FCK.EditingArea.Textarea;
-			} elseif( oDoc.editform ){
+			} else if( oDoc.editform ){
 				// if we have FCK enabled, behave differently...
 				if ( showFCKEditor & RTE_VISIBLE ){
 					SRCiframe = oDoc.getElementById( 'wpTextbox1___Frame' );
@@ -498,7 +498,7 @@ function onLoadFCKeditor(){
 				// save window scroll position
 				if ( oDoc.documentElement && oDoc.documentElement.scrollTop )
 					var winScroll = oDoc.documentElement.scrollTop;
-				elseif ( oDoc.body )
+				else if ( oDoc.body )
 					var winScroll = oDoc.body.scrollTop;
 
 				// get current selection
@@ -519,10 +519,10 @@ function onLoadFCKeditor(){
 				// restore window scroll position
 				if ( oDoc.documentElement && oDoc.documentElement.scrollTop )
 					oDoc.documentElement.scrollTop = winScroll;
-				elseif ( oDoc.body )
+				else if ( oDoc.body )
 					oDoc.body.scrollTop = winScroll;
 
-			} elseif ( txtarea.selectionStart || txtarea.selectionStart == '0' ){ // Mozilla
+			} else if ( txtarea.selectionStart || txtarea.selectionStart == '0' ){ // Mozilla
 
 				// save textarea scroll position
 				var textScroll = txtarea.scrollTop;
@@ -536,7 +536,7 @@ function onLoadFCKeditor(){
 				if( !selText ){
 					selText = sampleText;
 					isSample = true;
-				} elseif( selText.charAt(selText.length - 1) == ' ' ){ //exclude ending space char
+				} else if( selText.charAt(selText.length - 1) == ' ' ){ //exclude ending space char
 					selText = selText.substring(0, selText.length - 1);
 					tagClose += ' ';
 				}
@@ -560,7 +560,7 @@ function checkSelected(){
 	if( !selText ) {
 		selText = sampleText;
 		isSample = true;
-	} elseif( selText.charAt(selText.length - 1) == ' ' ) { //exclude ending space char
+	} else if( selText.charAt(selText.length - 1) == ' ' ) { //exclude ending space char
 		selText = selText.substring(0, selText.length - 1);
 		tagClose += ' '
 	}
@@ -591,7 +591,7 @@ function initEditor(){
 			// Remove the mwSetupToolbar onload hook to avoid a JavaScript error with FF.
 			if ( window.removeEventListener )
 				window.removeEventListener( 'load', mwSetupToolbar, false );
-			elseif ( window.detachEvent )
+			else if ( window.detachEvent )
 				window.detachEvent( 'onload', mwSetupToolbar );
 			mwSetupToolbar = function(){ return false ; };
 
