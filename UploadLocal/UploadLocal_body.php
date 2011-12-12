@@ -1,16 +1,16 @@
 <?php
 
-class SpecialUploadLocal extends SpecialPage {
+class UploadLocal extends SpecialPage {
 	function __construct() {
-		parent::__construct( 'SpecialUploadLocal',  'uploadlocal' );
-		wfLoadExtensionMessages( 'SpecialUploadLocal' );
+		parent::__construct( 'UploadLocal',  'uploadlocal' );
+		wfLoadExtensionMessages( 'UploadLocal' );
 	}
 
 	function execute( $par ) {
 		global $wgRequest, $wgUploadLocalDirectory, $wgMessageCache;
-		wfLoadExtensionMessages( 'SpecialUploadLocal' );
+		wfLoadExtensionMessages( 'UploadLocal' );
 		
-		$prefix = 'extensions/SpecialUploadLocal/';
+		$prefix = 'extensions/UploadLocal/';
 		require($prefix . 'UploadLocalDirectory.php');
 		require($prefix . 'UploadLocalForm.php');
 		

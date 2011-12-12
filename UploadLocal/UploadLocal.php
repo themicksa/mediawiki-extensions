@@ -23,14 +23,14 @@ $wgExtensionCredits['specialpage'][] = array(
 	'name' => 'UploadLocal',
 	'description' => 'allows users to link in files already on the server'
 );
-$wgSpecialPages['SpecialUploadLocal'] = 'SpecialUploadLocal';
-$wgExtensionMessagesFiles['SpecialUploadLocal'] = dirname( __FILE__ ) . '/SpecialUploadLocal.i18n.php';
-$wgAutoloadClasses[ 'SpecialUploadLocal' ] = dirname( __FILE__ ) . '/SpecialUploadLocal_body.php';
+$wgSpecialPages['UploadLocal'] = 'UploadLocal';
+$wgExtensionMessagesFiles['UploadLocal'] = dirname( __FILE__ ) . '/UploadLocal.i18n.php';
+$wgAutoloadClasses[ 'UploadLocal' ] = dirname( __FILE__ ) . '/UploadLocal_body.php';
 $wgAutoloadClasses[ 'WebRequestUploadLocal' ] = dirname( __FILE__ ) . '/WebRequestUploadLocal.php';
 
-$wgUploadLocalDirectory = $IP . '/extensions/SpecialUploadLocal/data';
+$wgUploadLocalDirectory = $IP . '/extensions/UploadLocal/data';
 
 $wgAvailableRights[] = 'uploadlocal';
 $wgGroupPermissions['uploader']['uploadlocal'] = true;
 $wgGroupPermissions['sysop']   ['uploadlocal'] = true;
-$wgSpecialPageGroups['SpecialUploadLocal'] = 'media';
+$wgSpecialPageGroups['UploadLocal'] = 'media';
