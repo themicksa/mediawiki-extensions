@@ -88,8 +88,15 @@ $wgAutoloadClasses['FCKeditor_MediaWiki'] = $dir . 'FCKeditor.body.php';
 $wgExtensionMessagesFiles['FCKeditor'] = $dir . 'FCKeditor.i18n.php';
 
 // Initialize FCKeditor and the MediaWiki extension
-$fckeditor = new FCKeditor('fake');
-$wgFCKEditorIsCompatible = $fckeditor->IsCompatible();
+// @fixme something like this should be delayed until it's actually time
+// to work with the editor or something.
+if (php_sapi_name() == 'cli') {
+	// Command line
+	$wgFCKEditorIsCompatible = false;
+} else {
+	$fckeditor = new FCKeditor('fake');
+	$wgFCKEditorIsCompatible = $fckeditor->IsCompatible();
+}
 
 $oFCKeditorExtension = new FCKeditor_MediaWiki();
 
