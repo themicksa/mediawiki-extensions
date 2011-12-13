@@ -13,7 +13,7 @@ $wgExtensionCredits['specialpage'][] = array(
 	'path'           => __FILE__,
 	'name'           => 'MogileClient',
 	'author'         => '',
-	'url'            => 'http://www.mediawiki.org/wiki/Extension:MogileClient',
+	'url'            => 'https://www.mediawiki.org/wiki/Extension:MogileClient',
 );
 
 /**

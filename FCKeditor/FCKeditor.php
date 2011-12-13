@@ -70,7 +70,7 @@ $wgExtensionCredits['other'][] = array(
 	'name' => 'FCKeditor',
 	'author' => array( 'Frederico Caldeira Knabben', 'Wiktor Walc', 'Jack Phoenix', '...' ),
 	'version' => '1.0.1',
-	'url' => 'http://www.mediawiki.org/wiki/Extension:FCKeditor_(Official)',
+	'url' => 'https://www.mediawiki.org/wiki/Extension:FCKeditor_(Official)',
 	'descriptionmsg' => 'fckeditor-desc',
 );
 
