@@ -1051,7 +1051,7 @@ $messages['nn'] = array(
  * @author Laaknor
  * @author Nghtwlkr
  */
-$messages['no'] = array(
+$messages['nb'] = array(
 	'fckeditor-desc' => 'Tillatt redigeringer med «WYSIWYG»-editoren FCKeditor',
 	'textrichditor' => 'Rik tekstredigering',
 	'prefs-fckeditor' => 'Rik editor',
