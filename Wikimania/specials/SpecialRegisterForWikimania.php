@@ -8,9 +8,17 @@ class SpecialRegisterForWikimania extends SpecialPage {
 	}
 
 	public function execute( $par = '' ) {
-		$this->setHeaders();
+		// Get our Wikimania class
 		$wikimania = Wikimania::getWikimania();
+
 		$out = $this->getOutput();
+
+		$this->setHeaders();
+		// Add the year to the title
+		$out->setPageTitle(
+			$this->msg( 'registerforwikimania', $wikimania->getYear() )
+		);
+
 		$out->addModules( 'ext.wikimania' );
 
 		// Add the banner to the beginning of the page
