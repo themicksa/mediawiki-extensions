@@ -78,6 +78,7 @@ $wgResourceModules['ext.wikimania'] = array(
  * that is: YYYYMMDDHHMMSS
  *
  *  year                => The year of the conference, 2011, 2012, etc.
+ *  bannerUrl           => URL for a banner image
  *  openDate            => Date to begin accepting registrations
  *  closeDate           => Date to end accepting registrations
  *  baseCurrency        => All prices are in this currency
@@ -92,6 +93,7 @@ $wgResourceModules['ext.wikimania'] = array(
  */
 $wgWikimaniaConf = array(
 	'year' => 2012,
+	'bannerUrl' => '//upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Wikimania_2012_banner.svg/758px-Wikimania_2012_banner.svg.png',
 	'openDate'  => '',
 	'closeDate' => '',
 	'baseCurrency' => 'USD',

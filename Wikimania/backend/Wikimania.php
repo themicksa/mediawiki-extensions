@@ -46,6 +46,12 @@ class Wikimania {
 	private $country;
 
 	/**
+	 * Banner image URL
+	 * @var String
+	 */
+	private $bannerUrl;
+
+	/**
 	 * Do a bit of delayed setup, based on this year's config
 	 * @param $year int Year to host Wikimania for
 	 */
@@ -79,7 +85,7 @@ class Wikimania {
 	 * @param $conf Array A $wgWikimaniaConf array
 	 */
 	private function __construct( array $conf ) {
-		$baseRequiredConf = array( 'year', 'openDate', 'closeDate', 'baseCurrency', 'country' );
+		$baseRequiredConf = array( 'year', 'bannerUrl', 'openDate', 'closeDate', 'baseCurrency', 'country' );
 		foreach( $baseRequiredConf as $confItem ) {
 			if( !isset( $conf[$confItem] ) ) {
 				throw new MWException( "Missing config item '$confItem'\n" );
@@ -136,5 +142,13 @@ class Wikimania {
 	 */
 	public function getCountry() {
 		return $this->country;
+	}
+
+	/**
+	 * Get the banner image URL
+	 * @return String
+	 */
+	public function getBannerUrl() {
+		return $this->bannerUrl;
 	}
 }

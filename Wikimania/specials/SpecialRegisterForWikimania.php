@@ -9,7 +9,15 @@ class SpecialRegisterForWikimania extends SpecialPage {
 
 	public function execute( $par = '' ) {
 		$this->setHeaders();
-		$this->getOutput()->addModules( 'ext.wikimania' );
+		$wikimania = Wikimania::getWikimania();
+		$out = $this->getOutput();
+		$out->addModules( 'ext.wikimania' );
+
+		// Add the banner to the beginning of the page
+		$out->addHTML(
+			Html::element( 'img', array( 'src' => $wikimania->getBannerUrl() ) )
+		);
+
 		$form = new WikimaniaRegistration( Wikimania::getWikimania(), $this->getContext() );
 		$form->show();
 	}
