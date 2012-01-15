@@ -62,7 +62,7 @@ class Wikimania {
 				throw new MWException( "Trying to host Wikimania for invalid $year\n" );
 			}
 			self::$i = new self( $wgWikimaniaConf );
-			$wgExtensionmessagesFiles["wikimania-$year"] = dirname( __FILE__ ) .
+			$wgExtensionMessagesFiles["wikimania-$year"] = dirname( dirname( __FILE__ ) ) .
 				"/lang/Wikimania{$year}.i18n.php";
 		} elseif( self::$i && self::$i->getYear() !== $year ) {
 			throw new MWException( "Can only host one year at a time!\n" );

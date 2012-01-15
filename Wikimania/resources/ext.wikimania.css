@@ -1,3 +1,63 @@
 /**
  * CSS for Wikimania
  */
+
+#mwe-wmreg-steps {
+	background-color: white;
+	background-image: none;
+	border: none;
+	margin-bottom: 10px;
+}
+
+#mwe-wmreg-steps li {
+	color: #666666;
+	font-size: 1.2em;
+	margin-right: -1px;
+	border-top: solid 1px #a7d7f9;
+	border-bottom: solid 1px #a7d7f9;
+}
+
+#mwe-wmreg-step-tutorial {
+	border-left: solid 1px #a7d7f9;
+}
+
+#mwe-wmreg-step-thanks {
+	border-right: solid 1px #a7d7f9;
+}
+
+#mwe-wmreg-steps li.head {
+	color: #000000;
+}
+
+#mwe-wmreg-banner {
+	display: block;
+	margin: 0 auto;
+}
+
+.mwe-wmreg-stepdiv {
+	display: none;
+	padding: 15px;
+	border: 1px solid #cedff2;
+	background: #f5faff;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.mwe-wmreg-stepdiv > fieldset {
+	border: none;
+}
+
+.mwe-wmreg-stepdiv > fieldset > legend {
+	font-weight: bold;
+	font-size: 16pt;
+	padding: 0 0 10px;
+	color: #333;
+}
+
+.mwe-wmreg-buttons {
+	margin-top: 1em;
+	padding-top: 10px;
+	border-top: 1px solid #e0e0e0;
+	text-align: right;  /* works for now, only one 'next' button */
+}

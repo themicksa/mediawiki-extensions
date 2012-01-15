@@ -18,6 +18,7 @@ $messages['en'] = array(
 	'right-wikimania-admin' => 'Manage Wikimania registrations',
 	'right-wikimania-register' => 'Register for Wikimania',
 	'right-wikimania-checkstatus' => 'Check status of a Wikimania registration',
+	'wikimania-personal' => 'Personal information',
 	'wikimania-personal-info' => 'Personal identification data',
 	'wikimania-reg-fname' => 'First name',
 	'wikimania-reg-lname' => 'Last name',

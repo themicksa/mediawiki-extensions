@@ -69,7 +69,13 @@ $wgGroupPermissions['sysop']['wikimania-admin'] = true;
 $wgResourceModules['ext.wikimania'] = array(
 	'localBasePath' => dirname( __FILE__ ) . '/resources',
 	'remoteExtPath' => 'Wikimania/resources',
+	'scripts' => 'ext.wikimania.js',
 	'styles'  => 'ext.wikimania.css',
+	'dependencies' => array(
+		'jquery.arrowSteps',
+		'jquery.ui.core',
+		'jquery.ui.dialog',
+	),
 );
 
 /**
