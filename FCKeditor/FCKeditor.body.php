@@ -75,12 +75,6 @@ class FCKeditor_MediaWiki {
 		return $this->excludedNamespaces;
 	}
 
-	public static function onLanguageGetMagic( &$magicWords, $langCode ) {
-		$magicWords['NORICHEDITOR'] = array( 0, '__NORICHEDITOR__' );
-
-		return true;
-	}
-
 	public static function onParserBeforeInternalParse( &$parser, &$text, &$strip_state ) {
 		MagicWord::get( 'NORICHEDITOR' )->matchAndRemove( $text );
 
@@ -706,5 +700,4 @@ $script .= '</script>';
 
 		return true;
 	}
-
 }

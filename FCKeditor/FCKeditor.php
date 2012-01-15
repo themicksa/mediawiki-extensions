@@ -86,6 +86,7 @@ $wgAutoloadClasses['FCKeditor_MediaWiki'] = $dir . 'FCKeditor.body.php';
 
 // Path to internationalization file
 $wgExtensionMessagesFiles['FCKeditor'] = $dir . 'FCKeditor.i18n.php';
+$wgExtensionMessagesFiles['FCKeditorMagic'] = $dir . 'FCKeditor.i18n.magic.php';
 
 // Initialize FCKeditor and the MediaWiki extension
 // @fixme something like this should be delayed until it's actually time
@@ -107,7 +108,6 @@ $wgHooks['EditPage::showEditForm:fields'][]		= array( $oFCKeditorExtension, 'onE
 $wgHooks['EditPageBeforePreviewText'][]         = array( $oFCKeditorExtension, 'onEditPageBeforePreviewText' );
 $wgHooks['EditPagePreviewTextEnd'][]            = array( $oFCKeditorExtension, 'onEditPagePreviewTextEnd' );
 $wgHooks['CustomEditor'][]                      = array( $oFCKeditorExtension, 'onCustomEditor' );
-$wgHooks['LanguageGetMagic'][]					= 'FCKeditor_MediaWiki::onLanguageGetMagic';
 $wgHooks['ParserBeforeStrip'][]					= 'FCKeditor_MediaWiki::onParserBeforeStrip';
 $wgHooks['ParserBeforeInternalParse'][]			= 'FCKeditor_MediaWiki::onParserBeforeInternalParse';
 $wgHooks['EditPageBeforeConflictDiff'][]		= 'FCKeditor_MediaWiki::onEditPageBeforeConflictDiff';
