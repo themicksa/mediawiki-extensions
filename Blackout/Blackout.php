@@ -43,7 +43,7 @@ $wgBlackout = array(
 $dir = dirname(__FILE__) . '/';
 
 $wgAutoloadClasses['Blackout'] = $dir . 'Blackout.body.php';
-$wgAutoloadClasses['BlackoutTemplate'] = $dir . 'BlackoutTemplate.php';
+$wgAutoloadClasses['InfoTemplate'] = $dir . 'InfoTemplate.php';
 $wgAutoloadClasses['SkinBlackout'] = $dir . 'SkinBlackout.php';
 
 $wgExtensionMessagesFiles['Blackout'] = $dir . 'Blackout.i18n.php';
@@ -69,6 +69,6 @@ $wgResourceModules['ext.blackout'] = array(
 /*
  * Hooks
  */
-//$wgHooks['BeforePageDisplay'][] = 'Blackout::BlackoutBanner';
+$wgHooks['BeforePageDisplay'][] = 'Blackout::BlackoutBanner';
 $wgHooks['MediaWikiPerformAction'][] = 'Blackout::overrideAction';
 $wgHooks['SkinAfterBottomScripts'][] = 'Blackout::GeoLoader';

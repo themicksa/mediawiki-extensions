@@ -43,9 +43,9 @@ class Blackout {
 		$skin = new SkinBlackout();
 		$output->getContext()->setSkin( $skin );
 
-		//$tpl = new BlackoutTemplate();
+		$tpl = new InfoTemplate();
 
-		//$output->addTemplate( $tpl );
+		$output->addTemplate( $tpl );
 
 		return false;
 	}

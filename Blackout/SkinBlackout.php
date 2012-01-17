@@ -90,7 +90,7 @@ class BlackoutTemplate extends QuickTemplate {
 		</style>
 	</head>
 	<body>
-		Hei
+		<?php $this->html( 'bodycontent' ) ?>
 	</body>
 </html>
 <?php
