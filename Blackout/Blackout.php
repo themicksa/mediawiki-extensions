@@ -9,7 +9,6 @@
  * @license GPL
  *
  * Thank you to *** for feedback, bug reporting and cleaning up code
- * Thank you to Raymond and others mentioned in TweetANew.i18n.php for translation work
  *
  */
 
@@ -52,11 +51,9 @@ $wgResourceModules['ext.blackout'] = array(
 	'remoteExtPath' => 'Blackout/modules'
 );
 
-/**
+/*
  * Credits
- *
  */
-
  $wgExtensionCredits['other'][] = array(
 	'name'           => 'Blackout',
 	'version'        => '1.0.20120117',
@@ -65,9 +62,7 @@ $wgResourceModules['ext.blackout'] = array(
 	'url'            => 'https://www.mediawiki.org/wiki/Extension:Blackout',
 );
 
-/**
- * Call the hooks
- *
+/*
+ * Hooks
  */
-
 $wgHooks['BeforePageDisplay'][] = 'Blackout::BlackoutBanner';

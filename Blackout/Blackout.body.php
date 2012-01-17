@@ -1,7 +1,5 @@
 <?php
-if ( !defined( 'MEDIAWIKI' ) ) {
-	die();
-}
+
 /**
  * Class file for the Blackout extension
  *
@@ -9,20 +7,23 @@ if ( !defined( 'MEDIAWIKI' ) ) {
  * @license GPL
  */
 
-// Blackout
+/**
+ * Blackout class
+ */
 class Blackout {
 
 	/**
 	 * Function displaying banner
 	 *
-	 * @param $article Article
-	 * @param $user User
-	 * @param $summary
+	 * @param OutputPage $out
+	 * @param Skin $skin
 	 * @return bool
 	 */
-	public static function fnMyHook( OutputPage &$out, Skin &$skin ) {
+	public static function BlackoutBanner( OutputPage &$out, Skin &$skin ) {
 		global $wgBlackout, $wgOut;
-		$wgOut->addModules( 'ext.blackout' );
-	return true;
+
+		$out->addModules( 'ext.blackout' );
+
+		return true;
 	}
 }
