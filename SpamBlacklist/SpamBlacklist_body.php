@@ -137,7 +137,7 @@ class SpamBlacklist extends BaseBlacklist {
 	function validate( $editPage, $text, $section, &$hookError ) {
 		$thisPageName = $editPage->mTitle->getPrefixedDBkey();
 
-		if( !$this->isLocalSource( $editPage->mTitle ) ) {
+		if( !self::isLocalSource( $editPage->mTitle ) ) {
 			wfDebugLog( 'SpamBlacklist', "Spam blacklist validator: [[$thisPageName]] not a local blacklist\n" );
 			return true;
 		}
@@ -177,7 +177,7 @@ class SpamBlacklist extends BaseBlacklist {
 	 * @return bool
 	 */
 	function onArticleSave( &$article, &$user, $text, $summary, $isminor, $iswatch, $section ) {
-		if( $this->isLocalSource( $article->getTitle() ) ) {
+		if( self::isLocalSource( $article->getTitle() ) ) {
 			$this->clearCache();
 		}
 		return true;

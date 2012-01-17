@@ -98,17 +98,22 @@ abstract class BaseBlacklist {
 
 	/**
 	 * Check if the given local page title is a spam regex source.
+	 *
 	 * @param Title $title
 	 * @return bool
 	 */
-	function isLocalSource( $title ) {
-		global $wgDBname;
-		$listType = ucfirst( $this->getBlacklistType() );
+	public static function isLocalSource( $title ) {
+		global $wgDBname, $wgBlacklistSettings;
 
 		if( $title->getNamespace() == NS_MEDIAWIKI ) {
-			$sources = array(
-				"$listType-blacklist",
-				"$listType-whitelist" );
+			$sources = array();
+			foreach ( self::$blacklistTypes as $type => $class ) {
+				$sources =+ array(
+					"$type-blacklist",
+					"$type-whitelist"
+				);
+			}
+
 			if( in_array( $title->getDBkey(), $sources ) ) {
 				return true;
 			}
@@ -117,7 +122,14 @@ abstract class BaseBlacklist {
 		$thisHttp = wfExpandUrl( $title->getFullUrl( 'action=raw' ), PROTO_HTTP );
 		$thisHttpRegex = '/^' . preg_quote( $thisHttp, '/' ) . '(?:&.*)?$/';
 
-		foreach( $this->files as $fileName ) {
+		$files = array();
+		foreach ( self::$blacklistTypes as $type => $class ) {
+			if ( isset( $wgBlacklistSettings[$type]['files'] ) ) {
+				$files =+ $wgBlacklistSettings[$type]['files'];
+			}
+		}
+
+		foreach( $files as $fileName ) {
 			$matches = array();
 			if ( preg_match( '/^DB: (\w*) (.*)$/', $fileName, $matches ) ) {
 				if ( $wgDBname == $matches[1] ) {
