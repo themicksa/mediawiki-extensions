@@ -7,6 +7,8 @@ class SpamBlacklistHooks {
 	/**
 	 * Get an instance of SpamBlacklist and do some first-call initialisation.
 	 * All actual functionality is implemented in that object
+	 *
+	 * @return SpamBlacklist
 	 */
 	static function getSpamBlacklistObject() {
 		global $wgSpamBlacklistFiles, $wgSpamBlacklistSettings;
@@ -23,6 +25,12 @@ class SpamBlacklistHooks {
 
 	/**
 	 * Hook function for EditFilterMerged
+	 *
+	 * @param $editPage EditPage
+	 * @param $text string
+	 * @param $hookErr string
+	 * @param $editSummary string
+	 * @return bool
 	 */
 	static function filterMerged( $editPage, $text, &$hookErr, $editSummary ) {
 		global $wgTitle;
@@ -49,6 +57,11 @@ class SpamBlacklistHooks {
 
 	/**
 	 * Hook function for APIEditBeforeSave
+	 *
+	 * @param $editPage EditPage
+	 * @param $text string
+	 * @param $resultArr array
+	 * @return bool
 	 */
 	static function filterAPIEditBeforeSave( $editPage, $text, &$resultArr ) {
 		$spamObj = self::getSpamBlacklistObject();
@@ -65,6 +78,12 @@ class SpamBlacklistHooks {
 	 * Hook function for EditFilter
 	 * Confirm that a local blacklist page being saved is valid,
 	 * and toss back a warning to the user if it isn't.
+	 *
+	 * @param $editPage EditPage
+	 * @param $text string
+	 * @param $section string
+	 * @param $hookError string
+	 * @return bool
 	 */
 	static function validate( $editPage, $text, $section, &$hookError ) {
 		$spamObj = self::getSpamBlacklistObject();
@@ -74,6 +93,15 @@ class SpamBlacklistHooks {
 	/**
 	 * Hook function for ArticleSaveComplete
 	 * Clear local spam blacklist caches on page save.
+	 *
+	 * @param $article Article
+	 * @param $user User
+	 * @param $text string
+	 * @param $summary string
+	 * @param $isminor
+	 * @param $iswatch
+	 * @param $section
+	 * @return bool
 	 */
 	static function articleSave( &$article, &$user, $text, $summary, $isminor, $iswatch, $section ) {
 		$spamObj = self::getSpamBlacklistObject();
