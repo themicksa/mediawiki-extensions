@@ -20,7 +20,6 @@ class SpamBlacklistHooks {
 		global $wgSpamBlacklistFiles, $wgSpamBlacklistSettings;
 
 		if ( self::$spamInstance === null ) {
-			require_once( "SpamBlacklist_body.php" );
 			self::$spamInstance = new SpamBlacklist( $wgSpamBlacklistSettings );
 
 			if( $wgSpamBlacklistFiles ) {
