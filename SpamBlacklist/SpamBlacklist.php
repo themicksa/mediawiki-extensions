@@ -29,6 +29,8 @@ $wgHooks['EditFilter'][] = 'wfSpamBlacklistValidate';
 $wgHooks['ArticleSaveComplete'][] = 'wfSpamBlacklistArticleSave';
 $wgHooks['APIEditBeforeSave'][] = 'wfSpamBlacklistFilterAPIEditBeforeSave';
 
+$wgAutoloadClasses['BaseBlacklist'] = $dir . 'BaseBlacklist.php';
+
 /**
  * Get an instance of SpamBlacklist and do some first-call initialisation.
  * All actual functionality is implemented in that object
