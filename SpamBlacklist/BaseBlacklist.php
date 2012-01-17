@@ -74,6 +74,15 @@ abstract class BaseBlacklist {
 	}
 
 	/**
+	 * Return the array of blacklist types currently defined
+	 *
+	 * @return array
+	 */
+	public static function getBlacklistTypes() {
+		return self::$blacklistTypes;
+	}
+
+	/**
 	 * Returns an instance of the given blacklist
 	 *
 	 * @param $type string Code for the blacklist
@@ -118,7 +127,8 @@ abstract class BaseBlacklist {
 		if( $title->getNamespace() == NS_MEDIAWIKI ) {
 			$sources = array();
 			foreach ( self::$blacklistTypes as $type => $class ) {
-				$sources =+ array(
+				$type = ucfirst( $type );
+				$sources += array(
 					"$type-blacklist",
 					"$type-whitelist"
 				);
@@ -135,7 +145,7 @@ abstract class BaseBlacklist {
 		$files = array();
 		foreach ( self::$blacklistTypes as $type => $class ) {
 			if ( isset( $wgBlacklistSettings[$type]['files'] ) ) {
-				$files =+ $wgBlacklistSettings[$type]['files'];
+				$files += $wgBlacklistSettings[$type]['files'];
 			}
 		}
 
