@@ -44,7 +44,7 @@ $wgHooks['ArticleSaveComplete'][] = 'SpamBlacklistHooks::articleSave';
 
 $wgAutoloadClasses['BaseBlacklist'] = $dir . 'BaseBlacklist.php';
 $wgAutoloadClasses['SpamBlacklistHooks'] = $dir . 'SpamBlacklistHooks.php';
-$wgAutoloadClasses['SpamBlacklist'] = $dir . 'SpamBlacklist.php';
+$wgAutoloadClasses['SpamBlacklist'] = $dir . 'SpamBlacklist_body.php';
 $wgAutoloadClasses['SpamRegexBatch'] = $dir . 'SpamRegexBatch.php';
 
 
