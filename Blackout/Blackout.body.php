@@ -31,6 +31,11 @@ class Blackout {
 			return true;
 		}
 
+		// Check the article whitelist
+		if ( in_array( $title->getPrefixedDBkey(), $wgBlackout['Whitelist'] ) ) {
+			return true;
+		}
+
 		$skinClass = "Skin{$wgBlackout['Skin']}";
 		$skin = new $skinClass();
 		$output->getContext()->setSkin( $skin );

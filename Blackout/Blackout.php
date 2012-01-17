@@ -29,11 +29,23 @@
  * 			- Enables blackout message
  *			  Default is true
  *
+ * $wgBlackout['Skin']
+ * 			- Change the blackout skin
+ * 				* ProtestSopa (Default)
+ * 				* SopStrike
+ * 				* StopSopa
+ *
+ * $wgBlackout['Whitelist'][]
+ * 			- Add pages to the whitelist
+ *
  */
 
 $wgBlackout = array(
 	'Enable' => true,
 	'Skin' => 'ProtestSopa',
+	'Whitelist' => array(
+		'Special:Version',
+	),
 );
 
 /**
