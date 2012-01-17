@@ -4,23 +4,31 @@
  * Hooks for the spam blacklist extension
  */
 class SpamBlacklistHooks {
+
+	/**
+	 * @var SpamBlacklist
+	 */
+	private $spamInstance = null;
+
 	/**
 	 * Get an instance of SpamBlacklist and do some first-call initialisation.
 	 * All actual functionality is implemented in that object
 	 *
 	 * @return SpamBlacklist
 	 */
-	static function getSpamBlacklistObject() {
+	static function getSpamBlacklistInstance() {
 		global $wgSpamBlacklistFiles, $wgSpamBlacklistSettings;
-		static $spamObj;
-		if ( !$spamObj ) {
+
+		if ( self::$spamInstance === null ) {
 			require_once( "SpamBlacklist_body.php" );
-			$spamObj = new SpamBlacklist( $wgSpamBlacklistSettings );
+			self::$spamInstance = new SpamBlacklist( $wgSpamBlacklistSettings );
+
 			if( $wgSpamBlacklistFiles ) {
-				$spamObj->files = $wgSpamBlacklistFiles;
+				self::$spamInstance->files = $wgSpamBlacklistFiles;
 			}
 		}
-		return $spamObj;
+
+		return self::$spamInstance;
 	}
 
 	/**
@@ -40,7 +48,7 @@ class SpamBlacklistHooks {
 			return true;
 		}
 
-		$spamObj = self::getSpamBlacklistObject();
+		$spamObj = self::getSpamBlacklistInstance();
 		$title = $editPage->mArticle->getTitle();
 		$ret = $spamObj->filter( $title, $text, '', $editSummary, $editPage );
 		if ( $ret !== false ) {
@@ -64,7 +72,7 @@ class SpamBlacklistHooks {
 	 * @return bool
 	 */
 	static function filterAPIEditBeforeSave( $editPage, $text, &$resultArr ) {
-		$spamObj = self::getSpamBlacklistObject();
+		$spamObj = self::getSpamBlacklistInstance();
 		$title = $editPage->mArticle->getTitle();
 		$ret = $spamObj->filter( $title, $text, '', '', $editPage );
 		if ( $ret!==false ) {
@@ -86,7 +94,7 @@ class SpamBlacklistHooks {
 	 * @return bool
 	 */
 	static function validate( $editPage, $text, $section, &$hookError ) {
-		$spamObj = self::getSpamBlacklistObject();
+		$spamObj = self::getSpamBlacklistInstance();
 		return $spamObj->validate( $editPage, $text, $section, $hookError );
 	}
 
@@ -104,7 +112,7 @@ class SpamBlacklistHooks {
 	 * @return bool
 	 */
 	static function articleSave( &$article, &$user, $text, $summary, $isminor, $iswatch, $section ) {
-		$spamObj = self::getSpamBlacklistObject();
+		$spamObj = self::getSpamBlacklistInstance();
 		return $spamObj->onArticleSave( $article, $user, $text, $summary, $isminor, $iswatch, $section );
 	}
 }
