@@ -13,21 +13,6 @@
 class Blackout {
 
 	/**
-	 * Function displaying banner
-	 *
-	 * @param OutputPage $out
-	 * @param Skin $skin
-	 * @return bool
-	 */
-	public static function BlackoutBanner( OutputPage &$out, Skin &$skin ) {
-		global $wgBlackout, $wgOut;
-
-		$out->addModules( 'ext.blackout' );
-
-		return true;
-	}
-
-	/**
 	 * Override action hook. This is the show-stopper
 	 *
 	 * @param $output OutputPage
@@ -45,18 +30,5 @@ class Blackout {
 		$output->getContext()->setSkin( $skin );
 
 		return false;
-	}
-
-	/**
-	 * SkinAfterBottomScripts hook handler
-	 * This function outputs the call to the geoIP lookup
-	 * @param $skin Skin
-	 * @param $text string
-	 * @return bool
-	 */
-	function GeoLoader( $skin, &$text ) {
-		// Insert the geoIP lookup
-		$text .= Html::linkedScript( "//geoiplookup.wikimedia.org/" );
-		return true;
 	}
 }
