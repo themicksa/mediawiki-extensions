@@ -12,8 +12,6 @@ class SpamRegexBatch {
 	 * @param int $batchSize largest allowed batch regex;
 	 *                       if 0, will produce one regex per line
 	 * @return array
-	 * @private
-	 * @static
 	 */
 	static function buildRegexes( $lines, $batchSize=4096 ) {
 		# Make regex
@@ -55,10 +53,9 @@ class SpamRegexBatch {
 
 	/**
 	 * Confirm that a set of regexes is either empty or valid.
-	 * @param array $lines set of regexes
+	 *
+	 * @param $regexes array set of regexes
 	 * @return bool true if ok, false if contains invalid lines
-	 * @private
-	 * @static
 	 */
 	static function validateRegexes( $regexes ) {
 		foreach( $regexes as $regex ) {
@@ -75,8 +72,9 @@ class SpamRegexBatch {
 
 	/**
 	 * Strip comments and whitespace, then remove blanks
-	 * @private
-	 * @static
+	 *
+	 * @param $lines array
+	 * @return array
 	 */
 	static function stripLines( $lines ) {
 		return array_filter(
@@ -87,11 +85,10 @@ class SpamRegexBatch {
 
 	/**
 	 * Do a sanity check on the batch regex.
-	 * @param lines unsanitized input lines
-	 * @param string $fileName optional for debug reporting
+	 *
+	 * @param $lines string unsanitized input lines
+	 * @param $fileName string optional for debug reporting
 	 * @return array of regexes
-	 * @private
-	 * @static
 	 */
 	static function buildSafeRegexes( $lines, $fileName=false ) {
 		$lines = SpamRegexBatch::stripLines( $lines );
@@ -110,9 +107,10 @@ class SpamRegexBatch {
 	}
 
 	/**
+	 * Returns an array of invalid lines
+	 *
 	 * @param array $lines
 	 * @return array of input lines which produce invalid input, or empty array if no problems
-	 * @static
 	 */
 	static function getBadLines( $lines ) {
 		$lines = SpamRegexBatch::stripLines( $lines );
@@ -145,10 +143,9 @@ class SpamRegexBatch {
 	 * Build a set of regular expressions from the given multiline input text,
 	 * with empty lines and comments stripped.
 	 *
-	 * @param string $source
-	 * @param string $fileName optional, for reporting of bad files
+	 * @param $source string
+	 * @param $fileName bool|string optional, for reporting of bad files
 	 * @return array of regular expressions, potentially empty
-	 * @static
 	 */
 	static function regexesFromText( $source, $fileName=false ) {
 		$lines = explode( "\n", $source );
@@ -158,9 +155,9 @@ class SpamRegexBatch {
 	/**
 	 * Build a set of regular expressions from a MediaWiki message.
 	 * Will be correctly empty if the message isn't present.
-	 * @param string $source
+	 *
+	 * @param $message string
 	 * @return array of regular expressions, potentially empty
-	 * @static
 	 */
 	static function regexesFromMessage( $message ) {
 		$source = wfMsgForContent( $message );
