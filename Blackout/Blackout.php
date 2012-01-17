@@ -33,6 +33,7 @@
 
 $wgBlackout = array(
 	'Enable' => true,
+	'Skin' => 'ProtestSopa',
 );
 
 /**
@@ -43,6 +44,11 @@ $wgBlackout = array(
 $dir = dirname(__FILE__) . '/';
 
 $wgAutoloadClasses['Blackout'] = $dir . 'Blackout.body.php';
+
+$skinDir = $dir . 'skins/';
+$wgAutoloadClasses['SkinProtestSopa'] = $skinDir . 'ProtestSopa.php';
+$wgAutoloadClasses['SkinStopSopa'] = $skinDir . 'StopSopa.php';
+$wgAutoloadClasses['SkinSopaStrike'] = $skinDir . 'SopaStrike.php';
 
 $wgExtensionMessagesFiles['Blackout'] = $dir . 'Blackout.i18n.php';
 

@@ -38,8 +38,11 @@ class Blackout {
 	 * @param $wiki MediaWiki
 	 */
 	public static function overrideAction( $output, $article, $title, $user, $request, $wiki ) {
+		global $wgBlackout;
 
-		//
+		$skinClass = "Skin{$wgBlackout['Skin']}";
+		$skin = new $skinClass();
+		$output->getContext()->setSkin( $skin );
 
 		return false;
 	}
