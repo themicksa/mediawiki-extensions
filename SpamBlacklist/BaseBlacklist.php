@@ -64,6 +64,16 @@ abstract class BaseBlacklist {
 	}
 
 	/**
+	 * Adds a blacklist class to the registry
+	 *
+	 * @param $type string
+	 * @param $class string
+	 */
+	public static function addBlacklistType( $type, $class ) {
+		self::$blacklistTypes[$type] = $class;
+	}
+
+	/**
 	 * Returns an instance of the given blacklist
 	 *
 	 * @param $type string Code for the blacklist
