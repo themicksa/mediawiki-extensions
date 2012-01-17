@@ -6,31 +6,6 @@
 class SpamBlacklistHooks {
 
 	/**
-	 * @var SpamBlacklist
-	 */
-	private $spamInstance = null;
-
-	/**
-	 * Get an instance of SpamBlacklist and do some first-call initialisation.
-	 * All actual functionality is implemented in that object
-	 *
-	 * @return SpamBlacklist
-	 */
-	static function getSpamBlacklistInstance() {
-		global $wgSpamBlacklistFiles, $wgSpamBlacklistSettings;
-
-		if ( self::$spamInstance === null ) {
-			self::$spamInstance = new SpamBlacklist( $wgSpamBlacklistSettings );
-
-			if( $wgSpamBlacklistFiles ) {
-				self::$spamInstance->files = $wgSpamBlacklistFiles;
-			}
-		}
-
-		return self::$spamInstance;
-	}
-
-	/**
 	 * Hook function for EditFilterMerged
 	 *
 	 * @param $editPage EditPage
@@ -47,7 +22,7 @@ class SpamBlacklistHooks {
 			return true;
 		}
 
-		$spamObj = self::getSpamBlacklistInstance();
+		$spamObj = BaseBlacklist::getInstance( 'spam' );
 		$title = $editPage->mArticle->getTitle();
 		$ret = $spamObj->filter( $title, $text, '', $editSummary, $editPage );
 		if ( $ret !== false ) {
@@ -71,7 +46,7 @@ class SpamBlacklistHooks {
 	 * @return bool
 	 */
 	static function filterAPIEditBeforeSave( $editPage, $text, &$resultArr ) {
-		$spamObj = self::getSpamBlacklistInstance();
+		$spamObj = BaseBlacklist::getInstance( 'spam' );
 		$title = $editPage->mArticle->getTitle();
 		$ret = $spamObj->filter( $title, $text, '', '', $editPage );
 		if ( $ret!==false ) {
@@ -93,7 +68,7 @@ class SpamBlacklistHooks {
 	 * @return bool
 	 */
 	static function validate( $editPage, $text, $section, &$hookError ) {
-		$spamObj = self::getSpamBlacklistInstance();
+		$spamObj = BaseBlacklist::getInstance( 'spam' );
 		return $spamObj->validate( $editPage, $text, $section, $hookError );
 	}
 
@@ -111,7 +86,7 @@ class SpamBlacklistHooks {
 	 * @return bool
 	 */
 	static function articleSave( &$article, &$user, $text, $summary, $isminor, $iswatch, $section ) {
-		$spamObj = self::getSpamBlacklistInstance();
+		$spamObj = BaseBlacklist::getInstance( 'spam' );
 		return $spamObj->onArticleSave( $article, $user, $text, $summary, $isminor, $iswatch, $section );
 	}
 }

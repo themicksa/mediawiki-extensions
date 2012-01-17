@@ -18,11 +18,24 @@ $wgExtensionCredits[version_compare($wgVersion, '1.17alpha', '>=') ? 'antispam' 
 $dir = dirname(__FILE__) . '/';
 $wgExtensionMessagesFiles['SpamBlackList'] = $dir . 'SpamBlacklist.i18n.php';
 
-global $wgSpamBlacklistFiles;
-global $wgSpamBlacklistSettings;
+/**
+ * Array of settings for blacklist classes
+ */
+$wgBlacklistSettings = array(
+	'spam' => array(
+		'files' => array(),
+	),
+);
 
-$wgSpamBlacklistFiles = false;
-$wgSpamBlacklistSettings = array();
+/**
+ * @deprecated
+ */
+$wgSpamBlacklistFiles =& $wgBlacklistSettings['spam']['files'];
+
+/**
+ * @deprecated
+ */
+$wgSpamBlacklistSettings =& $wgBlacklistSettings['spam'];
 
 $wgHooks['EditFilterMerged'][] = 'SpamBlacklistHooks::filterMerged';
 $wgHooks['APIEditBeforeSave'][] = 'SpamBlacklistHooks::filterAPIEditBeforeSave';

@@ -29,12 +29,28 @@ abstract class BaseBlacklist {
 	/**
 	 * @var int
 	 */
-	public  $warningTime = 600;
+	public $warningTime = 600;
 
 	/**
 	 * @var int
 	 */
 	public $expiryTime = 900;
+
+	/**
+	 * Array containing blacklists that extend BaseBlacklist
+	 *
+	 * @var array
+	 */
+	private static $blacklistTypes = array(
+		'spam' => 'SpamBlacklist',
+	);
+
+	/**
+	 * Array of blacklist instances
+	 *
+	 * @var array
+	 */
+	private static $instances = array();
 
 	/**
 	 * Constructor
@@ -45,6 +61,32 @@ abstract class BaseBlacklist {
 		foreach ( $settings as $name => $value ) {
 			$this->$name = $value;
 		}
+	}
+
+	/**
+	 * Returns an instance of the given blacklist
+	 *
+	 * @param $type string Code for the blacklist
+	 * @return BaseBlacklist
+	 * @throws MWException
+	 */
+	public static function getInstance( $type ) {
+		if ( !isset( self::$blacklistTypes[$type] ) ) {
+			throw new MWException( "Invalid blacklist type '$type' passed to " . __METHOD__ );
+		}
+
+		if ( !isset( self::$instances[$type] ) ) {
+			global $wgBlacklistSettings;
+
+			// Prevent notices
+			if ( !isset( $wgBlacklistSettings[$type] ) ) {
+				$wgBlacklistSettings[$type] = array();
+			}
+
+			self::$instances[$type] = new self::$blacklistTypes[$type]( $wgBlacklistSettings[$type] );
+		}
+
+		return self::$instances[$type];
 	}
 
 	/**
