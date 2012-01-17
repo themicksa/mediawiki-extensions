@@ -26,4 +26,17 @@ class Blackout {
 
 		return true;
 	}
+
+	/**
+	 * SkinAfterBottomScripts hook handler
+	 * This function outputs the call to the geoIP lookup
+	 * @param $skin Skin
+	 * @param $text string
+	 * @return bool
+	 */
+	function GeoLoader( $skin, &$text ) {
+		// Insert the geoIP lookup
+		$text .= Html::linkedScript( "//geoiplookup.wikimedia.org/" );
+		return true;
+	}
 }

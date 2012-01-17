@@ -66,3 +66,4 @@ $wgResourceModules['ext.blackout'] = array(
  * Hooks
  */
 $wgHooks['BeforePageDisplay'][] = 'Blackout::BlackoutBanner';
+$wgHooks['SkinAfterBottomScripts'][] = 'Blackout::GeoLoader';
