@@ -39,13 +39,7 @@ class Blackout {
 	 */
 	public static function overrideAction( $output, $article, $title, $user, $request, $wiki ) {
 
-		$output->clearHTML();
-		$skin = new SkinBlackout();
-		$output->getContext()->setSkin( $skin );
-
-		$tpl = new InfoTemplate();
-
-		$output->addTemplate( $tpl );
+		//
 
 		return false;
 	}
