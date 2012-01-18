@@ -64,7 +64,7 @@ class ConcurrencyCheck {
 		if ( $wgConcurrency['TrustMemc'] ) {
 			$cached = $wgMemc->get( $cacheKey );
 			if ( $cached ) {
-				if ( ! $override && $cached['userId'] != $userId && $cached['expiration'] > time() ) {
+				if ( !$override && $cached['userId'] != $userId && $cached['expiration'] > time() ) {
 					// this is already checked out.
 					return false;
 				}
@@ -73,7 +73,7 @@ class ConcurrencyCheck {
 
 		// attempt an insert, check success (this is atomic)
 		$insertError = null;
-		$res = $dbw->insert(
+		$dbw->insert(
 			'concurrencycheck',
 			array(
 				'cc_resource_type' => $this->resourceType,
@@ -96,7 +96,7 @@ class ConcurrencyCheck {
 		// if the insert failed, it's necessary to check the expiration.
 		// here, check by deleting, since that permits the use of write locks
 		// (SELECT..LOCK IN SHARE MODE), rather than read locks (SELECT..FOR UPDATE)
-		$dbw->begin();
+		$dbw->begin( __METHOD__ );
 		$dbw->delete(
 			'concurrencycheck',
 			array(
@@ -125,8 +125,13 @@ class ConcurrencyCheck {
 			// this was a cache miss.  populate the cache with data from the db.
 			// cache is set to expire at the same time as the checkout, since it'll become invalid then anyway.
 			// inside this transaction, a row-level lock is established which ensures cache concurrency
-			$wgMemc->set( $cacheKey, array( 'userId' => $row->cc_user, 'expiration' => wfTimestamp( TS_UNIX, $row->cc_expiration ) ), wfTimestamp( TS_UNIX, $row->cc_expiration ) - time() );
-			$dbw->rollback();
+			$wgMemc->set( $cacheKey, array(
+					'userId' => $row->cc_user,
+					'expiration' => wfTimestamp( TS_UNIX, $row->cc_expiration )
+				),
+				wfTimestamp( TS_UNIX, $row->cc_expiration ) - time()
+			);
+			$dbw->rollback( __METHOD__ );
 			return false;
 		}
 
@@ -149,7 +154,7 @@ class ConcurrencyCheck {
 		// cache the result.
 		$wgMemc->set( $cacheKey, array( 'userId' => $userId, 'expiration' => $expiration ), $this->expirationTime );
 
-		$dbw->commit();
+		$dbw->commit( __METHOD__ );
 		return true;
 	}
 
@@ -257,10 +262,10 @@ class ConcurrencyCheck {
 			// solution above could be implemented instead.
 			$queryParams = array();
 			if ( $wgDBtype === 'mysql' ) {
-				$queryParamsp[] = 'LOCK IN SHARE MODE';
+				$queryParams[] = 'LOCK IN SHARE MODE';
 
 				// the transaction seems incongruous, I know, but it's to keep the cache update atomic.
-				$dbw->begin();
+				$dbw->begin( __METHOD__ );
 			}
 
 			$res = $dbw->select(
@@ -293,7 +298,7 @@ class ConcurrencyCheck {
 
 			if ( $wgDBtype === 'mysql' ) {
 				// end the transaction.
-				$dbw->rollback();
+				$dbw->rollback( __METHOD__ );
 			}
 		}
 

@@ -13,7 +13,7 @@ class InterfaceConcurrencyHooks {
 	}
 
 	/**
-	 * Runs InterfaceConcurrency schema updates#
+	 * Runs InterfaceConcurrency schema updates
 	 *
 	 * @param $updater DatabaseUpdater
 	 */

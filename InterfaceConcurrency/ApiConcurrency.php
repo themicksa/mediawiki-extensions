@@ -93,6 +93,9 @@ class ApiConcurrency extends ApiBase {
 		return __CLASS__ . ': $Id: ApiConcurrency.php 108560 2012-01-10 23:12:00Z reedy $';
 	}
 
+	/**
+	 * @param $user User
+	 */
 	private function checkPermission( $user ) {
 		if ( $user->isAnon() ) {
 			$this->dieUsage( "You don't have permission to do that", 'permission-denied' );
