@@ -13,7 +13,7 @@ $messages['en'] = array(
 	'apisandbox'              => 'API sandbox',
 	'apisb-no-js'             => "'''Error''': this feature requires JavaScript.",
 	'apisb-intro'             => "Use this page to experiment with the '''MediaWiki web service API'''.
-	Refer to [//www.mediawiki.org/wiki/API the API documentation] for further details of API usage.  Example: [//www.mediawiki.org/wiki/API#A_simple_example get the content of a Main Page].  Select format and action to see more examples.",
+	Refer to [//www.mediawiki.org/wiki/API the API documentation] for further details of API usage.  Example: [//www.mediawiki.org/wiki/API#A_simple_example get the content of a Main Page].  Select an action to see more examples.",
 	'apisb-api-disabled'      => 'API is disabled on this site.',
 	'apisb-parameters'        => 'Parameters',
 	'apisb-result'            => 'Result',
