@@ -308,3 +308,14 @@ $messages['yi'] = array(
 	'zero-rated-mobile-access-banner-text-data-charges-no' => 'ניין',
 );
 
+/** Simplified Chinese (‪中文(简体)‬)
+ * @author Hzy980512
+ */
+$messages['zh-hans'] = array(
+	'zero-rated-mobile-access-search' => '搜索',
+	'zero-rated-mobile-access-language-selection' => '所有语言',
+	'zero-rated-mobile-access-home-page-selection' => '$1主页',
+	'zero-rated-mobile-access-banner-text-data-charges-yes' => '是',
+	'zero-rated-mobile-access-banner-text-data-charges-no' => '否',
+);
+

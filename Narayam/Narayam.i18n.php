@@ -1438,6 +1438,7 @@ $messages['it'] = array(
 );
 
 /** Japanese (日本語)
+ * @author Anakmalaysia
  * @author Schu
  * @author Whym
  */
@@ -1448,26 +1449,53 @@ $messages['ja'] = array(
 	'narayam-menu-tooltip' => 'Narayam 入力メソッドエディタ ( IME ) を管理',
 	'narayam-help' => 'ヘルプ',
 	'narayam-checkbox-tooltip' => '入力メソッドの入・切を反転させる',
+	'narayam-am' => 'アムハラ語翻字',
+	'narayam-as-avro' => 'アッサム語 Avro',
+	'narayam-as-bornona' => 'アッサム語 Bornona',
+	'narayam-as-inscript' => 'アッサム語 InScript',
+	'narayam-ber-tfng' => 'ティフナグ語翻字',
+	'narayam-brx-inscript' => 'ボド語 InScript',
 	'narayam-eo' => 'エスペラント',
+	'narayam-hi' => 'ヒンディー語翻字',
 	'narayam-hi-inscript' => 'ヒンディー語 InScript',
 	'narayam-kn' => 'カンナダ語翻字',
 	'narayam-kn-inscript' => 'カンナダ語 InScript',
 	'narayam-ml' => 'マラヤラム語翻字',
 	'narayam-ml-inscript' => 'マラヤラム語 InScript',
+	'narayam-mr' => 'マラーティー語翻字',
+	'narayam-mr-inscript' => 'マラーティー語 InScript',
 	'narayam-ne' => 'ネパール語翻字',
 	'narayam-ne-inscript' => 'ネパール語 InScript',
 	'narayam-or' => 'オリヤ語翻字',
+	'narayam-or-lekhani' => 'オリヤ語 Lekhani',
 	'narayam-or-inscript' => 'オリヤ語 InScript',
+	'narayam-pa-phonetic' => 'パンジャブ語グルムキー文字表音入力',
+	'narayam-pa-inscript' => 'パンジャブ語グルムキー文字 InScript',
 	'narayam-sa' => 'サンスクリット語翻字',
 	'narayam-sa-inscript' => 'サンスクリット語 InScript',
 	'narayam-si-singlish' => 'シンハラ語シングリッシュ',
 	'narayam-si-wijesekara' => 'シンハラ語 Wijesekara',
 	'narayam-ta-99' => 'Tamil99',
+	'narayam-ta-inscript' => 'タミル語 InScript',
 	'narayam-ta' => 'タミル語翻字',
+	'narayam-ta-bamini' => 'タミル語 Bamini',
+	'narayam-tcy' => 'トゥル語翻字',
 	'narayam-te-inscript' => 'テルグ語 InScript',
 	'narayam-bn-avro' => 'ベンガル語 Avro',
 	'narayam-bn-inscript' => 'ベンガル語 InScript',
 	'narayam-bn-nkb' => 'ベンガル語 NKB',
+	'narayam-ur' => 'ウルドゥー語標準',
+	'narayam-de' => 'ドイツ語',
+	'narayam-gu' => 'グジャラート語翻字',
+	'narayam-gu-inscript' => 'グジャラート語 InScript',
+	'narayam-ru-standard' => 'ロシア語標準',
+	'narayam-sah-standard' => 'サハ語標準',
+	'narayam-hne-inscript' => 'チャッティースガリー語 InScript',
+	'narayam-mai-inscript' => 'ミティラー語 InScript',
+	'narayam-gom-deva' => 'ゴア州コンカニ語デーヴァナーガリー文字翻字',
+	'narayam-gom-deva-inscript' => 'ゴア州コンカニ語デーヴァナーガリー文字 InScript',
+	'narayam-he-standard-2011-extonly' => 'ヘブライ語2011年標準',
+	'narayam-he-standard-2011' => 'ヘブライ語2011年標準（英語キーボード）',
 );
 
 /** Khmer (ភាសាខ្មែរ)
@@ -1804,7 +1832,7 @@ $messages['ms'] = array(
 	'narayam-gom-deva' => 'Alih Huruf Devanagari Konkani Goa',
 	'narayam-gom-deva-inscript' => 'InScript Devanagari Konkani Goa',
 	'narayam-he-standard-2011-extonly' => 'Piawaian Ibrani 2011',
-	'narayam-he-standard-2011' => 'Piawaian Ibrani 2011',
+	'narayam-he-standard-2011' => 'Piawaian Ibrani 2011 (papan kekunci Inggeris)',
 );
 
 /** Norwegian Bokmål (‪Norsk (bokmål)‬)
@@ -2918,7 +2946,7 @@ $messages['zh-hans'] = array(
 	'narayam-gom-deva' => '果阿孔卡尼语天城文转写',
 	'narayam-gom-deva-inscript' => '果阿孔卡尼语天城文InScript',
 	'narayam-he-standard-2011-extonly' => '希伯来语2011年标准',
-	'narayam-he-standard-2011' => '希伯来语标准2011（英语键盘）',
+	'narayam-he-standard-2011' => '希伯来语2011年标准（英语键盘）',
 );
 
 /** Traditional Chinese (‪中文(繁體)‬)
@@ -2980,6 +3008,6 @@ $messages['zh-hant'] = array(
 	'narayam-gom-deva' => '果阿孔卡尼語天城文音譯',
 	'narayam-gom-deva-inscript' => '果阿孔卡尼語天城文 InScript',
 	'narayam-he-standard-2011-extonly' => '希伯來語2011年標準',
-	'narayam-he-standard-2011' => '希伯來語2011年標準',
+	'narayam-he-standard-2011' => '希伯來語2011年標準（英語鍵盤）',
 );
 

@@ -267,8 +267,8 @@ See also:
 	'moodbar-success-title' => 'Title of the screen after the feedback was successfully submitted.',
 	'moodbar-error-title' => 'Title of the screen when after an error occurred and submission aborted.',
 	'moodbar-success-subtitle' => 'Subtitle of screen when feedback was successfullyully submitted. 
-{{FBD-LINK}} Not required, replaced with link to FeedbackDashboard
-{{$1}} Not required, Wiki SITENAME',
+* <nowiki>{{FBD-LINK}}</nowiki> Not required, replaced with link to FeedbackDashboard
+* <nowiki>{{$1}}</nowiki> Not required, Wiki SITENAME',
 	'moodbar-error-subtitle' => 'Subtitle of screen when an error occurred. $1 is the SITENAME',
 	'moodbar-blocked-title' => 'Title of the screen after blocked user attempts to post feedback.',
 	'moodbar-blocked-subtitle' => 'Subtitle of screen after blocked user attempts to post feedback.',
@@ -982,6 +982,7 @@ Weitere Informationen hierzu sind an der folgenden Stelle zu finden: $1.',
 	'moodbar-privacy' => 'Mit dem Speichern erklärst du dich mit diesen $1 einverstanden.',
 	'moodbar-privacy-link' => 'Bedingungen',
 	'moodbar-privacy-link-title' => 'Nutzungsbedingungen',
+	'moodbar-fbd-link-title' => 'Rückmeldung',
 	'moodbar-disable-link' => 'Ich bin nicht interessiert. Bitte diese Funktion deaktivieren.',
 	'moodbar-form-title' => 'Weil …',
 	'moodbar-form-note' => 'Maximal 140 Zeichen',
@@ -992,7 +993,7 @@ Weitere Informationen hierzu sind an der folgenden Stelle zu finden: $1.',
 	'moodbar-loading-title' => 'Am senden ...',
 	'moodbar-success-title' => 'Vielen Dank!',
 	'moodbar-error-title' => 'Hoppla!',
-	'moodbar-success-subtitle' => 'Uns deine Stimmung mitzuteilen hilft uns dabei $1 weiter zu verbessern.',
+	'moodbar-success-subtitle' => 'Uns eine {{FBD-LINK}} zu geben, hilft uns dabei $1 weiter zu verbessern.',
 	'moodbar-error-subtitle' => 'Es ist ein Fehler aufgetreten. Bitte versuche es später noch einmal, uns deine Rückmeldung mitzuteilen.',
 	'moodbar-blocked-title' => 'Hoppla!',
 	'moodbar-blocked-subtitle' => 'Du wurdest gesperrt und kannst daher keine Bearbeitungen machen.',
@@ -1066,6 +1067,7 @@ Weitere Informationen hierzu sind an der folgenden Stelle zu finden: $1.',
 	'moodbar-invalid-item' => 'Das System konnte den richtigen Teil der Rückmeldung nicht finden.',
 	'moodbar-feedback-action-error' => 'Während des Ausführens dieser Aktion ist ein Fehler aufgetreten.',
 	'moodbar-feedback-response-summary' => '[[$1|$2]] [[$3|antwortete]] vor $4',
+	'moodbar-feedback-response-helpful-summary' => '[[$1|$2]] [[$3|antwortete]] vor $4 und [[$5|$6]] glaubt, dass die Antwort hilfreich sei',
 	'moodbar-feedback-edit-summary' => 'Antwort zur [[Special:FeedbackDashboard/$1|Rückmeldung]]: $2',
 	'moodbar-feedback-top-responders-title' => 'Benutzer mit den meisten Rückmeldungen',
 	'moodbar-type-happy' => '{{GENDER:$1|Glücklich}}',
@@ -1095,7 +1097,7 @@ Weitere Informationen hierzu sind an der folgenden Stelle zu finden: $1.',
 	'moodbar-enotif-subject' => '$1 antwortete auf deine Rückmeldung.',
 	'moodbar-enotif-body' => 'Hallo $1,
 
-Willkommen bei {{SITENAME}} und vielen Dank für deine [$2 Rückmeldung]. Ein anderer {{SITENAME}}-Benutzer, [$3 $6], hinterließ die folgende Antwort:
+Willkommen bei {{SITENAME}} und vielen Dank für deine [$2 Rückmeldung]. Ein anderer Benutzer, [$3 $6], hinterließ die folgende Antwort:
 
      $4
 
@@ -1104,7 +1106,7 @@ Sehe dir die Nachricht auf deiner [$5 Diskussionsseite] an.
 Was ist eine Diskussionsseite?
 Eine Diskussionsseite ist eine Seite auf der die Benutzer eines Wikis miteinander kommunizieren, indem sie dort Nachrichten hinterlassen. Es können aktuelle Angelegenheiten diskutiert werden, Hilfestellung gegeben werden, allgemeine Nachrichten oder ein Dankeschön hinterlassen werden. Eine Diskussionsseite kann auch genutzt werden, um einfach Hallo zu sagen.
 
-Wir wünschen dir noch einen schönen Tag,
+Vielen Dank, das du Teil der Gemeinschaft bist.
 
 -- {{SITENAME}}',
 );
@@ -1129,7 +1131,7 @@ $messages['de-formal'] = array(
 	'moodbar-enotif-subject' => '$1 antwortete auf Ihre Rückmeldung.',
 	'moodbar-enotif-body' => 'Hallo $1,
 
-Willkommen bei {{SITENAME}} und vielen Dank für Ihre [$2 Rückmeldung]. Ein anderer {{SITENAME}}-Benutzer, [$3 $6], hinterließ die folgende Antwort:
+Willkommen bei {{SITENAME}} und vielen Dank für Ihre [$2 Rückmeldung]. Ein anderer Benutzer, [$3 $6], hinterließ die folgende Antwort:
 
      $4
 
@@ -1138,7 +1140,7 @@ Sehen Sie sich die Nachricht auf Ihrer [$5 Diskussionsseite] an.
 Was ist eine Diskussionsseite?
 Eine Diskussionsseite ist eine Seite auf der die Benutzer eines Wikis miteinander kommunizieren, indem sie dort Nachrichten hinterlassen. Es können aktuelle Angelegenheiten diskutiert werden, Hilfestellung gegeben werden, allgemeine Nachrichten oder ein Dankeschön hinterlassen werden. Eine Diskussionsseite kann auch genutzt werden, um einfach Hallo zu sagen.
 
-Wir wünschen Ihnen noch einen schönen Tag,
+Vielen Dank, das Sie Teil der Gemeinschaft sind.
 
 -- {{SITENAME}}',
 );
@@ -1801,6 +1803,7 @@ Pour plus d'information, consultez la $1.",
 	'moodbar-privacy' => 'En soumettant, vous acceptez la transparence en accord avec ces $1.',
 	'moodbar-privacy-link' => 'conditions',
 	'moodbar-privacy-link-title' => "Conditions d'utilisation",
+	'moodbar-fbd-link-title' => 'avis',
 	'moodbar-disable-link' => 'Je ne suis pas intéressé. Désactiver cette fonctionnalité.',
 	'moodbar-form-title' => 'Parce que ...',
 	'moodbar-form-note' => '140 caractères maximum',
@@ -1811,7 +1814,7 @@ Pour plus d'information, consultez la $1.",
 	'moodbar-loading-title' => 'Partager...',
 	'moodbar-success-title' => 'Merci !',
 	'moodbar-error-title' => 'Oups !',
-	'moodbar-success-subtitle' => 'Partager votre expérience  nous aide à améliorer $1.',
+	'moodbar-success-subtitle' => 'Partager votre {{FBD-LINK}} nous aide à améliorer $1.',
 	'moodbar-error-subtitle' => "Quelque chose s'est mal passé ! Essayer de partager vos commentaires plus tard.",
 	'moodbar-blocked-title' => 'Oups !',
 	'moodbar-blocked-subtitle' => 'Vous avez été bloqué en édition.',
@@ -1885,6 +1888,7 @@ Pour plus d'information, consultez la $1.",
 	'moodbar-invalid-item' => 'Le système a été incapable de trouver le commentaire correct.',
 	'moodbar-feedback-action-error' => "Une erreur s'est produite lorsque vous avez essayé d'effectuer cette action.",
 	'moodbar-feedback-response-summary' => '[[$1|$2]] [[$3|a répondu]] il y a $4',
+	'moodbar-feedback-response-helpful-summary' => '[[$1|$2]] [[$3|a répondu]] il y a $4 et [[$5|$6]] pense que cela est utile',
 	'moodbar-feedback-edit-summary' => 'Réponse au [[Special:FeedbackDashboard/$1|ressenti utilisateur]]: $2',
 	'moodbar-feedback-top-responders-title' => 'Principaux répondants',
 	'moodbar-type-happy' => '{{GENDER:$1|Heureux|Heureuse}}',
@@ -1917,14 +1921,14 @@ Bienvenue sur {{SITENAME}}, et merci pour votre [$2 commentaire]. Un autre utili
 
      $4
 
-Afficher ce message sur votre [$5 page de discussion]
+Afficher ce message sur votre [$5 page de discussion].
 
 Qu\'est-ce qu\'une page de discussion ?
-Votre page de discussion d\'utilisateur est la page que les autres rédacteurs de {{SITENAME}} utilisent pour communiquer avec vous.  Vous pouvez répondre en cliquant "Modifier", déplacer le curseur en dessous du commentaire, taper votre réponse et quatre tildes (~~~~) pour signer, et enregistrer. Toutes les pages de {{SITENAME}} ont des pages de discussion, et elles sont utilisées à de nombreuses fins diverses. Cela prend un certain temps comprendre cela, mais c\'est assez facile une fois que vous y êtes habitué.
+Votre page de discussion d\'utilisateur est la page que les autres rédacteurs de {{SITENAME}} utilisent pour communiquer avec vous. Vous pouvez répondre en cliquant "Modifier", déplacer le curseur en dessous du commentaire, taper votre réponse et quatre tildes (~~~~) pour signer, et enregistrer. Toutes les pages de {{SITENAME}} ont des pages de discussion, et elles sont utilisées à de nombreuses fins diverses. Cela prend un certain temps comprendre cela, mais c\'est assez facile une fois que vous y êtes habitué.
 
-Encore incertain ? [http://en.wikipedia.org/wiki/File:Wikipedia_basics_-_Talk_pages.ogv Cette vidéo] (à voir sur [http://www.youtube.com/watch?v=JdeDLRsB2Es YouTube]) vous donne un aperçu pas à pas. 
+Encore incertain ? [http://en.wikipedia.org/wiki/File:Wikipedia_basics_-_Talk_pages.ogv Cette vidéo] (à voir sur [http://www.youtube.com/watch?v=JdeDLRsB2Es YouTube]) vous donne un aperçu pas à pas de la manière dont fonctionnent les pages de discussion. 
 
-Bonne journée,
+Merci de votre participation à cette communauté.
 
 -- {{SITENAME}}',
 );
@@ -2078,6 +2082,7 @@ Para obter máis información, bótelle unha ollada á $1.',
 	'moodbar-privacy' => 'Se envía os seus comentarios, acepta publicalos baixo estes $1.',
 	'moodbar-privacy-link' => 'termos',
 	'moodbar-privacy-link-title' => 'Termos de uso',
+	'moodbar-fbd-link-title' => 'comentarios',
 	'moodbar-disable-link' => 'Non estou interesado. Desactivar esta característica.',
 	'moodbar-form-title' => 'Porque...',
 	'moodbar-form-note' => '140 caracteres como máximo',
@@ -2088,7 +2093,7 @@ Para obter máis información, bótelle unha ollada á $1.',
 	'moodbar-loading-title' => 'Compartindo...',
 	'moodbar-success-title' => 'Grazas!',
 	'moodbar-error-title' => 'Vaites!',
-	'moodbar-success-subtitle' => 'Compartir a súa experiencia na edición axúdanos a mellorar $1.',
+	'moodbar-success-subtitle' => 'Ao compartir os seus {{FBD-LINK}} axúdanos a mellorar $1.',
 	'moodbar-error-subtitle' => 'Algo foi mal! Intente compartir os seus comentarios máis tarde.',
 	'moodbar-blocked-title' => 'Vaites!',
 	'moodbar-blocked-subtitle' => 'Foi bloqueado fronte á edición.',
@@ -2162,6 +2167,7 @@ Para obter máis información, bótelle unha ollada á $1.',
 	'moodbar-invalid-item' => 'O sistema non puido atopar o elemento de valoración correcto.',
 	'moodbar-feedback-action-error' => 'Produciuse un erro ao intentar levar a cabo esta acción.',
 	'moodbar-feedback-response-summary' => '[[$1|$2]] [[$3|respondeu]] hai $4',
+	'moodbar-feedback-response-helpful-summary' => '[[$1|$2]] [[$3|respondeu]] hai $4 e [[$5|$6]] pensa que é útil',
 	'moodbar-feedback-edit-summary' => 'Resposta aos [[Special:FeedbackDashboard/$1|comentarios do usuario]]: $2',
 	'moodbar-feedback-top-responders-title' => 'Usuarios que achegaron máis respostas',
 	'moodbar-type-happy' => '{{GENDER:$1|Contento|Contenta}}',
@@ -2195,14 +2201,14 @@ Benvido a {{SITENAME}} e grazas polos seus [$2 comentarios]. Outro usuario de {{
 
      $4
 
-Lea esta mensaxe na súa [$5 páxina de conversa]
+Lea esta mensaxe na súa [$5 páxina de conversa].
 
 Que é unha páxina de conversa?
 A súa páxina de conversa é o lugar onde os editores de {{SITENAME}} se comunican con vostede mediante mensaxes. Pode responder premendo en "Editar" e desprazando o cursor debaixo do comentario; logo escriba a súa resposta e use catro tiles (~~~~) para asinar; finalmente só queda gardar. Todas as páxinas de {{SITENAME}} teñen a súa páxina de conversa asociada e úsanse para moitas cousas. Leva un tempo afacerse a elas, pero é doado unha vez que se usan varias veces.
 
-Aínda ten preguntas? [http://en.wikipedia.org/wiki/File:Wikipedia_basics_-_Talk_pages.ogv Este vídeo] (véxao no [http://www.youtube.com/watch?v=JdeDLRsB2Es YouTube]) dá unha guía paso a paso.
+Aínda ten preguntas? [http://en.wikipedia.org/wiki/File:Wikipedia_basics_-_Talk_pages.ogv Este vídeo] (véxao no [http://www.youtube.com/watch?v=JdeDLRsB2Es YouTube]) dá unha guía paso a paso sobre o funcionamento das páxinas de conversa.
 
-Teña un bo día,
+Grazas por formar parte da comunidade.
 
 -- {{SITENAME}}',
 );
@@ -2252,6 +2258,7 @@ $messages['gsw'] = array(
 
 /** Hebrew (עברית)
  * @author Amire80
+ * @author Ofekalef
  * @author Ofrahod
  */
 $messages['he'] = array(
@@ -2283,6 +2290,7 @@ $messages['he'] = array(
 	'moodbar-privacy' => 'על־ידי שליחה, אתה מסכים לשקיפות לפי $1 הבאים.',
 	'moodbar-privacy-link' => 'התנאים',
 	'moodbar-privacy-link-title' => 'תנאי שימוש',
+	'moodbar-fbd-link-title' => 'משוב',
 	'moodbar-disable-link' => 'אני לא רוצה. אנא כבו את האפשרות הזאת.',
 	'moodbar-form-title' => 'כי...',
 	'moodbar-form-note' => '140 תווים לכל היותר',
@@ -2368,6 +2376,7 @@ $messages['he'] = array(
 	'moodbar-invalid-item' => 'המערכת לא הצליחה למצא את פריט המשוב הנכון.',
 	'moodbar-feedback-action-error' => 'אירעה שגיאה בעת ניסיון לבצע את הפעולה הזאת.',
 	'moodbar-feedback-response-summary' => 'המשתמש [[$1|$2]] [[$3|ענה]] לפני $4',
+	'moodbar-feedback-response-helpful-summary' => '[[$1|$2]] [[$3|הגיבו]] לפני $4 ו[[$5|$6]] חושבים שזה מועיל.',
 	'moodbar-feedback-edit-summary' => 'תשובה ל[[Special:FeedbackDashboard/$1|משוב ממשתמש]]: $2',
 	'moodbar-feedback-top-responders-title' => 'העונים הפורים ביותר',
 	'moodbar-type-happy' => '{{GENDER:$1|שמח|שמחה}}',
@@ -2593,6 +2602,7 @@ Za dalše informacije. wopytaj prošu $1.',
 	'moodbar-action-reason-required' => 'Prošu podaj přičinu.',
 	'moodbar-feedback-action-error' => 'Při wuwjedźenju tuteje akcije je zmylk wustupił.',
 	'moodbar-feedback-response-summary' => '[[$1|$2]] [[$3|wotmołwi]] před $4',
+	'moodbar-feedback-response-helpful-summary' => '[[$1|$2]] [[$3|wotmołwi]] před $4 a [[$5|$6]] ma wotmołwu za pomocliwu',
 	'moodbar-feedback-edit-summary' => 'Wotmołwa na [[Special:FeedbackDashboard/$1|komentar wužiwarja]]: $2',
 	'moodbar-feedback-top-responders-title' => 'Wužiwarjo z najwjace komentarami',
 	'moodbar-type-happy' => '{{GENDER:$1|Zbožowny|Zbožowna}}',
@@ -2761,6 +2771,7 @@ Pro ulterior information, per favor visita le $1.',
 	'moodbar-privacy' => 'Per submitter, tu accepta que tu contribution essera usate publicamente sub iste $1.',
 	'moodbar-privacy-link' => 'conditiones',
 	'moodbar-privacy-link-title' => 'Conditiones de uso',
+	'moodbar-fbd-link-title' => 'retroaction',
 	'moodbar-disable-link' => 'Isto non me interessa. Per favor disactiva iste function.',
 	'moodbar-form-title' => 'Perque...',
 	'moodbar-form-note' => 'maximo 140 characteres',
@@ -2846,6 +2857,7 @@ Pro ulterior information, per favor visita le $1.',
 	'moodbar-invalid-item' => 'Le systema non poteva trovar le elemento de retroaction correcte.',
 	'moodbar-feedback-action-error' => 'Un error occurreva durante le tentativa de exequer iste action.',
 	'moodbar-feedback-response-summary' => '[[$1|$2]] [[$3|respondeva]] $4 retro',
+	'moodbar-feedback-response-helpful-summary' => '[[$1|$2]] [[$3|respondeva]] $4 retro e [[$5|$6]] lo trova utile',
 	'moodbar-feedback-edit-summary' => 'Responsa a [[Special:FeedbackDashboard/$1|retroaction de usator]]: $2',
 	'moodbar-feedback-top-responders-title' => 'Top de responditores',
 	'moodbar-type-happy' => '{{GENDER:$1|Felice}}',
@@ -3293,6 +3305,7 @@ $messages['mk'] = array(
 	'moodbar-privacy' => 'Поднесувајќи го ова, се согласувате на транспарентност под следниве $1.',
 	'moodbar-privacy-link' => 'услови',
 	'moodbar-privacy-link-title' => 'Услови на употреба',
+	'moodbar-fbd-link-title' => 'мислења',
 	'moodbar-disable-link' => 'Не сум заинтересиран. Оневозможи ја функцијава.',
 	'moodbar-form-title' => 'Бидејќи...',
 	'moodbar-form-note' => 'највеќе 140 знаци',
@@ -3303,7 +3316,7 @@ $messages['mk'] = array(
 	'moodbar-loading-title' => 'Споделувам...',
 	'moodbar-success-title' => 'Благодариме!',
 	'moodbar-error-title' => 'Упс!',
-	'moodbar-success-subtitle' => 'Споделувајќи го вашето уредувачко искуство ни помагате да ја подобриме $1.',
+	'moodbar-success-subtitle' => 'Споделувајќи го вашето {{FBD-LINK}} ни помагате да ја подобриме $1.',
 	'moodbar-error-subtitle' => 'Нешто не е во ред! Обидете се да го споделите вашето мислење подоцна.',
 	'moodbar-blocked-title' => 'Упс!',
 	'moodbar-blocked-subtitle' => 'Блокирани сте од уредување.',
@@ -3377,6 +3390,7 @@ $messages['mk'] = array(
 	'moodbar-invalid-item' => 'Системот не можеше да го најде бараното мислење',
 	'moodbar-feedback-action-error' => 'Настана грешка при обидот да се изврши дејството.',
 	'moodbar-feedback-response-summary' => '[[$1|$2]] [[$3|одговори]] пред $4',
+	'moodbar-feedback-response-helpful-summary' => '[[$1|$2]] [[$3|одговори]] пред $4, а [[$5|$6]] го смета одговорот за корисен',
 	'moodbar-feedback-edit-summary' => 'Одговор на [[Special:FeedbackDashboard/$1|искажано мислење]]: $2',
 	'moodbar-feedback-top-responders-title' => 'Најистакнати одговарачи',
 	'moodbar-type-happy' => '{{GENDER:$1|Среќен|Среќна|Среќен}}',
@@ -3415,9 +3429,9 @@ $messages['mk'] = array(
 Што е страница за разговор?
 Вашата страница ра разговор е местото кадешто другите уредници на {{SITENAME}} општат со вас. За да одговорите, стиснете на „Уреди“, ја носите стрелката под коментарот, го пишувате одговорот, ставата четири тилди за да се потпишете (~~~~), па ја зачувувате страницата. Сите страници на {{SITENAME}} имаат свои страници за разговор, и имаат најразлични намени. Може да ви треба некое време за да се привикнете, но потоа ќе ви биде многу лесно.
 
-Сè уште сте збунети? [http://mk.wikipedia.org/wiki/Податотека:Wikipedia_basics_-_Talk_pages.ogv Ова видео] ([http://www.youtube.com/watch?v=JdeDLRsB2Es на YouTube]) ќе ве воведе во нештата чекор по чекор.
+Сè уште сте збунети? [http://mk.wikipedia.org/wiki/Податотека:Wikipedia_basics_-_Talk_pages.ogv Ова видео] ([http://www.youtube.com/watch?v=JdeDLRsB2Es на YouTube]) ќе ве воведе во страниците за разговор чекор по чекор.
 
-Пријатен ден,
+Ви благодариме што сте дел од заедницата.
 
 -- {{SITENAME}}',
 );
@@ -3633,6 +3647,7 @@ Untuk maklumat lanjut, sila layari $1.',
 	'moodbar-invalid-item' => 'Sistem tidak dapat mencari butiran maklum balas yang betul.',
 	'moodbar-feedback-action-error' => 'Ralat berlaku ketika cuba melakukan tindakan ini.',
 	'moodbar-feedback-response-summary' => '[[$1|$2]] [[$3|membalas]] $4 lalu',
+	'moodbar-feedback-response-helpful-summary' => '[[$1|$2]] [[$3|membalas]] pada $4 lalu, [[$5|$6]] mendapatinya membantu',
 	'moodbar-feedback-edit-summary' => 'Jawapan kepada [[Special:FeedbackDashboard/$1|maklum balas penggun]]: $2',
 	'moodbar-feedback-top-responders-title' => 'Pembalas Teratas',
 	'moodbar-type-happy' => '{{GENDER:$1|Gembira}}',
@@ -3748,6 +3763,7 @@ Ga naar de $1 voor meer informatie.',
 	'moodbar-privacy' => 'Door op te slaan gaat u akkoord met transparantie onder deze $1.',
 	'moodbar-privacy-link' => 'voorwaarden',
 	'moodbar-privacy-link-title' => 'Gebruiksvoorwaarden',
+	'moodbar-fbd-link-title' => 'terugkoppeling',
 	'moodbar-disable-link' => 'Ik ben niet geïnteresseerd. Schakel deze functie uit.',
 	'moodbar-form-title' => 'Omdat...',
 	'moodbar-form-note' => 'Maximaal 140 tekens',
@@ -3832,6 +3848,7 @@ Ga naar de $1 voor meer informatie.',
 	'moodbar-invalid-item' => 'Het systeem kon het juiste terugkoppelingsitem niet vinden.',
 	'moodbar-feedback-action-error' => 'Er is een fout opgetreden tijdens het uitvoeren van deze handeling.',
 	'moodbar-feedback-response-summary' => '[[$1|$2]] heeft $4 geleden [[$3|gereageerd]]',
+	'moodbar-feedback-response-helpful-summary' => '[[$1|$2]] [[$3|antwoordde]] $4 geleden en [[$5|$6]] vindt dit nuttig',
 	'moodbar-feedback-edit-summary' => 'Antwoord op [[Special:FeedbackDashboard/$1|terugkoppeling]]: $2',
 	'moodbar-feedback-top-responders-title' => 'Topbeantwoorders',
 	'moodbar-type-happy' => '{{GENDER:$1|Blij}}',
@@ -4498,7 +4515,7 @@ Pentru mai multe informații, vizitați $1.',
 	'moodbar-loading-title' => 'Partajare...',
 	'moodbar-success-title' => 'Mulțumesc!',
 	'moodbar-error-title' => 'Ups!',
-	'moodbar-success-subtitle' => 'Împărtășindu-ne experiența dumneavoastră ne ajutați să îmbunătățim $1.',
+	'moodbar-success-subtitle' => 'Împărtășindu-ne {{FBD-LINK}} ne ajutați să îmbunătățim $1.',
 	'moodbar-error-subtitle' => 'Ceva nu a mers bine! Încercați din nou mai târziu.',
 	'moodbar-blocked-title' => 'Ups!',
 	'moodbar-email-title' => 'Adăugați e-mailul',

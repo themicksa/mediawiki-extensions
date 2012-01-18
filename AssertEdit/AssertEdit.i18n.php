@@ -104,6 +104,15 @@ $messages['bcc'] = array(
 	'assert_edit_message' => 'مشخص بوتگین اعلان ($1) پروش وارت',
 );
 
+/** Belarusian (Беларуская)
+ * @author Хомелка
+ */
+$messages['be'] = array(
+	'assert_edit_title' => 'Зацверджанне не атрымалася',
+	'assertedit-desc' => 'Дадае зацверджанні рэдагаванняў для выкарыстання робатамі',
+	'assert_edit_message' => 'Вызначанае зацверджанне ($1) не атрымалася.',
+);
+
 /** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
  * @author EugeneZelenko
  */

@@ -29,6 +29,7 @@ $messages['qqq'] = array(
 );
 
 /** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
+ * @author EugeneZelenko
  * @author Jim-by
  * @author Wizardist
  */
@@ -36,7 +37,7 @@ $messages['be-tarask'] = array(
 	'solrstore-desc' => 'Пошук сэмантычных уласьцівасьцяў з выкарыстаньнем рухавіка поўнатэкстнага пошуку',
 	'solrsearch' => 'SolrSearch',
 	'solrstore-searchFieldSets' => 'SolrSearch',
-	'solrstore-searchFieldSets-select' => 'Выберыце, калі ласка, SearchSet',
+	'solrstore-searchFieldSets-select' => 'Калі ласка, выберыце SearchSet',
 	'solrstore-searchFieldSets-title' => 'SolrSearch: выбар SearchSet',
 );
 

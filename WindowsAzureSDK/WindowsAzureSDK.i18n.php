@@ -61,6 +61,13 @@ $messages['mk'] = array(
 	'windowsazuresdk-desc' => 'Го дава приборот за програмски развој [http://phpazure.codeplex.com/ PHPAzure] од [http://www.realdolmen.com/ REALDOLMEN].',
 );
 
+/** Malay (Bahasa Melayu)
+ * @author Anakmalaysia
+ */
+$messages['ms'] = array(
+	'windowsazuresdk-desc' => 'Membekalkan SDK [http://phpazure.codeplex.com/ PHPAzure] ciptaan [http://www.realdolmen.com/ REALDOLMEN]',
+);
+
 /** Dutch (Nederlands)
  * @author Siebrand
  */

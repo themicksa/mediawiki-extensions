@@ -27,6 +27,13 @@ $messages['de'] = array(
 	'interfaceconcurrency-desc' => 'Ermöglicht ein Backend für die Benutzeroberfläche, das anzeigt, welche Quellen genutzt werden',
 );
 
+/** Lower Sorbian (Dolnoserbski)
+ * @author Michawiki
+ */
+$messages['dsb'] = array(
+	'interfaceconcurrency-desc' => 'Staja backend za wužywarksi powjerch k dispoziciji, kótaryž pokazujo, kótare resurse se wužywaju.',
+);
+
 /** French (Français)
  * @author Gomoko
  */

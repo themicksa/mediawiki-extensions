@@ -40,16 +40,21 @@ $messages['en'] = array(
 
 /** Message documentation (Message documentation)
  * @author EugeneZelenko
+ * @author MaxSem
  * @author Purodha
  */
 $messages['qqq'] = array(
 	'apisb-desc' => '{{desc}}',
+	'apisandbox' => 'Special page title',
 	'apisb-parameters' => '{{Identical|Parameter}}',
 	'apisb-result' => '{{Identical|Result}}',
 	'apisb-request-url' => 'This is about the URL of a request.',
 	'apisb-loading' => '{{Identical|Loading}}',
+	'apisb-ns-main' => 'Refers to the main namespace',
 	'apisb-query-prop' => '{{Identical|Property}}',
 	'apisb-query-list' => '{{Identical|List}}',
+	'apisb-generator-parameters' => 'Refers to an [https://www.mediawiki.org/wiki/API:Query#Generators API concept]',
+	'apisb-clear' => 'Title of the button that clears all inputs',
 );
 
 /** Afrikaans (Afrikaans)
@@ -132,8 +137,8 @@ $messages['be-tarask'] = array(
 	'apisb-desc' => 'Дазваляе налажваць выклікі [//www.mediawiki.org/wiki/API MediaWiki API] з браўзэра',
 	'apisandbox' => 'Пясочніца API',
 	'apisb-no-js' => "'''Памылка''': гэтая магчымасьць патрабуе JavaScript.",
-	'apisb-intro' => "Гэтая старонка зьяўляецца экспэрымэнтам з '''MediaWiki API'''.
-Зазірніце ў [//www.mediawiki.org/wiki/API дакумэнтацыю API] для дадатковай інфармацыі па выкарыстаньні API.",
+	'apisb-intro' => "Выкарыстоўвайце гэтую старонку для экспэрымэнтаў з '''API вэб-сэрвіса MediaWiki'''.
+Зьвяртайцеся да [//www.mediawiki.org/wiki/API дакумэнтацыі API] для дадатковай інфармацыі па выкарыстаньні API. Напрыклад, [//www.mediawiki.org/wiki/API#A_simple_example як атрымаць зьмест Галоўнай старонкі]. Выберыце дзеяньне, каб пабачыць болей узораў.",
 	'apisb-api-disabled' => 'API забаронены на гэтым сайце.',
 	'apisb-parameters' => 'Парамэтры',
 	'apisb-result' => 'Вынік',
@@ -153,6 +158,9 @@ $messages['be-tarask'] = array(
 	'apisb-query-meta' => 'Мэтазьвесткі',
 	'apisb-generic-parameters' => 'Агульныя парамэтры',
 	'apisb-generator-parameters' => 'Генэратар',
+	'apisb-example' => 'Прыклад',
+	'apisb-examples' => 'Прыклады',
+	'apisb-clear' => 'Ачысьціць',
 );
 
 /** Bulgarian (Български)
@@ -239,8 +247,8 @@ $messages['de'] = array(
 	'apisb-desc' => 'Ermöglicht das Beseitigen von Fehlern bei Aufrufen der [//www.mediawiki.org/wiki/API MediaWiki-API] mit dem Browser',
 	'apisandbox' => 'API-Spielwiese',
 	'apisb-no-js' => "'''Fehler:''' Diese Funktion erfordert JavaSkript.",
-	'apisb-intro' => "Diese Seite für Versuche mit der '''MediaWiki-API''' verwenden.
-Die [//www.mediawiki.org/wiki/API Dokumentation zur API] enthält weitere Hinweise zur Nutzung der API.",
+	'apisb-intro' => "Diese Seite kannst du für Versuche mit der '''MediaWiki-API''' verwenden.
+Die [//www.mediawiki.org/wiki/API:Main_page/de Dokumentation zur API] enthält weitere Hinweise zu ihrer Nutzung. Beispiel: [//www.mediawiki.org/wiki/API:Main_page/de#Beispiel Den Inhalt der Hauptseite abrufen]. Für weitere Beispiele eine der verfügbaren Aktionen auswählen.",
 	'apisb-api-disabled' => 'Die API wurde auf diesem Wiki deaktiviert.',
 	'apisb-parameters' => 'Parameter',
 	'apisb-result' => 'Ergebnis',
@@ -260,6 +268,17 @@ Die [//www.mediawiki.org/wiki/API Dokumentation zur API] enthält weitere Hinwei
 	'apisb-query-meta' => 'Metainformationen',
 	'apisb-generic-parameters' => 'Generische Parameter',
 	'apisb-generator-parameters' => 'Generator',
+	'apisb-example' => 'Beispiel',
+	'apisb-examples' => 'Beispiele',
+	'apisb-clear' => 'Leeren',
+);
+
+/** German (formal address) (‪Deutsch (Sie-Form)‬)
+ * @author Kghbln
+ */
+$messages['de-formal'] = array(
+	'apisb-intro' => "Diese Seite können Sie für Versuche mit der '''MediaWiki-API''' verwenden.
+Die [//www.mediawiki.org/wiki/API:Main_page/de Dokumentation zur API] enthält weitere Hinweise zu ihrer Nutzung. Beispiel: [//www.mediawiki.org/wiki/API:Main_page/de#Beispiel Den Inhalt der Hauptseite abrufen]. Für weitere Beispiele eine der verfügbaren Aktionen auswählen.",
 );
 
 /** Greek (Ελληνικά)
@@ -452,6 +471,7 @@ $messages['fi'] = array(
 /** French (Français)
  * @author Balzac 40
  * @author Crochet.david
+ * @author Gomoko
  * @author Grondin
  * @author Verdy p
  */
@@ -480,6 +500,9 @@ Reportez-vous sur [//www.mediawiki.org/wiki/API la documentation de l’API] pou
 	'apisb-query-meta' => 'Méta-information',
 	'apisb-generic-parameters' => 'Paramètres génériques',
 	'apisb-generator-parameters' => 'Générateur',
+	'apisb-example' => 'Exemple',
+	'apisb-examples' => 'Exemples',
+	'apisb-clear' => 'Effacer',
 );
 
 /** Franco-Provençal (Arpetan)
@@ -519,8 +542,8 @@ $messages['gl'] = array(
 	'apisb-desc' => 'Permite a depuración das chamadas da [//www.mediawiki.org/wiki/API API de MediaWiki] desde o navegador',
 	'apisandbox' => 'Zona de probas API',
 	'apisb-no-js' => "'''Erro:''' Esta característica necesita JavaScript.",
-	'apisb-intro' => "Use esta páxina para experimentar coa '''API de MediaWiki'''.
-Consulte a [//www.mediawiki.org/wiki/API documentación da API] para obter máis información sobre o uso da API.",
+	'apisb-intro' => "Use esta páxina para experimentar co '''servizo web da API de MediaWiki'''.
+Consulte a [//www.mediawiki.org/wiki/API documentación da API] para obter máis información sobre o uso da API. Exemplo: [//www.mediawiki.org/wiki/API#A_simple_example obter o contido dunha páxina de inicio]. Seleccione unha acción para ollar máis exemplos.",
 	'apisb-api-disabled' => 'API está desactivado neste sitio.',
 	'apisb-parameters' => 'Parámetros',
 	'apisb-result' => 'Resultado',
@@ -540,15 +563,27 @@ Consulte a [//www.mediawiki.org/wiki/API documentación da API] para obter máis
 	'apisb-query-meta' => 'Metainformación',
 	'apisb-generic-parameters' => 'Parámetros xenéricos',
 	'apisb-generator-parameters' => 'Xerador',
+	'apisb-example' => 'Exemplo',
+	'apisb-examples' => 'Exemplos',
+	'apisb-clear' => 'Limpar',
 );
 
 /** Hebrew (עברית)
+ * @author Amire80
  * @author Deror avi
+ * @author Ofekalef
  */
 $messages['he'] = array(
+	'apisb-desc' => 'הפעלת ניפוי שגיאות של קריאות ל־[//www.mediawiki.org/wiki/API API של מדיה־ויקי] מהדפדפן',
+	'apisandbox' => 'ארגז חול של API',
+	'apisb-no-js' => "'''שגיאה''': היכולת הזאת דורשת JavaScript",
+	'apisb-intro' => "השתמשו בדף הזה כדי להתנסות עם '''API של מדיה־ויקי'''.
+פנו ל־[//www.mediawiki.org/wiki/API תיעוד של ה־API] למידע נוסף של שימוש ב־API.",
+	'apisb-api-disabled' => 'API אינו פעיל באתר הזה.',
 	'apisb-parameters' => 'פרמטרים',
 	'apisb-result' => 'תוצאה',
 	'apisb-request-url' => 'כתובת ה-URL של הבקשה:',
+	'apisb-request-post' => 'נתוני POST:',
 	'apisb-select-action' => 'בחירת פעולה',
 	'apisb-select-query' => 'מהי השאילתה?',
 	'apisb-select-value' => 'בחירת ערך',
@@ -563,6 +598,9 @@ $messages['he'] = array(
 	'apisb-query-meta' => 'מידע נוסף',
 	'apisb-generic-parameters' => 'פרמטרים כלליים',
 	'apisb-generator-parameters' => 'מחולל',
+	'apisb-example' => 'דוגמה',
+	'apisb-examples' => 'דוגמאות',
+	'apisb-clear' => 'ריקון',
 );
 
 /** Hindi (हिन्दी)
@@ -595,8 +633,8 @@ $messages['hsb'] = array(
 	'apisb-desc' => 'Zmóžnja wotstronjenje zmylkow při wołanju [//www.mediawiki.org/wiki/API MediaWiki API] z wobhladowaka',
 	'apisandbox' => 'API-hrajkanišćo',
 	'apisb-no-js' => "'''Zmylk''': tuta funkcija sej JavaScript wužaduje.",
-	'apisb-intro' => "Wužij tutu stronu, zo by z '''Mediawiki API''' eksperimentował.
-Hlej [//www.mediawiki.org/wiki/API API-dokumentaciju] za dalše podrobnosće za wužiwanje API.",
+	'apisb-intro' => "Wužij tutu stronu, zo by z '''websłužbu Mediawiki API''' eksperimentował.
+Hlej [//www.mediawiki.org/wiki/API API-dokumentaciju] za dalše podrobnosće za wužiwanje API. Přikład: [//www.mediawiki.org/wiki/API#A_simple_example Wobsah hłowneje strony wotwołać]. Wubjer akciju, zo by dalše přikłady widźał.",
 	'apisb-api-disabled' => 'API je so na tutym sydle znjemóžnił.',
 	'apisb-parameters' => 'Parametry',
 	'apisb-result' => 'Wuslědk',
@@ -616,6 +654,9 @@ Hlej [//www.mediawiki.org/wiki/API API-dokumentaciju] za dalše podrobnosće za 
 	'apisb-query-meta' => 'Metainformacije',
 	'apisb-generic-parameters' => 'Powšitkowne parametry',
 	'apisb-generator-parameters' => 'Generator',
+	'apisb-example' => 'Přikład',
+	'apisb-examples' => 'Přikłady',
+	'apisb-clear' => 'Wuprózdnić',
 );
 
 /** Hungarian (Magyar)
@@ -677,6 +718,9 @@ Consulta [//www.mediawiki.org/wiki/API le documentation del API] pro ulterior de
 	'apisb-query-meta' => 'Metainformationes',
 	'apisb-generic-parameters' => 'Parametros generic',
 	'apisb-generator-parameters' => 'Generator',
+	'apisb-example' => 'Exemplo',
+	'apisb-examples' => 'Exemplos',
+	'apisb-clear' => 'Rader',
 );
 
 /** Indonesian (Bahasa Indonesia)
@@ -938,6 +982,9 @@ $messages['mk'] = array(
 	'apisb-query-meta' => 'Метаинформации',
 	'apisb-generic-parameters' => 'Општи параметри',
 	'apisb-generator-parameters' => 'Создавач',
+	'apisb-example' => 'Пример',
+	'apisb-examples' => 'Примери',
+	'apisb-clear' => 'Исчисти',
 );
 
 /** Malayalam (മലയാളം)
@@ -983,6 +1030,9 @@ $messages['ms'] = array(
 	'apisb-query-meta' => 'Maklumat meta',
 	'apisb-generic-parameters' => 'Parameter am',
 	'apisb-generator-parameters' => 'Penjana',
+	'apisb-example' => 'Contoh',
+	'apisb-examples' => 'Contoh',
+	'apisb-clear' => 'Padamkan',
 );
 
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
@@ -1042,6 +1092,9 @@ Zie de [//www.mediawiki.org/wiki/API API-documentatie] voor verdere details over
 	'apisb-query-meta' => 'Metaigegevens',
 	'apisb-generic-parameters' => 'Algemene parameters',
 	'apisb-generator-parameters' => 'Generator',
+	'apisb-example' => 'Voorbeeld',
+	'apisb-examples' => 'Voorbeelden',
+	'apisb-clear' => 'Leegmaken',
 );
 
 /** Oriya (ଓଡ଼ିଆ)
@@ -1605,6 +1658,7 @@ $messages['yi'] = array(
 /** Simplified Chinese (‪中文(简体)‬)
  * @author Anakmalaysia
  * @author Hydra
+ * @author Hzy980512
  * @author Liangent
  * @author PhiLiP
  * @author Shizhao
@@ -1635,6 +1689,8 @@ $messages['zh-hans'] = array(
 	'apisb-query-meta' => 'Meta 信息',
 	'apisb-generic-parameters' => '通用参数',
 	'apisb-generator-parameters' => '生成器',
+	'apisb-example' => '示例',
+	'apisb-examples' => '示例',
 );
 
 /** Traditional Chinese (‪中文(繁體)‬)
