@@ -75,7 +75,6 @@ $wgAPIListModules['translationmemories'] = 'ApiQueryTranslationMemories';
 $wgHooks['ArticleViewHeader'][] = 'LiveTranslateHooks::onArticleViewHeader';
 $wgHooks['LoadExtensionSchemaUpdates'][] = 'LiveTranslateHooks::onSchemaUpdate';
 $wgHooks['ArticleSaveComplete'][] = 'LiveTranslateHooks::onArticleSaveComplete';
-$wgHooks['LanguageGetMagic'][] = 'LiveTranslateHooks::addMagicWords';
 $wgHooks['InternalParseBeforeLinks'][] = 'LiveTranslateHooks::stripMagicWords';
 $wgHooks['OutputPageParserOutput'][] = 'LiveTranslateHooks::onOutputPageParserOutput';
 

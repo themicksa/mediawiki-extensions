@@ -16,12 +16,6 @@ class LuaHooks {
 		return true;
 	}
 
-	/** LanguageGetMagic hook */
-	public static function magic(&$magicWords, $langCode) {
-		$magicWords['luaexpr'] = array(0, 'luaexpr');
-		return true;
-	}
-
 	/** ParserBeforeTidy hook */
 	public static function beforeTidy(&$parser, &$text) {
 		global $wgLua;

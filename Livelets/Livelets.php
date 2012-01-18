@@ -9,7 +9,12 @@
  * Started: 2007-10-06
  *     1.0: 2010-08-25
  */
-define( 'LIVELETS_VERSION', '1.0.4, 2010-09-05' );
+
+if( !defined( 'MEDIAWIKI' ) ) {
+	die( 'This is not a valid entry point to MediaWiki.' );
+}
+
+define( 'LIVELETS_VERSION', '1.1.0, 2012-01-18' );
 
 # the parser-function name for doing live-transclusions
 $wgLiveletsMagic  = 'live';
@@ -29,7 +34,9 @@ $wgExtensionCredits['parserhook'][] = array(
 );
 $dir = dirname( __FILE__ );
 $wgExtensionMessagesFiles['Livelets'] =  "$dir/Livelets.i18n.php";
+$wgExtensionMessagesFiles['LiveletsMagic'] =  "$dir/Livelets.i18n.magic.php";
 
+// @todo FIXME: Move class to a separate file.
 class Livelets {
 
 	var $container_id = 0;
@@ -37,9 +44,6 @@ class Livelets {
 
 	function __construct() {
 		global $wgHooks, $wgExtensionFunctions;
-
-		# Activate the parser-function
-		$wgHooks['LanguageGetMagic'][] = $this;
 
 		# Call the setup method at extension setup time
 		$wgExtensionFunctions[] = array( $this, 'setup' );
@@ -55,7 +59,6 @@ class Livelets {
 
 			# Add a hook to replace the wikitext with just the requested livelet's content
 			$wgHooks['ArticleAfterFetchContent'][] = $this;
-
 		}
 	}
 
@@ -74,10 +77,7 @@ class Livelets {
 			$wgOut->addHTML("<object type=\"application/x-shockwave-flash\" data=\"$swf\" width=\"1\" height=\"1\">
 				<param name=\"movie\" value=\"$swf\" /><param name=\"bgcolor\" value=\"$wgLiveletsSwfBg\"/></object>");
 		}
-
 	}
-
-
 	# Render livelet container
 	function renderContainer( &$parser ) {
 		global $wgTitle, $wgJsMimeType, $wgLiveletsDefaultContent;
@@ -114,7 +114,6 @@ class Livelets {
 		return true;
 	}
 
-
 	# Extract recursive braces belonging to templates and parserfunctions
 	function examineBraces( &$content ) {
 		$braces = array();
@@ -137,17 +136,7 @@ class Livelets {
 		}
 		return $braces;
 	}
-
-
-	# Set up magic word
-	function onLanguageGetMagic( &$magicWords, $langCode = 0 ) {
-		global $wgLiveletsMagic;
-		$magicWords[$wgLiveletsMagic] = array( $langCode, $wgLiveletsMagic );
-		return true;
-	}
 }
 
 # Instantiate a global instance of the extension
 $wgLivelets = new Livelets();
-
-

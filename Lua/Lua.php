@@ -18,6 +18,7 @@ $wgExtensionCredits['parserhook'][] = array(
 
 $dir = dirname(__FILE__) . '/';
 $wgExtensionMessagesFiles['Lua'] = $dir . 'Lua.i18n.php';
+$wgExtensionMessagesFiles['LuaMagic'] = $dir . 'Lua.i18n.magic.php';
 $wgAutoloadClasses['LuaHooks'] = $dir . 'Lua.hooks.php';
 $wgAutoloadClasses['LuaError'] = $dir . 'Lua.wrapper.php';
 $wgAutoloadClasses['LuaWrapper'] = $dir . 'Lua.wrapper.php';
@@ -31,5 +32,4 @@ $wgLuaMaxTime = 5;
 
 
 $wgHooks['ParserFirstCallInit'][] = 'LuaHooks::parserInit';
-$wgHooks['LanguageGetMagic'][] = 'LuaHooks::magic';
 $wgHooks['ParserBeforeTidy'][] = 'LuaHooks::beforeTidy';

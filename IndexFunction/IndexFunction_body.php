@@ -183,13 +183,6 @@ class IndexFunctionHooks {
 		return true;
 	}
 
-	// Register the function name
-	static function addIndexFunction( &$magicWords, $langCode ) {
-		$magicWords['index-func'] = array( 0, 'index' );
-
-		return true;
-	}
-
 	// Function called to render the parser function
 	// Output is an empty string unless there are errors
 	static function indexRender( &$parser ) {

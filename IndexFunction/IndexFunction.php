@@ -13,7 +13,6 @@ $dir = dirname( __FILE__ ) . '/';
 
 # Register function
 $wgHooks['ParserFirstCallInit'][] = 'efIndexSetup';
-$wgHooks['LanguageGetMagic'][] = 'IndexFunctionHooks::addIndexFunction';
 # Add to database
 $wgHooks['OutputPageParserOutput'][] = 'IndexFunctionHooks::doIndexes';
 # Make links to indexes blue
@@ -41,6 +40,7 @@ $wgSpecialPageGroups['Index'] = 'pages';
 # i18n
 $wgExtensionMessagesFiles['IndexFunctionAlias'] = $dir . 'IndexFunction.alias.php';
 $wgExtensionMessagesFiles['IndexFunction'] = $dir . 'IndexFunction.i18n.php';
+$wgExtensionMessagesFiles['IndexFunctionMagic'] = $dir . 'IndexFunction.i18n.magic.php';
 
 # Register classes with the autoloader
 $wgAutoloadClasses['SpecialIndex'] = $dir . 'SpecialIndex.php';

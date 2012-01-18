@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Initialization file for the Include WP extension.
  * 
@@ -55,12 +54,12 @@ $wgExtensionCredits['other'][] = array(
 $egIncWPScriptPath = $wgExtensionAssetsPath === false ? $wgScriptPath . '/extensions/IncludeWP' : $wgExtensionAssetsPath . '/IncludeWP';
 
 $wgExtensionMessagesFiles['IncludeWP'] = dirname( __FILE__ ) . '/IncludeWP.i18n.php';
+$wgExtensionMessagesFiles['IncludeWPMagic'] = dirname( __FILE__ ) . '/IncludeWP.i18n.magic.php';
 
 $wgAutoloadClasses['IncludeWP'] = dirname( __FILE__ ) . '/IncludeWP.class.php';
 $wgAutoloadClasses['ApiIncludeWP'] = dirname( __FILE__ ) . '/api/ApiIncludeWP.php';
 
 $wgHooks['ParserFirstCallInit'][] = 'IncludeWP::staticInit';
-$wgHooks['LanguageGetMagic'][] = 'IncludeWP::staticMagic';
 
 $wgAPIModules['includewp'] = 'ApiIncludeWP';
 

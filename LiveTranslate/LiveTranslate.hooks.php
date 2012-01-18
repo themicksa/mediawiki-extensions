@@ -295,27 +295,6 @@ final class LiveTranslateHooks {
 	}
 
 	/**
-	 * Registers the magic words to show and hide the translation control.
-	 *
-	 * TODO: apparently there is some new way of doing this for quite a while,
-	 * which is not linked in the docs. If someone cares to explain the new stuff,
-	 * I'll be happy to update this.
-	 *
-	 * @since 0.6
-	 *
-	 * @param array &$magicWords
-	 * @param string $langCode
-	 *
-	 * @return true
-	 */
-	public static function addMagicWords( array &$magicWords, $langCode ) {
-		$magicWords['LT_NOTRANSLATIONCONTROL'] = array( 0, '__NOTRANSLATIONCONTROL__' );
-		$magicWords['LT_SHOWTRANSLATIONCONTROL'] =array( 0, '__SHOWTRANSLATIONCONTROL__' );
-
-		return true;
-	}
-
-	/**
 	 * Strips the magic words added by Live Translate from the page text.
 	 *
 	 * @since 0.6
