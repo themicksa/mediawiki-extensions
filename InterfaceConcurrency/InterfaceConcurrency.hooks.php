@@ -6,6 +6,7 @@ class InterfaceConcurrencyHooks {
 	 *
 	 * @param $output OutputPage
 	 * @param $skin Skin
+	 * @return bool
 	 */
 	public static function beforePageDisplay( &$output, &$skin ) {
 		$output->addModules( array( 'jquery.interfaceConcurrency' ) );
@@ -16,6 +17,7 @@ class InterfaceConcurrencyHooks {
 	 * Runs InterfaceConcurrency schema updates
 	 *
 	 * @param $updater DatabaseUpdater
+	 * @return bool
 	 */
 	public static function onLoadExtensionSchemaUpdates( $updater = null ) {
 		$dir = dirname( __FILE__ ) . '/sql';

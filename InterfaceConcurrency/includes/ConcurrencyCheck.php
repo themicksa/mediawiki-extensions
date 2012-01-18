@@ -215,6 +215,10 @@ class ConcurrencyCheck {
 		return $dbw->affectedRows();
 	}
 
+	/**
+	 * @param $keys array
+	 * @return array
+	 */
 	public function status( $keys ) {
 		global $wgMemc, $wgDBtype;
 		$dbw = $this->dbw;
@@ -246,7 +250,6 @@ class ConcurrencyCheck {
 		if ( $toSelect ) {
 			// If it's time to go to the database, go ahead and expire old rows.
 			$this->expire();
-
 
 			// Why LOCK IN SHARE MODE, you might ask?  To avoid a race condition: Otherwise, it's possible for
 			// a checkin and/or checkout to occur between this select and the value being stored in cache, which
@@ -324,6 +327,9 @@ class ConcurrencyCheck {
 		$this->user = $user;
 	}
 
+	/**
+	 * @param $expirationTime int|null
+	 */
 	public function setExpirationTime( $expirationTime = null ) {
 		global $wgConcurrency;
 
@@ -345,7 +351,7 @@ class ConcurrencyCheck {
 	/**
 	 * Check to make sure a record ID is numeric, throw an exception if not.
 	 *
-	 * @var $record Integer
+	 * @param $record Integer
 	 * @throws ConcurrencyCheckBadRecordIdException
 	 * @return boolean
 	 */

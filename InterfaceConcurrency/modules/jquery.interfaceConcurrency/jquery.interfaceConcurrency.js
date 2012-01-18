@@ -35,7 +35,7 @@
 				token: mw.user.tokens.get( 'editToken' ),
 				format: 'json'
 			}, params);
-				
+
 			return $.ajax( {
 				type: 'POST',
 				url: mw.util.wikiScript( 'api' ),
@@ -43,13 +43,14 @@
 				success: function( data ){
 					if ( typeof callback === 'function' ){
 						if ( data && data.concurrency.result ) { 
-							callback( data.concurrency.result );	
+							callback( data.concurrency.result );
 						}
 					}
 				},
 				dataType: 'json'
 			} );
 		}
-	};	
+	};
 
 })( jQuery );
+
