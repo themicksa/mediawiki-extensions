@@ -1,6 +1,6 @@
 <?php
 /**
- * Internationalisation for Add Media Wizard extension
+ * Internationalisation for Swift Cloud Files extension
  *
  * @file
  * @ingroup Extensions
