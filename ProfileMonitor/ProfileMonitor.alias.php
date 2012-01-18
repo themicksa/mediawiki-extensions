@@ -10,95 +10,95 @@ $specialPageAliases = array();
 
 /** English (English) */
 $specialPageAliases['en'] = array(
-	'ProfileMonitor' => array( 'ProfileMonitor' ),
+	'Profiling' => array( 'Profiling', 'ProfileMonitor' ),
 );
 
 /** Arabic (العربية) */
 $specialPageAliases['ar'] = array(
-	'ProfileMonitor' => array( 'مراقب_الملف' ),
+	'Profiling' => array( 'مراقب_الملف' ),
 );
 
 /** Egyptian Spoken Arabic (مصرى) */
 $specialPageAliases['arz'] = array(
-	'ProfileMonitor' => array( 'مراقب_الپروفايل' ),
+	'Profiling' => array( 'مراقب_الپروفايل' ),
 );
 
 /** German (Deutsch) */
 $specialPageAliases['de'] = array(
-	'ProfileMonitor' => array( 'Profilmonitor' ),
+	'Profiling' => array( 'Profilmonitor' ),
 );
 
 /** Lower Sorbian (Dolnoserbski) */
 $specialPageAliases['dsb'] = array(
-	'ProfileMonitor' => array( 'Profiklowy monitor' ),
+	'Profiling' => array( 'Profiklowy monitor' ),
 );
 
 /** Persian (فارسی) */
 $specialPageAliases['fa'] = array(
-	'ProfileMonitor' => array( 'نمایشگر_پروفایل' ),
+	'Profiling' => array( 'نمایشگر_پروفایل' ),
 );
 
 /** Upper Sorbian (Hornjoserbsce) */
 $specialPageAliases['hsb'] = array(
-	'ProfileMonitor' => array( 'Profilowy monitor' ),
+	'Profiling' => array( 'Profilowy monitor' ),
 );
 
 /** Haitian (Kreyòl ayisyen) */
 $specialPageAliases['ht'] = array(
-	'ProfileMonitor' => array( 'MonitèProfil' ),
+	'Profiling' => array( 'MonitèProfil' ),
 );
 
 /** Interlingua (Interlingua) */
 $specialPageAliases['ia'] = array(
-	'ProfileMonitor' => array( 'Analyse_de_rendimento' ),
+	'Profiling' => array( 'Analyse_de_rendimento' ),
 );
 
 /** Indonesian (Bahasa Indonesia) */
 $specialPageAliases['id'] = array(
-	'ProfileMonitor' => array( 'Monitor_profil', 'MonitorProfil' ),
+	'Profiling' => array( 'Monitor_profil', 'MonitorProfil' ),
 );
 
 /** Japanese (日本語) */
 $specialPageAliases['ja'] = array(
-	'ProfileMonitor' => array( 'プロファイリングデータ', 'プロファイルモニター', 'プロファイルモニタ' ),
+	'Profiling' => array( 'プロファイリングデータ', 'プロファイルモニター', 'プロファイルモニタ' ),
 );
 
 /** Macedonian (Македонски) */
 $specialPageAliases['mk'] = array(
-	'ProfileMonitor' => array( 'НадзорНаПрофили' ),
+	'Profiling' => array( 'НадзорНаПрофили' ),
 );
 
 /** Norwegian Bokmål (‪Norsk (bokmål)‬) */
 $specialPageAliases['nb'] = array(
-	'ProfileMonitor' => array( 'Profilmonitor' ),
+	'Profiling' => array( 'Profilmonitor' ),
 );
 
 /** Nedersaksisch (Nedersaksisch) */
 $specialPageAliases['nds-nl'] = array(
-	'ProfileMonitor' => array( 'Profielkiekscharm' ),
+	'Profiling' => array( 'Profielkiekscharm' ),
 );
 
 /** Dutch (Nederlands) */
 $specialPageAliases['nl'] = array(
-	'ProfileMonitor' => array( 'ProfilingMonitor' ),
+	'Profiling' => array( 'ProfilingMonitor' ),
 );
 
 /** Sanskrit (संस्कृतम्) */
 $specialPageAliases['sa'] = array(
-	'ProfileMonitor' => array( 'व्यक्तिविवरणावेक्षते' ),
+	'Profiling' => array( 'व्यक्तिविवरणावेक्षते' ),
 );
 
 /** Slovak (Slovenčina) */
 $specialPageAliases['sk'] = array(
-	'ProfileMonitor' => array( 'MonitorProfilu' ),
+	'Profiling' => array( 'MonitorProfilu' ),
 );
 
 /** Tagalog (Tagalog) */
 $specialPageAliases['tl'] = array(
-	'ProfileMonitor' => array( 'Tagapagmatyag ng talaan ng katangian' ),
+	'Profiling' => array( 'Tagapagmatyag ng talaan ng katangian' ),
 );
 
 /** Turkish (Türkçe) */
 $specialPageAliases['tr'] = array(
-	'ProfileMonitor' => array( 'ProfilMonitörü' ),
+	'Profiling' => array( 'ProfilMonitörü' ),
 );
