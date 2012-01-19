@@ -18,7 +18,6 @@ if ( ! defined( 'MEDIAWIKI' ) )
  */
 
 $wgHooks['ParserFirstCallInit'][] = 'efStockChartsSetHooks';
-$wgHooks['LanguageGetMagic'][] = 'efStockChartsMagic';
 
 $wgExtensionCredits['parserhook'][] = array(
 	'name' => 'StockCharts',
@@ -26,21 +25,17 @@ $wgExtensionCredits['parserhook'][] = array(
 	'author' => 'Brendan Meutzner, Anton Zolotkov, Roger Fong',
 	'descriptionmsg' => 'stockcharts-desc',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:StockCharts',
-	'version' => '0.2',
+	'version' => '0.3',
 );
 
 # Internationalisation file
 $wgExtensionMessagesFiles['StockCharts'] =  dirname( __FILE__ ) . '/StockCharts.i18n.php';
+$wgExtensionMessagesFiles['StockChartsMagic'] =  dirname( __FILE__ ) . '/StockCharts.i18n.magic.php';
 
 $wgAutoloadClasses['StockCharts'] = dirname( __FILE__ ) . '/StockCharts_body.php';
 
 function efStockChartsSetHooks( $parser ) {
 	$parser->setHook( 'stockchart', array( 'StockCharts', 'renderTagExtension' ) ); // hook for <stockchart ../>
 	$parser->setFunctionHook( 'stockchart', array( 'StockCharts', 'renderParserFunction' ) ); // hook for {{#stockchart ..}}
-	return true;
-}
-
-function efStockChartsMagic( &$magicWords, $langCode ) {
-	$magicWords['stockchart'] = array( 0, 'stockchart' );
 	return true;
 }

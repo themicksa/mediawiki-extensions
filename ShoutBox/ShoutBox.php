@@ -57,7 +57,7 @@ if( !defined( 'MEDIAWIKI' ) ) {
 $wgExtensionCredits['parserhook'][] = array(
         'path' =>  __FILE__,
 	'name' => 'ShoutBox',
-	'version' => '0.2.2',
+	'version' => '0.3.0',
 	'author' => array( 'Jim R. Wilson', 'Jack Phoenix' ),
 	'url' => 'https://www.mediawiki.org/wiki/Extension:ShoutBox',
 	'descriptionmsg' => 'shoutbox-desc',
@@ -79,17 +79,18 @@ $wgShoutBoxCSS = false;
 // Internationalization file
 $dir = dirname( __FILE__ ) . '/';
 $wgExtensionMessagesFiles['ShoutBox'] = $dir . 'ShoutBox.i18n.php';
+$wgExtensionMessagesFiles['ShoutBoxMagic'] = $dir . 'ShoutBox.i18n.magic.php';
 
 // Hooked functions
 $wgHooks['ParserFirstCallInit'][] = 'ShoutBox::setup';
-$wgHooks['LanguageGetMagic'][] = 'ShoutBox::parserFunctionMagic';
 $wgHooks['ParserBeforeTidy'][] = 'ShoutBox::placeholderCorrections';
+
+// @todo FIXME: Move classes out of the init file.
 
 /**
  * Wrapper class for encapsulating ShoutBox related parser methods
  */
 class ShoutBox {
-
 	/**
 	 * Sets up parser functions.
 	 *
@@ -99,18 +100,6 @@ class ShoutBox {
 	public static function setup( &$parser ) {
 		# Setup parser hook
 		$parser->setFunctionHook( 'shoutbox', array( 'ShoutBox', 'parserFunction' ) );
-		return true;
-	}
-
-	/**
-	 * Adds magic words for parser functions.
-	 *
-	 * @param $magicWords Array: available magic words
-	 * @param $langCode String: language code
-	 * @return Boolean: always true
-	 */
-	public static function parserFunctionMagic( &$magicWords, $langCode = 'en' ) {
-		$magicWords['shoutbox'] = array( 0, 'shoutbox' );
 		return true;
 	}
 

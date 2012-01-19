@@ -22,15 +22,15 @@ class SimpleSecurity {
 
 	function setup() {
 		global $wgParser, $wgHooks, $wgLogTypes, $wgLogNames, $wgLogHeaders, $wgLogActions,
-			$wgSecurityMagicIf, $wgSecurityMagicGroup, $wgSecurityExtraActions, $wgSecurityExtraGroups,
+			$wgSecurityExtraActions, $wgSecurityExtraGroups,
 			$wgRestrictionTypes, $wgRestrictionLevels, $wgGroupPermissions,
 			$wgSecurityRenderInfo, $wgSecurityAllowUnreadableLinks, $wgSecurityGroupsArticle;
 
 		# Add our hooks
 		$wgHooks['UserGetRights'][] = $this;
 		$wgHooks['ImgAuthBeforeStream'][] = $this;
-		if ( $wgSecurityMagicIf )    $wgParser->setFunctionHook( $wgSecurityMagicIf,    array( $this, 'ifUserCan' ) );
-		if ( $wgSecurityMagicGroup ) $wgParser->setFunctionHook( $wgSecurityMagicGroup, array( $this, 'ifGroup' ) );
+		$wgParser->setFunctionHook( 'ifusercan',    array( $this, 'ifUserCan' ) );
+		$wgParser->setFunctionHook( 'ifgroup', array( $this, 'ifGroup' ) );
 		if ( $wgSecurityRenderInfo ) $wgHooks['OutputPageBeforeHTML'][] = $this;
 		if ( $wgSecurityAllowUnreadableLinks ) $wgHooks['BeforePageDisplay'][] = $this;
 
@@ -72,14 +72,12 @@ class SimpleSecurity {
 
 	}
 
-
 	/**
 	 * Process the ifUserCan conditional security directive
 	 */
 	public function ifUserCan( &$parser, $action, $pagename, $then, $else = '' ) {
 		return Title::newFromText( $pagename )->userCan( $action ) ? $then : $else;
 	}
-
 
 	/**
 	 * Process the ifGroup conditional security directive
@@ -90,7 +88,6 @@ class SimpleSecurity {
 		$intersection = array_intersect( array_map( 'strtolower', explode( ',', $groups ) ), $wgUser->getEffectiveGroups() );
 		return count( $intersection ) > 0 ? $then : $else;
 	}
-
 
 	/**
 	 * Convert the urls with guids for hrefs into non-clickable text of class "unreadable"
@@ -103,7 +100,6 @@ class SimpleSecurity {
 		);
 		return true;
 	}
-
 
 	/**
 	 * Render security info if any restrictions on this title
@@ -462,5 +458,4 @@ class LoadBalancer_SimpleSecurity extends LoadBalancer {
 		}
 		return $db;
 	}
-
 }

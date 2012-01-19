@@ -22,17 +22,15 @@ if( version_compare( $wgVersion, '1.17.0' ) < 0 ) die( 'This version of SimpleSe
  * @copyright © 2007-2011 Aran Dunkley
  * @license GNU General Public Licence 2.0 or later
  */
-define( 'SIMPLESECURITY_VERSION', '5.0.4, 2011-06-29' );
+define( 'SIMPLESECURITY_VERSION', '5.1.0, 2012-01-19' );
 
 # Load the SimpleSecurity class and messages
 $dir = dirname( __FILE__ ) . '/';
 $wgExtensionMessagesFiles['SimpleSecurity'] = $dir . 'SimpleSecurity.i18n.php';
+$wgExtensionMessagesFiles['SimpleSecurityMagic'] = $dir . 'SimpleSecurity.i18n.magic.php';
 $wgAutoloadClasses['SimpleSecurity'] = $dir . 'SimpleSecurity_body.php';
 
 # Global security settings
-# TODO: Localize magic words
-$wgSecurityMagicIf              = "ifusercan";                  # the name for doing a permission-based conditional
-$wgSecurityMagicGroup           = "ifgroup";                    # the name for doing a group-based conditional
 $wgSecurityLogActions           = array( 'edit', 'download' );  # Actions that should be logged
 $wgSecurityAllowUser            = false;                        # Allow restrictions based on user not just group
 $wgSecurityAllowUnreadableLinks = false;                        # Should links to unreadable pages be allowed? (MW1.7+)
@@ -58,7 +56,6 @@ $wgSecurityProtectRecords = true;
 # Don't use the DB hook by default since it's voodoo
 if( !isset( $wgSecurityUseDBHook ) ) $wgSecurityUseDBHook = false;
 
-$wgHooks['LanguageGetMagic'][] = 'wfSimpleSecurityLanguageGetMagic';
 $wgExtensionCredits['parserhook'][] = array(
 	'path'        => __FILE__,
 	'name'        => "SimpleSecurity",
@@ -74,16 +71,6 @@ $wgSimpleSecurity = new SimpleSecurity();
 
 # If using the DBHook, apply it now (must be done from the root scope since it creates classes)
 if( $wgSecurityUseDBHook ) SimpleSecurity::applyDatabaseHook();
-
-/**
- * Register magic words
- */
-function wfSimpleSecurityLanguageGetMagic( &$magicWords, $langCode = 0 ) {
-	global $wgSecurityMagicIf, $wgSecurityMagicGroup;
-	$magicWords[$wgSecurityMagicIf]    = array( $langCode, $wgSecurityMagicIf );
-	$magicWords[$wgSecurityMagicGroup] = array( $langCode, $wgSecurityMagicGroup );
-	return true;
-}
 
 function wfSimpleSecurityMessagesPreLoad( $title, &$text ) {
 	global $wgSecurityExtraActions, $wgSecurityExtraGroups;

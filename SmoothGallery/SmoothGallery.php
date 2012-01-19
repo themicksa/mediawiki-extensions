@@ -35,7 +35,7 @@ if ( !defined( 'MEDIAWIKI' ) )
 $wgExtensionCredits['other'][] = array(
 	'path'           => __FILE__,
 	'name'           => 'SmoothGallery parser extension',
-	'version'        => '1.1h',
+	'version'        => '1.1i',
 	'author'         => 'Ryan Lane',
 	'descriptionmsg' => 'smoothgallery-desc',
 	'url'            => 'https://www.mediawiki.org/wiki/Extension:SmoothGallery',
@@ -47,11 +47,7 @@ $wgHooks['OutputPageParserOutput'][] = 'smoothGalleryParserOutput';
 
 $dir = dirname( __FILE__ ) . '/';
 $wgExtensionMessagesFiles['SmoothGallery'] = $dir . 'SmoothGallery.i18n.php';
-if( version_compare( $wgVersion, '1.16alpha', '>=' ) ) {
-	$wgExtensionMessagesFiles['SmoothGalleryMagic'] = $dir . 'SmoothGallery.i18n.magic.php';
-} else {
-	$wgHooks['LanguageGetMagic'][] = 'smoothGalleryLanguageGetMagic';
-}
+$wgExtensionMessagesFiles['SmoothGalleryMagic'] = $dir . 'SmoothGallery.i18n.magic.php';
 $wgAutoloadClasses['SmoothGallery'] = $dir . 'SmoothGalleryClass.php';
 $wgAutoloadClasses['SmoothGalleryParser'] = $dir . 'SmoothGalleryParser.php';
 
@@ -148,14 +144,5 @@ function smoothGalleryParserOutput( $outputPage, $parserOutput )  {
 	if ( !empty( $parserOutput->mSmoothGallerySetTag ) ) {
 		SmoothGallery::setGallerySetHeaders( $outputPage );
 	}
-	return true;
-}
-
-/**
- * We ignore langCode - parser function names can be translated but
- * we are not using this feature
- */
-function smoothGalleryLanguageGetMagic( $magicWords, $langCode ) {
-	$magicWords['sgallery']  = array( 0, 'sgallery' );
 	return true;
 }

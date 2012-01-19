@@ -1,7 +1,6 @@
 <?php
 
 class SmoothGalleryParser {
-
 	var $set;
 	var $argumentArray;
 	var $galleriesArray;
@@ -287,5 +286,4 @@ class SmoothGalleryParser {
 
 		return $images;
 	}
-
 }
