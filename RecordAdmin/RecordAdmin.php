@@ -10,17 +10,16 @@ if( !defined( 'MEDIAWIKI' ) ) die( 'Not an entry point.' );
  * @author Siebrand Mazeland
  * @licence GNU General Public Licence 2.0 or later
  */
-define( 'RECORDADMIN_VERSION', '1.3.5, 2011-09-29' );
+define( 'RECORDADMIN_VERSION', '1.4.0, 2012-01-19' );
 
 $wgRecordAdminExtPath = preg_replace( "|^.*(/extensions/.*$)|", "$wgScriptPath$1", dirname( __FILE__ ) );
 
 $dir = dirname( __FILE__ ) . '/';
 $wgExtensionMessagesFiles['RecordAdmin'] = $dir . 'RecordAdmin.i18n.php';
 $wgExtensionMessagesFiles['RecordAdminAlias']  = $dir . 'RecordAdmin.alias.php';
-$wgAutoloadClasses['RecordAdmin']        = $dir . 'RecordAdmin_body.php';
+$wgExtensionMessagesFiles['RecordAdminMagic'] = $dir . 'RecordAdmin.i18n.magic.php';
+$wgAutoloadClasses['RecordAdmin'] = $dir . 'RecordAdmin_body.php';
 
-$wgRecordAdminTableMagic = 'recordtable';
-$wgRecordAdminDataMagic  = 'recorddata';
 $wgRecordAdminTag        = 'recordid';
 
 $wgGroupPermissions['sysop']['recordadmin'] = true;
@@ -48,12 +47,4 @@ function wfSetupRecordAdmin() {
 	);
 
 	$wgRecordAdmin = new RecordAdmin();
-}
-
-$wgHooks['LanguageGetMagic'][] = 'wfRecordAdminLanguageGetMagic';
-function wfRecordAdminLanguageGetMagic( &$magicWords, $langCode = 0 ) {
-	global $wgRecordAdminTableMagic, $wgRecordAdminDataMagic;
-	$magicWords[$wgRecordAdminTableMagic] = array( $langCode, $wgRecordAdminTableMagic );
-	$magicWords[$wgRecordAdminDataMagic]  = array( $langCode, $wgRecordAdminDataMagic );
-	return true;
 }

@@ -5,7 +5,7 @@
 
 $magicWords = array();
 
-/** English (English) */
 $magicWords['en'] = array(
-	'translationdialog' => array( 0, 'translationdialog' ),
+	'recorddata' => array( 0, 'recorddata' ),
+	'recordtable' => array( 0, 'recordtable' ),
 );

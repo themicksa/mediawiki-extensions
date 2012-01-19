@@ -1,14 +1,6 @@
 <?php
-if ( !defined( 'MEDIAWIKI' ) ) {
-	echo <<<EOT
-To install the Pure Wiki Deletion extension, put the following line in LocalSettings.php:
-require_once( "\$IP/extensions/PureWikiDeletion/PureWikiDeletion.php" );
-EOT;
-	exit( 1 );
-}
 
 class PureWikiDeletionHooks {
-
 	/**
 	 * When a user visits the URL of a blanked page, redirect to the edit page
 	 */
@@ -232,17 +224,6 @@ class PureWikiDeletionHooks {
 		# Set a function hook associating the "example" magic word with our function
 		$parser->setFunctionHook( 'ifnotblank', 'PureWikiDeletionHooks::efPureWikiDeletionParserFunction_RenderNotBlank' );
 		$parser->setFunctionHook( 'ifblank', 'PureWikiDeletionHooks::efPureWikiDeletionParserFunction_RenderBlank' );
-		return true;
-	}
-
-	public static function efPureWikiDeletionParserFunction_Magic( &$magicWords, $langCode ) {
-		# Add the magic word
-		# The first array element is whether to be case sensitive, in this case (0) it is not case
-		# sensitive, 1 would be sensitive. All remaining elements are synonyms for our parser
-		# function
-		$magicWords['ifnotblank'] = array( 0, 'ifnotblank' );
-		$magicWords['ifblank'] = array( 0, 'ifblank' );
-		# unless we return true, other parser functions extensions won't get loaded.
 		return true;
 	}
 

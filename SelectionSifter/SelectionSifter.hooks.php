@@ -8,12 +8,7 @@
  * @licence Modified BSD License
  */
 
-if ( !defined( 'MEDIAWIKI' ) ) {
-	exit( 1 );
-}
-
 class SelectionSifterHooks {
-
 	private static function updateDatabase( $title, $assessments, $timestamp ) {
 		$main_title = Title::makeTitle( NS_MAIN, $title->getText() );
 		$ratings = Rating::forTitle( $main_title );

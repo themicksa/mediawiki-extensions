@@ -31,18 +31,10 @@ $wgExtensionCredits['parserhook'][] = array(
 
 $dir = dirname( __FILE__ );
 $wgExtensionMessagesFiles['SNMPquery'] = $dir . '/SNMPquery.i18n.php';
+$wgExtensionMessagesFiles['SNMPqueryMagic'] = $dir . '/SNMPquery.i18n.magic.php';
 
 # Define a setup function
 $wgHooks['ParserFirstCallInit'][] = 'SNMP_Setup';
-
-# Add a hook to initialise the magic word
-$wgHooks['LanguageGetMagic'][] = 'SNMP_Magic';
-
-function SNMP_Magic( &$magicWords, $langCode ) {
-	$magicWords['snmpget'] = array( 0, 'snmpget' );
-	$magicWords['snmpwalk'] = array( 0, 'snmpwalk' );
-	return true;
-}
 
 function SNMP_Setup() {
 	global $wgParser;

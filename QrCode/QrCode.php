@@ -22,7 +22,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 $wgExtensionCredits['parserhook'][] = array(
 	'path' => __FILE__,
 	'name' => 'QrCode',
-	'version' => '0.11',
+	'version' => '0.12',
 	'author' => array( 'David Raison' ), 
 	'url' => 'https://www.mediawiki.org/wiki/Extension:QrCode',
 	'descriptionmsg' => 'qrcode-desc'
@@ -30,18 +30,13 @@ $wgExtensionCredits['parserhook'][] = array(
 
 $wgAutoloadClasses['QRcode'] = dirname(__FILE__) . '/phpqrcode/qrlib.php';
 $wgExtensionMessagesFiles['QrCode'] = dirname(__FILE__) .'/QrCode.i18n.php';
+$wgExtensionMessagesFiles['QrCodeMagic'] = dirname(__FILE__) .'/QrCode.i18n.magic.php';
 
-$wgHooks['LanguageGetMagic'][] = 'wfQrCodeLanguageGetMagic';
 $wgHooks['ParserFirstCallInit'][] = 'efQrcodeRegisterFunction';
 $wgJobClasses['uploadQrCode'] = 'UploadQrCodeJob';
 
 function efQrcodeRegisterFunction( Parser &$parser ) {
 	$parser->setFunctionHook( 'qrcode', 'newQrCode' );
-	return true;
-}
-
-function wfQrCodeLanguageGetMagic( &$magicWords, $langCode = 'en' ) {
-	$magicWords['qrcode'] = array( 0, 'qrcode' );
 	return true;
 }
 
@@ -61,7 +56,6 @@ $wgReservedUsernames[] = QRCODEBOT;	// Unless we removed the var from his influe
  * to OOP patterns.
  */
 function newQrCode() {
-
 	$params = func_get_args();
 	$parser = array_shift($params);	// we'll need the parser later
 
@@ -79,13 +73,14 @@ function newQrCode() {
 	$newQrCode = new MWQrCode( $parser, $ecc, $size, $margin, $scheme );
 	return $newQrCode->showCode( $label );
 }
-	
+
+// @todo FIXME: Move classes out of the init file.
+
 /**
  * Class that handles QrCode generation and MW file handling.
  *
  */
 class MWQrCode {
-
 	/**
 	 * @var Parser
 	 */
@@ -123,7 +118,6 @@ class MWQrCode {
 	 * first generate then publish it.
 	 */
 	public function showCode( $label = false ){
-
 		// Check for a provided label and use the page URL as default (but force protocol if requested)
 		if ( $label ) {
 			$this->_label = $label;	// should we sanitize this?
@@ -189,8 +183,6 @@ class MWQrCode {
 }
 
 class UploadQrCodeJob extends Job {
-
-
 	public function __construct( $title, $params, $id = 0 ) {
 		wfDebug("QrCodeDebug::Creating Job\n");
 		$this->_dstFileName = $params['dstName'];
@@ -233,7 +225,6 @@ class UploadQrCodeJob extends Job {
 	 * @note there doesn't seem to be a decent method for checking if a user already exists
 	 * */
 	private function _getBot(){
-
 		$bot = User::createNew( QRCODEBOT );
 		if( $bot != null ){
 			wfDebug( 'QrCode::_getBot: Created new user '.QRCODEBOT."\n" );

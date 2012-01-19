@@ -54,6 +54,7 @@ $wgExtensionCredits['other'][] = array(
 $egRatingsScriptPath = $wgExtensionAssetsPath === false ? $wgScriptPath . '/extensions/Ratings' : $wgExtensionAssetsPath . '/Ratings';
 
 $wgExtensionMessagesFiles['Ratings'] = dirname( __FILE__ ) . '/Ratings.i18n.php';
+$wgExtensionMessagesFiles['RatingsMagic'] = dirname( __FILE__ ) . '/Ratings.i18n.magic.php';
 
 $wgAutoloadClasses['ApiDoRating'] = dirname( __FILE__ ) . '/api/ApiDoRating.php';
 $wgAutoloadClasses['ApiQueryRatings'] = dirname( __FILE__ ) . '/api/ApiQueryRatings.php';
@@ -64,17 +65,14 @@ $wgAPIListModules['ratings'] = 'ApiQueryRatings';
 $wgAutoloadClasses['RatingsStars'] = dirname( __FILE__ ) . '/starrating/RatingsStars.php';
 
 $wgHooks['ParserFirstCallInit'][] = 'RatingsStars::staticInit';
-$wgHooks['LanguageGetMagic'][] = 'RatingsStars::staticMagic';
 
 $wgAutoloadClasses['RatingsAllRating'] = dirname( __FILE__ ) . '/allrating/RatingsAllRating.php';
 
 $wgHooks['ParserFirstCallInit'][] = 'RatingsAllRating::staticInit';
-$wgHooks['LanguageGetMagic'][] = 'RatingsAllRating::staticMagic';
 
 $wgAutoloadClasses['RatingsVoteSummary'] = dirname( __FILE__ ) . '/votesummary/RatingsVoteSummary.php';
 
 $wgHooks['ParserFirstCallInit'][] = 'RatingsVoteSummary::staticInit';
-$wgHooks['LanguageGetMagic'][] = 'RatingsVoteSummary::staticMagic';
 
 $wgAutoloadClasses['Ratings'] = dirname( __FILE__ ) . '/Ratings.class.php';
 $wgAutoloadClasses['RatingsHooks'] = dirname( __FILE__ ) . '/Ratings.hooks.php';

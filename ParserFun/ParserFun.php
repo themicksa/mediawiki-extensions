@@ -53,7 +53,6 @@ $wgExtensionMessagesFiles['ParserFunMagic'] = ExtParserFun::getDir() . '/ParserF
 
 $wgHooks['ParserFirstCallInit'   ][] = 'ExtParserFun::init';
 
-
 // for magic word 'THISPAGENAME':
 $wgHooks['MagicWordwgVariableIDs'      ][] = 'ExtParserFun::onMagicWordwgVariableIDs';
 $wgHooks['ParserGetVariableValueSwitch'][] = 'ExtParserFun::onParserGetVariableValueSwitch';
@@ -65,11 +64,7 @@ $wgAutoloadClasses['ParserFunParse' ] = ExtParserFun::getDir() . '/includes/PFun
 $wgAutoloadClasses['ParserFunCaller'] = ExtParserFun::getDir() . '/includes/PFun_Caller.php';
 
 $wgHooks['ParserFirstCallInit'][] = 'ParserFunParse::staticInit';
-$wgHooks['LanguageGetMagic'   ][] = 'ParserFunParse::staticMagic';
-
 $wgHooks['ParserFirstCallInit'][] = 'ParserFunCaller::staticInit';
-$wgHooks['LanguageGetMagic'   ][] = 'ParserFunCaller::staticMagic';
-
 
 /**
  * Extension class of the 'Parser Fun' extension.
@@ -83,15 +78,12 @@ class ExtParserFun {
 	 * 
 	 * @var string
 	 */
-	const VERSION = '0.2';
-	
-	const MAG_THIS = 'this';
-	const MAG_CALLER = 'caller';
-	
-	static function init( Parser &$parser ) {				
-		if( self::isEnabledFunction( self::MAG_THIS ) ) {
+	const VERSION = '0.3';
+
+	static function init( Parser &$parser ) {
+		if( self::isEnabledFunction( 'this' ) ) {
 			// only register function if not disabled by configuration
-			$parser->setFunctionHook( self::MAG_THIS, array( 'ParserFunThis', 'pfObj_this' ), SFH_NO_HASH | SFH_OBJECT_ARGS );
+			$parser->setFunctionHook( 'this', array( 'ParserFunThis', 'pfObj_this' ), SFH_NO_HASH | SFH_OBJECT_ARGS );
 		}
 		return true;
 	}
@@ -136,12 +128,12 @@ class ExtParserFun {
 		}
 		switch( $magicWordId ) {
 			/** THIS **/
-			case self::MAG_THIS:
+			case 'this':
 				$ret = ParserFunThis::pfObj_this( $parser, $frame, null );
 				break;
 			
 			/** CALLER **/
-			case self::MAG_CALLER:
+			case 'caller':
 				$ret = ParserFunCaller::getCallerVar( $frame );
 				break;
 		}
@@ -150,11 +142,11 @@ class ExtParserFun {
 	
 	static function onMagicWordwgVariableIDs( &$variableIds ) {		
 		// only register variables if not disabled by configuration
-		if( self::isEnabledFunction( self::MAG_THIS ) ) {
-			$variableIds[] = self::MAG_THIS;
+		if( self::isEnabledFunction( 'this' ) ) {
+			$variableIds[] = 'this';
 		}
-		if( self::isEnabledFunction( self::MAG_CALLER ) ) {
-			$variableIds[] = self::MAG_CALLER;
+		if( self::isEnabledFunction( 'caller' ) ) {
+			$variableIds[] = 'caller';
 		}
 		return true;
 	}

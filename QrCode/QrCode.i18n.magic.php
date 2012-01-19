@@ -5,7 +5,6 @@
 
 $magicWords = array();
 
-/** English (English) */
 $magicWords['en'] = array(
-	'translationdialog' => array( 0, 'translationdialog' ),
+	'qrcode' => array( 0, 'qrcode' ),
 );

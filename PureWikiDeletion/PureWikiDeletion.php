@@ -31,7 +31,7 @@ $wgExtensionCredits['specialpage'][] = array(
 	'author' => 'Tisane',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:PureWikiDeletion',
 	'descriptionmsg' => 'purewikideletion-desc',
-	'version' => '1.0.5',
+	'version' => '1.1.0',
 );
  
 $dir = dirname( __FILE__ ) . '/';
@@ -44,6 +44,7 @@ $wgAutoloadClasses['AllPagesExcludeBlank'] = "$dir/SpecialPureWikiDeletion.php";
 $wgAutoloadClasses['PopulateBlankedPagesTable'] = "$dir/SpecialPureWikiDeletion.php";
 $wgExtensionMessagesFiles['PureWikiDeletion'] = $dir . 'PureWikiDeletion.i18n.php';
 $wgExtensionMessagesFiles['PureWikiDeletionAlias'] = $dir . 'PureWikiDeletion.alias.php';
+$wgExtensionMessagesFiles['PureWikiDeletionMagic'] = $dir . 'PureWikiDeletion.i18n.magic.php';
 
 $wgHooks['LoadExtensionSchemaUpdates'][] = 'PureWikiDeletionHooks::PureWikiDeletionCreateTable';
 $wgHooks['ArticleSaveComplete'][] = 'PureWikiDeletionHooks::PureWikiDeletionSaveCompleteHook';
@@ -54,7 +55,6 @@ $wgHooks['ArticleDeleteComplete'][] = 'PureWikiDeletionHooks::PureWikiDeletionDe
 $wgHooks['ArticleUndelete'][] = 'PureWikiDeletionHooks::PureWikiDeletionUndeleteHook';
 $wgHooks['GetPreferences'][] = 'PureWikiDeletionGetPreferences';
 $wgHooks['ParserFirstCallInit'][] = 'PureWikiDeletionHooks::efPureWikiDeletionParserFunction_Setup';
-$wgHooks['LanguageGetMagic'][]       = 'PureWikiDeletionHooks::efPureWikiDeletionParserFunction_Magic';
 $wgHooks['AlternateEdit'][] = 'PureWikiDeletionAlternateEditHook';
 $wgHooks['OutputPageParserOutput'][] = 'PureWikiDeletionHooks::PureWikiDeletionOutputPageParserOutputHook';
 

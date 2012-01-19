@@ -1,26 +1,14 @@
 <?php
-if ( !defined( 'MEDIAWIKI' ) ) {
-	exit( 1 );
-}
 
 /**
  * @todo Document overall purpose of this class.
  */
 class TableDisplay {
-
 	/**
 	 * Register our parser functions
 	 */
 	public static function ParserFunctionInit( &$parser ) {
 		$parser->setFunctionHook( 'AssessmentStats', 'TableDisplay::AssessmentStatsRender' );
-		return true;
-	}
-
-	/**
-	 * Register new magic words.
-	 */
-	public static function LanguageGetMagic( &$magicWords, $langCode ) {
-		$magicWords['AssessmentStats'] = array( 0, 'AssessmentStats' );
 		return true;
 	}
 

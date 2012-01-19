@@ -5,7 +5,7 @@
 
 $magicWords = array();
 
-/** English (English) */
 $magicWords['en'] = array(
-	'translationdialog' => array( 0, 'translationdialog' ),
+	'snmpget' => array( 0, 'snmpget' ),
+	'snmpwalk' => array( 0, 'snmpwalk' ),
 );

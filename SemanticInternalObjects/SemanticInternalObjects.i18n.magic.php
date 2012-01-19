@@ -8,6 +8,7 @@ $magicWords = array();
 /** English (English) */
 $magicWords['en'] = array(
 	'set_internal' => array( 0, 'set_internal' ),
+	'set_internal_recurring_event' => array( 0, 'set_internal_recurring_event' ),
 );
 
 /** Arabic (العربية) */

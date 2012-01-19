@@ -29,6 +29,7 @@ $dir = dirname( __FILE__ ) . '/';
 
 $wgExtensionMessagesFiles['SelectionSifter'] = $dir . 'SelectionSifter.i18n.php';
 $wgExtensionMessagesFiles['SelectionSifterAlias'] = $dir . 'SelectionSifter.alias.php';
+$wgExtensionMessagesFiles['SelectionSifterMagic'] = $dir . 'SelectionSifter.i18n.magic.php';
 
 $wgAutoloadClasses['SelectionSifterHooks'] = $dir . 'SelectionSifter.hooks.php';
 $wgAutoloadClasses['Statistics'] = $dir . 'models/Statistics.php';
@@ -48,7 +49,6 @@ $wgHooks['ArticleSaveComplete'][] = 'SelectionSifterHooks::ArticleSaveComplete';
 $wgHooks['LoadExtensionSchemaUpdates'][] = 'SelectionSifterHooks::SetupSchema';
 
 $wgHooks['ParserFirstCallInit'][] = 'TableDisplay::ParserFunctionInit';
-$wgHooks['LanguageGetMagic'][] = 'TableDisplay::LanguageGetMagic';
 
 $wgHooks['TitleMoveComplete'][] = 'SelectionSifterHooks::TitleMoveComplete';
 

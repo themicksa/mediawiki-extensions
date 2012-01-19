@@ -19,14 +19,6 @@ class ParserFunCaller extends ParserHook {
 	
 	/**
 	 * No LSB in pre-5.3 PHP, to be refactored later
-	 */
-	public static function staticMagic( array &$magicWords, $langCode ) {
-		$instance = new self;
-		return $instance->magic( $magicWords, $langCode );
-	}
-	
-	/**
-	 * No LSB in pre-5.3 PHP, to be refactored later
 	 */	
 	public static function staticInit( Parser &$parser ) {
 		global $egParserFunEnabledFunctions;

@@ -1,6 +1,6 @@
 <?php
-class RecordAdmin {
 
+class RecordAdmin {
 	var $form        = '';
 	var $formClass   = '';
 	var $formAtts    = '';
@@ -16,7 +16,7 @@ class RecordAdmin {
 
 	function __construct() {
 		global $wgHooks, $wgParser, $wgRequest, $wgRecordAdminTag, $wgRecordAdminCategory,
-			$wgRecordAdminTag, $wgRecordAdminTableMagic, $wgRecordAdminDataMagic;
+			$wgRecordAdminTag;
 
 		# Name to use for creating a new record either via RecordAdmin or a public form
 		$this->guid();
@@ -25,8 +25,8 @@ class RecordAdmin {
 		$wgParser->setHook( $wgRecordAdminTag, array( $this, 'expandTag' ) );
 
 		# Add the parser-functions
-		$wgParser->setFunctionHook( $wgRecordAdminTableMagic, array( $this, 'expandTableMagic' ) );
-		$wgParser->setFunctionHook( $wgRecordAdminDataMagic,  array( $this, 'expandDataMagic'  ) );
+		$wgParser->setFunctionHook( 'recordtable', array( $this, 'expandTableMagic' ) );
+		$wgParser->setFunctionHook( 'recorddata',  array( $this, 'expandDataMagic'  ) );
 
 		# Add the hooks to handle cache invalidation and edit-forms
 		$wgHooks['BeforePageDisplay'][] = $this;
@@ -926,7 +926,6 @@ class RecordAdmin {
 		}
 	}
 
-
 	/**
 	 * Render a record search in a parser-function
 	 */
@@ -979,7 +978,6 @@ class RecordAdmin {
 		return array( $table, 'noparse' => true, 'isHTML' => true );
 	}
 
-
 	/**
 	 * Obtain a record or record field value from passed parameters
 	 */
@@ -995,7 +993,6 @@ class RecordAdmin {
 		return self::getFieldValue( $args );
 	}
 
-
 	/**
 	 * If a record was created by a public form, make last 5 digits of ID available via a tag
 	 */
@@ -1004,14 +1001,12 @@ class RecordAdmin {
 		return $this->guid ? substr( $this->guid, -5 ) : '';
 	}
 
-
 	/**
 	 * Generate a guid - check $wgRecordAdminGuidFormat array for specialised formats
 	 */
 	function guid() {
 		return $this->guid = strftime( '%Y%m%d', time() ) . '-' . substr( strtoupper( uniqid('', true) ), -5 );
 	}
-
 
 	/**
 	 * Create DB table for caching queries
@@ -1025,5 +1020,4 @@ class RecordAdmin {
 			$dbw->freeResult( $result );
 		}
 	}
-
 }

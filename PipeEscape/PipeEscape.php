@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * @ingroup Extensions
@@ -35,8 +34,8 @@ $wgExtensionCredits[ 'parserhook' ][] = array(
 );
 
 $dir = dirname(__FILE__) . DIRECTORY_SEPARATOR;
-$wgExtensionMessagesFiles['Pipe Escape'] = $dir . 'PipeEscape.i18n.php';
-$wgHooks[ 'LanguageGetMagic' ][]  = 'ExtPipeEsc::languageGetMagic';
+$wgExtensionMessagesFiles['PipeEscape'] = $dir . 'PipeEscape.i18n.php';
+$wgExtensionMessagesFiles['PipeEscapeMagic'] = $dir . 'PipeEscape.i18n.magic.php';
 
 class ExtPipeEsc
 {
@@ -49,12 +48,6 @@ class ExtPipeEsc
 		foreach( self::$parserFunctions as $hook => $function )
 			$parser->setFunctionHook( $hook,
 				array( __CLASS__, $function ), SFH_OBJECT_ARGS );
-		return true;
-	}
-
-	public static function languageGetMagic( &$magicWords, $langCode )
-	{
-		$magicWords[ '!' ] = array( 0, '!' );
 		return true;
 	}
 
@@ -78,4 +71,3 @@ class ExtPipeEsc
 		return trim( $output );
 	}
 }
-

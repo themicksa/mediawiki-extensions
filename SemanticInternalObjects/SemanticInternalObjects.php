@@ -21,7 +21,6 @@ $wgExtensionCredits[defined( 'SEMANTIC_EXTENSION_TYPE' ) ? 'semantic' : 'parserh
 );
 
 $wgHooks['ParserFirstCallInit'][] = 'siofRegisterParserFunctions';
-$wgHooks['LanguageGetMagic'][] = 'siofLanguageGetMagic';
 $wgHooks['ParserClearState'][] = 'SIOHandler::clearState';
 $wgHooks['SMWSQLStore2::updateDataAfter'][] = 'SIOHandler::updateData';
 $wgHooks['SMWSQLStore2::deleteSubjectAfter'][] = 'SIOHandler::deleteData';
@@ -48,13 +47,4 @@ function siofRegisterParserFunctions( &$parser ) {
 	$parser->setFunctionHook( 'set_internal', array( 'SIOHandler', 'doSetInternal' ) );
 	$parser->setFunctionHook( 'set_internal_recurring_event', array( 'SIOHandler', 'doSetInternalRecurringEvent' ) );
 	return true; // always return true, in order not to stop MW's hook processing!
-}
-
-function siofLanguageGetMagic( &$magicWords, $langCode = 'en' ) {
-	switch ( $langCode ) {
-	default:
-		// Not in i18n file, so remains for now...
-		$magicWords['set_internal_recurring_event'] = array ( 0, 'set_internal_recurring_event' );
-	}
-	return true;
 }
