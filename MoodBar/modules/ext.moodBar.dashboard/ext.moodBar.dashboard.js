@@ -672,7 +672,7 @@ jQuery( document ).ready( function ( $ ) {
 			$tooltip.fadeOut( function(){
 				$tooltip.remove();
 			} );
-		}, 1500 );
+		}, 2500 );
 	}
 	
 	// On-load stuff

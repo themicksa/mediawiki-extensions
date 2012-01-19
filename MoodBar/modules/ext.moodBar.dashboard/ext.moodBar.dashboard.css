@@ -125,7 +125,7 @@
 /* Tool Tip */
 
 .fbd-tooltip-overlay-wrap {
-	width: 285px;
+	width: 296px;
 	position: absolute;
 	left: 1em;
 	top: 5.25em;
@@ -154,14 +154,15 @@
 	font-weight: bold;
 	font-size: 0.75em;
 	/* embed */
-	background: url(images/mb-icon-16x16-alert.png) left top no-repeat;
+	background: url(images/mb-icon-16x16-alert.png) 2px top no-repeat;
 	line-height: 18px;
-	padding-left: 20px;
+	padding-left: 26px;
 }
 
 .fbd-tooltip-close {
 	color: #FF9933;
 	float: right;
+	margin: 0 2px;
 }
 
 /* List */
