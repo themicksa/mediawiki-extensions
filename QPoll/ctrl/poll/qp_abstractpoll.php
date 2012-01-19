@@ -102,10 +102,8 @@ class qp_AbstractPoll {
 	 * @public
 	 */
 	function __construct( array $argv, qp_AbstractPollView $view ) {
-		global $wgLanguageCode;
 		$this->mResponse = qp_Setup::$request->response();
 		# Determine which messages will be used, according to the language.
-		qp_Setup::onLoadAllMessages();
 		$view->setController( $this );
 		# *** get visual style poll attributes ***
 		$perRow = intval( array_key_exists( 'perrow', $argv ) ? $argv['perrow'] : 1 );
@@ -289,5 +287,4 @@ class qp_AbstractPoll {
 		}
 		return $showResults;
 	}
-
-} /* end of qp_AbstractPoll class */
+}

@@ -33,10 +33,6 @@
  * @author QuestPC <questpc@rambler.ru>
  */
 
-if ( !defined( 'MEDIAWIKI' ) ) {
-	die( "This file is part of the QPoll extension. It is not a valid entry point.\n" );
-}
-
 /**
  * A special page with handy built-in Linker
  */
@@ -93,7 +89,6 @@ class qp_SpecialPage extends SpecialPage {
  * thus, it is much safer to implement a larger subset of pager itself
  */
 abstract class qp_QueryPage extends qp_SpecialPage {
-
 	var $listoutput = false;
 
 	public function __construct() {

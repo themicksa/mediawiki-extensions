@@ -11,6 +11,8 @@ $specialPageAliases = array();
 /** English (English) */
 $specialPageAliases['en'] = array(
 	'PollResults' => array( 'PollResults' ),
+	'QPollWebInstall' => array( 'QPollWebInstall' ),
+	
 );
 
 /** Arabic (العربية) */

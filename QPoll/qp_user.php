@@ -336,8 +336,9 @@ class qp_Setup {
 		$wgExtensionMessagesFiles['QPoll'] = self::$ExtDir . '/i18n/qp.i18n.php';
 		# localized namespace names
 		$wgExtensionMessagesFiles['QPollNamespaces'] = self::$ExtDir . '/i18n/qp.namespaces.php';
-		# localized special page titles
+		# localized special page titles and magic words.
 		$wgExtensionMessagesFiles['QPollAlias'] = self::$ExtDir . '/i18n/qp.alias.php';
+		$wgExtensionMessagesFiles['QPollMagic'] = self::$ExtDir . '/i18n/QPoll.i18n.magic.php';
 
 		# extension setup, hooks handling and content transformation
 		self::autoLoad( array(
@@ -419,15 +420,11 @@ class qp_Setup {
 			'interpretation/qp_eval.php' => 'qp_Eval'
 		) );
 
-		# TODO: Use the new technique for i18n of special page aliases
 		$wgSpecialPages['PollResults'] = 'PollResults';
 		$wgSpecialPages['QPollWebInstall'] = 'qp_WebInstall';
-		# TODO: Use the new technique for i18n of magic words
 		# instantiating fake instance for PHP < 5.2.3, which does not support 'Class::method' type of callbacks
-		$wgHooks['LanguageGetMagic'][] =
 		$wgHooks['MediaWikiPerformAction'][] =
 		$wgHooks['ParserFirstCallInit'][] =
-		$wgHooks['LoadAllMessages'][] =
 		$wgHooks['ParserAfterTidy'][] =
 		$wgHooks['CanonicalNamespaces'][] = new qp_Setup;
 		$wgHooks['LoadExtensionSchemaUpdates'][] = new qp_SchemaUpdater;
@@ -528,35 +525,6 @@ class qp_Setup {
 			$attr_vals[$attr_name] = ( count( $match ) > 1 ) ? array_pop( $match ) : null;
 		}
 		return $attr_vals;
-	}
-
-	static function onLoadAllMessages() {
-		if ( !self::$messagesLoaded ) {
-			self::$messagesLoaded = true;
-			# for MW 1.15 which is still being used by many customers
-			# please do not remove until 2012
-			if ( self::mediaWikiVersionCompare( '1.16' ) ) {
-				wfLoadExtensionMessages( 'QPoll' );
-			}
-		}
-		return true;
-	}
-
-	static function ParserFunctionsWords( $lang ) {
-		$words = array();
-		$words[ 'en' ] = array( 'qpuserchoice' => array( 0, 'qpuserchoice' ) );
-		# English is used as a fallback, and the English synonyms are
-		# used if a translation has not been provided for a given word
-		return ( $lang == 'en' || !array_key_exists( $lang, $words ) )
-			? $words[ 'en' ]
-			: array_merge( $words[ 'en' ], $words[ $lang ] );
-	}
-
-	static function onLanguageGetMagic( &$magicWords, $langCode ) {
-		foreach ( self::ParserFunctionsWords( $langCode ) as $word => $trans ) {
-			$magicWords[$word] = $trans;
-		}
-		return true;
 	}
 
 	static function clearCache() {

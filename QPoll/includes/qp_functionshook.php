@@ -33,10 +33,6 @@
  * @author QuestPC <questpc@rambler.ru>
  */
 
-if ( !defined( 'MEDIAWIKI' ) ) {
-	die( "This file is part of the QPoll extension. It is not a valid entry point.\n" );
-}
-
 class qp_FunctionsHook {
 
 	var $frame;
@@ -51,7 +47,6 @@ class qp_FunctionsHook {
 	var $error_message = 'no_such_poll';
 
 	function qpuserchoice( Parser &$parser, PPFrame $frame, array $args ) {
-		qp_Setup::onLoadAllMessages();
 		$this->frame = $frame;
 		$this->args = &$args;
 		if ( isset( $args[ 0 ] ) ) {
@@ -138,4 +133,4 @@ class qp_FunctionsHook {
 		return $result;
 	}
 
-} /* end of qp_FunctionsHook class */
+}

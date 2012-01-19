@@ -33,19 +33,9 @@
  * @author QuestPC <questpc@rambler.ru>
  */
 
-if ( !defined( 'MEDIAWIKI' ) ) {
-	die( "This file is part of the QPoll extension. It is not a valid entry point.\n" );
-}
-
 class PollResults extends qp_SpecialPage {
-
 	public function __construct() {
 		parent::__construct( 'PollResults', 'read' );
-		# for MW 1.15 (still being used by many customers)
-		# please do not remove until 2012
-		if ( qp_Setup::mediaWikiVersionCompare( '1.16' ) ) {
-			wfLoadExtensionMessages( 'QPoll' );
-		}
 	}
 
 	static $accessPermissions = array( 'read', 'pollresults' );
