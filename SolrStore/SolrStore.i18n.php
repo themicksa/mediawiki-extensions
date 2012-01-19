@@ -11,6 +11,7 @@ $messages = array();
 $messages['en'] = array(
 	'solrstore-desc' => 'Search semantic properties with the power of a fulltext search engine',
 	'solrsearch' => 'SolrSearch',
+        'solrstore-error' => 'Error: Please Check your Query',
 	'solrstore-searchFieldSets' => 'SolrSearch',
 	'solrstore-searchFieldSets-select' => 'Please select a SearchSet',
 	'solrstore-searchFieldSets-title' => 'SolrSearch: SearchSet select',
@@ -23,6 +24,7 @@ $messages['en'] = array(
 $messages['qqq'] = array(
 	'solrstore-desc' => '{{desc}}',
 	'solrsearch' => "The title of the Special:SolrSearch page as appearing in Special:SpecialPages. Should probably be the same as message ''solrstore-searchFieldSets''",
+        'solrstore-error' => 'Currently we have just One Error Message, "Error: Please Check your Query"',
 	'solrstore-searchFieldSets' => 'The pagetitle (heading) of the Special:SolrSearch page',
 	'solrstore-searchFieldSets-select' => 'A SearchSet is a predefined search form for a field based search.',
 	'solrstore-searchFieldSets-title' => 'The title of the Special:SolrSearch page. A SearchSet is a predefined search form for a field based search.',
@@ -43,10 +45,12 @@ $messages['be-tarask'] = array(
 
 /** German (Deutsch)
  * @author Kghbln
+ * @author SBachenberg
  */
 $messages['de'] = array(
 	'solrstore-desc' => 'Ermöglicht die Suche nach semantischen Attributen mit einer Volltextsuchmaschine',
 	'solrsearch' => 'SolrSuche',
+        'solrstore-error' => 'Fehler: Bitte überprüfen Sie ihre Suchanfrage',
 	'solrstore-searchFieldSets' => 'SolrSuche',
 	'solrstore-searchFieldSets-select' => 'Bitte wähle ein SearchSet aus',
 	'solrstore-searchFieldSets-title' => 'SolrSearch: SearchSet Auswahl',
