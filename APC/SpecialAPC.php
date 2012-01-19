@@ -53,7 +53,7 @@ class SpecialAPC extends SpecialPage {
 	}
 
 	public function execute( $parameters ) {
-		global $wgOut, $wgScriptPath, $wgStyleVersion, $wgUser;
+		global $wgOut, $wgUser;
 
 		$this->setHeaders();
 		$this->setup();
