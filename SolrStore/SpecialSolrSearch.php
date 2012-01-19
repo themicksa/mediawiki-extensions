@@ -236,8 +236,7 @@ class SpecialSolrSearch extends SpecialPage {
 		if ( $num || $this->offset ) {
 			// Show the create link ahead
 			$this->showCreateLink ( $t );
-			$prevnext = wfViewPrevNext ( $this->offset, $this->limit, SpecialPage::getTitleFor ( 'SolrSearch' ), wfArrayToCGI ( array ( 'solrsearch' => $query ) ), max ( $titleMatchesNum, $textMatchesNum ) < $this->limit
-			);
+			$prevnext = wfViewPrevNext ( $this->offset, $this->limit, SpecialPage::getTitleFor ( 'SolrSearch/' . $fieldSet->{'mName'} ), wfArrayToCGI ( $fieldSet->{'mFields'} ), max ( $titleMatchesNum, $textMatchesNum ) < $this->limit );
 			//$wgOut->addHTML( "<p class='mw-search-pager-top'>{$prevnext}</p>\n" );
 			wfRunHooks ( 'SpecialSolrSearchResults', array ( $fieldSet, &$titleMatches, &$textMatches ) );
 		} else {
