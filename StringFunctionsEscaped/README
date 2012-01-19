@@ -3,7 +3,7 @@
 |status        = stable
 |type1         = parser function
 |type2         =
-|hook1         = LanguageGetMagic
+|hook1         = 
 |hook2         =
 |username      = jpond
 |author        = Jack D. Pond
