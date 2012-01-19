@@ -233,12 +233,6 @@ function mvSetupExtension() {
 			$wgAutoloadClasses['mvOggHandler']			= dirname( __FILE__ )  . '/MV_OggHandler.php';
 			$wgMediaHandlers['application/ogg']='mvOggHandler';
 			$wgParserOutputHooks['OggHandler'] = array( 'mvOggHandler', 'outputHook' );
-			// @todo FIXME: LanguageGetMagic is deprecated. Need to find another solution.
-			foreach($wgHooks['LanguageGetMagic'] as & $hook_function){
-				if($hook_function=='OggHandler::registerMagicWords'){
-					$hook_function='mvOggHandler::registerMagicWords';
-				}
-			}
 			foreach($wgExtensionCredits as & $ext){
 				 if(isset($ext['name'])){
 					 if($ext['name']=='OggHandler'){
