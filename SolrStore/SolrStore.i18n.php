@@ -1,5 +1,4 @@
 <?php
-
 /**
  * SolrStore: The SolrStore Extesion is Semantic Mediawiki Searchprovieder based on Apache Solr.
  *
@@ -7,12 +6,12 @@
  * @file
  * @author Simon Bachenberg
  */
-$messages = array ( );
+$messages = array();
 
-$messages[ 'en' ] = array (
+$messages['en'] = array(
 	'solrstore-desc' => 'Search semantic properties with the power of a fulltext search engine',
 	'solrsearch' => 'SolrSearch',
-	'solrstore-error' => 'Error: Please Check your Query',
+	'solrstore-error' => 'Error: Please check your query.',
 	'solrstore-searchFieldSets' => 'SolrSearch',
 	'solrstore-searchFieldSets-select' => 'Please select a SearchSet',
 	'solrstore-searchFieldSets-title' => 'SolrSearch: SearchSet select',
@@ -22,10 +21,10 @@ $messages[ 'en' ] = array (
  * @author F.trott
  * @author Siebrand
  */
-$messages[ 'qqq' ] = array (
+$messages['qqq'] = array(
 	'solrstore-desc' => '{{desc}}',
 	'solrsearch' => "The title of the Special:SolrSearch page as appearing in Special:SpecialPages. Should probably be the same as message ''solrstore-searchFieldSets''",
-	'solrstore-error' => 'Currently we have just One Error Message, "Error: Please Check your Query"',
+        'solrstore-error' => 'Currently we have just One Error Message, "Error: Please Check your Query"',
 	'solrstore-searchFieldSets' => 'The pagetitle (heading) of the Special:SolrSearch page',
 	'solrstore-searchFieldSets-select' => 'A SearchSet is a predefined search form for a field based search.',
 	'solrstore-searchFieldSets-title' => 'The title of the Special:SolrSearch page. A SearchSet is a predefined search form for a field based search.',
@@ -36,7 +35,7 @@ $messages[ 'qqq' ] = array (
  * @author Jim-by
  * @author Wizardist
  */
-$messages[ 'be-tarask' ] = array (
+$messages['be-tarask'] = array(
 	'solrstore-desc' => 'Пошук сэмантычных уласьцівасьцяў з выкарыстаньнем рухавіка поўнатэкстнага пошуку',
 	'solrsearch' => 'SolrSearch',
 	'solrstore-searchFieldSets' => 'SolrSearch',
@@ -48,7 +47,7 @@ $messages[ 'be-tarask' ] = array (
  * @author Kghbln
  * @author SBachenberg
  */
-$messages[ 'de' ] = array (
+$messages['de'] = array(
 	'solrstore-desc' => 'Ermöglicht die Suche nach semantischen Attributen mit einer Volltextsuchmaschine',
 	'solrsearch' => 'SolrSuche',
 	'solrstore-error' => 'Fehler: Bitte überprüfen Sie ihre Suchanfrage',
@@ -60,7 +59,7 @@ $messages[ 'de' ] = array (
 /** French (Français)
  * @author Gomoko
  */
-$messages[ 'fr' ] = array (
+$messages['fr'] = array(
 	'solrstore-desc' => "Rechercher des propriétés avec la puissance d'un moteur de recherche plein texte",
 	'solrsearch' => 'SolrSearch',
 	'solrstore-searchFieldSets' => 'SolrSearch',
@@ -71,7 +70,7 @@ $messages[ 'fr' ] = array (
 /** Galician (Galego)
  * @author Toliño
  */
-$messages[ 'gl' ] = array (
+$messages['gl'] = array(
 	'solrstore-desc' => 'Procurar propiedades semánticas co poder dun motor de procuras de texto',
 	'solrsearch' => 'SolrSearch',
 	'solrstore-searchFieldSets' => 'SolrSearch',
@@ -82,7 +81,7 @@ $messages[ 'gl' ] = array (
 /** Upper Sorbian (Hornjoserbsce)
  * @author Michawiki
  */
-$messages[ 'hsb' ] = array (
+$messages['hsb'] = array(
 	'solrstore-desc' => 'Pytanje za semantiskimi atributami z połnotekstowej pytawu',
 	'solrsearch' => 'SolrSearch',
 	'solrstore-searchFieldSets' => 'SolrSearch',
@@ -93,7 +92,7 @@ $messages[ 'hsb' ] = array (
 /** Interlingua (Interlingua)
  * @author McDutchie
  */
-$messages[ 'ia' ] = array (
+$messages['ia'] = array(
 	'solrstore-desc' => 'Cercar proprietates semantic con le poter de un motor de recerca de plen texto',
 	'solrsearch' => 'SolrSearch',
 	'solrstore-searchFieldSets' => 'SolrSearch',
@@ -104,7 +103,7 @@ $messages[ 'ia' ] = array (
 /** Luxembourgish (Lëtzebuergesch)
  * @author Robby
  */
-$messages[ 'lb' ] = array (
+$messages['lb'] = array(
 	'solrsearch' => 'SolrSich',
 	'solrstore-searchFieldSets' => 'SolrSich',
 );
@@ -112,7 +111,7 @@ $messages[ 'lb' ] = array (
 /** Macedonian (Македонски)
  * @author Bjankuloski06
  */
-$messages[ 'mk' ] = array (
+$messages['mk'] = array(
 	'solrstore-desc' => 'Пребарување на семантички својства со способностите на пребарувачот на полн текст',
 	'solrsearch' => 'SolrSearch',
 	'solrstore-searchFieldSets' => 'SolrSearch',
@@ -123,7 +122,7 @@ $messages[ 'mk' ] = array (
 /** Dutch (Nederlands)
  * @author Siebrand
  */
-$messages[ 'nl' ] = array (
+$messages['nl'] = array(
 	'solrstore-desc' => 'Semantische eigenschappen doorzoeken met de kracht van een fulltext zoekmachine',
 	'solrsearch' => 'SolrSearch',
 	'solrstore-searchFieldSets' => 'SolrSearch',
@@ -135,7 +134,7 @@ $messages[ 'nl' ] = array (
  * @author Borichèt
  * @author Dragonòt
  */
-$messages[ 'pms' ] = array (
+$messages['pms'] = array(
 	'solrstore-desc' => "Arserché dle proprietà semàntiche con la potensa d'un motor d'arserca a test pien",
 	'solrsearch' => 'SolrSearch',
 	'solrstore-searchFieldSets' => 'SolrSearch',
@@ -146,7 +145,7 @@ $messages[ 'pms' ] = array (
 /** Russian (Русский)
  * @author Eleferen
  */
-$messages[ 'ru' ] = array (
+$messages['ru'] = array(
 	'solrstore-desc' => 'Семантический поиск с использованием ресурсов полнотекстовой поисковой системы',
 	'solrsearch' => 'SolrSearch',
 	'solrstore-searchFieldSets' => 'SolrSearch',
