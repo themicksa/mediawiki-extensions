@@ -16,7 +16,7 @@
 /**
  * Exit if called outside of MediaWiki
  */
- if( !defined( 'MEDIAWIKI' ) ) {
+if( !defined( 'MEDIAWIKI' ) ) {
 	echo( "This file is an extension to the MediaWiki software and cannot be used standalone.\n" );
 	die( 1 );
 }
@@ -67,7 +67,7 @@ $wgAutoloadClasses['SkinSopaStrike'] = $skinDir . 'SopaStrike.php';
 /*
  * Credits
  */
- $wgExtensionCredits['other'][] = array(
+$wgExtensionCredits['other'][] = array(
 	'name'           => 'Blackout',
 	'version'        => '1.0.20120118',
 	'author'         => array('[https://www.mediawiki.org/wiki/User:Johnduhart John Du Hart]', '[https://www.mediawiki.org/wiki/User:Varnent Gregory Varnum]', '...'),
