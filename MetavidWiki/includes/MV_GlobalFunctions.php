@@ -23,6 +23,9 @@ require_once( $mvgIP . '/languages/MV_Language.php' );
 // Register special page aliases file
 $wgExtensionMessagesFiles['MetavidWikiAlias'] = $mvgIP . '/languages/MV_Aliases.php';
 
+// Register magic words
+$wgExtensionMessagesFiles['MetavidWikiMagic'] = $mvgIP . '/languages/MV_Magic.php';
+
 $markerList = array();
 $mvGlobalJSVariables = array();
 // override special search page:
@@ -230,12 +233,6 @@ function mvSetupExtension() {
 			$wgAutoloadClasses['mvOggHandler']			= dirname( __FILE__ )  . '/MV_OggHandler.php';
 			$wgMediaHandlers['application/ogg']='mvOggHandler';
 			$wgParserOutputHooks['OggHandler'] = array( 'mvOggHandler', 'outputHook' );
-			// @todo FIXME: LanguageGetMagic is deprecated. Need to find another solution.
-			foreach($wgHooks['LanguageGetMagic'] as & $hook_function){
-				if($hook_function=='OggHandler::registerMagicWords'){
-					$hook_function='mvOggHandler::registerMagicWords';
-				}
-			}
 			foreach($wgExtensionCredits as & $ext){
 				 if(isset($ext['name'])){
 					 if($ext['name']=='OggHandler'){
@@ -266,16 +263,6 @@ function mvSetupExtension() {
 		'url' => 'http://metavid.org/wiki/MetaVidWiki_Software',
 		'descriptionmsg' => 'mv-desc',
 	);
-}
-# Define a setup function
-// @todo FIXME LanguageGetMagic is deprecated. Need to find another solution.
-# Add a hook to initialize the magic word
-$wgHooks['LanguageGetMagic'][]       = 'mvMagicParserFunction_Magic';
-
-function mvMagicParserFunction_Magic( &$magicWords, $langCode ) {
-        $magicWords['mvData'] = array( 0, 'mvData' );
-        $magicWords['mvEmbed'] = array( 0, 'mvEmbed' );
-        return true;
 }
 
 function mvMagicParserFunction_Render( &$parser ) {
