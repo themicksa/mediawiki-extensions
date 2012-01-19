@@ -28,8 +28,6 @@ if ( !$wgUseAjax ) {
 }
 
 // Hook up into MediaWiki
-//$wgExtensionFunctions[] = 'wikiTweeter';
-$wgHooks['LanguageGetMagic'][]	= 'wikiTweeterMagic';
 $wgHooks['ParserFirstCallInit'][] = 'wfWikiTweetRegisterHook';
 $wgExtensionCredits['parserhook'][] = array(
 	'path'           => __FILE__,
@@ -37,11 +35,12 @@ $wgExtensionCredits['parserhook'][] = array(
 	'author'         => 'Thomas Fauré',
 	'descriptionmsg' => 'wikitweet-desc',
 	'url'            => 'https://www.mediawiki.org/wiki/Extension:WikiTweet',
-	'version'        => '0.9.0'
+	'version'        => '0.10.0'
 );
 
 $dir = dirname(__FILE__) . '/';
 $wgExtensionMessagesFiles['WikiTweet'] = $dir . 'WikiTweet.i18n.php';
+$wgExtensionMessagesFiles['WikiTweetMagic'] = $dir . 'WikiTweet.i18n.magic.php';
 $wgAutoloadClasses['ApiQueryWikiTweet'] = "$dir/WikiTweet.api.php";
 $wgAPIListModules['wikitweet'] = 'ApiQueryWikiTweet';
 $wgAutoloadClasses['WikiTweetFunctions'] = "$dir/WikiTweet.functions.php";
@@ -49,13 +48,6 @@ $wgAutoloadClasses['WikiTweetFunctions'] = "$dir/WikiTweet.functions.php";
 function wfWikiTweetRegisterHook( $parser )
 {
 	$parser->setHook( 'wiki-tweet', 'wikiTweeterRender' );
-	return true;
-}
-
-// Sets up the magic for the parser functions
-function wikiTweeterMagic(&$magicWords, $langCode)
-{
-	$magicWords['wiki-tweet'] = array(0, 'wiki-tweet');
 	return true;
 }
 
@@ -405,4 +397,3 @@ function wikiTweeterRender($input, $args, $parser)
 	wfProfileOut('wikiTweeter::Render');
 	return $text;
 }
-?>

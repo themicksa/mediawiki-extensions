@@ -16,18 +16,9 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 $wgAutoloadClasses['UKGDisplayUkPoint'] 	= $ukggDir . 'ParserFunctions/DisplayUkPoint/UKG_DisplayUkPoint.php';
 $wgAutoloadClasses['UKGBaseUkPointMap'] 	= $ukggDir . 'ParserFunctions/DisplayUkPoint/UKG_BaseUkPointMap.php';
 
-$wgHooks['LanguageGetMagic'][] 				= 'efUKGDisplayUkPointMagic';
 $wgHooks['ParserFirstCallInit'][] 			= 'efUKGRegisterDisplayPoint';
 
 $egMapsFeatures['pf'][]	= 'UKGDisplayUkPoint::initialize';
-
-/**
- * Adds the magic words for the parser functions.
- */
-function efUKGDisplayUkPointMagic( &$magicWords, $langCode ) {
-	$magicWords['display_uk_point'] = array( 0, 'display_uk_point', 'display_uk_points' );
-	return true; // Unless we return true, other parser functions won't get loaded.
-}
 
 /**
  * Adds the parser function hooks

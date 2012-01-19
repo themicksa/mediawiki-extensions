@@ -13,19 +13,19 @@ $wgPhpbbDataRootPath        = 'forum/';
 $wgPhpbbDataUpdatedDuration = 24;		# hours
 
 $wgExtensionCredits['other'][] = array(
-	'path'        => __FILE__,
-	'name'        => 'phpbbData',
-	'version'     => '1.0',
-	'author'      => 'Tim Laqua',
-	'description' => 'Allows you to include phpBB data in wiki pages',
-	'url'         => 'https://www.mediawiki.org/wiki/Extension:phpbbData',
+	'path'           => __FILE__,
+	'name'           => 'phpbbData',
+	'version'        => '1.1',
+	'author'         => 'Tim Laqua',
+	'descriptionmsg' => 'phpbbdata-desc',
+	'url'            => 'https://www.mediawiki.org/wiki/Extension:phpbbData',
 );
 
 $wgHooks['ParserFirstCallInit'][] = 'efPhpbbData_ParserFirstCallInit';
-$wgHooks['LanguageGetMagic' ][] = 'efPhpbbData_LanguageGetMagic';
 $wgHooks['BeforePageDisplay'][] = 'efPhpbbData_BeforePageDisplay';
 
 $wgExtensionMessagesFiles['phpbbData'] = dirname( __FILE__ ) . '/phpbbData.i18n.php';
+$wgExtensionMessagesFiles['phpbbDataMagic'] = dirname( __FILE__ ) . '/phpbbData.i18n.magic.php';
 
 function efPhpbbData_ParserFirstCallInit( $parser ) {
 	# Set a function hook associating the "example" magic word with our function
@@ -59,16 +59,6 @@ function efPhpbbData_BeforePageDisplay(&$out) {
 	
 	# Be nice.
 	return true;
-}
-
-function efPhpbbData_LanguageGetMagic( &$magicWords, $langCode ) {
-        # Add the magic word
-        # The first array element is case sensitive, in this case it is not case sensitive
-        # All remaining elements are synonyms for our parser function
-        $magicWords['phpbb'] = array( 0, 'phpbb' );
-        $magicWords['phpbblink'] = array( 0, 'phpbblink' );
-        # unless we return true, other parser functions extensions won't get loaded.
-        return true;
 }
 
 function efPhpbbData_makeTopicWikiLink($display_text='', $forum_id=null, $topic_id=null, $post_id=null) {

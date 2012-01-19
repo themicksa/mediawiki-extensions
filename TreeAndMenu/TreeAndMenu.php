@@ -14,27 +14,28 @@
 
 if( !defined( 'MEDIAWIKI' ) ) die( 'Not an entry point.' );
 
-define( 'TREEANDMENU_VERSION','1.2.4, 2012-01-09' );
+define( 'TREEANDMENU_VERSION','1.3.0, 2012-01-19' );
 
 // Set any unset images to default titles
 if( !isset( $wgTreeViewImages ) || !is_array( $wgTreeViewImages ) ) $wgTreeViewImages = array();
 
-$wgTreeMagic                   = "tree"; // the parser-function name for trees
-$wgMenuMagic                   = "menu"; // the parser-function name for dropdown menus
 $wgTreeViewShowLines           = false;  // whether to render the dotted lines joining nodes
 $wgExtensionFunctions[]        = 'wfSetupTreeAndMenu';
-$wgHooks['LanguageGetMagic'][] = 'wfTreeAndMenuLanguageGetMagic';
 
 $wgExtensionCredits['parserhook'][] = array(
-	'path'        => __FILE__,
-	'name'        => 'TreeAndMenu',
-	'author'      => array( '[http://www.organicdesign.co.nz/User:Nad Nad]', '[http://www.organicdesign.co.nz/User:Sven Sven]' ),
-	'url'         => 'http://www.mediawiki.org/wiki/Extension:TreeAndMenu',
-	'description' => 'Adds #tree and #menu parser functions which contain bullet-lists to be rendered as collapsible treeview\'s or dropdown menus.
-	                  The treeview\'s use the [http://www.destroydrop.com/javascripts/tree dTree] JavaScript tree menu,
-	                  and the dropdown menu\'s use [http://www.htmldog.com/articles/suckerfish/dropdowns/ Son of Suckerfish]',
-	'version'     => TREEANDMENU_VERSION
+	'path'           => __FILE__,
+	'name'           => 'TreeAndMenu',
+	'author'         => array( '[http://www.organicdesign.co.nz/User:Nad Nad]', '[http://www.organicdesign.co.nz/User:Sven Sven]' ),
+	'url'            => 'http://www.mediawiki.org/wiki/Extension:TreeAndMenu',
+	'descriptionmsg' => 'treeandmenu-desc',
+	'version'        => TREEANDMENU_VERSION,
 );
+
+$dir = dirname( __FILE__ ) . '/';
+$wgExtensionMessagesFiles['TreeAndMenu'] = $dir . 'TreeAndMenu.i18n.php';
+$wgExtensionMessagesFiles['TreeAndMenuMagic'] = $dir . 'TreeAndMenu.i18n.magic.php';
+
+// @todo FIXME: Move classes out of init file.
 
 class TreeAndMenu {
 
@@ -53,12 +54,12 @@ class TreeAndMenu {
 	 * Constructor
 	 */
 	function __construct() {
-		global $wgOut, $wgHooks, $wgParser, $wgScriptPath, $wgJsMimeType, $wgTreeMagic,
-			$wgMenuMagic, $wgTreeViewImages, $wgTreeViewShowLines, $wgTreeViewBaseDir, $wgTreeViewBaseUrl;
+		global $wgOut, $wgHooks, $wgParser, $wgScriptPath, $wgJsMimeType,
+			$wgTreeViewImages, $wgTreeViewShowLines, $wgTreeViewBaseDir, $wgTreeViewBaseUrl;
 
 		// Add hooks
-		$wgParser->setFunctionHook( $wgTreeMagic, array( $this,'expandTree' ) );
-		$wgParser->setFunctionHook( $wgMenuMagic, array( $this,'expandMenu' ) );
+		$wgParser->setFunctionHook( 'tree', array( $this,'expandTree' ) );
+		$wgParser->setFunctionHook( 'menu', array( $this,'expandMenu' ) );
 		$wgHooks['ParserAfterTidy'][] = array( $this, 'renderTreeAndMenu' );
 
 		// Update general tree paths and properties
@@ -267,7 +268,6 @@ class TreeAndMenu {
 		$text = preg_replace( "/\x7f1$u\x7f.+?[\\r\\n]+/m", '', $text ); // Remove all unreplaced row information
 		return true;
 	}
-
 }
 
 /**
@@ -276,14 +276,4 @@ class TreeAndMenu {
 function wfSetupTreeAndMenu() {
 	global $wgTreeAndMenu;
 	$wgTreeAndMenu = new TreeAndMenu();
-}
-
-/**
- * Reserve magic words
- */
-function wfTreeAndMenuLanguageGetMagic( &$magicWords, $langCode = 0 ) {
-	global $wgTreeMagic, $wgMenuMagic;
-	$magicWords[$wgTreeMagic] = array( $langCode, $wgTreeMagic );
-	$magicWords[$wgMenuMagic] = array( $langCode, $wgMenuMagic );
-	return true;
 }
