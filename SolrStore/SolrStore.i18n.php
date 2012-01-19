@@ -24,7 +24,7 @@ $messages['en'] = array(
 $messages['qqq'] = array(
 	'solrstore-desc' => '{{desc}}',
 	'solrsearch' => "The title of the Special:SolrSearch page as appearing in Special:SpecialPages. Should probably be the same as message ''solrstore-searchFieldSets''",
-        'solrstore-error' => 'Currently we have just One Error Message, "Error: Please Check your Query"',
+	'solrstore-error' => 'Currently we have just One Error Message, "Error: Please Check your Query"',
 	'solrstore-searchFieldSets' => 'The pagetitle (heading) of the Special:SolrSearch page',
 	'solrstore-searchFieldSets-select' => 'A SearchSet is a predefined search form for a field based search.',
 	'solrstore-searchFieldSets-title' => 'The title of the Special:SolrSearch page. A SearchSet is a predefined search form for a field based search.',
@@ -50,10 +50,17 @@ $messages['be-tarask'] = array(
 $messages['de'] = array(
 	'solrstore-desc' => 'Ermöglicht die Suche nach semantischen Attributen mit einer Volltextsuchmaschine',
 	'solrsearch' => 'SolrSuche',
-	'solrstore-error' => 'Fehler: Bitte überprüfen Sie ihre Suchanfrage',
+	'solrstore-error' => 'Fehler: Bitte überprüfe die Suchanfrage.',
 	'solrstore-searchFieldSets' => 'SolrSuche',
 	'solrstore-searchFieldSets-select' => 'Bitte wähle ein SearchSet aus',
 	'solrstore-searchFieldSets-title' => 'SolrSearch: SearchSet Auswahl',
+);
+
+/** German (formal address) (‪Deutsch (Sie-Form)‬)
+ * @author Kghbln
+ */
+$messages['de-formal'] = array(
+	'solrstore-error' => 'Fehler: Bitte überprüfen Sie die Suchanfrage.',
 );
 
 /** French (Français)
@@ -62,6 +69,7 @@ $messages['de'] = array(
 $messages['fr'] = array(
 	'solrstore-desc' => "Rechercher des propriétés avec la puissance d'un moteur de recherche plein texte",
 	'solrsearch' => 'SolrSearch',
+	'solrstore-error' => 'Erreur: Veuillez vérifier votre requête.',
 	'solrstore-searchFieldSets' => 'SolrSearch',
 	'solrstore-searchFieldSets-select' => 'Veuillez sélectionner un SearchSet',
 	'solrstore-searchFieldSets-title' => 'SolrSearch: choix de SearchSet',
@@ -71,8 +79,9 @@ $messages['fr'] = array(
  * @author Toliño
  */
 $messages['gl'] = array(
-	'solrstore-desc' => 'Procurar propiedades semánticas co poder dun motor de procuras de texto',
+	'solrstore-desc' => 'Procurar propiedades semánticas co poder dun motor de procura de texto',
 	'solrsearch' => 'SolrSearch',
+	'solrstore-error' => 'Erro: Comprobe a súa pescuda.',
 	'solrstore-searchFieldSets' => 'SolrSearch',
 	'solrstore-searchFieldSets-select' => 'Seleccione un conxunto de procuras',
 	'solrstore-searchFieldSets-title' => 'SolrSearch: Selección do conxunto de procuras',
@@ -84,6 +93,7 @@ $messages['gl'] = array(
 $messages['hsb'] = array(
 	'solrstore-desc' => 'Pytanje za semantiskimi atributami z połnotekstowej pytawu',
 	'solrsearch' => 'SolrSearch',
+	'solrstore-error' => 'Zmylk: Prošu přepruwuj swoje naprašowanje.',
 	'solrstore-searchFieldSets' => 'SolrSearch',
 	'solrstore-searchFieldSets-select' => 'Prošu wubjer pytansku sadźbu',
 	'solrstore-searchFieldSets-title' => 'SolrSearch: Wuběr pytanskich sadźbow',
@@ -95,6 +105,7 @@ $messages['hsb'] = array(
 $messages['ia'] = array(
 	'solrstore-desc' => 'Cercar proprietates semantic con le poter de un motor de recerca de plen texto',
 	'solrsearch' => 'SolrSearch',
+	'solrstore-error' => 'Error: Per favor verifica tu consulta.',
 	'solrstore-searchFieldSets' => 'SolrSearch',
 	'solrstore-searchFieldSets-select' => 'Per favor selige un SearchSet',
 	'solrstore-searchFieldSets-title' => 'SolrSearch: selection de SearchSet',
@@ -114,6 +125,7 @@ $messages['lb'] = array(
 $messages['mk'] = array(
 	'solrstore-desc' => 'Пребарување на семантички својства со способностите на пребарувачот на полн текст',
 	'solrsearch' => 'SolrSearch',
+	'solrstore-error' => 'Грешка: Проверете го барањето.',
 	'solrstore-searchFieldSets' => 'SolrSearch',
 	'solrstore-searchFieldSets-select' => 'Изберете SearchSet',
 	'solrstore-searchFieldSets-title' => 'SolrSearch: Избор на SearchSet',

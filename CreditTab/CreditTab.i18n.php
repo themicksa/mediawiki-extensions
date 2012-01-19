@@ -68,6 +68,15 @@ $messages['de'] = array(
 	'credits-tab-title' => 'Autoren dieser Seite',
 );
 
+/** Lower Sorbian (Dolnoserbski)
+ * @author Michawiki
+ */
+$messages['dsb'] = array(
+	'credits-desc' => 'Pśidawa wótkaz k lisćinje awtorow',
+	'credits-tab' => 'Awtory',
+	'credits-tab-title' => 'Awtory toś togo boka',
+);
+
 /** French (Français)
  * @author Gomoko
  */

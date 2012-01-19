@@ -479,8 +479,8 @@ $messages['fr'] = array(
 	'apisb-desc' => 'Permet de déboguer les appels de l’[//www.mediawiki.org/wiki/API API de MediaWiki] à partir du navigateur',
 	'apisandbox' => 'Bac à sable API',
 	'apisb-no-js' => "''' Erreur ''': cette fonctionnalité nécessite JavaScript.",
-	'apisb-intro' => "Utilisez cette page pour expérimenter '''MediaWiki API'''.
-Reportez-vous sur [//www.mediawiki.org/wiki/API la documentation de l’API] pour plus de détails sur l’utilisation de l’API.",
+	'apisb-intro' => "Utilisez cette page pour expérimenter le '''webservice MediaWiki'''.
+Reportez-vous à [//www.mediawiki.org/wiki/API la documentation de l’API] pour plus de détails sur l’API. Exemple: [//www.mediawiki.org/wiki/API#A_simple_example obtenir le contenu d'une page principale]. Choisissez une option pour voir d'autres exemples.",
 	'apisb-api-disabled' => 'API est désactivé sur ce site.',
 	'apisb-parameters' => 'Paramètres',
 	'apisb-result' => 'Résultat',
@@ -697,8 +697,8 @@ $messages['ia'] = array(
 	'apisb-desc' => 'Permitte cercar defectos in appellos del [//www.mediawiki.org/wiki/API API de MediaWiki] ab le navigator del web',
 	'apisandbox' => 'Cassa de sablo pro API',
 	'apisb-no-js' => "'''Error''': iste function require JavaScript.",
-	'apisb-intro' => "Usa iste pagina pro experimentar con le '''API de MediaWiki'''.
-Consulta [//www.mediawiki.org/wiki/API le documentation del API] pro ulterior detalios concernente le uso del API.",
+	'apisb-intro' => "Usa iste pagina pro experimentar con le '''API de servicio web de MediaWiki'''.
+Consulta [//www.mediawiki.org/wiki/API le documentation del API] pro ulterior detalios concernente le uso del API. Per exemplo: [//www.mediawiki.org/wiki/API#A_simple_example obtener le contento de un Pagina principal]. Selige un action pro vider altere exemplos.",
 	'apisb-api-disabled' => 'Le API ha essite disactivate in iste sito.',
 	'apisb-parameters' => 'Parametros',
 	'apisb-result' => 'Resultato',
@@ -758,8 +758,8 @@ $messages['ilo'] = array(
 	'apisb-desc' => 'Agpalubos ti panag-kkat ti kiteb [//www.mediawiki.org/wiki/API MediaWiki API] a dagiti mangaw-awag manipud idiay pagbasabasa',
 	'apisandbox' => 'API a pagpsubokan',
 	'apisb-no-js' => "''Biddut''': daytoy a langa ket makasapul ti JavaScript.",
-	'apisb-intro' => "Usaren daytoy a panid ti panagsubok iti '''MediaWiki API'''.
-Agituron idiay [//www.mediawiki.org/wiki/API the API dokumentasion] para iti adadu pay a detalye iti panag-usar ti API.",
+	'apisb-intro' => "Usaren daytoy a panid ti panagsubok ti '''MediaWiki apot a serbisio ti API'''.
+Agiturong idiay [//www.mediawiki.org/wiki/API the API dokumentasion] para iti adadu pay a detalye iti panag-usar ti API. Kas pagarigan: [//www.mediawiki.org/wiki/API#A_simple_example alaen ti linaon ti Umuna a Panid].  Agpili ti maaramid tapno makakita ti adu pay a kas pagarigan.",
 	'apisb-api-disabled' => 'Ti API ket nabaldodo iti daytoy a pagsaadan.',
 	'apisb-parameters' => 'Dagiti parametro',
 	'apisb-result' => 'Nagbanagan',
@@ -779,6 +779,9 @@ Agituron idiay [//www.mediawiki.org/wiki/API the API dokumentasion] para iti ada
 	'apisb-query-meta' => 'Pakaammo a meta',
 	'apisb-generic-parameters' => 'Dagiti kadawyan a parametro',
 	'apisb-generator-parameters' => 'Agpaandar',
+	'apisb-example' => 'Kas pagarigan',
+	'apisb-examples' => 'Dagiti kas pagarigan',
+	'apisb-clear' => 'Dalusan',
 );
 
 /** Italian (Italiano)
@@ -961,8 +964,8 @@ $messages['mk'] = array(
 	'apisb-desc' => 'Овозможува отстранување на грешки во повикувањата на [//www.mediawiki.org/wiki/API?uselang=mk посредникот за програмирање на прилози (API) на МедијаВики] од прелистувачот',
 	'apisandbox' => 'API-песочница',
 	'apisb-no-js' => "'''Грешка''': оваа функција бара JavaScript.",
-	'apisb-intro' => "На оваа страница можете да експериментирате со '''API на МедијаВики'''.
-	Повеќе напатствија за користење ќе најдете на [//www.mediawiki.org/wiki/API?uselang=mk документацијата на API].",
+	'apisb-intro' => "Страницава служи за експериментирање со '''МедијаВики API'''.
+	Повеќе за употребата на овој API ќе најдете во [//www.mediawiki.org/wiki/API неговата документација].  Пример: [//www.mediawiki.org/wiki/API#A_simple_example преземање на содржината на главната страница].  Одберете дејство за да видите повеќе примери.",
 	'apisb-api-disabled' => 'API е оневозможен на ова мрежно место.',
 	'apisb-parameters' => 'Параметри',
 	'apisb-result' => 'Извод',

@@ -1644,6 +1644,7 @@ $messages['mk'] = array(
 	'narayam-menu' => 'Вносен метод',
 	'narayam-menu-tooltip' => 'Контрола со уредникот на вносни методи (IME) Narayam',
 	'narayam-help' => 'Помош',
+	'narayam-help-page' => '//www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Narayam?uselang=mk',
 	'narayam-checkbox-tooltip' => 'За вкл/искл на метод на внос',
 	'narayam-enable-preference' => 'Овозможи вносен метод',
 	'narayam-more-imes' => 'Други вносни методи',

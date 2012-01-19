@@ -187,6 +187,18 @@ $messages['gl'] = array(
 	'fptc-no-suggestion' => 'Non se atopou suxestión ningunha',
 );
 
+/** Hebrew (עברית)
+ * @author Ofekalef
+ */
+$messages['he'] = array(
+	'fptc-categoryname' => 'קטגוריה',
+	'fptc-refresh-frequent-patterns' => 'רענון נתונים',
+	'fptc-search-button' => 'חיפוש',
+	'fptc-search-suggestion-value' => 'דומה ל "%s":',
+	'fptc-suggestion' => 'האם התכוונת ל:',
+	'fptc-no-suggestion' => 'לא נמצאו הצעות',
+);
+
 /** Upper Sorbian (Hornjoserbsce)
  * @author Michawiki
  */

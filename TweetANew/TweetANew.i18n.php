@@ -250,6 +250,14 @@ $messages['nl'] = array(
 	'tweetanew-edit3' => 'Kijk eens op de aangepaste pagina $1 ($2)',
 );
 
+/** Serbian (Cyrillic script) (‪Српски (ћирилица)‬)
+ * @author Rancher
+ */
+$messages['sr-ec'] = array(
+	'tweetanew-minoredit' => 'м',
+	'tweetanew-authorcredit' => 'од',
+);
+
 /** Simplified Chinese (‪中文(简体)‬)
  * @author Hzy980512
  */

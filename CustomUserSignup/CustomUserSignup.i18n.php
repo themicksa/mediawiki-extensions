@@ -79,6 +79,13 @@ $messages['de'] = array(
 	'customusersignup-desc' => 'Ermöglicht die Ausgabe angepasster Benutzernachrichten im Verlauf der Benutzerkontenerstellung',
 );
 
+/** Lower Sorbian (Dolnoserbski)
+ * @author Michawiki
+ */
+$messages['dsb'] = array(
+	'customusersignup-desc' => 'Zmóžnja pśiměrjobne powěźeńki pśi załoženju wužywarskego konta',
+);
+
 /** Greek (Ελληνικά)
  * @author Glavkos
  */

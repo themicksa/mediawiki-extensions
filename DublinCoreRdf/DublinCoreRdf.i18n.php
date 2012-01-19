@@ -66,6 +66,13 @@ $messages['de'] = array(
 	'dublincorerdf-desc' => 'Stellt RDF-Metadaten nach der Definition „Dublin Core“ bereit',
 );
 
+/** Lower Sorbian (Dolnoserbski)
+ * @author Michawiki
+ */
+$messages['dsb'] = array(
+	'dublincorerdf-desc' => 'Dublin Core RDF-metadaty',
+);
+
 /** French (Français)
  * @author Jean-Frédéric
  */

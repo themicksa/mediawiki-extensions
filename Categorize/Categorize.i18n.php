@@ -79,6 +79,16 @@ $messages['de-formal'] = array(
 	'categorize-footer' => 'Sofern Sie eine Bezeichnung hinzufügen lassen möchten, kontaktieren Sie hierzu bitte einen [[Special:ListUsers/sysop|Administrator]].',
 );
 
+/** Lower Sorbian (Dolnoserbski)
+ * @author Michawiki
+ */
+$messages['dsb'] = array(
+	'categorize-desc' => 'Pśidawa zapódawańske pólo za wobźěłowanje a nagrawanje bokow, kótarež dowólujo wužywarjam, kategorije pśipokazaś',
+	'categorize-title' => 'Kategorizacija wědy',
+	'categorize-footer' => 'Jolic coš pomjenjenje pśidaś, staj se pšosym z [[Special:ListUsers/sysop|administratorom]] do zwiska.',
+	'categorize-advice' => 'Klikni na pomjenjenja, kótarež coš toś tomu bokoju pśipisaś:',
+);
+
 /** Spanish (Español)
  * @author Fitoschido
  */

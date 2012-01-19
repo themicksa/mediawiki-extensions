@@ -219,6 +219,15 @@ $messages['arz'] = array(
 	'prefstats-legend-in' => 'مشترك',
 );
 
+/** Asturian (Asturianu)
+ * @author Xuacu
+ */
+$messages['ast'] = array(
+	'prefstats' => 'Estadístiques de les preferencies',
+	'prefstats-desc' => 'Siguir les estadístiques sobro cuantos usuarios tienen determinaes preferencies activaes',
+	'prefstats-title' => 'Estadístiques de les preferencies',
+);
+
 /** Azerbaijani (Azərbaycanca)
  * @author Cekli829
  * @author Vugar 1981

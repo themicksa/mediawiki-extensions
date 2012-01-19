@@ -52,6 +52,13 @@ $messages['de'] = array(
 	'automaticboardwelcome-desc' => 'Ermöglicht, nach der Neuanlage eines Kontos, die Erstellung einer automatischen [[MediaWiki:User-board-welcome-message|Willkommensnachricht]] auf der entsprechenden Benutzerseite',
 );
 
+/** Lower Sorbian (Dolnoserbski)
+ * @author Michawiki
+ */
+$messages['dsb'] = array(
+	'automaticboardwelcome-desc' => 'Sćelo awtomatiski [[MediaWiki:User-board-welcome-message|pówitańsku powěsć]] na wužywarske delki nowych wužywarjow pó załoženju konta',
+);
+
 /** French (Français)
  * @author Gomoko
  */

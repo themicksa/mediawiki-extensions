@@ -74,6 +74,16 @@ $messages['de'] = array(
 	'apiexplorer-loading' => 'Funktionen werden geladen …',
 );
 
+/** Lower Sorbian (Dolnoserbski)
+ * @author Michawiki
+ */
+$messages['dsb'] = array(
+	'apiexplorer' => 'API-Explorer',
+	'apiexplorer-desc' => 'Bok za interaktiwne wužywanje dokumentacije MediaWiki-API',
+	'apiexplorer-intro' => 'Toś ten bok pokazujo dokumentaciju za API aktualnego wikija. Pšosym klikni na jadnu ze sledujucych funkcijow, aby dalšne informacije wó tom wiźeł, kótare parametry daju se w kuždem wołanju wužywaś. Glědaj teke [http://www.mediawiki.org/wiki/API:Main_page powšykna dokumentacija API MediaWiki].',
+	'apiexplorer-loading' => 'Funkcije se zacytuju...',
+);
+
 /** Persian (فارسی)
  * @author Leyth
  */
@@ -126,7 +136,7 @@ $messages['he'] = array(
 $messages['hsb'] = array(
 	'apiexplorer' => 'API-Explorer',
 	'apiexplorer-desc' => 'Strona za interaktiwne wužiwanje dokumentacije MediaWikijoweho API',
-	'apiexplorer-intro' => 'Tuta strona pokazuje dokumentaciju za API aktualneho wikija. Prošu klikń na jednu ze sledowacych funkcijow, zo by dalše informacije wo tym widźał, kotre parametry dadźa so w kóždym wołanju wužiwać. Hlej tež [http://www.mediawiki.org/wiki/API:Main_page the powšitkowna dokumentacija API MediaWiki].',
+	'apiexplorer-intro' => 'Tuta strona pokazuje dokumentaciju za API aktualneho wikija. Prošu klikń na jednu ze sledowacych funkcijow, zo by dalše informacije wo tym widźał, kotre parametry dadźa so w kóždym wołanju wužiwać. Hlej tež [http://www.mediawiki.org/wiki/API:Main_page powšitkowna dokumentacija API MediaWiki].',
 	'apiexplorer-loading' => 'Funkcije so začituja...',
 );
 

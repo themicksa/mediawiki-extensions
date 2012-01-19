@@ -583,14 +583,20 @@ $messages['gsw'] = array(
 
 /** Hebrew (עברית)
  * @author Deror avi
+ * @author Ofekalef
  */
 $messages['he'] = array(
+	'collabwatchlisttagcomment' => 'הערה',
 	'collabwatchlisttools-view' => 'תצוגה',
 	'collabwatchlisttools-edit' => 'עריכת קטגוריות',
 	'collabwatchlisttools-delete' => 'מחיקה',
 	'collabwatchlistsall' => 'כל הרשימות',
 	'collabwatchlistfiltertags' => 'הסתרת תגיות',
 	'collabwatchlistedit-users-raw-submit' => 'שמירה',
+	'collabwatchlistedit-raw-titles' => 'קטגוריות:',
+	'collabwatchlistedit-users-raw-titles' => 'משתמשים:',
+	'collabwatchlistedit-normal-title' => 'עריכת קטגוריות',
+	'collabwatchlistedit-tags-raw-submit' => 'שמירה',
 	'collabwatchlistdelete-submit' => 'מחיקה',
 	'collabwatchlistdelete-title' => 'מחיקת רשימת מעקב שיתופית',
 	'collabwatchlistnew-legend' => 'יצירת רשימת מעקב שיתופית חדשה',

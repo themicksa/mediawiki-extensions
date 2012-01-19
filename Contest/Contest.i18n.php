@@ -929,6 +929,10 @@ $messages['be-tarask'] = array(
 	'contest-mycontests-active-text' => 'У цяперашні момант Вы ўдзельнічаеце ў наступных конкурсах:',
 	'contest-mycontests-finished-text' => 'Вы ўдзельнічалі ў наступных конкурсах:',
 	'contest-mycontests-header-contest' => 'Конкурс',
+	'contest-mycontests-header-challenge' => 'Задача',
+	'contest-mycontests-signup-success' => 'Вы пасьпяхова запісаліся ў конкурс «$1».',
+	'contest-mycontests-addition-success' => 'Вашая заяўка на ўдзел прынятая пасьпяхова! Дзякуй за ўдзел у гэтым конкурсе.',
+	'contest-mycontests-updated-success' => 'Вы зьмянілі Вашую заяўку на ўдзел.',
 );
 
 /** Bengali (বাংলা)
@@ -5660,7 +5664,7 @@ $messages['pms'] = array(
 	'contest-contest-reminder-success' => 'Spedission riussìa dël mëssagi ëd promemòria a $1 {{PLURAL:$1|concorent|concorent}}',
 	'contest-contest-reminder-close' => 'Sara',
 	'contest-contest-reminder-retry' => 'Prova torna a spedì',
-	'contest-contest-reminder-failed' => "A l'é pa podù spedisse {{PLURAL:$1|l'e-mail|j'e-mail}} ëd promemòria.",
+	'contest-contest-reminder-failed' => 'Impossìbil ëspedì {{PLURAL:$1|ël mëssagi|ij mëssagi}} ëd promemòria.',
 	'contest-contest-reminder-subject' => 'Soget:',
 	'contest-contestant-id' => 'ID',
 	'contest-contestant-challenge-name' => 'Nòm ëd la preuva',

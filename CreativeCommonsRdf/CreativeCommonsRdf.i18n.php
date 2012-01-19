@@ -52,6 +52,13 @@ $messages['de'] = array(
 	'creativecommonsrdf-desc' => 'Stellt RDF-Metadaten im  Creative-Commons-Stil bereit',
 );
 
+/** Lower Sorbian (Dolnoserbski)
+ * @author Michawiki
+ */
+$messages['dsb'] = array(
+	'creativecommonsrdf-desc' => 'CreativeCommons RDF-metadaty',
+);
+
 /** French (Français)
  * @author Jean-Frédéric
  */
@@ -143,18 +150,18 @@ $messages['ms'] = array(
 	'creativecommonsrdf-desc' => 'Metadata Creative Commons RDF',
 );
 
-/** Dutch (Nederlands)
- * @author Siebrand
- */
-$messages['nl'] = array(
-	'creativecommonsrdf-desc' => 'Creative Commons RDF-metadata',
-);
-
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
  * @author Event
  */
 $messages['nb'] = array(
 	'creativecommonsrdf-desc' => 'CreativeCommons RDF-metadata',
+);
+
+/** Dutch (Nederlands)
+ * @author Siebrand
+ */
+$messages['nl'] = array(
+	'creativecommonsrdf-desc' => 'Creative Commons RDF-metadata',
 );
 
 /** Polish (Polski)

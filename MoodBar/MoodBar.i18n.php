@@ -2533,6 +2533,7 @@ Za dalše informacije. wopytaj prošu $1.',
 	'moodbar-what-link' => 'stronu z funkcijemi',
 	'moodbar-privacy-link' => 'wuměnjenja',
 	'moodbar-privacy-link-title' => 'Wužiwarske wuměnjenja',
+	'moodbar-fbd-link-title' => 'komentar',
 	'moodbar-disable-link' => 'Njejsym zajimowany. Prošu znjemóžńće tutu funkciju.',
 	'moodbar-form-title' => 'Dokelž...',
 	'moodbar-form-note' => 'Maksimalnje 140 znamješkow',
@@ -2782,7 +2783,7 @@ Pro ulterior information, per favor visita le $1.',
 	'moodbar-loading-title' => 'Invio in curso...',
 	'moodbar-success-title' => 'Gratias!',
 	'moodbar-error-title' => 'Ups!',
-	'moodbar-success-subtitle' => 'Per specificar tu experientia durante le modification, tu nos adjuta a meliorar $1.',
+	'moodbar-success-subtitle' => 'Relatar le tue {{FBD-LINK}} pote adjutar nos a meliorar $1.',
 	'moodbar-error-subtitle' => 'Un problema ha occurrite! Per favor tenta specificar tu retroaction de novo plus tarde.',
 	'moodbar-blocked-title' => 'Ups!',
 	'moodbar-blocked-subtitle' => 'Le modification ha essite blocate pro te.',
@@ -3563,6 +3564,7 @@ Untuk maklumat lanjut, sila layari $1.',
 	'moodbar-privacy' => 'Dengan penyerahan ini, anda bersetuju dengan ketelusan di bawah $1 ini.',
 	'moodbar-privacy-link' => 'syarat-syarat',
 	'moodbar-privacy-link-title' => 'Syarat-Syarat Penggunaan',
+	'moodbar-fbd-link-title' => 'maklum balas',
 	'moodbar-disable-link' => 'Saya tak minat. Sila matikan ciri ini.',
 	'moodbar-form-title' => 'Kerana...',
 	'moodbar-form-note' => 'maksimum 140 aksara',
@@ -3573,7 +3575,7 @@ Untuk maklumat lanjut, sila layari $1.',
 	'moodbar-loading-title' => 'Berkongsi...',
 	'moodbar-success-title' => 'Terima kasih!',
 	'moodbar-error-title' => 'Alamak!',
-	'moodbar-success-subtitle' => 'Berkongsi pengalaman menyunting anda membantu kami meningkatkan $1.',
+	'moodbar-success-subtitle' => 'Berkongsi {{FBD-LINK}} anda membantu kami meningkatkan $1.',
 	'moodbar-error-subtitle' => 'Ada yang tak kena! Sila cuba berkongsi maklum balas anda kemudian.',
 	'moodbar-blocked-title' => 'Alamak!',
 	'moodbar-blocked-subtitle' => 'Anda disekat daripada menyunting.',
@@ -3680,14 +3682,14 @@ Selamat datang ke {{SITENAME}}, dan terima kasih atas [$2 maklum balas] anda. Se
 
      $4
 
-Baca pesanan ini dalam [$5 laman perbincangan] anda
+Baca pesanan ini dalam [$5 laman perbincangan] anda.
 
 Laman perbincangan itu apa?
-Laman perbincangan pengguna anda ialah laman yang digunakan oleh para penyunting {{SITENAME}} yang lain untuk berhubung dengan anda.  Anda boleh membalas dengan mengklik “Sunting”, mengalihkan kursor ke bawah ulasan, menaipkan balasan anda dengan diakhiri empat tanda tilde (~~~~), dan menyimpan. Kesemua laman di {{SITENAME}} ada laman perbincangan yang digunakan untuk pelbagai kegunaan yang berbeza. Mula-mula anda perlu membiasakan diri, tetapi lambat-laun semuanya menjadi mudah.
+Laman perbincangan pengguna anda ialah laman yang digunakan oleh para penyunting {{SITENAME}} yang lain untuk berhubung dengan anda.  Anda boleh membalas dengan mengklik "Sunting", mengalihkan kursor ke bawah ulasan, menaipkan balasan anda dengan diakhiri empat tanda tilde (~~~~), dan menyimpan. Kesemua laman di {{SITENAME}} ada laman perbincangan yang digunakan untuk pelbagai kegunaan yang berbeza. Mula-mula anda perlu membiasakan diri, tetapi lambat-laun semuanya menjadi mudah.
 
-Masih tak faham? [http://en.wikipedia.org/wiki/File:Wikipedia_basics_-_Talk_pages.ogv Video ini] (tonton di [http://www.youtube.com/watch?v=JdeDLRsB2Es YouTube]) menunjukkan anda langkah demi langkah. (Bahasa Inggeris sahaja)
+Masih tak faham? [http://en.wikipedia.org/wiki/File:Wikipedia_basics_-_Talk_pages.ogv Video ini] (tonton di [http://www.youtube.com/watch?v=JdeDLRsB2Es YouTube]) menunjukkan anda intisari penggunaan laman perbincangan selangkah demi selangkah. (Bahasa Inggeris sahaja)
 
-Semoga ceria,
+Terima kasih kerana menyertai komuniti ini.
 
 -- {{SITENAME}}',
 );
@@ -4300,7 +4302,7 @@ Për savèjne ëd pi, për piasì vìsita ël $1.",
 	'moodbar-log-name' => 'Registr dij coment',
 	'moodbar-log-header' => "Cost-sì a l'é ël registr dj'assion fàite ansima ai coment listà an sël [[Special:FeedbackDashboard|cruscòt dij coment]].",
 	'moodbar-log-hide' => 'stërma [[$1]]',
-	'moodbar-log-feedback' => 'Artorn [[$1]] ëd MoodBar',
+	'moodbar-log-feedback' => "Opinion an sla bara d'umor [[$1]]",
 	'moodbar-log-restore' => 'ripristinà la visibilità për [[$1]]',
 	'moodbar-response-terms' => 'An sgnacand, a aceta na trasparensa conforma a coste $1.',
 	'moodbar-response-link' => 'condission',

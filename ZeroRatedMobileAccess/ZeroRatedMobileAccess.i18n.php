@@ -248,6 +248,17 @@ $messages['mk'] = array(
 	'zero-rated-mobile-access-click-to-view-image' => 'Стиснете за да ја погледате сликата на „$1“...',
 );
 
+/** Malayalam (മലയാളം)
+ * @author Praveenp
+ */
+$messages['ml'] = array(
+	'zero-rated-mobile-access-search' => 'തിരയുക',
+	'zero-rated-mobile-access-language-selection' => 'എല്ലാ ഭാഷകളും',
+	'zero-rated-mobile-access-banner-text-data-charges' => 'തുടരുകയാണെങ്കിൽ ഡേറ്റ ചാർജുകൾ ഈടാക്കപ്പെട്ടേക്കാം: $1 അഥവാ $2',
+	'zero-rated-mobile-access-banner-text-data-charges-yes' => 'ശരി',
+	'zero-rated-mobile-access-banner-text-data-charges-no' => 'വേണ്ട',
+);
+
 /** Malay (Bahasa Melayu)
  * @author Anakmalaysia
  */

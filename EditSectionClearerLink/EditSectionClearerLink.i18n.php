@@ -43,6 +43,13 @@ $messages['de'] = array(
 	'editsectionclearerlink-desc' => 'Verbessert die Nutzbarkeit der Links für die Bearbeitung von Seitenabschnitten durch zusätzliche Aktionen, die beim Überfahren mit der Maus eingeblendet werden',
 );
 
+/** Lower Sorbian (Dolnoserbski)
+ * @author Michawiki
+ */
+$messages['dsb'] = array(
+	'editsectionclearerlink-desc' => 'Wužywajobnosć wótkazow za wobźěłowanje wótrězkow pśez akcije p´pólěpšyś, kótarež stoje pśi pśelětowanju z kursorom myše k dispoziciji',
+);
+
 /** French (Français)
  * @author Sherbrooke
  */

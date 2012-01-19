@@ -58,6 +58,13 @@ $messages['de'] = array(
 	'editpagetracking-desc' => 'Ermöglicht das Nachvollziehen des erstens Besuchs einer Bearbeitungsseite durch einen Benutzer',
 );
 
+/** Lower Sorbian (Dolnoserbski)
+ * @author Michawiki
+ */
+$messages['dsb'] = array(
+	'editpagetracking-desc' => 'Protokolěrujo prědny raz, gaž wužywaŕ woglědujo se wobźěłański bok',
+);
+
 /** Esperanto (Esperanto)
  * @author Yekrats
  */

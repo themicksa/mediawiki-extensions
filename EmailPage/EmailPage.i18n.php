@@ -1378,6 +1378,13 @@ $messages['vi'] = array(
 	'ea-data' => 'Dữ liệu',
 );
 
+/** Yiddish (ייִדיש)
+ * @author פוילישער
+ */
+$messages['yi'] = array(
+	'ea-message' => 'מעלדונג:',
+);
+
 /** Simplified Chinese (‪中文(简体)‬)
  * @author Hydra
  * @author Xiaomingyan

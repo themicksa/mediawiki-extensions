@@ -149,6 +149,15 @@ $messages['ast'] = array(
 	'article-comments-commenter-said' => '$1 dixo...',
 	'article-comments-summary' => 'Comentariu proporcionáu por $1 - pela estensión ArticleComments',
 	'article-comments-submission-succeeded' => "El comentariu s'unvió correutamente",
+	'article-comments-submission-success' => 'Unviasti correutamente un comentariu sobro "[[$1]]"',
+	'article-comments-submission-view-all' => 'Pues ver [[$1|tolos los comentarios sobro esa páxina]]',
+	'article-comments-user-is-blocked' => "La to cuenta d'usuariu tien torgao editar «[[$1]]».",
+	'article-comments-comment-bad-mode' => 'El mou que se dio pal comentariu nun ye válidu.
+Los moos disponibles son "plain", "normal" y "wiki".',
+	'article-comments-comment-missing-name-parameter' => "Falta'l nome",
+	'article-comments-comment-missing-date-parameter' => 'Fata la data del comentariu',
+	'article-comments-no-spam' => 'Polo menos un de los campos unviaos se marcó como puxarra.',
+	'processcomment' => 'Procesar el comentariu de páxina',
 );
 
 /** Azerbaijani (Azərbaycanca)

@@ -63,6 +63,15 @@ $messages['de'] = array(
 	'elm-easyref-close' => 'Schließen',
 );
 
+/** Lower Sorbian (Dolnoserbski)
+ * @author Michawiki
+ */
+$messages['dsb'] = array(
+	'elm-easyref-desc' => 'Wuskokowańske pólo pśida, áby se wopśimjeśe reference wobrazniło',
+	'elm-easyref-ref' => 'Referenca $1',
+	'elm-easyref-close' => 'Zacyniś',
+);
+
 /** French (Français)
  * @author Sherbrooke
  */

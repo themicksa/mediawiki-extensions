@@ -4112,7 +4112,11 @@ $messages['wa'] = array(
  */
 $messages['yi'] = array(
 	'ogg-play' => 'שפּיל',
+	'ogg-pause' => 'פויזע',
+	'ogg-more' => 'נאך…',
 	'ogg-dismiss' => 'שליסן',
+	'ogg-download' => 'אראָפלאָדן טעקע',
+	'ogg-desc-link' => 'וועגן דער טעקע',
 );
 
 /** Yoruba (Yorùbá)

@@ -185,6 +185,19 @@ $messages['de'] = array(
 	'bm-printversion-inexistent-book' => 'Das Buch wurde nicht gefunden. Bitte den Namen eines vorhandenen Buchs angeben, für das eine Druckversion erstellt werden soll.',
 );
 
+/** Lower Sorbian (Dolnoserbski)
+ * @author Michawiki
+ */
+$messages['dsb'] = array(
+	'bookmanager-desc' => 'Rědy za knigły',
+	'bm-booktools-section' => 'Nastroje za knihi',
+	'bm-randomchapter-link' => 'Pśipadny kapitel',
+	'bm-printversion' => 'Śišćarska wersija',
+	'bm-printversion-desc' => 'Twóri [[Special:PrintVersion|śišćarsku wersiju]] knigłow',
+	'bm-printversion-no-book' => 'Pšosym zapódaj mě knigłow, aby jich śišćarsku wersiju dostał.',
+	'bm-printversion-inexistent-book' => 'Knigły njejsu se namakali. Pšosym zapódaj mě eksistěrujucych knigłow, aby jeje śišćarsku wersiju napórał.',
+);
+
 /** Greek (Ελληνικά)
  * @author Glavkos
  */
