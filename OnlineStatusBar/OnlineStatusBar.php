@@ -25,6 +25,7 @@ $wgExtensionCredits['other'][] = array(
 
 $dir = dirname( __FILE__ );
 $wgExtensionMessagesFiles['OnlineStatusBar'] = "$dir/OnlineStatusBar.i18n.php";
+$wgExtensionMessagesFiles['OnlineStatusBarMagic'] = "$dir/OnlineStatusBar.i18n.magic.php";
 
 $wgResourceModules['ext.OnlineStatusBar'] = array (
 	'skinStyles' => array (
@@ -63,7 +64,6 @@ define( 'ONLINESTATUSBAR_NORMAL_CACHE', 'n' );
 define( 'ONLINESTATUSBAR_CK_DELAYED', 1 );
 define( 'ONLINESTATUSBAR_CK_AWAY', 2 );
 
-
 // Configuration
 // Those values can be overriden in LocalSettings, do not change it here
 // default for anonymous and uknown users
@@ -99,14 +99,12 @@ $wgOnlineStatusBarIcon = array(
 	'offline' => 'statusred.png',
 );
 
-
 $wgHooks['LoadExtensionSchemaUpdates'][] = 'OnlineStatusBarHooks::ckSchema';
 $wgHooks['UserLogout'][] = 'OnlineStatusBarHooks::logout';
 $wgHooks['ArticleViewHeader'][] = 'OnlineStatusBarHooks::renderBar';
 $wgHooks['UserLoginComplete'][] = 'OnlineStatusBarHooks::updateStatus';
 $wgHooks['GetPreferences'][] = 'OnlineStatusBarHooks::preferencesHook';
 $wgHooks['UserGetDefaultOptions'][] = 'OnlineStatusBarHooks::setDefaultOptions';
-$wgHooks['LanguageGetMagic'][] = 'OnlineStatusBarHooks::magicWordVar';
 $wgHooks['BeforePageDisplay'][] = 'OnlineStatusBarHooks::stylePage';
 $wgHooks['MagicWordwgVariableIDs'][] = 'OnlineStatusBarHooks::magicWordSet';
 $wgHooks['ParserGetVariableValueSwitch'][] = 'OnlineStatusBarHooks::parserGetVariable';

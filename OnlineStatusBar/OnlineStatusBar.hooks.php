@@ -138,16 +138,6 @@ class OnlineStatusBarHooks {
 	}
 
 	/**
-	 * @param $magicWords array
-	 * @param $ln string (language)
-	 * @return bool
-	 */
-	public static function magicWordVar( array &$magicWords, $ln ) {
-		$magicWords['ISONLINE'] = array( 1, 'ISONLINE' );
-		return true;
-	}
-
-	/**
 	 * @param $out OutputPage
 	 * @param $skin Skin
 	 * @return bool

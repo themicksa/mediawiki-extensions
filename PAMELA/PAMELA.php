@@ -104,14 +104,12 @@ unset( $incDir );
 
 # Required for #listpeople.
 $wgHooks['ParserFirstCallInit'][] = 'PAMELAListPeople::staticInit';
-$wgHooks['LanguageGetMagic'][] = 'PAMELAListPeople::staticMagic';
 # Required for #personstatus.
 $wgHooks['ParserFirstCallInit'][] = 'PAMELAPersonStatus::staticInit';
-$wgHooks['LanguageGetMagic'][] = 'PAMELAPersonStatus::staticMagic';	
 # Required for #openwidget.
 $wgHooks['ParserFirstCallInit'][] = 'PAMELAOpenWidget::staticInit';
-$wgHooks['LanguageGetMagic'][] = 'PAMELAOpenWidget::staticMagic';	
 
 $wgExtensionMessagesFiles['PAMELA'] = dirname( __FILE__ ) . '/PAMELA.i18n.php';
+$wgExtensionMessagesFiles['PAMELAMagic'] = dirname( __FILE__ ) . '/PAMELA.i18n.magic.php';
 
 require_once 'PAMELA.settings.php';
