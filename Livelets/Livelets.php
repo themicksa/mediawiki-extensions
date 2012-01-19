@@ -14,10 +14,7 @@ if( !defined( 'MEDIAWIKI' ) ) {
 	die( 'This is not a valid entry point to MediaWiki.' );
 }
 
-define( 'LIVELETS_VERSION', '1.1.0, 2012-01-18' );
-
-# the parser-function name for doing live-transclusions
-$wgLiveletsMagic  = 'live';
+define( 'LIVELETS_VERSION', '1.1.0, 2012-01-19' );
 
 # Settings for the event-driven live method
 $wgLiveletsUseSWF = false;     # Set this to true to use SWF to make livelets fully event-driven (no polling for change)
@@ -32,6 +29,7 @@ $wgExtensionCredits['parserhook'][] = array(
 	'url' => 'https://www.mediawiki.org/wiki/Extension:Livelets',
 	'version' => LIVELETS_VERSION
 );
+
 $dir = dirname( __FILE__ );
 $wgExtensionMessagesFiles['Livelets'] =  "$dir/Livelets.i18n.php";
 $wgExtensionMessagesFiles['LiveletsMagic'] =  "$dir/Livelets.i18n.magic.php";
@@ -65,10 +63,10 @@ class Livelets {
 
 	# Called at extension setup time
 	function setup() {
-		global $wgOut, $wgParser, $wgLiveletsMagic, $wgLiveletsUseSwf;
+		global $wgOut, $wgParser, $wgLiveletsUseSwf;
 
 		# Activate the parser-function
-		$wgParser->setFunctionHook( $wgLiveletsMagic, array( $this, 'renderContainer' ) );
+		$wgParser->setFunctionHook( 'live', array( $this, 'renderContainer' ) );
 
 		# Embed the SWF if enabled (SWF must be requested from Livelets.pl)
 		if ( $wgLiveletsUseSwf ) {
@@ -100,12 +98,10 @@ class Livelets {
 
 	# This early hook called from the Ajax bypass whereby the parser has yet to process wikitext
 	function onArticleAfterFetchContent( &$article, &$content ) {
-		global $wgLiveletsMagic;
-
 		# Replace the wikitext with just the content of the requested livelet
 		foreach( $this->examineBraces( $content ) as $brace ) {
-			if ( $brace['NAME'] == "#$wgLiveletsMagic:" && --$this->request_id < 0 ) {
-				$len = strlen( $wgLiveletsMagic );
+			if ( $brace['NAME'] == "#live:" && --$this->request_id < 0 ) {
+				$len = strlen( 'live' );
 				$content = substr( $content, $brace['OFFSET'] + $len + 4, $brace['LENGTH'] - $len - 6 );
 				break;
 			}

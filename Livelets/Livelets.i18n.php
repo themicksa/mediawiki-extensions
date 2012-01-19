@@ -20,11 +20,7 @@ $messages['en'] = array(
  * @author Raymond
  */
 $messages['qqq'] = array(
-	'livelets-desc' => "{{desc}}
-
-Further description on http://www.mediawiki.org/wiki/Extension:Livelets
-
-According to that page, the functionality of this extension is not limited to the Main Page but can be used in all pages. ''Therefore, the phrase \"the main page content\" '''should be translated as \"the main content of the page\",''' not as \"the content of the main page\".''",
+	'livelets-desc' => "{{desc}} Further description on https://www.mediawiki.org/wiki/Extension:Livelets. According to that page, the functionality of this extension is not limited to the Main Page but can be used in all pages. ''Therefore, the phrase \"the main page content\" '''should be translated as \"the main content of the page\",''' not as \"the content of the main page\".''",
 );
 
 /** Asturian (Asturianu)
