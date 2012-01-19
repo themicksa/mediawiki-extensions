@@ -141,7 +141,7 @@ For more information, please visit the $1.',
 	'moodbar-invalid-item' => 'The system was unable to find the correct feedback item.',
 	'moodbar-feedback-action-error' => 'An error occurred when trying to perform this action.',
 	'moodbar-feedback-response-summary' => '[[$1|$2]] [[$3|responded]] $4 ago',
-	'moodbar-feedback-response-helpful-summary' => '[[$1|$2]] [[$3|responded]] $4 ago and [[$5|$6]] thinks it helpful',
+	'moodbar-feedback-response-helpful-summary' => '[[$1|$2]] [[$3|responded]] $4 ago and [[$5|$6]] finds it helpful',
 	'moodbar-feedback-edit-summary' => 'Response to [[Special:FeedbackDashboard/$1|user feedback]]: $2',
 	'moodbar-feedback-top-responders-title' => 'Top Responders',
 	// Mood types
