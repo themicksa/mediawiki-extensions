@@ -73,8 +73,8 @@ $messages['bs'] = array(
  * @author Kghbln
  */
 $messages['de'] = array(
-	'ukgeocoding_name' => 'Georeferenzierung für Karten (UK)',
 	'ukgeocoding-desc' => 'Erweitert die Softwareerweiterung Maps um die Parserfunktion „display_uk_point“ und ermöglicht so die Georeferenzierung von Postleitzahlen des Vereinigten Königreichs (UK)',
+	'ukgeocoding_name' => 'Georeferenzierung für Karten (UK)',
 	'ukgeocoding_couldNotGeocode' => 'Eine oder mehrere Postleitzahlen konnte nicht geokodiert werden und wurden nicht in die Karte aufgenommen.',
 );
 
@@ -118,8 +118,8 @@ $messages['frp'] = array(
  * @author Toliño
  */
 $messages['gl'] = array(
-	'ukgeocoding_name' => 'Xeocodificación do Reino Unido para os mapas',
 	'ukgeocoding-desc' => 'Expande os mapas cunha función analítica display_uk_point coa implementación do Google Maps',
+	'ukgeocoding_name' => 'Xeocodificación do Reino Unido para os mapas',
 	'ukgeocoding_couldNotGeocode' => 'Un ou máis códigos postais non se puideron xeocodificar e omitíronse no mapa.',
 );
 
@@ -208,18 +208,9 @@ $messages['lb'] = array(
  * @author Bjankuloski06
  */
 $messages['mk'] = array(
+	'ukgeocoding-desc' => 'Ги проширува картите со парсерска функција display_uk_point со примена во Google Карти',
 	'ukgeocoding_name' => 'Британско геокодирање за карти',
-	'ukgeocoding-desc' => 'Ги проширува картите со display_uk_point парсерски функции со имплементирање на Google Maps',
 	'ukgeocoding_couldNotGeocode' => 'Еден или повеќе поштенски броеви не можеа да се геокодираат и затоа не се на картата.',
-);
-
-/** Dutch (Nederlands)
- * @author Siebrand
- */
-$messages['nl'] = array(
-	'ukgeocoding_name' => 'VK-geocodering voor Maps',
-	'ukgeocoding-desc' => 'Uitbreiding van Maps met de parserfunctie "display_uk_point" met een implementatie voor Google Maps',
-	'ukgeocoding_couldNotGeocode' => 'Een of meer postcodes konden niet gegeocodeerd worden en zijn uit de kaart weggelaten.',
 );
 
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
@@ -229,6 +220,15 @@ $messages['nb'] = array(
 	'ukgeocoding_name' => 'Geokoding av UK for Maps',
 	'ukgeocoding-desc' => 'Utvider Maps med en display_uk_point-tolkefunksjon med Google Maps-implementasjon',
 	'ukgeocoding_couldNotGeocode' => 'En eller fler postkoder kunne ikke geokodes og har blitt utelatt fra kartet.',
+);
+
+/** Dutch (Nederlands)
+ * @author Siebrand
+ */
+$messages['nl'] = array(
+	'ukgeocoding_name' => 'VK-geocodering voor Maps',
+	'ukgeocoding-desc' => 'Uitbreiding van Maps met de parserfunctie "display_uk_point" met een implementatie voor Google Maps',
+	'ukgeocoding_couldNotGeocode' => 'Een of meer postcodes konden niet gegeocodeerd worden en zijn uit de kaart weggelaten.',
 );
 
 /** Occitan (Occitan)

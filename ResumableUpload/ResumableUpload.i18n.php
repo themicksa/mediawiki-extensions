@@ -47,6 +47,13 @@ $messages['de'] = array(
 	'resumableupload-desc' => 'Ermöglicht das Wiederaufnehmen des Hochladens',
 );
 
+/** Lower Sorbian (Dolnoserbski)
+ * @author Michawiki
+ */
+$messages['dsb'] = array(
+	'resumableupload-desc' => 'Zmóžnja z nagraśim pókšacowaś',
+);
+
 /** Spanish (Español)
  * @author Fitoschido
  */

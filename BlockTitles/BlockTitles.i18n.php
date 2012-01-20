@@ -751,6 +751,7 @@ $messages['sl'] = array(
 );
 
 /** Serbian (Cyrillic script) (‪Српски (ћирилица)‬)
+ * @author Rancher
  * @author Sasa Stefanovic
  * @author Жељко Тодоровић
  * @author Михајло Анђелковић
@@ -758,7 +759,7 @@ $messages['sl'] = array(
 $messages['sr-ec'] = array(
 	'block_title_error_page_title' => 'Блокиран наслов',
 	'blocktitles-desc' => 'Пружа једноставан начин спречавања прављења или снимања страница са неодговарајућим насловима',
-	'block_title_error' => 'Жао нам је, наслов ове странице није могуће снимити.',
+	'block_title_error' => 'Нажалост, није дозвољено да страница има овакав наслов.',
 );
 
 /** Serbian (Latin script) (‪Srpski (latinica)‬)

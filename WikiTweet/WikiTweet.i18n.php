@@ -213,8 +213,14 @@ $messages['be-tarask'] = array(
  */
 $messages['bg'] = array(
 	'wikitweet-delete' => 'изтриване',
+	'wikitweet-back-timeline' => 'Обратно към времевата линия',
 	'wikitweet-timeago' => 'Преди $1',
 	'wikitweet-fewsecondsago' => 'Преди няколко секунди',
+	'wikitweet-status' => 'Статут:',
+	'wikitweet-comment' => 'Коментар',
+	'wikitweet-from' => 'от',
+	'wikitweet-in' => 'в',
+	'wikitweet-directlink' => 'Директна препратка:',
 );
 
 /** Breton (Brezhoneg)

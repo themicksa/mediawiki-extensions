@@ -935,6 +935,17 @@ $messages['be-tarask'] = array(
 	'contest-mycontests-updated-success' => 'Вы зьмянілі Вашую заяўку на ўдзел.',
 );
 
+/** Bulgarian (Български)
+ * @author DCLXVI
+ */
+$messages['bg'] = array(
+	'contest-special-name' => 'Име',
+	'contest-special-edit' => 'Редактиране',
+	'contest-special-delete' => 'Изтриване',
+	'contest-contest-name' => 'Име',
+	'contest-contest-status' => 'Статут',
+);
+
 /** Bengali (বাংলা)
  * @author Bellayet
  */
@@ -7498,7 +7509,7 @@ $messages['vi'] = array(
 	'contest-contest-reminder-success' => 'Đã gửi thành công thư điện tử nhắc nhở cho $1 người trang giải',
 	'contest-contest-reminder-close' => 'Đóng',
 	'contest-contest-reminder-retry' => 'Thử gửi lần nữa',
-	'contest-contest-reminder-failed' => 'Không thể gửi thư điện tử nhắc nhở.',
+	'contest-contest-reminder-failed' => 'Không thể gửi {{PLURAL:$1|thư điện tử|các thư điện tử}} nhắc nhở.',
 	'contest-contest-reminder-subject' => 'Tiêu đề:',
 	'contest-contestant-id' => 'ID',
 	'contest-contestant-challenge-name' => 'Tên thách thức',

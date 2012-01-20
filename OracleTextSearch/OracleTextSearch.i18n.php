@@ -45,6 +45,14 @@ $messages['de'] = array(
 	'oracletextsearch-desc' => 'Ermöglicht das Durchsuchen von Inhalt und Metadaten hochgeladener Dateien unter Verwendung der „Oracle TEXT“-Indexierung',
 );
 
+/** Lower Sorbian (Dolnoserbski)
+ * @author Michawiki
+ */
+$messages['dsb'] = array(
+	'oracletextsearch' => 'OracleTextSearch',
+	'oracletextsearch-desc' => 'Wopśimjeśe/Metadaty nagratych datajow z pomocu indicěrowanja "Oracle Text" pśepytaś',
+);
+
 /** Spanish (Español)
  * @author Fitoschido
  */

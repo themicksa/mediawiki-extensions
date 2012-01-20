@@ -867,6 +867,7 @@ $messages['bg'] = array(
 	'mwe-ftype-unk' => 'Неизвестен файлов формат',
 	'mwe-am-this_wiki-title' => 'Това уики',
 	'mwe-am-this_wiki-desc' => 'Локалното уики',
+	'mwe-upload-multi' => 'Качване на {{PLURAL:$1|файл|файлове}}',
 );
 
 /** Bengali (বাংলা)

@@ -86,10 +86,11 @@ $messages['be-tarask'] = array(
 );
 
 /** Bulgarian (Български)
+ * @author DCLXVI
  * @author Stanqo
  */
 $messages['bg'] = array(
-	'addmediawizard-desc' => 'Добави съветник създаден в партньорство с Kaltura и Wikimedia Foundation',
+	'addmediawizard-desc' => 'Добавя медиа помощник, разработен съвместно между Kaltura и Фондация Уикимедия',
 );
 
 /** Breton (Brezhoneg)

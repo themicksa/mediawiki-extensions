@@ -68,6 +68,15 @@ $messages['de-formal'] = array(
 	'badaccess-bogususerpage' => 'Zu dieser Benutzerseite ist kein Benutzerkonto vorhanden. Sie sind nicht berechtigt diese Benutzerseite zu erstellen.',
 );
 
+/** Lower Sorbian (Dolnoserbski)
+ * @author Michawiki
+ */
+$messages['dsb'] = array(
+	'nobogususerpages-desc' => 'Zajźujo napóranjeju wužywarskich bokow, za kótarež wužywaŕ njeeksistěrujo',
+	'badaccess-bogususerpage' => 'Wužywaŕ toś togo wužywarskego boka njeeksistěrujo. Njamaš pšawa, aby napórał toś ten bok.',
+	'right-createbogususerpage' => 'Wužywarske boki za wužywarjow napóraś, kótarež njejsu na toś tom wikiju zregistrěrowane',
+);
+
 /** French (Français)
  * @author Gomoko
  */
@@ -91,8 +100,8 @@ $messages['gl'] = array(
  */
 $messages['hsb'] = array(
 	'nobogususerpages-desc' => 'Zadźěwa wutworjenju wužiwarskich stronow, za kotrež wužiwar njeeksistuje',
-	'badaccess-bogususerpage' => 'Wužiwar tuteje wužiwarskeje strony njeeksistuje. Nimaš prawa, zo by wopačnu wužiwarsku stronu wutworił.',
-	'right-createbogususerpage' => 'Wužiwarske strony za wužiwarjow wutowrić, kotřiž njejsu na tutym wikiju zregistrowani',
+	'badaccess-bogususerpage' => 'Wužiwar tuteje wužiwarskeje strony njeeksistuje. Nimaš prawa, zo by tutu wužiwarsku stronu wutworił.',
+	'right-createbogususerpage' => 'Wužiwarske strony za wužiwarjow wutworić, kotřiž njejsu na tutym wikiju zregistrowani',
 );
 
 /** Interlingua (Interlingua)

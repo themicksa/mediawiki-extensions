@@ -36,6 +36,13 @@ $messages['de'] = array(
 	'namespacepaths-desc' => 'Ermöglicht für Namensräume die Darstellung benutzerdefinierter Pfade zu Artikeln',
 );
 
+/** Lower Sorbian (Dolnoserbski)
+ * @author Michawiki
+ */
+$messages['dsb'] = array(
+	'namespacepaths-desc' => 'Zmóžnja zwobraznjenje swójskich sćažkow k nastawkam za mjenjowe rumy wikija. Na pś. Zwobraznjenje bokow ako Help:A do /help/Page město /wiki/Help:Page.',
+);
+
 /** French (Français)
  * @author Gomoko
  */

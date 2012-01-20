@@ -301,6 +301,18 @@ $messages['nl'] = array(
 	'zero-rated-mobile-access-click-to-view-image' => 'Klik om de afbeelding te zien of "$1"...',
 );
 
+/** Pashto (پښتو)
+ * @author Ahmed-Najib-Biabani-Ibrahimkhel
+ */
+$messages['ps'] = array(
+	'zero-rated-mobile-access-search' => 'پلټل',
+	'zero-rated-mobile-access-language-selection' => 'ټولې ژبې',
+	'zero-rated-mobile-access-home-page-selection' => 'د $1 کورپاڼه',
+	'zero-rated-mobile-access-banner-text' => 'وړيا {{SITENAME}} د $1 لخوا',
+	'zero-rated-mobile-access-banner-text-data-charges-yes' => 'هو',
+	'zero-rated-mobile-access-banner-text-data-charges-no' => 'نه',
+);
+
 /** Telugu (తెలుగు)
  * @author Veeven
  */
@@ -309,6 +321,22 @@ $messages['te'] = array(
 	'zero-rated-mobile-access-language-selection' => 'అన్ని భాషలు',
 	'zero-rated-mobile-access-banner-text-data-charges-yes' => 'అవును',
 	'zero-rated-mobile-access-banner-text-data-charges-no' => 'కాదు',
+);
+
+/** Vietnamese (Tiếng Việt)
+ * @author Minh Nguyen
+ */
+$messages['vi'] = array(
+	'zero-rated-mobile-access-desc' => 'Cung cấp tính năng cho các nhà cung cấp điện thoại di động mà cho phép truy cập miễn phí',
+	'zero-rated-mobile-access-search' => 'Tìm kiếm',
+	'zero-rated-mobile-access-language-selection' => 'Tất cả các ngôn ngữ',
+	'zero-rated-mobile-access-home-page-selection' => 'Trang đầu $1',
+	'zero-rated-mobile-access-home-page-selection-text' => 'Hoặc vào trang đầu trong các ngôn ngữ sau:',
+	'zero-rated-mobile-access-banner-text' => '{{SITENAME}} miễn phí từ $1',
+	'zero-rated-mobile-access-banner-text-data-charges' => 'Các chi phí dữ liệu có thể được áp dụng nếu bạn tiếp tục: $1 hoặc $2',
+	'zero-rated-mobile-access-banner-text-data-charges-yes' => 'Có',
+	'zero-rated-mobile-access-banner-text-data-charges-no' => 'Không',
+	'zero-rated-mobile-access-click-to-view-image' => 'Bấm để xem hình “$1”…',
 );
 
 /** Yiddish (ייִדיש)

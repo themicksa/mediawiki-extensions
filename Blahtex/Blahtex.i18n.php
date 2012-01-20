@@ -3422,6 +3422,7 @@ Ste namesto tega morda nameravali uporabiti »$2«?',
 );
 
 /** Serbian (Cyrillic script) (‪Српски (ћирилица)‬)
+ * @author Rancher
  * @author Sasa Stefanovic
  * @author Михајло Анђелковић
  */
@@ -3451,7 +3452,7 @@ $messages['sr-ec'] = array(
 	'math_InvalidColour' => 'Боја "$1" је неисправна',
 	'math_InvalidUtf8Input' => 'Улазни стринг није валидни UTF-8',
 	'math_LatexFontNotSpecified' => 'Није био наведен LaTeX фонт за "$1"',
-	'math_LatexPackageUnavailable' => 'Није могуће израдити PNG зато што је LaTeX пакет "$1" недоступан',
+	'math_LatexPackageUnavailable' => 'Не могу да направим PNG слику јер је LaTeX пакет „$1“ недоступан',
 	'math_MismatchedBeginAndEnd' => 'Команде "$1" и "$2" се не поклапају',
 	'math_MisplacedLimits' => 'Команда "$1" може да се употреби само након математичког оператора.
 Размислите о коришћењу "\\mathop".',
@@ -3460,7 +3461,7 @@ $messages['sr-ec'] = array(
 	'math_MissingOpenBraceBefore' => 'Недостаје отворена заграда "{" пре "$1"',
 	'math_MissingOrIllegalParameterIndex' => 'Индекс параметра недостаје или је неисправан у дефиницији "$1"',
 	'math_NotEnoughArguments' => 'Недовољно аргумената је употребљено за "$1"',
-	'math_PngIncompatibleCharacter' => 'Није било могуће исправно исцртати PNG слиу која садржи карактер $1',
+	'math_PngIncompatibleCharacter' => 'Не могу да исправно направим PNG слику који садржи знак $1',
 	'math_SubstackRowTooBig' => 'У сваком реду блока "подстека" се може наћи само један унос',
 	'math_TooManyMathmlNodes' => 'MathML дрво садржи превише чворова',
 	'math_TooManyTokens' => 'Унос је превише дугачак',

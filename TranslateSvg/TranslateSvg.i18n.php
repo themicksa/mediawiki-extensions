@@ -315,6 +315,7 @@ $messages['ko'] = array(
 $messages['lb'] = array(
 	'translatesvg-page' => 'Fichier:',
 	'translatesvg-submit' => 'Lass',
+	'translatesvg-summary' => "Dës Spezialsäit erlaabt et fir Iwwersetzungen déi an SVG-Dateien integréiert sinn derbäizesetzen, ewechzehuelen an z'änneren.",
 	'translatesvg-add' => 'Wann Är Sprooch net schonn an der Lëscht dran ass, kënnt Dir se [[#addlanguage|derbäisetzen]].',
 	'translatesvg-xcoordinate-pre' => 'X-Koordinat (horizontal):',
 	'translatesvg-ycoordinate-pre' => 'Y-Koordinat (vertikal):',

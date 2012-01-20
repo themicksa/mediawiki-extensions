@@ -33,6 +33,13 @@ $messages['de'] = array(
 	'hashtables-desc' => 'Ergänzt Parserfunktionen die assoziative Datenfelder (Hashes) auf Wikiseiten ermöglichen sowie nutzbar machen',
 );
 
+/** Lower Sorbian (Dolnoserbski)
+ * @author Michawiki
+ */
+$messages['dsb'] = array(
+	'hashtables-desc' => 'Parserowe funkcije, kótarež zmóžnjaju asociatiwne datowe póla na wikibokach',
+);
+
 /** French (Français)
  * @author Gomoko
  */

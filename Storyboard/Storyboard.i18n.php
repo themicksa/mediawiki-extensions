@@ -340,6 +340,14 @@ $messages['be-tarask'] = array(
 	'storyboard-storydeletionconfirm' => 'Вы ўпэўненыя, што жадаеце назаўсёды выдаліць гэтую гісторыю?',
 );
 
+/** Bulgarian (Български)
+ * @author DCLXVI
+ */
+$messages['bg'] = array(
+	'storyboard-language' => 'Език',
+	'storyboard-deletestory' => 'Премахване',
+);
+
 /** Breton (Brezhoneg)
  * @author Fulup
  * @author Y-M D

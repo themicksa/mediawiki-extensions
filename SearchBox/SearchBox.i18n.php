@@ -94,6 +94,16 @@ $messages['arz'] = array(
 	'searchbox-namespaces' => 'النطاقات:',
 );
 
+/** Asturian (Asturianu)
+ * @author Xuacu
+ */
+$messages['ast'] = array(
+	'searchbox-desc' => 'Permite incluir formularios de gueta',
+	'searchbox-search' => 'Guetar',
+	'searchbox-go' => 'Dir',
+	'searchbox-namespaces' => 'Espacios de nomes:',
+);
+
 /** Azerbaijani (Azərbaycanca)
  * @author Cekli829
  */

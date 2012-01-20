@@ -226,6 +226,17 @@ $messages['ast'] = array(
 	'prefstats' => 'Estadístiques de les preferencies',
 	'prefstats-desc' => 'Siguir les estadístiques sobro cuantos usuarios tienen determinaes preferencies activaes',
 	'prefstats-title' => 'Estadístiques de les preferencies',
+	'prefstats-xaxis' => 'Duración (hores)',
+	'prefstats-factors' => 'Ver por: $1',
+	'prefstats-factor-hour' => 'hora',
+	'prefstats-factor-sixhours' => 'seis hores',
+	'prefstats-factor-day' => 'día',
+	'prefstats-factor-week' => 'selmana',
+	'prefstats-factor-twoweeks' => 'dos selmanes',
+	'prefstats-factor-fourweeks' => 'cuatro selmanes',
+	'prefstats-factor-default' => 'tornar a la escala predeterminada',
+	'prefstats-legend-out' => 'Desactivao',
+	'prefstats-legend-in' => 'Activao',
 );
 
 /** Azerbaijani (Azərbaycanca)

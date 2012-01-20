@@ -83,6 +83,17 @@ $messages['arz'] = array(
 	'pageby-anon' => '<i>مجهول</i>',
 );
 
+/** Asturian (Asturianu)
+ * @author Xuacu
+ */
+$messages['ast'] = array(
+	'pageby-desc' => 'Amuesa les collaboraciones feches a una páxina wiki usando la etiqueta <code><nowiki><pageby></nowiki></code>',
+	'pageby-first' => 'Páxina creada por $1, $2',
+	'pageby-last' => 'Últimu  <a href="$3">cambiu</a> fechu por $1, $2',
+	'pageby-contributors' => 'Collaboradores:',
+	'pageby-anon' => '<i>anónimu</i>',
+);
+
 /** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
  * @author EugeneZelenko
  * @author Jim-by

@@ -138,7 +138,7 @@ $messages['be-tarask'] = array(
 	'apisandbox' => 'Пясочніца API',
 	'apisb-no-js' => "'''Памылка''': гэтая магчымасьць патрабуе JavaScript.",
 	'apisb-intro' => "Выкарыстоўвайце гэтую старонку для экспэрымэнтаў з '''API вэб-сэрвіса MediaWiki'''.
-Зьвяртайцеся да [//www.mediawiki.org/wiki/API дакумэнтацыі API] для дадатковай інфармацыі па выкарыстаньні API. Напрыклад, [//www.mediawiki.org/wiki/API#A_simple_example як атрымаць зьмест Галоўнай старонкі]. Выберыце дзеяньне, каб пабачыць болей узораў.",
+Зьвяртайцеся да [//www.mediawiki.org/wiki/API:Main_page дакумэнтацыі API] для дадатковай інфармацыі па выкарыстаньні API. Напрыклад, [//www.mediawiki.org/wiki/API#A_simple_example як атрымаць зьмест Галоўнай старонкі]. Выберыце дзеяньне, каб пабачыць болей узораў.",
 	'apisb-api-disabled' => 'API забаронены на гэтым сайце.',
 	'apisb-parameters' => 'Парамэтры',
 	'apisb-result' => 'Вынік',
@@ -168,8 +168,13 @@ $messages['be-tarask'] = array(
  */
 $messages['bg'] = array(
 	'apisb-no-js' => "'''Грешка''': тази функционалност изисква Джаваскрипт.",
+	'apisb-parameters' => 'Параметри',
 	'apisb-result' => 'Резултат',
+	'apisb-select-action' => 'Избиране на действие',
 	'apisb-loading' => 'Зареждане...',
+	'apisb-example' => 'Пример',
+	'apisb-examples' => 'Примери',
+	'apisb-clear' => 'Изчистване',
 );
 
 /** Bengali (বাংলা)
@@ -193,7 +198,7 @@ $messages['br'] = array(
 	'apisandbox' => 'Poull-traezh API',
 	'apisb-no-js' => "'''Fazi''' : Rekis eo JavaScript evit an arc'hwel-mañ.",
 	'apisb-intro' => "Grit gant ar bajenn-mañ evit amprouiñ '''MediaWiki API'''.
-Kit da deuler ur sell war [//www.mediawiki.org/wiki/API teulioù API] evit gouzout hiroc'h penaos embreger API.",
+Kit da deuler ur sell war [//www.mediawiki.org/wiki/API:Main_page teulioù API] evit gouzout hiroc'h penaos embreger API.",
 	'apisb-api-disabled' => "Diweredekaet eo API war al lec'hienn-mañ.",
 	'apisb-parameters' => 'Arventennoù',
 	'apisb-result' => "Disoc'h",
@@ -315,7 +320,7 @@ $messages['eo'] = array(
 	'apisandbox' => 'API testejo',
 	'apisb-no-js' => "'''Eraro''': tiu ĉi funkcio postulas Ĝavaskripton.",
 	'apisb-intro' => "Uzu tiun ĉi paĝon por eksperimenti kun '''MediaWiki API'''.
-Vidu [//www.mediawiki.org/wiki/API la API-dokumentadon] por pli da detaloj pri la uzo de API.",
+Vidu [//www.mediawiki.org/wiki/API:Main_page la API-dokumentadon] por pli da detaloj pri la uzo de API.",
 	'apisb-api-disabled' => 'API estas malŝalta en ĉi tiu retejo.',
 	'apisb-parameters' => 'Parametroj',
 	'apisb-result' => 'Rezulto',
@@ -349,7 +354,7 @@ $messages['es'] = array(
 	'apisb-no-js' => "'''Error ''': esta característica requiere JavaScript.",
 	'apisb-intro' => "Utiliza está página para experimentar con el '''API de MediaWiki'''.
 
-Consulte [//www.mediawiki.org/wiki/API la documentación] para más detalles sobre su uso.",
+Consulte [//www.mediawiki.org/wiki/API:Main_page la documentación] para más detalles sobre su uso.",
 	'apisb-api-disabled' => 'La API está desactivada en este sitio.',
 	'apisb-parameters' => 'Parámetros',
 	'apisb-result' => 'Resultado',
@@ -378,7 +383,7 @@ $messages['et'] = array(
 	'apisandbox' => 'API-liivakast',
 	'apisb-no-js' => "'''Tõrge''': Selle funktsiooni jaoks on JavaScripti vaja.",
 	'apisb-intro' => "Kasuta seda lehekülge '''MediaWiki API''' katsetamiseks.
-Üksikasjad API kasutamise kohta leiad [//www.mediawiki.org/wiki/API API dokumentatsioonist].",
+Üksikasjad API kasutamise kohta leiad [//www.mediawiki.org/wiki/API:Main_page API dokumentatsioonist].",
 	'apisb-api-disabled' => 'API on selles võrgukohas keelatud.',
 	'apisb-parameters' => 'Parameetrid',
 	'apisb-result' => 'Tulemus',
@@ -446,7 +451,7 @@ $messages['fi'] = array(
 	'apisandbox' => 'API-hiekkalaatikko',
 	'apisb-no-js' => "'''Virhe:''' Tämä ominaisuus vaatii JavaScriptin.",
 	'apisb-intro' => "Tämä on '''MediaWiki API:n''' hiekkalaatikko.
-[//www.mediawiki.org/wiki/API API-dokumentaatio] kertoo lisää API:en käytöstä.",
+[//www.mediawiki.org/wiki/API:Main_page API-dokumentaatio] kertoo lisää API:en käytöstä.",
 	'apisb-api-disabled' => 'API on poistettu käytöstä tällä sivustolla.',
 	'apisb-parameters' => 'Parametrit',
 	'apisb-result' => 'Tulos',
@@ -480,7 +485,7 @@ $messages['fr'] = array(
 	'apisandbox' => 'Bac à sable API',
 	'apisb-no-js' => "''' Erreur ''': cette fonctionnalité nécessite JavaScript.",
 	'apisb-intro' => "Utilisez cette page pour expérimenter le '''webservice MediaWiki'''.
-Reportez-vous à [//www.mediawiki.org/wiki/API la documentation de l’API] pour plus de détails sur l’API. Exemple: [//www.mediawiki.org/wiki/API#A_simple_example obtenir le contenu d'une page principale]. Choisissez une option pour voir d'autres exemples.",
+Reportez-vous à [//www.mediawiki.org/wiki/API:Main_page la documentation de l’API] pour plus de détails sur l’API. Exemple: [//www.mediawiki.org/wiki/API#A_simple_example obtenir le contenu d'une page principale]. Choisissez une option pour voir d'autres exemples.",
 	'apisb-api-disabled' => 'API est désactivé sur ce site.',
 	'apisb-parameters' => 'Paramètres',
 	'apisb-result' => 'Résultat',
@@ -513,7 +518,7 @@ $messages['frp'] = array(
 	'apisandbox' => 'Bouèta de sabla API',
 	'apisb-no-js' => "'''Èrror :''' cela fonccionalitât at fôta de JavaScript.",
 	'apisb-intro' => "Utilisâd ceta pâge por èxpèrimentar avouéc '''MediaWiki API'''.
-Reportâd-vos sur [//www.mediawiki.org/wiki/API la documentacion de l’API] por més de dètalys sur l’usâjo de l’API.",
+Reportâd-vos sur [//www.mediawiki.org/wiki/API:Main_page la documentacion de l’API] por més de dètalys sur l’usâjo de l’API.",
 	'apisb-api-disabled' => 'API est dèsactivâ sur ceti seto.',
 	'apisb-parameters' => 'Paramètres',
 	'apisb-result' => 'Rèsultat',
@@ -543,7 +548,7 @@ $messages['gl'] = array(
 	'apisandbox' => 'Zona de probas API',
 	'apisb-no-js' => "'''Erro:''' Esta característica necesita JavaScript.",
 	'apisb-intro' => "Use esta páxina para experimentar co '''servizo web da API de MediaWiki'''.
-Consulte a [//www.mediawiki.org/wiki/API documentación da API] para obter máis información sobre o uso da API. Exemplo: [//www.mediawiki.org/wiki/API#A_simple_example obter o contido dunha páxina de inicio]. Seleccione unha acción para ollar máis exemplos.",
+Consulte a [//www.mediawiki.org/wiki/API:Main_page documentación da API] para obter máis información sobre o uso da API. Exemplo: [//www.mediawiki.org/wiki/API#A_simple_example obter o contido dunha páxina de inicio]. Seleccione unha acción para ollar máis exemplos.",
 	'apisb-api-disabled' => 'API está desactivado neste sitio.',
 	'apisb-parameters' => 'Parámetros',
 	'apisb-result' => 'Resultado',
@@ -578,7 +583,7 @@ $messages['he'] = array(
 	'apisandbox' => 'ארגז חול של API',
 	'apisb-no-js' => "'''שגיאה''': היכולת הזאת דורשת JavaScript",
 	'apisb-intro' => "השתמשו בדף הזה כדי להתנסות עם '''API של מדיה־ויקי'''.
-פנו ל־[//www.mediawiki.org/wiki/API תיעוד של ה־API] למידע נוסף של שימוש ב־API.",
+פנו ל־[//www.mediawiki.org/wiki/API:Main_page תיעוד של ה־API] למידע נוסף של שימוש ב־API.",
 	'apisb-api-disabled' => 'API אינו פעיל באתר הזה.',
 	'apisb-parameters' => 'פרמטרים',
 	'apisb-result' => 'תוצאה',
@@ -634,7 +639,7 @@ $messages['hsb'] = array(
 	'apisandbox' => 'API-hrajkanišćo',
 	'apisb-no-js' => "'''Zmylk''': tuta funkcija sej JavaScript wužaduje.",
 	'apisb-intro' => "Wužij tutu stronu, zo by z '''websłužbu Mediawiki API''' eksperimentował.
-Hlej [//www.mediawiki.org/wiki/API API-dokumentaciju] za dalše podrobnosće za wužiwanje API. Přikład: [//www.mediawiki.org/wiki/API#A_simple_example Wobsah hłowneje strony wotwołać]. Wubjer akciju, zo by dalše přikłady widźał.",
+Hlej [//www.mediawiki.org/wiki/API:Main_page API-dokumentaciju] za dalše podrobnosće za wužiwanje API. Přikład: [//www.mediawiki.org/wiki/API#A_simple_example Wobsah hłowneje strony wotwołać]. Wubjer akciju, zo by dalše přikłady widźał.",
 	'apisb-api-disabled' => 'API je so na tutym sydle znjemóžnił.',
 	'apisb-parameters' => 'Parametry',
 	'apisb-result' => 'Wuslědk',
@@ -668,7 +673,7 @@ $messages['hu'] = array(
 	'apisandbox' => 'API homokozó',
 	'apisb-no-js' => "'''Hiba''': ehhez a szolgáltatáshoz JavaScript szükséges.",
 	'apisb-intro' => "Ezen az oldalon kísérletezhetsz a '''MediaWiki API'''-val.
-További részletek az [//www.mediawiki.org/wiki/API API-dokumentációnál] találhatók.",
+További részletek az [//www.mediawiki.org/wiki/API:Main_page API-dokumentációnál] találhatók.",
 	'apisb-api-disabled' => 'API le van tiltva ezen az oldalon.',
 	'apisb-parameters' => 'Paraméterek',
 	'apisb-result' => 'Eredmény',
@@ -698,7 +703,7 @@ $messages['ia'] = array(
 	'apisandbox' => 'Cassa de sablo pro API',
 	'apisb-no-js' => "'''Error''': iste function require JavaScript.",
 	'apisb-intro' => "Usa iste pagina pro experimentar con le '''API de servicio web de MediaWiki'''.
-Consulta [//www.mediawiki.org/wiki/API le documentation del API] pro ulterior detalios concernente le uso del API. Per exemplo: [//www.mediawiki.org/wiki/API#A_simple_example obtener le contento de un Pagina principal]. Selige un action pro vider altere exemplos.",
+Consulta [//www.mediawiki.org/wiki/API:Main_page le documentation del API] pro ulterior detalios concernente le uso del API. Per exemplo: [//www.mediawiki.org/wiki/API#A_simple_example obtener le contento de un Pagina principal]. Selige un action pro vider altere exemplos.",
 	'apisb-api-disabled' => 'Le API ha essite disactivate in iste sito.',
 	'apisb-parameters' => 'Parametros',
 	'apisb-result' => 'Resultato',
@@ -731,7 +736,7 @@ $messages['id'] = array(
 	'apisandbox' => 'Bak pasir API',
 	'apisb-no-js' => "'''Galat''': fitur ini memerlukan JavaScript.",
 	'apisb-intro' => "Gunakan halaman ini untuk bereksperimen dengan '''MediaWiki API'''.
-Lihat [//www.mediawiki.org/wiki/API dokumentasi API] untuk perincian lanjut penggunaan API.",
+Lihat [//www.mediawiki.org/wiki/API:Main_page dokumentasi API] untuk perincian lanjut penggunaan API.",
 	'apisb-api-disabled' => 'API dinonaktifkan pada situs ini.',
 	'apisb-parameters' => 'Parameter',
 	'apisb-result' => 'Hasil',
@@ -759,7 +764,7 @@ $messages['ilo'] = array(
 	'apisandbox' => 'API a pagpsubokan',
 	'apisb-no-js' => "''Biddut''': daytoy a langa ket makasapul ti JavaScript.",
 	'apisb-intro' => "Usaren daytoy a panid ti panagsubok ti '''MediaWiki apot a serbisio ti API'''.
-Agiturong idiay [//www.mediawiki.org/wiki/API the API dokumentasion] para iti adadu pay a detalye iti panag-usar ti API. Kas pagarigan: [//www.mediawiki.org/wiki/API#A_simple_example alaen ti linaon ti Umuna a Panid].  Agpili ti maaramid tapno makakita ti adu pay a kas pagarigan.",
+Agiturong idiay [//www.mediawiki.org/wiki/API:Main_page the API dokumentasion] para iti adadu pay a detalye iti panag-usar ti API. Kas pagarigan: [//www.mediawiki.org/wiki/API#A_simple_example alaen ti linaon ti Umuna a Panid].  Agpili ti maaramid tapno makakita ti adu pay a kas pagarigan.",
 	'apisb-api-disabled' => 'Ti API ket nabaldodo iti daytoy a pagsaadan.',
 	'apisb-parameters' => 'Dagiti parametro',
 	'apisb-result' => 'Nagbanagan',
@@ -796,7 +801,7 @@ $messages['it'] = array(
 	'apisandbox' => 'Sandbox API',
 	'apisb-no-js' => "'''Errore''': questa funzione richiede JavaScript.",
 	'apisb-intro' => "Utilizza questa pagina per sperimentare con '''MediaWiki API'''.
-Per ulteriori dettagli di utilizzo delle API, fai riferimento alla [//www.mediawiki.org/wiki/API documentazione API].",
+Per ulteriori dettagli di utilizzo delle API, fai riferimento alla [//www.mediawiki.org/wiki/API:Main_page documentazione API].",
 	'apisb-api-disabled' => 'Le funzionalità API sono disabilitate su questo sito.',
 	'apisb-parameters' => 'Parametri',
 	'apisb-result' => 'Risultato',
@@ -826,7 +831,7 @@ $messages['ko'] = array(
 	'apisandbox' => 'API 실험실',
 	'apisb-no-js' => "'''오류''': 이 기능을 쓰려면 자바스크립트가 필요합니다.",
 	'apisb-intro' => "'''미디어위키 API'''를 시험해보려면 이 페이지를 이용해보세요.
-사용법에 대해서는 [//www.mediawiki.org/wiki/API API 사용법]을 참고해보십시오.",
+사용법에 대해서는 [//www.mediawiki.org/wiki/API:Main_page API 사용법]을 참고해보십시오.",
 	'apisb-api-disabled' => '이 사이트에서는 API가 꺼져 있습니다.',
 	'apisb-parameters' => '변수',
 	'apisb-result' => '결과',
@@ -897,7 +902,7 @@ $messages['li'] = array(
 	'apisandbox' => 'API-zandjbak',
 	'apisb-no-js' => "'''Fout''': dees funktie vereis JavaScript.",
 	'apisb-intro' => "Gebroek dees pagina óm te experimentere mit de '''MediaWiki API'''.
-Zuuch de [//www.mediawiki.org/wiki/API API-dokkemèntatie] veur mier details euver 't gebroek van de API.",
+Zuuch de [//www.mediawiki.org/wiki/API:Main_page API-dokkemèntatie] veur mier details euver 't gebroek van de API.",
 	'apisb-api-disabled' => 'API is oetgesjakeld op deze site.',
 	'apisb-parameters' => 'Parameters',
 	'apisb-result' => 'Rizzeltaat',
@@ -928,7 +933,7 @@ $messages['lt'] = array(
 	'apisandbox' => 'API smėlio dėžės',
 	'apisb-no-js' => '"" Klaida "": ši funkcija reikalauja JavaScript.',
 	'apisb-intro' => "Naudokite šį puslapį norėdami eksperimentuoti su '''MediaWiki API \"„.
-	Ieškokite [//www.mediawiki.org/wiki/API API dokumentacijoje] Išsamesnės informacijos apie API naudojimo.",
+	Ieškokite [//www.mediawiki.org/wiki/API:Main_page API dokumentacijoje] Išsamesnės informacijos apie API naudojimo.",
 	'apisb-api-disabled' => 'API yra išjungtas šioje svetainėje.',
 	'apisb-parameters' => 'Parametrai',
 	'apisb-result' => 'Rezultatai',
@@ -965,7 +970,7 @@ $messages['mk'] = array(
 	'apisandbox' => 'API-песочница',
 	'apisb-no-js' => "'''Грешка''': оваа функција бара JavaScript.",
 	'apisb-intro' => "Страницава служи за експериментирање со '''МедијаВики API'''.
-	Повеќе за употребата на овој API ќе најдете во [//www.mediawiki.org/wiki/API неговата документација].  Пример: [//www.mediawiki.org/wiki/API#A_simple_example преземање на содржината на главната страница].  Одберете дејство за да видите повеќе примери.",
+	Повеќе за употребата на овој API ќе најдете во [//www.mediawiki.org/wiki/API:Main_page неговата документација].  Пример: [//www.mediawiki.org/wiki/API#A_simple_example преземање на содржината на главната страница].  Одберете дејство за да видите повеќе примери.",
 	'apisb-api-disabled' => 'API е оневозможен на ова мрежно место.',
 	'apisb-parameters' => 'Параметри',
 	'apisb-result' => 'Извод',
@@ -1000,9 +1005,14 @@ $messages['ml'] = array(
 	'apisb-parameters' => 'ചരങ്ങൾ',
 	'apisb-result' => 'ഫലം',
 	'apisb-request-url' => 'അഭ്യർത്ഥിച്ച യൂ.ആർ.എൽ.:',
+	'apisb-select-action' => 'പ്രവൃത്തി തിരഞ്ഞെടുക്കുക',
+	'apisb-select-value' => 'വില തിരഞ്ഞെടുക്കുക',
 	'apisb-loading' => 'ശേഖരിക്കുന്നു...',
 	'apisb-ns-main' => '(മുഖ്യം)',
 	'apisb-query-meta' => 'മെറ്റ വിവരങ്ങൾ',
+	'apisb-example' => 'ഉദാഹരണം',
+	'apisb-examples' => 'ഉദാഹരണങ്ങൾ',
+	'apisb-clear' => 'ശൂന്യമാക്കുക',
 );
 
 /** Malay (Bahasa Melayu)
@@ -1012,8 +1022,9 @@ $messages['ms'] = array(
 	'apisb-desc' => 'Membolehkan penyahpepijatan panggilan [//www.mediawiki.org/wiki/API MediaWiki API] dari pelayar',
 	'apisandbox' => 'Kotak pasir API',
 	'apisb-no-js' => "'''Perhatian''': ciri ini memerlukan JavaScript.",
-	'apisb-intro' => "Gunakan laman ini untuk bereksperimen dengan '''MediaWiki API'''.
-	Rujuk [//www.mediawiki.org/wiki/API dokumentasi API] untuk keterangan lanjut tentang penggunaan API.",
+	'apisb-intro' => "Gunakan laman ini untuk bereksperimen dengan '''API perkhidmatan sesawang MediaWiki'''.
+Rujuk [//www.mediawiki.org/wiki/API:Main_page dokumentasi API] untuk keterangan lanjut tentang penggunaan API.
+Contoh: [//www.mediawiki.org/wiki/API#A_simple_example dapatkan kandungan Laman Utama].  Pilih satu tindakan untuk melihat banyak lagi contoh.",
 	'apisb-api-disabled' => 'API dimatikan di tapak web ini.',
 	'apisb-parameters' => 'Parameter',
 	'apisb-result' => 'Hasil',
@@ -1075,7 +1086,7 @@ $messages['nl'] = array(
 	'apisandbox' => 'API-zandbak',
 	'apisb-no-js' => "'''Fout''': deze functie vereist JavaScript.",
 	'apisb-intro' => "Gebruik deze pagina om te experimenteren met de '''MediaWiki API'''.
-Zie de [//www.mediawiki.org/wiki/API API-documentatie] voor verdere details over het gebruik van de API.",
+Zie de [//www.mediawiki.org/wiki/API:Main_page API-documentatie] voor verdere details over het gebruik van de API.",
 	'apisb-api-disabled' => 'API is uitgeschakeld op deze site.',
 	'apisb-parameters' => 'Parameters',
 	'apisb-result' => 'Resultaat',
@@ -1148,7 +1159,7 @@ $messages['pl'] = array(
 	'apisandbox' => 'API sandbox (środowisko testowe)',
 	'apisb-no-js' => "'''Błąd''' – ta funkcja wymaga JavaScript.",
 	'apisb-intro' => "Użyj tej strony do eksperymentowania z '''MediaWiki API'''.
-Więcej szczegółów na temat użycia interfejsu API można znaleźć w [//www.mediawiki.org/wiki/API API dokumentacji].",
+Więcej szczegółów na temat użycia interfejsu API można znaleźć w [//www.mediawiki.org/wiki/API:Main_page API dokumentacji].",
 	'apisb-api-disabled' => 'API jest wyłączone na tej stronie.',
 	'apisb-parameters' => 'Parametry',
 	'apisb-result' => 'Rezultat',
@@ -1179,7 +1190,7 @@ $messages['pms'] = array(
 	'apisandbox' => 'Spassi dle preuve API',
 	'apisb-no-js' => "'''Eror''': sta funsion a l'ha damanca ëd JavaScript",
 	'apisb-intro' => "Ch'a deuvra sta pàgina për sperimenté con '''MediaWiki API'''.
-Ch'a fasa riferiment a [//www.mediawiki.org/wiki/API la documentassion ëd l'API] për d'àutri detaj an sl'utilisassion ëd l'API.",
+Ch'a fasa riferiment a [//www.mediawiki.org/wiki/API:Main_page la documentassion ëd l'API] për d'àutri detaj an sl'utilisassion ëd l'API.",
 	'apisb-api-disabled' => "API a l'é disabilità ansima a 's sit.",
 	'apisb-parameters' => 'Paràmetr',
 	'apisb-result' => 'Arzultà',
@@ -1224,7 +1235,7 @@ $messages['pt'] = array(
 	'apisandbox' => 'Testes da API',
 	'apisb-no-js' => "'''Erro''': Esta funcionalidade requer o JavaScript.",
 	'apisb-intro' => "Use esta página para fazer experiências com a '''API do MediaWiki'''.
-Consulte a [//www.mediawiki.org/wiki/API documentação da API] para informações sobre o uso da API.",
+Consulte a [//www.mediawiki.org/wiki/API:Main_page documentação da API] para informações sobre o uso da API.",
 	'apisb-api-disabled' => 'A API está desactivada neste site.',
 	'apisb-parameters' => 'Parâmetros',
 	'apisb-result' => 'Resultado',
@@ -1253,7 +1264,7 @@ $messages['pt-br'] = array(
 	'apisandbox' => 'Caixa de areia da API',
 	'apisb-no-js' => "'''Erro''': este recurso requer JavaScript.",
 	'apisb-intro' => "Use esta página para experimentar com '''API MediaWiki'''.
-Consulte [//www.mediawiki.org/wiki/API the API documentation] para obter mais detalhes de uso da API.",
+Consulte [//www.mediawiki.org/wiki/API:Main_page the API documentation] para obter mais detalhes de uso da API.",
 	'apisb-api-disabled' => 'A API está desabilitada neste site.',
 	'apisb-parameters' => 'Parâmetros',
 	'apisb-result' => 'Resultado',
@@ -1336,7 +1347,7 @@ $messages['ru'] = array(
 	'apisandbox' => 'Песочница API',
 	'apisb-no-js' => "'''Ошибка''': эта возможность требует JavaScript.",
 	'apisb-intro' => "Используйте эту страницу для экспериментов с '''MediaWiki API'''.
-Обратитесь к [//www.mediawiki.org/wiki/API документации API] для получения дополнительной информации об использовании API.",
+Обратитесь к [//www.mediawiki.org/wiki/API:Main_page документации API] для получения дополнительной информации об использовании API.",
 	'apisb-api-disabled' => 'API отключен на этом сайте.',
 	'apisb-parameters' => 'Параметры',
 	'apisb-result' => 'Результат',
@@ -1382,7 +1393,7 @@ $messages['si'] = array(
 	'apisandbox' => 'API වැලිපිල්ල',
 	'apisb-no-js' => "'''දෝෂය''': මෙම ගුණාංගය සඳහා ජාවාස්ක්‍රිප්ට් අවශ්‍ය වේ.",
 	'apisb-intro' => "'''මාධ්‍යවිකි API''' සමඟ අත්හදා බැලීම සඳහා මෙම පිටුව භාවිතා කරන්න.
-	API භාවිතය පිලිබඳ වැඩිදුර විස්තර සඳහා  [//www.mediawiki.org/wiki/API API ප්‍රලේඛනය] හී ඉල්ලීමක් කරන්න.",
+	API භාවිතය පිලිබඳ වැඩිදුර විස්තර සඳහා  [//www.mediawiki.org/wiki/API:Main_page API ප්‍රලේඛනය] හී ඉල්ලීමක් කරන්න.",
 	'apisb-api-disabled' => 'මෙම අඩවියෙහි API අක්‍රීය කොට ඇත.',
 	'apisb-parameters' => 'පරාමිතීන්',
 	'apisb-result' => 'ප්‍රතිඵලය',
@@ -1432,7 +1443,7 @@ $messages['sl'] = array(
 	'apisandbox' => 'Peskovnik API',
 	'apisb-no-js' => "'''Napaka''': funkcija potrebuje JavaScript.",
 	'apisb-intro' => "Uporabite to stran za preizkušanje '''MediaWiki API'''.
-	Oglejte si [//www.mediawiki.org/wiki/API dokumentacijo API] za nadaljnje podrobnosti uporabe API.",
+	Oglejte si [//www.mediawiki.org/wiki/API:Main_page dokumentacijo API] za nadaljnje podrobnosti uporabe API.",
 	'apisb-api-disabled' => 'API je onemogočen na tej spletni strani.',
 	'apisb-parameters' => 'Parametri',
 	'apisb-result' => 'Rezultat',
@@ -1487,7 +1498,7 @@ $messages['sv'] = array(
 	'apisandbox' => 'API-sandlåda',
 	'apisb-no-js' => "'''Fel''': Denna funktion kräver JavaScript.",
 	'apisb-intro' => "Använd denna sida för att experimentera med '''MediaWiki API'''.
-Kolla på [//www.mediawiki.org/wiki/API API-dokumentationen] för fler detaljer om API-användning.",
+Kolla på [//www.mediawiki.org/wiki/API:Main_page API-dokumentationen] för fler detaljer om API-användning.",
 	'apisb-api-disabled' => 'API är inaktiverat på denna webbplats.',
 	'apisb-parameters' => 'Parametrar',
 	'apisb-result' => 'Resultat',
@@ -1544,7 +1555,7 @@ $messages['tl'] = array(
 	'apisandbox' => 'Kahong buhanginan ng API',
 	'apisb-no-js' => "'''Kamalian''': nangangailangan ng JavaScript ang tampok na ito.",
 	'apisb-intro' => "Gamitin ang pahinang ito upang mag-eksperimento sa pamamagitan ng '''API ng MediaWiki'''.
-Sumangguni sa [//www.mediawiki.org/wiki/API dokumentasyon ng API] para sa karagdagan pang mga detalye sa paggamit ng API.",
+Sumangguni sa [//www.mediawiki.org/wiki/API:Main_page dokumentasyon ng API] para sa karagdagan pang mga detalye sa paggamit ng API.",
 	'apisb-api-disabled' => 'Hindi pinagagana ang API sa sityong ito.',
 	'apisb-parameters' => 'Mga parametro',
 	'apisb-result' => 'Kinalabasan',
@@ -1585,7 +1596,7 @@ $messages['uk'] = array(
 	'apisandbox' => 'Майданчик для тестування API',
 	'apisb-no-js' => "'''Помилка''': ця функція вимагає JavaScript.",
 	'apisb-intro' => "Ця сторінка служить для експериментування з '''MediaWiki API'''.
-Звертайтеся до [//www.mediawiki.org/wiki/API документації] для докладнішої інформації про використання API.",
+Звертайтеся до [//www.mediawiki.org/wiki/API:Main_page документації] для докладнішої інформації про використання API.",
 	'apisb-api-disabled' => 'API вимкнуто на цьому сайті.',
 	'apisb-parameters' => 'Параметри',
 	'apisb-result' => 'Результат',
@@ -1625,8 +1636,8 @@ $messages['vi'] = array(
 	'apisb-desc' => 'Cho phép gỡ lỗi các lần gọi [//www.mediawiki.org/wiki/API API của MediaWiki] trong trình duyệt',
 	'apisandbox' => 'Chỗ thử API',
 	'apisb-no-js' => "'''Lỗi:''' Tính năng này cần JavaScript.",
-	'apisb-intro' => "Trang này dùng để thử nghiệm với '''API của MediaWiki'''.
-	Hãy tra cứu [//www.mediawiki.org/wiki/API tài liệu API] để biết chi tiết về cách sử dụng API.",
+	'apisb-intro' => "Trang này dùng để thử nghiệm với '''API dịch vụ Web của MediaWiki'''.
+	Hãy tra cứu [//www.mediawiki.org/wiki/API:Main_page tài liệu API] để biết chi tiết về cách sử dụng API. Ví dụ: [//www.mediawiki.org/wiki/API#A_simple_example lấy nội dung của Trang Chính]. Chọn một tác vụ để xem thêm ví dụ.",
 	'apisb-api-disabled' => 'API đã bị vô hiệu hóa trên trang web này.',
 	'apisb-parameters' => 'Các tham số',
 	'apisb-result' => 'Kết quả',
@@ -1646,6 +1657,8 @@ $messages['vi'] = array(
 	'apisb-query-meta' => 'Siêu thông tin',
 	'apisb-generic-parameters' => 'Tham số chung',
 	'apisb-generator-parameters' => 'Bộ xuất phát',
+	'apisb-example' => 'Ví dụ',
+	'apisb-examples' => 'Ví dụ',
 );
 
 /** Yiddish (ייִדיש)
@@ -1671,8 +1684,9 @@ $messages['zh-hans'] = array(
 	'apisb-desc' => '允许从浏览器调试[//www.mediawiki.org/wiki/API MediaWiki API]调用',
 	'apisandbox' => 'API沙盒',
 	'apisb-no-js' => "'''错误'''：此功能需要 JavaScript。",
-	'apisb-intro' => '使用这个页面来试验“MediaWiki应用程序接口（API）”。
-欲知API使用详情，请参阅[//www.mediawiki.org/wiki/API API文档]。',
+	'apisb-intro' => '使用这个页面来试验“MediaWiki Web 服务应用程序接口（API）”。
+欲知API使用详情，请参阅[//www.mediawiki.org/wiki/API:Main_page API文档]。
+例如：[//www.mediawiki.org/wiki/API#A_simple_example 取得某个主页的内容]，然后选择一个操作来看更多范例。',
 	'apisb-api-disabled' => '此站点上禁用了API。',
 	'apisb-parameters' => '参数',
 	'apisb-result' => '结果',
@@ -1705,7 +1719,7 @@ $messages['zh-hant'] = array(
 	'apisandbox' => 'API沙箱',
 	'apisb-no-js' => "'''錯誤'''：此功能需要 JavaScript。",
 	'apisb-intro' => '使用這個頁面來試驗“MediaWiki應用程式介面（API）”。
-欲知API使用詳情，請參閱[//www.mediawiki.org/wiki/API API文檔]。',
+欲知API使用詳情，請參閱[//www.mediawiki.org/wiki/API:Main_page API文檔]。',
 	'apisb-api-disabled' => '此站點上禁用了API。',
 	'apisb-parameters' => '參數',
 	'apisb-result' => '結果',

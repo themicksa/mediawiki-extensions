@@ -42,6 +42,13 @@ $messages['de'] = array(
 	'subpagefun-desc' => 'Fügt Parser-Funktionen zum Ermitteln umfangreicher Informationen über [http://www.mediawiki.org/wiki/Help:Subpages Unterseiten] hinzu',
 );
 
+/** Lower Sorbian (Dolnoserbski)
+ * @author Michawiki
+ */
+$messages['dsb'] = array(
+	'subpagefun-desc' => 'Pśidawa parserowe funkcije, kótarež dowóluju wobšyrne informacije wó [http://www.mediawiki.org/wiki/Help:Subpages pódbokach] dóstaś',
+);
+
 /** French (Français)
  * @author Gomoko
  */

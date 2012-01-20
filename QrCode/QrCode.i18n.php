@@ -45,6 +45,13 @@ $messages['be-tarask'] = array(
 	'qrcode-desc' => 'Стварае і дадае выявы QR Code на вікі-старонкі',
 );
 
+/** Bulgarian (Български)
+ * @author DCLXVI
+ */
+$messages['bg'] = array(
+	'qrcode-desc' => 'Създава и добавя QR код изображения на страниците в уикито',
+);
+
 /** Breton (Brezhoneg)
  * @author Fulup
  */

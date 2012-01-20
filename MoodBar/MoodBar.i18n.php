@@ -2301,7 +2301,7 @@ $messages['he'] = array(
 	'moodbar-loading-title' => 'שיתוף...',
 	'moodbar-success-title' => 'תודה!',
 	'moodbar-error-title' => 'אוי!',
-	'moodbar-success-subtitle' => 'שיתוף חוויית המשתמש שלך עוזר לנו לשפר את $1.',
+	'moodbar-success-subtitle' => 'שיתוף {{FBD-LINK}} שלך עוזר לנו לשפר את $1.',
 	'moodbar-error-subtitle' => 'משהו השתבש! נא לנסות לשתף אותנו במשוב שלך מאוחר יותר.',
 	'moodbar-blocked-title' => 'אוי!',
 	'moodbar-blocked-subtitle' => 'נחסמת מפני עריכה.',
@@ -2891,14 +2891,14 @@ Benvenite a {{SITENAME}}, e gratias pro le [$2 retroaction]. Un altere usator de
 
      $4
 
-Vide iste message in tu [$5 pagina de discussion]
+Vide iste message in tu [$5 pagina de discussion].
 
 Que es un pagina de discussion?
-Tu pagina de discussion personal es le pagina que altere usatores de {{SITENAME}} usa pro communicar con te.  Tu pote responder per cliccar sur “Modificar”, displaciar le cursor a sub le commento, digitar tu responsa e quatro tildes (~~~~) pro adjunger un signatura, e cliccar sur Publicar. Tote le paginas in {{SITENAME}} ha paginas de discussion, e illes es usate pro multe e varie scopos. Il prende un tempore familiarisar se con tote isto, ma il es multo facile quando on se ha accostumate.
+Tu pagina de discussion personal es le pagina que altere usatores de {{SITENAME}} usa pro communicar con te.  Tu pote responder per cliccar sur "Modificar", displaciar le cursor a sub le commento, digitar tu responsa e quatro tildes (~~~~) pro adjunger un signatura, e cliccar sur Publicar. Tote le paginas in {{SITENAME}} ha paginas de discussion, e illos es usate pro multe e varie scopos. Il prende un tempore familiarisar se con tote isto, ma il es multo facile quando on se ha accostumate.
 
-Confuse ancora? [http://en.wikipedia.org/wiki/File:Wikipedia_basics_-_Talk_pages.ogv Iste video] (reguardar in [http://www.youtube.com/watch?v=JdeDLRsB2Es YouTube]) te da un explication passo a passo.
+Confuse ancora? [http://en.wikipedia.org/wiki/File:Wikipedia_basics_-_Talk_pages.ogv Iste video] (reguardar in [http://www.youtube.com/watch?v=JdeDLRsB2Es YouTube]) te da un explication passo a passo de como functiona le paginas de discussion.
 
-Con salutes,
+Gratias pro facer parte del communitate.
 
 -- {{SITENAME}}',
 );
@@ -5693,6 +5693,10 @@ $messages['vi'] = array(
 	'moodbar-trigger-feedback' => 'Phản hồi về sửa đổi',
 	'moodbar-trigger-share' => 'Chia sẻ ấn tượng của bạn',
 	'moodbar-trigger-editing' => 'Việc sửa đổi $1…',
+	'moodbar-weeks' => '$1 tuần',
+	'moodbar-months' => '$1 tháng',
+	'moodbar-years' => '$1 năm',
+	'moodbar-seconds' => 'ít hơn 1 một',
 	'moodbar-close' => '(đóng)',
 	'moodbar-intro-feedback' => 'Việc sửa đổi $1 làm cho tôi có vẻ…',
 	'moodbar-intro-share' => 'Việc sử dụng $1 làm cho tôi có vẻ…',
@@ -5712,6 +5716,7 @@ $messages['vi'] = array(
 	'moodbar-privacy' => 'Bằng cách gửi thông tin, bạn đồng ý phát hành thông tin này công khai theo các $1 này.',
 	'moodbar-privacy-link' => 'điều khoản',
 	'moodbar-privacy-link-title' => 'Điều khoản sử dụng',
+	'moodbar-fbd-link-title' => 'phản hồi',
 	'moodbar-disable-link' => 'Thôi, xin tắt tính năng này.',
 	'moodbar-form-title' => 'Bởi vì…',
 	'moodbar-form-note' => 'tối đa 150 ký tự nữa',
@@ -5722,7 +5727,7 @@ $messages['vi'] = array(
 	'moodbar-loading-title' => 'Đang chia sẻ…',
 	'moodbar-success-title' => 'Cám ơn!',
 	'moodbar-error-title' => 'Ôi!',
-	'moodbar-success-subtitle' => 'Việc chia sẻ những ấn tượng về quá trình sửa đổi giúp chúng tôi cải thiện $1.',
+	'moodbar-success-subtitle' => 'Việc chia sẻ {{FBD-LINK}} giúp chúng tôi cải thiện $1.',
 	'moodbar-error-subtitle' => 'Oái, đã bị trục trặc! Xin vui lòng chia sẻ phản hồi của bạn lát nữa.',
 	'moodbar-blocked-title' => 'Ôi!',
 	'moodbar-blocked-subtitle' => 'Bạn đã bị cấm không được sửa đổi.',
@@ -5831,7 +5836,7 @@ Trang thảo luận cá nhân của bạn là trang mà những người dùng k
 
 Vẫn còn thắc mắc? [http://vi.wikipedia.org/wiki/Tập_tin:Wikipedia_basics_-_Talk_pages.ogv Video này] (coi trên [http://www.youtube.com/watch?v=JdeDLRsB2Es YouTube]) chỉ dẫn từng bước một.
 
-Chúc vui vẻ,
+Cám ơn bạn tham gia cộng đồng,
 
 {{SITENAME}}',
 );

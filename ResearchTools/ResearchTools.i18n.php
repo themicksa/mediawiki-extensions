@@ -85,6 +85,18 @@ $messages['de'] = array(
 	'researchtools-page-prefs' => 'Statistiken zu Benutzereinstellungen',
 );
 
+/** Lower Sorbian (Dolnoserbski)
+ * @author Michawiki
+ */
+$messages['dsb'] = array(
+	'researchtools' => 'Rešeršowe rědy',
+	'researchtools-desc' => 'Sajźba rědow, kótarež su wužytne za wuwjeźenje rešeršowych studijow wužywarja',
+	'researchtools-page-dashboard' => 'Pśeglědny bok',
+	'researchtools-page-surveys' => 'Napšašowańske wótegrona',
+	'researchtools-page-clicks' => 'Slědowanje kliknjenjow',
+	'researchtools-page-prefs' => 'Statistika nastajenjow',
+);
+
 /** Spanish (Español)
  * @author Fitoschido
  */

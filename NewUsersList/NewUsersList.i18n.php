@@ -36,6 +36,13 @@ $messages['de'] = array(
 	'newuserslist-desc' => 'Ergänzt das <tt>&lt;newusers&gt;</tt>-Tag mit dem die Liste neue Benutzer mitsamt ihrer Avatare angezeigt werden kann',
 );
 
+/** Lower Sorbian (Dolnoserbski)
+ * @author Michawiki
+ */
+$messages['dsb'] = array(
+	'newuserslist-desc' => 'Pśidawa toflicku <tt>&lt;newusers&gt;</tt>, z kótarejež pomocu dajo se lisćina nowych wužywarjow a jich awatary zwobrazniś',
+);
+
 /** Spanish (Español)
  * @author Fitoschido
  */

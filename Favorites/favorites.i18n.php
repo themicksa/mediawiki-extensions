@@ -185,6 +185,13 @@ $messages['be-tarask'] = array(
 	'favoritelisttools-raw' => 'Рэдагаваць нефарматаваны сьпіс улюблёных',
 );
 
+/** Bulgarian (Български)
+ * @author DCLXVI
+ */
+$messages['bg'] = array(
+	'favoritelistall2' => 'всички',
+);
+
 /** Breton (Brezhoneg)
  * @author Fulup
  * @author Y-M D

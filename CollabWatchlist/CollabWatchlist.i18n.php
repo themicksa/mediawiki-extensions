@@ -209,6 +209,18 @@ $messages['be-tarask'] = array(
 	'tog-collabwatchlisthidelistusers' => 'Схаваць рэдагаваньні ўдзельнікаў агульнага сьпісу назіраньня',
 );
 
+/** Bulgarian (Български)
+ * @author DCLXVI
+ */
+$messages['bg'] = array(
+	'collabwatchlisttools-delete' => 'Изтриване',
+	'collabwatchlistedit-users-raw-submit' => 'Съхраняване',
+	'collabwatchlistedit-raw-titles' => 'Категории:',
+	'collabwatchlistedit-tags-raw-submit' => 'Съхраняване',
+	'collabwatchlistdelete-submit' => 'Изтриване',
+	'collabwatchlistedit-normal-submit' => 'Съхраняване',
+);
+
 /** Breton (Brezhoneg)
  * @author Fulup
  * @author Y-M D
