@@ -398,20 +398,13 @@ class ExtZeroRatedMobileAccess {
 			$foreignOptions = $wgMemc->get( $memcKey );
 
 			if ( !$foreignOptions ) {
-				$options = array();
-				$options['method'] = 'GET';
 				$url = 'http://en.wikipedia.org/w/api.php?action=query&prop=revisions&&rvlimit=1&rvprop=content&format=json&titles=MediaWiki:' . $pageName;
-				$req = ( class_exists( 'MWHttpRequest' ) ) ? MWHttpRequest::factory( $url, $options ) :  HttpRequest::factory( $url, $options );
+				$ret = Http::get( $url );
 
-				$status = $req->execute();
-
-				if ( !$status->isOK() ) {
-					$error = $req->getContent();
+				if ( !$ret ) {
 					wfProfileOut( __METHOD__ );
 					return array( $key, $rev );
 				}
-
-				$ret = $req->getContent();
 
 				$jsonData = FormatJson::decode( $ret, true );
 
