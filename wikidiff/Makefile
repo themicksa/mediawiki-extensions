@@ -25,7 +25,7 @@ $(OUTPUT) : $(PRODUCT).cpp $(PRODUCT)_wrap.cpp
 #	MACOSX_DEPLOYMENT_TARGET=10.3 g++ -O2 `php-config --includes` $(SHARED) -o php_wikidiff.so wikidiff.cpp wikidiff_wrap.cpp -undefined dynamic_lookup
 
 $(PRODUCT)_wrap.cpp : $(PRODUCT).i
-	swig -php4 -c++ $(PRODUCT).i
+	swig -php5 -c++ $(PRODUCT).i
 
 install : $(OUTPUT)
 	install -d "$(INSTALL_TARGET)"
