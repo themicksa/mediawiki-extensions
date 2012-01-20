@@ -142,7 +142,7 @@ class WMFRewrite(object):
         try:
             last_modified = time.mktime(uinfo.getdate('Last-Modified'))
         except TypeError:
-            last_modified = time.localtime()
+            last_modified = time.mktime(time.localtime())
 
         if self.writethumb:
             # Fetch from upload, write into the cluster, and return it
