@@ -50,7 +50,6 @@ $wgAPIModules['concurrency'] = 'ApiConcurrency';
 
 // Hooks
 $wgAutoloadClasses['InterfaceConcurrencyHooks'] = $dir . 'InterfaceConcurrency.hooks.php';
-$wgHooks['BeforePageDisplay'][] = 'InterfaceConcurrencyHooks::beforePageDisplay';
 $wgHooks['LoadExtensionSchemaUpdates'][] = 'InterfaceConcurrencyHooks::onLoadExtensionSchemaUpdates';
 
 // Resources
