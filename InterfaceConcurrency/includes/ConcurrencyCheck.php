@@ -59,27 +59,27 @@ class ConcurrencyCheck {
 		$userId = $this->user->getId();
 		$cacheKey = wfMemcKey( 'concurrencycheck', $this->resourceType, $record );
 
-		// when operating with a single memcached cluster, it's reasonable to check the cache here.
-		global $wgConcurrency;
-		if ( $wgConcurrency['TrustMemc'] ) {
-			$cached = $wgMemc->get( $cacheKey );
-			if ( $cached ) {
-				if ( !$override && $cached['userId'] != $userId && $cached['expiration'] > time() ) {
-					// this is already checked out.
-					return false;
-				}
+		global $wgInterfaceConcurrencyConfig;
+		
+		// check the cache first.
+		$cached = $wgMemc->get( $cacheKey );
+		if ( $cached ) {
+			if ( !$override && $cached['userId'] != $userId && $cached['expiration'] > time() ) {
+				// this is already checked out.
+				return false;
 			}
 		}
 
-		// attempt an insert, check success (this is atomic)
+		// attempt an insert, check success
 		$insertError = null;
+		$expiration = time() + $this->expirationTime;
 		$dbw->insert(
 			'concurrencycheck',
 			array(
 				'cc_resource_type' => $this->resourceType,
 				'cc_record' => $record,
 				'cc_user' => $userId,
-				'cc_expiration' => wfTimestamp( TS_MW, time() + $this->expirationTime ),
+				'cc_expiration' => $dbw->timestamp( $expiration ),
 			),
 			__METHOD__,
 			array( 'IGNORE' )
@@ -87,41 +87,38 @@ class ConcurrencyCheck {
 
 		// if the insert succeeded, checkout is done.
 		if ( $dbw->affectedRows() === 1 ) {
-			// delete any existing cache key.  can't create a new key here
-			// since the insert didn't happen inside a transaction.
-			$wgMemc->delete( $cacheKey );
+			// "By default, MediaWiki opens a transaction at the first query, and commits it before the output is sent."
+			// set the cache key, since this is inside an implicit transaction.
+			$wgMemc->set( $cacheKey, array(
+					'userId' => $userId,
+					'expiration' => $expiration,
+				),
+				$this->expirationTime
+			);
+			
+			$dbw->commit( __METHOD__ );
 			return true;
 		}
 
-		// if the insert failed, it's necessary to check the expiration.
-		// here, check by deleting, since that permits the use of write locks
-		// (SELECT..LOCK IN SHARE MODE), rather than read locks (SELECT..FOR UPDATE)
-		$dbw->begin( __METHOD__ );
-		$dbw->delete(
+		// the insert failed, which means there's an existing row.
+		$row = $dbw->selectRow(
 			'concurrencycheck',
+			array( '*' ),
 			array(
 				'cc_resource_type' => $this->resourceType,
 				'cc_record' => $record,
-				'(cc_user = ' . $userId . ' OR cc_expiration <= ' . $dbw->addQuotes( wfTimestamp( TS_MW ) ) . ')',  // only the owner can perform a checkin
 			),
 			__METHOD__,
 			array()
 		);
 
-		// delete failed: not checked out by current user, checkout is unexpired, override is unset
-		if ( $dbw->affectedRows() !== 1 && ! $override ) {
-			// fetch the existing data to cache it
-			$row = $dbw->selectRow(
-				'concurrencycheck',
-				array( '*' ),
-				array(
-					'cc_resource_type' => $this->resourceType,
-					'cc_record' => $record,
-				),
-				__METHOD__,
-				array()
-			);
-
+		// checked out by current user, checkout is unexpired, override is unset
+		if (
+			$row &&
+			$row->cc_user != $userId &&
+			wfTimestamp( TS_UNIX, $row->cc_expiration ) > time() &&
+			! $override 
+		) {			
 			// this was a cache miss.  populate the cache with data from the db.
 			// cache is set to expire at the same time as the checkout, since it'll become invalid then anyway.
 			// inside this transaction, a row-level lock is established which ensures cache concurrency
@@ -135,9 +132,6 @@ class ConcurrencyCheck {
 			return false;
 		}
 
-		$expiration = time() + $this->expirationTime;
-
-		// delete succeeded, insert a new row.
 		// replace is used here to support the override parameter
 		$res = $dbw->replace(
 			'concurrencycheck',
@@ -146,7 +140,7 @@ class ConcurrencyCheck {
 				'cc_resource_type' => $this->resourceType,
 				'cc_record' => $record,
 				'cc_user' => $userId,
-				'cc_expiration' => wfTimestamp( TS_MW, $expiration ),
+				'cc_expiration' => $dbw->timestamp( $expiration ),
 			),
 			__METHOD__
 		);
@@ -182,12 +176,15 @@ class ConcurrencyCheck {
 			array()
 		);
 
-		// check row count (this is atomic, select would not be)
+		// check row count (this is atomic since the dml establishes a lock, select would not be)
+		// not that it matters too much, since cache deletes can happen w/o atomicity
 		if ( $dbw->affectedRows() === 1 ) {
 			$wgMemc->delete( $cacheKey );
+			$dbw->commit( __METHOD__ );
 			return true;
 		}
 
+		$dbw->commit( __METHOD__ );
 		return false;
 	}
 
@@ -199,23 +196,30 @@ class ConcurrencyCheck {
 	public function expire() {
 		// TODO: run this in a few other places that db access happens, to make sure the db stays non-crufty.
 		$dbw = $this->dbw;
-		$now = time();
 
 		// remove the rows from the db.  trust memcached to expire the cache.
 		$dbw->delete(
 			'concurrencycheck',
 			array(
-				'cc_expiration <= ' . $dbw->addQuotes( wfTimestamp( TS_MW, $now ) ),
+				'cc_expiration <= ' . $dbw->addQuotes( $dbw->timestamp() ),
 			),
 			__METHOD__,
 			array()
 		);
 
-		// return the number of rows removed.
-		return $dbw->affectedRows();
+		$rowCount = $dbw->affectedRows();
+		$dbw->commit( __METHOD__ );
+
+		// if I'm going to assume an implicit transaction, best not to contradict that assumption.
+		// expire() is called internally.
+		$dbw->begin( __METHOD__ );
+
+		return $rowCount;
 	}
 
 	/**
+	 * Get the status of a set of known keys
+	 *
 	 * @param $keys array
 	 * @return array
 	 */
@@ -238,7 +242,7 @@ class ConcurrencyCheck {
 					'cc_resource_type' => $this->resourceType,
 					'cc_record' => $key,
 					'cc_user' => $cached['userId'],
-					'cc_expiration' => wfTimestamp( TS_MW, $cached['expiration'] ),
+					'cc_expiration' => $dbw->timestamp( $cached['expiration'] ),
 					'cache' => 'cached',
 				);
 			} else {
@@ -251,24 +255,21 @@ class ConcurrencyCheck {
 			// If it's time to go to the database, go ahead and expire old rows.
 			$this->expire();
 
-			// Why LOCK IN SHARE MODE, you might ask?  To avoid a race condition: Otherwise, it's possible for
-			// a checkin and/or checkout to occur between this select and the value being stored in cache, which
-			// makes for an incorrect cache.  This, in turn, could make checkout() above (which uses the cache)
-			// function incorrectly.
+			// Why LOCK IN SHARE MODE, you might ask?  To avoid a race condition: Otherwise, it's
+			// possible for a checkin and/or checkout to occur between this select and the value
+			// being stored in cache, which makes for an incorrect cache.  This, in turn, could
+			// make checkout() above (which uses the cache) function incorrectly.
 			//
-			// Another option would be to run the select, then check each row in-turn before setting the cache
-			// key using either SELECT (with LOCK IN SHARE MODE) or UPDATE that checks a timestamp (and which
-			// would establish the same lock). That method would mean smaller, quicker locks, but more overall
-			// database overhead.
+			// With LOCK IN SHARE MODE on, a concurrent INSERT call in checkout() will make this
+            // select wait, and this query will wait for the transaction in checkout().
 			//
-			// It appears all the DBMSes we use support LOCK IN SHARE MODE, but if that's not the case, the second
-			// solution above could be implemented instead.
+			// Another option would be to run the select, then check each row in-turn before
+            // setting the cache key using either SELECT (with LOCK IN SHARE MODE) or UPDATE
+            // that checks a timestamp (and which would establish the same lock). That method
+            // would mean smaller, quicker locks, but more overall database overhead.
 			$queryParams = array();
 			if ( $wgDBtype === 'mysql' ) {
 				$queryParams[] = 'LOCK IN SHARE MODE';
-
-				// the transaction seems incongruous, I know, but it's to keep the cache update atomic.
-				$dbw->begin( __METHOD__ );
 			}
 
 			$res = $dbw->select(
@@ -277,7 +278,7 @@ class ConcurrencyCheck {
 				array(
 					'cc_resource_type' => $this->resourceType,
 					'cc_record' => $toSelect,
-					'cc_expiration > ' . $dbw->addQuotes( wfTimestamp( TS_MW ) ),
+					'cc_expiration > ' . $dbw->addQuotes( $dbw->timestamp() ),
 				),
 				__METHOD__,
 				$queryParams
@@ -316,11 +317,60 @@ class ConcurrencyCheck {
 		return $checkouts;
 	}
 
+	/**
+	 * Get a list of all the currently checked out records
+	 *
+	 * This information can be stale by up to $wgInterfaceConcurrencyConfig['ListMaxAge']
+	 *
+	 * @return Array describing existing checkouts
+	 */
 	public function listCheckouts() {
-		// TODO: fill in the function that lets you get the complete set of checkouts for a given application.
+		global $wgMemc, $wgInterfaceConcurrencyConfig;
+		$dbw = $this->dbw;
+		$userId = $this->user->getId();
+		$cacheKey = wfMemcKey( 'concurrencycheck', $this->resourceType, 'currentCheckouts' );
+
+		$checkouts = $wgMemc->get($cacheKey);
+
+		// not cached? fetch from the db
+		if( ! $checkouts ) {
+			// when going to the db, remove expired rows.
+			$this->expire();
+
+			$res = $dbw->select(
+				'concurrencycheck',
+				array( '*' ),
+				array(
+					'cc_resource_type' => $this->resourceType,
+					),
+				__METHOD__,
+				array()
+			);
+
+			while ( $res && $record = $res->fetchRow() ) {
+				$checkouts[$record['cc_record']] = $record;
+			}
+			
+			$wgMemc->set( $cacheKey, $checkouts, $wgInterfaceConcurrencyConfig['ListMaxAge'] );
+		}
+		
+		$checkoutsReturn = $checkouts;
+		foreach( $checkouts as $record => $values ) {
+			// does this checkout belong to the current user?
+			if( $values['cc_user'] == $userId ) {
+				$checkoutsReturn[$record]['mine'] = true;
+			} else {
+				$checkoutsReturn[$record]['mine'] = false;
+			}
+		}
+
+		return $checkoutsReturn;
+		
 	}
 
 	/**
+	 * Setter for user.
+	 *
 	 * @param $user user
 	 */
 	public function setUser( $user ) {
@@ -328,23 +378,25 @@ class ConcurrencyCheck {
 	}
 
 	/**
+	 * Setter for expirationTime
+	 *
 	 * @param $expirationTime int|null
 	 */
 	public function setExpirationTime( $expirationTime = null ) {
-		global $wgConcurrency;
+		global $wgInterfaceConcurrencyConfig;
 
 		// check to make sure the time is a number
 		// negative number are allowed, though mostly only used for testing
 		if ( $expirationTime && (int) $expirationTime == $expirationTime ) {
-			if ( $expirationTime > $wgConcurrency['ExpirationMax'] ) {
-				$this->expirationTime = $wgConcurrency['ExpirationMax']; // if the number is too high, limit it to the max value.
-			} elseif ( $expirationTime < $wgConcurrency['ExpirationMin'] ) {
-				$this->expirationTime = $wgConcurrency['ExpirationMin']; // low limit, default -1 min
+			if ( $expirationTime > $wgInterfaceConcurrencyConfig['ExpirationMax'] ) {
+				$this->expirationTime = $wgInterfaceConcurrencyConfig['ExpirationMax']; // if the number is too high, limit it to the max value.
+			} elseif ( $expirationTime < $wgInterfaceConcurrencyConfig['ExpirationMin'] ) {
+				$this->expirationTime = $wgInterfaceConcurrencyConfig['ExpirationMin']; // low limit, default -1 min
 			} else {
 				$this->expirationTime = $expirationTime; // the amount of time before a checkout expires.
 			}
 		} else {
-			$this->expirationTime = $wgConcurrency['ExpirationDefault']; // global default is 15 mins.
+			$this->expirationTime = $wgInterfaceConcurrencyConfig['ExpirationDefault']; // global default is 15 mins.
 		}
 	}
 

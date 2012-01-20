@@ -28,10 +28,10 @@ class ConcurrencyCheckTest extends MediaWikiTestCase {
 
 		// turn on memcached for this test.
 		// if no memcached is present, this still works fine.
-		global $wgMainCacheType, $wgConcurrency;
+		global $wgMainCacheType, $wgInterfaceConcurrencyConfig;
 		$this->oldcache = $wgMainCacheType;
 		$wgMainCacheType = CACHE_MEMCACHED;
-		$wgConcurrency['ExpirationMin'] = -60;  // negative numbers are needed for testing
+		$wgInterfaceConcurrencyConfig['ExpirationMin'] = -60;  // negative numbers are needed for testing
 	}
 
 	public function tearDown() {
@@ -100,5 +100,17 @@ class ConcurrencyCheckTest extends MediaWikiTestCase {
 		$this->assertEquals( 'valid', $output[1337]['status'], "Current checkouts are listed as valid" );
 		$this->assertEquals( 'invalid', $output[1339]['status'], "Expired checkouts are invalid" );
 		$this->assertEquals( 'invalid', $output[13310]['status'], "Missing checkouts are invalid" );
+	}
+	
+	public function testListCheckouts() {
+		$cc = new ConcurrencyCheck( 'CCUnitTest',  self::$users['user1']->user );
+		$cc->checkout( 1337 );
+		$cc->checkout( 1338 );
+
+		$output = $cc->listCheckouts();
+		$this->assertTrue( $output[1337] && $output[1338], "Current checkouts are present" );
+		$this->assertEquals( self::$users['user1']->user->getId(), $output[1337]['cc_user'], "User matches" );
+		$this->assertTrue( array_key_exists( 'cc_expiration', $output[1337] ), "Expiration exists" );
+		$this->assertTrue( $output[1337]['mine'], "Ownership flag set" );
 	}
 }

@@ -68,9 +68,9 @@ $wgResourceModules['jquery.interfaceConcurrency'] = $icResourceTemplate + array(
 );
 
 // Configuration
-$wgConcurrency = array(
+$wgInterfaceConcurrencyConfig = array(
 	'ExpirationDefault' => 60 * 15, // Default checkout duration. 15 minutes.
 	'ExpirationMax' => 60 * 30, // Maximum possible checkout duration. 30 minutes.
 	'ExpirationMin' => 1, // Minimum possible checkout duration.  Negative is possible for testing if you want.
-	'TrustMemc' => true // If running in an environment with multiple discrete caches, set to false.
+	'ListMaxAge' => 60, // How stale (in seconds) can listCheckouts() be?	
 );
