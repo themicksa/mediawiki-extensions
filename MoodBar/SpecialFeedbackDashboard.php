@@ -63,7 +63,7 @@ class SpecialFeedbackDashboard extends IncludableSpecialPage {
 		
 		// Output HTML
 		$wgOut->setPageTitle( wfMsg( 'moodbar-feedback-title' ) );
-		$wgOut->setRobotPolicy('noindex,nofollow');
+		$wgOut->setRobotPolicy( 'noindex,nofollow' );
 		$wgOut->addHTML( $this->buildForm( $filterType ) );
 		$wgOut->addHTML( $this->buildList( $res ) );
 		$wgOut->addModuleStyles( 'ext.moodBar.dashboard.styles' );
