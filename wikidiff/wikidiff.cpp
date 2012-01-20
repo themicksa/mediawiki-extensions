@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <vector>
+#include <string.h>
 #include <string>
 
 #define MAX_DIFF_LINE 10000
