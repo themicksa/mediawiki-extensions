@@ -1076,9 +1076,6 @@ webcacheh02a.cache.pol.co.uk.
 # www.opoy.fi
 213.216.199.14
 
-# wikipedia.cnblog.org
-211.103.111.178
-
 # Solcon (filternet). bug #6161 -- 2006-06-08 Hashar
 filter.solcon.nl.
 filter01.solcon.nl.
