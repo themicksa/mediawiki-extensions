@@ -3,17 +3,18 @@
 /**
  * Class for cooperative locking of web resources
  *
- * Each resource is identified by a combination of the "resource type" (the application, the type
- * of content, etc), and the resource's primary key or some other unique numeric ID.
+ * Each resource is identified by a combination of the "resource type" (the application, the
+ * type of content, etc), and the resource's primary key or some other unique numeric ID.
  *
- * Currently, a resource can only be checked out by a single user.  Other attempts to check it out result
- * in the checkout failing.  In the future, an option for multiple simulataneous checkouts could be added
- * without much trouble.
+ * Currently, a resource can only be checked out by a single user. Other attempts to check it
+ * out result in the checkout failing. In the future, an option for multiple simulataneous
+ * checkouts could be added without much trouble.
  *
- * This could be done with named locks, except then it would be impossible to build a list of all the
- * resources currently checked out for a given application.  There's no good way to construct a query
- * that answers the question, "What locks do you have starting with [foo]"  This could be done really well
- * with a concurrent, reliable, distributed key/value store, but we don't have one of those right now.
+ * This could be done with named locks, except then it would be impossible to build a list of
+ * all the resources currently checked out for a given application. There's no good way to
+ * construct a query that answers the question, "What locks do you have starting with [foo]"
+ * This could be done really well with a concurrent, reliable, distributed key/value store,
+ * but we don't have one of those right now.
  *
  * @author Ian Baker <ian@wikimedia.org>
  */
@@ -34,8 +35,8 @@ class ConcurrencyCheck {
 	 */
 	public function __construct( $resourceType, $user, $expirationTime = null ) {
 
-		// All database calls are to the master, since the whole point of this class is maintaining
-		// concurrency. Most reads should come from cache anyway.
+		// All database calls are to the master, since the whole point of this class is 
+		// maintaining concurrency. Most reads should come from cache anyway.
 		$this->dbw = wfGetDb( DB_MASTER );
 
 		$this->user = $user;
@@ -64,7 +65,11 @@ class ConcurrencyCheck {
 		// check the cache first.
 		$cached = $wgMemc->get( $cacheKey );
 		if ( $cached ) {
-			if ( !$override && $cached['userId'] != $userId && $cached['expiration'] > time() ) {
+			if ( 
+				!$override && 
+				$cached['userId'] != $userId && 
+				$cached['expiration'] > time()
+			) {
 				// this is already checked out.
 				return false;
 			}
@@ -87,7 +92,8 @@ class ConcurrencyCheck {
 
 		// if the insert succeeded, checkout is done.
 		if ( $dbw->affectedRows() === 1 ) {
-			// "By default, MediaWiki opens a transaction at the first query, and commits it before the output is sent."
+			// "By default, MediaWiki opens a transaction at the first query, and commits
+			// it before the output is sent."
 			// set the cache key, since this is inside an implicit transaction.
 			$wgMemc->set( $cacheKey, array(
 					'userId' => $userId,
@@ -120,8 +126,10 @@ class ConcurrencyCheck {
 			! $override 
 		) {			
 			// this was a cache miss.  populate the cache with data from the db.
-			// cache is set to expire at the same time as the checkout, since it'll become invalid then anyway.
-			// inside this transaction, a row-level lock is established which ensures cache concurrency
+			// cache is set to expire at the same time as the checkout, since it'll become 
+			// invalid then anyway.
+			// inside this transaction, a row-level lock is established which ensures cache
+			// concurrency
 			$wgMemc->set( $cacheKey, array(
 					'userId' => $row->cc_user,
 					'expiration' => wfTimestamp( TS_UNIX, $row->cc_expiration )
@@ -146,7 +154,11 @@ class ConcurrencyCheck {
 		);
 
 		// cache the result.
-		$wgMemc->set( $cacheKey, array( 'userId' => $userId, 'expiration' => $expiration ), $this->expirationTime );
+		$wgMemc->set( 
+			$cacheKey,
+			array( 'userId' => $userId, 'expiration' => $expiration ),
+			$this->expirationTime
+		);
 
 		$dbw->commit( __METHOD__ );
 		return true;
@@ -176,8 +188,8 @@ class ConcurrencyCheck {
 			array()
 		);
 
-		// check row count (this is atomic since the dml establishes a lock, select would not be)
-		// not that it matters too much, since cache deletes can happen w/o atomicity
+		// check row count (this is atomic since the dml establishes a lock, select would 
+		// not be). not that it matters too much, since cache deletes can happen w/o atomicity
 		if ( $dbw->affectedRows() === 1 ) {
 			$wgMemc->delete( $cacheKey );
 			$dbw->commit( __METHOD__ );
@@ -194,7 +206,8 @@ class ConcurrencyCheck {
 	 * @return Integer describing the number of records expired.
 	 */
 	public function expire() {
-		// TODO: run this in a few other places that db access happens, to make sure the db stays non-crufty.
+		// TODO: run this in a few other places that db access happens, to make sure the db
+		// stays non-crufty.
 		$dbw = $this->dbw;
 
 		// remove the rows from the db.  trust memcached to expire the cache.
@@ -210,7 +223,8 @@ class ConcurrencyCheck {
 		$rowCount = $dbw->affectedRows();
 		$dbw->commit( __METHOD__ );
 
-		// if I'm going to assume an implicit transaction, best not to contradict that assumption.
+		// if I'm going to assume an implicit transaction, best not to contradict that
+		// assumption.
 		// expire() is called internally.
 		$dbw->begin( __METHOD__ );
 
@@ -289,12 +303,16 @@ class ConcurrencyCheck {
 				$checkouts[ $record['cc_record'] ] = $record;
 
 				// TODO: implement strategy #2 above, determine which DBMSes need which method.
-				// for now, disable adding to cache here for databases that don't support read locking
+				// for now, disable adding to cache here for databases that don't support read
+				// locking
 				if ( $wgDBtype !== 'mysql' ) {
 					// safe to store values since this is inside the transaction
 					$wgMemc->set(
 						wfMemcKey( 'concurrencycheck', $this->resourceType, $record['cc_record'] ),
-						array( 'userId' => $record['cc_user'], 'expiration' => wfTimestamp( TS_UNIX, $record['cc_expiration'] ) ),
+						array(
+							'userId' => $record['cc_user'],
+							'expiration' => wfTimestamp( TS_UNIX, $record['cc_expiration'] )
+						),
 						wfTimestamp( TS_UNIX, $record['cc_expiration'] ) - time()
 					);
 				}
@@ -389,14 +407,18 @@ class ConcurrencyCheck {
 		// negative number are allowed, though mostly only used for testing
 		if ( $expirationTime && (int) $expirationTime == $expirationTime ) {
 			if ( $expirationTime > $wgInterfaceConcurrencyConfig['ExpirationMax'] ) {
-				$this->expirationTime = $wgInterfaceConcurrencyConfig['ExpirationMax']; // if the number is too high, limit it to the max value.
+				// if the number is too high, limit it to the max value.
+				$this->expirationTime = $wgInterfaceConcurrencyConfig['ExpirationMax'];
 			} elseif ( $expirationTime < $wgInterfaceConcurrencyConfig['ExpirationMin'] ) {
-				$this->expirationTime = $wgInterfaceConcurrencyConfig['ExpirationMin']; // low limit, default -1 min
+				// low limit, default -1 min
+				$this->expirationTime = $wgInterfaceConcurrencyConfig['ExpirationMin'];
 			} else {
-				$this->expirationTime = $expirationTime; // the amount of time before a checkout expires.
+				// the amount of time before a checkout expires.
+				$this->expirationTime = $expirationTime;
 			}
 		} else {
-			$this->expirationTime = $wgInterfaceConcurrencyConfig['ExpirationDefault']; // global default is 15 mins.
+			// global default is generally 15 mins.
+			$this->expirationTime = $wgInterfaceConcurrencyConfig['ExpirationDefault'];
 		}
 	}
 
@@ -409,7 +431,9 @@ class ConcurrencyCheck {
 	 */
 	private static function validateId ( $record ) {
 		if ( (int) $record !== $record || $record <= 0 ) {
-			throw new ConcurrencyCheckBadRecordIdException( 'Record ID ' . $record . ' must be a positive integer' );
+			throw new ConcurrencyCheckBadRecordIdException(
+				'Record ID ' . $record . ' must be a positive integer'
+			);
 		}
 
 		// TODO: add a hook here for client-side validation.

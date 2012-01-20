@@ -77,7 +77,6 @@ class ApiConcurrencyTest extends ApiTestCase {
 		global $wgUser;
 
 		$wgUser = self::$users['one']->user;
-		/* commenting these out since i need to go home and they're breakin CI.  See commit summary for details.
 
 		list( $result, , $session ) =  $this->doApiRequestWithToken( array(
 									'action' => 'concurrency',
@@ -104,7 +103,6 @@ class ApiConcurrencyTest extends ApiTestCase {
 									'resourcetype' => 'responding-to-moodbar-feedback'), $sessionArray['two'], self::$users['two']->user );
 
 		$this->assertEquals( "success", $result['concurrency']['result'] );
-		*/
 	}
 
 	/**
@@ -115,7 +113,6 @@ class ApiConcurrencyTest extends ApiTestCase {
 		global $wgUser;
 
 		$wgUser = self::$users['one']->user;
-		/* commenting these out since i need to go home and they're breakin CI.  See commit summary for details.
 
 		list( $result, , $session ) =  $this->doApiRequestWithToken( array(
 									'action' => 'concurrency',
@@ -142,7 +139,6 @@ class ApiConcurrencyTest extends ApiTestCase {
 									'resourcetype' => 'responding-to-moodbar-feedback'), $sessionArray['two'], self::$users['two']->user );
 
 		$this->assertEquals( "success", $result['concurrency']['result'] );
-		*/
 	}
 
 	/**
@@ -166,7 +162,6 @@ class ApiConcurrencyTest extends ApiTestCase {
 				$e->getMessage() );
 		}
 		$this->assertTrue( $exception, "Got exception" );
-
 	}
 
 }

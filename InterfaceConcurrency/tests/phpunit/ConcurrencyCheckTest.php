@@ -31,7 +31,8 @@ class ConcurrencyCheckTest extends MediaWikiTestCase {
 		global $wgMainCacheType, $wgInterfaceConcurrencyConfig;
 		$this->oldcache = $wgMainCacheType;
 		$wgMainCacheType = CACHE_MEMCACHED;
-		$wgInterfaceConcurrencyConfig['ExpirationMin'] = -60;  // negative numbers are needed for testing
+		// negative numbers are needed for testing
+		$wgInterfaceConcurrencyConfig['ExpirationMin'] = -60;
 	}
 
 	public function tearDown() {
@@ -56,19 +57,43 @@ class ConcurrencyCheckTest extends MediaWikiTestCase {
 		// tests
 		$this->assertTrue( $first->checkout( $testKey ), "Initial checkout" );
 		$this->assertTrue( $first->checkout( $testKey ), "Cache hit" );
-		$this->assertFalse( $second->checkout( $testKey ), "Checkout of locked resource fails as different user" );
-		$this->assertTrue( $first->checkout( $testKey ), "Checkout of locked resource succeeds as original user" );
-		$this->assertFalse( $second->checkin( $testKey ), "Checkin of locked resource fails as different user" );
-		$this->assertTrue( $first->checkin( $testKey ), "Checkin of locked resource succeeds as original user" );
+		$this->assertFalse(
+			$second->checkout( $testKey ),
+			"Checkout of locked resource fails as different user"
+		);
+		$this->assertTrue(
+			$first->checkout( $testKey ),
+			"Checkout of locked resource succeeds as original user"
+		);
+		$this->assertFalse(
+			$second->checkin( $testKey ),
+			"Checkin of locked resource fails as different user"
+		);
+		$this->assertTrue(
+			$first->checkin( $testKey ),
+			"Checkin of locked resource succeeds as original user"
+		);
 		$second->setExpirationTime( -5 );
-		$this->assertTrue( $second->checkout( $testKey ), "Checked-in resource is now available to second user" );
+		$this->assertTrue(
+			$second->checkout( $testKey ),
+			"Checked-in resource is now available to second user"
+		);
 		$second->setExpirationTime();
-		$this->assertTrue( $first->checkout( $testKey ), "Checkout of expired resource succeeds as first user" );
+		$this->assertTrue(
+			$first->checkout( $testKey ),
+			"Checkout of expired resource succeeds as first user"
+		);
 		$this->assertTrue( $second->checkout( $testKey, true ), "Checkout override" );
-		$this->assertFalse( $first->checkout( $testKey ), "Checkout of overriden resource fails as different user" );
+		$this->assertFalse(
+			$first->checkout( $testKey ),
+			"Checkout of overriden resource fails as different user"
+		);
 
 		// cleanup
-		$this->assertTrue( $second->checkin( $testKey ), "Checkin of record with changed ownership" );
+		$this->assertTrue(
+			$second->checkin( $testKey ),
+			"Checkin of record with changed ownership"
+		);
 
 	}
 
@@ -97,9 +122,21 @@ class ConcurrencyCheckTest extends MediaWikiTestCase {
 		$output = $cc->status( array( 1337, 1338, 1339, 13310 ) );
 		$this->assertEquals( true, is_array( $output ), "Status returns values" );
 		$this->assertEquals( 4, count( $output ), "Output has the correct number of records" );
-		$this->assertEquals( 'valid', $output[1337]['status'], "Current checkouts are listed as valid" );
-		$this->assertEquals( 'invalid', $output[1339]['status'], "Expired checkouts are invalid" );
-		$this->assertEquals( 'invalid', $output[13310]['status'], "Missing checkouts are invalid" );
+		$this->assertEquals(
+			'valid',
+			$output[1337]['status'],
+			"Current checkouts are listed as valid"
+		);
+		$this->assertEquals(
+			'invalid',
+			$output[1339]['status'],
+			"Expired checkouts are invalid"
+		);
+		$this->assertEquals(
+			'invalid',
+			$output[13310]['status'],
+			"Missing checkouts are invalid"
+		);
 	}
 	
 	public function testListCheckouts() {
@@ -109,8 +146,15 @@ class ConcurrencyCheckTest extends MediaWikiTestCase {
 
 		$output = $cc->listCheckouts();
 		$this->assertTrue( $output[1337] && $output[1338], "Current checkouts are present" );
-		$this->assertEquals( self::$users['user1']->user->getId(), $output[1337]['cc_user'], "User matches" );
-		$this->assertTrue( array_key_exists( 'cc_expiration', $output[1337] ), "Expiration exists" );
+		$this->assertEquals(
+			self::$users['user1']->user->getId(),
+			$output[1337]['cc_user'],
+			"User matches"
+		);
+		$this->assertTrue(
+			array_key_exists( 'cc_expiration', $output[1337] ),
+			"Expiration exists"
+		);
 		$this->assertTrue( $output[1337]['mine'], "Ownership flag set" );
 	}
 }
