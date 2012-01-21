@@ -253,7 +253,7 @@ The link is to the privacy policy of the wiki.
 See [[Thread:Support/About MediaWiki:Moodbar-privacy/en (2)/reply (4)|discussion]].',
 	'moodbar-privacy-link' => 'This is the anchor text being used in the link replacing $1 in the message {{msg-mw|moodbar-privacy}}',
 	'moodbar-privacy-link-title' => 'This is the title of the anchor link being used for the privacy message',
-	'moodbar-fbd-link-title' => 'This is the title of the link to the Feedback Dashboard page.  Shown after leaving moodbar feedback.',
+	'moodbar-fbd-link-title' => 'This is the link text of <nowiki>{{FBD-LINK}}</nowiki> in {{msg-mw|moodbar-success-subtitle}}. Shown after leaving moodbar feedback.',
 	'moodbar-form-note-dynamic' => 'Should support plural.',
 	'moodbar-form-policy-text' => 'Text displayed below the input area.
 
@@ -267,7 +267,7 @@ See also:
 	'moodbar-success-title' => 'Title of the screen after the feedback was successfully submitted.',
 	'moodbar-error-title' => 'Title of the screen when after an error occurred and submission aborted.',
 	'moodbar-success-subtitle' => 'Subtitle of screen when feedback was successfullyully submitted. 
-* <nowiki>{{FBD-LINK}}</nowiki> Not required, replaced with link to FeedbackDashboard
+* <nowiki>{{FBD-LINK}}</nowiki> Not required, replaced with link to FeedbackDashboard of which {{msg-mw|moodbar-fbd-link-title}} is the link text
 * <nowiki>{{$1}}</nowiki> Not required, Wiki SITENAME',
 	'moodbar-error-subtitle' => 'Subtitle of screen when an error occurred. $1 is the SITENAME',
 	'moodbar-blocked-title' => 'Title of the screen after blocked user attempts to post feedback.',
@@ -1599,6 +1599,7 @@ $messages['fa'] = array(
 	'moodbar-user-ip' => 'نشانی آی‌پی',
 	'moodbar-user-user' => 'کاربر ثبت شده',
 	'moodbar-log-name' => 'سیاههٔ بازخورد',
+	'moodbar-response-link' => 'شرایط',
 	'response-back-text' => 'بازگشت',
 	'response-preview-text' => 'پیش‌نمایش',
 	'response-ajax-action-head' => 'در حال پاسخ...',
@@ -2301,7 +2302,7 @@ $messages['he'] = array(
 	'moodbar-loading-title' => 'שיתוף...',
 	'moodbar-success-title' => 'תודה!',
 	'moodbar-error-title' => 'אוי!',
-	'moodbar-success-subtitle' => 'שיתוף {{FBD-LINK}} שלך עוזר לנו לשפר את $1.',
+	'moodbar-success-subtitle' => 'שיתוף ה{{FBD-LINK}} שלך עוזר לנו לשפר את $1.',
 	'moodbar-error-subtitle' => 'משהו השתבש! נא לנסות לשתף אותנו במשוב שלך מאוחר יותר.',
 	'moodbar-blocked-title' => 'אוי!',
 	'moodbar-blocked-subtitle' => 'נחסמת מפני עריכה.',
@@ -3776,7 +3777,7 @@ Ga naar de $1 voor meer informatie.',
 	'moodbar-loading-title' => 'Bezig met delen...',
 	'moodbar-success-title' => 'Bedankt!',
 	'moodbar-error-title' => 'Oeps!',
-	'moodbar-success-subtitle' => 'Door het delen van uw ervaringen bij het bewerken, helpt u mee $1 te verbeteren.',
+	'moodbar-success-subtitle' => 'Door het delen van uw {{FBD-LINK}} bij het bewerken, helpt u mee $1 te verbeteren.',
 	'moodbar-error-subtitle' => 'Er is iets misgegaan! Probeer later opnieuw uw terugkoppeling te delen.',
 	'moodbar-blocked-title' => 'Oeps!',
 	'moodbar-blocked-subtitle' => 'U bent geblokkeerd en kunt niet bewerken.',
@@ -3888,9 +3889,9 @@ U kunt dit bericht bekijken op uw [$5 overlegpagina].
 Wat is een overlegpagina?
 Uw overlegpagina is de pagina waar andere gebruikers van {{SITENAME}} met u kunnen communiceren. U kunt antwoorden door op "Bewerken" te klikken en uw cursor te verplaatsen tot onder de reactie. Daar kunt u weer antwoorden en vier tildes (~~~~) toevoegen als ondertekening. Sla daarna de pagina op. Alle pagina\'s in {{SITENAME}} hebben een overlegpagina en deze worden gebruikt voor veel doeleinden. Het duurt even voordat u het door zult hebben, maar daarna is het vanzelfspreken.
 
-Nog steeds in verwarring? [http://en.wikipedia.org/wiki/File:Wikipedia_basics_-_Talk_pages.ogv Deze video] (ook [http://www.youtube.com/watch?v=JdeDLRsB2Es op YouTube] beschikbaar) laat het u stop voor stap zien.
+Nog steeds in verwarring? [http://en.wikipedia.org/wiki/File:Wikipedia_basics_-_Talk_pages.ogv Deze video] (ook [http://www.youtube.com/watch?v=JdeDLRsB2Es op YouTube] beschikbaar) laat u stap voor stap zien hoe overlegpagina\'s werken.
 
-Nog een fijne dag!
+Bedankt om deel uit te maken van de gemeenschap.
 
 -- {{SITENAME}}',
 );
@@ -5075,7 +5076,7 @@ Za več informacij obiščite $1.',
 	'moodbar-loading-title' => 'Deljenje ...',
 	'moodbar-success-title' => 'Hvala!',
 	'moodbar-error-title' => 'Ups!',
-	'moodbar-success-subtitle' => 'Deljenje vaše urejevalne izkušnje nam pomaga izboljšati $1.',
+	'moodbar-success-subtitle' => 'Deljenje vaše {{FBD-LINK}} nam pomaga izboljšati $1.',
 	'moodbar-error-subtitle' => 'Nekaj je šlo narobe! Prosimo, poskusite znova deliti svojo povratno informacijo pozneje.',
 	'moodbar-blocked-title' => 'Ups!',
 	'moodbar-blocked-subtitle' => 'Urejanje vam je preprečeno.',
@@ -5121,6 +5122,7 @@ Za več informacij obiščite $1.',
 	'moodbar-feedback-filters-type-sad' => 'Žalostno',
 	'moodbar-feedback-filters-username' => 'Uporabniško ime:',
 	'moodbar-feedback-filters-my-response' => 'Samo moji odgovori',
+	'moodbar-feedback-filters-show-unanswered' => 'Prikaži neodgovorjene',
 	'moodbar-feedback-filters-button' => 'Nastavi filtre',
 	'moodbar-feedback-whatis' => 'Kaj je ta funkcija?',
 	'moodbar-feedback-permalink' => 'povezava do sem',
@@ -5177,14 +5179,14 @@ Dobrodošli na {{SITENAME}} in hvala za vaš [$2 odziv]. Drug uporabnik {{GRAMMA
 
 $4
 
-Oglejte si sporočilo na svoji [$5 pogovorni strani]
+Oglejte si sporočilo na svoji [$5 pogovorni strani].
 
 Kaj je pogovorna stran?
 Vaša uporabniška pogovorna stran je stran, kjer se lahko drugi uporabniki {{GRAMMAR:rodilnik|{{SITENAME}}}} sporazumevajo z vami. Odgovorite lahko s klikom na »Uredi stran«. Miškin kazalec postavite pod pripombo, napišete svoj odgovor, se podpišete s štirimi vijugami (~~~~) in stran shranite. Vse strani {{GRAMMAR:rodilnik|{{SITENAME}}}} imajo svojo pogovorno stran. Uporablja se jo za več različnih namenov. Včasih učenje vzame nekaj časa, vendar je uporaba precej preprosta, ko se je navadite.
 
-Ste še negotovi? [http://en.wikipedia.org/wiki/File:Wikipedia_basics_-_Talk_pages.ogv Ta video] (na [http://www.youtube.com/watch?v=JdeDLRsB2Es YouTubeu]) vam jih predstavi korak za korakom.
+Ste še negotovi? [http://en.wikipedia.org/wiki/File:Wikipedia_basics_-_Talk_pages.ogv Videoposnetek] (na [http://www.youtube.com/watch?v=JdeDLRsB2Es YouTubu]) vam korak za korakom predstavi delovanje pogovornih strani.
 
-Želimo vam lep dan,
+Hvala, ker ste del skupnosti,
 
 -- {{SITENAME}}',
 );

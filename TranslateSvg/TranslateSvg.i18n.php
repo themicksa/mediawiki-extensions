@@ -313,6 +313,7 @@ $messages['ko'] = array(
  * @author Robby
  */
 $messages['lb'] = array(
+	'translatesvg-legend' => 'Pad bei de Fichier',
 	'translatesvg-page' => 'Fichier:',
 	'translatesvg-submit' => 'Lass',
 	'translatesvg-summary' => "Dës Spezialsäit erlaabt et fir Iwwersetzungen déi an SVG-Dateien integréiert sinn derbäizesetzen, ewechzehuelen an z'änneren.",

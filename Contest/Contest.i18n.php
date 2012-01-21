@@ -407,6 +407,7 @@ $messages['qqq'] = array(
 	'contest-mycontests-addition-success' => 'Message shown when a user has added a submission',
 	'contest-mycontests-updated-success' => 'Message shown when a user has edited a submission',
 	'contest-mycontests-sessionfail' => 'Session failure',
+	'contest-submission-submit' => '{{Identical|Submit}}',
 	'contest-submission-challenge' => 'Tells the user which challenge they are part of. $1 is the challenge name',
 	'contest-submission-challenge-description' => 'Output of challenge name and description. $1 is the challenge name, $2 is the challenge description',
 );
@@ -933,6 +934,16 @@ $messages['be-tarask'] = array(
 	'contest-mycontests-signup-success' => 'Вы пасьпяхова запісаліся ў конкурс «$1».',
 	'contest-mycontests-addition-success' => 'Вашая заяўка на ўдзел прынятая пасьпяхова! Дзякуй за ўдзел у гэтым конкурсе.',
 	'contest-mycontests-updated-success' => 'Вы зьмянілі Вашую заяўку на ўдзел.',
+	'contest-mycontests-sessionfail' => 'Немагчыма захаваць Вашае паведамленьне з-за страты зьвестак сэсіі. Калі ласка, паспрабуйце ізноў.',
+	'contest-submission-submit' => 'Даслаць',
+	'contest-submission-unknown' => 'Няма конкурсу з пададзенай назвай.',
+	'contest-submission-header' => 'Дзякуй за ўдзел у гэтым конкурсе! Пасьля таго як Вы выканаеце задачу, Вы зможаце дадаць спасылку на Вашае паведамленьне пра Ваш удзел ніжэй.',
+	'contest-submission-finished' => 'Гэты конкурс скончыўся. Дзякуй за ўдзел!',
+	'contest-submission-submission' => 'Спасылка на Вашае паведамленьне',
+	'contest-submission-invalid-url' => 'Гэты URL-адрас не адпавядае дазволеным фарматам.',
+	'contest-submission-new-submission' => 'Вам усё яшчэ неабходна ўвесьці URL-адрас у Вашае паведамленьне. Гэта неабходна выканаць да пэўнага тэрміну.',
+	'contest-submission-current-submission' => 'Гэта URL-адрас Вашага паведамленьня, якое Вы можаце зьмяняць да пэўнага тэрміну.',
+	'contest-submission-challenge' => 'У цяперашні момант Вы ўдзельнічаеце ў конкурсе $1.',
 );
 
 /** Bulgarian (Български)
@@ -6626,10 +6637,10 @@ $messages['sl'] = array(
 	'contest-contest-reminder-send' => 'Pošlji opomnik',
 	'contest-contest-reminder-cancel' => 'Prekliči',
 	'contest-contest-reminder-sending' => 'Pošiljanje ...',
-	'contest-contest-reminder-success' => 'Uspešno sem poslal e-poštni opomnik $1 tekmovalcem',
+	'contest-contest-reminder-success' => 'Uspešno sem poslal e-poštni opomnik $1 {{PLURAL:$1|tekmovalcu|tekmovalcema|tekmovalcem}}',
 	'contest-contest-reminder-close' => 'Zapri',
 	'contest-contest-reminder-retry' => 'Poskusi ponovno poslati',
-	'contest-contest-reminder-failed' => 'E-poštnih opomnikov ni bilo mogoče poslati.',
+	'contest-contest-reminder-failed' => '{{PLURAL:$1|E-poštnega opomnika|E-poštnih opomnikov}} ni bilo mogoče poslati.',
 	'contest-contest-reminder-subject' => 'Zadeva:',
 	'contest-contestant-id' => 'ID',
 	'contest-contestant-challenge-name' => 'Ime izziva',

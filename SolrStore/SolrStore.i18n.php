@@ -132,11 +132,13 @@ $messages['mk'] = array(
 );
 
 /** Dutch (Nederlands)
+ * @author SPQRobin
  * @author Siebrand
  */
 $messages['nl'] = array(
 	'solrstore-desc' => 'Semantische eigenschappen doorzoeken met de kracht van een fulltext zoekmachine',
 	'solrsearch' => 'SolrSearch',
+	'solrstore-error' => 'Fout: Controleer uw query.',
 	'solrstore-searchFieldSets' => 'SolrSearch',
 	'solrstore-searchFieldSets-select' => 'Selecteer een SearchSet',
 	'solrstore-searchFieldSets-title' => 'SolrSearch: SearchSet selecteren',

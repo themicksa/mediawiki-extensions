@@ -35,8 +35,8 @@ $messages['aln'] = array(
  * @author Xuacu
  */
 $messages['ast'] = array(
-	'ukgeocoding_name' => 'Xeocodificación del Reinu Xuníu pa los mapes',
 	'ukgeocoding-desc' => "Espande Mapes con una función d'analís display_uk_point cola cadarma de Google Maps",
+	'ukgeocoding_name' => 'Xeocodificación del Reinu Xuníu pa los mapes',
 	'ukgeocoding_couldNotGeocode' => 'Un o más códigos postales nun se pudieron xeocodificar y saltáronse nel mapa.',
 );
 
@@ -45,8 +45,8 @@ $messages['ast'] = array(
  * @author Jim-by
  */
 $messages['be-tarask'] = array(
-	'ukgeocoding_name' => 'Брытанскае геакадаваньне для мапаў',
 	'ukgeocoding-desc' => 'Пашырае мапы з функцыяй парсэру display_uk_point з выкананьнем у Google Maps',
+	'ukgeocoding_name' => 'Брытанскае геакадаваньне для мапаў',
 	'ukgeocoding_couldNotGeocode' => 'Адзін ці болей паштовых індэксаў ня могуць быць геакадаванымі і былі выдаленыя з мапы.',
 );
 

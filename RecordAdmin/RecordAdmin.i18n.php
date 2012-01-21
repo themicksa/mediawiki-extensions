@@ -147,6 +147,7 @@ $messages['an'] = array(
  * @author Meno25
  * @author OsamaK
  * @author Ouda
+ * @author زكريا
  * @author محمد الجداوي
  */
 $messages['ar'] = array(
@@ -183,8 +184,8 @@ $messages['ar'] = array(
 	'recordadmin-actions' => 'عدل',
 	'recordadmin-needscontent' => 'أضف المحتوى...',
 	'right-recordadmin' => 'أبحث و عدل صفحات السجل',
-	'recordadmin-export-csv' => 'سي في إس',
-	'recordadmin-export-pdf' => 'بي دي إف',
+	'recordadmin-export-csv' => 'القيم المفصولة بفواصل',
+	'recordadmin-export-pdf' => 'صيغة المستندات المحمولة',
 );
 
 /** Aramaic (ܐܪܡܝܐ)

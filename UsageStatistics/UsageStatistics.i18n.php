@@ -1532,8 +1532,8 @@ $messages['lzz'] = array(
  * @author Brest
  */
 $messages['mk'] = array(
-	'specialuserstats' => 'Статистики на користење',
-	'usagestatistics' => 'Статистики на користење',
+	'specialuserstats' => 'Статистики за употреба',
+	'usagestatistics' => 'Статистики за употреба',
 	'usagestatistics-desc' => 'Приказ на статистики на користење поединечно за корисник и за целото вики',
 	'usagestatisticsfor' => '<h2>Статистики на користење за [[User:$1|$1]]</h2>',
 	'usagestatisticsforallusers' => '<h2>Статистики на користење за сите корисници</h2>',

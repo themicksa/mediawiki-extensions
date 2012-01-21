@@ -20,6 +20,13 @@ $messages['qqq'] = array(
 	'interfaceconcurrency-desc' => '{{desc}}',
 );
 
+/** Asturian (Asturianu)
+ * @author Xuacu
+ */
+$messages['ast'] = array(
+	'interfaceconcurrency-desc' => "Ufre una infraestructura pa la interfaz d'usuariu qu'amuesa qué recursos tan n'usu",
+);
+
 /** German (Deutsch)
  * @author Kghbln
  */

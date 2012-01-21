@@ -471,6 +471,8 @@ $messages['fi'] = array(
 	'apisb-query-meta' => 'Metatiedot',
 	'apisb-generic-parameters' => 'Yleiset parametrit',
 	'apisb-generator-parameters' => 'Generoija',
+	'apisb-example' => 'Esimerkki',
+	'apisb-examples' => 'Esimerkkejä',
 );
 
 /** French (Français)
@@ -672,8 +674,8 @@ $messages['hu'] = array(
 	'apisb-desc' => 'Lehetőséget biztosít az [//www.mediawiki.org/wiki/API MediaWiki API] hívások nyomkövetésére a böngészőből',
 	'apisandbox' => 'API homokozó',
 	'apisb-no-js' => "'''Hiba''': ehhez a szolgáltatáshoz JavaScript szükséges.",
-	'apisb-intro' => "Ezen az oldalon kísérletezhetsz a '''MediaWiki API'''-val.
-További részletek az [//www.mediawiki.org/wiki/API:Main_page API-dokumentációnál] találhatók.",
+	'apisb-intro' => "Ezen az oldalon kísérletezhetsz a '''MediaWiki web service API'''-val.
+A használattal kapcsolatos további részletek az [//www.mediawiki.org/wiki/API:Main_page API-dokumentációnál] találhatók. Példa: [//www.mediawiki.org/wiki/API#A_simple_example olvasd el a főoldal tartalomjegyzékét]. További példákért válassz egy tevékenységet!",
 	'apisb-api-disabled' => 'API le van tiltva ezen az oldalon.',
 	'apisb-parameters' => 'Paraméterek',
 	'apisb-result' => 'Eredmény',
@@ -1085,8 +1087,8 @@ $messages['nl'] = array(
 	'apisb-desc' => 'Maakt het mogelijk om [//www.mediawiki.org/wiki/API API-verzoeken voor MediaWiki] vanuit een browser te debuggen',
 	'apisandbox' => 'API-zandbak',
 	'apisb-no-js' => "'''Fout''': deze functie vereist JavaScript.",
-	'apisb-intro' => "Gebruik deze pagina om te experimenteren met de '''MediaWiki API'''.
-Zie de [//www.mediawiki.org/wiki/API:Main_page API-documentatie] voor verdere details over het gebruik van de API.",
+	'apisb-intro' => "Gebruik deze pagina om te experimenteren met de '''MediaWiki-API'''.
+Zie de [//www.mediawiki.org/wiki/API:Main_page API-documentatie] voor verdere details over het gebruik van de API. Voorbeeld: [//www.mediawiki.org/wiki/API#A_simple_example hoe de inhoud van een Hoofdpagina ophalen]. Selecteer een handeling om meer voorbeelden te zien.",
 	'apisb-api-disabled' => 'API is uitgeschakeld op deze site.',
 	'apisb-parameters' => 'Parameters',
 	'apisb-result' => 'Resultaat',
@@ -1442,8 +1444,8 @@ $messages['sl'] = array(
 	'apisb-desc' => 'Omogoča popravljanje napak klicev [//www.mediawiki.org/wiki/API MediaWiki API] iz brskalnika',
 	'apisandbox' => 'Peskovnik API',
 	'apisb-no-js' => "'''Napaka''': funkcija potrebuje JavaScript.",
-	'apisb-intro' => "Uporabite to stran za preizkušanje '''MediaWiki API'''.
-	Oglejte si [//www.mediawiki.org/wiki/API:Main_page dokumentacijo API] za nadaljnje podrobnosti uporabe API.",
+	'apisb-intro' => "Uporabite to stran za preizkušanje '''API spletnih storitev MediaWiki'''.
+	Oglejte si [//www.mediawiki.org/wiki/API:Main_page dokumentacijo API] za nadaljnje podrobnosti o uporabi API.  Primer: [//www.mediawiki.org/wiki/API#A_simple_example pridobi vsebino Glavne strani].  Izberite dejanje, da si ogledate več primerov.",
 	'apisb-api-disabled' => 'API je onemogočen na tej spletni strani.',
 	'apisb-parameters' => 'Parametri',
 	'apisb-result' => 'Rezultat',
@@ -1463,6 +1465,9 @@ $messages['sl'] = array(
 	'apisb-query-meta' => 'Metapodatki',
 	'apisb-generic-parameters' => 'Generični parametri',
 	'apisb-generator-parameters' => 'Generator',
+	'apisb-example' => 'Primer',
+	'apisb-examples' => 'Primeri',
+	'apisb-clear' => 'Počisti',
 );
 
 /** Serbian (Cyrillic script) (‪Српски (ћирилица)‬)
