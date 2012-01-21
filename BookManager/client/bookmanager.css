@@ -4,10 +4,10 @@
 	-webkit-border-radius:4px; /* Safari, Google Chrome, etc */
 	-opera-border-radius:4px; /* Opera */
 	border-radius:4px;
-	padding:8px;
+	padding:8px !important;
 	border: 1px solid #a7d7f9;
 	background-color:#eaf2f8;
-	margin:5px auto;
+	margin:5px auto !important;
 	font-size:95%;
 	display:table;
 	clear:both;
