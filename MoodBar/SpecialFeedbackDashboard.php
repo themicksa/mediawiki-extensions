@@ -68,6 +68,11 @@ class SpecialFeedbackDashboard extends IncludableSpecialPage {
 		$wgOut->addHTML( $this->buildList( $res ) );
 		$wgOut->addModuleStyles( 'ext.moodBar.dashboard.styles' );
 		$wgOut->addModules( 'ext.moodBar.dashboard' );
+		//check for interfaceConcurrency extension, remove check when in core.
+		if( class_exists( 'ApiConcurrency') ) {
+			$wgOut->addModules( 'jquery.interfaceConcurrency' );
+		}
+
 	}
 	
 	/**
