@@ -27,6 +27,24 @@ class ApiConcurrency extends ApiBase {
 				} else {
 					$res['result'] = 'failure';
 				}
+
+				// data to be utilized by the caller for checkout
+				if ( $params['ccaction'] === 'checkout' ) {
+					$lastCheckout = $concurrencyCheck->checkoutResult();
+
+					if ( $res['result'] === 'success' ) {
+						$user = $wgUser;
+					}
+					else {
+						$user = User::newFromId( intval( $lastCheckout['userId'] ) );
+					}
+					if ( !$user->isAnon() ) {
+						$res['userid'] = $user->getId();
+						$res['username'] = $user->getName();
+					}
+
+					$res['expiration'] = $lastCheckout['expiration'];
+				}
 				break;
 
 			default:
