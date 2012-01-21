@@ -62,14 +62,27 @@ class ConcurrencyCheckTest extends MediaWikiTestCase {
 		$res = $first->checkoutResult();
 		$this->assertEquals( $firstId, $res['userId'], "User matches on success");
 		$this->assertTrue( array_key_exists( 'expiration', $res ), "Expiration is present");
+		$this->assertTrue( $res['expiration'] > 0, "Expiration is a positive integer");
 
 		$this->assertTrue( $first->checkout( $testKey ), "Cache hit" );
+
+		global $wgMemc;
+		$cacheKey = wfMemcKey( 'concurrencycheck', 'CCUnitTest', $testKey );
+		$wgMemc->delete($cacheKey);
+		$first->lastCheckout = array();
+		$this->assertTrue( $first->checkout( $testKey ), "Cache miss" );
+		$res = $first->checkoutResult();
+		$this->assertEquals( $firstId, $res['userId'], "User matches on success (nocache)");
+		$this->assertTrue( array_key_exists( 'expiration', $res ), "Expiration is present (nocache)");
+		$this->assertTrue( $res['expiration'] > 0, "Expiration is a positive integer (nocache)");
+		
 		$this->assertFalse(
 			$second->checkout( $testKey ),
 			"Checkout of locked resource fails as different user"
 		);
 		$res = $second->checkoutResult();
 		$this->assertEquals( $firstId, $res['userId'], "Actual owner matches on failure");
+		$this->assertTrue( $res['expiration'] > 0, "Expiration is a positive integer");
 		
 		$this->assertTrue(
 			$first->checkout( $testKey ),

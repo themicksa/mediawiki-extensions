@@ -172,7 +172,7 @@ class ConcurrencyCheck {
 		);
 
 		$dbw->commit( __METHOD__ );
-		$this->checkoutResult = $toCache;
+		$this->checkoutResult( $toCache );
 		return true;
 	}
 
