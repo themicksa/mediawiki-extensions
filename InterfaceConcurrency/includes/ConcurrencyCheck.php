@@ -43,6 +43,7 @@ class ConcurrencyCheck {
 		// TODO: create a registry of all valid resourceTypes that client app can add to.
 		$this->resourceType = $resourceType;
 		$this->setExpirationTime( $expirationTime );
+		$this->lastCheckout = array();
 	}
 
 	/**
@@ -71,6 +72,7 @@ class ConcurrencyCheck {
 				$cached['expiration'] > time()
 			) {
 				// this is already checked out.
+				$this->checkoutResult( $cached );
 				return false;
 			}
 		}
@@ -95,14 +97,15 @@ class ConcurrencyCheck {
 			// "By default, MediaWiki opens a transaction at the first query, and commits
 			// it before the output is sent."
 			// set the cache key, since this is inside an implicit transaction.
-			$wgMemc->set( $cacheKey, array(
-					'userId' => $userId,
-					'expiration' => $expiration,
-				),
-				$this->expirationTime
+			$toCache = array(
+				'userId' => $userId,
+				'expiration' => $expiration,				
 			);
 			
+			$wgMemc->set( $cacheKey, $toCache, $this->expirationTime );
+			
 			$dbw->commit( __METHOD__ );
+			$this->checkoutResult( $toCache );
 			return true;
 		}
 
@@ -130,13 +133,19 @@ class ConcurrencyCheck {
 			// invalid then anyway.
 			// inside this transaction, a row-level lock is established which ensures cache
 			// concurrency
-			$wgMemc->set( $cacheKey, array(
-					'userId' => $row->cc_user,
-					'expiration' => wfTimestamp( TS_UNIX, $row->cc_expiration )
-				),
+			$toCache = array(
+				'userId' => $row->cc_user,
+				'expiration' => wfTimestamp( TS_UNIX, $row->cc_expiration )
+			);
+			
+			$wgMemc->set(
+				$cacheKey,
+				$toCache,
 				wfTimestamp( TS_UNIX, $row->cc_expiration ) - time()
 			);
+			
 			$dbw->rollback( __METHOD__ );
+			$this->checkoutResult( $toCache );
 			return false;
 		}
 
@@ -153,14 +162,17 @@ class ConcurrencyCheck {
 			__METHOD__
 		);
 
+		$toCache = array( 'userId' => $userId, 'expiration' => $expiration );
+
 		// cache the result.
 		$wgMemc->set( 
 			$cacheKey,
-			array( 'userId' => $userId, 'expiration' => $expiration ),
+			$toCache,
 			$this->expirationTime
 		);
 
 		$dbw->commit( __METHOD__ );
+		$this->checkoutResult = $toCache;
 		return true;
 	}
 
@@ -384,6 +396,20 @@ class ConcurrencyCheck {
 
 		return $checkoutsReturn;
 		
+	}
+
+	/**
+	 * Return information about the owner of the record on which a checkout was last
+	 * attempted.
+	 * 
+	 * @param $checkoutInfo array (optional) of checkout information to store
+	 * @return array
+	 */
+	public function checkoutResult( $checkoutInfo = null ) {
+		if( isset( $checkoutInfo ) ) { // true on empty array
+			$this->lastCheckout = $checkoutInfo;
+		}
+		return $this->lastCheckout;
 	}
 
 	/**

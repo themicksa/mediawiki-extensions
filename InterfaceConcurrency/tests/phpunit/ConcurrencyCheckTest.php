@@ -48,6 +48,9 @@ class ConcurrencyCheckTest extends MediaWikiTestCase {
 	public function testCheckoutCheckin() {
 		$first = new ConcurrencyCheck( 'CCUnitTest',  self::$users['user1']->user );
 		$second = new ConcurrencyCheck( 'CCUnitTest',  self::$users['user2']->user );
+		$firstId = self::$users['user1']->user->getId();
+		$secondId = self::$users['user2']->user->getId();
+		
 		$testKey = 1337;
 
 		// clean up after any previously failed tests
@@ -56,11 +59,18 @@ class ConcurrencyCheckTest extends MediaWikiTestCase {
 
 		// tests
 		$this->assertTrue( $first->checkout( $testKey ), "Initial checkout" );
+		$res = $first->checkoutResult();
+		$this->assertEquals( $firstId, $res['userId'], "User matches on success");
+		$this->assertTrue( array_key_exists( 'expiration', $res ), "Expiration is present");
+
 		$this->assertTrue( $first->checkout( $testKey ), "Cache hit" );
 		$this->assertFalse(
 			$second->checkout( $testKey ),
 			"Checkout of locked resource fails as different user"
 		);
+		$res = $second->checkoutResult();
+		$this->assertEquals( $firstId, $res['userId'], "Actual owner matches on failure");
+		
 		$this->assertTrue(
 			$first->checkout( $testKey ),
 			"Checkout of locked resource succeeds as original user"
