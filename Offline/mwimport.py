@@ -223,8 +223,30 @@ class Output(object):
 
 
 if __name__ == "__main__":
-  #op = OptionParser()
-  #op.add_option(
+  op = OptionParser()
+  op.add_option("-d", "--dir", dest="base_dir",
+    help="base directory for output files")
+  #op.add_option("-f", "--force", dest="force", action="store_true",
+  #  help="ignore processing errors")
+  #op.add_option("-s", "--skip", dest="skip", type="int",
+  #  help="skip over this many articles before begining import")
+  #op.add_option("--import", dest="do_sql", action="store_true",
+  #  help="run sql import script when finished with dump")
+  #op.add_option("--no-import", dest="do_sql", action="store_false",
+  #  help="stop after dump, do not import sql")
+  #op.add_option("--ignore-existing", dest="replace", action="store_false",
+  #  help="no not overwrite existing data")
+  #op.add_option("--replace-existing", dest="replace", action="store_true",
+  #  help="generated sql statements will overwrite existing data")
+  options, args = op.parse_args()
 
-  p = DumpParser()
+  if len(args) > 1:
+    print "too many input file arguments provided: "+" ".join(args)
+    sys.exit(-1)
+  elif len(args) == 0 or args[0] == '-':
+    f = sys.stdin
+  else:
+    f = open(args[0])
+
+  p = DumpParser(input=f, output_base=options.base_dir)
   p.parse()
