@@ -143,6 +143,7 @@ class FindSettings extends Maintenance {
 			} else {
 				$allSettings = array_keys( ConfigurationSettings::singleton( CONF_SETTINGS_CORE )->getAllSettings() );
 				$ignoreList = array(
+					'wgActions',                   // Needs PHP code
 					'wgAPIListModules',            // Extensions only
 					'wgAPIMetaModules',            // Extensions only
 					'wgAPIModules',                // Extensions only
@@ -152,6 +153,7 @@ class FindSettings extends Maintenance {
 					'wgAutoloadClasses',           // Extensions only
 					'wgAvailableRights',           // Extensions only
 					'wgCommandLineMode',           // Internal use
+					'wgCompiledFiles',             // Extensions only
 					'wgConf',                      // Object
 					'wgDBmysql4',                  // Deprecated
 					'wgDummyLanguageCodes',        // Internal use
@@ -164,10 +166,12 @@ class FindSettings extends Maintenance {
 					'wgExtensionCredits',          // Extensions only
 					'wgExtensionFunctions',        // Extensions only
 					'wgExtensionMessagesFiles',    // Extensions only
+					'wgFeedClasses',               // Needs PHP code
 					'wgFilterCallback',            // Needs PHP code
 					'wgHooks',                     // Extensions only
 					'wgInputEncoding',             // Deprecated
 					'wgJobClasses',                // Extensions only
+					'wgJobTypesExcludedFromDefaultQueue', // Extensions only
 					'wgLegacySchemaConversion',    // Deprecated
 					'wgLogActions',                // Extensions only
 					'wgLogActionsHandlers',        // Extensions only
@@ -176,12 +180,14 @@ class FindSettings extends Maintenance {
 					'wgLogTypes',                  // Extensions only
 					'wgMaintenanceScripts',        // Extensions only
 					'wgMemCachedDebug',            // Internal use
+					'wgObjectCaches',              // Too dificult
 					'wgOldChangeTagsIndex',        // Temporary
 					'wgOutputEncoding',            // Deprecated
 					'wgPagePropLinkInvalidations', // Extensions only
 					'wgParserOutputHooks',         // Extensions only
 					'wgParserTestFiles',           // Extensions only
 					'wgProxyKey',                  // Deprecated
+					'wgResourceLoaderSources',     // Extensions only
 					'wgResourceModules',           // Extensions only
 					'wgSeleniumTestConfigs',       // Needs PHP code
 					'wgSkinExtensionFunctions',    // Extensions only
@@ -190,6 +196,7 @@ class FindSettings extends Maintenance {
 					'wgSorbsUrl',                  // Deprecated
 					'wgStyleSheetPath',            // Deprecated
 					'wgTrivialMimeDetection',      // Internal use
+					'wgUseTeX',                    // Deprecated
 					'wgValidSkinNames',            // Extensions only
 					'wgVersion',                   // Internal use
 				);

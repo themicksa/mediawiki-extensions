@@ -1,6 +1,29 @@
 This file lists changes on this extension. Localisation updates are done
 through translatewiki.net and are not listed here.
 
+0.17.2 - 22 January 2012
+  * Added $wgIncludeLegacyJavaScript, $wgLegacyJavaScriptGlobals,
+    $wgResourceBasePath, $wgResourceLoaderMaxQueryLength,
+    $wgResourceLoaderMinifierMaxLineLength,
+    $wgResourceLoaderMinifierStatementsOnOwnLine, $wgResourceLoaderValidateJS,
+    $wgResourceLoaderValidateStaticJS, $wgEnableJavaScriptTest,
+    $wgJavaScriptTestConfig, $wgExtraGenderNamespaces,
+    $wgSitemapNamespacesPriorities, $wgAutopromoteOnce, $wgCanonicalServer,
+    $wgExiv2Command, $wgAllowSchemaUpdates, $wgCleanupPresentationalAttributes,
+    $wgSend404Code, $wgDebugToolbar, $wgDeprecationReleaseLimit,
+    $wgAggregateStatsID, $wgArticleCountMethod, $wgCachePrefix,
+    $wgCopyUploadsDomains, $wgDisableUploadScriptChecks, $wgUploadStashMaxAge,
+    $wgUpdateCompatibleMetadata, $wgEnableAutoRotation,
+    $wgExcludeFromThumbnailPurge, $wgImageMagickIdentifyCommand,
+    $wgSVGMetadataCutoff, $wgExportAllowAll, $wgQueryPageDefaultLimit,
+    $wgAutopromoteOnceLogInRC, $wgPasswordResetRoutes,
+    $wgEnableSearchContributorsByIP and $wgVaryOnXFP.
+  * Removed $wgResourceLoaderMinifyJSVerticalSpace, $wgAPICacheHelp,
+    $wgMathDirectory, $wgMathPath, $wgProto, $wgTexvc, $wgDBts2schema,
+    $wgSysopRangeBans, $wgSysopUserBans, $wgUseTeX, $wgTexvcBackgroundColor,
+    $wgMathCheckFiles, $wgAllowUserSkin, $wgLogAutocreatedAccounts and
+    $wgCheckCopyrightUpload.
+
 0.17.1 - 14 January 2012
   Fixed a JavaScript error.
 
