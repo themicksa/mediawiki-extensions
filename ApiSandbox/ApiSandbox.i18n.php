@@ -22,6 +22,10 @@ $messages['en'] = array(
 	'apisb-select-action'     => 'Select action',
 	'apisb-select-query'      => 'What to query?',
 	'apisb-select-value'      => 'Select value',
+	'apisb-docs-more'         => 'read more',
+	'apisb-params-param'      => 'Parameter',
+	'apisb-params-input'      => 'Input',
+	'apisb-params-desc'       => 'Description',
 	'apisb-loading'           => 'Loading...',
 	'apisb-load-error'        => 'Error loading API description',
 	'apisb-request-error'     => 'Error performing API request',
@@ -128,7 +132,7 @@ $messages['ba'] = array(
 	'apisb-generator-parameters' => 'Генератор',
 );
 
-/** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
+/** Belarusian (Taraškievica orthography) (Беларуская (тарашкевіца))
  * @author EugeneZelenko
  * @author Jim-by
  * @author Wizardist
@@ -278,7 +282,7 @@ Die [//www.mediawiki.org/wiki/API:Main_page/de Dokumentation zur API] enthält w
 	'apisb-clear' => 'Leeren',
 );
 
-/** German (formal address) (‪Deutsch (Sie-Form)‬)
+/** German (formal address) (Deutsch (Sie-Form))
  * @author Kghbln
  */
 $messages['de-formal'] = array(
@@ -867,7 +871,7 @@ $messages['ksh'] = array(
 	'apisb-query-list' => 'Leste',
 );
 
-/** Kurdish (Latin script) (‪Kurdî (latînî)‬)
+/** Kurdish (Latin script) (Kurdî (latînî))
  * @author George Animal
  */
 $messages['ku-latn'] = array(
@@ -1051,7 +1055,7 @@ Contoh: [//www.mediawiki.org/wiki/API#A_simple_example dapatkan kandungan Laman 
 	'apisb-clear' => 'Padamkan',
 );
 
-/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
+/** Norwegian (bokmål) (Norsk (bokmål))
  * @author Nghtwlkr
  */
 $messages['nb'] = array(
@@ -1470,7 +1474,7 @@ $messages['sl'] = array(
 	'apisb-clear' => 'Počisti',
 );
 
-/** Serbian (Cyrillic script) (‪Српски (ћирилица)‬)
+/** Serbian (Cyrillic script) (Српски (ћирилица))
  * @author Rancher
  */
 $messages['sr-ec'] = array(
@@ -1676,7 +1680,7 @@ $messages['yi'] = array(
 	'apisb-query-list' => 'ליסטעס',
 );
 
-/** Simplified Chinese (‪中文(简体)‬)
+/** Simplified Chinese (中文(简体))
  * @author Anakmalaysia
  * @author Hydra
  * @author Hzy980512
@@ -1715,7 +1719,7 @@ $messages['zh-hans'] = array(
 	'apisb-examples' => '示例',
 );
 
-/** Traditional Chinese (‪中文(繁體)‬)
+/** Traditional Chinese (中文(繁體))
  * @author Anakmalaysia
  * @author Liangent
  */

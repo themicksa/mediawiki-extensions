@@ -1,25 +1,74 @@
+/* Buttons */
+#api-sandbox-buttons {
+	text-align: right;
+}
+
+/* Options */
+
 .api-sandbox-options {
 	width: 100%;
+	table-layout: fixed;
 }
 
-.api-sandbox-label {
-	text-align: right;
-	width: 12em;
+.api-sandbox-options th {
+	text-align: left;
+}
+
+.api-sandbox-options td,
+.api-sandbox-options th {
 	vertical-align: top;
+	width: 13em;
 }
 
-.api-sandbox-result-label {
+.api-sandbox-options select {
 	width: 12em;
 }
 
-.api-sandbox-value {
-	width: 18em;
+.api-sandbox-options .api-sandbox-docs-col {
+	width: auto;
+}
+
+/* Params */
+.api-sandbox-params {
+	width: 100%;
+	table-layout: fixed;
+}
+
+.api-sandbox-params td,
+.api-sandbox-params th {
+	padding: 5px 7px;
+}
+
+.api-sandbox-params-label {
+	vertical-align: top;
+	width: 12em;
+	text-align: right;
+}
+
+.api-sandbox-params-value {
+	width: 20em;
 	vertical-align: top;
 	overflow: auto;
 }
 
+.api-sandbox-params input[type="text"] {
+	padding: 2px 3px;
+	width: 19em;
+}
+
+th.api-sandbox-params-label,
+th.api-sandbox-params-value {
+	text-align: center;
+}
+
+/* Result */
+
 .api-sandbox-result-container {
 	width: 100%;
+}
+
+.api-sandbox-result-label {
+	width: 12em;
 }
 
 #api-sandbox-input {

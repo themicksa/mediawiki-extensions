@@ -31,14 +31,21 @@ $wgResourceModules['ext.apiSandbox'] = array(
 		'apisb-load-error',
 		'apisb-request-error',
 		'apisb-select-value',
-		'apisb-namespaces-error',
+		'apisb-docs-more',
+		'apisb-params-param',
+		'apisb-params-input',
+		'apisb-params-desc',
 		'apisb-ns-main',
 		'apisb-example',
 		'apisb-examples',
 		'apisb-clear',
+		'apisb-submit',
 		'parentheses',
 	),
-	'dependencies' => 'mediawiki.util',
+	'dependencies' => array(
+		'mediawiki.util',
+		'jquery.ui.button',
+	)
 );
 
 $wgHooks['APIGetDescription'][] = 'efASAPIGetDescription';

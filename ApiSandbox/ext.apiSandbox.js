@@ -7,11 +7,32 @@
 		paramInfo, namespaceOptions,
 		// page elements
 		$format, $action, $query, $queryRow, $help, $mainContainer, $genericContainer,
-		$generatorContainer, $queryContainer, $generatorBox, $submit, $requestUrl, $requestPost,
-		$output, $postRow, $buttonsContainer, $examplesButton, $examplesContent;
+		$generatorContainer, $queryContainer, $generatorBox, $form, $submit, $requestUrl, $requestPost,
+		$output, $postRow, $buttonsContainer, $examplesButton, $examplesContent, $pageScroll;
 
 
 	/** Local utility functions **/
+
+	// get the first element in a list that is "scrollable"
+	// depends on browser and skin (i.e. body or html)
+	function getScrollableElement( /* selectors, .. */ ) {
+		var i, argLen, el, $el, canScroll;
+		for ( i = 0, argLen = arguments.length; i < argLen; i += 1 ) {
+			el = arguments[i];
+			$el = $(el);
+			if ( $el.scrollTop() > 0 ) {
+				return el;
+			} else {
+				$el.scrollTop( 1 );
+				canScroll = $el.scrollTop() > 0;
+				$el.scrollTop( 0 );
+				if ( canScroll ) {
+					return el;
+				}
+			}
+		}
+		return [];
+	}
 
 	function showLoading( $element ) {
 		$element.html(
@@ -185,7 +206,7 @@
 				).appendTo( $list );
 			count++;
 		}
-		$examplesButton.text( mw.msg( count === 1 ? 'apisb-example' : 'apisb-examples' ) );
+		$examplesButton.button( 'option', 'text', mw.msg( count === 1 ? 'apisb-example' : 'apisb-examples' ) );
 		$list.appendTo( $examplesContent );
 		if ( count ) {
 			$examplesButton.show();
@@ -199,7 +220,7 @@
 			isQuery = action === 'query';
 
 		if ( action === '-' || ( isQuery && query === '-' ) ) {
-			$submit.prop( 'disabled', true );
+			$submit.button( 'option', 'disabled', true );
 			return;
 		}
 		query = query.replace( /^.*=/, '' );
@@ -212,7 +233,7 @@
 		getParamInfo( data,
 			function () {
 				showLoading( $mainContainer );
-				$submit.prop( 'disabled', true );
+				$submit.button( 'option', 'disabled', true );
 				$examplesContent.hide();
 			},
 			function () {
@@ -224,11 +245,11 @@
 				}
 				mainRequest = new UiBuilder( $mainContainer, info, '' );
 				mainRequest.setHelp( $help );
-				$submit.prop( 'disabled', false );
+				$submit.button( 'option', 'disabled', false );
 				updateExamples( info );
 			},
 			function () {
-				$submit.removeAttr( 'disabled' );
+				$submit.button( 'option', 'disabled', false );
 				showLoadError( $mainContainer, 'apisb-load-error' );
 				$examplesContent.hide();
 			}
@@ -309,23 +330,29 @@
 		 * Creates inputs and places them into container
 		 */
 		createInputs: function () {
-			var $table, i, length, param, name;
+			var $table, $tbody, i, length, param, name;
 
-			$table = $( '<table class="api-sandbox-options"></table>' );
+			$table = $( '<table class="api-sandbox-params mw-datatable"><thead><tr></tr></thead><tbody></tbody></table>' )
+				.find( '> thead > tr' )
+					.append( mw.html.element( 'th', { 'class': 'api-sandbox-params-label' }, mw.msg( 'apisb-params-param' ) ) )
+					.append( mw.html.element( 'th', { 'class': 'api-sandbox-params-value' }, mw.msg( 'apisb-params-input' ) ) )
+					.append( mw.html.element( 'th', {}, mw.msg( 'apisb-params-desc' ) ) )
+				.end();
+			$tbody = $table.find( '> tbody' )
 			for ( i = 0, length = this.params.length; i < length; i += 1 ) {
 				param = this.params[i];
 				name = this.prefix + param.name;
 
 				$( '<tr>' )
 					.append(
-						$( '<td class="api-sandbox-label"></td>' )
+						$( '<td class="api-sandbox-params-label"></td>' )
 							.html( mw.html.element( 'label',
-								{ 'for': 'param-' + name }, name + '=' )
+								{ 'for': 'param-' + name }, name )
 						)
 					)
-					.append( $( '<td class="api-sandbox-value"></td>' ).html( this.input( param, name ) ) )
+					.append( $( '<td class="api-sandbox-params-value"></td>' ).html( this.input( param, name ) ) )
 					.append( $( '<td>' ).html( smartEscape( param.description ) ) )
-					.appendTo( $table );
+					.appendTo( $tbody );
 			}
 			this.$container.html( $table );
 		},
@@ -335,16 +362,16 @@
 		 * @param $container {jQuery} Container to use
 		 */
 		setHelp: function ( $container ) {
-			var desc = smartEscape( this.info.description );
+			var	linkHtml = '',
+				descTxt = smartEscape( this.info.description );
 			if ( this.info.helpurls && this.info.helpurls[0] ) {
-				desc = desc.replace( /^([^\r\n\.]*)/,
-					mw.html.element( 'a', {
-						'target': '_blank',
-						'href': this.info.helpurls[0]
-					}, '$1' )
-				);
+				descTxt = descTxt.replace( /^([^\r\n\.]*)/, '$1' ) + ' ';
+				linkHtml = mw.html.element( 'a', {
+					'target': '_blank',
+					'href': this.info.helpurls[0]
+				}, mw.msg( 'apisb-docs-more' ) );
 			}
-			$container.html( desc );
+			$container.text( descTxt ).append( mw.msg( 'parentheses', linkHtml ) );
 		},
 
 		input: function ( param, name ) {
@@ -361,7 +388,8 @@
 					s = mw.html.element( 'input', {
 						'class': 'api-sandbox-input',
 						'id': 'param-' + name,
-						'value': value
+						'value': value,
+						'type': 'text'
 					} );
 					break;
 
@@ -471,20 +499,43 @@
 		$generatorContainer = $( '#api-sandbox-generator-inputs' );
 		$queryContainer = $( '#api-sandbox-query-inputs' );
 		$generatorBox = $( '#api-sandbox-generator-parameters' );
-		$submit = $( '#api-sandbox-submit' );
 		$requestUrl = $( '#api-sandbox-url' );
 		$requestPost = $( '#api-sandbox-post' );
 		$output = $( '#api-sandbox-output' );
 		$postRow = $( '#api-sandbox-post-row' );
 		$buttonsContainer = $( '#api-sandbox-buttons' );
-		$examplesButton = $( '<button>' )
+		$examplesContent = $( '#api-sandbox-examples' );
+		$pageScroll = $( getScrollableElement( 'body', 'html' ) );
+		$form = $( '#api-sandbox-form' );
+		$submit = $( '<button>' )
+			.text( mw.msg( 'apisb-submit' ) )
+			.appendTo( $buttonsContainer );
+		$submit = $submit.clone( /*dataAndEvents=*/true, /*deep=*/true )
+			.appendTo( '#api-sandbox-parameters' )
+			.add( $submit )
 			.click( function ( e ) {
-				e.preventDefault();
+				// Avoid triggering other stuff, including the sister-button
+				e.stopImmediatePropagation();
+				$form.submit();
+			} )
+			.button({ disabled: true });
+
+		$examplesButton = $( '<button>' )
+			.text( mw.msg( 'apisb-examples' ) )
+			.click( function ( e ) {
 				$examplesContent.slideToggle();
 			} )
+			.button()
 			.hide()
 			.appendTo( $buttonsContainer );
-		$examplesContent = $( '#api-sandbox-examples' );
+
+		$( '<button>' )
+			.text( mw.msg( 'apisb-clear' ) )
+			.click( function ( e ) {
+				resetUI();
+			} )
+			.button()
+			.appendTo( $buttonsContainer );
 
 		// init caches
 		paramInfo = { modules: {}, querymodules: {} };
@@ -502,14 +553,6 @@
 				} );
 			}		
 		} );
-
-		$( '<button>' )
-			.text( mw.msg( 'apisb-clear' ) )
-			.click( function ( e ) {
-				e.preventDefault();
-				resetUI();
-			} )
-			.insertAfter( $examplesButton );
 
 		// load stuff we need from the beginning
 		getParamInfo(
@@ -554,19 +597,18 @@
 		} );
 
 
-		$( '#api-sandbox-form' ).submit( function ( e ) {
-			var url, params, mustBePosted, data;
+		$form.submit( function ( e ) {
+			var url, params, mustBePosted;
 
 			e.preventDefault();
 
-			if ( $submit.prop( 'disabled' ) === true ) {
+			if ( $submit.button( 'option', 'disabled' ) === true ) {
 				return;
 			}
 
 			url = mw.util.wikiScript( 'api' ) + '?' + $.param({ action: $action.val() });
 			params = mainRequest.getRequestData();
 			mustBePosted = mainRequest.info.mustbeposted === '';
-			debugger;
 			if ( $action.val() === 'query' ) {
 				url += '&' + $query.val();
 				params += queryRequest.getRequestData();
@@ -591,7 +633,7 @@
 				$postRow.hide();
 			}
 			url = url.replace( /(&format=[^&]+)/, '$1fm' );
-			data = {
+			$.ajax({
 				url: url,
 				data: params,
 				dataType: 'text',
@@ -608,9 +650,14 @@
 				},
 				error: function () {
 					showLoadError( $output, 'apisb-request-error' );
+				},
+				// either success or error
+				complete: function () {
+					$pageScroll.animate({ scrollTop: $('#api-sandbox-result').offset().top }, 400, function () {
+						window.location.hash = '#api-sandbox-result';
+					});
 				}
-			};
-			$.ajax( data );
+			});
 		});
 
 	});

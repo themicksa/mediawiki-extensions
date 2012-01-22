@@ -39,12 +39,12 @@ class SpecialApiSandbox extends SpecialPage {
 			. $this->openFieldset( 'result' )
 			. '<table class="api-sandbox-result-container"><tbody>
 '
-			. '<tr><td class="api-sandbox-result-label"><label for="api-sandbox-url">'
-			. wfMessage( 'apisb-request-url' )->parse() . '</label></td>'
+			. '<tr><th class="api-sandbox-result-label"><label for="api-sandbox-url">'
+			. wfMessage( 'apisb-request-url' )->parse() . '</label></th>'
 			. '<td><input id="api-sandbox-url" readonly="readonly" /></td></tr>
 '
-			. '<tr id="api-sandbox-post-row"><td class="api-sandbox-result-label"><label for="api-sandbox-post">'
-			. wfMessage( 'apisb-request-post' )->parse() . '</label></td>'
+			. '<tr id="api-sandbox-post-row"><th class="api-sandbox-result-label"><label for="api-sandbox-post">'
+			. wfMessage( 'apisb-request-post' )->parse() . '</label></th>'
 			. '<td><input id="api-sandbox-post" readonly="readonly" /></td></tr>
 '
 			. '<tr><td colspan="2"><div id="api-sandbox-output"></div></td></tr>'
@@ -78,21 +78,29 @@ class SpecialApiSandbox extends SpecialPage {
 			$this->getQueryModules( 'meta' )
 		);
 
-		$s = '<table class="api-sandbox-options">
-<tbody>
-';
-		$s .= '<tr><td class="api-sandbox-label"><label for="api-sandbox-format"><code>format=</code></label></td><td class="api-sandbox-value">' 
-			. self::getSelect( 'format', $formats, 'json' )
-			. '</td><td>' . $this->getButtonsBox() . '</td></tr>
-';
-		$s .= '<tr><td class="api-sandbox-label"><label for="api-sandbox-action"><code>action=</code></label></td><td class="api-sandbox-value">' 
-			. self::getSelect( 'action', $modules )
-			. '</td><td id="api-sandbox-help" rowspan="2"></td></tr>
-';
-		$s .= '<tr id="api-sandbox-query-row" style="display: none"><td class="api-sandbox-label">'
-			. '</td><td class="api-sandbox-value">'
-			. self::getSelect( 'query', $queryModules )
-			. '</td></tr>
+		$s = '<div id="api-sandbox-buttons"></div>';
+		$s .= '<div id="api-sandbox-examples" style="display: none;"></div>';
+		$s .= '
+<table class="api-sandbox-options">
+	<tbody>
+		<tr>
+			<th><label for="api-sandbox-format">Format</label></th>
+			<th><label for="api-sandbox-action">Action</label></th>
+			<th class="api-sandbox-docs-col">Documentation</th>
+		</tr>
+		<tr>
+			<td>' . self::getSelect( 'format', $formats, 'json' ) . '</td>
+			<td>
+				' . self::getSelect( 'action', $modules ) . '
+				<div id="api-sandbox-query-row" style="display: none;">
+					' . self::getSelect( 'query', $queryModules ) . '
+				</div>
+			</td>
+			<td class="api-sandbox-docs-col">
+				<span id="api-sandbox-help"></span>
+			</td>
+		</tr>
+	</tbody>
 </table>
 ';
 		$s .= '<div id="api-sandbox-main-inputs"></div><div id="api-sandbox-query-inputs" style="display: none"></div>'
@@ -101,20 +109,7 @@ class SpecialApiSandbox extends SpecialPage {
 			. $this->openFieldset( 'generator-parameters', array( 'style' => 'display: none;' ) )
 			. '<div id="api-sandbox-generator-inputs"></div></fieldset>
 ';
-
-		$s .= Html::element( 'input',
-			array(
-				'type' => 'submit',
-				'id' => 'api-sandbox-submit',
-				'value' => wfMessage( 'apisb-submit' )->text(),
-				'disabled' => 'disabled',
-			) 
-		) . "\n";
 		return $s;
-	}
-
-	public function getButtonsBox() {
-		return '<div id="api-sandbox-buttons"><div id="api-sandbox-examples" style="display: none"></div></div>';
 	}
 
 	/**
