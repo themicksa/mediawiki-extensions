@@ -81,11 +81,11 @@ class SpecialApiSandbox extends SpecialPage {
 		$s = '<table class="api-sandbox-options">
 <tbody>
 ';
-		$s .= '<tr><td class="api-sandbox-label"><label for="api-sandbox-format">format=</label></td><td class="api-sandbox-value">' 
+		$s .= '<tr><td class="api-sandbox-label"><label for="api-sandbox-format"><code>format=</code></label></td><td class="api-sandbox-value">' 
 			. self::getSelect( 'format', $formats, 'json' )
 			. '</td><td>' . $this->getButtonsBox() . '</td></tr>
 ';
-		$s .= '<tr><td class="api-sandbox-label"><label for="api-sandbox-action">action=</label></td><td class="api-sandbox-value">' 
+		$s .= '<tr><td class="api-sandbox-label"><label for="api-sandbox-action"><code>action=</code></label></td><td class="api-sandbox-value">' 
 			. self::getSelect( 'action', $modules )
 			. '</td><td id="api-sandbox-help" rowspan="2"></td></tr>
 ';
