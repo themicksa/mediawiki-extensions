@@ -6,10 +6,10 @@ import os
 import os.path
 import sys
 import random
-import time
+from datetime import datetime
 from lxml import etree
 from collections import namedtuple
-
+from optparse import OptionParser
 
 Page = namedtuple('Page', [
   'id',
@@ -51,18 +51,10 @@ class Element(object):
     self.xmlns = xmlns
 
   def text(self, tag, default='NULL'):
-    content = self.element.findtext(self.xmlns+tag)
-    if content:
-      return content
-    else:
-      return default
+    return self.element.findtext(self.xmlns+tag, default)
 
   def attr(self, tag, default='NULL'):
-    attr = self.element.get(self.xmlns+tag)
-    if attr:
-      return attr
-    else:
-      return default
+    return self.element.get(self.xmlns+tag, default)
 
   def child(self, tag):
     children = self.element.iterchildren(tag=self.xmlns+tag)
@@ -79,7 +71,7 @@ class ParsedArticle(object):
   def __init__(self):
     pass
 
-class Parser(object):
+class DumpParser(object):
   def __init__(self, input=None, output_base=None):
     if not input or input == "-":
       self.input = sys.stdin
@@ -97,7 +89,7 @@ class Parser(object):
       #XXX problem, we would have to listen to tag start events:
       #if tag == 'mediawiki':
       #  self.xmlns = Element(element).attr('xmlns')
-      method = getattr(Parser, tag, None)
+      method = getattr(DumpParser, tag, None)
       if method:
         article = method(self, element=Element(element, xmlns=self.xmlns))
         self.output.write_article(article)
@@ -109,17 +101,30 @@ class Parser(object):
     self.article.page_id=element.text('id')
     self.revision(element.child('revision'))
 
+    title = element.text('title')
+    if ':' in title:
+      namespace, title = title.split(':', 1)
+    else:
+      namespace = 'Main'
+
+    if re.match("#redirect", self.article.text.text, re.I):
+      redirect = 1
+    else:
+      redirect = 0
+
+    touched = datetime.now().strftime("%Y%m%d%H%M%S") # mysql timestamp
+
     self.article.page = Page(
       id=self.article.page_id,
-      namespace='Main',
-      title=element.text('title'),
+      namespace=namespace,
+      title=title,
       restrictions=element.text('restrictions', 0),
       counter=0,
-      is_redirect=0, #XXX
+      is_redirect=redirect, #XXX
       is_new=0,
       random=random.randint(0, 4000000000),
-      touched=time.strftime('%Y-%m-%d %H:%M:%S'), # mysql datetime
-      latest=0,
+      touched=touched,
+      latest=self.article.revision.id,
       len=self.article.text_len
     )
     return self.article
@@ -130,18 +135,21 @@ class Parser(object):
     self.contributor(element.child('contributor'))
     self.comment(element.child('comment'))
 
+    parsed_time = datetime.strptime(element.text('timestamp'), "%Y-%m-%dT%H:%M:%SZ")
+    timestamp = parsed_time.strftime("%Y%m%d%H%M%S") # mysql timestamp
+
     self.article.revision = Revision(
       id=self.article.revision_id,
       page=self.article.page_id,
+      text_id=self.article.text.id,
       comment=self.article.comment,
       user=self.article.contrib_id,
       user_text=self.article.contrib_user,
-      text_id=self.article.text.id,
-      timestamp=element.text('timestamp'),
+      timestamp=timestamp,
       minor_edit=element.text('minor', 0),
       deleted=0,
       len=self.article.text_len,
-      parent_id=0
+      parent_id=self.article.page_id
     )
 
   def text(self, element):
@@ -152,12 +160,12 @@ class Parser(object):
       flags='utf-8'
     )
     self.article.text_len = 0
-    if self.article.text_len:
+    if self.article.text.text:
       self.article.text_len = len(self.article.text.text)
 
   def contributor(self, element):
-    self.article.contrib_user = element.text('username')
-    self.article.contrib_id = element.text('id')
+    self.article.contrib_user = element.text('username', element.text('ip'))
+    self.article.contrib_id = element.text('id', 0)
 
   def comment(self, element):
     if element and not element.attr('deleted'):
@@ -215,5 +223,8 @@ class Output(object):
 
 
 if __name__ == "__main__":
-  p = Parser()
+  #op = OptionParser()
+  #op.add_option(
+
+  p = DumpParser()
   p.parse()
