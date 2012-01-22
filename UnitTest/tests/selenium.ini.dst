@@ -33,10 +33,8 @@ selenese	= yes
 ;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [host]
-;hostname	= "localhost"
-hostname	= "wikimedia-commit.localhost.wikimedia.org"
-;browserUrl	= "http://localhost/"
-browserUrl	= "http://wikimedia-commit.localhost.wikimedia.org/"
+hostname	= "localhost"
+browserUrl	= "http://localhost/"
 
 [credentials]
 admin[username] = "admin"
