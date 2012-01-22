@@ -219,7 +219,7 @@
 		var	data,
 			isQuery = action === 'query';
 
-		if ( action === '-' || ( isQuery && query === '-' ) ) {
+		if ( action === '' || ( isQuery && query === '' ) ) {
 			$submit.button( 'option', 'disabled', true );
 			return;
 		}
@@ -289,7 +289,7 @@
 			isQuery = a === 'query';
 		if ( isQuery ) {
 			$queryRow.show();
-			if ( q !== '-' ) {
+			if ( q !== '' ) {
 				$queryContainer.show();
 			} else {
 				$queryContainer.hide();

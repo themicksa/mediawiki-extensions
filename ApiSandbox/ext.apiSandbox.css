@@ -1,6 +1,11 @@
 /* Buttons */
+
 #api-sandbox-buttons {
-	text-align: right;
+	float: right;
+}
+
+#api-sandbox-buttons button {
+	float: left;
 }
 
 /* Options */
@@ -29,6 +34,7 @@
 }
 
 /* Params */
+
 .api-sandbox-params {
 	width: 100%;
 	table-layout: fixed;
@@ -51,9 +57,10 @@
 	overflow: auto;
 }
 
-.api-sandbox-params input[type="text"] {
+.api-sandbox-params input[type="text"],
+.api-sandbox-params select {
 	padding: 2px 3px;
-	width: 19em;
+	width: 18em;
 }
 
 th.api-sandbox-params-label,
