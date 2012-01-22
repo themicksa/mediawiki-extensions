@@ -5905,6 +5905,7 @@ $messages['zh-hans'] = array(
 	'moodbar-privacy' => '提交后，您将同意在$1下的透明度。',
 	'moodbar-privacy-link' => '条款',
 	'moodbar-privacy-link-title' => '使用条款',
+	'moodbar-fbd-link-title' => '反馈',
 	'moodbar-disable-link' => '我不感兴趣，请禁用此功能。',
 	'moodbar-form-title' => '因为……',
 	'moodbar-form-note' => '最多140字',
@@ -5915,7 +5916,7 @@ $messages['zh-hans'] = array(
 	'moodbar-loading-title' => '分享中……',
 	'moodbar-success-title' => '感谢！',
 	'moodbar-error-title' => '糟糕！',
-	'moodbar-success-subtitle' => '分享您的编辑体验，帮助我们改善$1。',
+	'moodbar-success-subtitle' => '分享您的{{FBD-LINK}}，帮助我们改善$1。',
 	'moodbar-error-subtitle' => '出错啦！请重试分享您的反馈意见。',
 	'moodbar-blocked-title' => '糟糕！',
 	'moodbar-blocked-subtitle' => '您已被封禁，不能编辑。',
@@ -5990,6 +5991,7 @@ $messages['zh-hans'] = array(
 	'moodbar-invalid-item' => '本系统无法找到正确的反馈项目。',
 	'moodbar-feedback-action-error' => '尝试执行此操作中发生了错误。',
 	'moodbar-feedback-response-summary' => '[[$1|$2]]于$4前[[$3|回应]]',
+	'moodbar-feedback-response-helpful-summary' => '[[$1|$2]]于$4前发表[[$3|回应]]，[[$5|$6]]觉得其有帮助',
 	'moodbar-feedback-edit-summary' => '回应[[Special:FeedbackDashboard/$1|用户反馈]]：$2',
 	'moodbar-feedback-top-responders-title' => '最高反应者',
 	'moodbar-type-happy' => '{{GENDER:$1|开心}}',
@@ -6002,6 +6004,7 @@ $messages['zh-hans'] = array(
 	'moodbar-log-name' => '反馈日志',
 	'moodbar-log-header' => '这是采取列于的[[Special:FeedbackDashboard|反馈仪表板]]反馈项目行动日志。',
 	'moodbar-log-hide' => '隐藏[[$1]]',
+	'moodbar-log-feedback' => 'MoodBar反馈[[$1]]',
 	'moodbar-log-restore' => '恢复[[$1]]的可视性',
 	'moodbar-response-terms' => '提交后，您将同意在$1下的透明度。',
 	'moodbar-response-link' => '条款',
@@ -6021,14 +6024,14 @@ $messages['zh-hans'] = array(
 
      $4
 
-　在您的 [$5 talk page|对话页]查看此消息。
+　请在您的[$5 对话页]查看此消息。
 
 什么是对话页？
-您的用户对话页是这样一个页，其他{{SITENAME}}编辑用来与您沟通。您可以通过点击＂编辑＂来回复，将光标移到建议的下面，输入您的回复和四个波浪线(~~~~)签名并保存。所有{{SITENAME}}页都有对话页，并且它们有很多不同的用途。可能需要一些时间掌握它，不过一旦习惯了以后也非常简单。
+您的用户对话页是这样一个页，其他{{SITENAME}}编辑用来与您沟通。您可以通过点击“编辑”来回复，将光标移到建议的下面，输入您的回复和四个波浪线（~~~~）签名并保存。所有{{SITENAME}}页都有对话页，并且它们有很多不同的用途。可能需要一些时间掌握它，不过一旦习惯了以后也非常简单。
 
-还有点困惑？[http://en.wikipedia.org/wiki/File:Wikipedia_basics_-_Talk_pages.ogv 此视频] (在 [http://www.youtube.com/watch?v=JdeDLRsB2Es YouTube]上观看) 可以提供一个一步一步的概览。
+还有点困惑？[http://en.wikipedia.org/wiki/File:Wikipedia_basics_-_Talk_pages.ogv 此视频]（在[http://www.youtube.com/watch?v=JdeDLRsB2Es YouTube]上观看）可以提供一个讨论页作用一步一步的概览。
 
-愉快一整天，
+感谢您参入本社区，
 
 -- {{SITENAME}}',
 );
@@ -6074,7 +6077,7 @@ $messages['zh-hant'] = array(
 	'moodbar-loading-title' => '分享中……',
 	'moodbar-success-title' => '謝謝！',
 	'moodbar-error-title' => '糟糕！',
-	'moodbar-success-subtitle' => '分享您的編輯體驗，幫助我們改善$1。',
+	'moodbar-success-subtitle' => '分享您的{{FBD-LINK}}，幫助我們改善$1。',
 	'moodbar-error-subtitle' => '出錯了！請重試分享您的反饋意見。',
 	'moodbar-blocked-title' => '糟糕！',
 	'moodbar-blocked-subtitle' => '您已被封禁，不能編輯。',

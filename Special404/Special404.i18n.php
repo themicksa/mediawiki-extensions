@@ -119,7 +119,7 @@ Efallai yr hoffech fynd at:
  * @author SVG
  */
 $messages['de'] = array(
-	'special404-desc' => 'Ermöglicht eine benutzerdefinierte Zielseite für den Fall, dass der HTTP-Fehler „404 Not Found“ auftritt',
+	'special404-desc' => 'Ermöglicht eine benutzerdefinierte Zielseite für den Fall, dass der HTTP-Fehler „404 Nicht gefunden“ auftritt',
 	'error404' => '404 Nicht gefunden',
 	'special404-body' => 'Die gewünschte URL wurde nicht gefunden.
 

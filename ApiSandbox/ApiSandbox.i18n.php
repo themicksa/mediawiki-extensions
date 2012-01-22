@@ -250,6 +250,7 @@ $messages['cs'] = array(
 
 /** German (Deutsch)
  * @author Kghbln
+ * @author Metalhead64
  * @author Purodha
  */
 $messages['de'] = array(
@@ -266,6 +267,10 @@ Die [//www.mediawiki.org/wiki/API:Main_page/de Dokumentation zur API] enthält w
 	'apisb-select-action' => 'Vorgang auswählen',
 	'apisb-select-query' => 'Was soll abgefragt werden?',
 	'apisb-select-value' => 'Wert auswählen',
+	'apisb-docs-more' => 'Mehr',
+	'apisb-params-param' => 'Parameter',
+	'apisb-params-input' => 'Eingabe',
+	'apisb-params-desc' => 'Beschreibung',
 	'apisb-loading' => 'Lade …',
 	'apisb-load-error' => 'Fehler beim Laden der API-Beschreibung',
 	'apisb-request-error' => 'Fehler beim Ausführen der API-Anforderung',
@@ -484,6 +489,8 @@ $messages['fi'] = array(
  * @author Crochet.david
  * @author Gomoko
  * @author Grondin
+ * @author IAlex
+ * @author Jean-Frédéric
  * @author Verdy p
  */
 $messages['fr'] = array(
@@ -500,6 +507,10 @@ Reportez-vous à [//www.mediawiki.org/wiki/API:Main_page la documentation de l�
 	'apisb-select-action' => 'Sélectionner une action',
 	'apisb-select-query' => 'Que faut-il interroger ?',
 	'apisb-select-value' => 'Sélectionnez la valeur',
+	'apisb-docs-more' => 'lire la suite',
+	'apisb-params-param' => 'Paramètre',
+	'apisb-params-input' => 'Entrée',
+	'apisb-params-desc' => 'Description',
 	'apisb-loading' => 'Chargement...',
 	'apisb-load-error' => 'Erreur lors du chargement de description de l’API',
 	'apisb-request-error' => "Erreur lors de l'exécution d'une requête API",
@@ -563,6 +574,10 @@ Consulte a [//www.mediawiki.org/wiki/API:Main_page documentación da API] para o
 	'apisb-select-action' => 'Seleccionar unha acción',
 	'apisb-select-query' => 'Que quere consultar?',
 	'apisb-select-value' => 'Seleccione o valor',
+	'apisb-docs-more' => 'ler máis',
+	'apisb-params-param' => 'Parámetro',
+	'apisb-params-input' => 'Entrada',
+	'apisb-params-desc' => 'Descrición',
 	'apisb-loading' => 'Cargando...',
 	'apisb-load-error' => 'Erro ao cargar a descrición API',
 	'apisb-request-error' => 'Erro ao executar a solicitude API',
@@ -654,6 +669,10 @@ Hlej [//www.mediawiki.org/wiki/API:Main_page API-dokumentaciju] za dalše podrob
 	'apisb-select-action' => 'Akciju wubrać',
 	'apisb-select-query' => 'Što ma so wotprašeć?',
 	'apisb-select-value' => 'Hódnotu wubrać',
+	'apisb-docs-more' => 'dalše informacije',
+	'apisb-params-param' => 'Parameter',
+	'apisb-params-input' => 'Zapodaće',
+	'apisb-params-desc' => 'Wopisanje',
 	'apisb-loading' => 'Začituje so...',
 	'apisb-load-error' => 'Zmylk při začitowanju API-wopisanja',
 	'apisb-request-error' => 'Zmylk při přewjedźenju API-naprašowanja',
@@ -718,6 +737,10 @@ Consulta [//www.mediawiki.org/wiki/API:Main_page le documentation del API] pro u
 	'apisb-select-action' => 'Selige action',
 	'apisb-select-query' => 'Que consultar?',
 	'apisb-select-value' => 'Selige valor',
+	'apisb-docs-more' => 'leger plus',
+	'apisb-params-param' => 'Parametro',
+	'apisb-params-input' => 'Entrata',
+	'apisb-params-desc' => 'Description',
 	'apisb-loading' => 'Cargamento…',
 	'apisb-load-error' => 'Error durante le cargamento del description del API',
 	'apisb-request-error' => 'Error durante le execution del requesta al API',
@@ -890,6 +913,9 @@ $messages['lb'] = array(
 	'apisb-request-url' => 'URL fir Ufroen:',
 	'apisb-select-action' => 'Aktioun eraussichen',
 	'apisb-select-value' => 'Wäert eraussichen',
+	'apisb-docs-more' => 'liest méi',
+	'apisb-params-param' => 'Parameter',
+	'apisb-params-desc' => 'Beschreiwung',
 	'apisb-loading' => 'Lueden...',
 	'apisb-load-error' => 'Feeler beim Luede vun der API- Beschreiwung',
 	'apisb-namespaces-error' => 'Feeler beim Luede vun den Nummraim',
@@ -898,6 +924,9 @@ $messages['lb'] = array(
 	'apisb-query-prop' => 'Eegeschaften',
 	'apisb-query-list' => 'Lëschten',
 	'apisb-query-meta' => 'Meta-Informatioun',
+	'apisb-example' => 'Beispill',
+	'apisb-examples' => 'Beispiller',
+	'apisb-clear' => 'Eidel maachen',
 );
 
 /** Limburgish (Limburgs)
@@ -985,6 +1014,10 @@ $messages['mk'] = array(
 	'apisb-select-action' => 'Одберете дејство',
 	'apisb-select-query' => 'Што да барам?',
 	'apisb-select-value' => 'Одберете вредност',
+	'apisb-docs-more' => 'прочитајте повеќе',
+	'apisb-params-param' => 'Параметар',
+	'apisb-params-input' => 'Внос',
+	'apisb-params-desc' => 'Опис',
 	'apisb-loading' => 'Вчитувам...',
 	'apisb-load-error' => 'Грешка при вчитувањето на описот на API',
 	'apisb-request-error' => 'Грешка при извршувањето на барањето од API',
@@ -1039,6 +1072,10 @@ Contoh: [//www.mediawiki.org/wiki/API#A_simple_example dapatkan kandungan Laman 
 	'apisb-select-action' => 'Pilih tindakan',
 	'apisb-select-query' => 'Apa untuk ditanya?',
 	'apisb-select-value' => 'Pilih nilai',
+	'apisb-docs-more' => 'baca lagi',
+	'apisb-params-param' => 'Parameter',
+	'apisb-params-input' => 'Input',
+	'apisb-params-desc' => 'Keterangan',
 	'apisb-loading' => 'Memuatkan...',
 	'apisb-load-error' => 'Ralat ketika memuatkan keterangan API',
 	'apisb-request-error' => 'Ralat ketika melakukan permohonan API',
@@ -1101,6 +1138,10 @@ Zie de [//www.mediawiki.org/wiki/API:Main_page API-documentatie] voor verdere de
 	'apisb-select-action' => 'Handeling selecteren',
 	'apisb-select-query' => 'Wat is uw vraag?',
 	'apisb-select-value' => 'Selecteer waarde',
+	'apisb-docs-more' => 'meer lezen',
+	'apisb-params-param' => 'Parameter',
+	'apisb-params-input' => 'Invoer',
+	'apisb-params-desc' => 'Beschrijving',
 	'apisb-loading' => 'Bezig met laden…',
 	'apisb-load-error' => 'Fout bij het laden van de API-beschrijving',
 	'apisb-request-error' => 'Fout bij het uitvoeren van het API-verzoek',
@@ -1680,7 +1721,7 @@ $messages['yi'] = array(
 	'apisb-query-list' => 'ליסטעס',
 );
 
-/** Simplified Chinese (中文(简体))
+/** Simplified Chinese (‪中文(简体)‬)
  * @author Anakmalaysia
  * @author Hydra
  * @author Hzy980512
@@ -1704,6 +1745,10 @@ $messages['zh-hans'] = array(
 	'apisb-select-action' => '选择操作',
 	'apisb-select-query' => '如何查询？',
 	'apisb-select-value' => '选择值',
+	'apisb-docs-more' => '阅读更多',
+	'apisb-params-param' => '参数',
+	'apisb-params-input' => '输入',
+	'apisb-params-desc' => '说明',
 	'apisb-loading' => '正在载入...',
 	'apisb-load-error' => '加载 API 说明时出错',
 	'apisb-request-error' => '执行 API 请求时出错',
@@ -1717,9 +1762,10 @@ $messages['zh-hans'] = array(
 	'apisb-generator-parameters' => '生成器',
 	'apisb-example' => '示例',
 	'apisb-examples' => '示例',
+	'apisb-clear' => '清除',
 );
 
-/** Traditional Chinese (中文(繁體))
+/** Traditional Chinese (‪中文(繁體)‬)
  * @author Anakmalaysia
  * @author Liangent
  */
@@ -1727,8 +1773,9 @@ $messages['zh-hant'] = array(
 	'apisb-desc' => '允許從瀏覽器調試[//www.mediawiki.org/wiki/API MediaWiki API]調用',
 	'apisandbox' => 'API沙箱',
 	'apisb-no-js' => "'''錯誤'''：此功能需要 JavaScript。",
-	'apisb-intro' => '使用這個頁面來試驗“MediaWiki應用程式介面（API）”。
-欲知API使用詳情，請參閱[//www.mediawiki.org/wiki/API:Main_page API文檔]。',
+	'apisb-intro' => '使用這個頁面來試驗“MediaWiki 網上服務應用程式介面（API）”。
+欲知API使用詳情，請參閱[//www.mediawiki.org/wiki/API:Main_page API文檔]。
+例如：[//www.mediawiki.org/wiki/API#A_simple_example 取得某個主頁的內容]，然後選擇一個操作來看更多範例。',
 	'apisb-api-disabled' => '此站點上禁用了API。',
 	'apisb-parameters' => '參數',
 	'apisb-result' => '結果',
@@ -1737,6 +1784,10 @@ $messages['zh-hant'] = array(
 	'apisb-select-action' => '選擇操作',
 	'apisb-select-query' => '查詢又如何？',
 	'apisb-select-value' => '選擇值',
+	'apisb-docs-more' => '閱讀更多',
+	'apisb-params-param' => '參數',
+	'apisb-params-input' => '輸入',
+	'apisb-params-desc' => '說明',
 	'apisb-loading' => '正在載入...',
 	'apisb-load-error' => '加載 API 說明時出錯',
 	'apisb-request-error' => '執行 API 請求時出錯',
@@ -1748,5 +1799,8 @@ $messages['zh-hant'] = array(
 	'apisb-query-meta' => 'Meta 信息',
 	'apisb-generic-parameters' => '通用參數',
 	'apisb-generator-parameters' => '生成器',
+	'apisb-example' => '示例',
+	'apisb-examples' => '示例',
+	'apisb-clear' => '清除',
 );
 

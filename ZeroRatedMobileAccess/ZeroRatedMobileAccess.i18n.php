@@ -348,13 +348,19 @@ $messages['yi'] = array(
 );
 
 /** Simplified Chinese (‪中文(简体)‬)
+ * @author Anakmalaysia
  * @author Hzy980512
  */
 $messages['zh-hans'] = array(
+	'zero-rated-mobile-access-desc' => '为提供免费访问的移动运营商提供特殊功能',
 	'zero-rated-mobile-access-search' => '搜索',
 	'zero-rated-mobile-access-language-selection' => '所有语言',
 	'zero-rated-mobile-access-home-page-selection' => '$1主页',
+	'zero-rated-mobile-access-home-page-selection-text' => '或者转到以下语言版本的主页：',
+	'zero-rated-mobile-access-banner-text' => '$1为您提供的免费{{SITENAME}}',
+	'zero-rated-mobile-access-banner-text-data-charges' => '若要继续，数据可能会收取费用：$1/$2',
 	'zero-rated-mobile-access-banner-text-data-charges-yes' => '是',
 	'zero-rated-mobile-access-banner-text-data-charges-no' => '否',
+	'zero-rated-mobile-access-click-to-view-image' => '点击来查看“$1”的图像…',
 );
 

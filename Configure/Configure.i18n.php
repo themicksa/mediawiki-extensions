@@ -291,7 +291,6 @@ In addition, you may want to append "<code>&uselang=</code>" with your language 
 	'configure-section-djvu' => '{{optional}}',
 	'configure-section-imagemagick' => '{{optional}}',
 	'configure-section-svg' => '{{optional}}',
-	'configure-section-tex' => '{{optional}}',
 	'configure-section-tidy' => '{{optional}}',
 	'configure-section-specialpages' => '{{Identical|Special pages}}',
 	'configure-section-recentchanges' => '{{Identical|Recent changes}}',
@@ -626,7 +625,6 @@ $messages['ar'] = array(
 	'configure-section-svg' => 'إس في جي',
 	'configure-section-antivirus' => 'مضاد فيروسات',
 	'configure-section-parser' => 'المحلل',
-	'configure-section-tex' => 'تخ',
 	'configure-section-tidy' => 'تيدي',
 	'configure-section-specialpages' => 'الصفحات الخاصة',
 	'configure-section-recentchanges' => 'أحدث التغييرات',
@@ -865,7 +863,6 @@ $messages['arz'] = array(
 	'configure-section-svg' => 'إس فى جي',
 	'configure-section-antivirus' => 'مضاد فيروسات',
 	'configure-section-parser' => 'المحلل',
-	'configure-section-tex' => 'تخ',
 	'configure-section-tidy' => 'تيدي',
 	'configure-section-specialpages' => 'الصفحات الخاصة',
 	'configure-section-recentchanges' => 'أحدث التغييرات',
@@ -4155,7 +4152,7 @@ $messages['frp'] = array(
 	'configure-throttle-action-rollback' => 'Rèvocacions',
 	'configure-throttle-action-mailpassword' => 'Mandar un rapèl du contresegno',
 	'configure-throttle-action-emailuser' => 'Èxpèdicion de mèssâjos',
-	'configure-throttle-group-anon' => 'Tôs los utilisators pas encartâs',
+	'configure-throttle-group-anon' => 'Tôs los usanciérs pas encartâs',
 	'configure-throttle-group-user' => 'Per compto usanciér',
 	'configure-throttle-group-newbie' => 'Per compto usanciér novél',
 	'configure-throttle-group-ip' => 'Per adrèce IP',
@@ -4777,7 +4774,6 @@ $messages['he'] = array(
 	'configure-section-svg' => 'SVG',
 	'configure-section-antivirus' => 'אנטי־וירוס',
 	'configure-section-parser' => 'מפענח',
-	'configure-section-tex' => 'TeX',
 	'configure-section-tidy' => 'Tidy',
 	'configure-section-specialpages' => 'דפים מיוחדים',
 	'configure-section-recentchanges' => 'שינויים אחרונים',
@@ -7467,7 +7463,6 @@ $messages['mk'] = array(
 	'configure-section-svg' => 'SVG',
 	'configure-section-antivirus' => 'Антивирус',
 	'configure-section-parser' => 'Парсер',
-	'configure-section-tex' => 'TeX',
 	'configure-section-tidy' => 'Tidy',
 	'configure-section-specialpages' => 'Специјални страници',
 	'configure-section-recentchanges' => 'Скорешни промени',
@@ -7893,9 +7888,8 @@ $messages['nah'] = array(
 	'configure-condition-operator-or' => 'Nozo',
 );
 
-/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
+/** Norwegian Bokmål (‪Norsk (bokmål)‬)
  * @author Audun
- * @author Jon Harald Søby
  * @author Laaknor
  * @author Nghtwlkr
  */
@@ -8315,6 +8309,7 @@ Er wordt een voorvertoning weergegeven als u het veld verlaat.',
  * @author Gunnernett
  * @author Harald Khan
  * @author Nghtwlkr
+ * @author Njardarlogar
  */
 $messages['nn'] = array(
 	'configure' => 'Konfigurer wikien',
@@ -10623,7 +10618,6 @@ $messages['sr-ec'] = array(
 	'configure-section-svg' => 'SVG',
 	'configure-section-antivirus' => 'Антивирус',
 	'configure-section-parser' => 'Рашчлањивач',
-	'configure-section-tex' => 'TeX',
 	'configure-section-tidy' => 'Tidy',
 	'configure-section-specialpages' => 'Посебне странице',
 	'configure-section-recentchanges' => 'Скорашње измене',
@@ -10800,7 +10794,6 @@ Molimo Vas da ga napravite ili ga promenite kako biste koristili ovu ekstenziju.
 	'configure-section-svg' => 'SVG',
 	'configure-section-antivirus' => 'Antivirus',
 	'configure-section-parser' => 'Raščlanjivač',
-	'configure-section-tex' => 'TeX',
 	'configure-section-tidy' => 'Tidy',
 	'configure-section-specialpages' => 'Posebne stranice',
 	'configure-section-recentchanges' => 'Skorašnje izmene',
@@ -10953,7 +10946,6 @@ $messages['stq'] = array(
 	'configure-section-svg' => 'SVG',
 	'configure-section-antivirus' => 'Antivirus',
 	'configure-section-parser' => 'Parser',
-	'configure-section-tex' => 'TeX',
 	'configure-section-specialpages' => 'Spezioalsieden',
 	'configure-section-recentchanges' => 'Lääste Annerengen',
 	'configure-section-users' => 'Benutsere',
@@ -12077,7 +12069,7 @@ $messages['vec'] = array(
 	'right-configure-all' => 'Configura tute le inpostassion de la wiki',
 );
 
-/** Veps (Vepsan kel')
+/** Veps (Vepsän kel')
  * @author Игорь Бродский
  */
 $messages['vep'] = array(

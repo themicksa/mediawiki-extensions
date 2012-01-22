@@ -458,6 +458,21 @@ $messages['hsb'] = array(
 	'semanticformsinputs-prev' => 'Předchadny',
 	'semanticformsinputs-next' => 'Přichodny',
 	'semanticformsinputs-today' => 'Dźensa',
+	'semanticformsinputs-malformedregexp' => 'Njepłaćiwy regularny wuraz ($1)',
+	'semanticformsinputs-datepicker-dateformat' => 'Rjećazk znamjškow za datumowy format. Hlej [http://www.mediawiki.org/w/index.php?title=Extension:Semantic_Forms_Inputs&fromsection=Date_picker#Parameters online-dokumentaciju]',
+	'semanticformsinputs-datepicker-weekstart' => 'Prěni dźeń tydźenja (0 - njedźela, 1 - póndźela, ...)',
+	'semanticformsinputs-datepicker-firstdate' => 'Prěni datum, kotryž da so wubrać (we formaće JJJJ/MM/TT).',
+	'semanticformsinputs-datepicker-lastdate' => 'Posledni datum, kotryž da so wubrać (we formaće JJJJ/MM/TT).',
+	'semanticformsinputs-datepicker-disabledaysofweek' => 'Lisćina dnjow, kotrež njedadźa so wurać (na př. kónc tydźenja: 6.0).',
+	'semanticformsinputs-datepicker-highlightdaysofweek' => 'Lisćina dnjow, kotrež maja so jako wuzběhnjene zwobraznić (na př. kónc tydźenja: 6.0).',
+	'semanticformsinputs-datepicker-showweeknumbers' => 'Maja tydźenjowe čisła nalěwo pódla tydźenja pokazać?',
+	'semanticformsinputs-timepicker-mintime' => 'Najzažniši čas, kotryž ma so pokazać. Format: hh:mm',
+	'semanticformsinputs-timepicker-maxtime' => 'Najpózdźiši čas, kotryž ma so pokazać. Format: hh:mm',
+	'semanticformsinputs-timepicker-interval' => 'Interwal mjez mjeńšinami. Ličba mjez 1 a 60.',
+	'semanticformsinputs-regexp-baseprefix' => 'Prefiks za parametry zakładneho typa.',
+	'semanticformsinputs-regexp-orchar' => 'OR-znamješko, kotrež ma so w regularnym wurazu město | pokazać. Standard je "!".',
+	'semanticformsinputs-menuselect-structure' => 'Menijowa struktura jako naličenje.',
+	'semanticformsinputs-menuselect-enableinputfield' => 'Ma wužiwar zapodawanske polo direktnje móc wupjelnić?',
 );
 
 /** Hungarian (Magyar)

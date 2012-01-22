@@ -164,6 +164,7 @@ $messages['ia'] = array(
  * @author Robby
  */
 $messages['lb'] = array(
+	'apiexplorer-desc' => "Säit fir d'Dokumentatioun vun der MediaWiki API interaktiv ze entdecken",
 	'apiexplorer-loading' => 'Fonctioune lueden ...',
 );
 
