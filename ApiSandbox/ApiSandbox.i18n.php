@@ -15,13 +15,15 @@ $messages['en'] = array(
 	'apisb-intro'             => "Use this page to experiment with the '''MediaWiki web service API'''.
 	Refer to [//www.mediawiki.org/wiki/API:Main_page the API documentation] for further details of API usage.  Example: [//www.mediawiki.org/wiki/API#A_simple_example get the content of a Main Page].  Select an action to see more examples.",
 	'apisb-api-disabled'      => 'API is disabled on this site.',
-	'apisb-parameters'        => 'Parameters',
-	'apisb-result'            => 'Result',
-	'apisb-request-url'       => 'Request URL:',
-	'apisb-request-post'      => 'POST data:',
-	'apisb-select-action'     => 'Select action',
-	'apisb-select-query'      => 'What to query?',
-	'apisb-select-value'      => 'Select value',
+	'apisb-legend-parameters' => 'Parameters',
+	'apisb-legend-result'     => 'Result',
+	'apisb-legend-generic-parameters'=> 'Generic parameters',
+	'apisb-legend-generator-parameters'=> 'Generator',
+	'apisb-result-request-url' => 'Request URL:',
+	'apisb-result-request-post' => 'POST data:',
+	'apisb-select-action'     => '(select action)',
+	'apisb-select-query'      => '(select query)',
+	'apisb-select-value'      => '(select value)',
 	'apisb-docs-more'         => 'read more',
 	'apisb-params-param'      => 'Parameter',
 	'apisb-params-input'      => 'Input',
@@ -35,8 +37,6 @@ $messages['en'] = array(
 	'apisb-query-prop'        => 'Properties',
 	'apisb-query-list'        => 'Lists',
 	'apisb-query-meta'        => 'Meta information',
-	'apisb-generic-parameters'=> 'Generic parameters',
-	'apisb-generator-parameters'=> 'Generator',
 	'apisb-example'           => 'Example',
 	'apisb-examples'          => 'Examples',
 	'apisb-clear'             => 'Clear',
@@ -1721,7 +1721,7 @@ $messages['yi'] = array(
 	'apisb-query-list' => 'ליסטעס',
 );
 
-/** Simplified Chinese (‪中文(简体)‬)
+/** Simplified Chinese (中文(简体))
  * @author Anakmalaysia
  * @author Hydra
  * @author Hzy980512
@@ -1765,7 +1765,7 @@ $messages['zh-hans'] = array(
 	'apisb-clear' => '清除',
 );
 
-/** Traditional Chinese (‪中文(繁體)‬)
+/** Traditional Chinese (中文(繁體))
  * @author Anakmalaysia
  * @author Liangent
  */

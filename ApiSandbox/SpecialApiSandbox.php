@@ -40,11 +40,11 @@ class SpecialApiSandbox extends SpecialPage {
 			. '<table class="api-sandbox-result-container"><tbody>
 '
 			. '<tr><th class="api-sandbox-result-label"><label for="api-sandbox-url">'
-			. wfMessage( 'apisb-request-url' )->parse() . '</label></th>'
+			. wfMessage( 'apisb-result-request-url' )->parse() . '</label></th>'
 			. '<td><input id="api-sandbox-url" readonly="readonly" /></td></tr>
 '
 			. '<tr id="api-sandbox-post-row"><th class="api-sandbox-result-label"><label for="api-sandbox-post">'
-			. wfMessage( 'apisb-request-post' )->parse() . '</label></th>'
+			. wfMessage( 'apisb-result-request-post' )->parse() . '</label></th>'
 			. '<td><input id="api-sandbox-post" readonly="readonly" /></td></tr>
 '
 			. '<tr><td colspan="2"><div id="api-sandbox-output"></div></td></tr>'
@@ -62,9 +62,11 @@ class SpecialApiSandbox extends SpecialPage {
 
 		$apiMain = new ApiMain( new FauxRequest( array() ), $wgEnableWriteAPI );
 		$this->apiQuery = new ApiQuery( $apiMain, 'query' );
-		$formats = array_filter( array_keys( $apiMain->getFormats() ),
-			'SpecialApiSandbox::filterFormats' );
+
+		$formats = array_filter( array_keys( $apiMain->getFormats() ), 'SpecialApiSandbox::filterFormats' );
 		sort( $formats );
+		$formatOptions = array_combine( $formats, $formats );
+
 		$modules = array_keys( $apiMain->getModules() );
 		sort( $modules );
 		$key = array_search( 'query', $modules );
@@ -72,6 +74,8 @@ class SpecialApiSandbox extends SpecialPage {
 			array_splice( $modules, $key, 1 );
 			array_unshift( $modules, 'query' );
 		}
+		$moduleOptions = array_combine( $modules, $modules );
+
 		$queryModules = array_merge(
 			$this->getQueryModules( 'list' ),
 			$this->getQueryModules( 'prop' ),
@@ -89,9 +93,9 @@ class SpecialApiSandbox extends SpecialPage {
 			<th class="api-sandbox-docs-col">Documentation</th>
 		</tr>
 		<tr>
-			<td>' . self::getSelect( 'format', $formats, 'json' ) . '</td>
+			<td>' . self::getSelect( 'format', $formatOptions, 'json' ) . '</td>
 			<td>
-				' . self::getSelect( 'action', $modules ) . '
+				' . self::getSelect( 'action', $moduleOptions ) . '
 				<div id="api-sandbox-query-row" style="display: none;">
 					' . self::getSelect( 'query', $queryModules ) . '
 				</div>
@@ -117,30 +121,22 @@ class SpecialApiSandbox extends SpecialPage {
 	 * @return array
 	 */
 	private function getQueryModules( $type ) {
-		$res = array();
+		$options = array();
 		$params = $this->apiQuery->getAllowedParams();
 		foreach ( $params[$type][ApiBase::PARAM_TYPE] as $module ) {
-			$res[] = array(
-				'value' => "$type=$module",
-				'text' => /* &nbsp; x 3 */ "\xc2\xa0\xc2\xa0\xc2\xa0$type=$module",
-			);
+			$options["$type=$module"] = "$type=$module";
 		}
-		sort( $res );
-		array_unshift( $res, 
-			array(
-				'value' => "-$type-",
-				'text' => wfMessage( "apisb-query-$type" )->parse(),
-				'attributes' => array( 'disabled' => 'disabled' )
-			)
-		);
-
-		return $res;
+		
+		$optgroup = array();
+		$optgroup[wfMessage( "apisb-query-$type" )->parse()] = $options;
+		
+		return $optgroup;
 	}
 
 	/**
 	 * @param $name string
 	 * @param $items array
-	 * @param $default bool
+	 * @param $default mixed
 	 * @return string
 	 */
 	private static function getSelect( $name, $items, $default = false ) {
@@ -150,37 +146,11 @@ class SpecialApiSandbox extends SpecialPage {
 			'id' => "api-sandbox-$name" )
 		);
 		if ( $default === false ) {
-			$s .= "\n\t" . self::option( '-', wfMessage( "apisb-select-$name" )->text(),
-				array( 'selected' => 'selected' )
-			);
+			$s .= Xml::option( wfMessage( "apisb-select-$name" )->text(), '', true );
 		}
-		foreach ( $items as $item ) {
-			$attributes = array();
-			if ( is_array( $item ) ) {
-				$value = $item['value'];
-				$text = $item['text'];
-				$attributes = isset( $item['attributes'] ) ? $item['attributes'] : array();
-			} else {
-				$value = $text = $item;
-			}
-			if ( $value === $default ) {
-				$attributes['selected'] = 'selected';
-			}
-			$s .= "\n\t" . self::option( $value, $text, $attributes );
-		}
-		$s .= "\n" . Html::closeElement( 'select' ) . "\n";
+		$s .= XmlSelect::formatOptions( $items, $default );
+		$s .= Html::closeElement( 'select' );
 		return $s;
-	}
-
-	/**
-	 * @param $value string
-	 * @param $text string
-	 * @param $attributes array
-	 * @return string
-	 */
-	private static function option( $value, $text, $attributes = array() ) {
-		$attributes['value'] = $value;
-		return Html::element( 'option', $attributes, $text );
 	}
 
 	/**
@@ -190,7 +160,7 @@ class SpecialApiSandbox extends SpecialPage {
 	 */
 	private function openFieldset( $name, $attribs = array() ) {
 		return "\n" . Html::openElement( 'fieldset', array( 'id' => "api-sandbox-$name" ) + $attribs )
-			. "\n\t" . Html::rawElement( 'legend', array(), wfMessage( "apisb-$name" )->parse() )
+			. "\n\t" . Html::rawElement( 'legend', array(), wfMessage( "apisb-legend-$name" )->parse() )
 			. "\n";
 	}
 
