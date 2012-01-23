@@ -301,7 +301,7 @@ class SpecialSolrSearch extends SpecialPage {
 	/**
 	 *
 	 */
-	protected function setupPage ( $fieldSet, $results = false ) {
+	protected function setupPage ( $fieldSet ) {
 		global $wgOut;
 
 		if ( !empty ( $fieldSet ) ) {
@@ -320,7 +320,7 @@ class SpecialSolrSearch extends SpecialPage {
 	 *
 	 * @param $matches SearchResultSet
 	 */
-	protected function showMatches ( $matches ) {
+	protected function showMatches ( &$matches ) {
 		global $wgContLang;
 		wfProfileIn ( __METHOD__ );
 
