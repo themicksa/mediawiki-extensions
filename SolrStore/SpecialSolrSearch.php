@@ -82,12 +82,12 @@ class SpecialSolrSearch extends SpecialPage {
 		$sk = $wgUser->getSkin ();
 
 
-		$wgOut->setPageTitle ( wfMsg ( 'searchFieldSets' ) );
-		$wgOut->setHTMLTitle ( wfMsg ( 'pagetitle', wfMsg ( 'searchFieldSets-title', 'SolrSearch: Select FieldSet' ) ) );
+		$wgOut->setPageTitle ( wfMsg ( 'solrstore-searchFieldSets-title' ) );
+		$wgOut->setHTMLTitle ( wfMsg ( 'pagetitle', wfMsg ( 'solrstore-searchFieldSets-title', 'SolrSearch: Select FieldSet' ) ) );
 
 		$wgOut->setArticleRelated ( false );
 		$wgOut->addHtml ( '<div class="solrsearch-fieldset">' );
-		$wgOut->addHtml ( wfMsg ( 'searchFieldSets-select' ) );
+		$wgOut->addHtml ( wfMsg ( 'solrstore-searchFieldSets-select' ) );
 		$wgOut->addHtml ( '<ul>' );
 
 		//TODO: If no SearchSets exist, provide a shot Manual how to create some!
@@ -113,15 +113,15 @@ class SpecialSolrSearch extends SpecialPage {
 		$this->searchEngine = SearchEngine::create ();
 		$search = & $this->searchEngine;
 		$search->setLimitOffset ( $this->limit, $this->offset );
-
+		
 		$this->setupPage ( $fieldSet );
-
+		
 		$t = Title::newFromText ( $fieldSet->getName () );
 
-		//DO we have Title matches
+		//Do we have Title matches
 		$fields = $fieldSet->getFields ();
 
-		//BUILD SOLR QUERY STRING FROM DA FIELDS
+		//Build Solr query string form the fields
 		if ( isset ( $fields[ 'solrsearch' ] ) ) {
 			$query = $fields[ 'solrsearch' ];
 		} else {
@@ -236,7 +236,7 @@ class SpecialSolrSearch extends SpecialPage {
 		if ( $num || $this->offset ) {
 			// Show the create link ahead
 			$this->showCreateLink ( $t );
-			$prevnext = wfViewPrevNext ( $this->offset, $this->limit, SpecialPage::getTitleFor ( 'SolrSearch/' . $fieldSet->{'mName'} ), wfArrayToCGI ( $fieldSet->{'mFields'} ), max ( $titleMatchesNum, $textMatchesNum ) < $this->limit );
+			$prevnext = wfViewPrevNext ( $this->offset, $this->limit, SpecialPage::getTitleFor ( 'SolrSearch/' . $fieldSet->mName ), wfArrayToCGI ( $fieldSet->mFields ), max ( $titleMatchesNum, $textMatchesNum ) < $this->limit );
 			//$wgOut->addHTML( "<p class='mw-search-pager-top'>{$prevnext}</p>\n" );
 			wfRunHooks ( 'SpecialSolrSearchResults', array ( $fieldSet, &$titleMatches, &$textMatches ) );
 		} else {
@@ -301,12 +301,12 @@ class SpecialSolrSearch extends SpecialPage {
 	/**
 	 *
 	 */
-	protected function setupPage ( $fieldSet ) {
+	protected function setupPage ( $fieldSet, $results = false ) {
 		global $wgOut;
 
 		if ( !empty ( $fieldSet ) ) {
-			$wgOut->setPageTitle ( wfMsg ( 'searchresults' ) );
-			$wgOut->setHTMLTitle ( wfMsg ( 'pagetitle', wfMsg ( 'searchresults-title', $fieldSet->getName () ) ) );
+			$wgOut->setPageTitle ( wfMsg ( 'solrsearch' ) .': '.  $fieldSet->getName () );
+			$wgOut->setHTMLTitle ( wfMsg ( 'pagetitle', wfMsg ( 'solrsearch', $fieldSet->getName () ) ) );
 		}
 		$wgOut->setArticleRelated ( false );
 		$wgOut->setRobotPolicy ( 'noindex,nofollow' );
@@ -320,7 +320,7 @@ class SpecialSolrSearch extends SpecialPage {
 	 *
 	 * @param $matches SearchResultSet
 	 */
-	protected function showMatches ( &$matches ) {
+	protected function showMatches ( $matches ) {
 		global $wgContLang;
 		wfProfileIn ( __METHOD__ );
 

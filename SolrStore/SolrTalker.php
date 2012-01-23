@@ -135,6 +135,15 @@ class SolrTalker {
 				if ( strpos( $value, ':' ) !== false ) { // Value conatins a  ":" ?
 					$parts = explode( ':', $value ); // Split the query part in key (parts[0]) and value (parts[1])
 					$solrField = $this->findField( $parts[0] ); // Search for a Solr field for the key
+					
+					//If we have a Wildcard Search transform Query to Lowercase for a Better Matching.
+					//Because on wildcard and fuzzy searches, no text analysis is performed on the search word
+					//and no Analyseres get used
+					if ( strpos( $parts[1], '*' ) !== false ) {
+						$parts[1] = strtolower( $parts[1] );
+					}
+					
+					//If we have a solrField Match add a ':' (its the Lucene equivalent of '=' )
 					if ( $solrField ) {
 						$queryStr = $queryStr . ' ' . $solrField . ':' . $parts[1];
 					} else {
