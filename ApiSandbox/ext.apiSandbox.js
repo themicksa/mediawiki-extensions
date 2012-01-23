@@ -515,8 +515,6 @@
 			.appendTo( '#api-sandbox-parameters' )
 			.add( $submit )
 			.click( function ( e ) {
-				// Avoid triggering other stuff, including the sister-button
-				e.stopImmediatePropagation();
 				$form.submit();
 			} )
 			.button({ disabled: true });
