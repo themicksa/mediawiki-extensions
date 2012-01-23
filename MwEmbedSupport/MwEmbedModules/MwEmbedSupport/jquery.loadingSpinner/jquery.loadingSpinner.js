@@ -2,26 +2,50 @@
 	/**
 	 * Set a given selector html to the loading spinner:
 	 */
-	$.fn.loadingSpinner = function( ) {
-		var _this = this;
-		if ( _this ) {
-			$( _this ).html(
-				$( '<div />' )
-					.addClass( "loadingSpinner" )
-			);
-			var i =0;
-			var interval = setInterval( function(){
-				if( _this && $( _this ).find('.loadingSpinner').length ){
-					var offset = i*32;
-					$( _this ).find('.loadingSpinner').css('background-position','0 ' + offset + 'px');
-					if(i >= 7) i = 0;
-					i++;
-				} else {
-					 clearInterval( interval );
+	$.fn.loadingSpinner = function( options ) {
+		// empty the target: 
+		$(this).empty();
+		
+		// If we have LoadingSpinner.ImageUrl use that:
+		if( mw.getConfig('LoadingSpinner.ImageUrl') ) {
+			this.each(function() {
+				var $this = $(this).empty();
+				var thisSpinner = $this.data('spinner');
+				if (thisSpinner) {
+					$this.data('spinner', null);
+					delete thisSpinner;
 				}
-			}, 70 );
+				if (opts !== false) {
+					var $loadingSpinner = $('<img />').attr("src", mw.getConfig('LoadingSpinner.ImageUrl')).load(function() {
+						// Set spinner position based on image dimension
+						$( this ).css({
+							'margin-top': '-' + (this.height/2) + 'px',
+							'margin-left': '-' + (this.width/2) + 'px'
+						});
+					});
+					thisSpinner = $this.append($loadingSpinner);
+				}
+			});
+			return this;
 		}
-		return _this;
+		
+		// Else, use Spin.js
+		if(!options)
+			options = {};
+		options = $.extend( {'color' : '#eee', 'shadow': true }, options);
+		this.each(function() {
+			var $this = $(this).empty();
+			var thisSpinner = $this.data('spinner');
+			if (thisSpinner) {
+				thisSpinner.stop();
+				delete thisSpinner;
+			}
+			if (options !== false) {
+				thisSpinner = new Spinner($.extend({color: $this.css('color')}, options)).spin(this);
+			}
+		});
+		// correct the position: 
+		return this;
 	};
 	/**
 	 * Add an absolute overlay spinner useful for cases where the
@@ -40,7 +64,8 @@
 		var $spinner = $('<div />')
 			.addClass('absoluteOverlaySpinner')
 			.loadingSpinner()				
-			.css({				
+			.css({
+				'position' : 'absolute',
 				'top' : posTop + 'px',
 				'left' : posLeft + 'px'
 			});
@@ -49,3 +74,4 @@
 	};	
 	
 } )( jQuery );
+

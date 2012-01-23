@@ -23,7 +23,7 @@
 	
 	/**
 	 * Shortcut to a themed button Should be depreciated for $.button
-	 * bellow
+	 * below
 	 */
 	$.btnHtml = function( msg, styleClass, iconId, opt ) {
 		if ( !opt )
