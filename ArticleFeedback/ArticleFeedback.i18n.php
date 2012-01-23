@@ -7578,6 +7578,7 @@ Sve najlepše,
 
 /** Swedish (Svenska)
  * @author Ainali
+ * @author Boivie
  * @author Fluff
  * @author Lokal Profil
  * @author Tobulos1
@@ -7642,11 +7643,11 @@ $messages['sv'] = array(
 	'articlefeedback-field-complete-tooltip-5' => 'Heltäckande innehåll',
 	'articlefeedback-field-objective-label' => 'Objektiv',
 	'articlefeedback-field-objective-tip' => 'Känner du att den här sidan visar en rättvis representation av alla perspektiv på frågan?',
-	'articlefeedback-field-objective-tooltip-1' => 'Starkt ensidig',
-	'articlefeedback-field-objective-tooltip-2' => 'Måttlig ensidig',
-	'articlefeedback-field-objective-tooltip-3' => 'Minimalt ensidig',
-	'articlefeedback-field-objective-tooltip-4' => 'Inte märkbart ensidig',
-	'articlefeedback-field-objective-tooltip-5' => 'Helt ensidig',
+	'articlefeedback-field-objective-tooltip-1' => 'Starkt partisk',
+	'articlefeedback-field-objective-tooltip-2' => 'Måttligt partisk',
+	'articlefeedback-field-objective-tooltip-3' => 'Minimalt partisk',
+	'articlefeedback-field-objective-tooltip-4' => 'Ingen uppenbar partiskhet',
+	'articlefeedback-field-objective-tooltip-5' => 'Helt opartisk',
 	'articlefeedback-field-wellwritten-label' => 'Välskriven',
 	'articlefeedback-field-wellwritten-tip' => 'Tycker du att den här sidan är väl organiserad och välskriven?',
 	'articlefeedback-field-wellwritten-tooltip-1' => 'Obegriplig',

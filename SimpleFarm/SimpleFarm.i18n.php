@@ -26,6 +26,13 @@ $messages['qqq'] = array(
 	'simplefarm-desc' => '{{desc}}',
 );
 
+/** Asturian (Asturianu)
+ * @author Xuacu
+ */
+$messages['ast'] = array(
+	'simplefarm-desc' => 'Simple, pero potente estensión de granxa wiki ensin denguna páxina de configuración guapa',
+);
+
 /** German (Deutsch)
  * @author Daniel Werner
  * @author Kghbln

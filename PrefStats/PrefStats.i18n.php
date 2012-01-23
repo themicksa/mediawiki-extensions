@@ -226,6 +226,17 @@ $messages['ast'] = array(
 	'prefstats' => 'Estadístiques de les preferencies',
 	'prefstats-desc' => 'Siguir les estadístiques sobro cuantos usuarios tienen determinaes preferencies activaes',
 	'prefstats-title' => 'Estadístiques de les preferencies',
+	'prefstats-list-intro' => "De momentu, tan siguiendose les siguientes preferencies.
+Calca nuna pa ver estadístiques d'ella.",
+	'prefstats-noprefs' => 'De momentu nun se sigue preferencia denguna.
+Configura $wgPrefStatsTrackPrefs pa siguir preferencies.',
+	'prefstats-counters' => "* $1 {{PLURAL:$1|usuariu activó|usuarios activaron}} esta preferencia desque s'activaron les estadístiques de preferencies
+** $2 {{PLURAL:$2|usuariu inda la tien|usuarios inda la tienen}} activada
+** $3 {{PLURAL:$3|usuariu tienla|usuarios tienenla}} desactivada",
+	'prefstats-counters-expensive' => "* $1 {{PLURAL:$1|usuariu activó|usuarios activaron}} esta preferencia desque s'activaron les estadístiques de preferencies
+** $2 {{PLURAL:$2|usuariu inda la tien|usuarios inda la tienen}} activada
+** $3 {{PLURAL:$3|usuariu tienla|usuarios tienenla}} desactivada
+* En total, $4 {{PLURAL:$4|usuariu tien|usuarios tienen}} esta preferencia configurada",
 	'prefstats-xaxis' => 'Duración (hores)',
 	'prefstats-factors' => 'Ver por: $1',
 	'prefstats-factor-hour' => 'hora',

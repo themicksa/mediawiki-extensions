@@ -58,7 +58,7 @@ $messages['fr'] = array(
  * @author Toliño
  */
 $messages['gl'] = array(
-	'localjquery-desc' => 'Cargar o jQuery desde [[MediaWiki:JQuery.js]] (co Cargador de recursos)',
+	'localjquery-desc' => 'Cargar o jQuery desde [[MediaWiki:JQuery.js]] (co xestor de recursos)',
 );
 
 /** Hebrew (עברית)

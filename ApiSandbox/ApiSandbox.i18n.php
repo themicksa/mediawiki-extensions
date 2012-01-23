@@ -44,20 +44,36 @@ $messages['en'] = array(
 
 /** Message documentation (Message documentation)
  * @author EugeneZelenko
+ * @author Krinkle
  * @author MaxSem
  * @author Purodha
+ * @author Raymond
  */
 $messages['qqq'] = array(
 	'apisb-desc' => '{{desc}}',
 	'apisandbox' => 'Special page title',
-	'apisb-parameters' => '{{Identical|Parameter}}',
-	'apisb-result' => '{{Identical|Result}}',
-	'apisb-request-url' => 'This is about the URL of a request.',
+	'apisb-legend-result' => 'Used as "legend" in the form fieldset containing read-only fields with info about an executed API request.
+{{Identical|Result}}',
+	'apisb-legend-generator-parameters' => 'Refers to an [https://www.mediawiki.org/wiki/API:Query#Generators API concept]',
+	'apisb-result-request-url' => 'Used as "label" for a read-only form field containing the exact URL that was (or is going to be) loaded.',
+	'apisb-result-request-post' => 'Used as "label" for a ready-only form field containing the POST query parameters of the HTTP request made',
+	'apisb-select-action' => 'This is the placeholder text in the "select" dropdown menu containing options with various action modules.',
+	'apisb-select-query' => 'This is the placeholder text in the "select" dropdown menu containing options with various query types.',
+	'apisb-select-value' => 'This is the generic placeholder text in "select" dropdown menus containing custom options (e.g. wiki namespaces, content direction, ..)',
+	'apisb-docs-more' => 'Used in parenthesis next to a short (but not cut off) version of the description. Links to a page on mediawiki.org with complete documentation.',
+	'apisb-params-param' => 'Table heading of the column with the parameter identifiers.
+{{Identical|Parameter}}',
+	'apisb-params-input' => 'Table heading for the column with the input fields (e.g. text inputs, dropdown menus, checkboxes)',
+	'apisb-params-desc' => 'Table heading of the column containing the descriptions.
+{{Identical|Description}}',
 	'apisb-loading' => '{{Identical|Loading}}',
-	'apisb-ns-main' => 'Refers to the main namespace',
+	'apisb-ns-main' => 'Refers to the main namespace, commonly put in parenthesis.
+{{Identical/Main namespace}}',
+	'apisb-submit' => 'Submit button text that submits the form and performs the API request, after which the result is shown below',
 	'apisb-query-prop' => '{{Identical|Property}}',
 	'apisb-query-list' => '{{Identical|List}}',
-	'apisb-generator-parameters' => 'Refers to an [https://www.mediawiki.org/wiki/API:Query#Generators API concept]',
+	'apisb-example' => 'Button text that will reveal the example list, used if the list contains only 1 entry. See also {{msg-mw|apisb-examples}}',
+	'apisb-examples' => 'Button text that will reveal the example list, used if the list contains multiple entries. See also {{msg-mw|apisb-example}}',
 	'apisb-clear' => 'Title of the button that clears all inputs',
 );
 
@@ -68,8 +84,9 @@ $messages['qqq'] = array(
  */
 $messages['af'] = array(
 	'apisb-api-disabled' => 'API is afgeskakel op hierdie webwerf.',
-	'apisb-parameters' => 'Parameters',
-	'apisb-result' => 'Resultaat',
+	'apisb-legend-result' => 'Resultaat',
+	'apisb-legend-generic-parameters' => 'generiese parameters',
+	'apisb-legend-generator-parameters' => 'Generator',
 	'apisb-select-action' => "Kies 'n aksie",
 	'apisb-select-value' => "Kies 'n waarde",
 	'apisb-loading' => 'Laai tans…',
@@ -81,8 +98,6 @@ $messages['af'] = array(
 	'apisb-query-prop' => 'Eienskappe',
 	'apisb-query-list' => 'Lyste',
 	'apisb-query-meta' => 'Meta-inligting',
-	'apisb-generic-parameters' => 'generiese parameters',
-	'apisb-generator-parameters' => 'Generator',
 );
 
 /** Arabic (العربية)
@@ -116,10 +131,11 @@ $messages['az'] = array(
  * @author Haqmar
  */
 $messages['ba'] = array(
-	'apisb-parameters' => 'Параметрҙар',
-	'apisb-result' => 'Һөҙөмтә',
-	'apisb-request-url' => 'Һоратыуҙың URL-адресы:',
-	'apisb-request-post' => 'POST мәғлүмәттәр:',
+	'apisb-legend-result' => 'Һөҙөмтә',
+	'apisb-legend-generic-parameters' => 'Дөйөм параметрҙар',
+	'apisb-legend-generator-parameters' => 'Генератор',
+	'apisb-result-request-url' => 'Һоратыуҙың URL-адресы:',
+	'apisb-result-request-post' => 'POST мәғлүмәттәр:',
 	'apisb-select-action' => 'Хәрәкәт һайларға',
 	'apisb-select-query' => 'Ни һоратырға?',
 	'apisb-loading' => 'Асыла...',
@@ -128,11 +144,9 @@ $messages['ba'] = array(
 	'apisb-query-prop' => 'Үҙенсәлектәр',
 	'apisb-query-list' => 'Исемлектәр',
 	'apisb-query-meta' => 'Мета-мәғлүмәт',
-	'apisb-generic-parameters' => 'Дөйөм параметрҙар',
-	'apisb-generator-parameters' => 'Генератор',
 );
 
-/** Belarusian (Taraškievica orthography) (Беларуская (тарашкевіца))
+/** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
  * @author EugeneZelenko
  * @author Jim-by
  * @author Wizardist
@@ -144,13 +158,18 @@ $messages['be-tarask'] = array(
 	'apisb-intro' => "Выкарыстоўвайце гэтую старонку для экспэрымэнтаў з '''API вэб-сэрвіса MediaWiki'''.
 Зьвяртайцеся да [//www.mediawiki.org/wiki/API:Main_page дакумэнтацыі API] для дадатковай інфармацыі па выкарыстаньні API. Напрыклад, [//www.mediawiki.org/wiki/API#A_simple_example як атрымаць зьмест Галоўнай старонкі]. Выберыце дзеяньне, каб пабачыць болей узораў.",
 	'apisb-api-disabled' => 'API забаронены на гэтым сайце.',
-	'apisb-parameters' => 'Парамэтры',
-	'apisb-result' => 'Вынік',
-	'apisb-request-url' => 'URL-адрас запыту:',
-	'apisb-request-post' => 'POST-зьвесткі:',
+	'apisb-legend-result' => 'Вынік',
+	'apisb-legend-generic-parameters' => 'Агульныя парамэтры',
+	'apisb-legend-generator-parameters' => 'Генэратар',
+	'apisb-result-request-url' => 'URL-адрас запыту:',
+	'apisb-result-request-post' => 'POST-зьвесткі:',
 	'apisb-select-action' => 'Выбраць дзеяньне',
 	'apisb-select-query' => 'Што запытаць?',
 	'apisb-select-value' => 'Выбраць значэньне',
+	'apisb-docs-more' => 'даведацца болей',
+	'apisb-params-param' => 'Парамэтар',
+	'apisb-params-input' => 'Увод',
+	'apisb-params-desc' => 'Апісаньне',
 	'apisb-loading' => 'Загрузка…',
 	'apisb-load-error' => 'Немагчыма загрузіць апісаньне API',
 	'apisb-request-error' => 'Немагчыма апрацаваць запыт API',
@@ -160,8 +179,6 @@ $messages['be-tarask'] = array(
 	'apisb-query-prop' => 'Уласьцівасьці',
 	'apisb-query-list' => 'Сьпісы',
 	'apisb-query-meta' => 'Мэтазьвесткі',
-	'apisb-generic-parameters' => 'Агульныя парамэтры',
-	'apisb-generator-parameters' => 'Генэратар',
 	'apisb-example' => 'Прыклад',
 	'apisb-examples' => 'Прыклады',
 	'apisb-clear' => 'Ачысьціць',
@@ -185,7 +202,7 @@ $messages['bg'] = array(
  * @author Bellayet
  */
 $messages['bn'] = array(
-	'apisb-result' => 'ফলাফল',
+	'apisb-legend-result' => 'ফলাফল',
 	'apisb-select-value' => 'মান নির্বাচন',
 	'apisb-loading' => 'লোডিং...',
 	'apisb-ns-main' => '(প্রধান)',
@@ -204,10 +221,11 @@ $messages['br'] = array(
 	'apisb-intro' => "Grit gant ar bajenn-mañ evit amprouiñ '''MediaWiki API'''.
 Kit da deuler ur sell war [//www.mediawiki.org/wiki/API:Main_page teulioù API] evit gouzout hiroc'h penaos embreger API.",
 	'apisb-api-disabled' => "Diweredekaet eo API war al lec'hienn-mañ.",
-	'apisb-parameters' => 'Arventennoù',
-	'apisb-result' => "Disoc'h",
-	'apisb-request-url' => 'Goulenn URL :',
-	'apisb-request-post' => 'roadennoù POST :',
+	'apisb-legend-result' => "Disoc'h",
+	'apisb-legend-generic-parameters' => 'Arventennoù hollek',
+	'apisb-legend-generator-parameters' => 'Ganer',
+	'apisb-result-request-url' => 'Goulenn URL :',
+	'apisb-result-request-post' => 'roadennoù POST :',
 	'apisb-select-action' => 'Dibab un ober',
 	'apisb-select-query' => 'Petra glask ?',
 	'apisb-select-value' => 'Dibab an talvoud',
@@ -220,8 +238,6 @@ Kit da deuler ur sell war [//www.mediawiki.org/wiki/API:Main_page teulioù API] 
 	'apisb-query-prop' => 'Perzhioù',
 	'apisb-query-list' => 'Rolloù',
 	'apisb-query-meta' => 'Titouroù Meta',
-	'apisb-generic-parameters' => 'Arventennoù hollek',
-	'apisb-generator-parameters' => 'Ganer',
 );
 
 /** Catalan (Català)
@@ -260,10 +276,11 @@ $messages['de'] = array(
 	'apisb-intro' => "Diese Seite kannst du für Versuche mit der '''MediaWiki-API''' verwenden.
 Die [//www.mediawiki.org/wiki/API:Main_page/de Dokumentation zur API] enthält weitere Hinweise zu ihrer Nutzung. Beispiel: [//www.mediawiki.org/wiki/API:Main_page/de#Beispiel Den Inhalt der Hauptseite abrufen]. Für weitere Beispiele eine der verfügbaren Aktionen auswählen.",
 	'apisb-api-disabled' => 'Die API wurde auf diesem Wiki deaktiviert.',
-	'apisb-parameters' => 'Parameter',
-	'apisb-result' => 'Ergebnis',
-	'apisb-request-url' => 'Anforderungs-URL:',
-	'apisb-request-post' => 'POST-Daten:',
+	'apisb-legend-result' => 'Ergebnis',
+	'apisb-legend-generic-parameters' => 'Generische Parameter',
+	'apisb-legend-generator-parameters' => 'Generator',
+	'apisb-result-request-url' => 'Anforderungs-URL:',
+	'apisb-result-request-post' => 'POST-Daten:',
 	'apisb-select-action' => 'Vorgang auswählen',
 	'apisb-select-query' => 'Was soll abgefragt werden?',
 	'apisb-select-value' => 'Wert auswählen',
@@ -280,8 +297,6 @@ Die [//www.mediawiki.org/wiki/API:Main_page/de Dokumentation zur API] enthält w
 	'apisb-query-prop' => 'Eigenschaften',
 	'apisb-query-list' => 'Listen',
 	'apisb-query-meta' => 'Metainformationen',
-	'apisb-generic-parameters' => 'Generische Parameter',
-	'apisb-generator-parameters' => 'Generator',
 	'apisb-example' => 'Beispiel',
 	'apisb-examples' => 'Beispiele',
 	'apisb-clear' => 'Leeren',
@@ -302,9 +317,10 @@ Die [//www.mediawiki.org/wiki/API:Main_page/de Dokumentation zur API] enthält w
 $messages['el'] = array(
 	'apisb-no-js' => "'''Σφάλμα''': αυτό το χαρακτηριστικό απαιτεί τη χρήση της κονσόλας JavaScript.",
 	'apisb-api-disabled' => 'Η Διεπαφή Προγραμματισμού Εφαρμογών (API) είναι απενεργοποιημένη σε αυτήν την τοποθεσία.',
-	'apisb-parameters' => 'Παράμετροι',
-	'apisb-result' => 'Αποτέλεσμα',
-	'apisb-request-url' => 'Αίτηση URL:',
+	'apisb-legend-result' => 'Αποτέλεσμα',
+	'apisb-legend-generic-parameters' => 'Γενικές παράμετροι',
+	'apisb-legend-generator-parameters' => 'Γεννήτρια',
+	'apisb-result-request-url' => 'Αίτηση URL:',
 	'apisb-select-action' => 'Επιλέξτε ενέργεια',
 	'apisb-select-query' => 'Τι πρέπει να ρωτήσω;',
 	'apisb-select-value' => 'Επιλέξτε τιμή',
@@ -315,8 +331,6 @@ $messages['el'] = array(
 	'apisb-query-prop' => 'Ιδιότητες',
 	'apisb-query-list' => 'Λίστες',
 	'apisb-query-meta' => 'Πληροφορίες Meta',
-	'apisb-generic-parameters' => 'Γενικές παράμετροι',
-	'apisb-generator-parameters' => 'Γεννήτρια',
 );
 
 /** Esperanto (Esperanto)
@@ -331,10 +345,11 @@ $messages['eo'] = array(
 	'apisb-intro' => "Uzu tiun ĉi paĝon por eksperimenti kun '''MediaWiki API'''.
 Vidu [//www.mediawiki.org/wiki/API:Main_page la API-dokumentadon] por pli da detaloj pri la uzo de API.",
 	'apisb-api-disabled' => 'API estas malŝalta en ĉi tiu retejo.',
-	'apisb-parameters' => 'Parametroj',
-	'apisb-result' => 'Rezulto',
-	'apisb-request-url' => 'Mendi URL-on.',
-	'apisb-request-post' => 'POST-datumoj:',
+	'apisb-legend-result' => 'Rezulto',
+	'apisb-legend-generic-parameters' => 'Komunaj parametroj',
+	'apisb-legend-generator-parameters' => 'Generanto',
+	'apisb-result-request-url' => 'Mendi URL-on.',
+	'apisb-result-request-post' => 'POST-datumoj:',
 	'apisb-select-action' => 'Elekti agojn',
 	'apisb-select-query' => 'Kion peti?',
 	'apisb-select-value' => 'Elekti valoron',
@@ -347,8 +362,6 @@ Vidu [//www.mediawiki.org/wiki/API:Main_page la API-dokumentadon] por pli da det
 	'apisb-query-prop' => 'Atributoj',
 	'apisb-query-list' => 'Listoj',
 	'apisb-query-meta' => 'Metainformoj',
-	'apisb-generic-parameters' => 'Komunaj parametroj',
-	'apisb-generator-parameters' => 'Generanto',
 );
 
 /** Spanish (Español)
@@ -365,10 +378,11 @@ $messages['es'] = array(
 
 Consulte [//www.mediawiki.org/wiki/API:Main_page la documentación] para más detalles sobre su uso.",
 	'apisb-api-disabled' => 'La API está desactivada en este sitio.',
-	'apisb-parameters' => 'Parámetros',
-	'apisb-result' => 'Resultado',
-	'apisb-request-url' => 'URL solicitante:',
-	'apisb-request-post' => 'Datos POST:',
+	'apisb-legend-result' => 'Resultado',
+	'apisb-legend-generic-parameters' => 'Parámetros genéricos',
+	'apisb-legend-generator-parameters' => 'Generador',
+	'apisb-result-request-url' => 'URL solicitante:',
+	'apisb-result-request-post' => 'Datos POST:',
 	'apisb-select-action' => 'Selecciona acción',
 	'apisb-select-query' => '¿Qué consultar?',
 	'apisb-select-value' => 'Seleccionar valor',
@@ -381,8 +395,6 @@ Consulte [//www.mediawiki.org/wiki/API:Main_page la documentación] para más de
 	'apisb-query-prop' => 'Propiedades',
 	'apisb-query-list' => 'Listas',
 	'apisb-query-meta' => 'información de Meta',
-	'apisb-generic-parameters' => 'Parámetros genéricos',
-	'apisb-generator-parameters' => 'Generador',
 );
 
 /** Estonian (Eesti)
@@ -394,10 +406,10 @@ $messages['et'] = array(
 	'apisb-intro' => "Kasuta seda lehekülge '''MediaWiki API''' katsetamiseks.
 Üksikasjad API kasutamise kohta leiad [//www.mediawiki.org/wiki/API:Main_page API dokumentatsioonist].",
 	'apisb-api-disabled' => 'API on selles võrgukohas keelatud.',
-	'apisb-parameters' => 'Parameetrid',
-	'apisb-result' => 'Tulemus',
-	'apisb-request-url' => 'Päringu URL:',
-	'apisb-request-post' => 'POST-andmed:',
+	'apisb-legend-result' => 'Tulemus',
+	'apisb-legend-generic-parameters' => 'Üldised parameetrid',
+	'apisb-result-request-url' => 'Päringu URL:',
+	'apisb-result-request-post' => 'POST-andmed:',
 	'apisb-select-action' => 'Vali toiming',
 	'apisb-select-query' => 'Mida pärida?',
 	'apisb-select-value' => 'Vali väärtus',
@@ -409,7 +421,6 @@ $messages['et'] = array(
 	'apisb-query-prop' => 'Atribuudid',
 	'apisb-query-list' => 'Loendid',
 	'apisb-query-meta' => 'Metaandmed',
-	'apisb-generic-parameters' => 'Üldised parameetrid',
 );
 
 /** Basque (Euskara)
@@ -431,10 +442,11 @@ $messages['fa'] = array(
 	'apisandbox' => 'گودال ماسه‌بازی رابط برنامه‌نویسی',
 	'apisb-no-js' => "'''خطا''': این قابلیت نیازمند جاوااسکریپت است.",
 	'apisb-api-disabled' => 'رابط برنامه‌نویسی در این تارنما غیرفعال شده‌است.',
-	'apisb-parameters' => 'پارامترها',
-	'apisb-result' => 'نتیجه',
-	'apisb-request-url' => 'درخواست آدرس:',
-	'apisb-request-post' => 'فرستادن داده‌ها:',
+	'apisb-legend-result' => 'نتیجه',
+	'apisb-legend-generic-parameters' => 'پارامترهای عمومی',
+	'apisb-legend-generator-parameters' => 'تولیدکننده',
+	'apisb-result-request-url' => 'درخواست آدرس:',
+	'apisb-result-request-post' => 'فرستادن داده‌ها:',
 	'apisb-select-action' => 'انتخاب اقدامات',
 	'apisb-select-value' => 'انتخاب مقدار',
 	'apisb-loading' => 'در حال بارگذاری…',
@@ -446,8 +458,6 @@ $messages['fa'] = array(
 	'apisb-query-prop' => 'ویژگی‌ها',
 	'apisb-query-list' => 'فهرست‌ها',
 	'apisb-query-meta' => 'اطلاعات متا',
-	'apisb-generic-parameters' => 'پارامترهای عمومی',
-	'apisb-generator-parameters' => 'تولیدکننده',
 );
 
 /** Finnish (Suomi)
@@ -462,10 +472,11 @@ $messages['fi'] = array(
 	'apisb-intro' => "Tämä on '''MediaWiki API:n''' hiekkalaatikko.
 [//www.mediawiki.org/wiki/API:Main_page API-dokumentaatio] kertoo lisää API:en käytöstä.",
 	'apisb-api-disabled' => 'API on poistettu käytöstä tällä sivustolla.',
-	'apisb-parameters' => 'Parametrit',
-	'apisb-result' => 'Tulos',
-	'apisb-request-url' => 'Pyynnön URL:',
-	'apisb-request-post' => 'POST-tiedot:',
+	'apisb-legend-result' => 'Tulos',
+	'apisb-legend-generic-parameters' => 'Yleiset parametrit',
+	'apisb-legend-generator-parameters' => 'Generoija',
+	'apisb-result-request-url' => 'Pyynnön URL:',
+	'apisb-result-request-post' => 'POST-tiedot:',
 	'apisb-select-action' => 'Valitse toiminto',
 	'apisb-select-query' => 'Mitä kysellään?',
 	'apisb-select-value' => 'Valitse arvo',
@@ -478,8 +489,6 @@ $messages['fi'] = array(
 	'apisb-query-prop' => 'Ominaisuudet',
 	'apisb-query-list' => 'Luettelot',
 	'apisb-query-meta' => 'Metatiedot',
-	'apisb-generic-parameters' => 'Yleiset parametrit',
-	'apisb-generator-parameters' => 'Generoija',
 	'apisb-example' => 'Esimerkki',
 	'apisb-examples' => 'Esimerkkejä',
 );
@@ -500,10 +509,11 @@ $messages['fr'] = array(
 	'apisb-intro' => "Utilisez cette page pour expérimenter le '''webservice MediaWiki'''.
 Reportez-vous à [//www.mediawiki.org/wiki/API:Main_page la documentation de l’API] pour plus de détails sur l’API. Exemple: [//www.mediawiki.org/wiki/API#A_simple_example obtenir le contenu d'une page principale]. Choisissez une option pour voir d'autres exemples.",
 	'apisb-api-disabled' => 'API est désactivé sur ce site.',
-	'apisb-parameters' => 'Paramètres',
-	'apisb-result' => 'Résultat',
-	'apisb-request-url' => 'Requête URL :',
-	'apisb-request-post' => 'données POST :',
+	'apisb-legend-result' => 'Résultat',
+	'apisb-legend-generic-parameters' => 'Paramètres génériques',
+	'apisb-legend-generator-parameters' => 'Générateur',
+	'apisb-result-request-url' => 'Requête URL :',
+	'apisb-result-request-post' => 'données POST :',
 	'apisb-select-action' => 'Sélectionner une action',
 	'apisb-select-query' => 'Que faut-il interroger ?',
 	'apisb-select-value' => 'Sélectionnez la valeur',
@@ -520,8 +530,6 @@ Reportez-vous à [//www.mediawiki.org/wiki/API:Main_page la documentation de l�
 	'apisb-query-prop' => 'Propriétés',
 	'apisb-query-list' => 'Listes',
 	'apisb-query-meta' => 'Méta-information',
-	'apisb-generic-parameters' => 'Paramètres génériques',
-	'apisb-generator-parameters' => 'Générateur',
 	'apisb-example' => 'Exemple',
 	'apisb-examples' => 'Exemples',
 	'apisb-clear' => 'Effacer',
@@ -537,10 +545,11 @@ $messages['frp'] = array(
 	'apisb-intro' => "Utilisâd ceta pâge por èxpèrimentar avouéc '''MediaWiki API'''.
 Reportâd-vos sur [//www.mediawiki.org/wiki/API:Main_page la documentacion de l’API] por més de dètalys sur l’usâjo de l’API.",
 	'apisb-api-disabled' => 'API est dèsactivâ sur ceti seto.',
-	'apisb-parameters' => 'Paramètres',
-	'apisb-result' => 'Rèsultat',
-	'apisb-request-url' => 'Requéta URL :',
-	'apisb-request-post' => 'Balyês POST :',
+	'apisb-legend-result' => 'Rèsultat',
+	'apisb-legend-generic-parameters' => 'Paramètres g·ènèricos',
+	'apisb-legend-generator-parameters' => 'G·ènèrator',
+	'apisb-result-request-url' => 'Requéta URL :',
+	'apisb-result-request-post' => 'Balyês POST :',
 	'apisb-select-action' => 'Chouèsir una accion',
 	'apisb-select-query' => 'Que fôt-o entèrrogiér ?',
 	'apisb-select-value' => 'Chouèsir la valor',
@@ -553,8 +562,6 @@ Reportâd-vos sur [//www.mediawiki.org/wiki/API:Main_page la documentacion de l�
 	'apisb-query-prop' => 'Propriètâts',
 	'apisb-query-list' => 'Listes',
 	'apisb-query-meta' => 'Mèta-enformacions',
-	'apisb-generic-parameters' => 'Paramètres g·ènèricos',
-	'apisb-generator-parameters' => 'G·ènèrator',
 );
 
 /** Galician (Galego)
@@ -567,10 +574,11 @@ $messages['gl'] = array(
 	'apisb-intro' => "Use esta páxina para experimentar co '''servizo web da API de MediaWiki'''.
 Consulte a [//www.mediawiki.org/wiki/API:Main_page documentación da API] para obter máis información sobre o uso da API. Exemplo: [//www.mediawiki.org/wiki/API#A_simple_example obter o contido dunha páxina de inicio]. Seleccione unha acción para ollar máis exemplos.",
 	'apisb-api-disabled' => 'API está desactivado neste sitio.',
-	'apisb-parameters' => 'Parámetros',
-	'apisb-result' => 'Resultado',
-	'apisb-request-url' => 'URL da solicitude:',
-	'apisb-request-post' => 'Datos POST:',
+	'apisb-legend-result' => 'Resultado',
+	'apisb-legend-generic-parameters' => 'Parámetros xenéricos',
+	'apisb-legend-generator-parameters' => 'Xerador',
+	'apisb-result-request-url' => 'URL da solicitude:',
+	'apisb-result-request-post' => 'Datos POST:',
 	'apisb-select-action' => 'Seleccionar unha acción',
 	'apisb-select-query' => 'Que quere consultar?',
 	'apisb-select-value' => 'Seleccione o valor',
@@ -587,8 +595,6 @@ Consulte a [//www.mediawiki.org/wiki/API:Main_page documentación da API] para o
 	'apisb-query-prop' => 'Propiedades',
 	'apisb-query-list' => 'Listas',
 	'apisb-query-meta' => 'Metainformación',
-	'apisb-generic-parameters' => 'Parámetros xenéricos',
-	'apisb-generator-parameters' => 'Xerador',
 	'apisb-example' => 'Exemplo',
 	'apisb-examples' => 'Exemplos',
 	'apisb-clear' => 'Limpar',
@@ -604,15 +610,20 @@ $messages['he'] = array(
 	'apisandbox' => 'ארגז חול של API',
 	'apisb-no-js' => "'''שגיאה''': היכולת הזאת דורשת JavaScript",
 	'apisb-intro' => "השתמשו בדף הזה כדי להתנסות עם '''API של מדיה־ויקי'''.
-פנו ל־[//www.mediawiki.org/wiki/API:Main_page תיעוד של ה־API] למידע נוסף של שימוש ב־API.",
+פנו ל־[//www.mediawiki.org/wiki/API:Main_page תיעוד של ה־API] למידע נוסף של שימוש ב־API (באנגלית). למשל: [//www.mediawiki.org/wiki/API#A_simple_example איך לקבל את התוכן של הדף הראשי]. בחרו בפעולה (action) לדוגמאות נוספות.",
 	'apisb-api-disabled' => 'API אינו פעיל באתר הזה.',
-	'apisb-parameters' => 'פרמטרים',
-	'apisb-result' => 'תוצאה',
-	'apisb-request-url' => 'כתובת ה-URL של הבקשה:',
-	'apisb-request-post' => 'נתוני POST:',
+	'apisb-legend-result' => 'תוצאה',
+	'apisb-legend-generic-parameters' => 'פרמטרים כלליים',
+	'apisb-legend-generator-parameters' => 'מחולל',
+	'apisb-result-request-url' => 'כתובת ה-URL של הבקשה:',
+	'apisb-result-request-post' => 'נתוני POST:',
 	'apisb-select-action' => 'בחירת פעולה',
 	'apisb-select-query' => 'מהי השאילתה?',
 	'apisb-select-value' => 'בחירת ערך',
+	'apisb-docs-more' => 'לקרוא עוד',
+	'apisb-params-param' => 'פרמטר',
+	'apisb-params-input' => 'קלט',
+	'apisb-params-desc' => 'תיאור',
 	'apisb-loading' => 'בטעינה...',
 	'apisb-load-error' => 'שגיאה בטעינת תיאור API',
 	'apisb-request-error' => 'שגיעה בביצוע בקשת API',
@@ -622,8 +633,6 @@ $messages['he'] = array(
 	'apisb-query-prop' => 'מאפיינים',
 	'apisb-query-list' => 'רשימות',
 	'apisb-query-meta' => 'מידע נוסף',
-	'apisb-generic-parameters' => 'פרמטרים כלליים',
-	'apisb-generator-parameters' => 'מחולל',
 	'apisb-example' => 'דוגמה',
 	'apisb-examples' => 'דוגמאות',
 	'apisb-clear' => 'ריקון',
@@ -634,10 +643,11 @@ $messages['he'] = array(
  */
 $messages['hi'] = array(
 	'apisandbox' => 'एपीआई सांडबॉक्स',
-	'apisb-parameters' => 'पारामीटर्स',
-	'apisb-result' => 'परिणाम',
-	'apisb-request-url' => 'अनुरोध URL:',
-	'apisb-request-post' => 'डेटा भेजें:',
+	'apisb-legend-result' => 'परिणाम',
+	'apisb-legend-generic-parameters' => 'जेनेरिक पैरामीटर्स',
+	'apisb-legend-generator-parameters' => 'जेनरेटर',
+	'apisb-result-request-url' => 'अनुरोध URL:',
+	'apisb-result-request-post' => 'डेटा भेजें:',
 	'apisb-select-action' => 'क्रिया चयन करें',
 	'apisb-select-query' => 'क्वेरी क्या करना है?',
 	'apisb-select-value' => 'मूल्य चयन करें',
@@ -648,8 +658,6 @@ $messages['hi'] = array(
 	'apisb-query-prop' => 'गुणधर्म',
 	'apisb-query-list' => 'सूचियाँ',
 	'apisb-query-meta' => 'मेटा जानकारी',
-	'apisb-generic-parameters' => 'जेनेरिक पैरामीटर्स',
-	'apisb-generator-parameters' => 'जेनरेटर',
 );
 
 /** Upper Sorbian (Hornjoserbsce)
@@ -662,10 +670,11 @@ $messages['hsb'] = array(
 	'apisb-intro' => "Wužij tutu stronu, zo by z '''websłužbu Mediawiki API''' eksperimentował.
 Hlej [//www.mediawiki.org/wiki/API:Main_page API-dokumentaciju] za dalše podrobnosće za wužiwanje API. Přikład: [//www.mediawiki.org/wiki/API#A_simple_example Wobsah hłowneje strony wotwołać]. Wubjer akciju, zo by dalše přikłady widźał.",
 	'apisb-api-disabled' => 'API je so na tutym sydle znjemóžnił.',
-	'apisb-parameters' => 'Parametry',
-	'apisb-result' => 'Wuslědk',
-	'apisb-request-url' => 'URL naprašowanja:',
-	'apisb-request-post' => 'POST-daty:',
+	'apisb-legend-result' => 'Wuslědk',
+	'apisb-legend-generic-parameters' => 'Powšitkowne parametry',
+	'apisb-legend-generator-parameters' => 'Generator',
+	'apisb-result-request-url' => 'URL naprašowanja:',
+	'apisb-result-request-post' => 'POST-daty:',
 	'apisb-select-action' => 'Akciju wubrać',
 	'apisb-select-query' => 'Što ma so wotprašeć?',
 	'apisb-select-value' => 'Hódnotu wubrać',
@@ -682,8 +691,6 @@ Hlej [//www.mediawiki.org/wiki/API:Main_page API-dokumentaciju] za dalše podrob
 	'apisb-query-prop' => 'Kajkosće',
 	'apisb-query-list' => 'Lisćiny',
 	'apisb-query-meta' => 'Metainformacije',
-	'apisb-generic-parameters' => 'Powšitkowne parametry',
-	'apisb-generator-parameters' => 'Generator',
 	'apisb-example' => 'Přikład',
 	'apisb-examples' => 'Přikłady',
 	'apisb-clear' => 'Wuprózdnić',
@@ -700,10 +707,11 @@ $messages['hu'] = array(
 	'apisb-intro' => "Ezen az oldalon kísérletezhetsz a '''MediaWiki web service API'''-val.
 A használattal kapcsolatos további részletek az [//www.mediawiki.org/wiki/API:Main_page API-dokumentációnál] találhatók. Példa: [//www.mediawiki.org/wiki/API#A_simple_example olvasd el a főoldal tartalomjegyzékét]. További példákért válassz egy tevékenységet!",
 	'apisb-api-disabled' => 'API le van tiltva ezen az oldalon.',
-	'apisb-parameters' => 'Paraméterek',
-	'apisb-result' => 'Eredmény',
-	'apisb-request-url' => 'Kérő URL:',
-	'apisb-request-post' => 'POST adat:',
+	'apisb-legend-result' => 'Eredmény',
+	'apisb-legend-generic-parameters' => 'Általános paraméterek',
+	'apisb-legend-generator-parameters' => 'Generátor',
+	'apisb-result-request-url' => 'Kérő URL:',
+	'apisb-result-request-post' => 'POST adat:',
 	'apisb-select-action' => 'Műveletek kiválasztása',
 	'apisb-select-query' => 'Mi a lekérdezés?',
 	'apisb-select-value' => 'Válassz értéket',
@@ -716,8 +724,6 @@ A használattal kapcsolatos további részletek az [//www.mediawiki.org/wiki/API
 	'apisb-query-prop' => 'Tulajdonságok',
 	'apisb-query-list' => 'Listák',
 	'apisb-query-meta' => 'Metaadatok',
-	'apisb-generic-parameters' => 'Általános paraméterek',
-	'apisb-generator-parameters' => 'Generátor',
 );
 
 /** Interlingua (Interlingua)
@@ -730,10 +736,11 @@ $messages['ia'] = array(
 	'apisb-intro' => "Usa iste pagina pro experimentar con le '''API de servicio web de MediaWiki'''.
 Consulta [//www.mediawiki.org/wiki/API:Main_page le documentation del API] pro ulterior detalios concernente le uso del API. Per exemplo: [//www.mediawiki.org/wiki/API#A_simple_example obtener le contento de un Pagina principal]. Selige un action pro vider altere exemplos.",
 	'apisb-api-disabled' => 'Le API ha essite disactivate in iste sito.',
-	'apisb-parameters' => 'Parametros',
-	'apisb-result' => 'Resultato',
-	'apisb-request-url' => 'URL de requesta:',
-	'apisb-request-post' => 'Datos POST:',
+	'apisb-legend-result' => 'Resultato',
+	'apisb-legend-generic-parameters' => 'Parametros generic',
+	'apisb-legend-generator-parameters' => 'Generator',
+	'apisb-result-request-url' => 'URL de requesta:',
+	'apisb-result-request-post' => 'Datos POST:',
 	'apisb-select-action' => 'Selige action',
 	'apisb-select-query' => 'Que consultar?',
 	'apisb-select-value' => 'Selige valor',
@@ -750,14 +757,13 @@ Consulta [//www.mediawiki.org/wiki/API:Main_page le documentation del API] pro u
 	'apisb-query-prop' => 'Proprietates',
 	'apisb-query-list' => 'Listas',
 	'apisb-query-meta' => 'Metainformationes',
-	'apisb-generic-parameters' => 'Parametros generic',
-	'apisb-generator-parameters' => 'Generator',
 	'apisb-example' => 'Exemplo',
 	'apisb-examples' => 'Exemplos',
 	'apisb-clear' => 'Rader',
 );
 
 /** Indonesian (Bahasa Indonesia)
+ * @author Farras
  * @author IvanLanin
  */
 $messages['id'] = array(
@@ -767,13 +773,17 @@ $messages['id'] = array(
 	'apisb-intro' => "Gunakan halaman ini untuk bereksperimen dengan '''MediaWiki API'''.
 Lihat [//www.mediawiki.org/wiki/API:Main_page dokumentasi API] untuk perincian lanjut penggunaan API.",
 	'apisb-api-disabled' => 'API dinonaktifkan pada situs ini.',
-	'apisb-parameters' => 'Parameter',
-	'apisb-result' => 'Hasil',
-	'apisb-request-url' => 'URL Permintaan:',
-	'apisb-request-post' => 'Data POST:',
+	'apisb-legend-result' => 'Hasil',
+	'apisb-legend-generic-parameters' => 'Parameter generik',
+	'apisb-legend-generator-parameters' => 'Generator',
+	'apisb-result-request-url' => 'URL Permintaan:',
+	'apisb-result-request-post' => 'Data POST:',
 	'apisb-select-action' => 'Pilih tindakan',
 	'apisb-select-query' => 'Pilih permintaan',
 	'apisb-select-value' => 'Pilih nilai',
+	'apisb-params-param' => 'Parameter',
+	'apisb-params-input' => 'Masukan',
+	'apisb-params-desc' => 'Keterangan',
 	'apisb-loading' => 'Memuat...',
 	'apisb-load-error' => 'Galat sewaktu memuat deskripsi API',
 	'apisb-request-error' => 'Galat sewaktu melakukan permintaan API',
@@ -783,6 +793,8 @@ Lihat [//www.mediawiki.org/wiki/API:Main_page dokumentasi API] untuk perincian l
 	'apisb-query-prop' => 'Properti',
 	'apisb-query-list' => 'Daftar',
 	'apisb-query-meta' => 'Informasi meta',
+	'apisb-example' => 'Contoh',
+	'apisb-examples' => 'Contoh',
 );
 
 /** Iloko (Ilokano)
@@ -795,10 +807,11 @@ $messages['ilo'] = array(
 	'apisb-intro' => "Usaren daytoy a panid ti panagsubok ti '''MediaWiki apot a serbisio ti API'''.
 Agiturong idiay [//www.mediawiki.org/wiki/API:Main_page the API dokumentasion] para iti adadu pay a detalye iti panag-usar ti API. Kas pagarigan: [//www.mediawiki.org/wiki/API#A_simple_example alaen ti linaon ti Umuna a Panid].  Agpili ti maaramid tapno makakita ti adu pay a kas pagarigan.",
 	'apisb-api-disabled' => 'Ti API ket nabaldodo iti daytoy a pagsaadan.',
-	'apisb-parameters' => 'Dagiti parametro',
-	'apisb-result' => 'Nagbanagan',
-	'apisb-request-url' => 'Agkiddaw ti URL:',
-	'apisb-request-post' => 'POST data:',
+	'apisb-legend-result' => 'Nagbanagan',
+	'apisb-legend-generic-parameters' => 'Dagiti kadawyan a parametro',
+	'apisb-legend-generator-parameters' => 'Agpaandar',
+	'apisb-result-request-url' => 'Agkiddaw ti URL:',
+	'apisb-result-request-post' => 'POST data:',
 	'apisb-select-action' => 'Agpili ti aramid',
 	'apisb-select-query' => 'Ania ti damdamagen?',
 	'apisb-select-value' => 'Agpili ti kuwenta',
@@ -811,8 +824,6 @@ Agiturong idiay [//www.mediawiki.org/wiki/API:Main_page the API dokumentasion] p
 	'apisb-query-prop' => 'Dagiti tagikua',
 	'apisb-query-list' => 'Dagiti listaan',
 	'apisb-query-meta' => 'Pakaammo a meta',
-	'apisb-generic-parameters' => 'Dagiti kadawyan a parametro',
-	'apisb-generator-parameters' => 'Agpaandar',
 	'apisb-example' => 'Kas pagarigan',
 	'apisb-examples' => 'Dagiti kas pagarigan',
 	'apisb-clear' => 'Dalusan',
@@ -832,10 +843,11 @@ $messages['it'] = array(
 	'apisb-intro' => "Utilizza questa pagina per sperimentare con '''MediaWiki API'''.
 Per ulteriori dettagli di utilizzo delle API, fai riferimento alla [//www.mediawiki.org/wiki/API:Main_page documentazione API].",
 	'apisb-api-disabled' => 'Le funzionalità API sono disabilitate su questo sito.',
-	'apisb-parameters' => 'Parametri',
-	'apisb-result' => 'Risultato',
-	'apisb-request-url' => 'URL di richiesta:',
-	'apisb-request-post' => 'Dati POST:',
+	'apisb-legend-result' => 'Risultato',
+	'apisb-legend-generic-parameters' => 'Parametri generici',
+	'apisb-legend-generator-parameters' => 'Generatore',
+	'apisb-result-request-url' => 'URL di richiesta:',
+	'apisb-result-request-post' => 'Dati POST:',
 	'apisb-select-action' => 'Seleziona azione',
 	'apisb-select-query' => 'Che cosa?',
 	'apisb-select-value' => 'Selezionare il valore',
@@ -848,8 +860,6 @@ Per ulteriori dettagli di utilizzo delle API, fai riferimento alla [//www.mediaw
 	'apisb-query-prop' => 'Proprietà',
 	'apisb-query-list' => 'Liste',
 	'apisb-query-meta' => 'Informazioni meta',
-	'apisb-generic-parameters' => 'Parametri generici',
-	'apisb-generator-parameters' => 'Generatore',
 );
 
 /** Korean (한국어)
@@ -862,10 +872,11 @@ $messages['ko'] = array(
 	'apisb-intro' => "'''미디어위키 API'''를 시험해보려면 이 페이지를 이용해보세요.
 사용법에 대해서는 [//www.mediawiki.org/wiki/API:Main_page API 사용법]을 참고해보십시오.",
 	'apisb-api-disabled' => '이 사이트에서는 API가 꺼져 있습니다.',
-	'apisb-parameters' => '변수',
-	'apisb-result' => '결과',
-	'apisb-request-url' => '요청 URL:',
-	'apisb-request-post' => 'POST 데이터:',
+	'apisb-legend-result' => '결과',
+	'apisb-legend-generic-parameters' => '일반 매개변수',
+	'apisb-legend-generator-parameters' => '제네레이터',
+	'apisb-result-request-url' => '요청 URL:',
+	'apisb-result-request-post' => 'POST 데이터:',
 	'apisb-select-action' => '동작을 선택하세요',
 	'apisb-select-query' => '어떤 쿼리를 요청할까요?',
 	'apisb-select-value' => '값을 선택하세요',
@@ -878,8 +889,6 @@ $messages['ko'] = array(
 	'apisb-query-prop' => '속성',
 	'apisb-query-list' => '목록',
 	'apisb-query-meta' => '메타 정보',
-	'apisb-generic-parameters' => '일반 매개변수',
-	'apisb-generator-parameters' => '제네레이터',
 );
 
 /** Colognian (Ripoarisch)
@@ -908,9 +917,8 @@ $messages['lb'] = array(
 	'apisandbox' => 'API-Sandkëscht',
 	'apisb-no-js' => "'''Feeler''': dës Fonctioun brauch JavaScript",
 	'apisb-api-disabled' => 'API ass op dësem Site ausgeschalt.',
-	'apisb-parameters' => 'Parameteren',
-	'apisb-result' => 'Resultat',
-	'apisb-request-url' => 'URL fir Ufroen:',
+	'apisb-legend-result' => 'Resultat',
+	'apisb-result-request-url' => 'URL fir Ufroen:',
 	'apisb-select-action' => 'Aktioun eraussichen',
 	'apisb-select-value' => 'Wäert eraussichen',
 	'apisb-docs-more' => 'liest méi',
@@ -939,10 +947,11 @@ $messages['li'] = array(
 	'apisb-intro' => "Gebroek dees pagina óm te experimentere mit de '''MediaWiki API'''.
 Zuuch de [//www.mediawiki.org/wiki/API:Main_page API-dokkemèntatie] veur mier details euver 't gebroek van de API.",
 	'apisb-api-disabled' => 'API is oetgesjakeld op deze site.',
-	'apisb-parameters' => 'Parameters',
-	'apisb-result' => 'Rizzeltaat',
-	'apisb-request-url' => 'Verzeuk-URL:',
-	'apisb-request-post' => 'POST-gegaeves:',
+	'apisb-legend-result' => 'Rizzeltaat',
+	'apisb-legend-generic-parameters' => 'Algemein parameters',
+	'apisb-legend-generator-parameters' => 'Generator',
+	'apisb-result-request-url' => 'Verzeuk-URL:',
+	'apisb-result-request-post' => 'POST-gegaeves:',
 	'apisb-select-action' => 'Hanjeling selektere',
 	'apisb-select-query' => 'Wat is dien vraog?',
 	'apisb-select-value' => 'Selekteer waerde',
@@ -955,8 +964,6 @@ Zuuch de [//www.mediawiki.org/wiki/API:Main_page API-dokkemèntatie] veur mier d
 	'apisb-query-prop' => 'Eigensjappe',
 	'apisb-query-list' => 'Lieste',
 	'apisb-query-meta' => 'Meta-infermasie',
-	'apisb-generic-parameters' => 'Algemein parameters',
-	'apisb-generator-parameters' => 'Generator',
 );
 
 /** Lithuanian (Lietuvių)
@@ -970,10 +977,10 @@ $messages['lt'] = array(
 	'apisb-intro' => "Naudokite šį puslapį norėdami eksperimentuoti su '''MediaWiki API \"„.
 	Ieškokite [//www.mediawiki.org/wiki/API:Main_page API dokumentacijoje] Išsamesnės informacijos apie API naudojimo.",
 	'apisb-api-disabled' => 'API yra išjungtas šioje svetainėje.',
-	'apisb-parameters' => 'Parametrai',
-	'apisb-result' => 'Rezultatai',
-	'apisb-request-url' => 'Prašyti URL:',
-	'apisb-request-post' => 'POST duomenys:',
+	'apisb-legend-result' => 'Rezultatai',
+	'apisb-legend-generator-parameters' => 'Generatorius',
+	'apisb-result-request-url' => 'Prašyti URL:',
+	'apisb-result-request-post' => 'POST duomenys:',
 	'apisb-select-action' => 'Pasirinkite veiksmą',
 	'apisb-select-query' => 'Ką užklausą?',
 	'apisb-select-value' => 'Pasirinkite vertę',
@@ -986,7 +993,6 @@ $messages['lt'] = array(
 	'apisb-query-prop' => 'Nusttymai',
 	'apisb-query-list' => 'Sąrašai',
 	'apisb-query-meta' => 'Meta informacija',
-	'apisb-generator-parameters' => 'Generatorius',
 );
 
 /** Latvian (Latviešu)
@@ -1007,10 +1013,11 @@ $messages['mk'] = array(
 	'apisb-intro' => "Страницава служи за експериментирање со '''МедијаВики API'''.
 	Повеќе за употребата на овој API ќе најдете во [//www.mediawiki.org/wiki/API:Main_page неговата документација].  Пример: [//www.mediawiki.org/wiki/API#A_simple_example преземање на содржината на главната страница].  Одберете дејство за да видите повеќе примери.",
 	'apisb-api-disabled' => 'API е оневозможен на ова мрежно место.',
-	'apisb-parameters' => 'Параметри',
-	'apisb-result' => 'Извод',
-	'apisb-request-url' => 'URL на барањето:',
-	'apisb-request-post' => 'POST-податоци:',
+	'apisb-legend-result' => 'Извод',
+	'apisb-legend-generic-parameters' => 'Општи параметри',
+	'apisb-legend-generator-parameters' => 'Создавач',
+	'apisb-result-request-url' => 'URL на барањето:',
+	'apisb-result-request-post' => 'POST-податоци:',
 	'apisb-select-action' => 'Одберете дејство',
 	'apisb-select-query' => 'Што да барам?',
 	'apisb-select-value' => 'Одберете вредност',
@@ -1027,8 +1034,6 @@ $messages['mk'] = array(
 	'apisb-query-prop' => 'Својства',
 	'apisb-query-list' => 'Списоци',
 	'apisb-query-meta' => 'Метаинформации',
-	'apisb-generic-parameters' => 'Општи параметри',
-	'apisb-generator-parameters' => 'Создавач',
 	'apisb-example' => 'Пример',
 	'apisb-examples' => 'Примери',
 	'apisb-clear' => 'Исчисти',
@@ -1041,11 +1046,13 @@ $messages['mk'] = array(
 $messages['ml'] = array(
 	'apisb-no-js' => "'''പിഴവ്''': ഈ വിശേഷഗുണത്തിനു ജാവാസ്ക്രിപ്റ്റ് ആവശ്യമാണ്.",
 	'apisb-api-disabled' => 'ഈ സൈറ്റിൽ എ.പി.ഐ. പ്രവർത്തനരഹിതമാക്കിയിരിക്കുന്നു.',
-	'apisb-parameters' => 'ചരങ്ങൾ',
-	'apisb-result' => 'ഫലം',
-	'apisb-request-url' => 'അഭ്യർത്ഥിച്ച യൂ.ആർ.എൽ.:',
+	'apisb-legend-result' => 'ഫലം',
+	'apisb-result-request-url' => 'അഭ്യർത്ഥിച്ച യൂ.ആർ.എൽ.:',
 	'apisb-select-action' => 'പ്രവൃത്തി തിരഞ്ഞെടുക്കുക',
 	'apisb-select-value' => 'വില തിരഞ്ഞെടുക്കുക',
+	'apisb-docs-more' => 'കൂടുതൽ വായിക്കുക',
+	'apisb-params-param' => 'ചരം',
+	'apisb-params-desc' => 'വിവരണം',
 	'apisb-loading' => 'ശേഖരിക്കുന്നു...',
 	'apisb-ns-main' => '(മുഖ്യം)',
 	'apisb-query-meta' => 'മെറ്റ വിവരങ്ങൾ',
@@ -1065,10 +1072,11 @@ $messages['ms'] = array(
 Rujuk [//www.mediawiki.org/wiki/API:Main_page dokumentasi API] untuk keterangan lanjut tentang penggunaan API.
 Contoh: [//www.mediawiki.org/wiki/API#A_simple_example dapatkan kandungan Laman Utama].  Pilih satu tindakan untuk melihat banyak lagi contoh.",
 	'apisb-api-disabled' => 'API dimatikan di tapak web ini.',
-	'apisb-parameters' => 'Parameter',
-	'apisb-result' => 'Hasil',
-	'apisb-request-url' => 'URL permohonan:',
-	'apisb-request-post' => 'Data POST:',
+	'apisb-legend-result' => 'Hasil',
+	'apisb-legend-generic-parameters' => 'Parameter am',
+	'apisb-legend-generator-parameters' => 'Penjana',
+	'apisb-result-request-url' => 'URL permohonan:',
+	'apisb-result-request-post' => 'Data POST:',
 	'apisb-select-action' => 'Pilih tindakan',
 	'apisb-select-query' => 'Apa untuk ditanya?',
 	'apisb-select-value' => 'Pilih nilai',
@@ -1085,8 +1093,6 @@ Contoh: [//www.mediawiki.org/wiki/API#A_simple_example dapatkan kandungan Laman 
 	'apisb-query-prop' => 'Sifat',
 	'apisb-query-list' => 'Senarai',
 	'apisb-query-meta' => 'Maklumat meta',
-	'apisb-generic-parameters' => 'Parameter am',
-	'apisb-generator-parameters' => 'Penjana',
 	'apisb-example' => 'Contoh',
 	'apisb-examples' => 'Contoh',
 	'apisb-clear' => 'Padamkan',
@@ -1131,10 +1137,11 @@ $messages['nl'] = array(
 	'apisb-intro' => "Gebruik deze pagina om te experimenteren met de '''MediaWiki-API'''.
 Zie de [//www.mediawiki.org/wiki/API:Main_page API-documentatie] voor verdere details over het gebruik van de API. Voorbeeld: [//www.mediawiki.org/wiki/API#A_simple_example hoe de inhoud van een Hoofdpagina ophalen]. Selecteer een handeling om meer voorbeelden te zien.",
 	'apisb-api-disabled' => 'API is uitgeschakeld op deze site.',
-	'apisb-parameters' => 'Parameters',
-	'apisb-result' => 'Resultaat',
-	'apisb-request-url' => 'Verzoek-URL:',
-	'apisb-request-post' => 'POST-gegevens:',
+	'apisb-legend-result' => 'Resultaat',
+	'apisb-legend-generic-parameters' => 'Algemene parameters',
+	'apisb-legend-generator-parameters' => 'Generator',
+	'apisb-result-request-url' => 'Verzoek-URL:',
+	'apisb-result-request-post' => 'POST-gegevens:',
 	'apisb-select-action' => 'Handeling selecteren',
 	'apisb-select-query' => 'Wat is uw vraag?',
 	'apisb-select-value' => 'Selecteer waarde',
@@ -1151,8 +1158,6 @@ Zie de [//www.mediawiki.org/wiki/API:Main_page API-documentatie] voor verdere de
 	'apisb-query-prop' => 'Eigenschappen',
 	'apisb-query-list' => 'Lijsten',
 	'apisb-query-meta' => 'Metaigegevens',
-	'apisb-generic-parameters' => 'Algemene parameters',
-	'apisb-generator-parameters' => 'Generator',
 	'apisb-example' => 'Voorbeeld',
 	'apisb-examples' => 'Voorbeelden',
 	'apisb-clear' => 'Leegmaken',
@@ -1168,10 +1173,11 @@ $messages['or'] = array(
 	'apisandbox' => 'API ପରଖଘର',
 	'apisb-no-js' => "'''ଭୁଲ''': ଏହି ସୁବିଧା ପାଇଁ JavaScript ଲୋଡ଼ା ।",
 	'apisb-api-disabled' => 'API ଟି ଏହି ସାଇଟରେ ଅଚଳ କରାଯାଇଛି ।',
-	'apisb-parameters' => 'ମୂଲ୍ୟଙ୍କ',
-	'apisb-result' => 'ପରିଣାମ',
-	'apisb-request-url' => 'URL ଅନୁରୋଧ କରିବେ:',
-	'apisb-request-post' => 'POST ତଥ୍ୟ:',
+	'apisb-legend-result' => 'ପରିଣାମ',
+	'apisb-legend-generic-parameters' => 'ସାଧାରଣ ମୂଲ୍ୟାଙ୍କ',
+	'apisb-legend-generator-parameters' => 'ଉତ୍ପାଦକ',
+	'apisb-result-request-url' => 'URL ଅନୁରୋଧ କରିବେ:',
+	'apisb-result-request-post' => 'POST ତଥ୍ୟ:',
 	'apisb-select-action' => 'କାମ ବାଛିବେ',
 	'apisb-select-query' => 'ପ୍ରଶ୍ନଟି କଣ?',
 	'apisb-select-value' => 'ମୂଲ୍ୟ ବାଛିବେ',
@@ -1184,8 +1190,6 @@ $messages['or'] = array(
 	'apisb-query-prop' => 'ସଜାଣି',
 	'apisb-query-list' => 'ତାଲିକା',
 	'apisb-query-meta' => 'ମେଟା ତଥ୍ୟ',
-	'apisb-generic-parameters' => 'ସାଧାରଣ ମୂଲ୍ୟାଙ୍କ',
-	'apisb-generator-parameters' => 'ଉତ୍ପାଦକ',
 );
 
 /** Deitsch (Deitsch)
@@ -1208,10 +1212,11 @@ $messages['pl'] = array(
 	'apisb-intro' => "Użyj tej strony do eksperymentowania z '''MediaWiki API'''.
 Więcej szczegółów na temat użycia interfejsu API można znaleźć w [//www.mediawiki.org/wiki/API:Main_page API dokumentacji].",
 	'apisb-api-disabled' => 'API jest wyłączone na tej stronie.',
-	'apisb-parameters' => 'Parametry',
-	'apisb-result' => 'Rezultat',
-	'apisb-request-url' => 'Żądanie URL:',
-	'apisb-request-post' => 'Dane POST:',
+	'apisb-legend-result' => 'Rezultat',
+	'apisb-legend-generic-parameters' => 'Parametry podstawowe',
+	'apisb-legend-generator-parameters' => 'Generator',
+	'apisb-result-request-url' => 'Żądanie URL:',
+	'apisb-result-request-post' => 'Dane POST:',
 	'apisb-select-action' => 'Wybierz działanie',
 	'apisb-select-query' => 'Podaj zapytanie?',
 	'apisb-select-value' => 'Wybierz wartość',
@@ -1224,8 +1229,6 @@ Więcej szczegółów na temat użycia interfejsu API można znaleźć w [//www.
 	'apisb-query-prop' => 'Właściwości',
 	'apisb-query-list' => 'Listy',
 	'apisb-query-meta' => 'Matainformacje',
-	'apisb-generic-parameters' => 'Parametry podstawowe',
-	'apisb-generator-parameters' => 'Generator',
 );
 
 /** Piedmontese (Piemontèis)
@@ -1239,10 +1242,11 @@ $messages['pms'] = array(
 	'apisb-intro' => "Ch'a deuvra sta pàgina për sperimenté con '''MediaWiki API'''.
 Ch'a fasa riferiment a [//www.mediawiki.org/wiki/API:Main_page la documentassion ëd l'API] për d'àutri detaj an sl'utilisassion ëd l'API.",
 	'apisb-api-disabled' => "API a l'é disabilità ansima a 's sit.",
-	'apisb-parameters' => 'Paràmetr',
-	'apisb-result' => 'Arzultà',
-	'apisb-request-url' => "Anliura d'arcesta:",
-	'apisb-request-post' => 'Dat ëd POST:',
+	'apisb-legend-result' => 'Arzultà',
+	'apisb-legend-generic-parameters' => 'Paràmetr genérich',
+	'apisb-legend-generator-parameters' => 'Generator',
+	'apisb-result-request-url' => "Anliura d'arcesta:",
+	'apisb-result-request-post' => 'Dat ëd POST:',
 	'apisb-select-action' => "Selessioné n'assion",
 	'apisb-select-query' => "Lòn ch'a-i é da ciamé?",
 	'apisb-select-value' => 'Selessioné ël valor',
@@ -1255,16 +1259,14 @@ Ch'a fasa riferiment a [//www.mediawiki.org/wiki/API:Main_page la documentassion
 	'apisb-query-prop' => 'Proprietà',
 	'apisb-query-list' => 'Liste',
 	'apisb-query-meta' => 'Meta-anformassion',
-	'apisb-generic-parameters' => 'Paràmetr genérich',
-	'apisb-generator-parameters' => 'Generator',
 );
 
 /** Pashto (پښتو)
  * @author Ahmed-Najib-Biabani-Ibrahimkhel
  */
 $messages['ps'] = array(
-	'apisb-result' => 'پايله',
-	'apisb-request-url' => 'د URL غوښتنه کول:',
+	'apisb-legend-result' => 'پايله',
+	'apisb-result-request-url' => 'د URL غوښتنه کول:',
 	'apisb-select-action' => 'چاره ټاکل',
 	'apisb-select-value' => 'ارزښت ټاکل',
 	'apisb-loading' => 'د برسېرېدلو په حال کې...',
@@ -1284,10 +1286,9 @@ $messages['pt'] = array(
 	'apisb-intro' => "Use esta página para fazer experiências com a '''API do MediaWiki'''.
 Consulte a [//www.mediawiki.org/wiki/API:Main_page documentação da API] para informações sobre o uso da API.",
 	'apisb-api-disabled' => 'A API está desactivada neste site.',
-	'apisb-parameters' => 'Parâmetros',
-	'apisb-result' => 'Resultado',
-	'apisb-request-url' => 'URL do pedido:',
-	'apisb-request-post' => 'Dados POST:',
+	'apisb-legend-result' => 'Resultado',
+	'apisb-result-request-url' => 'URL do pedido:',
+	'apisb-result-request-post' => 'Dados POST:',
 	'apisb-select-action' => 'Seleccionar acção',
 	'apisb-select-query' => 'O que pretende consultar?',
 	'apisb-select-value' => 'Seleccionar o valor',
@@ -1313,10 +1314,11 @@ $messages['pt-br'] = array(
 	'apisb-intro' => "Use esta página para experimentar com '''API MediaWiki'''.
 Consulte [//www.mediawiki.org/wiki/API:Main_page the API documentation] para obter mais detalhes de uso da API.",
 	'apisb-api-disabled' => 'A API está desabilitada neste site.',
-	'apisb-parameters' => 'Parâmetros',
-	'apisb-result' => 'Resultado',
-	'apisb-request-url' => 'URL solicitante:',
-	'apisb-request-post' => 'Dados POST:',
+	'apisb-legend-result' => 'Resultado',
+	'apisb-legend-generic-parameters' => 'Parâmetros genéricos',
+	'apisb-legend-generator-parameters' => 'Gerador',
+	'apisb-result-request-url' => 'URL solicitante:',
+	'apisb-result-request-post' => 'Dados POST:',
 	'apisb-select-action' => 'Selecione a ação',
 	'apisb-select-query' => 'Qual é a consulta?',
 	'apisb-select-value' => 'Selecione o valor',
@@ -1329,18 +1331,17 @@ Consulte [//www.mediawiki.org/wiki/API:Main_page the API documentation] para obt
 	'apisb-query-prop' => 'Propriedades',
 	'apisb-query-list' => 'Listas',
 	'apisb-query-meta' => 'Meta informação',
-	'apisb-generic-parameters' => 'Parâmetros genéricos',
-	'apisb-generator-parameters' => 'Gerador',
 );
 
 /** Romanian (Română)
  * @author Firilacroco
  */
 $messages['ro'] = array(
-	'apisb-parameters' => 'Parametrii',
-	'apisb-result' => 'Rezultat',
-	'apisb-request-url' => 'URL cerere:',
-	'apisb-request-post' => 'Date POST:',
+	'apisb-legend-result' => 'Rezultat',
+	'apisb-legend-generic-parameters' => 'Parametrii generici',
+	'apisb-legend-generator-parameters' => 'Generator',
+	'apisb-result-request-url' => 'URL cerere:',
+	'apisb-result-request-post' => 'Date POST:',
 	'apisb-select-action' => 'Alegeți o acțiune',
 	'apisb-select-query' => 'Ce trebuie interogat?',
 	'apisb-select-value' => 'Selectați valoarea',
@@ -1353,8 +1354,6 @@ $messages['ro'] = array(
 	'apisb-query-prop' => 'Proprietăți',
 	'apisb-query-list' => 'Liste',
 	'apisb-query-meta' => 'Meta-informații',
-	'apisb-generic-parameters' => 'Parametrii generici',
-	'apisb-generator-parameters' => 'Generator',
 );
 
 /** Tarandíne (Tarandíne)
@@ -1364,10 +1363,11 @@ $messages['roa-tara'] = array(
 	'apisb-desc' => "Permette de verificà le chiamate de [//www.mediawiki.org/wiki/API MediaWiki API] da 'u browser",
 	'apisandbox' => "Sandbox de l'API",
 	'apisb-no-js' => "'''Errore''': sta funzionalità vole 'u JavaScript.",
-	'apisb-parameters' => 'Parametre',
-	'apisb-result' => 'Resultate',
-	'apisb-request-url' => 'URL richieste:',
-	'apisb-request-post' => "POST d'u date:",
+	'apisb-legend-result' => 'Resultate',
+	'apisb-legend-generic-parameters' => 'Parametre generiche',
+	'apisb-legend-generator-parameters' => 'Generatore',
+	'apisb-result-request-url' => 'URL richieste:',
+	'apisb-result-request-post' => "POST d'u date:",
 	'apisb-select-action' => "Scacchie l'azione",
 	'apisb-select-query' => "Ce ha 'nderrogà?",
 	'apisb-select-value' => "Scacchie 'nu valore",
@@ -1380,12 +1380,11 @@ $messages['roa-tara'] = array(
 	'apisb-query-prop' => 'probbietà',
 	'apisb-query-list' => 'Elenghe',
 	'apisb-query-meta' => "'Mbormaziune sus a le Meta",
-	'apisb-generic-parameters' => 'Parametre generiche',
-	'apisb-generator-parameters' => 'Generatore',
 );
 
 /** Russian (Русский)
  * @author DCamer
+ * @author Eleferen
  * @author KorneySan
  * @author Александр Сигачёв
  */
@@ -1396,13 +1395,17 @@ $messages['ru'] = array(
 	'apisb-intro' => "Используйте эту страницу для экспериментов с '''MediaWiki API'''.
 Обратитесь к [//www.mediawiki.org/wiki/API:Main_page документации API] для получения дополнительной информации об использовании API.",
 	'apisb-api-disabled' => 'API отключен на этом сайте.',
-	'apisb-parameters' => 'Параметры',
-	'apisb-result' => 'Результат',
-	'apisb-request-url' => 'URL-адрес запроса:',
-	'apisb-request-post' => 'POST данные:',
+	'apisb-legend-result' => 'Результат',
+	'apisb-legend-generic-parameters' => 'Общие параметры',
+	'apisb-legend-generator-parameters' => 'Генератор',
+	'apisb-result-request-url' => 'URL-адрес запроса:',
+	'apisb-result-request-post' => 'POST данные:',
 	'apisb-select-action' => 'Выберите действие',
 	'apisb-select-query' => 'Что запросить?',
 	'apisb-select-value' => 'Выберите значение',
+	'apisb-docs-more' => 'подробнее',
+	'apisb-params-param' => 'Параметр',
+	'apisb-params-desc' => 'Описание',
 	'apisb-loading' => 'Загрузка…',
 	'apisb-load-error' => 'Ошибка при загрузке описания API',
 	'apisb-request-error' => 'Ошибка выполнения запроса API',
@@ -1412,8 +1415,8 @@ $messages['ru'] = array(
 	'apisb-query-prop' => 'Свойства',
 	'apisb-query-list' => 'Списки',
 	'apisb-query-meta' => 'Мета-информация',
-	'apisb-generic-parameters' => 'Общие параметры',
-	'apisb-generator-parameters' => 'Генератор',
+	'apisb-example' => 'Пример',
+	'apisb-examples' => 'Примеры',
 );
 
 /** Sanskrit (संस्कृतम्)
@@ -1442,10 +1445,11 @@ $messages['si'] = array(
 	'apisb-intro' => "'''මාධ්‍යවිකි API''' සමඟ අත්හදා බැලීම සඳහා මෙම පිටුව භාවිතා කරන්න.
 	API භාවිතය පිලිබඳ වැඩිදුර විස්තර සඳහා  [//www.mediawiki.org/wiki/API:Main_page API ප්‍රලේඛනය] හී ඉල්ලීමක් කරන්න.",
 	'apisb-api-disabled' => 'මෙම අඩවියෙහි API අක්‍රීය කොට ඇත.',
-	'apisb-parameters' => 'පරාමිතීන්',
-	'apisb-result' => 'ප්‍රතිඵලය',
-	'apisb-request-url' => 'URL ලිපිනය අයදින්න:',
-	'apisb-request-post' => 'POST දත්ත:',
+	'apisb-legend-result' => 'ප්‍රතිඵලය',
+	'apisb-legend-generic-parameters' => 'ප්‍රජාතීය පරාමිතීන්',
+	'apisb-legend-generator-parameters' => 'උත්පාදකය',
+	'apisb-result-request-url' => 'URL ලිපිනය අයදින්න:',
+	'apisb-result-request-post' => 'POST දත්ත:',
 	'apisb-select-action' => 'කාර්ය තෝරන්න',
 	'apisb-select-query' => 'ප්‍රශ්නය කුමක්ද?',
 	'apisb-select-value' => 'අගය තෝරන්න',
@@ -1458,8 +1462,6 @@ $messages['si'] = array(
 	'apisb-query-prop' => 'ගුණ',
 	'apisb-query-list' => 'ලැයිස්තු',
 	'apisb-query-meta' => 'මෙටා තොරතුරු',
-	'apisb-generic-parameters' => 'ප්‍රජාතීය පරාමිතීන්',
-	'apisb-generator-parameters' => 'උත්පාදකය',
 );
 
 /** Slovak (Slovenčina)
@@ -1467,10 +1469,9 @@ $messages['si'] = array(
  */
 $messages['sk'] = array(
 	'apisandbox' => 'API pieskovisko',
-	'apisb-parameters' => 'Parametre',
-	'apisb-result' => 'Výsledok',
-	'apisb-request-url' => 'URL požiadavky:',
-	'apisb-request-post' => 'Údaje POST:',
+	'apisb-legend-result' => 'Výsledok',
+	'apisb-result-request-url' => 'URL požiadavky:',
+	'apisb-result-request-post' => 'Údaje POST:',
 	'apisb-select-action' => 'Vyberte operáciu',
 	'apisb-select-query' => 'Požiadavku na čo?',
 	'apisb-select-value' => 'Vyberte hodnotu',
@@ -1492,10 +1493,11 @@ $messages['sl'] = array(
 	'apisb-intro' => "Uporabite to stran za preizkušanje '''API spletnih storitev MediaWiki'''.
 	Oglejte si [//www.mediawiki.org/wiki/API:Main_page dokumentacijo API] za nadaljnje podrobnosti o uporabi API.  Primer: [//www.mediawiki.org/wiki/API#A_simple_example pridobi vsebino Glavne strani].  Izberite dejanje, da si ogledate več primerov.",
 	'apisb-api-disabled' => 'API je onemogočen na tej spletni strani.',
-	'apisb-parameters' => 'Parametri',
-	'apisb-result' => 'Rezultat',
-	'apisb-request-url' => 'URL zahteve:',
-	'apisb-request-post' => 'Podatki POST:',
+	'apisb-legend-result' => 'Rezultat',
+	'apisb-legend-generic-parameters' => 'Generični parametri',
+	'apisb-legend-generator-parameters' => 'Generator',
+	'apisb-result-request-url' => 'URL zahteve:',
+	'apisb-result-request-post' => 'Podatki POST:',
 	'apisb-select-action' => 'Izberite dejanje',
 	'apisb-select-query' => 'Kaj naj poizvem?',
 	'apisb-select-value' => 'Izberite vrednost',
@@ -1508,22 +1510,21 @@ $messages['sl'] = array(
 	'apisb-query-prop' => 'Lastnosti',
 	'apisb-query-list' => 'Seznami',
 	'apisb-query-meta' => 'Metapodatki',
-	'apisb-generic-parameters' => 'Generični parametri',
-	'apisb-generator-parameters' => 'Generator',
 	'apisb-example' => 'Primer',
 	'apisb-examples' => 'Primeri',
 	'apisb-clear' => 'Počisti',
 );
 
-/** Serbian (Cyrillic script) (Српски (ћирилица))
+/** Serbian (Cyrillic script) (‪Српски (ћирилица)‬)
  * @author Rancher
  */
 $messages['sr-ec'] = array(
 	'apisb-api-disabled' => 'АПИ је онемогућен на овом сајту.',
-	'apisb-parameters' => 'Параметри',
-	'apisb-result' => 'Резултат',
-	'apisb-request-url' => 'Адреса захтева:',
-	'apisb-request-post' => 'POST подаци:',
+	'apisb-legend-result' => 'Резултат',
+	'apisb-legend-generic-parameters' => 'Општи параметри',
+	'apisb-legend-generator-parameters' => 'Стварач',
+	'apisb-result-request-url' => 'Адреса захтева:',
+	'apisb-result-request-post' => 'POST подаци:',
 	'apisb-select-action' => 'Изаберите радњу',
 	'apisb-select-query' => 'Шта да претражим?',
 	'apisb-select-value' => 'Изаберите вредност',
@@ -1536,8 +1537,6 @@ $messages['sr-ec'] = array(
 	'apisb-query-prop' => 'Својства',
 	'apisb-query-list' => 'Спискови',
 	'apisb-query-meta' => 'Метаподаци',
-	'apisb-generic-parameters' => 'Општи параметри',
-	'apisb-generator-parameters' => 'Стварач',
 );
 
 /** Swedish (Svenska)
@@ -1550,10 +1549,10 @@ $messages['sv'] = array(
 	'apisb-intro' => "Använd denna sida för att experimentera med '''MediaWiki API'''.
 Kolla på [//www.mediawiki.org/wiki/API:Main_page API-dokumentationen] för fler detaljer om API-användning.",
 	'apisb-api-disabled' => 'API är inaktiverat på denna webbplats.',
-	'apisb-parameters' => 'Parametrar',
-	'apisb-result' => 'Resultat',
-	'apisb-request-url' => 'Begär URL:',
-	'apisb-request-post' => 'POST-data:',
+	'apisb-legend-result' => 'Resultat',
+	'apisb-legend-generator-parameters' => 'Generator',
+	'apisb-result-request-url' => 'Begär URL:',
+	'apisb-result-request-post' => 'POST-data:',
 	'apisb-select-action' => 'Välj handling',
 	'apisb-select-query' => 'Vad ska begäras?',
 	'apisb-select-value' => 'Välj värde',
@@ -1566,7 +1565,6 @@ Kolla på [//www.mediawiki.org/wiki/API:Main_page API-dokumentationen] för fler
 	'apisb-query-prop' => 'Egenskaper',
 	'apisb-query-list' => 'Listor',
 	'apisb-query-meta' => 'Metainformation',
-	'apisb-generator-parameters' => 'Generator',
 );
 
 /** Tamil (தமிழ்)
@@ -1607,10 +1605,9 @@ $messages['tl'] = array(
 	'apisb-intro' => "Gamitin ang pahinang ito upang mag-eksperimento sa pamamagitan ng '''API ng MediaWiki'''.
 Sumangguni sa [//www.mediawiki.org/wiki/API:Main_page dokumentasyon ng API] para sa karagdagan pang mga detalye sa paggamit ng API.",
 	'apisb-api-disabled' => 'Hindi pinagagana ang API sa sityong ito.',
-	'apisb-parameters' => 'Mga parametro',
-	'apisb-result' => 'Kinalabasan',
-	'apisb-request-url' => 'Hilingin ang URL:',
-	'apisb-request-post' => 'Dato ng POST:',
+	'apisb-legend-result' => 'Kinalabasan',
+	'apisb-result-request-url' => 'Hilingin ang URL:',
+	'apisb-result-request-post' => 'Dato ng POST:',
 	'apisb-select-action' => 'Piliin ang kilos',
 	'apisb-select-query' => 'Ano ang itatanong?',
 	'apisb-select-value' => 'Piliin ang halaga',
@@ -1648,10 +1645,11 @@ $messages['uk'] = array(
 	'apisb-intro' => "Ця сторінка служить для експериментування з '''MediaWiki API'''.
 Звертайтеся до [//www.mediawiki.org/wiki/API:Main_page документації] для докладнішої інформації про використання API.",
 	'apisb-api-disabled' => 'API вимкнуто на цьому сайті.',
-	'apisb-parameters' => 'Параметри',
-	'apisb-result' => 'Результат',
-	'apisb-request-url' => 'URL-адреса запиту:',
-	'apisb-request-post' => 'POST данні:',
+	'apisb-legend-result' => 'Результат',
+	'apisb-legend-generic-parameters' => 'Загальні параметри',
+	'apisb-legend-generator-parameters' => 'Генератор',
+	'apisb-result-request-url' => 'URL-адреса запиту:',
+	'apisb-result-request-post' => 'POST данні:',
 	'apisb-select-action' => 'Виберіть дію',
 	'apisb-select-query' => 'Що запитати?',
 	'apisb-select-value' => 'Оберіть значення',
@@ -1664,8 +1662,6 @@ $messages['uk'] = array(
 	'apisb-query-prop' => 'Властивості',
 	'apisb-query-list' => 'Списки',
 	'apisb-query-meta' => 'Мета-інформація',
-	'apisb-generic-parameters' => 'Загальні параметри',
-	'apisb-generator-parameters' => 'Генератор',
 );
 
 /** Veps (Vepsän kel')
@@ -1689,10 +1685,11 @@ $messages['vi'] = array(
 	'apisb-intro' => "Trang này dùng để thử nghiệm với '''API dịch vụ Web của MediaWiki'''.
 	Hãy tra cứu [//www.mediawiki.org/wiki/API:Main_page tài liệu API] để biết chi tiết về cách sử dụng API. Ví dụ: [//www.mediawiki.org/wiki/API#A_simple_example lấy nội dung của Trang Chính]. Chọn một tác vụ để xem thêm ví dụ.",
 	'apisb-api-disabled' => 'API đã bị vô hiệu hóa trên trang web này.',
-	'apisb-parameters' => 'Các tham số',
-	'apisb-result' => 'Kết quả',
-	'apisb-request-url' => 'URL của yêu cầu:',
-	'apisb-request-post' => 'Dữ liệu POST:',
+	'apisb-legend-result' => 'Kết quả',
+	'apisb-legend-generic-parameters' => 'Tham số chung',
+	'apisb-legend-generator-parameters' => 'Bộ xuất phát',
+	'apisb-result-request-url' => 'URL của yêu cầu:',
+	'apisb-result-request-post' => 'Dữ liệu POST:',
 	'apisb-select-action' => 'Chọn tác vụ',
 	'apisb-select-query' => 'Bạn muốn truy vấn gì?',
 	'apisb-select-value' => 'Chọn giá trị',
@@ -1705,8 +1702,6 @@ $messages['vi'] = array(
 	'apisb-query-prop' => 'Thuộc tính',
 	'apisb-query-list' => 'Danh sách',
 	'apisb-query-meta' => 'Siêu thông tin',
-	'apisb-generic-parameters' => 'Tham số chung',
-	'apisb-generator-parameters' => 'Bộ xuất phát',
 	'apisb-example' => 'Ví dụ',
 	'apisb-examples' => 'Ví dụ',
 );
@@ -1721,7 +1716,7 @@ $messages['yi'] = array(
 	'apisb-query-list' => 'ליסטעס',
 );
 
-/** Simplified Chinese (中文(简体))
+/** Simplified Chinese (‪中文(简体)‬)
  * @author Anakmalaysia
  * @author Hydra
  * @author Hzy980512
@@ -1738,10 +1733,11 @@ $messages['zh-hans'] = array(
 欲知API使用详情，请参阅[//www.mediawiki.org/wiki/API:Main_page API文档]。
 例如：[//www.mediawiki.org/wiki/API#A_simple_example 取得某个主页的内容]，然后选择一个操作来看更多范例。',
 	'apisb-api-disabled' => '此站点上禁用了API。',
-	'apisb-parameters' => '参数',
-	'apisb-result' => '结果',
-	'apisb-request-url' => '请求的URL：',
-	'apisb-request-post' => 'POST数据：',
+	'apisb-legend-result' => '结果',
+	'apisb-legend-generic-parameters' => '通用参数',
+	'apisb-legend-generator-parameters' => '生成器',
+	'apisb-result-request-url' => '请求的URL：',
+	'apisb-result-request-post' => 'POST数据：',
 	'apisb-select-action' => '选择操作',
 	'apisb-select-query' => '如何查询？',
 	'apisb-select-value' => '选择值',
@@ -1758,14 +1754,12 @@ $messages['zh-hans'] = array(
 	'apisb-query-prop' => '属性',
 	'apisb-query-list' => '列表',
 	'apisb-query-meta' => 'Meta 信息',
-	'apisb-generic-parameters' => '通用参数',
-	'apisb-generator-parameters' => '生成器',
 	'apisb-example' => '示例',
 	'apisb-examples' => '示例',
 	'apisb-clear' => '清除',
 );
 
-/** Traditional Chinese (中文(繁體))
+/** Traditional Chinese (‪中文(繁體)‬)
  * @author Anakmalaysia
  * @author Liangent
  */
@@ -1777,10 +1771,11 @@ $messages['zh-hant'] = array(
 欲知API使用詳情，請參閱[//www.mediawiki.org/wiki/API:Main_page API文檔]。
 例如：[//www.mediawiki.org/wiki/API#A_simple_example 取得某個主頁的內容]，然後選擇一個操作來看更多範例。',
 	'apisb-api-disabled' => '此站點上禁用了API。',
-	'apisb-parameters' => '參數',
-	'apisb-result' => '結果',
-	'apisb-request-url' => '請求的 URL：',
-	'apisb-request-post' => 'POST數據：',
+	'apisb-legend-result' => '結果',
+	'apisb-legend-generic-parameters' => '通用參數',
+	'apisb-legend-generator-parameters' => '生成器',
+	'apisb-result-request-url' => '請求的 URL：',
+	'apisb-result-request-post' => 'POST數據：',
 	'apisb-select-action' => '選擇操作',
 	'apisb-select-query' => '查詢又如何？',
 	'apisb-select-value' => '選擇值',
@@ -1797,8 +1792,6 @@ $messages['zh-hant'] = array(
 	'apisb-query-prop' => '屬性',
 	'apisb-query-list' => '列表',
 	'apisb-query-meta' => 'Meta 信息',
-	'apisb-generic-parameters' => '通用參數',
-	'apisb-generator-parameters' => '生成器',
 	'apisb-example' => '示例',
 	'apisb-examples' => '示例',
 	'apisb-clear' => '清除',
