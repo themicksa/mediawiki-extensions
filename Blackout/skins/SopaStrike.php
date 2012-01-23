@@ -12,28 +12,28 @@ class SopaStrikeTemplate extends QuickTemplate {
 	 * to show the actual HTML output
 	 */
 	public function execute() {
-		$title = wfMsg( 'blackout-sopastrike-title' );
-		$ogdesc = wfMsg( 'blackout-sopastrike-ogdesc' );
-		$message1 = wfMsg( 'blackout-sopastrike-message1' );
-		$message2 = wfMsg( 'blackout-sopastrike-message2' );
-		$message3 = wfMsg( 'blackout-sopastrike-message3' );
-		$name = wfMsg( 'allmessagesname' );
-		$email = wfMsg( 'email' );
-		$address = wfMsg( 'blackout-sopastrike-address' );
-		$zipcode = wfMsg( 'blackout-sopastrike-zipcode' );
-		$action = wfMsg( 'blackout-sopastrike-action' );
-		$actionmsg1 = wfMsg( 'blackout-sopastrike-actionmsg1' );
-		$actionmsg2 = wfMsg( 'blackout-sopastrike-actionmsg2' );
-		$join = wfMsg( 'blackout-sopastrike-join' );
-		$add = wfMsg( 'blackout-sopastrike-add' );
-		$learn = wfMsg( 'blackout-sopastrike-learn' );
-		$video = wfMsg( 'blackout-sopastrike-video' );
+		$title = wfMsg( 'blackout-sopastrike-title', escape );
+		$ogdesc = wfMsg( 'blackout-sopastrike-ogdesc', escape );
+		$message1 = wfMsg( 'blackout-sopastrike-message1', escape );
+		$message2 = wfMsg( 'blackout-sopastrike-message2', escape );
+		$message3 = wfMsg( 'blackout-sopastrike-message3', escape );
+		$name = wfMsg( 'allmessagesname', escape );
+		$email = wfMsg( 'email', escape );
+		$address = wfMsg( 'blackout-sopastrike-address', escape );
+		$zipcode = wfMsg( 'blackout-sopastrike-zipcode', escape );
+		$action = wfMsg( 'blackout-sopastrike-action', escape );
+		$actionmsg1 = wfMsg( 'blackout-sopastrike-actionmsg1', escape );
+		$actionmsg2 = wfMsg( 'blackout-sopastrike-actionmsg2', escape );
+		$join = wfMsg( 'blackout-sopastrike-join', escape );
+		$add = wfMsg( 'blackout-sopastrike-add', escape );
+		$learn = wfMsg( 'blackout-sopastrike-learn', escape );
+		$video = wfMsg( 'blackout-sopastrike-video', escape );
 		$orgpage = wfMsg( 'blackout-sopastrike-orgpage' );
-		$infographic = wfMsg( 'blackout-sopastrike-infographic' );
-		$ocsopa = wfMsg( 'blackout-sopastrike-ocsopa' );
-		$ocpipa = wfMsg( 'blackout-sopastrike-ocpipa' );
-		$disclaimer = wfMsg( 'blackout-sopastrike-disclaimer' );
-		$privacy = wfMsg( 'blackout-sopastrike-privacy' );
+		$infographic = wfMsg( 'blackout-sopastrike-infographic', escape );
+		$ocsopa = wfMsg( 'blackout-sopastrike-ocsopa', escape );
+		$ocpipa = wfMsg( 'blackout-sopastrike-ocpipa', escape );
+		$disclaimer = wfMsg( 'blackout-sopastrike-disclaimer', escape );
+		$privacy = wfMsg( 'blackout-sopastrike-privacy', escape );
 		?>
 
 	<!DOCTYPE html>
