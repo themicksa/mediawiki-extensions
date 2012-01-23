@@ -458,18 +458,21 @@
 			// 52px in known margins, 58px seems to be a necessary
 			// fudge factor, plus 30px so the close button doesn't collide
 			// with the rounded corners
-			var newWidth = mb.ui.overlay
-					.find('.mw-moodBar-types')
-					.width() + 140;
-			var titleWidth = mb.ui.overlay
-					.find('.mw-moodBar-overlayTitle span')
-					.width() + 100;
-			
-			if ( newWidth < titleWidth ) {
-				newWidth = titleWidth;
+			// Check for ie7 before applying fix. Was breaking in chrome.
+			if( navigator.userAgent.toLowerCase().indexOf('msie 7') !== -1 ) {
+				var newWidth = mb.ui.overlay
+						.find('.mw-moodBar-types')
+						.width() + 140;
+				var titleWidth = mb.ui.overlay
+						.find('.mw-moodBar-overlayTitle span')
+						.width() + 100;
+				
+				if ( newWidth < titleWidth ) {
+					newWidth = titleWidth;
+				}
+				mb.ui.overlay.width(newWidth);
 			}
-			
-			mb.ui.overlay.width(newWidth);
+
 			mb.ui.overlay.hide();
 			
 			// Bind triger
