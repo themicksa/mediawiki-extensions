@@ -116,7 +116,7 @@ $.narayam = new ( function() {
 		return e.altKey == shortcutKey.altKey &&
 			e.ctrlKey == shortcutKey.ctrlKey &&
 			e.shiftKey == shortcutKey.shiftKey &&
-			String.fromCharCode( e.which ).toLowerCase() == shortcutKey.key.toLowerCase();
+			String.fromCharCode( e.which ) == shortcutKey.key;
 	}
 
 	/**
@@ -129,7 +129,7 @@ $.narayam = new ( function() {
 			ctrlKey: true,
 			shiftKey: false,
 			cmdKey: false,
-			key: 'm'
+			key: 'M'
 		};
 		// Browser sniffing to determine the available shortcutKey
 		// Refer: mediawiki.util.js and en.wikipedia.org/wiki/Access_key
@@ -139,7 +139,7 @@ $.narayam = new ( function() {
 		if ( !( profile.platform == 'win' && profile.name == 'safari' ) &&
 			 ( profile.name == 'safari'|| profile.platform == 'mac' || profile.name == 'konqueror' )
 			 && !( profile.name == 'opera' || profile.name == 'chrome' ) ) {
-			defaultShortcut.key = 'g';
+			defaultShortcut.key = 'G';
 		}
 		// For Opera in OSX, shortcut is control+command+m.
 		if ( profile.name == 'opera' && profile.platform == 'mac' ) {
