@@ -5,9 +5,9 @@
 # Copyright Evan Miller (emmiller@gmail.com)
 # Modifications copyright Joshua Hodge
 
-# Version 0.9.41, 23 Jan 2012
+# Version 0.9.42, 23 Jan 2012
 
-define('GOOGLE_MAPS_EXTENSION_VERSION', '0.9.41');
+define('GOOGLE_MAPS_EXTENSION_VERSION', '0.9.42');
 
 // if we're not in the mediawiki framework just die
 if( !defined( 'MEDIAWIKI' ) ) {
