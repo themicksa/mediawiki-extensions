@@ -30,7 +30,7 @@ class SpecialApiSandbox extends SpecialPage {
 		$out->addModules( 'ext.apiSandbox' );
 
 		$out->addHTML( '<noscript>' . wfMessage( 'apisb-no-js' )->parse() . '</noscript>
-<div id="api-sandbox-content" style="display: none">' );
+<div id="api-sandbox-content" style="display: none;">' );
 		$out->addWikiMsg( 'apisb-intro' );
 		$out->addHTML( '<form id="api-sandbox-form">'
 			. $this->openFieldset( 'parameters' )
@@ -82,9 +82,9 @@ class SpecialApiSandbox extends SpecialPage {
 			$this->getQueryModules( 'meta' )
 		);
 
-		$s = '<div id="api-sandbox-buttons"></div>';
-		$s .= '<div id="api-sandbox-examples" style="display: none;"></div>';
-		$s .= '
+		#$s = '<div id="api-sandbox-buttons"></div>';
+		#$s .= '<div id="api-sandbox-examples" style="display: none;"></div>';
+		$s = '
 <table class="api-sandbox-options">
 	<tbody>
 		<tr>
@@ -101,7 +101,9 @@ class SpecialApiSandbox extends SpecialPage {
 				</div>
 			</td>
 			<td class="api-sandbox-docs-col">
+				<div id="api-sandbox-buttons"></div>
 				<span id="api-sandbox-help"></span>
+				<div id="api-sandbox-examples" style="display: none;"></div>
 			</td>
 		</tr>
 	</tbody>

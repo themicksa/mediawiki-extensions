@@ -124,27 +124,27 @@
 			} else {
 				key = pieces[0];
 				value = decodeURIComponent( pieces.slice( 1 ).join( '=' ) );
-				if ( [ 'action', 'format', 'list', 'prop', 'meta' ].indexOf( key ) !== -1 ) {
+				if ( $.inArray( key, [ 'action', 'format', 'list', 'prop', 'meta' ] ) !== -1 ) {
 					continue;
 				}
 				$el = $( '#param-' + key );
 				if ( !$el.length ) {
 					continue;
 				}
-				switch ( $el[0].nodeName ) {
-					case 'SELECT':
+				switch ( $el[0].nodeName.toLowerCase() ) {
+					case 'select':
 						if ( $el.attr( 'multiple' ) ) {
 							splitted = value.split( '|' );
 							for ( j = 0; j < splitted.length; j++ ) {
-							$el.children( 'option[value=' + mw.html.escape( splitted[j] ) + ']' )
+							$el.children( 'option[value="' + mw.html.escape( splitted[j] ) + '"]' )
 								.prop( 'selected', true );
 							}
 						} else {
-							$el.children( 'option[value=' + mw.html.escape( value ) + ']' )
+							$el.children( 'option[value="' + mw.html.escape( value ) + '"]' )
 								.prop( 'selected', true );
 						}
 						break;
-					case 'INPUT':
+					case 'input':
 						if ( $el.attr( 'type' ) === 'checkbox' ) {
 							$( '#param-' + key ).prop( 'checked', true );
 						} else {
@@ -508,6 +508,7 @@
 		$pageScroll = $( getScrollableElement( 'body', 'html' ) );
 		$form = $( '#api-sandbox-form' );
 		$submit = $( '<button>' )
+			.attr( 'type', 'submit' )
 			.text( mw.msg( 'apisb-submit' ) )
 			.appendTo( $buttonsContainer );
 		$submit = $submit.clone( /*dataAndEvents=*/true, /*deep=*/true )
@@ -521,6 +522,7 @@
 			.button({ disabled: true });
 
 		$examplesButton = $( '<button>' )
+			.attr( 'type', 'button' )
 			.text( mw.msg( 'apisb-examples' ) )
 			.click( function ( e ) {
 				$examplesContent.slideToggle();
@@ -530,6 +532,7 @@
 			.appendTo( $buttonsContainer );
 
 		$( '<button>' )
+			.attr( 'type', 'button' )
 			.text( mw.msg( 'apisb-clear' ) )
 			.click( function ( e ) {
 				resetUI();

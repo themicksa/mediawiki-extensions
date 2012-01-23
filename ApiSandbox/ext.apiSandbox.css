@@ -22,11 +22,12 @@
 .api-sandbox-options td,
 .api-sandbox-options th {
 	vertical-align: top;
-	width: 13em;
+	padding: 3px 5px;
+	width: 160px;
 }
 
 .api-sandbox-options select {
-	width: 12em;
+	width: 140px;
 }
 
 .api-sandbox-options .api-sandbox-docs-col {
@@ -42,25 +43,23 @@
 
 .api-sandbox-params td,
 .api-sandbox-params th {
-	padding: 5px 7px;
+	vertical-align: top;
+	padding: 5px 10px;
 }
 
 .api-sandbox-params-label {
-	vertical-align: top;
-	width: 12em;
+	width: 150px;
 	text-align: right;
 }
 
 .api-sandbox-params-value {
-	width: 20em;
-	vertical-align: top;
-	overflow: auto;
+	width: 260px;
 }
 
 .api-sandbox-params input[type="text"],
 .api-sandbox-params select {
-	padding: 2px 3px;
-	width: 18em;
+	padding: 3px 5px;
+	width: 225px;
 }
 
 th.api-sandbox-params-label,
