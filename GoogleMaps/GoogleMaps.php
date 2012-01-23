@@ -5,9 +5,9 @@
 # Copyright Evan Miller (emmiller@gmail.com)
 # Modifications copyright Joshua Hodge
 
-# Version 0.9.4, 27 Jan 2009
+# Version 0.9.41, 23 Jan 2012
 
-define('GOOGLE_MAPS_EXTENSION_VERSION', '0.9.4');
+define('GOOGLE_MAPS_EXTENSION_VERSION', '0.9.41');
 
 // if we're not in the mediawiki framework just die
 if( !defined( 'MEDIAWIKI' ) ) {
@@ -18,13 +18,13 @@ if( !defined( 'MEDIAWIKI' ) ) {
 
 // FIXME: use autoloader and other standards here
 // require the message file
-require( 'extensions/GoogleMaps/GoogleMaps.i18n.php' );
-require( 'extensions/GoogleMaps/export/GoogleMapsExporter.php' );
-require( 'extensions/GoogleMaps/export/GoogleMapsJsExporter.php' );
-require( 'extensions/GoogleMaps/export/GoogleMapsKmlExporter.php' );
-require( 'extensions/GoogleMaps/export/GoogleMapsImgExporter.php' );
-require( 'extensions/GoogleMaps/SpecialGoogleMapsKML.php' );
-require( 'extensions/GoogleMaps/GoogleMaps.body.php' );
+require( "$IP/extensions/GoogleMaps/GoogleMaps.i18n.php" );
+require( "$IP/extensions/GoogleMaps/export/GoogleMapsExporter.php" );
+require( "$IP/extensions/GoogleMaps/export/GoogleMapsJsExporter.php" );
+require( "$IP/extensions/GoogleMaps/export/GoogleMapsKmlExporter.php" );
+require( "$IP/extensions/GoogleMaps/export/GoogleMapsImgExporter.php" );
+require( "$IP/extensions/GoogleMaps/SpecialGoogleMapsKML.php" );
+require( "$IP/extensions/GoogleMaps/GoogleMaps.body.php" );
 
 function wfGoogleMaps_CommentJS(&$pParser, &$pText) {
     global $wgGoogleMaps;

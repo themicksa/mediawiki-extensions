@@ -1,6 +1,6 @@
 <?php
 
-require_once("includes/SpecialPage.php");
+require_once( "$IP/includes/SpecialPage.php" );
 
 // TODO: Captions here
 // Bugs in main renderer (oops)
