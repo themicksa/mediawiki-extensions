@@ -4,7 +4,7 @@ class Notificator {
 
 public static function notificator_Render( $parser, $receiver = '', $receiverLabel = '' ) {
 
-	global $wgScript, $wgTitle;
+	global $wgTitle;
 
 	if ( !$receiverLabel ) {
 		$receiverLabel = $receiver;

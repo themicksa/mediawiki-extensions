@@ -82,7 +82,7 @@ class SqlQueryForm {
 	}
 
 	function doSubmit() {
-		global $wgOut, $wgUser, $wgServer, $wgScript, $wgLang, $wgContLang;
+		global $wgOut, $wgUser, $wgServer, $wgLang, $wgContLang;
 		global $wgDBserver, $wgDBsqluser, $wgDBsqlpassword, $wgDBname, $wgSqlTimeout;
 		global $wgDBtype;
 
