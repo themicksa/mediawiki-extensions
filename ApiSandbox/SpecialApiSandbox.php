@@ -125,6 +125,7 @@ class SpecialApiSandbox extends SpecialPage {
 	private function getQueryModules( $type ) {
 		$options = array();
 		$params = $this->apiQuery->getAllowedParams();
+		sort( $params[$type][ApiBase::PARAM_TYPE] );
 		foreach ( $params[$type][ApiBase::PARAM_TYPE] as $module ) {
 			$options["$type=$module"] = "$type=$module";
 		}
