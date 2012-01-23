@@ -363,15 +363,15 @@
 		 */
 		setHelp: function ( $container ) {
 			var	linkHtml = '',
-				descTxt = smartEscape( this.info.description );
+				descHtml = smartEscape( this.info.description );
 			if ( this.info.helpurls && this.info.helpurls[0] ) {
-				descTxt = descTxt.replace( /^([^\r\n\.]*)/, '$1' ) + ' ';
-				linkHtml = mw.html.element( 'a', {
+				descHtml = descHtml.replace( /^([^\r\n\.]*)/, '$1' ) + ' ';
+				linkHtml = mw.msg( 'parentheses', mw.html.element( 'a', {
 					'target': '_blank',
 					'href': this.info.helpurls[0]
-				}, mw.msg( 'apisb-docs-more' ) );
+				}, mw.msg( 'apisb-docs-more' ) ) );
 			}
-			$container.text( descTxt ).append( mw.msg( 'parentheses', linkHtml ) );
+			$container.html( descHtml ).append( linkHtml );
 		},
 
 		input: function ( param, name ) {
