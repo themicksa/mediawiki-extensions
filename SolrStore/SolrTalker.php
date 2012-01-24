@@ -1,4 +1,5 @@
 <?php
+
 /**
  * File holding the SolrTalker class
  *
@@ -85,12 +86,10 @@ class SolrTalker {
 	 */
 	public function findField( $searchField, $sort = 'ASC' ) {
 		$xml = $this->getSchema();
-		// $searchField = trim($searchField);
 		$searchField = str_replace( ' ', '_', trim( $searchField ) ); // Trim and replace all spaces with underscore for better matching
 		$result = false;
 		$stop = false;
 
-		// TODO: Decide on ASC + DESC parameter for Max or Min Sort Field
 		foreach ( $xml->lst as $item ) {
 			if ( $item['name'] == 'fields' ) {
 				foreach ( $item->lst as $field ) {
@@ -98,12 +97,14 @@ class SolrTalker {
 						$dynamicBase = substr( $field->str[2], 1 ); // Get the dynamic base of the field eg. "*_dtmax"
 						$newField = str_replace( $dynamicBase, '', $field['name'] ); // Get the field name without the dynamicbase
 						if ( strcasecmp( str_replace( ' ', '_', $newField ), $searchField ) == 0 ) { // Replace all spaces with underscore for better matching
-							$result = trim($field['name']);
+							$result = trim( $field['name'] );
 							if ( stripos( $dynamicBase, 'max' ) && stripos( $sort, 'desc' ) ) {
 								// For descending sorting use the MaX value field
-								continue 2;	// we got the right field, stop it!
+								continue 2; // we got the right field, stop it!
 							} elseif ( stripos( $dynamicBase, 'min' ) && stripos( $sort, 'asc' ) ) {
 								// For ascending sorting use the MIN value field
+								continue 2; // we got the right field, stop it!
+							} elseif ( !stripos( $dynamicBase, 'min' ) && !stripos( $dynamicBase, 'max' ) ) {
 								continue 2; // we got the right field, stop it!
 							}
 						} elseif ( strcasecmp( str_replace( ' ', '_', $field['name'] ), $searchField ) == 0 ) { // Replace all spaces with underscore for better matching
@@ -135,14 +136,13 @@ class SolrTalker {
 				if ( strpos( $value, ':' ) !== false ) { // Value conatins a  ":" ?
 					$parts = explode( ':', $value ); // Split the query part in key (parts[0]) and value (parts[1])
 					$solrField = $this->findField( $parts[0] ); // Search for a Solr field for the key
-					
 					//If we have a Wildcard Search transform Query to Lowercase for a Better Matching.
 					//Because on wildcard and fuzzy searches, no text analysis is performed on the search word
 					//and no Analyseres get used
 					if ( strpos( $parts[1], '*' ) !== false ) {
 						$parts[1] = strtolower( $parts[1] );
 					}
-					
+
 					//If we have a solrField Match add a ':' (its the Lucene equivalent of '=' )
 					if ( $solrField ) {
 						$queryStr = $queryStr . ' ' . $solrField . ':' . $parts[1];
@@ -334,71 +334,71 @@ class SolrTalker {
 				}
 				switch ( $di->getDIType() ) {
 					case 0:
-					//	  /// Data item ID that can be used to indicate that no data item class is appropriate
-					//	const TYPE_NOTYPE = 0;
+						//	  /// Data item ID that can be used to indicate that no data item class is appropriate
+						//	const TYPE_NOTYPE = 0;
 						break;
 
 					case 1:
-					//	/// Data item ID for SMWDINumber
-					//	const TYPE_NUMBER = 1;
+						//	/// Data item ID for SMWDINumber
+						//	const TYPE_NUMBER = 1;
 						$solritem->addField( $propertyName . '_i', $di->getNumber() );
 						$solritem->addSortField( $propertyName . '_i', $di->getNumber() );
 						break;
 
 					case 2:
-					//	/// Data item ID for SMWDIString
-					//	const TYPE_STRING = 2;
+						//	/// Data item ID for SMWDIString
+						//	const TYPE_STRING = 2;
 						$solritem->addField( $propertyName . '_t', $di->getString() );
 						$solritem->addSortField( $propertyName . '_t', $di->getString() );
 						break;
 
 					case 3:
-					//	///  Data item ID for SMWDIBlob
-					//	const TYPE_BLOB = 3;
+						//	///  Data item ID for SMWDIBlob
+						//	const TYPE_BLOB = 3;
 						$solritem->addField( $propertyName . '_t', $di->getString() );
 						$solritem->addSortField( $propertyName . '_t', $di->getString() );
 						break;
 
 					case 4:
-					//	///  Data item ID for SMWDIBoolean
-					//	const TYPE_BOOLEAN = 4;
+						//	///  Data item ID for SMWDIBoolean
+						//	const TYPE_BOOLEAN = 4;
 						$solritem->addField( $propertyName . '_b', $di->getBoolean() );
 						$solritem->addSortField( $propertyName . '_b', $di->getBoolean() );
 						break;
 
 					case 5:
-					//	///  Data item ID for SMWDIUri
-					//	const TYPE_URI = 5;
+						//	///  Data item ID for SMWDIUri
+						//	const TYPE_URI = 5;
 						$solritem->addField( $propertyName . '_t', $di->getURI() );
 						$solritem->addSortField( $propertyName . '_t', $di->getURI() );
 						break;
 
 					case 6:
-					//	///  Data item ID for SMWDITimePoint
-					//	const TYPE_TIME = 6;
+						//	///  Data item ID for SMWDITimePoint
+						//	const TYPE_TIME = 6;
 						$date = $di->getYear() . '-' . $di->getMonth() . '-' . $di->getDay() . 'T' . $di->getHour() . ':' . $di->getMinute() . ':' . $di->getSecond() . 'Z';
 						$solritem->addField( $propertyName . '_dt', $date );
 						$solritem->addSortField( $propertyName . '_dt', $date );
 						break;
 
 					case 7:
-					//	///  Data item ID for SMWDIGeoCoord
-					//	const TYPE_GEO = 7;
+						//	///  Data item ID for SMWDIGeoCoord
+						//	const TYPE_GEO = 7;
 						// TODO: Implement range Search in SOLR
 						$solritem->addField( $propertyName . '_lat', $di->getLatitude() );
 						$solritem->addField( $propertyName . '_lng', $di->getLongitude() );
 						break;
 
 					case 8:
-					//	///  Data item ID for SMWDIContainer
-					//	const TYPE_CONTAINER = 8
+						//	///  Data item ID for SMWDIContainer
+						//	const TYPE_CONTAINER = 8
 						// TODO: What the hell is this used for?
 						$data->getSubject()->getTitle()->getText() . ' : ';
 						break;
 
 					case 9:
-					//	///  Data item ID for SMWDIWikiPage
-					//	const TYPE_WIKIPAGE = 9;
+						//	///  Data item ID for SMWDIWikiPage
+						//	const TYPE_WIKIPAGE = 9;
 						$ns = $di->getNamespace();
 						if ( $ns == 0 ) {
 							$solritem->addField( $propertyName . '_s', $di->getTitle() );
@@ -409,20 +409,20 @@ class SolrTalker {
 						break;
 
 					case 10:
-					//	///  Data item ID for SMWDIConcept
-					//	const TYPE_CONCEPT = 10;
+						//	///  Data item ID for SMWDIConcept
+						//	const TYPE_CONCEPT = 10;
 						$data->getSubject()->getTitle()->getText() . ' : ';
 						break;
 
 					case 11:
-					//	///  Data item ID for SMWDIProperty
-					//	const TYPE_PROPERTY = 11;
+						//	///  Data item ID for SMWDIProperty
+						//	const TYPE_PROPERTY = 11;
 						$data->getSubject()->getTitle()->getText() . ' : ';
 						break;
 
 					case 12:
-					//	///  Data item ID for SMWDIError
-					//	const TYPE_ERROR = 12;
+						//	///  Data item ID for SMWDIError
+						//	const TYPE_ERROR = 12;
 						$data->getSubject()->getTitle()->getText() . ' : ';
 						break;
 					default:
