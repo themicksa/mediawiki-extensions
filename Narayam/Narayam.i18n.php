@@ -2252,6 +2252,7 @@ $messages['roa-tara'] = array(
  * @author Dim Grits
  * @author Eleferen
  * @author Eugrus
+ * @author KPu3uC B Poccuu
  * @author MaxSem
  * @author McDutchie
  * @author Александр Сигачёв
@@ -2263,6 +2264,7 @@ $messages['ru'] = array(
 	'narayam-menu-tooltip' => 'Управление редактором метода ввода нараям (IME)',
 	'narayam-help' => 'Справка',
 	'narayam-checkbox-tooltip' => 'Для включения и выключения метода ввода',
+	'narayam-enable-preference' => 'Включить метод ввода.',
 	'narayam-more-imes' => 'Другие методы ввода',
 	'narayam-am' => 'Амхарская транслитерация',
 	'narayam-as' => 'Ассамская транслитерации',

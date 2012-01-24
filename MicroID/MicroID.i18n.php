@@ -304,6 +304,14 @@ $messages['ms'] = array(
 	'tog-microid' => 'Siarkan <a href="http://microid.org/">MicroID</a> untuk mengesahkan akaun dengan perkhidmatan luar',
 );
 
+/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
+ * @author Jon Harald Søby
+ */
+$messages['nb'] = array(
+	'microid-desc' => 'Legger til [http://www.microid.org/ MicroID] på brukersider for å bekrefte kontoer med eksterne tjenester',
+	'tog-microid' => 'Publiser en <a href="http://microid.org/">MicroID</a> for å bekrefte kontoen for eksterne tjenester',
+);
+
 /** Dutch (Nederlands)
  * @author Siebrand
  */
@@ -318,14 +326,6 @@ $messages['nl'] = array(
 $messages['nn'] = array(
 	'microid-desc' => 'Legg til [http://www.microid.org/ MicroID] på brukarsider for å stadfesta kontoar med eksterne tenester',
 	'tog-microid' => 'Publiser ein <a href="http://microid.org/">MicroID</a> for å stadfesta kontoen med eksterne tenester',
-);
-
-/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
- * @author Jon Harald Søby
- */
-$messages['nb'] = array(
-	'microid-desc' => 'Legger til [http://www.microid.org/ MicroID] på brukersider for å bekrefte kontoer med eksterne tjenester',
-	'tog-microid' => 'Publiser en <a href="http://microid.org/">MicroID</a> for å bekrefte kontoen for eksterne tjenester',
 );
 
 /** Occitan (Occitan)
@@ -377,11 +377,12 @@ $messages['roa-tara'] = array(
 );
 
 /** Russian (Русский)
+ * @author KPu3uC B Poccuu
  * @author Александр Сигачёв
  */
 $messages['ru'] = array(
 	'microid-desc' => 'Добавляет [http://www.microid.org/ MicroID] на страницы участников, для подтверждения учётной записи внешними службами',
-	'tog-microid' => 'Опубликуйте <a href="http://microid.org/">MicroID</a>, чтобы подтвердить учётную запись с внешними службами',
+	'tog-microid' => 'Опубликуйте <a href="http://microid.org/">MicroID</a>, чтобы подтвердить учётную запись с внешними службами.',
 );
 
 /** Sicilian (Sicilianu)

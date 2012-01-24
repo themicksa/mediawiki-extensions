@@ -1071,10 +1071,18 @@ $messages['ja'] = array(
 	'mwe-clipedit-layout_left' => '左側の画像の配置',
 );
 
-/** Georgian (ქართული) */
+/** Georgian (ქართული)
+ * @author David1010
+ */
 $messages['ka'] = array(
 	'mwe-clipedit-sc_audio' => 'აუდიო კონტროლი',
 	'mwe-clipedit-sc_duration' => 'ხანგძლივობა',
+	'mwe-clipedit-start_time' => 'დაწყების დრო',
+	'mwe-clipedit-end_time' => 'დასრულების დრო',
+	'mwe-clipedit-edit-tools' => 'რედაქტირების ხელსაწყოები',
+	'mwe-clipedit-inline-description' => 'წარწერა',
+	'mwe-clipedit-edit-video-tools' => 'ვიდეოს რედაქტირების ხელსაწყოები:',
+	'mwe-clipedit-duration' => 'ხანგრძლივობა:',
 );
 
 /** Korean (한국어)

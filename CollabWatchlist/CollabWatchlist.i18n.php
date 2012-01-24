@@ -1216,9 +1216,15 @@ $messages['zh-hans'] = array(
 	'collabwatchlisttools-view' => '显示',
 	'collabwatchlisttools-edit' => '编辑类别',
 	'collabwatchlisttools-delete' => '删除',
+	'collabwatchlistsall' => '全部列表',
 	'collabwatchlistedit-users-raw-submit' => '保存',
 	'collabwatchlistedit-raw-titles' => '分类：',
+	'collabwatchlistedit-users-raw-titles' => '用户：',
+	'collabwatchlistedit-normal-title' => '编辑类别',
 	'collabwatchlistedit-tags-raw-submit' => '保存',
+	'collabwatchlistnew-name' => '列表名称',
+	'collabwatchlistnew-submit' => '创建',
+	'collabwatchlistedit-normal-submit' => '保存',
 );
 
 /** Traditional Chinese (‪中文(繁體)‬) */

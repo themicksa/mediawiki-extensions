@@ -1535,20 +1535,21 @@ Ce tu è trasute, tu puè disabbilità st\'avvertimende jndr\'à sezione "Cangia
 
 /** Russian (Русский)
  * @author G0rn
+ * @author KPu3uC B Poccuu
  * @author MaxSem
  * @author Александр Сигачёв
  */
 $messages['ru'] = array(
 	'vector' => 'Улучшения интерфейса для темы «Векторное»',
 	'vector-desc' => 'Улучшения пользовательского интерфейса для темы оформления «Векторное»',
-	'vector-collapsiblenav-preference' => 'Разрешить сворачивать блоки в левом меню в теме «Векторное»',
+	'vector-collapsiblenav-preference' => 'Разрешить сворачивать блоки в левом меню в теме «Векторное».',
 	'vector-collapsiblenav-more' => 'Больше языков',
 	'vector-editwarning-warning' => 'Переход на другую страницу может привести к потере сделанных вами изменений.
 Если вы зарегистрированы в системе, то вы можете отключить это предупреждение в разделе «Редактирование» ваших настроек.',
-	'vector-editwarning-preference' => 'Предупреждать, когда я покидаю страницу с несохранёнными изменениями',
+	'vector-editwarning-preference' => 'Предупреждать, когда я покидаю страницу с несохранёнными изменениями.',
 	'vector-simplesearch-search' => 'Поиск',
 	'vector-simplesearch-containing' => 'содержащие…',
-	'vector-noexperiments-preference' => 'Не предлагать экспериментальные возможности',
+	'vector-noexperiments-preference' => 'Не предлагать экспериментальные возможности.',
 );
 
 /** Rusyn (Русиньскый)

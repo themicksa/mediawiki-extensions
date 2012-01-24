@@ -950,12 +950,18 @@ $messages['ja'] = array(
 );
 
 /** Georgian (ქართული)
+ * @author David1010
  * @author Temuri rajavi
  */
 $messages['ka'] = array(
 	'amazonplus-german' => 'გერმანული',
 	'amazonplus-french' => 'ფრანგული',
 	'amazonplus-japanese' => 'იაპონური',
+	'amazonplus-amazon' => 'ამაზონის ფასი',
+	'amazonplus-new' => 'ახალი',
+	'amazonplus-cp-none' => 'არა',
+	'amazonplus-more' => 'მეტი',
+	'amazonplus-less' => 'ნაკლები',
 );
 
 /** Khmer (ភាសាខ្មែរ)

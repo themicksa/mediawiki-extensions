@@ -3886,11 +3886,16 @@ Vèrsi sing luwih anyar $2 iku wis ana ing http://pecl.php.net/package/APC/$2',
 );
 
 /** Georgian (ქართული)
+ * @author David1010
  * @author Malafaya
  * @author Temuri rajavi
  */
 $messages['ka'] = array(
+	'viewapc-start-time' => 'დაწყების დრო',
 	'viewapc-cached-files-d' => '$1 ფაილი ($2)',
+	'viewapc-display-filename' => 'ფაილის სახელი',
+	'viewapc-display-info' => 'სახელი',
+	'viewapc-display-type' => 'ტიპი',
 	'viewapc-ls-sort-size' => 'ზომა',
 	'viewapc-ls-sort-name' => 'სახელი',
 );

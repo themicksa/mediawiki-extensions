@@ -1772,6 +1772,7 @@ Jidde spanne pure le funziune de analise cumme<br />
 
 /** Russian (Русский)
  * @author AlexSm
+ * @author KPu3uC B Poccuu
  * @author Александр Сигачёв
  */
 $messages['ru'] = array(
@@ -1779,8 +1780,8 @@ $messages['ru'] = array(
 	'expandtemplates-desc' => 'Раскрывает шаблоны, функции парсера и переменные, чтобы показать развёрнутый вики-текст и просмотреть отрисованную страницу',
 	'expand_templates_intro' => 'Эта служебная страница преобразует текст, рекурсивно разворачивая все шаблоны в нём.
 Также развёртке подвергаются функции парсера
-<nowiki>{{</nowiki>#if:…}} и переменные
-<nowiki>{{</nowiki>CURRENTDAY}} — в общем, всё внутри двойных фигурных скобок.
+<code><nowiki>{{#if:…}}</nowiki></code> и переменные
+<code><nowiki>{{CURRENTDAY}}</nowiki></code> — в общем, всё внутри двойных фигурных скобок.
 Это производится корректным образом, с вызовом соответствующего обработчика MediaWiki.',
 	'expand_templates_title' => 'Заголовок страницы для {{FULLPAGENAME}} и т. п.:',
 	'expand_templates_input' => 'Входной текст:',

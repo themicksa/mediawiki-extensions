@@ -2836,8 +2836,25 @@ $messages['ja'] = array(
  * @author David1010
  */
 $messages['ka'] = array(
+	'fogg-videoCodec-title' => 'ვიდეო კოდეკი',
+	'fogg-audioCodec-title' => 'აუდიო კოდეკი',
+	'fogg-width-title' => 'ვიდეოს სიგანე',
+	'fogg-height-title' => 'ვიდეოს სიმაღლე',
+	'fogg-framerate-title' => 'კადრების სიხშირე',
+	'fogg-noaudio-title' => 'ხმის გარეშე',
+	'fogg-title-title' => 'სათაური',
+	'fogg-artist-title' => 'ავტორის სახელი',
 	'fogg-date-title' => 'თარიღი',
+	'fogg-location-title' => 'მდებარეობა',
+	'fogg-organization-title' => 'ორგანიზაცია',
+	'fogg-copyright-title' => 'საავტორო უფლებები',
+	'fogg-license-title' => 'ლიცენზია',
+	'fogg-contact-title' => 'კონტაქტი',
+	'fogg-contact-help' => 'საკონტაქტო ინფორმაცია',
 	'fogg-select_file' => 'ფაილის არჩევა',
+	'fogg-select_new_file' => 'ახალი ფაილის არჩევა',
+	'fogg-select_url' => 'URL-ს არჩევა',
+	'fogg-latest-firefox' => 'ბოლო Firefox',
 );
 
 /** Kirmanjki (Kırmancki)
@@ -5485,7 +5502,7 @@ $messages['zh-hans'] = array(
 	'fogg-location-help' => '录像的地点',
 	'fogg-organization-title' => '组织名称必填',
 	'fogg-organization-help' => '机构（工作室）名称',
-	'fogg-copyright-title' => '版权',
+	'fogg-copyright-title' => '著作权',
 	'fogg-copyright-help' => '該剪辑的版权',
 	'fogg-license-title' => '授权协议',
 	'fogg-license-help' => '该剪辑的许可协议（最好是Creative Commons的网址）。',
