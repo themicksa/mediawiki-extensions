@@ -62,7 +62,7 @@ $wgResourceModules['jquery.interfaceConcurrency'] = $icResourceTemplate + array(
 	'scripts' => 'jquery.interfaceConcurrency/jquery.interfaceConcurrency.js',
 	'dependencies' => array(
 		'mediawiki.util',
-		'mediawiki.user',
+		'user.tokens',
 	),
 );
 

@@ -9,11 +9,11 @@
 		ccaction: 'checkout',
 		resourcetype: 'application-specific-string',
 		record: 123 
-	}, function( result ){
-		if( result == 'failure' ) { 
-			//checkout failed because item is already checked out.  do something useful here.
-		} else if (result == 'success') {
-			//successfully checked out item.  do something useful here.
+	}, function ( result ) {
+		if ( result === 'failure' ) { 
+			// Checkout failed because item is already checked out.  do something useful here.
+		} else if ( result === 'success' ) {
+			// Successfully checked out item.  do something useful here.
 		}
 	} );
  */
@@ -29,20 +29,20 @@
 				callback: (function) handle results 
 			}
 		 */
-		check: function( params, callback ) {
+		check: function ( params, callback ) {
 			params = $.extend({
 				action: 'concurrency',
 				token: mw.user.tokens.get( 'editToken' ),
 				format: 'json'
-			}, params);
+			}, params );
 
 			return $.ajax( {
 				type: 'POST',
 				url: mw.util.wikiScript( 'api' ),
 				data: params,
-				success: function( data ){
+				success: function ( data ) {
 					if ( typeof callback === 'function' ){
-						if ( data && data.concurrency.result ) { 
+						if ( data && data.concurrency && data.concurrency.result ) { 
 							callback( data.concurrency.result );
 						}
 					}
