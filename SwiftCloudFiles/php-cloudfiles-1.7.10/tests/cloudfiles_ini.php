@@ -1,4 +1,8 @@
 <?php
+if ( php_sapi_name() !== 'cli' ) {
+	die( "This is not a valid web entry point." );
+}
+
 $VERBOSE = False;                       # informational messages to stdout
 $USER    = "";                          # Rackspace Cloud Username
 $API_KEY = "";				# Rackspace Cloud API Key

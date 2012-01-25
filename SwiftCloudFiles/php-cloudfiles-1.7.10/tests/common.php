@@ -1,4 +1,7 @@
 <?php
+if ( php_sapi_name() !== 'cli' ) {
+	die( "This is not a valid web entry point." );
+}
 if (empty($_ENV)) {
     $_ENV = $_SERVER;
 }
