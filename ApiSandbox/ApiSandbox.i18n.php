@@ -404,18 +404,25 @@ Consulte [//www.mediawiki.org/wiki/API:Main_page la documentación] para más de
  * @author Pikne
  */
 $messages['et'] = array(
+	'apisb-desc' => 'Võimaldab veebilehitseja kaudu tehtud [//www.mediawiki.org/wiki/API MediaWiki API] päringutest vigu leida.',
 	'apisandbox' => 'API-liivakast',
 	'apisb-no-js' => "'''Tõrge''': Selle funktsiooni jaoks on JavaScripti vaja.",
 	'apisb-intro' => "Kasuta seda lehekülge '''MediaWiki API''' katsetamiseks.
-Üksikasjad API kasutamise kohta leiad [//www.mediawiki.org/wiki/API:Main_page API dokumentatsioonist].",
+Üksikasjad API kasutamise kohta leiad [//www.mediawiki.org/wiki/API:Main_page API dokumentatsioonist]. Näide: [//www.mediawiki.org/wiki/API#A_simple_example esilehe sisu hankimine]. Vali toiming, et näha veel näiteid.",
 	'apisb-api-disabled' => 'API on selles võrgukohas keelatud.',
+	'apisb-legend-parameters' => 'Parameetrid',
 	'apisb-legend-result' => 'Tulemus',
 	'apisb-legend-generic-parameters' => 'Üldised parameetrid',
+	'apisb-legend-generator-parameters' => 'Generaator',
 	'apisb-result-request-url' => 'Päringu URL:',
 	'apisb-result-request-post' => 'POST-andmed:',
 	'apisb-select-action' => 'Vali toiming',
-	'apisb-select-query' => 'Mida pärida?',
-	'apisb-select-value' => 'Vali väärtus',
+	'apisb-select-query' => '(vali päring)',
+	'apisb-select-value' => '(vali väärtus)',
+	'apisb-docs-more' => 'loe veel',
+	'apisb-params-param' => 'Parameeter',
+	'apisb-params-input' => 'Sisend',
+	'apisb-params-desc' => 'Kirjeldus',
 	'apisb-loading' => 'Laadimine...',
 	'apisb-load-error' => 'API kirjelduse laadimisel esines tõrge',
 	'apisb-request-error' => 'API-päringu sooritamisel esines tõrge',
@@ -424,6 +431,9 @@ $messages['et'] = array(
 	'apisb-query-prop' => 'Atribuudid',
 	'apisb-query-list' => 'Loendid',
 	'apisb-query-meta' => 'Metaandmed',
+	'apisb-example' => 'Näide',
+	'apisb-examples' => 'Näited',
+	'apisb-clear' => 'Puhasta',
 );
 
 /** Basque (Euskara)
@@ -941,10 +951,11 @@ $messages['lb'] = array(
 	'apisandbox' => 'API-Sandkëscht',
 	'apisb-no-js' => "'''Feeler''': dës Fonctioun brauch JavaScript",
 	'apisb-api-disabled' => 'API ass op dësem Site ausgeschalt.',
+	'apisb-legend-parameters' => 'Parameteren',
 	'apisb-legend-result' => 'Resultat',
 	'apisb-result-request-url' => 'URL fir Ufroen:',
 	'apisb-select-action' => 'Aktioun eraussichen',
-	'apisb-select-value' => 'Wäert eraussichen',
+	'apisb-select-value' => '(Wäert eraussichen)',
 	'apisb-docs-more' => 'liest méi',
 	'apisb-params-param' => 'Parameter',
 	'apisb-params-desc' => 'Beschreiwung',
@@ -1361,16 +1372,25 @@ Consulte [//www.mediawiki.org/wiki/API:Main_page the API documentation] para obt
 
 /** Romanian (Română)
  * @author Firilacroco
+ * @author Minisarm
  */
 $messages['ro'] = array(
+	'apisandbox' => 'Cutia cu nisip pentru API',
+	'apisb-no-js' => "'''Eroare''': această caracteristică necesită JavaScript.",
+	'apisb-api-disabled' => 'API este dezactivat pe acest site.',
+	'apisb-legend-parameters' => 'Parametri',
 	'apisb-legend-result' => 'Rezultat',
-	'apisb-legend-generic-parameters' => 'Parametrii generici',
+	'apisb-legend-generic-parameters' => 'Parametri generici',
 	'apisb-legend-generator-parameters' => 'Generator',
 	'apisb-result-request-url' => 'URL cerere:',
 	'apisb-result-request-post' => 'Date POST:',
 	'apisb-select-action' => 'Alegeți o acțiune',
-	'apisb-select-query' => 'Ce trebuie interogat?',
-	'apisb-select-value' => 'Selectați valoarea',
+	'apisb-select-query' => '(selectați interogarea)',
+	'apisb-select-value' => '(selectați valoarea)',
+	'apisb-docs-more' => 'citiți mai mult',
+	'apisb-params-param' => 'Parametru',
+	'apisb-params-input' => 'Date de intrare',
+	'apisb-params-desc' => 'Descriere',
 	'apisb-loading' => 'Se încarcă...',
 	'apisb-load-error' => 'Eroare la încărcarea descrierii API',
 	'apisb-request-error' => 'Eroare la executarea cererii API',
@@ -1380,6 +1400,9 @@ $messages['ro'] = array(
 	'apisb-query-prop' => 'Proprietăți',
 	'apisb-query-list' => 'Liste',
 	'apisb-query-meta' => 'Meta-informații',
+	'apisb-example' => 'Exemplu',
+	'apisb-examples' => 'Exemple',
+	'apisb-clear' => 'Curăță',
 );
 
 /** Tarandíne (Tarandíne)
@@ -1525,8 +1548,8 @@ $messages['sl'] = array(
 	'apisb-result-request-url' => 'URL zahteve:',
 	'apisb-result-request-post' => 'Podatki POST:',
 	'apisb-select-action' => 'Izberite dejanje',
-	'apisb-select-query' => 'Kaj naj poizvem?',
-	'apisb-select-value' => 'Izberite vrednost',
+	'apisb-select-query' => '(izberite poizvedbo)',
+	'apisb-select-value' => '(izberite vrednost)',
 	'apisb-loading' => 'Nalaganje ...',
 	'apisb-load-error' => 'Napaka pri nalaganju opisa API',
 	'apisb-request-error' => 'Napak pri izvajanju zahteve API',

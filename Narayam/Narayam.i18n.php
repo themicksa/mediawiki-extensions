@@ -560,6 +560,7 @@ $messages['de'] = array(
 	'narayam-ta' => 'Tamilisch (Transliteration)',
 	'narayam-ta-bamini' => 'Tamilisch (Bamini)',
 	'narayam-tcy' => 'Tulu (Transliteration)',
+	'narayam-te' => 'Telugu (Transliteration)',
 	'narayam-te-inscript' => 'Telugu (InScript)',
 	'narayam-bn-avro' => 'Bengalisch (Avro)',
 	'narayam-bn-inscript' => 'Bengalisch (InScript)',
@@ -861,6 +862,7 @@ $messages['fr'] = array(
 	'narayam-ta' => 'Translittération tamoule',
 	'narayam-ta-bamini' => 'Tamoul Bamini',
 	'narayam-tcy' => 'Traduction tulu',
+	'narayam-te' => 'Traduction télougou',
 	'narayam-te-inscript' => 'InScript télougou',
 	'narayam-bn-avro' => 'Avro bengali',
 	'narayam-bn-inscript' => 'InScript bengali',
@@ -986,6 +988,7 @@ $messages['gl'] = array(
 	'narayam-ta' => 'Transliteración para támil',
 	'narayam-ta-bamini' => 'Támil Bamini',
 	'narayam-tcy' => 'Transliteración para tulú',
+	'narayam-te' => 'Transliteración para telugú',
 	'narayam-te-inscript' => 'InScript para telugú',
 	'narayam-bn-avro' => 'Avro para bengalí',
 	'narayam-bn-inscript' => 'InScript para bengalí',
@@ -1265,6 +1268,7 @@ $messages['hsb'] = array(
 	'narayam-ta' => 'Transliteracija tamilšćiny',
 	'narayam-ta-bamini' => 'Tamilšćina (Bamini)',
 	'narayam-tcy' => 'Transliteracija tulušćiny',
+	'narayam-te' => 'Transliteracije telugišćiny',
 	'narayam-te-inscript' => 'Telugušćina (InScript)',
 	'narayam-bn-avro' => 'Bengali-Avro',
 	'narayam-bn-inscript' => 'Bengali InScript',
@@ -1338,6 +1342,7 @@ $messages['ia'] = array(
 	'narayam-ta' => 'Translitteration in tamil',
 	'narayam-ta-bamini' => 'Tamil (Bamini)',
 	'narayam-tcy' => 'Translitteration in tulu',
+	'narayam-te' => 'Translitteration in telugu',
 	'narayam-te-inscript' => 'Telugu (InScript)',
 	'narayam-bn-avro' => 'Bengalese (Avro)',
 	'narayam-bn-inscript' => 'Bengalese (InScript)',
@@ -1682,6 +1687,7 @@ $messages['mk'] = array(
 	'narayam-ta' => 'Транслитерација на тамилски',
 	'narayam-ta-bamini' => 'тамилски - Bamini',
 	'narayam-tcy' => 'Транслитерација на тулу',
+	'narayam-te' => 'Транслитерација на телугу',
 	'narayam-te-inscript' => 'телугу - InScript',
 	'narayam-bn-avro' => 'бенгалски - Avro',
 	'narayam-bn-inscript' => 'бенгалски - InScript',
@@ -2694,6 +2700,7 @@ $messages['ta'] = array(
 );
 
 /** Telugu (తెలుగు)
+ * @author Logicwiki
  * @author Veeven
  * @author రహ్మానుద్దీన్
  */
@@ -2712,6 +2719,7 @@ $messages['te'] = array(
 	'narayam-sa-inscript' => 'సంస్కృతం ఇన్‌స్క్రిప్ట్',
 	'narayam-ta-99' => 'తమిళం99',
 	'narayam-ta' => 'తమిళం లిప్యంతరీకరణ',
+	'narayam-te' => 'తెలుగు-లిప్యంతరీకరణ',
 	'narayam-te-inscript' => 'తెలుగు ఇన్‍స్క్రిప్ట్',
 	'narayam-bn-avro' => 'బెంగాలీ అవ్రో',
 	'narayam-bn-inscript' => 'బెంగాలీ ఇన్‌స్క్రిప్ట్',

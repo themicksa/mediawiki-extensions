@@ -620,6 +620,63 @@ $messages['he'] = array(
 	'tog-collabwatchlisthidelistusers' => 'הסתרת עריכות ממשתמשי רשימת מעקב שיתופית',
 );
 
+/** Upper Sorbian (Hornjoserbsce)
+ * @author Michawiki
+ */
+$messages['hsb'] = array(
+	'collabwatchlist' => 'Zhromadna wobkedźbowanska lisćina',
+	'collabwatchlist-desc' => 'Staja zhromadne wobkedźbowanske lisćiny na zakładźe kategorijow k dispoziciji',
+	'specialcollabwatchlist' => 'Specialna strona zhromadneje wobkedźbowanskeje lisćiny',
+	'collabwatchlist-details' => '{{PLURAL:$1|$1 kategorija/strona|$1 kategoriji/stronje|$1 kategorije/strony|$1 kategorijow/stronow}} na tutej wobkedźbowanskej lisćinje.',
+	'collabwatchlisttagselect' => 'Taflička',
+	'collabwatchlisttagcomment' => 'Komentar',
+	'collabwatchlistsettagbutton' => 'Tafličku stajić',
+	'collabwatchlisttools-view' => 'Zwobraznić',
+	'collabwatchlisttools-edit' => 'Kategorije wobdźěłać',
+	'collabwatchlisttools-rawCategories' => 'Kategorije w surowej formje wobdźěłać',
+	'collabwatchlisttools-rawTags' => 'Taflički w surowej formje wobdźěłać',
+	'collabwatchlisttools-rawUsers' => 'Wužiwarjow w surowej formje wobdźěłać',
+	'collabwatchlisttools-delete' => 'Zhašeć',
+	'collabwatchlistsall' => 'Wšě lisćiny',
+	'collabwatchlistfiltertags' => 'Taflički schować',
+	'collabwatchlistedit-users-raw-submit' => 'Składować',
+	'collabwatchlistedit-raw-title' => 'Kategorije w surowej formje wobdźěłać',
+	'collabwatchlistedit-tags-raw-title' => 'Taflički w surowej formje wobdźěłać',
+	'collabwatchlistedit-users-raw-title' => 'Wužiwarjow w surowej formje wobdźěłać',
+	'collabwatchlistedit-users-last-owner' => 'Dyrbi znajmjeńša jednoho wobsedźerja eksistować',
+	'collabwatchlistedit-numitems' => 'Tuta zhromadna wobkedźbowanska lisćina wobsahuje {{PLURAL:$1|1 kategoriju|$1 kategoriji|$1 kategorije|$1 kategorijow}}',
+	'collabwatchlistedit-noitems' => 'Tuta zhromadna wobkedźbowanska lisćina žane kategorije njewobsahuje .',
+	'collabwatchlistedit-users-numitems' => 'Tuta zhromadna wobkedźbowanska lisćina wobsahuje {{PLURAL:$1|1 wužiwarja|$1 wužiwarjow|$1 wužiwarjow|$1 wužiwarjow}}',
+	'collabwatchlistedit-users-noitems' => 'Tuta zhromadna wobkedźbowanska lisćina žanych wužiwarjow njewobsahuje .',
+	'collabwatchlistedit-raw-legend' => 'Kategorije zhromadneje wobkedźbowanskeje lisćiny w surowej formje wobdźěłać',
+	'collabwatchlistedit-users-raw-legend' => 'Wužiwarjow zhromadneje wobkedźbowanskeje lisćiny w surowej formje wobdźěłać',
+	'collabwatchlistedit-raw-titles' => 'Kategorije:',
+	'collabwatchlistedit-users-raw-titles' => 'Wužiwarjo:',
+	'collabwatchlistedit-normal-title' => 'Kategorije wobdźěłać',
+	'collabwatchlistedit-normal-legend' => 'Kategorije ze zhromadneje wobkedźbowanskeje lisćiny wotstronić',
+	'collabwatchlistedit-normal-explain' => 'Kategorije na twojej zhromadnej wobkedźbowanskej lisćinje so deleka pokazuja.',
+	'collabwatchlistedit-tags-raw-submit' => 'Składować',
+	'collabwatchlistedit-normal-done' => '{{PLURAL:$1|1 kategorija je|$1 kategoriji stej|$1 kategorije su|$1 kategorijow je}} so ze zhromadneje wobkedźbowanskeje lisćiny {{PLURAL:$1|wotstroniła|wotstroniłoj|wotstronili|wotstroniło}}:',
+	'collabwatchlistedit-tags-raw-done' => 'Zhromadna wobkedźbowanska lisćina je so zaktualizowała',
+	'collabwatchlistedit-users-raw-done' => 'Zhromadna wobkedźbowanska lisćina je so zaktualizowała',
+	'collabwatchlistedit-users-raw-added' => '{{PLURAL:$1|1 wužiwar je so přidał|$1 wužiwarjej staj so přidałoj|$1 wužiwarjo su so přidali|$1 wužiwarjow je so přidało}}',
+	'collabwatchlistedit-users-raw-removed' => '{{PLURAL:$1|1 wužiwar je so wotstronił|$1 wužiwarjej staj so wotstroniłoj|$1 wužiwarjo su so wotstronili|$1 wužiwarjow je so wotstroniło}}',
+	'collabwatchlisttools-newList' => 'Nowa zhromadna wobkedźbowanska lisćina',
+	'collabwatchlistdelete-legend' => 'Zhromadnu wobkedźbowansku lisćinu zhašeć',
+	'collabwatchlistdelete-submit' => 'Zhašeć',
+	'collabwatchlistdelete-title' => 'Zhromadnu wobkedźbowansku lisćinu zhašeć',
+	'collabwatchlistnew-legend' => 'Nowu zhromadnu wobkedźbowansku lisćinu wutworić',
+	'collabwatchlistnew-explain' => 'Mjeno lisćiny dyrbi jónkróćne być.',
+	'collabwatchlistnew-name' => 'Mjeno lisćiny',
+	'collabwatchlistnew-submit' => 'Wutworić',
+	'collabwatchlistedit-raw-done' => 'Zhromadna wobkedźbowanska lisćina je so zaktualizowała',
+	'collabwatchlistedit-raw-added' => '{{PLURAL:$1|1 strona abo kategorija je so přidała|$1 stronje abo kategoriji stej so přidałoj|$1 strony abo kategorije su so přidali|$1 stronow abo kategorijow je so přidało}}',
+	'collabwatchlistedit-raw-removed' => '{{PLURAL:$1|1 strona abo kategorija je so wotstroniła|$1 stronje abo kategoriji stej so wotstroniłoj|$1 strony abo kategorije su so wotstronili|$1 stronow abo kategorijow je so wotstroniło}}',
+	'collabwatchlistedit-normal-submit' => 'Składować',
+	'collabwatchlistshowhidelistusers' => 'Lisćinowych wužiwarjow $1',
+	'tog-collabwatchlisthidelistusers' => 'Změny wužiwarjow zhromadneje wobkedźbowanskeje lisćiny schować',
+);
+
 /** Interlingua (Interlingua)
  * @author McDutchie
  */

@@ -313,6 +313,15 @@ $messages['ps'] = array(
 	'zero-rated-mobile-access-banner-text-data-charges-no' => 'نه',
 );
 
+/** Slovenian (Slovenščina)
+ * @author Dbc334
+ */
+$messages['sl'] = array(
+	'zero-rated-mobile-access-search' => 'Iskanje',
+	'zero-rated-mobile-access-banner-text-data-charges-yes' => 'Da',
+	'zero-rated-mobile-access-banner-text-data-charges-no' => 'Ne',
+);
+
 /** Telugu (తెలుగు)
  * @author Veeven
  */

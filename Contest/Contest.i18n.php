@@ -4172,6 +4172,61 @@ $messages['ka'] = array(
 	'contest-contest-reminder-close' => 'დახურვა',
 );
 
+/** Korean (한국어)
+ * @author Kwj2772
+ */
+$messages['ko'] = array(
+	'contest-desc' => '사용자끼리 경연대회에 참여할 수 있도록 합니다. 심판이 제출한 작품에 대해 토론하고 투표할 수 있습니다.',
+	'right-contestadmin' => '대회 관리하기',
+	'right-contestant' => '대회 참여하기',
+	'action-contestant' => '대회 참여하기',
+	'group-contestadmin' => '대회 관리자',
+	'group-contestadmin-member' => '{{GENDER:$1|대회 관리자}}',
+	'grouppage-contestadmin' => '{{ns:project}}:대회 관리자',
+	'group-contestant' => '대회 참가자',
+	'group-contestant-member' => '{{GENDER:$1|대회 참가자}}',
+	'grouppage-contestant' => '{{ns:project}}:대회 참가자',
+	'group-contestjudge' => '대회 심판',
+	'group-contestjudge-member' => '{{GENDER:$1|대회 심판}}',
+	'special-contests' => '대회 관리하기',
+	'contest-nav-contests' => '대회 목록',
+	'contest-special-addnew' => '새로운 대회 추가하기',
+	'contest-special-newname' => '대회 이름',
+	'contest-special-add' => '대회 추가',
+	'contest-special-name' => '이름',
+	'contest-special-status' => '상태',
+	'contest-special-submissioncount' => '제출물 수',
+	'contest-special-edit' => '편집',
+	'contest-special-delete' => '삭제',
+	'contest-special-confirm-delete' => '정말 이 대회를 삭제하시겠습니까?',
+	'contest-edit-intro' => '소개 문서',
+	'contest-edit-rulespage' => '규칙 문서',
+	'contest-edit-help' => '도움말 문서',
+	'contest-edit-submit' => '제출',
+	'contest-welcome-select-header' => '도전할 과제를 선택하세요:',
+	'contest-welcome-active-contests' => '다음은 현재 진행 중인 대회입니다:',
+	'contest-welcome-no-contests-active' => '현재 진행 중인 대회가 없습니다.',
+	'contest-signup-unknown' => '입력한 이름으로 된 대회가 없습니다.',
+	'contest-signup-email' => '이메일 주소',
+	'contest-signup-realname' => '실명',
+	'contest-signup-country' => '국적',
+	'contest-signup-require-rules' => '대회 규칙을 준수하는 데 반드시 동의해야 합니다.',
+	'contest-signup-require-country' => '거주 국가를 밝히는 데 동의해야 합니다.',
+	'contest-signup-invalid-email' => '당신이 입력한 이메일 주소가 올바르지 않습니다.',
+	'contest-contest-name' => '이름',
+	'contest-contest-status' => '상태',
+	'contest-contest-submissioncount' => '참가자 수',
+	'contest-contest-contestants' => '참가자',
+	'contest-contest-yes' => '예',
+	'contest-contest-no' => '아니오',
+	'contest-contest-filter-comments' => '의견',
+	'contest-contest-filter-rating_count' => '투표',
+	'contest-contest-reminder-close' => '닫기',
+	'contest-contest-reminder-subject' => '제목:',
+	'contest-contestant-no' => '아니오',
+	'contest-contestant-yes' => '예',
+);
+
 /** Colognian (Ripoarisch)
  * @author Purodha
  */

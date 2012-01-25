@@ -783,13 +783,14 @@ $messages['pt-br'] = array(
 
 /** Romanian (Română)
  * @author McDutchie
+ * @author Minisarm
  * @author Stelistcristi
  */
 $messages['ro'] = array(
 	'pf-admin-menu-default' => 'Implicit',
 	'pf-admin-link-editlink-page' => 'Modifică pagina',
 	'pf-admin-link-approve' => 'Aprobă pagina',
-	'pf-header-documentation' => 'Documentaţie',
+	'pf-header-documentation' => 'Documentație',
 	'pf-header-in_packages' => 'Pachete',
 	'pf-header-edit' => 'Legătură de editare',
 	'pf-header-type' => 'Tipul de pagină',
