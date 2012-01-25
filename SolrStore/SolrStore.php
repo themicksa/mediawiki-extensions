@@ -72,5 +72,6 @@ $wgSearchType				= 'SolrSearch';
 // Solr Configuration
 $wgSolrTalker		= new SolrTalker();
 $wgSolrShowRelated	= true;
+$wgSolrDebug		= false;
 $wgSolrUrl			= 'http://127.0.0.1:8080/solr';
 $wgSolrFields		= array( );

@@ -214,10 +214,13 @@ class SolrTalker {
 	 * @return SimpleXMLElement
 	 */
 	private function solrSend( $url, $xmlcontent = false ) {
+		global $wgSolrDebug;
 		$ch = curl_init();
 
 		$url = str_replace( ' ', '+', $url );
-
+		if ($wgSolrDebug){
+			echo $url;
+		}
 		curl_setopt( $ch, CURLOPT_URL, $url );
 		curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1 );
 		curl_setopt( $ch, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_1 );

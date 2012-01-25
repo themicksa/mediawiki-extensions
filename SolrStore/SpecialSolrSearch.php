@@ -105,7 +105,7 @@ class SpecialSolrSearch extends SpecialPage {
 	 * @param $fieldSet String
 	 */
 	public function showResults( $fieldSet ) {
-		global $wgOut, $wgUser, $wgContLang, $wgScript;
+		global $wgOut, $wgUser, $wgContLang, $wgScript, $wgSolrShowRelated, $wgSolrDebug;
 		wfProfileIn( __METHOD__ );
 
 		$sk = $wgUser->getSkin();
@@ -120,7 +120,7 @@ class SpecialSolrSearch extends SpecialPage {
 
 		//Do we have Title matches
 		$fields = $fieldSet->getFields();
-		$fieldSeperator = $fieldSet->getFieldSeperator();
+
 		//Build Solr query string form the fields
 		if ( isset( $fields[ 'solrsearch' ] ) ) {
 			$query = $fields[ 'solrsearch' ];
@@ -128,10 +128,16 @@ class SpecialSolrSearch extends SpecialPage {
 			$query = '';
 		}
 
-
+		$firsttime = true;
+		$fieldSeperator = $fieldSet->getFieldSeperator();
 		foreach ( $fields as $key=>$value ) {
 			if ( $key != 'solrsearch' && !empty( $value ) ) {
-				$query = trim( $query ) . " $fieldSeperator " . trim( substr( $key, 4 ) ) . ':' . '(' . ($value) . ')';
+				if ( $firsttime ) {
+					$query = trim( $query ) . ' ' . trim( substr( $key, 4 ) ) . ':' . '(' . ($value) . ')';
+					$firsttime = false;
+				} else {
+					$query = trim( $query ) . " $fieldSeperator " . trim( substr( $key, 4 ) ) . ':' . '(' . ($value) . ')';
+				}
 			}
 		}
 
@@ -172,6 +178,9 @@ class SpecialSolrSearch extends SpecialPage {
 			$textMatches = false;
 			$titleMatches = false;
 			$wgOut->addHTML( '<p class="solr-error">' . wfMsg( 'solrstore-error' ) . '<p\>' );
+			if ( $wgSolrDebug ) {
+				$wgOut->addHTML( '<p class="solr-error">' . $exc . '<p\>' );
+			}
 		}
 		// start rendering the page
 		$wgOut->addHtml(
@@ -241,7 +250,9 @@ class SpecialSolrSearch extends SpecialPage {
 		// prev/next links
 		if ( $num || $this->offset ) {
 			// Show the create link ahead
-			$this->showCreateLink( $t );
+			if ( $wgSolrShowRelated ) {
+				$this->showCreateLink( $t );
+			}
 			$prevnext = wfViewPrevNext(
 					$this->offset, $this->limit, SpecialPage::getTitleFor( 'SolrSearch/' . $fieldSet->mName ), wfArrayToCGI( $fieldSet->mFields ), max( $titleMatchesNum, $textMatchesNum ) < $this->limit );
 			wfRunHooks( 'SpecialSolrSearchResults', array( $fieldSet, &$titleMatches, &$textMatches ) );
@@ -454,7 +465,7 @@ class SpecialSolrSearch extends SpecialPage {
 
 		// link to related articles if supported
 		$related = '';
-		if ( $result->hasRelated() && $wgSolrStoreShowRelated ) {
+		if ( $result->hasRelated() ) {
 			$st = SpecialPage::getTitleFor( 'SolrSearch' );
 			$stParams = array( 'solrsearch'=>wfMsgForContent( 'searchrelated' ) . ':' . $t->getPrefixedText() );
 			$related = ' -- ' . $sk->linkKnown( $st, wfMsg( 'search-relatedarticle' ), array( ), $stParams );
