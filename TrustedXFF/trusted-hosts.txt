@@ -1124,6 +1124,7 @@ w3cache.icm.edu.pl
 
 # maxonline.com.sg
 218.186.9.1
+202.156.10.9
 
 # tsninternet.com.au
 # Source: Brendon Gough by email
