@@ -1,4 +1,5 @@
 <?php
+
 /**
  * File holding the SolrSearchFieldSet class
  *
@@ -24,12 +25,18 @@ class SolrSearchFieldSet {
 	var $mFields;
 	var $mLable;
 	var $mQuery;
+	var $mFieldSeperator;
 
-	public function __construct( $name, $fields = 'search', $lable = 'Alles', $query = null ) {
+	public function __construct( $name, $fields = 'search', $lable = 'Alles', $query = null, $fieldSeperator = null ) {
 		$this->mName = $name;
 		$this->mFields = explode( ';', $fields );
 		$this->mLable = explode( ';', $lable );
 		$this->mQuery = $query;
+		$this->mFieldSeperator = $fieldSeperator;
+
+		if ( !isset( $this->mFieldSeperator ) ) {
+			$this->mFieldSeperator = '';
+		}
 	}
 
 	public function getName() {
@@ -48,6 +55,10 @@ class SolrSearchFieldSet {
 		return $this->mQuery;
 	}
 
+	public function getFieldSeperator() {
+		return $this->mFieldSeperator;
+	}
+
 	public function setName( $value ) {
 		$this->mName = $value;
 	}
@@ -62,6 +73,10 @@ class SolrSearchFieldSet {
 
 	public function setQuery( $value ) {
 		$this->mQuery = $value;
+	}
+
+	public function setFieldSeperator( $value ) {
+		$this->mFieldSeperator = $value;
 	}
 
 }
