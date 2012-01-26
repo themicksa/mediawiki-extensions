@@ -326,76 +326,89 @@ class ExtZeroRatedMobileAccess {
 		return true;
 	}
 
+	/**
+	 * @param $formatter array
+	 * @param $wikiText string
+	 * @param $nChild bool
+	 * @return array
+	 */
 	public function parseWikiTextToArray( Array $formatter, $wikiText, $nChild = false ) {
-		wfProfileIn( __METHOD__ );
 		$options = array();
+		if ( !is_array( $formatter ) ) {
+			return $options;
+		}
+		wfProfileIn( __METHOD__ );
 		$data = explode( PHP_EOL, $wikiText );
-		if ( is_array( $formatter ) && !$nChild ) {
-			$arrayKeys = array_keys( $formatter );
-			$keyCount = count( $arrayKeys );
-			$index = 0;
-			foreach ( $data as $key => $rawData ) {
-				$index = ( intval( $key ) % $keyCount === 0 ) ? 0 : $index + 1;
-				if ( in_array( $index, $arrayKeys ) ) {
-					$data = trim( str_replace( '*', '', $rawData ) );
-					if ( is_array( $formatter[$index] ) ) {
-						$name = $formatter[$index]['name'];
-						if ( isset( $formatter[$index]['callback'] ) ) {
-							$callback = $formatter[$index]['callback'];
-							if ( method_exists( $this, $callback ) ) {
-								if ( isset( $formatter[$index]['parameters'] ) ) {
-									if ( is_array( $formatter[$index]['parameters'] ) ) {
-										$parameters = array();
-										foreach ( $formatter[$index]['parameters'] as $parameter ) {
-											if ( isset( $options[$prefixName][$parameter] ) ) {
-												$parameters[$parameter] = $options[$prefixName][$parameter];
-											}
-										}
-										$data = $this->$callback( $data, $parameters );
-									} else {
-										$parameter = $formatter[$index]['parameters'];
-										if ( isset( $options[$prefixName][$parameter] ) ) {
-											$parameterValue = $options[$prefixName][$parameter];
-											$data = $this->$callback( $data, $parameterValue );
-										}
-									}
-								} else {
-									$data = $this->$callback( $data );
-								}
-							}
-						}
-					} else {
-						$name = $formatter[$index];
-					}
-					if ( $index === 0 ) {
-						$prefixName = strtoupper( $data );
-					}
-					$options[$prefixName][$name] = $data;
-				}
-			}
-		} else if ( is_array( $formatter ) && $nChild ) {
+		if( $nChild ) {
 			foreach ( $data as $key => $rawData ) {
 				if ( strpos( $rawData, '*' ) === 0 && strpos( $rawData, '**' ) !== 0 && $key >= 0 ) {
 					$data = trim( str_replace( '*', '', $rawData ) );
 					$prefixName = strtoupper( $data );
 					$options[$prefixName] = '';
-				} else if ( strpos( $rawData, '**' ) === 0 && $key > 0 ) {
+				} elseif ( strpos( $rawData, '**' ) === 0 && $key > 0 ) {
 					$data = trim( str_replace( '*', '', $rawData ) );
-					if ( is_array( $formatter ) ) {
-						if ( isset( $formatter[0]['callback'] ) ) {
-							$callback = $formatter[0]['callback'];
-							if ( method_exists( $this, $callback ) ) {
-								$data = $this->$callback( $data );
-								if ( $data ) {
-									$options[$prefixName][] = $data;
-								}
-							}
-						}
-					} else {
+					if ( !is_array( $formatter ) ) {
 						$options[$prefixName][] = $data;
+						continue;
+					}
+					if ( !isset( $formatter[0]['callback'] ) ) {
+						continue;
+					}
+					$callback = $formatter[0]['callback'];
+					if ( method_exists( $this, $callback ) ) {
+						$data = $this->$callback( $data );
+						if ( $data ) {
+							$options[$prefixName][] = $data;
+						}
 					}
 				}
 			}
+			wfProfileOut( __METHOD__ );
+			return $options;
+		}
+
+		$arrayKeys = array_keys( $formatter );
+		$keyCount = count( $arrayKeys );
+		$index = 0;
+		foreach ( $data as $key => $rawData ) {
+			$index = ( intval( $key ) % $keyCount === 0 ) ? 0 : $index + 1;
+			if ( !in_array( $index, $arrayKeys ) ) {
+				continue;
+			}
+			$data = trim( str_replace( '*', '', $rawData ) );
+			if ( is_array( $formatter[$index] ) ) {
+				$name = $formatter[$index]['name'];
+				if ( isset( $formatter[$index]['callback'] ) ) {
+					$callback = $formatter[$index]['callback'];
+					if ( method_exists( $this, $callback ) ) {
+						if ( isset( $formatter[$index]['parameters'] ) ) {
+							if ( is_array( $formatter[$index]['parameters'] ) ) {
+								$parameters = array();
+								foreach ( $formatter[$index]['parameters'] as $parameter ) {
+									if ( isset( $options[$prefixName][$parameter] ) ) {
+										$parameters[$parameter] = $options[$prefixName][$parameter];
+									}
+								}
+								$data = $this->$callback( $data, $parameters );
+							} else {
+								$parameter = $formatter[$index]['parameters'];
+								if ( isset( $options[$prefixName][$parameter] ) ) {
+									$parameterValue = $options[$prefixName][$parameter];
+									$data = $this->$callback( $data, $parameterValue );
+								}
+							}
+						} else {
+							$data = $this->$callback( $data );
+						}
+					}
+				}
+			} else {
+				$name = $formatter[$index];
+			}
+			if ( $index === 0 ) {
+				$prefixName = strtoupper( $data );
+			}
+			$options[$prefixName][$name] = $data;
 		}
 		wfProfileOut( __METHOD__ );
 		return $options;
@@ -435,12 +448,12 @@ class ExtZeroRatedMobileAccess {
 		if ( !$carrierOptions ) {
 			if ( $rev ) {
 				$formatter = array(
-					 0 => 'name',
-					 1 => array( 'name' => 'link',
+					0 => 'name',
+					1 => array( 'name' => 'link',
 								 'callback' => 'createUrlCallback',
 								 'parameters' => 'name',
 						),
-					 2 => array( 'name' => 'partnerId',
+					2 => array( 'name' => 'partnerId',
 								 'callback' => 'intValCallback'
 						),
 				);
