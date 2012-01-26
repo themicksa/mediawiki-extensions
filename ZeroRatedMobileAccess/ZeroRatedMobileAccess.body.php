@@ -327,6 +327,7 @@ class ExtZeroRatedMobileAccess {
 	}
 
 	public function parseWikiTextToArray( Array $formatter, $wikiText, $nChild = false ) {
+		wfProfileIn( __METHOD__ );
 		$options = array();
 		$data = explode( PHP_EOL, $wikiText );
 		if ( is_array( $formatter ) && !$nChild ) {
@@ -396,6 +397,7 @@ class ExtZeroRatedMobileAccess {
 				}
 			}
 		}
+		wfProfileOut( __METHOD__ );
 		return $options;
 	}
 
