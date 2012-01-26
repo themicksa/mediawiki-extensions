@@ -839,7 +839,7 @@ class SWBSpecialBrowseWiki extends SpecialPage {
 				$this->linkHere( wfMsg( 'smw_result_prev' ), $this->showoutgoing, true, $offset );
 				$offset = $this->offset + SWBSpecialBrowseWiki::$incomingpropertiescount - 1;
 				$html .= " &#160;&#160;&#160;  <strong>" . wfMsg( 'smw_result_results' ) . " " . ( $this->offset + 1 ) .
-						 " ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“ " . ( $offset ) . "</strong>  &#160;&#160;&#160; ";
+						 " &#160;&#160;&#160; " . ( $offset ) . "</strong>  &#160;&#160;&#160; ";
 				$html .= $more ? $this->linkHere( wfMsg( 'smw_result_next' ), $this->showoutgoing, true, $offset ):wfMsg( 'smw_result_next' );
 			}
 		}
