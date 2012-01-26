@@ -19,7 +19,6 @@ class LuaError extends Exception {
 	 * @param $parameter \type{\string} Optional parameter for that message
 	 */
 	public function __construct($msg, $parameter = ''){
-
 		$this->message = '<strong class="error">' . wfMsgForContent( "lua_$msg", htmlspecialchars( $parameter ) ) . '</strong>';
 	}
 }
@@ -67,7 +66,7 @@ class LuaWrapper {
 						      1 => array('pipe', 'w')),
 						$this->pipes, null, null);
 			if (!is_resource($this->proc)) {
-				$this->defunct = TRUE;
+				$this->defunct = true;
 				throw new LuaError('interp_notfound');
 			}
 			stream_set_blocking($this->pipes[0], 0);
@@ -76,12 +75,12 @@ class LuaWrapper {
 			stream_set_write_buffer($this->pipes[1], 0);
 
 			# Ready to go.
-			$this->defunct = FALSE;
-			return TRUE;
+			$this->defunct = false;
+			return true;
 		} elseif ( $wgLuaExtension === 'lua' ) {
 			# We're using the extension - verify it exists
 			if (!class_exists('lua')) {
-				$this->defunct = TRUE;
+				$this->defunct = true;
 				throw new LuaError('extension_notfound');
 			}
 
@@ -96,11 +95,11 @@ class LuaWrapper {
 			}
 
 			# Ready to go.
-			$this->defunct = FALSE;
+			$this->defunct = false;
 			return TRUE;
 		} elseif ( $wgLuaExtension === 'luasandbox' ) {
 			if (!class_exists('luasandbox')) {
-				$this->defunct = TRUE;
+				$this->defunct = true;
 				throw new LuaError( 'extension_notfound' );
 			}
 
@@ -217,7 +216,7 @@ class LuaWrapper {
 	public function destroy() {
 		# If we're already defunct, we're done
 		if ($this->defunct)
-			return FALSE;
+			return false;
 
 		# Destroy the lua instance and/or external process and pipes
 		if ( isset( $this->sandbox ) ) {
@@ -233,8 +232,8 @@ class LuaWrapper {
 		}
 
 		# Mark this instance defunct
-		$this->defunct = TRUE;
-		return TRUE;
+		$this->defunct = true;
+		return true;
 	}
 
 	public function luaPrint() {
