@@ -751,11 +751,11 @@ $messages['ga'] = array(
 $messages['gl'] = array(
 	'createsigndocument' => 'Habilitar o asinado de documentos',
 	'createsigndoc-head' => "Empregue este formulario para crear unha páxina \"Asinar o documento\", de tal xeito que os usuarios [[Special:SignDocument|a poidan asinar]].
-Por favor, especifique o nome da páxina na que quere activar a sinatura dixital, os membros de que grupo de usuarios poden asinalo, que campos lles resultan visíbeis aos usuarios e cales han ser optativos, a idade mínima que se lles esixe aos usuarios para asinar o documento (sen mínimo se se omitise);
+Por favor, especifique o nome da páxina na que quere activar a sinatura dixital, os membros de que grupo de usuarios poden asinalo, que campos lles resultan visibles aos usuarios e cales han ser optativos, a idade mínima que se lles esixe aos usuarios para asinar o documento (sen mínimo se se omitise);
 e un texto introdutorio breve que describa o documento e lles dea instrucións aos usuarios.
 
-'''Actualmente non resulta posíbel eliminar ou modificar os documentos de sinatura unha vez que sexan creados''' sen acceso directo á base de datos.
-Ademais, o texto da páxina que se amosa na páxina de sinaturas será o texto ''actual'' da páxina, independentemente das modificacións que se lle fagan despois de hoxe.
+'''Actualmente non resulta posible eliminar ou modificar os documentos de sinatura unha vez que sexan creados''' sen acceso directo á base de datos.
+Ademais, o texto da páxina que se mostra na páxina de sinaturas será o texto ''actual'' da páxina, independentemente das modificacións que se lle fagan despois de hoxe.
 Asegúrese ben de que o documento está en situación de estabilidade antes de asinalo.
 Asegúrese tamén de que especifica todos os campos exactamente como han de ser ''antes de enviar este formulario''.",
 	'createsigndoc-pagename' => 'Páxina:',

@@ -67,6 +67,18 @@ $messages['arz'] = array(
 	'ratedpages-graphs' => 'بيانات التقييم',
 );
 
+/** Asturian (Asturianu)
+ * @author Xuacu
+ */
+$messages['ast'] = array(
+	'ratedpages' => 'Páxines calificaes polos llectores',
+	'ratedpages-leg' => 'Alcontrar páxines calificaes con un númberu bultable de votos',
+	'ratedpages-list' => 'Abaxo ta una llista de páxines ordenaes pola valoración devuelta polos llectores.',
+	'ratedpages-none' => 'Nun hai páxines nesta llista',
+	'ratedpages-graphs' => 'datos de calificación',
+	'ratedpages-count' => '$1 {{PLURAL:$1|revisión|revisiones}}',
+);
+
 /** Bashkir (Башҡортса)
  * @author Assele
  * @author Haqmar

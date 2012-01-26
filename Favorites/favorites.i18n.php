@@ -474,6 +474,7 @@ Tamén pode [[Special:Favoritelist/edit|empregar o editor normal]].',
 
 /** Hebrew (עברית)
  * @author Deror avi
+ * @author Nirofir
  * @author Ofekalef
  */
 $messages['he'] = array(
@@ -487,10 +488,13 @@ $messages['he'] = array(
 	'favoritelistfor' => "(עבור '''$1''')",
 	'nofavoritelist' => 'אין פריטים ברשימת המועדפים שלך.',
 	'favoritelistanontext' => 'נא $1 על מנת לצפות או לערוך פריטים ברשימת המעקב שלך.',
+	'addedfavorite' => 'הוסף לרשימת המועדפים',
 	'addedfavoritetext' => 'הדף "[[:$1]]" הוסף לרשימת ה[[Special:Favoritelist|מועדפים]] שלך.',
+	'removedfavorite' => 'הוסר מרשימת המועדפים',
 	'removedfavoritetext' => 'הדף "[[$1]]" הוסר מרשימת ה[[Special:Favoritelist|מועדפים]] שלך.',
 	'favoritelistedit-normal-title' => 'עריכת מועדפים',
 	'favoritelistedit-raw-titles' => 'כותרות:',
+	'favoritelisttools-view' => 'הצגת רשימת המועדפים',
 );
 
 /** Upper Sorbian (Hornjoserbsce)

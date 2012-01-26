@@ -1877,7 +1877,7 @@ $messages['vi'] = array(
 	'amazonplus-none' => 'Không có bản nào của món hàng này được đăng bán.',
 	'amazonplus-cp-none' => 'Không có',
 	'amazonplus-more' => 'thêm',
-	'amazonplus-less' => 'ít hơn',
+	'amazonplus-less' => 'bớt',
 );
 
 /** Volapük (Volapük)

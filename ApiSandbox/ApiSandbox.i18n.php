@@ -255,15 +255,37 @@ $messages['ca'] = array(
  * @author Utar
  */
 $messages['cs'] = array(
+	'apisb-desc' => 'Umožňuje ladit volání [//www.mediawiki.org/wiki/API MediaWiki API] v prohlížeči',
 	'apisandbox' => 'API pískoviště',
 	'apisb-no-js' => "'''Chyba''': tato funkce vyžaduje JavaScript.",
+	'apisb-intro' => "Pomocí této stránky můžete experimentovat s '''webovými službami MediaWiki API'''.
+Podrobností využití API najdete v [//www.mediawiki.org/wiki/API:Main_page jeho dokumentaci]. Příklad: [//www.mediawiki.org/wiki/API#A_simple_example získání obsahu Hlavní stránky]. Další příklady uvidíte vybráním parametru action.",
+	'apisb-api-disabled' => 'API je na tomto webu vypnuto.',
+	'apisb-legend-parameters' => 'Parametry',
+	'apisb-legend-result' => 'Výsledek',
+	'apisb-legend-generic-parameters' => 'Obecné parametry',
+	'apisb-legend-generator-parameters' => 'Generátor',
+	'apisb-result-request-url' => 'URL požadavku:',
+	'apisb-result-request-post' => 'POSTovaná data:',
+	'apisb-select-action' => '(vyberte akci)',
+	'apisb-select-query' => '(vyberte dotaz)',
+	'apisb-select-value' => '(vyberte hodnotu)',
+	'apisb-docs-more' => 'více informací',
+	'apisb-params-param' => 'Parametr',
+	'apisb-params-input' => 'Vstup',
+	'apisb-params-desc' => 'Popis',
+	'apisb-loading' => 'Načítá se…',
+	'apisb-load-error' => 'Chyba při načítání popisu API',
+	'apisb-request-error' => 'Chyba při provádění požadavku na API',
+	'apisb-namespaces-error' => 'Chyba při načítání jmenných prostorů',
 	'apisb-ns-main' => '(Hlavní)',
 	'apisb-submit' => 'Odeslat požadavek',
 	'apisb-query-prop' => 'Vlastnosti',
 	'apisb-query-list' => 'Seznamy',
 	'apisb-query-meta' => 'Meta informace',
-	'apisb-generic-parameters' => 'Obecné parametry',
-	'apisb-generator-parameters' => 'Generátor',
+	'apisb-example' => 'Příklad',
+	'apisb-examples' => 'Příklady',
+	'apisb-clear' => 'Vyčistit',
 );
 
 /** German (Deutsch)
@@ -1686,6 +1708,7 @@ $messages['tr'] = array(
 /** Ukrainian (Українська)
  * @author Microcell
  * @author Sodmy
+ * @author Тест
  */
 $messages['uk'] = array(
 	'apisb-desc' => 'Дозволяє налагоджувати виклики [//www.mediawiki.org/wiki/API MediaWiki API] з браузера',
@@ -1701,7 +1724,7 @@ $messages['uk'] = array(
 	'apisb-result-request-post' => 'POST данні:',
 	'apisb-select-action' => 'Виберіть дію',
 	'apisb-select-query' => 'Що запитати?',
-	'apisb-select-value' => 'Оберіть значення',
+	'apisb-select-value' => '(виберіть значення)',
 	'apisb-loading' => 'Завантаження...',
 	'apisb-load-error' => 'Помилка завантаження API опису',
 	'apisb-request-error' => 'Помилка виконання запиту API',
@@ -1734,14 +1757,19 @@ $messages['vi'] = array(
 	'apisb-intro' => "Trang này dùng để thử nghiệm với '''API dịch vụ Web của MediaWiki'''.
 	Hãy tra cứu [//www.mediawiki.org/wiki/API:Main_page tài liệu API] để biết chi tiết về cách sử dụng API. Ví dụ: [//www.mediawiki.org/wiki/API#A_simple_example lấy nội dung của Trang Chính]. Chọn một tác vụ để xem thêm ví dụ.",
 	'apisb-api-disabled' => 'API đã bị vô hiệu hóa trên trang web này.',
+	'apisb-legend-parameters' => 'Tham số',
 	'apisb-legend-result' => 'Kết quả',
 	'apisb-legend-generic-parameters' => 'Tham số chung',
 	'apisb-legend-generator-parameters' => 'Bộ xuất phát',
 	'apisb-result-request-url' => 'URL của yêu cầu:',
 	'apisb-result-request-post' => 'Dữ liệu POST:',
 	'apisb-select-action' => 'Chọn tác vụ',
-	'apisb-select-query' => 'Bạn muốn truy vấn gì?',
-	'apisb-select-value' => 'Chọn giá trị',
+	'apisb-select-query' => '(chọn truy vấn)',
+	'apisb-select-value' => '(chọn giá trị)',
+	'apisb-docs-more' => 'xem tiếp',
+	'apisb-params-param' => 'Tham số',
+	'apisb-params-input' => 'Đầu vào',
+	'apisb-params-desc' => 'Miêu tả',
 	'apisb-loading' => 'Đang tải…',
 	'apisb-load-error' => 'Lỗi khi tải miêu tả API',
 	'apisb-request-error' => 'Lỗi khi phản ứng yêu cầu API',
@@ -1753,6 +1781,7 @@ $messages['vi'] = array(
 	'apisb-query-meta' => 'Siêu thông tin',
 	'apisb-example' => 'Ví dụ',
 	'apisb-examples' => 'Ví dụ',
+	'apisb-clear' => 'Tẩy trống',
 );
 
 /** Yiddish (ייִדיש)

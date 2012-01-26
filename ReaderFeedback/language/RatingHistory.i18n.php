@@ -188,6 +188,40 @@ $messages['arz'] = array(
 	'right-feedback' => 'استخدام استمارة الآراء لتقييم صفحة',
 );
 
+/** Asturian (Asturianu)
+ * @author Xuacu
+ */
+$messages['ast'] = array(
+	'ratinghistory' => 'Historial de calificación de la páxina',
+	'ratinghistory-leg' => 'Datos del historial de calificación pa [[:$1|$1]]',
+	'ratinghistory-tab' => 'calificación',
+	'ratinghistory-link' => 'Calificación de la páxina',
+	'ratinghistory-thanks' => "''<span style=\"color:darkred;\">¡Gracies por tomar un momentu para revisar esta páxina!</span>''",
+	'ratinghistory-period' => 'Periodu de tiempu:',
+	'ratinghistory-month' => 'caberu mes',
+	'ratinghistory-3months' => 'caberos 3 meses',
+	'ratinghistory-year' => 'caberu añu',
+	'ratinghistory-3years' => 'caberos 3 años',
+	'ratinghistory-ave' => 'Media: $1',
+	'ratinghistory-chart' => 'Calificaciones de los llectores a lo llargo del tiempu',
+	'ratinghistory-purge' => 'purgar cache',
+	'ratinghistory-table' => 'Resume de les calificaciones de los llectores',
+	'ratinghistory-users' => 'Usuarios que calificaron',
+	'ratinghistory-graph' => '$2 de "$3" ($1 {{PLURAL:$1|revisión|revisiones}})',
+	'ratinghistory-svg' => 'Ver como SVG',
+	'ratinghistory-table-rating' => 'Calificación',
+	'ratinghistory-table-votes' => 'Votos',
+	'ratinghistory-none' => 'Nun hai datos bastantes devueltos polos llectores pa crear gráfiques nesti momentu.',
+	'ratinghistory-ratings' => "'''Lleenda:''' '''(1)''' - Probe; '''(2)''' - Baxa; '''(3)''' - Bona; '''(4)''' - Alta; '''(5)''' - Escelente;",
+	'ratinghistory-legend' => "El '''númberu de calificaciones diaries''' <span style=\"color:red;\">''(bermeyu)''</span>, la '''calificación media diaria''' <span style=\"color:blue;\">''(azul)''</span> y la '''calificación media actual''' <span style=\"color:green;\">''(verde)''</span> tan na gráfica d'abaxo, por data.
+La '''calificación media actual''' ye simplemente la media de toles calificaciones diaries ''dientro'' del periodu horariu de cada día.
+Les calificaciones son como sigue:
+
+'''(1)''' - Probe; '''(2)''' - Baxa; '''(3)''' - Bona; '''(4)''' - Alta; '''(5)''' - Escelente;",
+	'ratinghistory-graph-scale' => "Les '''revisiones por día''' <span style=\"color:red;\">''(bermeyu)''</span> amosaes a escala ''1:\$1''.",
+	'right-feedback' => "Usa'l formulariu de comentarios pa calificar una páxina",
+);
+
 /** Azerbaijani (Azərbaycanca)
  * @author Cekli829
  */
