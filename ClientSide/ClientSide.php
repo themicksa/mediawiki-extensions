@@ -30,7 +30,7 @@ abstract class CsHtml {
 			array_shift( $arguments );
 		}
 		if ( count( $arguments ) > 0 ) {
-			return self::tag( 'table', $attributes, implode( $arguments ) );
+			return self::tag( 'table', $attributes, implode( '', $arguments ) );
 		}
 		return null;
 	}
@@ -49,7 +49,7 @@ abstract class CsHtml {
 			array_shift( $arguments );
 		}
 		if ( count( $arguments ) > 0 ) {
-			return self::tag( 'tr', $attributes, implode( $arguments ) );
+			return self::tag( 'tr', $attributes, implode( '', $arguments ) );
 		}
 		return null;
 	}
@@ -163,7 +163,7 @@ abstract class CsHtml {
 		$contents = null
 	) {
 		if ( is_array( $contents ) && count( $contents ) > 1 ) {
-			return Xml::tags( $tag, $attributes, implode( $contents ) );
+			return Xml::tags( $tag, $attributes, implode( '', $contents ) );
 		} else {
 			return Xml::tags(
 				$tag, $attributes, $contents, ( $contents !== null )
@@ -313,7 +313,7 @@ abstract class CsJs {
 	) {
 		// Arrays
 		if ( is_array( $value ) ) {
-			return "'" . self::escape( implode( $value ) ) . "'";
+			return "'" . self::escape( implode( '', $value ) ) . "'";
 		}
 		// Scalars
 		if ( is_scalar( $value ) ) {
