@@ -34,11 +34,21 @@ $wgExtensionMessagesFiles['ConditionalShowSection'] = $dir . 'ConditionalShowSec
 
 $wgHooks['ParserFirstCallInit'][] = 'wfConditionalShowSection';
 
+/**
+ * @param $parser Parser
+ * @return bool
+ */
 function wfConditionalShowSection( $parser ) {
-    $parser->setHook( "cshow", "ConditionalShowSection" );
-    return true;
+	$parser->setHook( "cshow", "ConditionalShowSection" );
+	return true;
 }
 
+/**
+ * @param $input
+ * @param $argv
+ * @param $parser Parser
+ * @return string
+ */
 function ConditionalShowSection( $input, $argv, &$parser ) {
 	#
 	# By default, the section is HIDDEN unless the following conditions are met:
@@ -63,7 +73,6 @@ function ConditionalShowSection( $input, $argv, &$parser ) {
 	global $wgUser;
 
 	$userReqLogged = null;	 # default is "don't care"
-	$userReqGroup  = "" ;    # assuming no group membership required
 	$output = ""; 	         # assuming the section is hidden by default.
 
 	$cond1 = false;
@@ -96,7 +105,7 @@ function ConditionalShowSection( $input, $argv, &$parser ) {
 		$cond1 = true;
 	}
 	# if both conditions are met, then SHOW else HIDE
-	if ( ( $cond1 === true ) and ( $cond2 === true ) ) {
+	if ( ( $cond1 === true ) && ( $cond2 === true ) ) {
 		$output = $parser->recursiveTagParse( $input );
 	}
 
