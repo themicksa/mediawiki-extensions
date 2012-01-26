@@ -1,7 +1,7 @@
 <?php
 
 class ExtZeroRatedMobileAccess {
-	const VERSION = '0.0.8';
+	const VERSION = '0.0.9';
 
 	public static $renderZeroRatedLandingPage;
 	public static $renderZeroRatedBanner;
@@ -326,12 +326,96 @@ class ExtZeroRatedMobileAccess {
 		return true;
 	}
 
+	public function parseWikiTextToArray( Array $formatter, $wikiText, $nChild = false ) {
+		$options = array();
+		$data = explode( PHP_EOL, $wikiText );
+		if ( is_array( $formatter ) && !$nChild ) {
+			$arrayKeys = array_keys( $formatter );
+			$keyCount = count( $arrayKeys );
+			$index = 0;
+			foreach ( $data as $key => $rawData ) {
+				$index = ( intval( $key ) % $keyCount === 0 ) ? 0 : $index + 1;
+				if ( in_array( $index, $arrayKeys ) ) {
+					$data = trim( str_replace( '*', '', $rawData ) );
+					if ( is_array( $formatter[$index] ) ) {
+						$name = $formatter[$index]['name'];
+						if ( isset( $formatter[$index]['callback'] ) ) {
+							$callback = $formatter[$index]['callback'];
+							if ( method_exists( $this, $callback ) ) {
+								if ( isset( $formatter[$index]['parameters'] ) ) {
+									if ( is_array( $formatter[$index]['parameters'] ) ) {
+										$parameters = array();
+										foreach ( $formatter[$index]['parameters'] as $parameter ) {
+											if ( isset( $options[$prefixName][$parameter] ) ) {
+												$parameters[$parameter] = $options[$prefixName][$parameter];
+											}
+										}
+										$data = $this->$callback( $data, $parameters );
+									} else {
+										$parameter = $formatter[$index]['parameters'];
+										if ( isset( $options[$prefixName][$parameter] ) ) {
+											$parameterValue = $options[$prefixName][$parameter];
+											$data = $this->$callback( $data, $parameterValue );
+										}
+									}
+								} else {
+									$data = $this->$callback( $data );
+								}
+							}
+						}
+					} else {
+						$name = $formatter[$index];
+					}
+					if ( $index === 0 ) {
+						$prefixName = strtoupper( $data );
+					}
+					$options[$prefixName][$name] = $data;
+				}
+			}
+		} else if ( is_array( $formatter ) && $nChild ) {
+			foreach ( $data as $key => $rawData ) {
+				if ( strpos( $rawData, '*' ) === 0 && strpos( $rawData, '**' ) !== 0 && $key >= 0 ) {
+					$data = trim( str_replace( '*', '', $rawData ) );
+					$prefixName = strtoupper( $data );
+					$options[$prefixName] = '';
+				} else if ( strpos( $rawData, '**' ) === 0 && $key > 0 ) {
+					$data = trim( str_replace( '*', '', $rawData ) );
+					if ( is_array( $formatter ) ) {
+						if ( isset( $formatter[0]['callback'] ) ) {
+							$callback = $formatter[0]['callback'];
+							if ( method_exists( $this, $callback ) ) {
+								$data = $this->$callback( $data );
+								if ( $data ) {
+									$options[$prefixName][] = $data;
+								}
+							}
+						}
+					} else {
+						$options[$prefixName][] = $data;
+					}
+				}
+			}
+		}
+		return $options;
+	}
+
+	public function createUrlCallback( $url, $name ) {
+		$carrierLink = Html::rawElement( 'a',
+			array( 'href' => $url ),
+				$name );
+		return $carrierLink;
+	}
+
+	public function intValCallback( $int ) {
+		return intval( $int );
+	}
+
 	/**
 	* Returns the carrier options array parsed from a valid wiki page
 	*
 	* @return Array
 	*/
-	private static function createCarrierOptionsFromWikiText() {
+	private function createCarrierOptionsFromWikiText() {
 		global $wgMemc;
 		wfProfileIn( __METHOD__ );
 
@@ -347,32 +431,18 @@ class ExtZeroRatedMobileAccess {
 		}
 
 		if ( !$carrierOptions ) {
-			$carrierOptions = array();
-			$lines = array();
 			if ( $rev ) {
-				$lines = explode( "\n", $rev );
-			}
-			if ( $lines && count( $lines ) > 0 ) {
-				$sizeOfLines = sizeof( $lines );
-				for ( $i = 0; $i < $sizeOfLines; $i++ ) {
-					$line = $lines[$i];
-					if ( strpos( $line, '*' ) === 0 && strpos( $line, '**' ) !== 0 && $i >= 0 ) {
-						$carrierName = strtoupper( str_replace( '* ', '', $line ) );
-						$carrierRaw = str_replace( '* ', '', $line );
-						$carrierOptions[$carrierName] = '';
-						$carrierOptions[$carrierName]['name'] = $carrierRaw;
-					} elseif ( strpos( $line, '**' ) === 0 && $i > 0 ) {
-						if ( $i % 3 === 1 ) {
-							$carrierOptions[$carrierName]['url'] = trim( str_replace( '** ', '', $line ) );
-							$carrierLink = Html::rawElement( 'a',
-								array( 'href' => $carrierOptions[$carrierName]['url'] ),
-									$carrierOptions[$carrierName]['name'] );
-							$carrierOptions[$carrierName]['link'] = $carrierLink;
-						} elseif ( $i % 3 === 2 ) {
-							$carrierOptions[$carrierName]['partnerId'] = intval( trim( str_replace( '** ', '', $line ) ) );
-						}
-					}
-				}
+				$formatter = array(
+					 0 => 'name',
+					 1 => array( 'name' => 'link',
+								 'callback' => 'createUrlCallback',
+								 'parameters' => 'name',
+						),
+					 2 => array( 'name' => 'partnerId',
+								 'callback' => 'intValCallback'
+						),
+				);
+				 $carrierOptions = $this->parseWikiTextToArray( $formatter, $rev );
 			}
 			$wgMemc->set( $key, $carrierOptions, self::getMaxAge() );
 		}
@@ -433,12 +503,25 @@ class ExtZeroRatedMobileAccess {
 		return array( $key, $rev );
 	}
 
+	public function languagePercentageCallback( $data ) {
+		$languageArray = array();
+		$lineParts = explode( '#', $data );
+		$language = ( isset( $lineParts[0] ) ) ? trim( $lineParts[0] ) : trim( $data );
+		if ( $language !== 'portal' && $language !== 'other' ) {
+			$languageArray = ( isset( $lineParts[1] ) ) ?
+				array(	'language'  =>  $language,
+						'percentage'  =>  intval( str_replace( '%', '', trim( $lineParts[1] ) ) ) ) :
+				$language;
+		}
+		return $languageArray;
+	}
+
 	/**
 	* Returns the language options array parsed from a valid wiki page
 	*
 	* @return Array
 	*/
-	private static function createLanguageOptionsFromWikiText() {
+	private function createLanguageOptionsFromWikiText() {
 		global $wgMemc;
 		wfProfileIn( __METHOD__ );
 		$languageOptionsWikiPage = wfMsgForContent( 'zero-rated-mobile-access-language-options-wiki-page' );
@@ -456,28 +539,12 @@ class ExtZeroRatedMobileAccess {
 			$languageOptions = array();
 			$lines = array();
 			if ( $rev ) {
-				$lines = explode( "\n", $rev );
-			}
-			if ( $lines && count( $lines ) > 0 ) {
-				$sizeOfLines = sizeof( $lines );
-				for ( $i = 0; $i < $sizeOfLines; $i++ ) {
-					$line = $lines[$i];
-					if ( strpos( $line, '*' ) === 0 && strpos( $line, '**' ) !== 0 && $i >= 0 ) {
-						$countryName = strtoupper( str_replace( '* ', '', $line ) );
-						$languageOptions[$countryName] = '';
-					} elseif ( strpos( $line, '**' ) === 0 && $i > 0 ) {
-						$lineParts = explode( '#', $line );
-						$language = ( isset( $lineParts[0] ) ) ?
-							trim( str_replace( '** ', '', $lineParts[0] ) ) :
-							trim( str_replace( '** ', '', $line ) ) ;
-						if ( $language !== 'portal' && $language !== 'other' ) {
-							$languageOptions[$countryName][] = ( isset( $lineParts[1] ) ) ?
-								array(	'language'  =>  $language,
-										'percentage'  =>  intval( str_replace( '%', '', trim( $lineParts[1] ) ) ) ) :
-								$language;
-						}
-					}
-				}
+				$formatter = array(
+					 0 => array( 'name' => 'partnerId',
+								 'callback' => 'languagePercentageCallback'
+						),
+				);
+				$languageOptions = $this->parseWikiTextToArray( $formatter, $rev, true );
 			}
 			$wgMemc->set( $key, $languageOptions, self::getMaxAge() );
 		}
