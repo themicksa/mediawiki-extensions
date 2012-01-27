@@ -2789,6 +2789,7 @@ $messages['be-tarask'] = array(
 	'configure-setting-wgUseNPPatrol' => 'Выкарыстоўваць патруляваньне новых старонак для праверкі на вандалізм',
 	'configure-setting-wgAutopromote' => 'Умовы аўтаматычнага пераводу ўдзельнікаў ў пазначаныя групы',
 	'configure-setting-wgAutopromote-value' => 'Умовы',
+	'configure-setting-wgAutopromoteOnce' => 'Умовы аўтаматычнага падвышэньня ўдзельніка ў асобную групу, якое робіцца толькі адзін раз',
 	'configure-setting-wgAccountCreationThrottle' => 'Колькасьць рахункаў, якія можна стварыць з аднаго IP-адрасу',
 	'configure-setting-wgAllowPageInfo' => 'Дазволіць інфармацыйныя дзеяньні',
 	'configure-setting-wgBlockCIDRLimit' => 'Максымальны дыяпазон CIDR пад час блякаваньня дыяпазону IP-адрасоў',
@@ -2832,6 +2833,7 @@ $messages['be-tarask'] = array(
 	'configure-setting-wgDebugRedirects' => 'Паказваць перанакіраваньне замест пераходу на мэтавы URL-адрас',
 	'configure-setting-wgDebugPrintHttpHeaders' => 'Выводзіць HTTP-загалоўкі для кожнага запыту ў інфармацыі для наладкі',
 	'configure-setting-wgDebugTimestamps' => 'Дапаўненьне да паведамленьняў для наладкі з часам стварэньня',
+	'configure-setting-wgDebugToolbar' => 'Паказваць панэль інструмэнтаў для выпраўленьня памылак',
 	'configure-setting-wgDevelopmentWarnings' => 'Выводзіць паведамленьні PHP для некаторых магчымых памылковых умоваў і для састарэлых функцыяў',
 	'configure-setting-wgShowExceptionDetails' => 'Выводзіць поўную трасіроўку стэку для выключэньняў',
 	'configure-setting-wgShowDBErrorBacktrace' => 'Друкаваць поўны стэк выкліку ў выпадку памылак базы зьвестак',
@@ -20001,7 +20003,7 @@ $messages['sr-ec'] = array(
 	'configure-setting-wgQueryCacheLimit' => "Број редова који ће бити кеширани у 'querycache'-табели",
 	'configure-setting-wgRevisionCacheExpiry' => 'Време истека за кеширање текста ревизије у memcached (или 0, за онемогућавање)',
 	'configure-setting-wgThumbnailEpoch' => 'Епоха освежавања прегледа слике',
-	'configure-setting-wgTranscludeCacheExpiry' => 'Време истека кеша за међувики трансклузије',
+	'configure-setting-wgTranscludeCacheExpiry' => 'Истицање кеша за међувики укључивање',
 	'configure-setting-wgUseFileCache' => 'Користи кеш фајлова',
 	'configure-setting-wgUseGzip' => 'Користи GZIP кодирање',
 	'configure-setting-wgAllowDisplayTitle' => 'Омогући коришћење <nowiki>{{DISPLAYTITLE}}</nowiki>',
@@ -22324,6 +22326,7 @@ $messages['yi'] = array(
  * @author Hydra
  * @author Hzy980512
  * @author Liangent
+ * @author Linforest
  * @author PhiLiP
  * @author Xiaomingyan
  */
@@ -22390,6 +22393,7 @@ $messages['zh-hans'] = array(
 	'configure-setting-wgExternalLinkTarget' => '默认的外部链接的目标属性',
 	'configure-setting-wgCleanSignatures' => '替换模板中的签名',
 	'configure-setting-wgGalleryOptions' => '默认参数<nowiki><gallery></nowiki>标记',
+	'configure-setting-wgMaxTemplateDepth' => '适用于预处理程序的模板深度限制',
 	'configure-setting-wgParserConf' => '语法分析器设置',
 	'configure-setting-wgParserCacheExpireTime' => '缓存解析器的到期时间',
 	'configure-setting-wgRestrictDisplayTitle' => '需要使用<nowiki>{{DISPLAYTITLE}}</nowiki>常态化至相同标准页面标题',

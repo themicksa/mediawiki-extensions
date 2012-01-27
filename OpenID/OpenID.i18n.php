@@ -5180,7 +5180,7 @@ $messages['ru'] = array(
 	'openidsuccess' => 'Проверка прошла успешно',
 	'openidsuccesstext' => 'Проверка адреса OpenID прошла успешно.',
 	'openidusernameprefix' => 'УчастникOpenID',
-	'openidserverlogininstructions' => 'Введите ниже ваш пароль, чтобы войти на $3 как участник $2 (личная страница $1).',
+	'openidserverlogininstructions' => 'Введите ниже свой пароль, чтобы войти на $3 как участник $2 (личная страница $1 — это ваш OpenID URL).',
 	'openidtrustinstructions' => 'Отметьте, если вы хотите предоставить доступ к данным для $1.',
 	'openidallowtrust' => 'Разрешить $1 доверять этой учётной записи.',
 	'openidnopolicy' => 'Сайт не указал политику конфиденциальности.',
@@ -5206,7 +5206,7 @@ $messages['ru'] = array(
 	'openidconvertinstructions' => 'Эта форма позволяет вам сменить использование вашей учётной записи на использование адреса OpenID, добавить несколько адресов OpenID.',
 	'openidconvertoraddmoreids' => 'Преобразовать в OpenID или добавить другой адрес OpenID',
 	'openidconvertsuccess' => 'Успешное преобразование в OpenID',
-	'openidconvertsuccesstext' => 'Вы успешно преобразовали ваш OpenID в $1.',
+	'openidconvertsuccesstext' => 'Вы успешно преобразовали свой OpenID в $1.',
 	'openidconvertyourstext' => 'Это уже ваш OpenID.',
 	'openidconvertothertext' => 'Это чужой OpenID.',
 	'openidalreadyloggedin' => 'Вы уже вошли.',
@@ -5229,9 +5229,9 @@ OpenID позволяет вам заходить на различные веб
 	'openiddelete-text' => 'Нажав на кнопку «{{int:openiddelete-button}}», Вы удалите OpenID $1 из своей учётной записи.
 Вы больше не сможете входить с этим OpenID.',
 	'openiddelete-button' => 'Подтвердить',
-	'openiddeleteerrornopassword' => 'Вы не можете удалить все ваши OpenID, так как у вашей учётной записи нет пароля.
+	'openiddeleteerrornopassword' => 'Вы не можете удалить все свои OpenID, так как у вашей учётной записи нет пароля.
 У вас не будет возможности войти в систему без OpenID.',
-	'openiddeleteerroropenidonly' => 'Вы не можете удалить все ваши OpenID, так как вам разрешено входить в систему только с использованием OpenID.
+	'openiddeleteerroropenidonly' => 'Вы не можете удалить все свои OpenID, так как вам разрешено входить в систему только с использованием OpenID.
 У вас не будет возможности войти в систему без OpenID.',
 	'openiddelete-sucess' => 'OpenID успешно удалён из Вашей учётной записи.',
 	'openiddelete-error' => 'Произошла ошибка при удалении OpenID из Вашей учётной записи.',

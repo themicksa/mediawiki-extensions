@@ -6149,6 +6149,7 @@ $messages['roa-tara'] = array(
 /** Russian (Русский)
  * @author DCamer
  * @author Eugrus
+ * @author Kaganer
  * @author Ole Yves
  */
 $messages['ru'] = array(
@@ -6238,7 +6239,7 @@ $messages['ru'] = array(
 	'contest-signup-cv' => 'Ссылка на ваше резюме',
 	'contest-signup-readrules' => 'Я подтверждаю, что прочитал [[$1|правила конкурса]] и согласен с ними',
 	'contest-signup-challenge' => 'Какие задачи вы хотите взять на себя?',
-	'contest-signup-finished' => 'Этот конкурс завершился. Благодарим Вас за участие!',
+	'contest-signup-finished' => 'Этот конкурс завершился. Благодарим вас за участие!',
 	'contest-signup-draft' => 'Этот конкурс еще не начался. Пожалуйста, будьте терпеливы.',
 	'contest-signup-country' => 'Ваша страна',
 	'contest-signup-emailwarn' => 'Предупреждение: Вы изменяете адрес электронной почты вашей учетной записи, это потребует подтвердить новый адрес.',
@@ -6854,7 +6855,7 @@ $messages['sr-ec'] = array(
 	'contest-contest-reminder-sending' => 'Шаљем…',
 	'contest-contest-reminder-close' => 'Затвори',
 	'contest-contest-reminder-retry' => 'Покушај поново',
-	'contest-contest-reminder-failed' => 'Не могу да пошаљем подсетнике.',
+	'contest-contest-reminder-failed' => 'Не могу да пошаљем {{PLURAL:$1|подсетник|подсетнике}}.',
 	'contest-contest-reminder-subject' => 'Наслов:',
 	'contest-contestant-id' => 'Назнака',
 	'contest-contestant-challenge-name' => 'Назив задатка',

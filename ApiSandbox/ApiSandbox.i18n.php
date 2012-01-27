@@ -811,6 +811,7 @@ Consulta [//www.mediawiki.org/wiki/API:Main_page le documentation del API] pro u
 );
 
 /** Indonesian (Bahasa Indonesia)
+ * @author Anakmalaysia
  * @author Farras
  * @author IvanLanin
  */
@@ -827,8 +828,8 @@ Lihat [//www.mediawiki.org/wiki/API:Main_page dokumentasi API] untuk perincian l
 	'apisb-result-request-url' => 'URL Permintaan:',
 	'apisb-result-request-post' => 'Data POST:',
 	'apisb-select-action' => 'Pilih tindakan',
-	'apisb-select-query' => 'Pilih permintaan',
-	'apisb-select-value' => 'Pilih nilai',
+	'apisb-select-query' => '(pilih permintaan)',
+	'apisb-select-value' => '(pilih nilai)',
 	'apisb-params-param' => 'Parameter',
 	'apisb-params-input' => 'Masukan',
 	'apisb-params-desc' => 'Keterangan',
@@ -1130,14 +1131,15 @@ $messages['ms'] = array(
 Rujuk [//www.mediawiki.org/wiki/API:Main_page dokumentasi API] untuk keterangan lanjut tentang penggunaan API.
 Contoh: [//www.mediawiki.org/wiki/API#A_simple_example dapatkan kandungan Laman Utama].  Pilih satu tindakan untuk melihat banyak lagi contoh.",
 	'apisb-api-disabled' => 'API dimatikan di tapak web ini.',
+	'apisb-legend-parameters' => 'Parameter',
 	'apisb-legend-result' => 'Hasil',
 	'apisb-legend-generic-parameters' => 'Parameter am',
 	'apisb-legend-generator-parameters' => 'Penjana',
 	'apisb-result-request-url' => 'URL permohonan:',
 	'apisb-result-request-post' => 'Data POST:',
 	'apisb-select-action' => 'Pilih tindakan',
-	'apisb-select-query' => 'Apa untuk ditanya?',
-	'apisb-select-value' => 'Pilih nilai',
+	'apisb-select-query' => '(pilih pertanyaan)',
+	'apisb-select-value' => '(pilih nilai)',
 	'apisb-docs-more' => 'baca lagi',
 	'apisb-params-param' => 'Parameter',
 	'apisb-params-input' => 'Input',
@@ -1298,8 +1300,8 @@ $messages['pms'] = array(
 	'apisb-desc' => 'A përmëtt ëd gavé ij bigat a le ciamà [//www.mediawiki.org/wiki/API API ëd MediaWiki] a parte dal navigador',
 	'apisandbox' => 'Spassi dle preuve API',
 	'apisb-no-js' => "'''Eror''': sta funsion a l'ha damanca ëd JavaScript",
-	'apisb-intro' => "Ch'a deuvra sta pàgina për sperimenté con '''MediaWiki API'''.
-Ch'a fasa riferiment a [//www.mediawiki.org/wiki/API:Main_page la documentassion ëd l'API] për d'àutri detaj an sl'utilisassion ëd l'API.",
+	'apisb-intro' => "Ch'a deuvra sta pàgina për sperimenté ël '''servissi an sl'aragnà MediaWiki API'''.
+Ch'a fasa riferiment a [//www.mediawiki.org/wiki/API:Main_page la documentassion ëd l'API] për d'àutri detaj an sl'utilisassion ëd l'API. Për esempi: [//www.mediawiki.org/wiki/API#A_simple_example oten-e ël contnù ëd na pàgina d'Intrada]. Ch'a selession-a n'assion për vëdde d'àutri esempi.",
 	'apisb-api-disabled' => "API a l'é disabilità ansima a 's sit.",
 	'apisb-legend-result' => 'Arzultà',
 	'apisb-legend-generic-parameters' => 'Paràmetr genérich',
@@ -1456,6 +1458,7 @@ $messages['roa-tara'] = array(
 /** Russian (Русский)
  * @author DCamer
  * @author Eleferen
+ * @author Kaganer
  * @author KorneySan
  * @author Александр Сигачёв
  */
@@ -1464,18 +1467,20 @@ $messages['ru'] = array(
 	'apisandbox' => 'Песочница API',
 	'apisb-no-js' => "'''Ошибка''': эта возможность требует JavaScript.",
 	'apisb-intro' => "Используйте эту страницу для экспериментов с '''MediaWiki API'''.
-Обратитесь к [//www.mediawiki.org/wiki/API:Main_page документации API] для получения дополнительной информации об использовании API.",
+Обратитесь к [//www.mediawiki.org/wiki/API:Main_page документации API] для получения дополнительной информации об использовании API.  Например о том, [//www.mediawiki.org/wiki/API#A_simple_example как получить содержание Заглавной страницы]. Выберите действие, чтобы увидеть другие примеры.",
 	'apisb-api-disabled' => 'API отключен на этом сайте.',
+	'apisb-legend-parameters' => 'Параметры',
 	'apisb-legend-result' => 'Результат',
 	'apisb-legend-generic-parameters' => 'Общие параметры',
 	'apisb-legend-generator-parameters' => 'Генератор',
 	'apisb-result-request-url' => 'URL-адрес запроса:',
 	'apisb-result-request-post' => 'POST данные:',
 	'apisb-select-action' => 'Выберите действие',
-	'apisb-select-query' => 'Что запросить?',
-	'apisb-select-value' => 'Выберите значение',
+	'apisb-select-query' => '(выберите запрос)',
+	'apisb-select-value' => '(выберите значение)',
 	'apisb-docs-more' => 'подробнее',
 	'apisb-params-param' => 'Параметр',
+	'apisb-params-input' => 'Ввод',
 	'apisb-params-desc' => 'Описание',
 	'apisb-loading' => 'Загрузка…',
 	'apisb-load-error' => 'Ошибка при загрузке описания API',
@@ -1488,6 +1493,7 @@ $messages['ru'] = array(
 	'apisb-query-meta' => 'Мета-информация',
 	'apisb-example' => 'Пример',
 	'apisb-examples' => 'Примеры',
+	'apisb-clear' => 'Очистить',
 );
 
 /** Sanskrit (संस्कृतम्)
@@ -1597,8 +1603,8 @@ $messages['sr-ec'] = array(
 	'apisb-result-request-url' => 'Адреса захтева:',
 	'apisb-result-request-post' => 'POST подаци:',
 	'apisb-select-action' => 'Изаберите радњу',
-	'apisb-select-query' => 'Шта да претражим?',
-	'apisb-select-value' => 'Изаберите вредност',
+	'apisb-select-query' => '(изаберите упит)',
+	'apisb-select-value' => '(изаберите вредност)',
 	'apisb-loading' => 'Учитавам…',
 	'apisb-load-error' => 'Грешка при учитавању описа АПИ-ја',
 	'apisb-request-error' => 'Грешка при извршавању захтева од АПИ-ја',
@@ -1811,6 +1817,7 @@ $messages['zh-hans'] = array(
 欲知API使用详情，请参阅[//www.mediawiki.org/wiki/API:Main_page API文档]。
 例如：[//www.mediawiki.org/wiki/API#A_simple_example 取得某个主页的内容]，然后选择一个操作来看更多范例。',
 	'apisb-api-disabled' => '此站点上禁用了API。',
+	'apisb-legend-parameters' => '参数',
 	'apisb-legend-result' => '结果',
 	'apisb-legend-generic-parameters' => '通用参数',
 	'apisb-legend-generator-parameters' => '生成器',
@@ -1818,7 +1825,7 @@ $messages['zh-hans'] = array(
 	'apisb-result-request-post' => 'POST数据：',
 	'apisb-select-action' => '选择操作',
 	'apisb-select-query' => '（请选择查询）',
-	'apisb-select-value' => '（请选择）',
+	'apisb-select-value' => '（选择值）',
 	'apisb-docs-more' => '阅读更多',
 	'apisb-params-param' => '参数',
 	'apisb-params-input' => '输入',
@@ -1849,14 +1856,15 @@ $messages['zh-hant'] = array(
 欲知API使用詳情，請參閱[//www.mediawiki.org/wiki/API:Main_page API文檔]。
 例如：[//www.mediawiki.org/wiki/API#A_simple_example 取得某個主頁的內容]，然後選擇一個操作來看更多範例。',
 	'apisb-api-disabled' => '此站點上禁用了API。',
+	'apisb-legend-parameters' => '參數',
 	'apisb-legend-result' => '結果',
 	'apisb-legend-generic-parameters' => '通用參數',
 	'apisb-legend-generator-parameters' => '生成器',
 	'apisb-result-request-url' => '請求的 URL：',
 	'apisb-result-request-post' => 'POST數據：',
 	'apisb-select-action' => '選擇操作',
-	'apisb-select-query' => '查詢又如何？',
-	'apisb-select-value' => '選擇值',
+	'apisb-select-query' => '（請選擇查詢）',
+	'apisb-select-value' => '（選擇值）',
 	'apisb-docs-more' => '閱讀更多',
 	'apisb-params-param' => '參數',
 	'apisb-params-input' => '輸入',

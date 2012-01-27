@@ -3992,6 +3992,13 @@ $messages['ja'] = array(
 	'deletequeue-case-needs-review' => 'この事例には[[$1|審査]]が必要です。',
 );
 
+/** Georgian (ქართული)
+ * @author David1010
+ */
+$messages['ka'] = array(
+	'right-speedy-nominate' => 'გვერდების ნომინირება სწრაფი წაშლისათვის',
+);
+
 /** Kazakh (Cyrillic script) (‪Қазақша (кирил)‬)
  * @author GaiJin
  */

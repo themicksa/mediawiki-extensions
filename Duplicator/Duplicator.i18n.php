@@ -1187,6 +1187,34 @@ $messages['nah'] = array(
 	'duplicator-source' => 'Īhuīcpa:',
 );
 
+/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
+ * @author Jon Harald Søby
+ * @author Nghtwlkr
+ */
+$messages['nb'] = array(
+	'duplicator' => 'Kopier en side',
+	'duplicator-desc' => 'Opprett uavhengige [[Special:Duplicate|kopier av sider]] med full redigeringshistorikk',
+	'duplicator-toolbox' => 'Kopier denne siden',
+	'duplicator-header' => 'Denne siden muliggjør fullstendig kopiering av en side, med uavhengige kopier av all historikk. Dette er nyttig for oppdeling av sider, etc.',
+	'duplicator-options' => 'Alternativer',
+	'duplicator-source' => 'Kilde:',
+	'duplicator-dest' => 'Mål:',
+	'duplicator-dotalk' => 'Kopier diskusjonsside (om mulig)',
+	'duplicator-submit' => 'Kopier',
+	'duplicator-summary' => 'Kopiert fra [[$1]]',
+	'duplicator-success' => "<big>'''[[$1]]''' ble kopiert til [[$2]].'''</big>",
+	'duplicator-success-revisions' => '$1 {{PLURAL:$1|revisjon|revisjoner}} ble kopiert.',
+	'duplicator-success-talkcopied' => 'Diskusjonssiden ble også kopiert.',
+	'duplicator-success-talknotcopied' => 'Diskusjonssiden kunne ikke kopieres.',
+	'duplicator-failed' => 'Siden kunne ikke kopieres. En ukjent feil forekom.',
+	'duplicator-source-invalid' => 'Vennligst angi en gyldig kildetittel.',
+	'duplicator-source-notexist' => '[[$1]] finnes ikike. Angi tittelen til en eksisterende side.',
+	'duplicator-dest-invalid' => 'Angi en gyldig måltittel.',
+	'duplicator-dest-exists' => '[[$1]] finnes allerede. Angi en måltittel som ikke eksisterer.',
+	'duplicator-toomanyrevisions' => '[[$1]] har for mange ($2) revisjoner, og kan ikke kopieres. Nåværende grense er $3.',
+	'right-duplicate' => 'Kopier sidene',
+);
+
 /** Low German (Plattdüütsch)
  * @author Slomox
  */
@@ -1256,34 +1284,6 @@ Dette er nyttig for oppdeling av sider, etc.',
 	'duplicator-toomanyrevisions' => '[[$1]] har for mange ($2) versjonar og kan ikkje bli kopiert.
 Noverande grensa er $3.',
 	'right-duplicate' => 'Ta kopi av sidene',
-);
-
-/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
- * @author Jon Harald Søby
- * @author Nghtwlkr
- */
-$messages['nb'] = array(
-	'duplicator' => 'Kopier en side',
-	'duplicator-desc' => 'Opprett uavhengige [[Special:Duplicate|kopier av sider]] med full redigeringshistorikk',
-	'duplicator-toolbox' => 'Kopier denne siden',
-	'duplicator-header' => 'Denne siden muliggjør fullstendig kopiering av en side, med uavhengige kopier av all historikk. Dette er nyttig for oppdeling av sider, etc.',
-	'duplicator-options' => 'Alternativer',
-	'duplicator-source' => 'Kilde:',
-	'duplicator-dest' => 'Mål:',
-	'duplicator-dotalk' => 'Kopier diskusjonsside (om mulig)',
-	'duplicator-submit' => 'Kopier',
-	'duplicator-summary' => 'Kopiert fra [[$1]]',
-	'duplicator-success' => "<big>'''[[$1]]''' ble kopiert til [[$2]].'''</big>",
-	'duplicator-success-revisions' => '$1 {{PLURAL:$1|revisjon|revisjoner}} ble kopiert.',
-	'duplicator-success-talkcopied' => 'Diskusjonssiden ble også kopiert.',
-	'duplicator-success-talknotcopied' => 'Diskusjonssiden kunne ikke kopieres.',
-	'duplicator-failed' => 'Siden kunne ikke kopieres. En ukjent feil forekom.',
-	'duplicator-source-invalid' => 'Vennligst angi en gyldig kildetittel.',
-	'duplicator-source-notexist' => '[[$1]] finnes ikike. Angi tittelen til en eksisterende side.',
-	'duplicator-dest-invalid' => 'Angi en gyldig måltittel.',
-	'duplicator-dest-exists' => '[[$1]] finnes allerede. Angi en måltittel som ikke eksisterer.',
-	'duplicator-toomanyrevisions' => '[[$1]] har for mange ($2) revisjoner, og kan ikke kopieres. Nåværende grense er $3.',
-	'right-duplicate' => 'Kopier sidene',
 );
 
 /** Northern Sotho (Sesotho sa Leboa)
@@ -1548,6 +1548,7 @@ $messages['sk'] = array(
 );
 
 /** Serbian (Cyrillic script) (‪Српски (ћирилица)‬)
+ * @author Rancher
  * @author Михајло Анђелковић
  */
 $messages['sr-ec'] = array(
@@ -1556,7 +1557,7 @@ $messages['sr-ec'] = array(
 	'duplicator-toolbox' => 'Дуплирај овај чланак',
 	'duplicator-header' => 'Ова страна омогућава комплетно дуплирање неког чланка, прављењем независних копија свих историја.
 Ово је корисно за форковање чланака и сл.',
-	'duplicator-options' => 'Опције',
+	'duplicator-options' => 'Поставке',
 	'duplicator-source' => 'Извор:',
 	'duplicator-dest' => 'Циљ:',
 	'duplicator-dotalk' => 'Дуплирај страну за разговор (ако је могуће)',

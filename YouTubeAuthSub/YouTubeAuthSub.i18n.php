@@ -3226,18 +3226,18 @@ Ju lutemi keni durim.',
  * @author Михајло Анђелковић
  */
 $messages['sr-ec'] = array(
-	'youtubeauthsub' => 'Слање видеа са Јутуба',
-	'youtubeauthsub-desc' => 'Омогући корисницима да [[Special:YouTubeAuthSub|шаљу видее]] директно на Јутуб',
+	'youtubeauthsub' => 'Отпреми снимак с Јутјуба',
+	'youtubeauthsub-desc' => 'Омогућава корисницима да [[Special:YouTubeAuthSub|отпремају видео-снимке]] директно на Јутјуб',
 	'youtubeauthsub_info' => 'Попуните следећи образац да бисте отпремили видео-снимак на Јутјуб и убацили га на страницу:',
-	'youtubeauthsub_title' => 'Наслов:',
+	'youtubeauthsub_title' => 'Наслов',
 	'youtubeauthsub_description' => 'Опис',
-	'youtubeauthsub_password' => 'Лозинка на Јутубу',
-	'youtubeauthsub_username' => 'Корисничко име на Јутубу',
+	'youtubeauthsub_password' => 'Лозинка на Јутјубу',
+	'youtubeauthsub_username' => 'Корисничко име на Јутјубу',
 	'youtubeauthsub_keywords' => 'Кључне речи',
 	'youtubeauthsub_category' => 'Категорија',
-	'youtubeauthsub_submit' => 'Прихвати',
-	'youtubeauthsub_clickhere' => 'Кликните овде да бисте се улоговали на Јутуб',
-	'youtubeauthsub_tokenerror' => 'Грешка при генерисању ауторизационог кључа, покушајте са освеживањем странице.',
+	'youtubeauthsub_submit' => 'Пошаљи',
+	'youtubeauthsub_clickhere' => 'Кликните овде да се пријавите на Јутјуб',
+	'youtubeauthsub_tokenerror' => 'Грешка при стварању потврдног жетона. Покушајте поново.',
 	'youtubeauthsub_success' => "Честитамо!
 Ваш видео-снимак је отпремљен.
 <a href='http://www.youtube.com/watch?v=$1'>Погледајте га овде</a>.
@@ -3247,14 +3247,14 @@ $messages['sr-ec'] = array(
 <code>{{&#35;ev:youtube|$1}}</code>",
 	'youtubeauthsub_authsubinstructions' => 'Да бисте отпремили видео-снимак, прво се пријавите на Јутјуб.',
 	'youtubeauthsub_uploadhere' => 'Отпремите видео-снимак одавде:',
-	'youtubeauthsub_uploadbutton' => 'Слање',
+	'youtubeauthsub_uploadbutton' => 'Отпреми',
 	'youtubeauthsub_code' => '{{#ev:youtube|$1}}.
 
 [http://www.youtube.com/watch?v=$1 Погледајте видео-снимак]',
-	'youtubeauthsub_summary' => 'Слање видеа на Јутуб.',
+	'youtubeauthsub_summary' => 'Отпремање видео-снимка на Јутјуб',
 	'youtubeauthsub_uploading' => 'Видео-снимак се отпрема. Будите стрпљиви.',
 	'youtubeauthsub_viewpage' => 'Или пак можете да [[$1|погледате видео-снимак]].',
-	'youtubeauthsub_jserror_nokeywords' => 'Молимо Вас, унесите једну или више кључних речи.',
+	'youtubeauthsub_jserror_nokeywords' => 'Унесите једну или више кључних речи.',
 	'youtubeauthsub_jserror_notitle' => 'Унесите наслов видео-снимка.',
 	'youtubeauthsub_jserror_nodesc' => 'Унесите опис видео-снимка.',
 );

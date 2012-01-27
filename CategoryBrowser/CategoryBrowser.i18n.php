@@ -2025,7 +2025,20 @@ Prosimo, spremenite ali posodobite svoj brskalnik, če je le mogoče.',
  * @author Rancher
  */
 $messages['sr-ec'] = array(
+	'cb_previous_items_link' => 'Претходно',
 	'cb_previous_items_stats' => ' ($1 - $2)',
+	'cb_next_items_link' => 'Следеће',
+	'cb_next_items_stats' => ' (од $1)',
+	'cb_cat_subcats' => 'поткатегорије',
+	'cb_cat_pages' => 'странице',
+	'cb_cat_files' => 'датотеке',
+	'cb_apply_button' => 'Примени',
+	'cb_all_op' => 'Све',
+	'cb_or_op' => 'или',
+	'cb_and_op' => 'и',
+	'cb_edit_left_hint' => 'Премести лево, ако је могуће',
+	'cb_edit_right_hint' => 'Премести десно, ако је могуће',
+	'cb_edit_remove_hint' => 'Обриши, ако је могуће',
 );
 
 /** Serbian (Latin script) (‪Srpski (latinica)‬) */

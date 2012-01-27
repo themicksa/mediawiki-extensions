@@ -1096,6 +1096,7 @@ $messages['roa-tara'] = array(
 /** Russian (Русский)
  * @author DCamer
  * @author Eleferen
+ * @author Kaganer
  * @author Александр Сигачёв
  */
 $messages['ru'] = array(
@@ -1105,7 +1106,7 @@ $messages['ru'] = array(
 	'contrib-tracking-error-text' => 'Неправильное подчинение формы',
 	'contrib-tracking-submitting' => 'Отправка обработчику платежей…',
 	'contrib-tracking-continue' => 'Если Вы не были автоматически перенаправлены, нажмите на кнопку, чтобы завершить Ваше пожертвование.',
-	'contrib-tracking-redirect' => 'Вы будете автоматически перенаправлены для завершения Вашего пожертвования.',
+	'contrib-tracking-redirect' => 'Вы будете автоматически перенаправлены для завершения вашего пожертвования.',
 	'contrib-tracking-button' => 'Продолжить',
 	'contrib-tracking-item-name-onetime' => 'Единовременный взнос',
 	'contrib-tracking-item-name-recurring' => 'Ежемесячный взнос',

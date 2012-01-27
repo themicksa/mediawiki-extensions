@@ -73,11 +73,12 @@ $messages['ca'] = array(
 );
 
 /** Czech (Česky)
+ * @author Kaganer
  * @author Mormegil
  */
 $messages['cs'] = array(
 	'flvhandler_desc' => 'Umožňuje používat soubory formátu Flash Video (.flv) jako standardní soubory (např. <nowiki>[[</nowiki>{{ns:file}}:Video.flv<nowiki>]]</nowiki>)',
-	'flv-long-desc' => 'Flash Video, $1×$2 pixelů, velikost souboru: $3',
+	'flv-long-desc' => 'Flash Video, $1 × $2 pixelů, velikost souboru: $3',
 );
 
 /** German (Deutsch)
@@ -435,11 +436,12 @@ $messages['uk'] = array(
 );
 
 /** Vietnamese (Tiếng Việt)
+ * @author Kaganer
  * @author Minh Nguyen
  */
 $messages['vi'] = array(
 	'flvhandler_desc' => 'Cho phép thêm video Flash (.flv) như tập tin bình thường (thí dụ <nowiki>[[</nowiki>{{ns:file}}:Phim.flv<nowiki>]]</nowiki>)',
-	'flv-long-desc' => 'Video Flash, $1×$2 điểm ảnh, kích thước: $3',
+	'flv-long-desc' => 'Video Flash, $1 × $2 điểm ảnh, kích thước: $3',
 );
 
 /** Simplified Chinese (‪中文(简体)‬)
