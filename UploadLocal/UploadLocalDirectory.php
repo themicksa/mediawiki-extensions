@@ -137,6 +137,10 @@ class UploadLocalDirectory {
 		if ($directory[strlen($directory)-1] !== '/') $directory .= '/';
 		$dh = opendir($directory);
 		$filenames = array();
+		# Make sure the handle opens correctly
+		if( !$dh ) {
+			return $filenames; 
+		}
 		while (($file = readdir($dh)) !== false) {
 			if ($file == '.' || $file == '..') continue;
 			// check if it's a directory
