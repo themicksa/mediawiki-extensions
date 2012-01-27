@@ -146,7 +146,7 @@ class ExtZeroRatedMobileAccess {
 					}
 					self::addDebugOutput( $country );
 				}
-				$languageOptions = self::createLanguageOptionsFromWikiText();
+				$languageOptions = $this->createLanguageOptionsFromWikiText();
 				// self::$displayDebugOutput = true;
 				$languagesForCountry = ( isset( $languageOptions[self::getFullCountryNameFromCode( $country )] ) ) ?
 					$languageOptions[self::getFullCountryNameFromCode( $country )] : null;
