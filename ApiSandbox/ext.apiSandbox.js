@@ -365,7 +365,7 @@
 			var	linkHtml = '',
 				descHtml = smartEscape( this.info.description );
 			if ( this.info.helpurls && this.info.helpurls[0] ) {
-				descHtml = descHtml.replace( /^([^\r\n\.]*)/, '$1' ) + ' ';
+				descHtml = descHtml + ' ';
 				linkHtml = mw.msg( 'parentheses', mw.html.element( 'a', {
 					'target': '_blank',
 					'href': this.info.helpurls[0]
