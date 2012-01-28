@@ -151,6 +151,7 @@ $messages['nl'] = array(
 $messages['pms'] = array(
 	'solrstore-desc' => "Arserché dle proprietà semàntiche con la potensa d'un motor d'arserca a test pien",
 	'solrsearch' => 'SolrSearch',
+	'solrstore-error' => 'Eror: Për piasì contròla toa query.',
 	'solrstore-searchFieldSets' => 'SolrSearch',
 	'solrstore-searchFieldSets-select' => 'Për piasì selession-a un SearchSet',
 	'solrstore-searchFieldSets-title' => 'SolrSearch: selession ëd SearchSet',

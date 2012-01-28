@@ -139,6 +139,13 @@ $messages['pms'] = array(
 	'sdt-duration' => 'Durà',
 );
 
+/** Portuguese (Português)
+ * @author Luckas Blade
+ */
+$messages['pt'] = array(
+	'sdt-duration' => 'Duração',
+);
+
 /** Telugu (తెలుగు)
  * @author Veeven
  */

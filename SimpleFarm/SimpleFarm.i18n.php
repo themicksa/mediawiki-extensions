@@ -41,6 +41,13 @@ $messages['de'] = array(
 	'simplefarm-desc' => 'Ermöglicht den einfachen wie umfänglichen Betrieb einer Wikifarm, ohne dabei komplexe Konfigurationsseiten zu nutzen',
 );
 
+/** Lower Sorbian (Dolnoserbski)
+ * @author Michawiki
+ */
+$messages['dsb'] = array(
+	'simplefarm-desc' => 'Jadnore, ale mócne wikifarmowe rozšyrjenje bźez wjelikich konfiguraciskich bokow',
+);
+
 /** French (Français)
  * @author Gomoko
  */

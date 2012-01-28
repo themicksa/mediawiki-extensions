@@ -76,3 +76,10 @@ $messages['mk'] = array(
 	'interfaceconcurrency-desc' => 'Дава подлога за корисничкиот посредник што прикажува кои ресурси се во употреба',
 );
 
+/** Piedmontese (Piemontèis)
+ * @author Dragonòt
+ */
+$messages['pms'] = array(
+	'interfaceconcurrency-desc' => "A dà un backend për l'antërfacia utent ch'a mosta che arzorse a son dovrà",
+);
+

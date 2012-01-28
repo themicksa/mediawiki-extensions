@@ -1338,7 +1338,9 @@ $messages['ps'] = array(
 );
 
 /** Portuguese (Português)
+ * @author Giro720
  * @author Hamilton Abreu
+ * @author Luckas Blade
  */
 $messages['pt'] = array(
 	'apisb-desc' => 'Permite depurar chamadas à [//www.mediawiki.org/wiki/API API do MediaWiki] a partir do browser',
@@ -1347,12 +1349,17 @@ $messages['pt'] = array(
 	'apisb-intro' => "Use esta página para fazer experiências com a '''API do MediaWiki'''.
 Consulte a [//www.mediawiki.org/wiki/API:Main_page documentação da API] para informações sobre o uso da API.",
 	'apisb-api-disabled' => 'A API está desactivada neste site.',
+	'apisb-legend-parameters' => 'Parâmetros',
 	'apisb-legend-result' => 'Resultado',
 	'apisb-result-request-url' => 'URL do pedido:',
 	'apisb-result-request-post' => 'Dados POST:',
 	'apisb-select-action' => 'Seleccionar acção',
 	'apisb-select-query' => 'O que pretende consultar?',
 	'apisb-select-value' => 'Seleccionar o valor',
+	'apisb-docs-more' => 'leia mais',
+	'apisb-params-param' => 'Parâmetro',
+	'apisb-params-input' => 'Entrada',
+	'apisb-params-desc' => 'Descrição',
 	'apisb-loading' => 'A carregar…',
 	'apisb-load-error' => 'Erro ao carregar a descrição da API',
 	'apisb-request-error' => 'Erro ao executar o pedido da API',
@@ -1362,6 +1369,9 @@ Consulte a [//www.mediawiki.org/wiki/API:Main_page documentação da API] para i
 	'apisb-query-prop' => 'Propriedades',
 	'apisb-query-list' => 'Listas',
 	'apisb-query-meta' => 'Meta informação',
+	'apisb-example' => 'Exemplo',
+	'apisb-examples' => 'Exemplos',
+	'apisb-clear' => 'Limpar',
 );
 
 /** Brazilian Portuguese (Português do Brasil)

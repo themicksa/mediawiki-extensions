@@ -57,3 +57,10 @@ $messages['mk'] = array(
 	'swiftcloudfiles-desc' => "Го вклучува и регистрира API ''php-cloudfiles'' (https://github.com/rackspace/php-cloudfiles), овозможувајќи му на МедијаВики да се вклопи со складишната подлога OpenStack Swift.",
 );
 
+/** Piedmontese (Piemontèis)
+ * @author Dragonòt
+ */
+$messages['pms'] = array(
+	'swiftcloudfiles-desc' => "A comprend e a registra l'API ëd ''php-coudfiles'' (https://github.com/rackspace/php-cloudfiles), an përmëttend a MediaWiki d'antërfacesse con un backend ëd memorisassion OpenStack Swift.",
+);
+

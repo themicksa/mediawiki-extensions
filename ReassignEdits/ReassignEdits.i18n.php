@@ -212,6 +212,13 @@ $messages['nl'] = array(
 	'right-reassignedits' => 'Bewerkingen van een oude gebruiker aan een nieuwe toewijzen',
 );
 
+/** Portuguese (Português)
+ * @author Luckas Blade
+ */
+$messages['pt'] = array(
+	'reassignedits-new' => 'Novo nome de usuário',
+);
+
 /** Telugu (తెలుగు)
  * @author Veeven
  */
