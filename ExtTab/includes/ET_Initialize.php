@@ -18,54 +18,6 @@ $wgExtensionFunctions[] = 'smwgExtTabSetupExtension';
 $wgExtensionMessagesFiles['ExtTabMagic'] = $smwgExtTabIP . '/languages/ExtTab.i18n.magic.php';
 $wgAutoloadClasses['ETParserFunctions'] = $smwgExtTabIP . '/includes/ET_ParserFunctions.php';
 
-function smwfExtTabInitMessages() {
-	global $smwgExtTabMessagesInitialized;
-	if ( isset( $smwgExtTabMessagesInitialized ) ) return; // prevent double init
-
-	smwfExtTabInitUserMessages(); // lazy init for ajax calls
-
-	$smwgExtTabMessagesInitialized = true;
-}
-function smwfExtTabInitUserMessages() {
-	global $wgMessageCache, $smwgExtTabContLang, $wgLanguageCode;
-	smwfExtTabInitContentLanguage( $wgLanguageCode );
-
-	global $smwgExtTabIP, $smwgExtTabLang;
-	if ( !empty( $smwgExtTabLang ) ) { return; }
-	global $wgMessageCache, $wgLang;
-	$smwLangClass = 'ET_Language' . str_replace( '-', '_', ucfirst( $wgLang->getCode() ) );
-
-	if ( file_exists( $smwgExtTabIP . '/languages/' . $smwLangClass . '.php' ) ) {
-		include_once( $smwgExtTabIP . '/languages/' . $smwLangClass . '.php' );
-	}
-	// fallback if language not supported
-	if ( !class_exists( $smwLangClass ) ) {
-		global $smwgExtTabContLang;
-		$smwgExtTabLang = $smwgExtTabContLang;
-	} else {
-		$smwgExtTabLang = new $smwLangClass();
-	}
-
-	$wgMessageCache->addMessages( $smwgExtTabLang->getUserMsgArray(), $wgLang->getCode() );
-}
-function smwfExtTabInitContentLanguage( $langcode ) {
-	global $smwgExtTabIP, $smwgExtTabContLang;
-	if ( !empty( $smwgExtTabContLang ) ) { return; }
-
-	$smwContLangClass = 'ET_Language' . str_replace( '-', '_', ucfirst( $langcode ) );
-
-	if ( file_exists( $smwgExtTabIP . '/languages/' . $smwContLangClass . '.php' ) ) {
-		include_once( $smwgExtTabIP . '/languages/' . $smwContLangClass . '.php' );
-	}
-
-	// fallback if language not supported
-	if ( !class_exists( $smwContLangClass ) ) {
-		include_once( $smwgExtTabIP . '/languages/ET_LanguageEn.php' );
-		$smwContLangClass = 'ET_LanguageEn';
-	}
-	$smwgExtTabContLang = new $smwContLangClass();
-}
-
 function smwfExtTabGetAjaxMethodPrefix() {
 	$func_name = isset( $_POST["rs"] ) ? $_POST["rs"] : ( isset( $_GET["rs"] ) ? $_GET["rs"] : NULL );
 	if ( $func_name == NULL ) return NULL;
@@ -79,8 +31,6 @@ function smwfExtTabGetAjaxMethodPrefix() {
 function smwgExtTabSetupExtension() {
 	global $smwgExtTabIP, $wgExtensionCredits;
 	global $wgParser, $wgHooks, $wgAutoloadClasses;
-
-	smwfExtTabInitMessages();
 
 	// register hooks
 	if ( defined( 'MW_SETPORTS_PARSERFIRSTCALLINIT' ) ) {
