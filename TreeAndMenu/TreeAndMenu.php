@@ -14,7 +14,7 @@
 
 if( !defined( 'MEDIAWIKI' ) ) die( 'Not an entry point.' );
 
-define( 'TREEANDMENU_VERSION','1.3.0, 2012-01-19' );
+define( 'TREEANDMENU_VERSION','2.0.0, 2012-01-28' );
 
 // Set any unset images to default titles
 if( !isset( $wgTreeViewImages ) || !is_array( $wgTreeViewImages ) ) $wgTreeViewImages = array();
@@ -48,31 +48,29 @@ class TreeAndMenu {
 	var $images     = '';      // internal JS to update dTree images
 	var $useLines   = true;    // internal variable determining whether to render connector lines
 	var $args       = array(); // args for each tree
-	var $js         = 0;
 
 	/**
 	 * Constructor
 	 */
 	function __construct() {
-		global $wgOut, $wgHooks, $wgParser, $wgScriptPath, $wgJsMimeType,
-			$wgTreeViewImages, $wgTreeViewShowLines, $wgTreeViewBaseDir, $wgTreeViewBaseUrl;
+		global $wgOut, $wgHooks, $wgParser, $wgJsMimeType, $wgExtensionAssetsPath, $wgResourceModules, $wgTreeViewImages, $wgTreeViewShowLines;
 
 		// Add hooks
-		$wgParser->setFunctionHook( 'tree', array( $this,'expandTree' ) );
-		$wgParser->setFunctionHook( 'menu', array( $this,'expandMenu' ) );
+		$wgParser->setFunctionHook( 'tree', array( $this, 'expandTree' ) );
+		$wgParser->setFunctionHook( 'menu', array( $this, 'expandMenu' ) );
+		$wgParser->setFunctionHook( 'star', array( $this, 'expandStar' ) );
 		$wgHooks['ParserAfterTidy'][] = array( $this, 'renderTreeAndMenu' );
 
 		// Update general tree paths and properties
-		$this->baseDir  = isset( $wgTreeViewBaseDir ) ? $wgTreeViewBaseDir : dirname( __FILE__ );
-		$this->baseUrl  = isset( $wgTreeViewBaseUrl ) ? $wgTreeViewBaseUrl : preg_replace( '|^.+(?=/ext)|', $wgScriptPath, $this->baseDir );
+		$this->baseDir  = dirname( __FILE__ );
+		$this->baseUrl  = $wgExtensionAssetsPath . '/' . basename( dirname( __FILE__ ) );
 		$this->useLines = $wgTreeViewShowLines ? 'true' : 'false';
 		$this->uniq     = uniqid( $this->uniqname );
 
 		// Convert image titles to file paths and store as JS to update dTree
 		foreach( $wgTreeViewImages as $k => $v ) {
-			$title = Title::newFromText( $v, NS_IMAGE );
-			$image = wfFindFile( $title );
-			$v = $image && $image->exists() ? $image->getURL() : $wgTreeViewImages[$k];
+			$image = wfLocalFile( $v );
+			$v = ( is_object( $image ) && $image->exists() ) ? $image->getURL() : $wgTreeViewImages[$k];
 			$this->images .= "tree.icon['$k'] = '$v';";
 		}
 	}
@@ -91,6 +89,14 @@ class TreeAndMenu {
 	public function expandMenu() {
 		$args = func_get_args();
 		return $this->expandTreeAndMenu( 'menu', $args );
+	}
+
+	/**
+	 * Expand #star parser-functions
+	 */
+	public function expandStar() {
+		$args = func_get_args();
+		return 'star menus coming soon!';
 	}
 
 	/**
@@ -212,6 +218,13 @@ class TreeAndMenu {
 					$class = isset( $args['class'] ) ? $args['class'] : "d$type";
 					if( $type == 'tree' ) {
 
+						// Load the dTree script if not loaded already
+						static $dtree = false;
+						if( !$dtree ) {
+							$wgOut->addScriptFile( $this->baseUrl . '/dtree.js' );
+							$dtree = true;
+						}
+
 						// Finalise a tree
 						$add = isset( $args['root'] ) ? "tree.add(0,-1,'".$args['root']."');" : '';
 						$top = $bottom = $root = $opennodesjs = '';
@@ -222,41 +235,33 @@ class TreeAndMenu {
 						if( $top ) $top = "<p>&#160;$top</p>";
 						if( $bottom ) $bottom = "<p>&#160;$bottom</p>";
 
-						// Add the dTRee script if not loaded yet
-						$dTreeScript = $this->js++ ? "" : "<script type=\"$wgJsMimeType\" src=\"{$this->baseUrl}/dtree.js\"></script>";
-
 						// Define the script to build this tree
-						$script = "tree = new dTree('$objid');
-										for (i in tree.icon) tree.icon[i] = '{$this->baseUrl}/'+tree.icon[i];{$this->images}
-										tree.config.useLines = {$this->useLines};
-										$add
-										$objid = tree;
-										$nodes
-										document.getElementById('$id').innerHTML = $objid.toString();
-										$opennodesjs";
-
-						// Embed the script into the output
-						$html = "$top<div class='$class' id='$id'>$dTreeScript<script type=\"$wgJsMimeType\">/*<![CDATA[*/
-							// TreeAndMenu-{$this->version}
-							$script
-							/*]]>*/</script></div>$bottom";
+						$script = "// TreeAndMenu-{$this->version}\ntree = new dTree('$objid');
+							for (i in tree.icon) tree.icon[i] = '{$this->baseUrl}/'+tree.icon[i];{$this->images}
+							tree.config.useLines = {$this->useLines};
+							$add
+							$objid = tree;
+							$nodes
+							document.getElementById('$id').innerHTML = $objid.toString();
+							$opennodesjs
+							for(i in window.tamOnload_$objid) { window.tamOnload_{$objid}[i](); }";
+						$wgOut->addScript( "<script type=\"$wgJsMimeType\">$(function(){\n$script\n});</script>" );
+						$html = "$top<div class='$class' id='$id'></div>$bottom";
+						$html .= "<script type=\"$wgJsMimeType\">window.tamOnload_$objid=[]</script>";
 					} else {
 
 						// Finalise a menu
 						if( $depth > 0 ) $nodes .= str_repeat( '</ul></li>', $depth );
 						$nodes = preg_replace( "/<(a.*? )title=\".+?\".*?>/", "<$1>", $nodes ); // IE has problems with title attribute in suckerfish menus
-						$html = "
-							<ul class='$class' id='$id'>\n$nodes</ul>
-							<script type=\"$wgJsMimeType\">/*<![CDATA[*/
-								if (window.attachEvent) {
+						$html = "<ul class='$class' id='$id'>\n$nodes</ul><div style=\"clear:both\"></div>";
+						$script = "if (window.attachEvent) {
 									var sfEls = document.getElementById('$id').getElementsByTagName('li');
 									for (var i=0; i<sfEls.length; i++) {
 										sfEls[i].onmouseover=function() { this.className+=' sfhover'; }
 										sfEls[i].onmouseout=function()  { this.className=this.className.replace(new RegExp(' sfhover *'),''); }
 									}
-								}
-							/*]]>*/</script>
-							";
+								}";
+						$wgOut->addScript( "<script type=\"$wgJsMimeType\">$(function(){\n$script\n});</script>" );
 					}
 
 					$text  = preg_replace( "/\x7f1$u\x7f$id\x7f.+?$/m", $html, $text, 1 ); // replace first occurence of this trees root-id
