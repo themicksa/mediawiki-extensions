@@ -513,8 +513,8 @@ $messages['fi'] = array(
 	'apisb-result-request-url' => 'Pyynnön URL:',
 	'apisb-result-request-post' => 'POST-tiedot:',
 	'apisb-select-action' => 'Valitse toiminto',
-	'apisb-select-query' => 'Mitä kysellään?',
-	'apisb-select-value' => 'Valitse arvo',
+	'apisb-select-query' => '(valitse kysely)',
+	'apisb-select-value' => '(valitse arvo)',
 	'apisb-loading' => 'Ladataan...',
 	'apisb-load-error' => 'API-kuvauksen latausvirhe',
 	'apisb-request-error' => 'API-pyynnön suoritusvirhe',
@@ -1711,14 +1711,18 @@ Sumangguni sa [//www.mediawiki.org/wiki/API:Main_page dokumentasyon ng API] para
 
 /** Turkish (Türkçe)
  * @author Emperyan
+ * @author Incelemeelemani
  */
 $messages['tr'] = array(
-	'apisb-parameters' => 'Parametreler',
-	'apisb-result' => 'Sonuç',
+	'apisb-legend-result' => 'Sonuç',
+	'apisb-docs-more' => 'devamı',
 	'apisb-loading' => 'Yükleniyor...',
 	'apisb-ns-main' => '(Ana)',
 	'apisb-query-prop' => 'Özellikler',
 	'apisb-query-list' => 'Listeler',
+	'apisb-example' => 'Örnek',
+	'apisb-examples' => 'Örnekler',
+	'apisb-clear' => 'Temizle',
 );
 
 /** Ukrainian (Українська)

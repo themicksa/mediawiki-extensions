@@ -1163,16 +1163,19 @@ $messages['zh-cn'] = array(
 
 /** Simplified Chinese (‪中文(简体)‬)
  * @author Gaoxuewei
+ * @author Linforest
  */
 $messages['zh-hans'] = array(
 	'watchers' => '监视列表',
 	'watchers-desc' => '显示[[Special:Watchers|边个用户系监视列表里面有页面]]',
 	'watchers_link_title' => '谁在监视本页？',
 	'watchers_error_article' => "'''错误:''' 页面不存在。",
+	'watchers-error-invalid-page' => "'''错误：''' \"\$1\" 是一个无效的页面标题。",
 	'watchers_header' => '监视"[[:$1]]"的{{PLURAL:$2|用户|用户}}',
 	'watchers_noone_watches' => '没有用户监视本页。',
 	'watchers_x_or_more' => '$1 或者更多的{{PLURAL:$1|用户|用户}}将本页加入了他们的监视列表。',
 	'watchers_less_than_x' => '少于$1的{{PLURAL:$1|用户|用户}}将本页加入了他们的监视列表。',
+	'right-watchers-list' => '[[Special:Watchers|列出监视特定页面的用户]]',
 );
 
 /** Traditional Chinese (‪中文(繁體)‬)
