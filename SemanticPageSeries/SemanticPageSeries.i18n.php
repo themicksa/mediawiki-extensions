@@ -24,7 +24,7 @@ $messages['en'] = array(
 	'spserror_notargetfieldname' => 'No target field name given.',
 	'spserror_iteratorparammissing' => "The following iterator parameters are missing in the #seriesformlink call:\n$1",
 	'spserror_noiteratordata' => 'No iterator parameters found in the sent data.',
-	'spserror_pagegenerationlimitexeeded' => 'You tried to generate $1 pages. Your limit is $2 pages.',
+	'spserror_pagegenerationlimitexeeded' => 'You tried to generate $1 pages. This exeeds your allowed limit of $2 pages.',
 );
 
 /** Message documentation (Message documentation)
@@ -44,6 +44,8 @@ $messages['qqq'] = array(
 	'spserror_formunknown' => 'An error message',
 	'spserror_notargetformname' => 'An error message',
 	'spserror_notargetfieldname' => 'An error message',
-	'spserror_iteratorparammissing' => 'An error message'
+	'spserror_iteratorparammissing' => 'An error message',
+	'spserror_noiteratordata' => 'An error message',
+	'spserror_pagegenerationlimitexeeded' => 'An error message',
 );
 
