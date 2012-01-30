@@ -9,7 +9,7 @@ $messages = array();
  * @author F.trott
  */
 $messages['en'] = array(
-	'semanticpageseries-desc' => 'An extension creating a series of pages from one [https://www.mediawiki.org/wiki/Extension:Semantic_Forms Semantic Form]',
+	'semanticpageseries-desc' => 'Creating a series of pages from one [https://www.mediawiki.org/wiki/Extension:Semantic_Forms Semantic Form]',
 	'spssuccesstitle' => 'Creating $1 pages',
 	'spssuccess' => '$1 pages will be created.',
 	'spserror' => 'An error occurred',

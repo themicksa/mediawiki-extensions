@@ -38,7 +38,7 @@ $wgExtensionCredits[defined( 'SEMANTIC_EXTENSION_TYPE' ) ? 'semantic' : 'other']
 	'name' => 'Semantic Page Series',
 	'author' => '[http://www.mediawiki.org/wiki/User:F.trott Stephan Gambke]',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:Semantic_Page_Series',
-	'descriptionmsg' => 'SemanticPageSeries-desc',
+	'descriptionmsg' => 'semanticpageseries-desc',
 	'version' => SPS_VERSION,
 );
 
