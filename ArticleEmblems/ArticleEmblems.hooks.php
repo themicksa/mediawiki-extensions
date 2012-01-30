@@ -15,29 +15,6 @@ class ArticleEmblemsHooks {
 	/* Static Methods */
 
 	/**
-	 * LoadExtensionSchemaUpdates hook
-	 *
-	 * @param $updater DatabaseUpdater
-	 */
-	public static function loadExtensionSchemaUpdates( $updater = null ) {
-		if ( $updater === null ) {
-			global $wgExtNewTables;
-			$wgExtNewTables[] = array( 'articleemblems', dirname( __FILE__ ) . '/patches/ArticleEmblems.sql' );
-		} else {
-			$updater->addExtensionUpdate( array( 'addTable', 'articleemblems', dirname( __FILE__ ) . '/patches/ArticleEmblems.sql', true ) );
-		}
-		return true;
-	}
-
-	/**
-	 * ParserTestTables hook
-	 */
-	public static function parserTestTables( &$tables ) {
-		$tables[] = 'articleemblems';
-		return true;
-	}
-
-	/**
 	 * ParserInit hook
 	 *
 	 * @param $parser Parser
@@ -58,23 +35,6 @@ class ArticleEmblemsHooks {
 	public static function render( $input, $args, $parser, $frame ) {
 		self::$emblems[] = $parser->recursiveTagParse( $input, $frame );
 		return null;
-	}
-	
-	/**
-	 * ArticleSaveComplete hook
-	 *
-	 * @param $article Article
-	 */
-	public static function articleSaveComplete( &$article ) {
-		$articleId = $article->getId();
-		$dbw = wfGetDB( DB_MASTER );
-		$dbw->delete( 'articleemblems', array( 'ae_article' => $articleId ), __METHOD__ );
-		$emblems = array();
-		foreach ( self::$emblems as $emblem ) {
-			$emblems[] = array( 'ae_article' => $articleId, 'ae_value' => $emblem );
-		}
-		$dbw->insert( 'articleemblems', array_reverse( $emblems ), __METHOD__ );
-		return true;
 	}
 	
 	/**

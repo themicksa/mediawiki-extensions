@@ -22,11 +22,10 @@ $wgExtensionCredits['parserhook'][] = array(
 );
 $wgAutoloadClasses['ArticleEmblemsHooks'] = dirname( __FILE__ ) . '/ArticleEmblems.hooks.php';
 $wgExtensionMessagesFiles['ArticleEmblems'] = dirname( __FILE__ ) . '/ArticleEmblems.i18n.php';
-$wgHooks['LoadExtensionSchemaUpdates'][] = 'ArticleEmblemsHooks::loadExtensionSchemaUpdates';
+
 $wgHooks['ParserFirstCallInit'][] = 'ArticleEmblemsHooks::parserInit';
-$wgHooks['ParserTestTables'][] = 'ArticleEmblemsHooks::parserTestTables';
 $wgHooks['ArticleViewHeader'][] = 'ArticleEmblemsHooks::articleViewHeader';
-$wgHooks['ArticleSaveComplete'][] = 'ArticleEmblemsHooks::articleSaveComplete';
+
 $wgResourceModules['ext.articleEmblems'] = array(
 	'styles' => 'ext.articleEmblems.css',
 	'localBasePath' => dirname( __FILE__ ) . '/modules',
