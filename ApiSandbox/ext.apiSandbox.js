@@ -115,7 +115,7 @@
 		e.preventDefault();
 
 		resetUI();
-		link = $( this ).attr( 'href' ).replace( /^.*?\?/, '' );
+		link = $( this ).data( 'exampleLink' ).replace( /^.*?\?/, '' );
 		params = link.split( '&' );
 		for ( i = 0; i < params.length; i++ ) {
 			pieces = params[i].split( '=' );
@@ -200,7 +200,8 @@
 				.append( $prefix )
 				.append(
 					$( '<a>' )
-						.attr( 'href', href )
+						.attr( 'href', '#' )
+						.data( 'exampleLink', href )
 						.text( linkText )
 						.click( exampleClick )
 				).appendTo( $list );
