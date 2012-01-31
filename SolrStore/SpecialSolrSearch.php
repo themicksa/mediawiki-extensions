@@ -322,7 +322,7 @@ class SpecialSolrSearch extends SpecialPage {
 		global $wgOut;
 
 		if ( !empty( $fieldSet ) ) {
-			$wgOut->setPageTitle( wfMsg( 'solrsearch' ) . ': ' . $fieldSet->getName() );
+			$wgOut->setPageTitle( wfMsg( 'solrsearch-title' ) . ': ' . $fieldSet->getName() );
 			$wgOut->setHTMLTitle( wfMsg( 'pagetitle', wfMsg( 'solrsearch', $fieldSet->getName() ) ) );
 		}
 		$wgOut->setArticleRelated( false );
