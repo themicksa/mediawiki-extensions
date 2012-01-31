@@ -35,25 +35,6 @@ class ArticleEmblemsHooks {
 	}
 
 	/**
-	 * ParserBeforeTidy tag hook
-	 *
-	 * @param Parser $parser
-	 * @param string $text
-	 * @return Boolean 
-	 */
-	public static function parserBeforeTidy( Parser &$parser, &$text ) {
-		$out = $parser->getOutput();
-		if ( isset( $out->articleEmblems ) ) {
-			$emblems = array();
-			foreach ( $out->articleEmblems as $emblem ) {
-				$emblems[] = '<li class="articleEmblem">' . $emblem . '</li>';
-			}
-			$text = '<ul id="articleEmblems">' . implode( $emblems ) . '</ul>' . $text;
-		}
-		return true;
-	}
-
-	/**
 	 * OutputPageParserOutput hook handler
 	 * @param OutputPage $out
 	 * @param ParserOutput $parserOutput
@@ -62,6 +43,13 @@ class ArticleEmblemsHooks {
 	public static function outputPageParserOutput( OutputPage &$out, ParserOutput $parserOutput ) {
 		$out->addModuleStyles( 'ext.articleEmblems' );
 
+		if ( isset( $parserOutput->articleEmblems ) ) {
+			$emblems = array();
+			foreach ( $parserOutput->articleEmblems as $emblem ) {
+				$emblems[] = '<li class="articleEmblem">' . $emblem . '</li>';
+			}
+			$parserOutput->setText( '<ul id="articleEmblems">' . implode( $emblems ) . '</ul>' . $parserOutput->getText() );
+		}
 		return true;
 	}
 }

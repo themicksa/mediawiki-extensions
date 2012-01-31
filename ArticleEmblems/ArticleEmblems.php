@@ -25,7 +25,6 @@ $wgExtensionMessagesFiles['ArticleEmblems'] = dirname( __FILE__ ) . '/ArticleEmb
 
 $wgHooks['ParserFirstCallInit'][] = 'ArticleEmblemsHooks::parserFirstCallInit';
 $wgHooks['OutputPageParserOutput'][] = 'ArticleEmblemsHooks::outputPageParserOutput';
-$wgHooks['ParserBeforeTidy'][] = 'ArticleEmblemsHooks::parserBeforeTidy';
 
 $wgResourceModules['ext.articleEmblems'] = array(
 	'styles' => 'ext.articleEmblems.css',
