@@ -23,8 +23,9 @@ $wgExtensionCredits['parserhook'][] = array(
 $wgAutoloadClasses['ArticleEmblemsHooks'] = dirname( __FILE__ ) . '/ArticleEmblems.hooks.php';
 $wgExtensionMessagesFiles['ArticleEmblems'] = dirname( __FILE__ ) . '/ArticleEmblems.i18n.php';
 
-$wgHooks['ParserFirstCallInit'][] = 'ArticleEmblemsHooks::parserInit';
-$wgHooks['ArticleViewHeader'][] = 'ArticleEmblemsHooks::articleViewHeader';
+$wgHooks['ParserFirstCallInit'][] = 'ArticleEmblemsHooks::parserFirstCallInit';
+$wgHooks['OutputPageParserOutput'][] = 'ArticleEmblemsHooks::outputPageParserOutput';
+$wgHooks['ParserBeforeTidy'][] = 'ArticleEmblemsHooks::parserBeforeTidy';
 
 $wgResourceModules['ext.articleEmblems'] = array(
 	'styles' => 'ext.articleEmblems.css',
