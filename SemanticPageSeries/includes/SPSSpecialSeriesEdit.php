@@ -56,7 +56,7 @@ class SPSSpecialSeriesEdit extends SpecialPage {
 			$keys = array_keys( $get );
 
 			$wgOut->setPageTitle( wfMsg( 'spssuccesstitle', $keys[0] ) );
-			$wgOut->addHTML( wfMsg( 'spssuccess', $get[$keys[0]] ) );
+			$wgOut->addHTML( wfMsg( 'spssuccess', $get[$keys[0]] ) ); // FIXME: per message doc this is a number. Therefor it needs a run through $wgLang->formatNum(). Maybe PLURAL too?
 		} else {
 
 			// no action requested, show form

@@ -13,6 +13,6 @@ $specialPageAliases = array();
 /** English
  */
 $specialPageAliases['en'] = array(
-        'SeriesEdit' => array( 'SeriesEdit', 'SeriesEdit' ),
+        'SeriesEdit' => array( 'SeriesEdit' ),
 );
  

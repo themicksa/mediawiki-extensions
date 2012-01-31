@@ -14,8 +14,8 @@ $messages['en'] = array(
 	'spssuccess' => '$1 pages will be created.',
 	'spserror' => 'An error occurred',
 	
-	'spserror_diffnotsupported' => 'The Diff action is not supported for page series.',
-	'spserror_previewnotsupported' => 'The Preview action is not supported for page series.',
+	'spserror_diffnotsupported' => 'The diff action is not supported for page series.',
+	'spserror_previewnotsupported' => 'The preview action is not supported for page series.',
 	'spserror_noiteratorname' => 'No iterator name given.',
 	'spserror_iteratorunknown' => 'Iterator "$1" does not exist.',
 	'spserror_noformname' => 'No form name given.',
