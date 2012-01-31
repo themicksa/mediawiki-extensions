@@ -6,8 +6,9 @@ For details see https://www.mediawiki.org/Extension:Semantic_Page_Series
 
 == Dependencies ==
 
-This extension was developed for MediaWiki 1.17 with Semantic Forms 2.4
-installed. Other version might work, but are not tested.
+This extension was developed for MediaWiki 1.17 with at least Semantic
+MediaWiki 1.5.3 and Semantic Forms 2.4 installed. Other version might work, but
+are not tested.
 
 
 == Installation ==

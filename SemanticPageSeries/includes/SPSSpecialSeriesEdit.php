@@ -159,7 +159,7 @@ class SPSSpecialSeriesEdit extends SpecialPage {
 
 	private function evaluateForm( WebRequest &$request ) {
 
-		global $wgOut, $spsgIterators;
+		global $wgOut, $wgUser, $spsgIterators;
 
 		$requestValues = $_POST;
 
@@ -213,6 +213,8 @@ class SPSSpecialSeriesEdit extends SpecialPage {
 		}
 		
 		$targetFormTitle = Title::makeTitleSafe( SF_NS_FORM, $targetFormName );
+		
+		$requestValues['user'] = $wgUser->getId();
 
 		foreach ( $iteratorValues as $value ) {
 			SFAutoeditAPI::addToArray( $requestValues, $targetFieldName, $value, true );

@@ -18,10 +18,6 @@ if ( !defined( 'SPS_VERSION' ) ) {
  */
 class SPSPageCreationJob extends Job {
 
-//	public function __construct( $command, $title, $params = false, $id = 0 ) {
-//		parent::__construct( $command, $title, $params, $id );
-//	}
-
 	function __construct( $title, $params = '', $id = 0 ) {
 		parent::__construct( 'spsCreatePage', $title, $params, $id );
 	}
@@ -31,9 +27,16 @@ class SPSPageCreationJob extends Job {
 	 * @return boolean success
 	 */
 	function run() {
-
+		
+		global $wgUser, $wgCommandLineMode;
+		
+		$oldUser = $wgUser;
+		$wgUser = User::newFromId( $this->params['user'] );
+		
+		unset( $this->params['user'] );
+		
 		$this->params['form'] = $this->title->getText();
-
+		
 		$handler = new SFAutoeditAPI( null, 'sfautoedit' );
 		$handler->isApiQuery( false );
 		$handler->setOptions( $this->params );
@@ -49,7 +52,11 @@ class SPSPageCreationJob extends Job {
 
 			$result = wfMsgReplaceArgs( '$1', array($result) );
 		}
+
 		
+		$wgUser = $oldUser;
+		
+		$this->params = array( $result );
 		wfDebugLog( 'sps', 'Page Creation Job: ' . $result );
 	}
 
