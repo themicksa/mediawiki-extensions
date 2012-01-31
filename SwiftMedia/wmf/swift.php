@@ -62,7 +62,13 @@ function wmfGetSwiftThumbContainer( $site, $lang, $relPath ) {
 		NULL,
 		$wmfSwiftConfig['authUrl']
 	);
-	$auth->authenticate();
+
+	try {
+		$auth->authenticate();
+	} catch ( Exception $e ) {
+		wfDebugLog( 'swiftThumb', "Could not establish a connection to Swift." );
+		return null;
+	}
 
 	$conn = new CF_Connection( $auth );
 
