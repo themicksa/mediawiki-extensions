@@ -1,6 +1,6 @@
 <?php
 /**
- * Language file for Semantic Pages Series
+ * Language file for Semantic Page Series
  */
 
 $messages = array();
