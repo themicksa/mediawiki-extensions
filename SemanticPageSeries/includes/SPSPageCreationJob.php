@@ -54,10 +54,11 @@ class SPSPageCreationJob extends Job {
 		}
 
 		
+		$this->params = array( 'result' => $result, 'user' => $wgUser->getName() );
+		wfDebugLog( 'sps', 'Page Creation Job: ' . $result );
+
 		$wgUser = $oldUser;
 		
-		$this->params = array( $result );
-		wfDebugLog( 'sps', 'Page Creation Job: ' . $result );
 	}
 
 }
