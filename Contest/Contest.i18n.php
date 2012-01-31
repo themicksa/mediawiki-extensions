@@ -1957,6 +1957,7 @@ $messages['et'] = array(
 );
 
 /** Persian (فارسی)
+ * @author Huji
  * @author Leyth
  * @author Mehran
  * @author MehranVB
@@ -2027,7 +2028,7 @@ $messages['fa'] = array(
 	'contest-welcome-rules' => 'برای مشارکت نخست باید [[$1|قوانین مسابقه]] را بپذیرید.',
 	'contest-welcome-signup' => 'هم‌اکنون ثبت‌نام کنید',
 	'contest-welcome-accept-challenge' => 'چالش پذیرفته شد',
-	'contest-signup-submit' => 'ثبت‌نام',
+	'contest-signup-submit' => 'ثبت نام',
 	'contest-signup-email' => 'نشانی پست الکترونیکی شما',
 	'contest-signup-realname' => 'نام واقعی شما',
 	'contest-signup-country' => 'کشور شما',
@@ -5044,6 +5045,13 @@ $messages['ms'] = array(
 	'contest-submission-challenge' => 'Anda sedang menyertai cabaran $1.',
 	'contest-submission-challenge-description' => "'''Cabaran semasa: $1''' -- $2",
 	'contest-submission-domains' => 'Penyerahan terhad kepada tapak-tapak ini: $1',
+);
+
+/** Nepali (नेपाली)
+ * @author RajeshPandey
+ */
+$messages['ne'] = array(
+	'contest-contest-go' => 'जाउ',
 );
 
 /** Dutch (Nederlands)

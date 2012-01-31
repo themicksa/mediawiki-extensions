@@ -206,6 +206,13 @@ $messages['lb'] = array(
 	'customusersignup-desc' => 'Erméiglecht ugepasste Benotzermessagen während dem Opmaache vun engem Benotzerkont ze benotzen',
 );
 
+/** Basa Banyumasan (Basa Banyumasan)
+ * @author StefanusRA
+ */
+$messages['map-bms'] = array(
+	'customusersignup-desc' => 'Nyediakna pesen sing di-kustomisasi nggo pas lagi proses nggawe akun',
+);
+
 /** Macedonian (Македонски)
  * @author Bjankuloski06
  */

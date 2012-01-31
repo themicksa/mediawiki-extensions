@@ -1036,6 +1036,13 @@ $messages['nds'] = array(
 	'edituser-dosearch' => 'Söken',
 );
 
+/** Nepali (नेपाली)
+ * @author RajeshPandey
+ */
+$messages['ne'] = array(
+	'edituser-username' => 'प्रयोगकर्ता नाम:',
+);
+
 /** Dutch (Nederlands)
  * @author SPQRobin
  * @author Siebrand

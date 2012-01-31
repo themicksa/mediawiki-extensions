@@ -646,11 +646,15 @@ $messages['hsb'] = array(
 	'collabwatchlistedit-users-last-owner' => 'Dyrbi znajmjeńša jednoho wobsedźerja eksistować',
 	'collabwatchlistedit-numitems' => 'Tuta zhromadna wobkedźbowanska lisćina wobsahuje {{PLURAL:$1|1 kategoriju|$1 kategoriji|$1 kategorije|$1 kategorijow}}',
 	'collabwatchlistedit-noitems' => 'Tuta zhromadna wobkedźbowanska lisćina žane kategorije njewobsahuje .',
+	'collabwatchlistedit-tags-numitems' => 'Tuta zhromadna wobkedźbowanska lisćina wobsahuje {{PLURAL:$1|1 hesło|$1 hesle|$1 hesła|$1 hesłow}}',
+	'collabwatchlistedit-tags-noitems' => 'Tuta zhromadna wobkedźbowanska lisćina žane hesła njewobsahuje.',
 	'collabwatchlistedit-users-numitems' => 'Tuta zhromadna wobkedźbowanska lisćina wobsahuje {{PLURAL:$1|1 wužiwarja|$1 wužiwarjow|$1 wužiwarjow|$1 wužiwarjow}}',
 	'collabwatchlistedit-users-noitems' => 'Tuta zhromadna wobkedźbowanska lisćina žanych wužiwarjow njewobsahuje .',
 	'collabwatchlistedit-raw-legend' => 'Kategorije zhromadneje wobkedźbowanskeje lisćiny w surowej formje wobdźěłać',
 	'collabwatchlistedit-users-raw-legend' => 'Wužiwarjow zhromadneje wobkedźbowanskeje lisćiny w surowej formje wobdźěłać',
+	'collabwatchlistedit-tags-raw-legend' => 'Hesła zhromadneje wobkedźbowanskeje lisćiny w surowej formje wobdźěłać',
 	'collabwatchlistedit-raw-titles' => 'Kategorije:',
+	'collabwatchlistedit-tags-raw-titles' => 'Hesła:',
 	'collabwatchlistedit-users-raw-titles' => 'Wužiwarjo:',
 	'collabwatchlistedit-normal-title' => 'Kategorije wobdźěłać',
 	'collabwatchlistedit-normal-legend' => 'Kategorije ze zhromadneje wobkedźbowanskeje lisćiny wotstronić',
@@ -659,12 +663,18 @@ $messages['hsb'] = array(
 	'collabwatchlistedit-normal-done' => '{{PLURAL:$1|1 kategorija je|$1 kategoriji stej|$1 kategorije su|$1 kategorijow je}} so ze zhromadneje wobkedźbowanskeje lisćiny {{PLURAL:$1|wotstroniła|wotstroniłoj|wotstronili|wotstroniło}}:',
 	'collabwatchlistedit-tags-raw-done' => 'Zhromadna wobkedźbowanska lisćina je so zaktualizowała',
 	'collabwatchlistedit-users-raw-done' => 'Zhromadna wobkedźbowanska lisćina je so zaktualizowała',
+	'collabwatchlistedit-tags-raw-added' => '{{PLURAL:$1|1 hesło je so přidało|$1 hesle stej so přidałoj|$1 hesła su so přidali|$1 hesłow je so přidało}}',
 	'collabwatchlistedit-users-raw-added' => '{{PLURAL:$1|1 wužiwar je so přidał|$1 wužiwarjej staj so přidałoj|$1 wužiwarjo su so přidali|$1 wužiwarjow je so přidało}}',
+	'collabwatchlistedit-tags-raw-removed' => '{{PLURAL:$1|1 hesło je so wotstroniło|$1 hesle stej so wotstroniłoj|$1 hesła su so wotstronili|$1 hesłow je so wotstroniło}}',
 	'collabwatchlistedit-users-raw-removed' => '{{PLURAL:$1|1 wužiwar je so wotstronił|$1 wužiwarjej staj so wotstroniłoj|$1 wužiwarjo su so wotstronili|$1 wužiwarjow je so wotstroniło}}',
+	'collabwatchlistinverttags' => 'Hesłowy filter wobroćić',
+	'collabwatchlistpatrol' => 'Změny dohladować',
 	'collabwatchlisttools-newList' => 'Nowa zhromadna wobkedźbowanska lisćina',
 	'collabwatchlistdelete-legend' => 'Zhromadnu wobkedźbowansku lisćinu zhašeć',
 	'collabwatchlistdelete-submit' => 'Zhašeć',
 	'collabwatchlistdelete-title' => 'Zhromadnu wobkedźbowansku lisćinu zhašeć',
+	'collabwatchlistedit-set-tags-numitems' => 'Tuta zhromadna wobkedźbowanska lisćina je {{PLURAL:$1|1 hesło stajene|$1 hesle stajenej|$1 hesła stajene|$1 hesłow stajenych}}',
+	'collabwatchlistedit-set-tags-noitems' => 'Tuta zhromadna wobkedźbowanska lisćina njeje žane hesła stajiła.',
 	'collabwatchlistnew-legend' => 'Nowu zhromadnu wobkedźbowansku lisćinu wutworić',
 	'collabwatchlistnew-explain' => 'Mjeno lisćiny dyrbi jónkróćne być.',
 	'collabwatchlistnew-name' => 'Mjeno lisćiny',
@@ -958,6 +968,13 @@ $messages['nb'] = array(
 	'collabwatchlisttools-rawTags' => 'Rå redigeringstagger',
 );
 
+/** Nepali (नेपाली)
+ * @author RajeshPandey
+ */
+$messages['ne'] = array(
+	'collabwatchlisttagcomment' => 'टिप्पणी',
+);
+
 /** Dutch (Nederlands)
  * @author SPQRobin
  * @author Siebrand
@@ -1167,9 +1184,11 @@ $messages['pt'] = array(
 /** Russian (Русский)
  * @author Adata80
  * @author Alexandr Efremov
+ * @author Eleferen
  * @author Engineering
  */
 $messages['ru'] = array(
+	'collabwatchlist-desc' => 'Обеспечивает совместные списки наблюдений, основанные на категориях',
 	'collabwatchlisttagcomment' => 'Комментарий',
 	'collabwatchlisttools-view' => 'Дисплей',
 	'collabwatchlisttools-edit' => 'Изменить категорию',
@@ -1178,7 +1197,10 @@ $messages['ru'] = array(
 	'collabwatchlistfiltertags' => 'Скрыть метки',
 	'collabwatchlistedit-users-raw-submit' => 'Сохранить',
 	'collabwatchlistedit-users-raw-titles' => 'Участники:',
+	'collabwatchlistedit-tags-raw-submit' => 'Сохранить',
 	'collabwatchlistdelete-submit' => 'Удалить',
+	'collabwatchlistnew-name' => 'Название списка',
+	'collabwatchlistnew-submit' => 'Создать',
 	'collabwatchlistedit-normal-submit' => 'Сохранить',
 );
 

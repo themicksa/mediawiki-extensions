@@ -758,6 +758,13 @@ $messages['ms'] = array(
 	'wikitweet-cannotparse' => 'Tidak boleh huraikan',
 );
 
+/** Nepali (नेपाली)
+ * @author RajeshPandey
+ */
+$messages['ne'] = array(
+	'wikitweet-comment' => 'टिप्पणी',
+);
+
 /** Dutch (Nederlands)
  * @author SPQRobin
  * @author Siebrand

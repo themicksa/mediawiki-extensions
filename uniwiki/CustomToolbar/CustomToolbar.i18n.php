@@ -2034,6 +2034,13 @@ $messages['nds-nl'] = array(
 	'ct_italic_caption' => 'Schunedrokt',
 );
 
+/** Nepali (नेपाली)
+ * @author RajeshPandey
+ */
+$messages['ne'] = array(
+	'ct_user_sample' => 'प्रयोगकर्ता नाम:',
+);
+
 /** Dutch (Nederlands)
  * @author Siebrand
  */

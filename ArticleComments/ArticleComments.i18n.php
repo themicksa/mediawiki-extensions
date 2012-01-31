@@ -1565,6 +1565,14 @@ Tilgjengelige moduser er «plain», «normal» og «wiki».',
 	'processcomment' => 'Prosesser artikkelkommentar',
 );
 
+/** Nepali (नेपाली)
+ * @author RajeshPandey
+ */
+$messages['ne'] = array(
+	'article-comments-comment-string' => 'टिप्पणी',
+	'article-comments-comment-field' => 'टिप्पणी :',
+);
+
 /** Dutch (Nederlands)
  * @author Siebrand
  */

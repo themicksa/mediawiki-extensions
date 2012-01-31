@@ -4276,11 +4276,14 @@ Du ville ikke kunne logge inn uten en OpenID.',
 	'openid-provider-label-other-username' => 'Skriv inn ditt $1-brukernavn',
 );
 
-/** Nepali (नेपाली) */
+/** Nepali (नेपाली)
+ * @author RajeshPandey
+ */
 $messages['ne'] = array(
 	'openidemail' => 'इमेल ठेगाना',
 	'openidlanguage' => 'भाषा',
 	'openidtimezone' => 'समय क्षेत्र',
+	'openidchooseusername' => 'प्रयोगकर्ता नाम:',
 );
 
 /** Dutch (Nederlands)

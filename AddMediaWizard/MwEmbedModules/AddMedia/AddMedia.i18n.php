@@ -2304,6 +2304,7 @@ $messages['eu'] = array(
 
 /** Persian (فارسی)
  * @author Ebraminio
+ * @author Huji
  * @author Mjbmr
  * @author ZxxZxxZ
  */
@@ -2317,6 +2318,7 @@ $messages['fa'] = array(
 	'mwe-unknown-error' => 'خطای ناشناخته:',
 	'mwe-return-to-form' => 'بازگشت به فرم',
 	'mwe-file-exists-duplicate' => 'این پرونده نسخه‌ای تکراری از ان پرونده‌است:',
+	'mwe-fileexists' => 'پرونده‌ای با این نام از قبل وجود دارد. اگر مطمئن نیستید که می‌خواهید آن را تغییر دهید لطفاً <b><code>$1</code></b> را بررسی کنید.',
 	'mwe-fileexists-thumb' => 'پرونده موجود',
 	'mwe-ignorewarning' => 'نادیده‌گرفتن هشدارها و ذخیرهٔ پرونده',
 	'mwe-go-to-resource' => 'رفتن به صفحه منبع',
@@ -2336,7 +2338,7 @@ $messages['fa'] = array(
 	'mwe-date-of-work' => 'تاریخ کار',
 	'mwe-error_not_loggedin' => 'به نظر نمی‌آید که وارد شده‌باشید یا اینکه دسترسی بارگذاری ندارید.',
 	'mwe-uploaded-status' => 'بارگذاری شد',
-	'mwe-add_media_wizard' => 'افزودن جادوگر رسانه',
+	'mwe-add_media_wizard' => 'جادوگر افزودن رسانه',
 	'mwe-media_search' => 'جستجوی رسانه',
 	'mwe-am-box_layout' => 'طرح‌بندی جعبه',
 	'mwe-am-list_layout' => 'طرح‌بندی فهرست',
@@ -2346,6 +2348,9 @@ $messages['fa'] = array(
 	'mwe-am-results_prev' => 'قبلی',
 	'mwe-am-no_results' => 'هیچ نتیجه‌ای برای <b>$1</b> یافت نشد',
 	'mwe-upload_tab' => 'بارگذاری پرونده',
+	'mwe-am-layout' => 'چیدمان:',
+	'mwe-am-resource_edit' => 'ویرایش منبع: $1',
+	'mwe-resource_description_page' => 'صفحه توضیحات منبع',
 	'mwe-link' => 'پیوند',
 	'mwe-am-do_insert' => 'درج کردن',
 	'mwe-cc_nc_title' => 'غیر تجاری',

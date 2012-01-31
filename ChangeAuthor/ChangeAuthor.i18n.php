@@ -1680,6 +1680,14 @@ $messages['nds'] = array(
 	'changeauthor-revview' => 'Version #$1 vun $2',
 );
 
+/** Nepali (नेपाली)
+ * @author RajeshPandey
+ */
+$messages['ne'] = array(
+	'changeauthor-pagenameform-go' => 'जाउ',
+	'changeauthor-comment' => 'टिप्पणी :',
+);
+
 /** Dutch (Nederlands)
  * @author SPQRobin
  * @author Siebrand

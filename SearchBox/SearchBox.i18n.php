@@ -680,6 +680,13 @@ $messages['nb'] = array(
 	'searchbox-namespaces' => 'Navnerom:',
 );
 
+/** Nepali (नेपाली)
+ * @author RajeshPandey
+ */
+$messages['ne'] = array(
+	'searchbox-go' => 'जाउ',
+);
+
 /** Dutch (Nederlands)
  * @author Siebrand
  */

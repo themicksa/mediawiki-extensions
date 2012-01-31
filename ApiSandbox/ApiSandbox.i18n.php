@@ -390,6 +390,7 @@ Vidu [//www.mediawiki.org/wiki/API:Main_page la API-dokumentadon] por pli da det
 );
 
 /** Spanish (Español)
+ * @author Armando-Martin
  * @author Fitoschido
  * @author Imre
  * @author Platonides
@@ -399,18 +400,23 @@ $messages['es'] = array(
 	'apisb-desc' => 'Permite depurar llamadas a la [//www.mediawiki.org/wiki/API API de MediaWiki] desde el navegador',
 	'apisandbox' => 'Zona de pruebas API',
 	'apisb-no-js' => "'''Error ''': esta característica requiere JavaScript.",
-	'apisb-intro' => "Utiliza está página para experimentar con el '''API de MediaWiki'''.
+	'apisb-intro' => "Utilice está página para experimentar con el '''API de MediaWiki'''.
 
-Consulte [//www.mediawiki.org/wiki/API:Main_page la documentación] para más detalles sobre su uso.",
+Consulte [//www.mediawiki.org/wiki/API:Main_page la documentación API] para más detalles sobre su uso. Ejemplo: [//www.mediawiki.org/wiki/API#A_simple_example accede al contenido de una página principal].  Seleccione una acción para ver más ejemplos.",
 	'apisb-api-disabled' => 'La API está desactivada en este sitio.',
+	'apisb-legend-parameters' => 'Parámetros',
 	'apisb-legend-result' => 'Resultado',
 	'apisb-legend-generic-parameters' => 'Parámetros genéricos',
 	'apisb-legend-generator-parameters' => 'Generador',
 	'apisb-result-request-url' => 'URL solicitante:',
 	'apisb-result-request-post' => 'Datos POST:',
 	'apisb-select-action' => 'Selecciona acción',
-	'apisb-select-query' => '¿Qué consultar?',
-	'apisb-select-value' => 'Seleccionar valor',
+	'apisb-select-query' => '(Seleccione la consulta)',
+	'apisb-select-value' => '(Seleccione el valor)',
+	'apisb-docs-more' => 'Leer más',
+	'apisb-params-param' => 'Parámetro',
+	'apisb-params-input' => 'Entrada',
+	'apisb-params-desc' => 'Descripción',
 	'apisb-loading' => 'Cargando...',
 	'apisb-load-error' => 'Error al cargar la descripción de la API',
 	'apisb-request-error' => 'Error al realizar la solicitud de API',
@@ -420,6 +426,9 @@ Consulte [//www.mediawiki.org/wiki/API:Main_page la documentación] para más de
 	'apisb-query-prop' => 'Propiedades',
 	'apisb-query-list' => 'Listas',
 	'apisb-query-meta' => 'información de Meta',
+	'apisb-example' => 'Ejemplo',
+	'apisb-examples' => 'Ejemplos',
+	'apisb-clear' => 'Limpiar',
 );
 
 /** Estonian (Eesti)
@@ -510,11 +519,13 @@ $messages['fi'] = array(
 	'apisb-legend-result' => 'Tulos',
 	'apisb-legend-generic-parameters' => 'Yleiset parametrit',
 	'apisb-legend-generator-parameters' => 'Generoija',
-	'apisb-result-request-url' => 'Pyynnön URL:',
-	'apisb-result-request-post' => 'POST-tiedot:',
-	'apisb-select-action' => 'Valitse toiminto',
+	'apisb-result-request-url' => 'Pyynnön URL',
+	'apisb-result-request-post' => 'POST-tiedot',
+	'apisb-select-action' => '(valitse toiminto)',
 	'apisb-select-query' => '(valitse kysely)',
 	'apisb-select-value' => '(valitse arvo)',
+	'apisb-docs-more' => 'lue lisää',
+	'apisb-params-desc' => 'Kuvaus',
 	'apisb-loading' => 'Ladataan...',
 	'apisb-load-error' => 'API-kuvauksen latausvirhe',
 	'apisb-request-error' => 'API-pyynnön suoritusvirhe',
@@ -525,7 +536,8 @@ $messages['fi'] = array(
 	'apisb-query-list' => 'Luettelot',
 	'apisb-query-meta' => 'Metatiedot',
 	'apisb-example' => 'Esimerkki',
-	'apisb-examples' => 'Esimerkkejä',
+	'apisb-examples' => 'Esimerkit',
+	'apisb-clear' => 'Tyhjennä',
 );
 
 /** French (Français)
@@ -1204,7 +1216,7 @@ Zie de [//www.mediawiki.org/wiki/API:Main_page API-documentatie] voor verdere de
 	'apisb-result-request-url' => 'Verzoek-URL:',
 	'apisb-result-request-post' => 'POST-gegevens:',
 	'apisb-select-action' => 'Handeling selecteren',
-	'apisb-select-query' => '(selecteer query)',
+	'apisb-select-query' => '(selecteer zoekopdracht)',
 	'apisb-select-value' => '(selecteer waarde)',
 	'apisb-docs-more' => 'meer lezen',
 	'apisb-params-param' => 'Parameter',
@@ -1627,6 +1639,7 @@ $messages['sr-ec'] = array(
 );
 
 /** Swedish (Svenska)
+ * @author Skalman
  * @author WikiPhoenix
  */
 $messages['sv'] = array(
@@ -1648,7 +1661,7 @@ Kolla på [//www.mediawiki.org/wiki/API:Main_page API-dokumentationen] för fler
 	'apisb-request-error' => 'Fel uppstod när API skulle begäras',
 	'apisb-namespaces-error' => 'Fel uppstod när namnrymden skulle läsas in',
 	'apisb-ns-main' => '(Huvud)',
-	'apisb-submit' => 'Göra en begäran',
+	'apisb-submit' => 'Gör en begäran',
 	'apisb-query-prop' => 'Egenskaper',
 	'apisb-query-list' => 'Listor',
 	'apisb-query-meta' => 'Metainformation',

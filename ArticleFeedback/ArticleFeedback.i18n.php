@@ -1891,6 +1891,7 @@ La teamo {{SITENAME}}',
 );
 
 /** Spanish (Español)
+ * @author Armando-Martin
  * @author Dferg
  * @author Drini
  * @author Fitoschido
@@ -1918,7 +1919,7 @@ $messages['es'] = array(
 	'articlefeedback-survey-submit' => 'Enviar',
 	'articlefeedback-survey-title' => 'Por favor, contesta algunas preguntas',
 	'articlefeedback-survey-thanks' => 'Gracias por completar la encuesta.',
-	'articlefeedback-survey-disclaimer' => 'Para ayudar a mejorar esta característica, sus comentarios podrían compartirse anónimamente con la comunidad de Wikipedia.',
+	'articlefeedback-survey-disclaimer' => '¡¡FUZZY!!¡¡FUZZY!!Para ayudar a mejorar esta característica, sus comentarios podrían compartirse anónimamente con la comunidad de Wikipedia.',
 	'articlefeedback-survey-disclaimerlink' => 'términos',
 	'articlefeedback-error' => 'Ha ocurrido un error. Por favor inténtalo de nuevo más tarde.',
 	'articlefeedback-form-switch-label' => 'Evalúa este artículo',
@@ -5552,6 +5553,7 @@ Hilsen {{SITENAME}}-teamet',
 /** Nepali (नेपाली)
  * @author Bhawani Gautam
  * @author Bhawani Gautam Rhk
+ * @author RajeshPandey
  * @author सरोज कुमार ढकाल
  */
 $messages['ne'] = array(
@@ -5561,7 +5563,8 @@ $messages['ne'] = array(
 	'articlefeedback-survey-question-useful-iffalse' => 'किन?',
 	'articlefeedback-survey-question-comments' => 'तपाईंसित अरु कुनै अतिरिक्त टिप्पणीहरु छन्?',
 	'articlefeedback-survey-submit' => 'बुझाउने',
-	'articlefeedback-form-panel-title' => 'यस पृष्ठको मूल्य निर्धारण गर्ने',
+	'articlefeedback-form-panel-title' => 'यस पृष्ठलाई मूल्यांकन गर्नुहोस',
+	'articlefeedback-form-panel-explanation' => 'यो के हो ?',
 	'articlefeedback-form-panel-success' => 'सफलता पूर्वक संग्रह गरियो',
 	'articlefeedback-field-trustworthy-label' => 'विश्वस्त',
 	'articlefeedback-field-complete-label' => 'पूर्ण',
@@ -5570,11 +5573,11 @@ $messages['ne'] = array(
 	'articlefeedback-pitch-join-message' => 'के  तपाईं खाता बनाउन चाहनुहुन्थ्यो?',
 	'articlefeedback-pitch-join-accept' => 'खाता खोल्ने',
 	'articlefeedback-pitch-join-login' => 'प्रवेश गर्ने',
-	'articlefeedback-pitch-edit-message' => 'तपाईं यो पृष्ठलाई सम्पादन गर्न सक्नुहुन्छ भनेर  तपाईंलाई थाह थियो?',
-	'articlefeedback-pitch-edit-accept' => 'यो पृष्ट सम्पादन गर्ने',
+	'articlefeedback-pitch-edit-message' => 'के तपाईंलाई यो पृष्ठ सम्पादन गर्न सकिन्छ भनेर थाहा थियो?',
+	'articlefeedback-pitch-edit-accept' => 'यो पृष्ठ सम्पादन गर्ने',
 	'articlefeedback-survey-message-success' => 'सर्वेक्षण भर्नु भएकोमा धन्यवाद',
-	'articlefeedback-survey-message-error' => 'एउटा त्रुटि भएकोछ
-कृपया फेरि प्रयास गर्नुहोस्।',
+	'articlefeedback-survey-message-error' => 'एउटा त्रुटि भएको छ ।
+कृपया केही समय पछि पुनः प्रयास गर्नुहोला।',
 );
 
 /** Dutch (Nederlands)

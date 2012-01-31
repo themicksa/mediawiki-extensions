@@ -76,6 +76,13 @@ $messages['mk'] = array(
 	'interfaceconcurrency-desc' => 'Дава подлога за корисничкиот посредник што прикажува кои ресурси се во употреба',
 );
 
+/** Dutch (Nederlands)
+ * @author Siebrand
+ */
+$messages['nl'] = array(
+	'interfaceconcurrency-desc' => 'Biedt een backend voor de gebruikersinterface waarmee in gebruik zijnde bronnen weergegeven kunnen worden',
+);
+
 /** Piedmontese (Piemontèis)
  * @author Dragonòt
  */

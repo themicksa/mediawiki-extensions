@@ -8210,7 +8210,7 @@ $messages['or'] = array(
  * @author Bouron
  */
 $messages['os'] = array(
-	'mv_upload_file' => 'Ног файл сæвæр',
+	'mv_upload_file' => 'Бавгæнын файл',
 	'mv_tool_search' => 'Агурын',
 	'mv_edit' => 'Ивын',
 	'mv_history' => 'Истори',

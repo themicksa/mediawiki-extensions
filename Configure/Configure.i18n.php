@@ -8111,6 +8111,36 @@ $messages['nds-nl'] = array(
 	'extensions' => 'Uutbreidingen instellen',
 );
 
+/** Nepali (नेपाली)
+ * @author RajeshPandey
+ */
+$messages['ne'] = array(
+	'configure' => 'विकि कन्फीगर गर्ने',
+	'configure-desc' => '[[Special:Configure|क्न्फीगर]] को लागि अधिकृत उपयोगकर्ता लाई एक वेबमा आधारित इन्टरफेस को माध्यम बाट अनुमति दिने',
+	'configure-desc-group' => 'समूह',
+	'configure-desc-ns' => 'नामस्थान',
+	'configure-edit-core' => 'मेडियाविकि',
+	'configure-section-users' => 'प्रयोगकर्ताहरु',
+	'configure-section-feed' => 'फिड',
+	'configure-section-job' => 'कामहरु',
+	'configure-section-search' => 'खोज',
+	'configure-section-copyright' => 'प्रकाशन अधिकार सिमित',
+	'configure-section-misc' => 'विविध',
+	'configure-section-filter' => 'छाट्ने',
+	'configure-section-mw-extensions' => 'मेडियाविकि आयामहरु',
+	'configure-section-external-tools' => 'बाहिरी औजारहरु',
+	'configure-section-filesystem' => 'फाइलप्रणाली र आवरणीय विमर्श',
+	'configure-section-thumbnail' => 'चित्रका थम्वनेलिंग',
+	'configure-section-output' => 'उत्पादन',
+	'configure-select-wiki' => 'विकी चयन',
+	'configure-select-wiki-desc' => 'तपाइले तयार गर्न लाग्नुभएको विकि छान्नुहोस ।',
+	'configure-select-wiki-view-all' => 'सबै विकिहरु',
+	'configure-select-wiki-view-specific' => 'विशेष विकि:',
+	'configure-condition-operator-or' => 'अथवा',
+	'configure-condition-operator-and' => 'र',
+	'configure-condition-operator-xor' => 'पहिलो वा दोश्रो तर दुवै होइन',
+);
+
 /** Dutch (Nederlands)
  * @author GerardM
  * @author Siebrand

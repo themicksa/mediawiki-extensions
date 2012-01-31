@@ -1382,6 +1382,41 @@ $messages['myv'] = array(
 	'vote-invalid-choice' => 'Эряви кочкамс максозетнень эйстэ.',
 );
 
+/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
+ * @author Jon Harald Søby
+ * @author Nghtwlkr
+ */
+$messages['nb'] = array(
+	'vote' => 'Avstemning',
+	'vote-desc' => 'Gir enkle avstemningsmuligheter',
+	'vote-header' => "Du kan stemme på '''(eksempelbruker)''' her!",
+	'vote-current' => "Din nåværende stemme er på '''$1'''.",
+	'vote-legend' => 'Velg hvordan du vil stemme',
+	'vote-caption' => 'Ditt valg:',
+	'vote-choices' => 'bruker1|Første brukernavn
+bruker2|Andre brukernavn
+bruker3|Tredje brukernavn',
+	'vote-submit' => 'Stem',
+	'vote-registered' => 'Din stemme har blitt registrert.',
+	'vote-view-results' => 'Vis resultater',
+	'vote-results' => 'Avstemningsresultater',
+	'vote-results-choice' => 'Valg',
+	'vote-results-count' => 'Antall',
+	'vote-results-none' => 'Ingen stemmer har blitt avgitt enda.',
+	'vote-login' => 'Du må [$1 logge inn] for å stemme.',
+	'vote-invalid-choice' => 'Du må velge en av de tilgjengelige alternativene.',
+	'right-vote' => 'Stem',
+	'right-voteadmin' => 'Se resultater fra avstemningen',
+);
+
+/** Nepali (नेपाली)
+ * @author RajeshPandey
+ */
+$messages['ne'] = array(
+	'vote' => 'भोट गर्नुहोस',
+	'vote-submit' => 'भोट गर्नुहोस',
+);
+
 /** Dutch (Nederlands)
  * @author Siebrand
  * @author Tvdm
@@ -1436,33 +1471,6 @@ brukar3|Tredje brukernamn',
 	'vote-invalid-choice' => 'Du må velje eit av dei tilgjengelege alternativa.',
 	'right-vote' => 'Stem',
 	'right-voteadmin' => 'Sjå resultatar frå avrøystinga',
-);
-
-/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
- * @author Jon Harald Søby
- * @author Nghtwlkr
- */
-$messages['nb'] = array(
-	'vote' => 'Avstemning',
-	'vote-desc' => 'Gir enkle avstemningsmuligheter',
-	'vote-header' => "Du kan stemme på '''(eksempelbruker)''' her!",
-	'vote-current' => "Din nåværende stemme er på '''$1'''.",
-	'vote-legend' => 'Velg hvordan du vil stemme',
-	'vote-caption' => 'Ditt valg:',
-	'vote-choices' => 'bruker1|Første brukernavn
-bruker2|Andre brukernavn
-bruker3|Tredje brukernavn',
-	'vote-submit' => 'Stem',
-	'vote-registered' => 'Din stemme har blitt registrert.',
-	'vote-view-results' => 'Vis resultater',
-	'vote-results' => 'Avstemningsresultater',
-	'vote-results-choice' => 'Valg',
-	'vote-results-count' => 'Antall',
-	'vote-results-none' => 'Ingen stemmer har blitt avgitt enda.',
-	'vote-login' => 'Du må [$1 logge inn] for å stemme.',
-	'vote-invalid-choice' => 'Du må velge en av de tilgjengelige alternativene.',
-	'right-vote' => 'Stem',
-	'right-voteadmin' => 'Se resultater fra avstemningen',
 );
 
 /** Occitan (Occitan)

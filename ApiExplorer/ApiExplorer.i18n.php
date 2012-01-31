@@ -84,6 +84,16 @@ $messages['dsb'] = array(
 	'apiexplorer-loading' => 'Funkcije se zacytuju...',
 );
 
+/** Spanish (Español)
+ * @author Armando-Martin
+ */
+$messages['es'] = array(
+	'apiexplorer' => 'Explorador de API',
+	'apiexplorer-desc' => 'Página para explorar interactivamente la documentación de la API MediaWiki',
+	'apiexplorer-intro' => 'Esta página muestra la documentación de la API de la wiki actual. Haga clic en una función de abajo para ver más información sobre qué parámetros se pueden utilizar en cada llamada. Véase también [http://www.mediawiki.org/wiki/API:Main_page la documentación de la API MediaWiki general].',
+	'apiexplorer-loading' => 'Cargando funciones...',
+);
+
 /** Persian (فارسی)
  * @author Leyth
  */

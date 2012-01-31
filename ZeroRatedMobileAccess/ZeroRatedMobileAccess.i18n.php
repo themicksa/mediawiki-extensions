@@ -285,6 +285,13 @@ $messages['nds-nl'] = array(
 	'zero-rated-mobile-access-banner-text-data-charges-no' => 'Nee',
 );
 
+/** Nepali (नेपाली)
+ * @author RajeshPandey
+ */
+$messages['ne'] = array(
+	'zero-rated-mobile-access-search' => 'खोज',
+);
+
 /** Dutch (Nederlands)
  * @author Siebrand
  */

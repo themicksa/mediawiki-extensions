@@ -548,6 +548,15 @@ $messages['nb'] = array(
 	'prefs-category' => 'Kategori',
 );
 
+/** Nepali (नेपाली)
+ * @author RajeshPandey
+ */
+$messages['ne'] = array(
+	'categorymultisort-go' => 'जाउ',
+	'categorymultisort-default-sortkey' => 'सामान्य छान्ने शब्द:',
+	'prefs-category' => 'श्रेणी',
+);
+
 /** Dutch (Nederlands)
  * @author Siebrand
  */

@@ -3170,7 +3170,7 @@ $messages['sli'] = array(
 	'youtubeauthsub_description' => 'Beschreibung',
 	'youtubeauthsub_password' => 'YouTube-Passwurt',
 	'youtubeauthsub_username' => 'YouTube-Benutzernoame',
-	'youtubeauthsub_category' => 'Heetgruppe',
+	'youtubeauthsub_category' => 'Kategorie',
 );
 
 /** Somali (Soomaaliga)

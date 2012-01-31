@@ -668,6 +668,23 @@ $messages['nb'] = array(
 	'mostrevisors-viewcontributors' => 'Vis hovedbidragsytere',
 );
 
+/** Nepali (नेपाली)
+ * @author RajeshPandey
+ */
+$messages['ne'] = array(
+	'mostrevisors' => 'सबैभन्दा बढी संशोधनकर्ता भएका लेखहरू',
+	'mostrevisors-limitlinks' => '$1 वटा सम्म पृष्ठहरू देखाउ',
+	'mostrevisors-namespace' => 'नामस्थान:',
+	'mostrevisors-none' => 'कुनैपनि प्रविष्ठि पाइएन।',
+	'mostrevisors-ns-header' => "'''यस पृष्ठमा $2 नामस्थानमा सबैभन्दा बढी संशोधनकर्ता भएका {{PLURAL:$1|पृष्ठ|$1 पृष्ठहरू}} रहेका छन् ।'''",
+	'mostrevisors-showing' => '{{PLURAL:$1|पृष्ठ|$1 पृष्ठहरू}} को लिस्ट देखाउँदै:',
+	'mostrevisors-submit' => 'जाउ',
+	'mostrevisors-showredir' => 'रिडाइरेक्ट पृष्ठहरू देखाउ',
+	'mostrevisors-hideredir' => 'रिडाइरेक्ट पृष्ठहरू लुकाउ',
+	'mostrevisors-users' => '- $1 {{PLURAL:$1|सम्पादक|सम्पादकहरु}}',
+	'mostrevisors-viewcontributors' => 'मुख्य योगदानकर्ताहरूलाइ देखाउनुहोस।',
+);
+
 /** Dutch (Nederlands)
  * @author Siebrand
  */

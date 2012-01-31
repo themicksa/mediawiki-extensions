@@ -3468,6 +3468,14 @@ $1',
 	'sign-uniquequery-1signed2' => '[{{fullurl:Special:SignDocument|doc=$4&viewsigs&detail=$3}} $1] signerte [{{fullurl:Special:SignDocument|doc=$4&viewsigs}} $2].',
 );
 
+/** Nepali (नेपाली)
+ * @author RajeshPandey
+ */
+$messages['ne'] = array(
+	'sign-viewfield-reviewcomment' => 'टिप्पणी',
+	'sign-review-comment' => 'टिप्पणी',
+);
+
 /** Dutch (Nederlands)
  * @author Siebrand
  */

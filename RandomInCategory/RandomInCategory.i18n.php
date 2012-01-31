@@ -758,6 +758,26 @@ $messages['nah'] = array(
 	'randomincategory-submit' => 'Yāuh',
 );
 
+/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
+ * @author Harald Khan
+ * @author Jon Harald Søby
+ */
+$messages['nb'] = array(
+	'randomincategory' => 'Tilfeldig side fra en kategori',
+	'randomincategory-desc' => '[[Special:Randomincategory|Spesialside]] for å få en tilfeldig side fra en kategori',
+	'randomincategory-toolbox' => 'Tilfeldig side',
+	'randomincategory-nocategory' => 'Kategorien $1 finnes ikke, eller er tom',
+	'randomincategory-label' => 'Kategori:',
+	'randomincategory-submit' => '{{int:Go}}',
+);
+
+/** Nepali (नेपाली)
+ * @author RajeshPandey
+ */
+$messages['ne'] = array(
+	'randomincategory-submit' => 'जाउ',
+);
+
 /** Dutch (Nederlands)
  * @author SPQRobin
  * @author Siebrand
@@ -782,19 +802,6 @@ $messages['nn'] = array(
 	'randomincategory-nocategory' => 'Kategorien $1 finst ikkje, eller er tom',
 	'randomincategory-label' => 'Kategori:',
 	'randomincategory-submit' => 'Gå',
-);
-
-/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
- * @author Harald Khan
- * @author Jon Harald Søby
- */
-$messages['nb'] = array(
-	'randomincategory' => 'Tilfeldig side fra en kategori',
-	'randomincategory-desc' => '[[Special:Randomincategory|Spesialside]] for å få en tilfeldig side fra en kategori',
-	'randomincategory-toolbox' => 'Tilfeldig side',
-	'randomincategory-nocategory' => 'Kategorien $1 finnes ikke, eller er tom',
-	'randomincategory-label' => 'Kategori:',
-	'randomincategory-submit' => '{{int:Go}}',
 );
 
 /** Northern Sotho (Sesotho sa Leboa)

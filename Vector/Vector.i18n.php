@@ -1849,6 +1849,7 @@ $messages['tt-cyrl'] = array(
 	'vector-editwarning-preference' => 'Битне сакламыйча китү вакытында мине кисәтергә',
 	'vector-simplesearch-search' => 'Эзләү',
 	'vector-simplesearch-containing' => 'эчтәлек...',
+	'vector-noexperiments-preference' => 'Тикшерүдәге мөмкинлекләрне кулланмаска',
 );
 
 /** Ukrainian (Українська)

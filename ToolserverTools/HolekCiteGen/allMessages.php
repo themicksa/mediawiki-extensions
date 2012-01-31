@@ -308,11 +308,19 @@ $messages['es'] = array(
 );
 
 /** Persian (فارسی)
+ * @author Leyth
  * @author Mjbmr
+ * @author ZxxZxxZ
  */
 $messages['fa'] = array(
+	'ts-citegen-Title' => 'مولد الگوی یادکرد',
 	'ts-citegen-Send' => 'تولید',
 	'ts-citegen-Input-title' => 'ورودی',
+	'ts-citegen-Input-text' => 'این یک مولد الگوی یادکرد منبع است. با استفاده از آن، شما به سرعت می‌توانید الگوهای نحوه ارجاع در نسخه‌های مختلف زبان‌های ویکی‌پدیا را پر کنید. Please fill in the data (%s) in the fields below, and the script will try to complete the templates. Remember, it does not matter which fields you put the input data into. The script will automatically match the correct template to the input given.',
+	'ts-citegen-Option-append-author-link' => 'الحاق پیوند پدیدآور به الگو',
+	'ts-citegen-Option-append-newlines' => 'الحاق خط جدید پس از هر پارامتر',
+	'ts-citegen-Option-add-references' => 'افزودن برچسب <ref> اطراف الگوهای ذکر مرجع',
+	'ts-citegen-Option-add-list' => 'ایجاد یک ویکی‌فهرست از الگوهای یادکرد',
 	'ts-citegen-Output-title' => 'نتیجه',
 	'ts-citegen-Skins' => 'خروجی',
 	'ts-citegen-Skin-outputformat' => 'قالب خروجی:',

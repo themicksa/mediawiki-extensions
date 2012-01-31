@@ -783,6 +783,13 @@ $messages['nb'] = array(
 	'nss-db-error' => 'En feil oppstod under lesing av identifiseringsdatabasen',
 );
 
+/** Nepali (नेपाली)
+ * @author RajeshPandey
+ */
+$messages['ne'] = array(
+	'am-username' => 'प्रयोगकर्ता नाम',
+);
+
 /** Dutch (Nederlands)
  * @author Siebrand
  */

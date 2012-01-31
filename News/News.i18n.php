@@ -266,6 +266,13 @@ $messages['ms'] = array(
 	'newsextension-desc' => 'Paparkan perubahan terkini pada satu laman wiki, atau sebagai RSS atau suapan Atom',
 );
 
+/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
+ * @author Jon Harald Søby
+ */
+$messages['nb'] = array(
+	'newsextension-desc' => 'Viser egendefinerte siste endringer på en wikiside, eller en RSS- eller Atom-føde',
+);
+
 /** Low German (Plattdüütsch)
  * @author Slomox
  */
@@ -286,13 +293,6 @@ $messages['nl'] = array(
  */
 $messages['nn'] = array(
 	'newsextension-desc' => 'Syner eigendefinert siste endringar på ei wikisida eller som RSS- eller Atom-feed.',
-);
-
-/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
- * @author Jon Harald Søby
- */
-$messages['nb'] = array(
-	'newsextension-desc' => 'Viser egendefinerte siste endringer på en wikiside, eller en RSS- eller Atom-føde',
 );
 
 /** Occitan (Occitan)
@@ -440,6 +440,13 @@ $messages['vec'] = array(
  */
 $messages['vi'] = array(
 	'newsextension-desc' => 'Hiển thị các thay đổi gần đây đã tinh chỉnh trên các trang của một wiki hoặc bằng nguồn tin RSS hoặc Atom',
+);
+
+/** Simplified Chinese (‪中文(简体)‬)
+ * @author Hzy980512
+ */
+$messages['zh-hans'] = array(
+	'newsextension-desc' => '在页面中显示自定义的最近更改，或作为RSS和Atom发布',
 );
 
 /** Chinese (Hong Kong) (‪中文(香港)‬)

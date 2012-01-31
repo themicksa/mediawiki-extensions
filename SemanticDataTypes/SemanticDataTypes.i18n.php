@@ -115,6 +115,14 @@ $messages['mk'] = array(
 	'sdt-duration' => 'Времетраење',
 );
 
+/** Malay (Bahasa Melayu)
+ * @author Anakmalaysia
+ */
+$messages['ms'] = array(
+	'sdt-desc' => 'Jenis data tambahan untuk Semantic MediaWiki dan sambungan-sambungan',
+	'sdt-duration' => 'Tempoh',
+);
+
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
  * @author Event
  */

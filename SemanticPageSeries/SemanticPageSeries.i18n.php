@@ -49,3 +49,25 @@ $messages['qqq'] = array(
 	'spserror_pagegenerationlimitexeeded' => 'An error message',
 );
 
+/** German (Deutsch)
+ * @author Kghbln
+ */
+$messages['de'] = array(
+	'semanticpageseries-desc' => 'Ermöglicht das Erstellen einer Seitenfolge mit einem von [https://www.mediawiki.org/wiki/Extension:Semantic_Forms Semantic Forms] bereitgestellten Formular',
+	'spssuccesstitle' => '$1 Seiten werden erstellt …',
+	'spssuccess' => '$1 Seiten werden erstellt.',
+	'spserror' => 'Ein Fehler ist aufgetreten',
+	'spserror_diffnotsupported' => 'Die Aktion „diff“ wird nicht unterstützt.',
+	'spserror_previewnotsupported' => 'Die Seitenvorschau wird nicht unterstützt.',
+	'spserror_noiteratorname' => 'Es wurde kein Seitenfolgebezeichner für die Seitennamen angegeben.',
+	'spserror_iteratorunknown' => 'Der Seitenfolgebezeichner „$1“ ist nicht vorhanden.',
+	'spserror_noformname' => 'Der Name des Formulars wurde nicht angegeben.',
+	'spserror_formunknown' => 'Das Formular „$1“ ist nicht vorhanden.',
+	'spserror_notargetformname' => 'Der Name des Zielformulars wurde nicht angegeben.',
+	'spserror_notargetfieldname' => 'Der Name des Zielfeldes wurde nicht angegeben.',
+	'spserror_iteratorparammissing' => 'Die folgenden Parameter zum Seitenfolgebezeichner fehlen beim Aufruf der Funktion #seriesformlink:
+$1',
+	'spserror_noiteratordata' => 'Die gesendeten Daten enthalten keine Parameter zum Seitenfolgebezeichner.',
+	'spserror_pagegenerationlimitexeeded' => 'Es sollten $1 Seiten erstellt werden. Diese Anzahl übertrifft den zulässigen Grenzwert von $2 Seiten.',
+);
+

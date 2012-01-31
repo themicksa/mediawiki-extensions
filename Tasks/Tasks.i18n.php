@@ -2683,6 +2683,13 @@ $messages['nb'] = array(
 	'tasks-pref-showtaskcomments' => 'Inkluder kommentarside for oppgaver.',
 );
 
+/** Nepali (नेपाली)
+ * @author RajeshPandey
+ */
+$messages['ne'] = array(
+	'tasks_form_comment' => 'टिप्पणी',
+);
+
 /** Dutch (Nederlands)
  * @author Siebrand
  */

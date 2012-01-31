@@ -377,12 +377,13 @@ $messages['roa-tara'] = array(
 );
 
 /** Russian (Русский)
+ * @author AlexSm
  * @author KPu3uC B Poccuu
  * @author Александр Сигачёв
  */
 $messages['ru'] = array(
 	'microid-desc' => 'Добавляет [http://www.microid.org/ MicroID] на страницы участников, для подтверждения учётной записи внешними службами',
-	'tog-microid' => 'Опубликуйте <a href="http://microid.org/">MicroID</a>, чтобы подтвердить учётную запись с внешними службами.',
+	'tog-microid' => 'Опубликуйте <a href="http://microid.org/">MicroID</a>, чтобы подтвердить учётную запись с внешними службами',
 );
 
 /** Sicilian (Sicilianu)

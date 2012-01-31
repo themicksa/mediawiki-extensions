@@ -3730,6 +3730,14 @@ $messages['nb'] = array(
 	'moodbar-user-user' => 'Registrert bruker',
 );
 
+/** Nepali (नेपाली)
+ * @author RajeshPandey
+ */
+$messages['ne'] = array(
+	'moodbar-what-label' => 'यो के हो ?',
+	'moodbar-feedback-filters-username' => 'प्रयोगकर्ता नाम:',
+);
+
 /** Dutch (Nederlands)
  * @author Akoopal
  * @author B4bol4t
@@ -4208,6 +4216,7 @@ Për savèjne ëd pi, për piasì vìsita ël $1.",
 	'moodbar-privacy' => 'An sgnacand, a aceta na trasparensa conforma a coste $1.',
 	'moodbar-privacy-link' => 'condission',
 	'moodbar-privacy-link-title' => "Condission d'Usagi",
+	'moodbar-fbd-link-title' => 'opinion',
 	'moodbar-disable-link' => 'I son pa anteressà. Për piasì disabìlita sta funsionalità-sì.',
 	'moodbar-form-title' => 'Përchè...',
 	'moodbar-form-note' => '140 caràter al pi',
@@ -4218,7 +4227,7 @@ Për savèjne ëd pi, për piasì vìsita ël $1.",
 	'moodbar-loading-title' => 'Partagé...',
 	'moodbar-success-title' => 'Mersì!',
 	'moodbar-error-title' => 'Contacc!',
-	'moodbar-success-subtitle' => 'Partagé soa esperiensa ëd modìfica an giuta a amelioré $1.',
+	'moodbar-success-subtitle' => 'Partagé soa {{FBD-LINK}} an giuta a amelioré $1.',
 	'moodbar-error-subtitle' => "Quaicòs a l'é andàit mal! Për piasì, ch'a preuva a partagé ij tò coment torna pi tard.",
 	'moodbar-blocked-title' => 'Contacc!',
 	'moodbar-blocked-subtitle' => 'It ses stàit blocà, gnente modìfiche.',
@@ -4293,6 +4302,7 @@ Për savèjne ëd pi, për piasì vìsita ël $1.",
 	'moodbar-invalid-item' => "Ël sistema a l'ha nen podù trové ël coment giust.",
 	'moodbar-feedback-action-error' => "A l'é capitaje n'eror an provand a fé st'assion.",
 	'moodbar-feedback-response-summary' => "[[$1|$2]] [[$3|a l'ha arspondù]] $4 fà",
+	'moodbar-feedback-response-helpful-summary' => "[[$1|$2]] [[$3|arspondù]] $4 fà e [[$5|$6]] a l'ha trovalo ùtil",
 	'moodbar-feedback-edit-summary' => "Rispòsta a l'[[Special:FeedbackDashboard/$1|opinion d'utent]]: $2",
 	'moodbar-feedback-top-responders-title' => 'Rëspondent prinsipaj',
 	'moodbar-type-happy' => '{{GENDER:$1|Content}}',
@@ -4325,14 +4335,14 @@ Bin ëvnù a {{SITENAME}}, e mersì për sò [\$2 coment]. N'àutr utent ëd {{S
 
      \$4
 
-Smon-e ës mëssagi dzora a soa [\$5 pàgina ëd ciaciarade]
+Smon-e ës mëssagi dzora a soa [\$5 pàgina ëd ciaciarade].
 
 Lòn ch'a l'é na pàgina ëd ciaciarade?
 Soa pàgina ëd ciaciarade a l'é la pàgina che d'àutri contributor ëd {{SITENAME}} a deuvro për comuniché con chiel. A peul rësponde an sgnacand \"Modifiché\", spostand ël cursor sota ël coment, scrivend soa rispòsta e quatr tilde (~~~~) për sot-signé, e argistrand. Tute le pàgine an {{SITENAME}} a l'han dle pàgine ëd discussion, e a son dovrà për tanti but diferent. A-i va un pòch për pijé l'andi, ma a l'é bastansa bel fé na vira ch'a l'é costumasse.
 
-Ancor nen sigur? [http://en.wikipedia.org/wiki/File:Wikipedia_basics_-_Talk_pages.ogv Ës filmà] (da vëdde su [http://www.youtube.com/watch?v=JdeDLRsB2Es YouTube]) a-j dà na dimostrassion detajà.
+Ancor nen sigur? [http://en.wikipedia.org/wiki/File:Wikipedia_basics_-_Talk_pages.ogv Ës filmà] (da vëdde su [http://www.youtube.com/watch?v=JdeDLRsB2Es YouTube]) a-j dà na dimostrassion detajà ëd com le pagine ëd discussion a travajo.
 
-Bon-a giornà,
+Mersì për esse part ëd la comunità,
 
 -- {{SITENAME}}",
 );

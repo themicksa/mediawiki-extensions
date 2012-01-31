@@ -764,6 +764,7 @@ $messages['fa'] = array(
 );
 
 /** Finnish (Suomi)
+ * @author Crt
  * @author Nike
  * @author Olli
  */
@@ -771,7 +772,7 @@ $messages['fi'] = array(
 	'narayam-desc' => 'Mahdollistaa kirjoittamisen eri kirjoitusjärjestelmillä',
 	'narayam-toggle-ime' => 'Käytössä ($1)',
 	'narayam-menu' => 'Syöttötapa',
-	'narayam-menu-tooltip' => 'Hallitse Narayam-syöttötapoja',
+	'narayam-menu-tooltip' => 'Valitse syöttötapa',
 	'narayam-help' => 'Ohje',
 	'narayam-checkbox-tooltip' => 'Ota syöttötapa käyttöön ja pois',
 	'narayam-more-imes' => 'Lisää syöttötapoja',
@@ -1549,12 +1550,13 @@ $messages['km'] = array(
  * @author Purodha
  */
 $messages['ksh'] = array(
-	'narayam-desc' => 'Määt et müjjelesch, för beshtemmpte Shprooche un Schreffte för beshtemmpte Felder beim Einjävve de Taste met eije Aate ze Tippe ze belääje.',
+	'narayam-desc' => 'Määt et müjjelesch, för beshtemmpte Shprooche un Schreffte, för beshtemmpte Felder, beim Einjävve de Taste met eije Aate ze Tippe ze belääje.',
 	'narayam-toggle-ime' => 'Besönder Taste-Einjabe aanschallde ($1)',
 	'narayam-menu' => 'Taste-Einjabe',
-	'narayam-menu-tooltip' => 'Enjaabe övver <i lang="en">Narayam</i>',
+	'narayam-menu-tooltip' => 'Söhg ene Wääsch för Ding Enjaabe uß',
 	'narayam-help' => 'Hölp',
 	'narayam-checkbox-tooltip' => 'Et Tippe zwesche jewöhnlesch un besönders ömschallde',
+	'narayam-enable-preference' => 'Enschallde',
 	'narayam-more-imes' => 'Ander Müjjeleschkeite',
 	'narayam-am' => 'Amharesch met Äsazboochshtaave',
 	'narayam-as' => 'Aßamesesch met Äsazboochshtaave',
@@ -1588,6 +1590,7 @@ $messages['ksh'] = array(
 	'narayam-ta' => 'Tamilesch met Äsazboochshtaave',
 	'narayam-ta-bamini' => 'Tamilesch Bamini',
 	'narayam-tcy' => 'Tulu met Äsazboochshtaave',
+	'narayam-te' => 'Teluuju met Äsazboochshtaave',
 	'narayam-te-inscript' => 'Teluuju <i lang="en">InScript</i>',
 	'narayam-bn-avro' => 'Bänjaalesch Avro',
 	'narayam-bn-inscript' => 'Bänjaalesch <i lang="en">InScript</i>',
@@ -2044,7 +2047,7 @@ $messages['pms'] = array(
 	'narayam-desc' => "A përmët ëd gionté dij métod përsonalisà për scrive ant ij camp d'intrada",
 	'narayam-toggle-ime' => 'Abilité ($1)',
 	'narayam-menu' => "Métod d'anseriment",
-	'narayam-menu-tooltip' => "Controlé l'Editor dël Métod d'Anseriment (IME) Narayam",
+	'narayam-menu-tooltip' => "Selessioné un métod d'anseriment",
 	'narayam-help' => 'Agiut',
 	'narayam-checkbox-tooltip' => "Për ativé e disativé ël métod d'anseriment",
 	'narayam-enable-preference' => "Abilité ël métod d'imission",
@@ -2081,6 +2084,7 @@ $messages['pms'] = array(
 	'narayam-ta' => 'Trasliterassion Tamil',
 	'narayam-ta-bamini' => 'Tamil Bamini',
 	'narayam-tcy' => 'Trasliterassion Tulu',
+	'narayam-te' => 'Trasliterassion Telegu',
 	'narayam-te-inscript' => 'InScript Telugu',
 	'narayam-bn-avro' => 'Avro Bengali',
 	'narayam-bn-inscript' => 'InScript Bengali',

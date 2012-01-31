@@ -83,6 +83,7 @@ $messages['fr'] = array(
 $messages['gl'] = array(
 	'solrstore-desc' => 'Procurar propiedades semánticas co poder dun motor de procura de texto',
 	'solrsearch' => 'SolrSearch',
+	'solrsearch-title' => 'Procura',
 	'solrstore-error' => 'Erro: Comprobe a súa pescuda.',
 	'solrstore-searchFieldSets' => 'SolrSearch',
 	'solrstore-searchFieldSets-select' => 'Seleccione un conxunto de procuras',
