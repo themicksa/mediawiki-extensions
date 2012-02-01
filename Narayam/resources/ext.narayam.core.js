@@ -173,7 +173,7 @@ $.narayam = new ( function() {
 
 	/**
 	 * Change visual appearance of element (text input, textarea) according
-	 * current state of Narayam
+	 * to the current state of Narayam
 	 */
 	function changeVisual( $element ) {
 		if ( enabled ) {
@@ -185,7 +185,7 @@ $.narayam = new ( function() {
 
 	/**
 	 * Replace text part from startPos to endPos with peri
-	 * It function is specifically for webkit browsers,
+	 * This function is specifically for webkit browsers,
 	 * because of bug: https://bugs.webkit.org/show_bug.cgi?id=66630
 	 * TODO: remove when webkit bug is handled in jQuery.textSelection.js
 	 *
@@ -237,7 +237,7 @@ $.narayam = new ( function() {
 			return true;
 		}
 
-		// Leave non-ASCII stuff alone, as well as anything involving
+		// Leave ASCII control characters alone, as well as anything involving
 		// Alt (except for extended keymaps), Ctrl and Meta
 		if ( e.which < 32 || ( e.altKey && !currentScheme.extended_keyboard ) || e.ctrlKey || e.metaKey ) {
 			return true;
@@ -319,7 +319,7 @@ $.narayam = new ( function() {
 	 */
 	this.addInputs = function( inputs ) {
 		if ( typeof( inputs ) === "string" ) {
-			// If a string is passed, it is CSS selector
+			// If a string is passed, it is a CSS selector
 			// We can use jQuery's .live() instead of .bind()
 			// So Narayam can work on elements added later to DOM too
 			$( inputs )
@@ -502,11 +502,12 @@ $.narayam = new ( function() {
 		var $narayamMenuItemLabel = $( '<label>' )
 			.attr( 'for' ,'narayam-' + scheme )
 			.append( $input )
-			.append( mw.message( "narayam-"+ scheme ).escaped() );
+			.append( mw.message( 'narayam-' + scheme ).escaped() );
 
 		var $narayamMenuItem = $( '<li>' )
 			.append( $input )
 			.append( $narayamMenuItemLabel );
+
 		return $narayamMenuItem;
 	};
 
@@ -525,6 +526,7 @@ $.narayam = new ( function() {
 		if ( typeof recent === "string" ) {
 			recent = recent.split( "," );
 		}
+
 		// Prepare the recent inputmethods menu items
 		for ( var i = 0; i < recent.length; i++ ) {
 			var scheme = recent[i];
@@ -535,6 +537,7 @@ $.narayam = new ( function() {
 			$narayamMenuItem.addClass( 'narayam-recent-menu-item' );
 			$narayamMenuItems.append( $narayamMenuItem );
 		}
+
 		// menu items for the language of wiki.
 		var requested = [mw.config.get( 'wgUserVariant' ), mw.config.get( 'wgContentLanguage' ), mw.config.get( 'wgUserLanguage' )];
 		$( 'textarea[lang]' ).each( function( index ) {
@@ -591,13 +594,13 @@ $.narayam = new ( function() {
 		for ( var lang in allImes ) {
 			var langschemes = allImes[lang];
 			for ( var langscheme in langschemes ) {
-				// Donot repeat the input methods in more input methods section.
+				// Do not repeat the input methods in more input methods section.
 				// If already shown on recent items.
 				if ( $.inArray( langscheme, seen ) > -1 ) { continue; }
+
 				var $narayamMenuItem = that.buildMenuItem( langscheme );
 				$narayamMenuItem.addClass( 'narayam-scheme-dynamic-item' );
 				$narayamMenuItems.append( $narayamMenuItem );
-
 			}
 		}
 
@@ -626,6 +629,7 @@ $.narayam = new ( function() {
 		}
 
 		$narayamMenuItems.prepend( $( '<li>' ).append( $label ) );
+
 		return $( '<div>' )
 			.attr( 'id', 'narayam-menu-items' )
 			.addClass( 'menu-items' )
@@ -693,6 +697,7 @@ $.narayam = new ( function() {
 				event.stopPropagation();
 			}
 		} );
+
 		$( 'html' ).click( function() {
 			$menu.removeClass( 'open' );
 			$menu.hide();
@@ -700,6 +705,7 @@ $.narayam = new ( function() {
  		$menu.click( function( event ) {
 			event.stopPropagation();
 		} );
+
 		// Workaround for IE bug - activex components like input fields
 		// coming on top of everything.
 		// TODO: is there a better solution other than hiding it on hover?
@@ -711,6 +717,7 @@ $.narayam = new ( function() {
 			});
 		}
 		$('.narayam-scheme-dynamic-item').hide();
+
 		// Narayam controls setup complete, returns true
 		return true;
 	};
