@@ -48,7 +48,7 @@ class ArticleEmblemsHooks {
 			foreach ( $parserOutput->articleEmblems as $emblem ) {
 				$emblems[] = '<li class="articleEmblem">' . $emblem . '</li>';
 			}
-			$parserOutput->setText( '<ul id="articleEmblems">' . implode( $emblems ) . '</ul>' . $parserOutput->getText() );
+			$parserOutput->setText( '<ul id="articleEmblems" class="noprint">' . implode( $emblems ) . '</ul>' . $parserOutput->getText() );
 		}
 		return true;
 	}
