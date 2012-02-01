@@ -44,6 +44,8 @@ class SPSUtils {
 	 */
 	static public function renderSeriesLink( &$parser ) {
 		
+		global $wgTitle;
+		
 		$params = func_get_args();
 		array_shift( $params ); // We don't need the parser.
 		
@@ -55,6 +57,15 @@ class SPSUtils {
 			}
 
 		}
+
+		// We'd like to use 'origin' as a parameter, but that might be taken
+		// find the first available name
+		$count = 0;
+		while ( array_key_exists( 'origin' . $count, $params )) {
+			$count++;
+		}
+		
+		$params[] = "origin$count=" . $wgTitle->getArticleId();
 		
 		// hack to remove newline from beginning of output, thanks to
 		// http://jimbojw.com/wiki/index.php?title=Raw_HTML_Output_from_a_MediaWiki_Parser_Function

@@ -12,6 +12,7 @@ $messages['en'] = array(
 	'semanticpageseries-desc' => 'Creating a series of pages from one [https://www.mediawiki.org/wiki/Extension:Semantic_Forms Semantic Form]',
 	'spssuccesstitle' => 'Creating $1 pages',
 	'spssuccess' => '{{PLURAL:$1|One page|$1 pages}} will be created.',
+	'spssuccess_returntoorigin' => 'Return to $1',
 	'spserror' => 'An error occurred',
 	
 	'spserror_diffnotsupported' => 'The diff action is not supported for page series.',
@@ -35,6 +36,7 @@ $messages['qqq'] = array(
 	'semanticpageseries-desc' => '{{desc}}',
 	'spssuccesstitle' => 'The title of a page containing a success message. The parameter will contain the category of pages to be created, e.g. Event',
 	'spssuccess' => 'A success message. The parameter will contain a number.',
+	'spssuccess_returntoorigin' => 'Provides navigation back to the origin page. The parameter is the link.',
 	'spserror' => 'The title of en error page',
 	'spserror_diffnotsupported' => 'An error message',
 	'spserror_previewnotsupported' => 'An error message',
