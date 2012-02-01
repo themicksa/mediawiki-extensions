@@ -6142,6 +6142,9 @@ $messages['tr'] = array(
  */
 $messages['tt-cyrl'] = array(
 	'contribstats-daily-totals' => '{{PLURAL:$1|Соңгы $1 көн өчен|Соңгы $1 көннәр өчен}}',
+	'contribstats-donations' => 'Иганә',
+	'contribstats-conversion' => 'Конверсия күрсәткече (%)',
+	'contribstats-template' => 'Калып',
 );
 
 /** Ukrainian (Українська)

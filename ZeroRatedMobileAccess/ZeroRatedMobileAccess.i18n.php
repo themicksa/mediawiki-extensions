@@ -125,6 +125,7 @@ $messages['dsb'] = array(
  * @author Crt
  */
 $messages['fi'] = array(
+	'zero-rated-mobile-access-language-selection' => 'Kaikki kielet',
 	'zero-rated-mobile-access-banner-text-data-charges-yes' => 'Kyllä',
 	'zero-rated-mobile-access-banner-text-data-charges-no' => 'Ei',
 );

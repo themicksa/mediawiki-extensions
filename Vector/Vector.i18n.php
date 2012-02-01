@@ -491,7 +491,7 @@ $messages['diq'] = array(
 	'vector-editwarning-warning' => 'ihtimal o ke wexta şıma peli ra bıveci, vurnayiş o ke şıma kerdo, hewna şiyêro .
 eke şıma kewtê hesabê xo, no hişyari tercihanê xo ra şıma eşkeni "Ho vurnayeno" bıvındarnî .',
 	'vector-editwarning-preference' => 'wexta ke ez pelo nêqeydbiyaye ra veciyaya mı hişyar bıker',
-	'vector-simplesearch-search' => 'Cıgeyrê',
+	'vector-simplesearch-search' => 'Cı geyre',
 	'vector-simplesearch-containing' => 'tedeestey...',
 );
 

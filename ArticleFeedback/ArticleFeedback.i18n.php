@@ -1603,7 +1603,7 @@ $messages['diq'] = array(
 	'articlefeedback-survey-submit' => 'Qeyd ke',
 	'articlefeedback-form-panel-explanation' => 'No çıko?',
 	'articlefeedback-pitch-or' => 'ya zi',
-	'articlefeedback-pitch-join-login' => 'Cıkewe',
+	'articlefeedback-pitch-join-login' => 'Cı kewe',
 	'articlefeedback-pitch-edit-accept' => 'Ena pele bıvurne',
 	'articleFeedback-table-heading-page' => 'Pele',
 );

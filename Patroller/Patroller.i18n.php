@@ -2257,7 +2257,7 @@ $messages['tt-cyrl'] = array(
 	'patrol' => 'Тикшерү',
 	'patrol-resume' => 'Дәвам итү өчен монда басыгыз',
 	'group-patroller' => 'Тикшерүче',
-	'group-patroller-member' => 'тикшерүче',
+	'group-patroller-member' => '{{GENDER:$1|тикшерүче}}',
 	'grouppage-patroller' => '{{ns:project}}:Тикшерү',
 	'right-patroller' => 'Битләрне тикшерү',
 );

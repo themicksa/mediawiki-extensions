@@ -5149,10 +5149,12 @@ $messages['or'] = array(
 
 /** Ossetic (Ирон)
  * @author Amikeco
+ * @author Bouron
  */
 $messages['os'] = array(
 	'mwe-summary' => 'Ивдтыты афыст:',
 	'mwe-link' => 'æрвитæн',
+	'mwe-am-commons-title' => 'Викикъæбиц',
 );
 
 /** Deitsch (Deitsch)
@@ -6219,7 +6221,7 @@ $messages['sr-ec'] = array(
 	'mwe-cancel-confim' => 'Желите ли да откажете?',
 	'mwe-successfulupload' => 'Слање успешно',
 	'mwe-uploaderror' => 'Грешка при слању',
-	'mwe-uploadwarning' => 'Упозорење при слању',
+	'mwe-uploadwarning' => 'Упозорење при отпремању',
 	'mwe-unknown-error' => 'Непозната грешка:',
 	'mwe-return-to-form' => 'Назад на образац',
 	'mwe-fileexists-thumb' => 'Постојећа датотека',

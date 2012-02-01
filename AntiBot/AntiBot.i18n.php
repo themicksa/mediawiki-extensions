@@ -550,7 +550,7 @@ $messages['rue'] = array(
  * @author HalanTul
  */
 $messages['sah'] = array(
-	'antibot-desc' => 'Спамбуоттары тургутар уонна полезнай ноҕуруусканы холбуур судургу үнүстүрүмүөн',
+	'antibot-desc' => 'Спамбуоттары тургутар уонна полезнай ноҕуруусканы холбуур судургу сэбиргэл',
 );
 
 /** Sicilian (Sicilianu)

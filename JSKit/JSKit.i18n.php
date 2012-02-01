@@ -255,6 +255,13 @@ $messages['ms'] = array(
 	'jskit-desc' => 'Menggabungkan alat-alatan js-kit kepada laman wiki',
 );
 
+/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
+ * @author Nghtwlkr
+ */
+$messages['nb'] = array(
+	'jskit-desc' => 'Integrerer js-kit-verktøy på en wikiside',
+);
+
 /** Low German (Plattdüütsch)
  * @author Slomox
  */
@@ -274,13 +281,6 @@ $messages['nl'] = array(
  */
 $messages['nn'] = array(
 	'jskit-desc' => 'Integrerer js-kit-verkty på ei wikisida',
-);
-
-/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
- * @author Nghtwlkr
- */
-$messages['nb'] = array(
-	'jskit-desc' => 'Integrerer js-kit-verktøy på en wikiside',
 );
 
 /** Occitan (Occitan)
@@ -349,10 +349,11 @@ $messages['sq'] = array(
 );
 
 /** Serbian (Cyrillic script) (‪Српски (ћирилица)‬)
+ * @author Rancher
  * @author Михајло Анђелковић
  */
 $messages['sr-ec'] = array(
-	'jskit-desc' => 'Интегрише js-kit алате у Вики-чланак',
+	'jskit-desc' => 'Интегрише js-kit алатке на вики страницу',
 );
 
 /** Serbian (Latin script) (‪Srpski (latinica)‬)
