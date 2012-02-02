@@ -291,7 +291,7 @@ class SpecialOpenID extends SpecialPage {
 			} else {
 				$wgOut->addWikiMsg( 'openidautosubmit' );
 				$wgOut->addHTML( $form_html );
-				$wgOut->addInlineScript( "function submitOpenIDForm() {\n document.getElementById(\"" . $form_id . "\").submit()\n }\nhookEvent(\"load\", submitOpenIDForm);\n" );
+				$wgOut->addInlineScript( "function submitOpenIDForm() {\n document.getElementById(\"" . $form_id . "\").submit()\n};\njQuery( document ).ready( submitOpenIDForm );\n");
 			}
 		}
 
