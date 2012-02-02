@@ -685,6 +685,7 @@ $messages['ml'] = array(
 
 /** Marathi (मराठी)
  * @author Kaustubh
+ * @author Sankalpdravid
  */
 $messages['mr'] = array(
 	'latexdoc_no_text' => 'पानावर काहीही मजकूर नाही, DVI तयार करू शकत नाही',
@@ -698,8 +699,27 @@ $messages['mr'] = array(
 
 $3',
 	'latexdoc_get_dvi' => 'DVI तयार करा',
-	'latexdoc_get_pdf' => 'पीडिएफ तयार करा',
+	'latexdoc_get_pdf' => 'पीडीएफ तयार करा',
 	'latexdoc-desc' => 'LaTeX पानांचे एकत्रित संपादन',
+);
+
+/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
+ * @author Jon Harald Søby
+ */
+$messages['nb'] = array(
+	'latexdoc_no_text' => 'Siden inneholder ikke noe tekst, kan ikke generere DVI',
+	'latexdoc_cant_create_dir' => 'Kan ikke opprette midlertid mappe $1',
+	'latexdoc_cant_write' => 'Kan ikke skrive til filen $1',
+	'latexdoc_error' => 'LaTeX-feil
+
+Kommando: $1
+
+Resultat: $2
+
+$3',
+	'latexdoc_get_dvi' => 'Hent DVI',
+	'latexdoc_get_pdf' => 'Hent PDF',
+	'latexdoc-desc' => 'Felles redigering av LaTeX-dokumenter',
 );
 
 /** Dutch (Nederlands)
@@ -738,25 +758,6 @@ $3',
 	'latexdoc_get_dvi' => 'Hent DVI',
 	'latexdoc_get_pdf' => 'Hent PDF',
 	'latexdoc-desc' => 'Felles endring av LaTeX-dokument',
-);
-
-/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
- * @author Jon Harald Søby
- */
-$messages['nb'] = array(
-	'latexdoc_no_text' => 'Siden inneholder ikke noe tekst, kan ikke generere DVI',
-	'latexdoc_cant_create_dir' => 'Kan ikke opprette midlertid mappe $1',
-	'latexdoc_cant_write' => 'Kan ikke skrive til filen $1',
-	'latexdoc_error' => 'LaTeX-feil
-
-Kommando: $1
-
-Resultat: $2
-
-$3',
-	'latexdoc_get_dvi' => 'Hent DVI',
-	'latexdoc_get_pdf' => 'Hent PDF',
-	'latexdoc-desc' => 'Felles redigering av LaTeX-dokumenter',
 );
 
 /** Occitan (Occitan)

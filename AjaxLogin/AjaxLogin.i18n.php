@@ -1343,6 +1343,7 @@ Suriin ang iyong pagbabaybay.',
 );
 
 /** Turkish (Türkçe)
+ * @author Incelemeelemani
  * @author Joseph
  */
 $messages['tr'] = array(
@@ -1355,6 +1356,8 @@ Eğer bu sayfadan şimdi çıkarsanız sayfaya yaptığınız değişiklikleri k
 	'al-nosuchuser' => '"$1" adında bir kullanıcı yok.
 Kullanıcı adları büyük-küçük harf duyarlıdır.
 Yazımınızı kontrol edin.',
+	'al-createblocked' => 'IP adresinizin hesap oluşturması engellendi.',
+	'al-throttled' => 'Çok fazla sayıda parola denemesi yapıldı. Lütfen yeniden denemeden önce  $1 {{PLURAL:$1| second|saniye}} bekleyiniz .',
 );
 
 /** Tatar (Cyrillic script) (Татарча)

@@ -663,6 +663,19 @@ $messages['tl'] = array(
 	'bm-printversion-inexistent-book' => 'Hindi natagpuan ang aklat.  Pakipasok ang pangalan ng umiiral na aklat upang makuha ang bersyong maililimbag nito.',
 );
 
+/** Turkish (Türkçe)
+ * @author Incelemeelemani
+ */
+$messages['tr'] = array(
+	'bookmanager-desc' => 'Kitaplar için araçlar',
+	'bm-booktools-section' => 'Kitap araçları',
+	'bm-randomchapter-link' => 'Rastgele bölüm',
+	'bm-printversion' => 'Yazıcı versiyonu',
+	'bm-printversion-desc' => 'Kitabın [[Special:PrintVersion|yazdırılabilir sürümünü]] oluştur',
+	'bm-printversion-no-book' => 'Yazıcı çıktısı almak için bir kitap adını giriniz.',
+	'bm-printversion-inexistent-book' => 'Kitap bulunamadı. Lütfen varolan bir kitabın adını giriniz.',
+);
+
 /** Ukrainian (Українська)
  * @author Sodmy
  */

@@ -11628,6 +11628,7 @@ Pakilikha ito o baguhin ito upang magamit ang ganitong karugtong.',
 );
 
 /** Turkish (Türkçe)
+ * @author Incelemeelemani
  * @author Joseph
  * @author Karduelis
  * @author Mach
@@ -11718,6 +11719,7 @@ Lütfen bu eklentiyi kullanmak için PHP ile dizini yazılabilir hale getirin.',
 	'configure-section-proxy' => "Proxy'ler",
 	'configure-section-cookie' => 'Çerezler',
 	'configure-section-performance' => 'Performans',
+	'configure-section-test' => 'Testler',
 	'configure-section-upload' => 'Yükle',
 	'configure-section-sharedupload' => 'Paylaşılan yükleme',
 	'configure-section-mime' => 'MIME tipi',

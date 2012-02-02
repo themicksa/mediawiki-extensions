@@ -93,6 +93,7 @@ $messages['de'] = array(
  */
 $messages['dsb'] = array(
 	'semanticinternalobjects-desc' => 'Nastajenje internych objektow w Semantic MediaWiki',
+	'semanticinternalobjects-internalproperty' => 'Interna kakosć',
 );
 
 /** Greek (Ελληνικά)

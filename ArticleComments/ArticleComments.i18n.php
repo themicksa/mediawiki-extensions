@@ -48,9 +48,10 @@ Available ones are "plain", "normal" and "wiki".',
  * @author Hydra
  * @author Purodha
  * @author Siebrand
+ * @author Umherirrender
  */
 $messages['qqq'] = array(
-	'article-comments-desc' => 'This is the description of a user right.',
+	'article-comments-desc' => '{{desc}}',
 	'article-comments-title-string' => '{{Identical|Title}}',
 	'article-comments-name-string' => '{{Identical|Name}}',
 	'article-comments-comment-string' => '{{Identical|Comment}}',
@@ -2097,6 +2098,7 @@ Ang makukuha ay "payak", "pangkaraniwan" at "wiki".',
 /** Turkish (Türkçe)
  * @author 82-145
  * @author Emperyan
+ * @author Incelemeelemani
  * @author Karduelis
  */
 $messages['tr'] = array(
@@ -2109,11 +2111,14 @@ $messages['tr'] = array(
 	'article-comments-comment-string' => 'Açıklama',
 	'article-comments-comment-field' => 'Yorum:',
 	'article-comments-submit-button' => 'Gönder',
-	'article-comments-leave-comment-link' => 'Yorum bırak ...',
+	'article-comments-leave-comment-link' => 'Yorum yaz ...',
 	'article-comments-required-field' => '"$1" alanı gerekiyor.',
+	'article-comments-submission-failed' => 'Yorum gönderme başarısız',
 	'article-comments-talk-page-starter' => '<noinclude>"[[$1]]" yazısına yapılan yorumlar 
 <comments />
 ----- __NOEDITSECTION__</noinclude>',
+	'article-comments-commenter-said' => '$1dedi ki...',
+	'article-comments-submission-succeeded' => 'Yorum gönderme başarılı',
 	'article-comments-comment-missing-name-parameter' => 'Eksik isim',
 	'article-comments-comment-missing-date-parameter' => 'Eksik yorum tarihi',
 );

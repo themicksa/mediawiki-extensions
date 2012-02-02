@@ -36,6 +36,14 @@ $messages['de'] = array(
 	'parserfun-invalid-caller-mode' => 'Es wurde kein gültiger Modus oder kein numerischer Index angegeben.',
 );
 
+/** Lower Sorbian (Dolnoserbski)
+ * @author Michawiki
+ */
+$messages['dsb'] = array(
+	'parserfun-desc' => 'Pśidawa parserowu funkciju <code>#parse</code> za parsowanje wikiteksta a zawjedujo prefiks <code>THIS:</code> za magiske wariable, kótarež wótwołuju informacije bokow',
+	'parserfun-invalid-caller-mode' => 'Žeden płaśiwy modus abo numeriski indeks njepódany.',
+);
+
 /** French (Français)
  * @author Gomoko
  */

@@ -264,6 +264,13 @@ $messages['sv'] = array(
 	'apiexplorer-loading' => 'Läser in funktioner...',
 );
 
+/** Turkish (Türkçe)
+ * @author Incelemeelemani
+ */
+$messages['tr'] = array(
+	'apiexplorer-loading' => 'Fonksiyonlar yükleniyor...',
+);
+
 /** Ukrainian (Українська)
  * @author Sodmy
  */

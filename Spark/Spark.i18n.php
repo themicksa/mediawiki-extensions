@@ -37,6 +37,14 @@ $messages['de'] = array(
 	'spark-missing-query' => 'Es muss eine eine Abfrage mit dem Parameter „data-spark-query“ erstellt werden.',
 );
 
+/** Lower Sorbian (Dolnoserbski)
+ * @author Michawiki
+ */
+$messages['dsb'] = array(
+	'spark-desc' => 'Pśidawa toflicku <code><nowiki><spark /></nowiki></code>, kótaraž zmóžnja zasajźenje [http://km.aifb.kit.edu/sites/spark/ Sparkowych] mashupow. Biblioteka Spark jo se wót Dennisa Vrandecic a Andreasa Hartha napórała.',
+	'spark-missing-query' => 'Musyš napšašowanje z pomocu parametra "data-spark-query" pódaś.',
+);
+
 /** Spanish (Español)
  * @author Fitoschido
  */

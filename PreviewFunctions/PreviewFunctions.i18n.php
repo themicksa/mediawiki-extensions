@@ -31,6 +31,13 @@ $messages['de'] = array(
 	'previewfunctions-desc' => 'Ergänzt Parserfunktionen, welche die Anpassung der Seitenvorschau ermöglichen',
 );
 
+/** Lower Sorbian (Dolnoserbski)
+ * @author Michawiki
+ */
+$messages['dsb'] = array(
+	'previewfunctions-desc' => 'Sajźba parserowych funkcijow, aby manipulěrowała bok w pśeglěźe',
+);
+
 /** French (Français)
  * @author Gomoko
  */

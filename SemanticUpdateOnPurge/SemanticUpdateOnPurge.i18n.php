@@ -33,6 +33,13 @@ $messages['de'] = array(
 	'suop-desc' => 'Aktualisiert die semantischen Attribute auf einer Wiki-Seite, wenn deren Seitencache durch die Aktion „purge“ geleert wird',
 );
 
+/** Lower Sorbian (Dolnoserbski)
+ * @author Michawiki
+ */
+$messages['dsb'] = array(
+	'suop-desc' => 'Aktualizěrujo semantiske atributy wikiboka, gaž se cache boka prozni',
+);
+
 /** French (Français)
  * @author Sherbrooke
  */

@@ -7957,6 +7957,7 @@ Ang pangkat ng {{SITENAME}}',
  * @author 82-145
  * @author CnkALTDS
  * @author Emperyan
+ * @author Incelemeelemani
  * @author Joseph
  * @author Karduelis
  * @author Reedy
@@ -7966,10 +7967,12 @@ $messages['tr'] = array(
 	'articlefeedback' => 'Madde değerlendirmesi',
 	'articlefeedback-desc' => 'Madde geribildirimi',
 	'articlefeedback-survey-question-origin' => 'Bu ankete başladığında hangi sayfadaydınız?',
+	'articlefeedback-survey-question-whyrated' => 'Lütfen bu sayfayı oylayarak bize geribildirimde bulunun (size uygun olanı işaretleyin):',
 	'articlefeedback-survey-answer-whyrated-contribute-rating' => 'Sayfanın genel değerlendirilmesine katkıda bulunmak istedim',
 	'articlefeedback-survey-answer-whyrated-development' => 'Değerlendirmemin sayfanın gelişimini olumlu yönde etkileyeceğini düşünüyorum',
 	'articlefeedback-survey-answer-whyrated-contribute-wiki' => '{{SITENAME}} sitesine katkıda bulunmak istedim.',
 	'articlefeedback-survey-answer-whyrated-sharing-opinion' => 'Fikirlerimi paylaşmayı seviyorum',
+	'articlefeedback-survey-answer-whyrated-didntrate' => 'Şu anda oylama yapmak istemiyorum, ancak geri bildirimde bulunmak istedim',
 	'articlefeedback-survey-answer-whyrated-other' => 'Diğer',
 	'articlefeedback-survey-question-useful' => 'Mevcut değerlendirmelerin kullanışlı ve anlaşılır olduğunu düşünüyor musunuz?',
 	'articlefeedback-survey-question-useful-iffalse' => 'Neden?',
@@ -7977,31 +7980,68 @@ $messages['tr'] = array(
 	'articlefeedback-survey-submit' => 'Gönder',
 	'articlefeedback-survey-title' => 'Lütfen birkaç soruya yanıt verin',
 	'articlefeedback-survey-thanks' => 'Anketi doldurduğunuz için teşekkür ederiz.',
+	'articlefeedback-survey-disclaimer' => '$1 gönderinizin politikalarımıza uygun olduğunu doğruluyorsunuz.',
+	'articlefeedback-survey-disclaimerlink' => 'şartlar',
+	'articlefeedback-error' => 'Bir hata oluştu. Lütfen daha sonra yeniden deneyin.',
 	'articlefeedback-form-switch-label' => 'Bu sayfayı değerlendirin',
 	'articlefeedback-form-panel-title' => 'Bu sayfayı değerlendirin',
 	'articlefeedback-form-panel-explanation' => 'Bu nedir?',
+	'articlefeedback-form-panel-explanation-link' => 'Project:ArticleFeedback',
 	'articlefeedback-form-panel-clear' => 'Bu değerlendirmeyi kaldır',
-	'articlefeedback-form-panel-expertise-profession' => 'Mesleğimin bir parçasıdır',
+	'articlefeedback-form-panel-expertise' => 'Bu konu hakkında oldukça bilgiliyim (isteğe bağlı)',
+	'articlefeedback-form-panel-expertise-studies' => 'Bu konu hakkında eğitim gördüm',
+	'articlefeedback-form-panel-expertise-profession' => 'Mesleğimin bir parçası',
+	'articlefeedback-form-panel-expertise-hobby' => 'Bu konuya tutkuyla bağlıyım',
+	'articlefeedback-form-panel-expertise-other' => 'Burada benim konu hakkında ki bilgi seviyem listelenmiyor',
+	'articlefeedback-form-panel-helpimprove' => "Vikipedi'yi geliştirmede yardımcı olmak istiyorum, bana e-posta gönderebilirsiniz (isteğe bağlı)",
+	'articlefeedback-form-panel-helpimprove-note' => 'Size bir onay e-postası gönderilecektir. $1 e-posta adresiniz proje dışında üçüncü şahıslar ile paylaşılmayacaktır .',
+	'articlefeedback-form-panel-helpimprove-email-placeholder' => 'email@example.org',
 	'articlefeedback-form-panel-helpimprove-privacy' => 'Gizlilik ilkesi',
 	'articlefeedback-form-panel-submit' => 'Değerlendirmeleri kaydet',
 	'articlefeedback-form-panel-pending' => 'Değerlendirmeleriniz henüz kaydedilmedi',
 	'articlefeedback-form-panel-success' => 'Başarıyla kaydedildi',
+	'articlefeedback-form-panel-expiry-title' => 'Oylama zaman aşımına uğradı',
+	'articlefeedback-form-panel-expiry-message' => 'Lütfen bu sayfayı yeniden değerlendirin ve yeni oyunuzu gönderin.',
 	'articlefeedback-report-switch-label' => 'Sayfa değerlendirmelerini görüntüle',
 	'articlefeedback-report-panel-title' => 'Sayfa değerlendirmeleri',
 	'articlefeedback-report-panel-description' => 'Şu anki değerlendirme ortalaması',
 	'articlefeedback-report-empty' => 'Değerlendirme yok',
+	'articlefeedback-report-ratings' => '$1 oylandı',
 	'articlefeedback-field-trustworthy-label' => 'Güvenilir',
+	'articlefeedback-field-trustworthy-tip' => 'Bu sayfada yeterli alıntılar bulunduğunu ve bu alıntıların güvenilir kaynaklardan geldiğini hissediyor musunuz?',
+	'articlefeedback-field-trustworthy-tooltip-1' => 'Güvenilir kaynaklardan yoksun',
+	'articlefeedback-field-trustworthy-tooltip-2' => 'Birkaç güvenli kaynak mevcut',
+	'articlefeedback-field-trustworthy-tooltip-3' => 'Yeterli bilinen kaynağı var',
+	'articlefeedback-field-trustworthy-tooltip-4' => 'Oldukça güvenli kaynaklardan',
+	'articlefeedback-field-trustworthy-tooltip-5' => 'Büyük saygın kaynaklardan',
 	'articlefeedback-field-complete-label' => 'Tamamlanmış',
-	'articlefeedback-field-complete-tip' => 'Bu sayfada konuyla ilgili yer alması gerekn tüm bilgilerin yer aldığını düşünüyor musunuz?',
+	'articlefeedback-field-complete-tip' => 'Bu sayfanın konuyla ilgili yer alması gereken tüm bilgileri içerdiğini düşünüyor musunuz?',
+	'articlefeedback-field-complete-tooltip-1' => 'Bilgilerin çoğu eksik',
+	'articlefeedback-field-complete-tooltip-2' => 'Bazı bilgileri içeriyor',
+	'articlefeedback-field-complete-tooltip-3' => 'Önemli bilgiler içeriyor, ancak boşluklar var',
+	'articlefeedback-field-complete-tooltip-4' => 'Çok önemli bilgileri içeriyor',
+	'articlefeedback-field-complete-tooltip-5' => 'Kapsamlı bilgi',
 	'articlefeedback-field-objective-label' => 'Tarafsız',
 	'articlefeedback-field-objective-tip' => 'Bu sayfanın konu hakkındaki tüm bakış açılarını iyi bir şekilde yansıttığını düşünüyor musunuz?',
+	'articlefeedback-field-objective-tooltip-1' => 'Aşırı önyargılı',
+	'articlefeedback-field-objective-tooltip-2' => 'Orta seviyede önyargılı',
+	'articlefeedback-field-objective-tooltip-3' => 'Az önyargılı',
+	'articlefeedback-field-objective-tooltip-4' => 'Önyargı yok',
+	'articlefeedback-field-objective-tooltip-5' => 'Tamamen tarafsız',
 	'articlefeedback-field-wellwritten-label' => 'İyi yazılmış',
+	'articlefeedback-field-wellwritten-tip' => 'Bu sayfanın ne derece düzenli yazılmış olduğunu düşünüyorsunuz?',
+	'articlefeedback-field-wellwritten-tooltip-1' => 'Anlaşılamıyor',
+	'articlefeedback-field-wellwritten-tooltip-2' => 'Anlamak zor',
+	'articlefeedback-field-wellwritten-tooltip-3' => 'Yeterli seviyede',
+	'articlefeedback-field-wellwritten-tooltip-4' => 'İyi seviyede',
+	'articlefeedback-field-wellwritten-tooltip-5' => 'Olağanüstü gözüküyor',
 	'articlefeedback-pitch-reject' => 'Belki ileride',
 	'articlefeedback-pitch-or' => 'veya',
 	'articlefeedback-pitch-thanks' => 'Teşekkürler! Değerlendirmeleriniz kaydedildi.',
-	'articlefeedback-pitch-survey-message' => 'Lütfen kısa bir anketi doldurmak için bir dakikanızı ayırın.',
+	'articlefeedback-pitch-survey-message' => 'Lütfen bu kısa anketi doldurmak için bir kaç dakikanızı ayırın.',
 	'articlefeedback-pitch-survey-accept' => 'Ankete başla',
 	'articlefeedback-pitch-join-message' => 'Bir kullanıcı hesabı edinmek istiyor musunuz?',
+	'articlefeedback-pitch-join-body' => 'Yeni bir hesap düzenlemelerinizi takip etmek, tartışmalarda yer almak ve topluluğun bir parçası olmak için size yardımcı olur.',
 	'articlefeedback-pitch-join-accept' => 'Yeni hesap edin',
 	'articlefeedback-pitch-join-login' => 'Oturum aç',
 	'articlefeedback-pitch-edit-message' => 'Bu sayfayı düzenleyebileceğinizi biliyor muydunuz?',
@@ -8009,8 +8049,42 @@ $messages['tr'] = array(
 	'articlefeedback-survey-message-success' => 'Anketi doldurduğunuz için teşekkür ederiz.',
 	'articlefeedback-survey-message-error' => 'Bir hata meydana geldi.
 Lütfen daha sonra tekrar deneyin.',
+	'articlefeedback-privacyurl' => 'http://wikimediafoundation.org/wiki/Feedback_privacy_statement',
+	'articleFeedback-table-caption-dailyhighsandlows' => 'Günün en yüksek ve en düşükleri',
+	'articleFeedback-table-caption-dailyhighs' => 'En yüksek oy verilen sayfalar: $1',
+	'articleFeedback-table-caption-dailylows' => 'En düşük oy verilen sayfalar: $1',
+	'articleFeedback-table-caption-weeklymostchanged' => 'Bu hafta en fazla değiştirilen',
+	'articleFeedback-table-caption-recentlows' => 'Son düşenler',
 	'articleFeedback-table-heading-page' => 'Madde',
 	'articleFeedback-table-heading-average' => 'Ortalama',
+	'articlefeedback-table-noratings' => '-',
+	'articleFeedback-copy-above-highlow-tables' => 'Bu deneysel bir özelliktir.  Lütfen [ $1  tartışma sayfası]na geribildirimde bulunun.',
+	'articlefeedback-dashboard-bottom' => "'''Not''': Bu pencerelerin sayfalar üzerinde nasıl durduğuna dair farklı yollar denenmeye devam edilecektir.  Şu anda sayfa pencerelerinin içeriğinde bulunanlar şunlardır:
+* Sayfalardaki en düşük ve en yüksek beğenme oranları: son 24 saat içerisinde en az 10 oylama almış maddeler. Ortalamalar 24 saat içerisinde gönderilen tüm oylamaların ortalaması alınmak suretiyle hesaplanmaktadır.
+* Son düşenler: herhangi bir kategoride son 24 saat içerisinde %70'ten daha düşük (2 yıldız veya daha düşük) oy almış maddeler. Son 24 saat içerisinde en az 10 oy almış maddeler dahil edilmektedir.",
+	'articlefeedback-disable-preference' => 'Geri bildirim eklentisini makale sayfalarında gösterme',
+	'articlefeedback-emailcapture-response-body' => 'Merhaba!
+
+{{SITENAME}} sitesini geliştirmek için yardımcı olmak istemenizden dolayı teşekkür ederiz.
+
+Lütfen aşağıdaki linke tıklayarak e-posta adresinizi onaylamak için bir dakikanızı ayırın: 
+
+$1
+
+İsterseniz bu işlemi manuel olarak yapabilirsiniz. Bunun için aşağıdaki linke tıklayın:
+
+$2
+
+Ve aşağıdaki onay kodunu belirtilen alana girin:
+
+$3
+
+{{SITENAME}} sitesini geliştirmek için nasıl yardımcı olacağınız ile ilgili sizinle iletişime geçilecektir.
+
+Eğer bu isteği siz başlatmadıysanız, bu e-postayı gözardı edin. Bu durumda size başka bir ileti gönderilmeyecektir.
+
+Sizin için en iyi dileklerimizi bildirir, teşekkür ederiz
+{{SITENAME}} ekibi',
 );
 
 /** Ukrainian (Українська)

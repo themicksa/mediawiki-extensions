@@ -55,9 +55,10 @@ $messages['qqq'] = array(
  * @author Kghbln
  */
 $messages['de'] = array(
-	'semanticpageseries-desc' => 'Ermöglicht das Erstellen einer Seitenfolge mit einem von [https://www.mediawiki.org/wiki/Extension:Semantic_Forms Semantic Forms] bereitgestellten Formular',
+	'semanticpageseries-desc' => 'Ermöglicht das Erstellen einer Abfolge von Seiten mit einem von [https://www.mediawiki.org/wiki/Extension:Semantic_Forms Semantic Forms] bereitgestellten Formular',
 	'spssuccesstitle' => '$1 Seiten werden erstellt …',
 	'spssuccess' => '{{PLURAL:$1|Eine Seite wird|$1 Seiten werden}} erstellt.',
+	'spssuccess-returntoorigin' => 'Zurück zu $1',
 	'spserror' => 'Ein Fehler ist aufgetreten',
 	'spserror-diffnotsupported' => 'Die Aktion „diff“ wird nicht unterstützt.',
 	'spserror-previewnotsupported' => 'Die Seitenvorschau wird nicht unterstützt.',
@@ -95,6 +96,28 @@ $1",
 	'spserror-pagegenerationlimitexeeded' => 'Vous avez essayé de générer {{PLURAL:$1|une page|$1 pages}}. Cela dépasse votre limite autorisée de {{PLURAL:$2|une page|$2 pages}}.',
 );
 
+/** Galician (Galego)
+ * @author Toliño
+ */
+$messages['gl'] = array(
+	'semanticpageseries-desc' => 'Crear unha serie de páxinas a partir dun [https://www.mediawiki.org/wiki/Extension:Semantic_Forms formulario semántico]',
+	'spssuccesstitle' => 'Creando páxinas do tipo $1',
+	'spssuccess' => '{{PLURAL:$1|Vaise crear unha páxina.|Vanse crear $1 páxinas.}}',
+	'spserror' => 'Houbo un erro',
+	'spserror-diffnotsupported' => 'As series de páxinas non soportan a acción de diferenzas.',
+	'spserror-previewnotsupported' => 'As series de páxinas non soportan a acción de vista previa.',
+	'spserror-noiteratorname' => 'Non se especificou iterador ningún. Cómpre definir o parámetro "iterator" na función analítica de chamada #serieslink.',
+	'spserror-iteratorunknown' => 'Non existe o iterador "$1". Cómpre corrixir o parámetro "iterator" na función analítica de chamada #serieslink.',
+	'spserror-noformname' => 'Non se deu formulario ningún. Cómpre definir o parámetro "form" na función analítica #serieslink.',
+	'spserror-formunknown' => 'O formulario "$1" non existe.',
+	'spserror-notargetformname' => 'Non se deu nome de formulario de destino ningún. Cómpre definir o parámetro "target form" na función analítica de chamada #serieslink.',
+	'spserror-notargetfieldname' => 'Non se deu campo de destino ningún. Cómpre definir o parámetro "target field" na función analítica de chamada #serieslink.',
+	'spserror-iteratorparammissing' => 'Faltan os seguintes parámetros do iterador na chamada a #serieslink:
+$1',
+	'spserror-noiteratordata' => 'Non se atopou parámetro do iterador ningún nos datos enviados.',
+	'spserror-pagegenerationlimitexeeded' => 'Intentou xerar {{PLURAL:$1|unha páxina|$1 páxinas}}. Isto supera o límite {{PLURAL:$2|dunha páxina|de $2 páxinas}}.',
+);
+
 /** Upper Sorbian (Hornjoserbsce)
  * @author Michawiki
  */
@@ -102,6 +125,7 @@ $messages['hsb'] = array(
 	'semanticpageseries-desc' => 'Wutworjenje slěda stronow ze [https://www.mediawiki.org/wiki/Extension:Semantic_Forms semantiskim formularom]',
 	'spssuccesstitle' => '$1 stronow so wutwarja',
 	'spssuccess' => '{{PLURAL:$1|Jedna strona so wutwori|$1 stronje so wutworitej|$1 strony so wutworja|$1 stronow so wutwori}}.',
+	'spssuccess-returntoorigin' => 'Wróćo k $1',
 	'spserror' => 'Zmylk je wustupił',
 	'spserror-diffnotsupported' => 'Akcija "diff" so za slědy stronow njepodpěruje.',
 	'spserror-previewnotsupported' => 'Přehlad so za slědow stronow njepodpěruje.',

@@ -4700,6 +4700,10 @@ $messages['ru'] = array(
 	'moodbar-trigger-feedback' => 'Отзыв о редактировании',
 	'moodbar-trigger-share' => 'Поделитесь опытом',
 	'moodbar-trigger-editing' => 'Редактирование  $1...',
+	'moodbar-weeks' => '{{PLURAL:$1|$1 неделя|$1 недели|$1 недель}}',
+	'moodbar-months' => '{{PLURAL:$1|$1 месяц|$1 месяца|$1 месяцев}}',
+	'moodbar-years' => '{{PLURAL:$1|$1 год|$1 года|$1 лет}}',
+	'moodbar-seconds' => 'меньше минуты',
 	'moodbar-close' => '(закрыть)',
 	'moodbar-intro-feedback' => 'Редактирование {{GRAMMAR:genitive|$1}} принесло мне...',
 	'moodbar-intro-share' => 'Мой опыт на $1 сделали меня...',
@@ -4719,6 +4723,7 @@ $messages['ru'] = array(
 	'moodbar-privacy' => 'Отправляя, вы соглашаетесь огласить эти данные на $1.',
 	'moodbar-privacy-link' => 'следующих условиях',
 	'moodbar-privacy-link-title' => 'Условия использования',
+	'moodbar-fbd-link-title' => 'обратной связи',
 	'moodbar-disable-link' => 'Мне неинтересно. Пожалуйста, отключите эту функцию.',
 	'moodbar-form-title' => 'Потому что...',
 	'moodbar-form-note' => 'не более 140 символов',
@@ -4729,7 +4734,7 @@ $messages['ru'] = array(
 	'moodbar-loading-title' => 'Открытие доступа...',
 	'moodbar-success-title' => 'Спасибо!',
 	'moodbar-error-title' => 'Ой!',
-	'moodbar-success-subtitle' => 'Поделившись своим опытом, вы поможете нам улучшить $1.',
+	'moodbar-success-subtitle' => 'С помощью {{FBD-LINK}, вы поможете нам улучшить $1.',
 	'moodbar-error-subtitle' => 'Что-то пошло не так! Пожалуйста, попробуйте отправить ваш отзыв позднее.',
 	'moodbar-blocked-title' => 'Ой!',
 	'moodbar-blocked-subtitle' => 'Редактирование было для вас заблокировано.',
@@ -4773,8 +4778,9 @@ $messages['ru'] = array(
 	'moodbar-feedback-filters-type-happy' => 'Радость',
 	'moodbar-feedback-filters-type-confused' => 'Замешательство',
 	'moodbar-feedback-filters-type-sad' => 'Грусть',
-	'moodbar-feedback-filters-username' => 'Имя участника',
+	'moodbar-feedback-filters-username' => 'Имя участника:',
 	'moodbar-feedback-filters-my-response' => 'Только мои ответы',
+	'moodbar-feedback-filters-show-unanswered' => 'Показать сообщения без ответа',
 	'moodbar-feedback-filters-button' => 'Установка фильтров',
 	'moodbar-feedback-whatis' => 'Что это за функции?',
 	'moodbar-feedback-permalink' => 'ссылка сюда',
@@ -4802,9 +4808,11 @@ $messages['ru'] = array(
 	'moodbar-invalid-item' => 'Системе не удалось найти правильного элемента обратной связи.',
 	'moodbar-feedback-action-error' => 'При попытке выполнить это действие произошла ошибка.',
 	'moodbar-feedback-response-summary' => '[[$1|$2]] [[$3|ответил]] $4 назад',
+	'moodbar-feedback-response-helpful-summary' => '[[$1|$2]] [[$3|ответил]] $4 назад и [[$5|$6]] считает это полезным',
 	'moodbar-feedback-edit-summary' => 'Ответ на [[Special:FeedbackDashboard/$1|отзывы пользователей]]: $2',
-	'moodbar-type-happy' => '{{GENDER:$1|Рад}}',
-	'moodbar-type-sad' => '{{GENDER:$1|Расстроен}}',
+	'moodbar-feedback-top-responders-title' => 'Топ Отвечающих',
+	'moodbar-type-happy' => '{{GENDER:$1|Рад|Рада}}',
+	'moodbar-type-sad' => '{{GENDER:$1|Расстроен|Расстроена}}',
 	'moodbar-type-confused' => '{{GENDER:$1|В замешательстве}}',
 	'moodbar-type-stats' => 'Отзывы на доске настроений, сделанные за последние 24 часа: Рад: $1, Расстроен: $2, В замешательстве: $3',
 	'moodbar-user-anonymized' => 'Аноним',
@@ -4824,21 +4832,22 @@ $messages['ru'] = array(
 	'response-ajax-success-body' => 'Ваш ответ был добавлен.',
 	'response-ajax-error-head' => 'Ой!',
 	'response-ajax-error-body' => 'Возникла ошибка при добавлении вашего ответа. <br />Пожалуйста, попробуйте еще раз позднее.',
+	'response-concurrency-notification' => 'Кто-то недавно начал писать ответ на этот отзыв.',
 	'moodbar-enotif-subject' => '$1 ответил на ваш отзыв',
-	'moodbar-enotif-body' => 'Привет $1!
+	'moodbar-enotif-body' => 'Здравствуйте $1!
 
 Добро пожаловать на {{SITENAME}} и спасибо за ваш [$2 отзыв]. Другой пользователь {{SITENAME}}, [$3 $6], ответил вам:
 
      $4
-Посмотрите сообщение на вашей [$5 talk page] странице обсуждения.
+Посмотрите сообщение на вашей [$5 странице обсуждения].
 
 Что такое страница обсуждения?
-Ваша страница обсуждения это страница, которую другие редакторы {{SITENAME}} используют, чтобы общаться вами. Вы можете ответить, нажав «Редактировать», установив курсор под комментарием, введя ваш ответ и четыре тильды (~~~~) для подписи и сохранив. Все страницы на {{SITENAME}} имеют страницы обсуждения и они используются для разных целей. Нужно какое-то время, чтобы привыкнуть к ним, но когда это произойдёт, вам будет очень просто ими пользоваться.
+Ваша страница обсуждения это страница, которую другие редакторы {{SITENAME}} используют, чтобы общаться с вами. Вы можете ответить, нажав «Редактировать», установив курсор под комментарием, введя ваш ответ и четыре тильды (~~~~) для подписи и сохранив. У всех страниц на {{SITENAME}} есть свои страницы обсуждения и они используются для разных целей. Нужно какое-то время, чтобы привыкнуть к ним, но когда это произойдёт, вам будет очень просто ими пользоваться.
 
 Всё ещё в замешательстве?
-[http://ru.wikipedia.org/wiki/File:Wikipedia_basics_-_Talk_pages.ogv Это видео] (смотрите на [http://www.youtube.com/watch?v=JdeDLRsB2Es YouTube]) послужит вам пошаговым обзором.
+[http://ru.wikipedia.org/wiki/File:Wikipedia_basics_-_Talk_pages.ogv Это видео] (смотрите на [http://www.youtube.com/watch?v=JdeDLRsB2Es YouTube]) послужит вам пошаговой инструкцией.
 
-Хорошего вам дня,
+Спасибо за то, что вы являетесь частью сообщества.
 
 -- {{SITENAME}}',
 );
