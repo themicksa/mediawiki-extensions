@@ -58,14 +58,9 @@ class SPSUtils {
 
 		}
 
-		// We'd like to use 'origin' as a parameter, but that might be taken
-		// find the first available name
-		$count = 0;
-		while ( array_key_exists( 'origin' . $count, $params )) {
-			$count++;
-		}
-		
-		$params[] = "origin$count=" . $parser->getTitle()->getArticleId();
+		// set the origin parameter
+		// This will block it from use as iterator parameter. Oh well.
+		$params[] = "origin=" . $parser->getTitle()->getArticleId();
 		
 		// hack to remove newline from beginning of output, thanks to
 		// http://jimbojw.com/wiki/index.php?title=Raw_HTML_Output_from_a_MediaWiki_Parser_Function

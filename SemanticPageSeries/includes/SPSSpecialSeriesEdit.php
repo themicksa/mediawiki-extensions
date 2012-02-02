@@ -176,10 +176,6 @@ class SPSSpecialSeriesEdit extends SpecialPage {
 			throw new SPSException(  $this->buildMessage( 'spserror-noiteratordata' ) );
 		}
 
-		if ( !array_key_exists( 'general', $iteratorData ) ) {
-			throw new SPSException(  $this->buildMessage( 'spserror-noiteratordata' ) );
-		}
-		
 		$iteratorName = null;
 		$targetFormName = null;
 		$targetFieldName = null;
@@ -187,27 +183,23 @@ class SPSSpecialSeriesEdit extends SpecialPage {
 
 		foreach ( $iteratorData as $param => $value ) {
 
-			if ( $param === 'general' ) {
-				
-				if ( array_key_exists( 'iterator', $value ) ) {
-						$iteratorName = $value['iterator'];
-				}
-				
-				if ( array_key_exists( 'targetform', $value ) ) {
-						$targetFormName = $value['targetform'];
-				}
-				
-				if ( array_key_exists( 'targetfield', $value ) ) {
-						$targetFieldName = $value['targetfield'];
-				}
-				
-				if ( array_key_exists( 'origin', $value ) ) {
-						$originPageId = $value['origin'];
-				}
-				
-			} else {
-				$iteratorParams[$param] = $this->getAndRemoveFromArray( $requestValues, $value );
-			}
+			switch ( $param ) {
+				case 'iterator':
+					// iteratorName
+					$iteratorName = $value;
+					break;
+				case 'target_form':
+					$targetFormName = $value;
+					break;
+				case 'target_field':
+					$targetFieldName = $value;
+					break;
+				case 'origin':
+					$originPageId = $value;
+					break;
+				default :
+					$iteratorParams[$param] = $this->getAndRemoveFromArray( $requestValues, $value );
+			}			
 		}
 
 		if ( is_null( $iteratorName ) || $iteratorName === '' ) {
@@ -242,6 +234,11 @@ class SPSSpecialSeriesEdit extends SpecialPage {
 			$job->insert();
 		}
 		
+		// if given origin page does not exist use Main page
+		if ( Title::newFromID( $originPageId ) === null ) {
+			$originPageId = Title::newMainPage()->getArticleID();
+		}
+		
 		if ( isset( $_SESSION ) ) {
 			// cookies enabled
 			$request->setSessionData( 'spsResult', $iteratorValuesCount );
@@ -251,7 +248,7 @@ class SPSSpecialSeriesEdit extends SpecialPage {
 		} else {
 
 			// cookies disabled, write result data to URL
-			header( 'Location: ' . $this->getTitle()->getFullURL() . "?$targetFormPageId&$iteratorValuesCount&$originPageId" );
+			header( 'Location: ' . $this->getTitle()->getFullURL() . "?$targetFormPageId;$iteratorValuesCount;$originPageId" );
 		}
 
 		return null;
@@ -318,22 +315,12 @@ class SPSSpecialSeriesEdit extends SpecialPage {
 		}
 
 		$params = array(
-			'general' => array(
-				'iterator' => $iteratorName,
-				'targetform' => $targetFormName,
-				'targetfield' => $targetFieldName
-			)
+			'iterator' => $iteratorName,
+			'target_form' => $targetFormName,
+			'target_field' => $targetFieldName,
+			'origin' => $request->getVal( 'origin' )
 		);
 
-		// We'd like to use 'origin' as a parameter, but that might be taken
-		// find what we used instead
-		$count = 0;
-		while ( $request->getCheck( 'origin' . $count ) ) {
-			$count++;
-		}
-		
-		$params['general'][ 'origin' ] = $request->getVal( 'origin' . ( $count - 1 ) );
-		
 		// add the iterator-specific values
 		$paramNames = $iterator->getParameterNames();
 		$errors = '';
