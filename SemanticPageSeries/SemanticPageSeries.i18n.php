@@ -26,6 +26,14 @@ $messages['en'] = array(
 	'spserror-iteratorparammissing' => "The following iterator parameters are missing in the #serieslink call:\n$1",
 	'spserror-noiteratordata' => 'No iterator parameters found in the sent data.',
 	'spserror-pagegenerationlimitexeeded' => 'You tried to generate {{PLURAL:$1|one page|$1 pages}}. This exeeds your allowed limit of {{PLURAL:$2|one page|$2 pages}}.',
+
+	'spserror-date-startdatemissing' => 'The start date is missing.',
+	'spserror-date-internalerror' => 'An error occurred while creating the dates. This could be due to a malformed start or end date.',
+	
+	'spserror-count-startvaluemalformed' => 'The start value is not a number.',
+	'spserror-count-endvaluemalformed' => 'The end value is not a number.',
+	'spserror-count-stepvaluemalformed' => 'The step value is not a number.',
+	'spserror-count-digitsvaluemalformed' => 'The digits value is not a number.',
 );
 
 /** Message documentation (Message documentation)
@@ -49,6 +57,14 @@ $messages['qqq'] = array(
 	'spserror-iteratorparammissing' => 'An error message. See the [[wikipedia:Iterator | wikipedia page]] for the meaning of iterator. Do not translate <code>#serieslink</code>.',
 	'spserror-noiteratordata' => 'An error message. See the [[wikipedia:Iterator | wikipedia page]] for the meaning of iterator.',
 	'spserror-pagegenerationlimitexeeded' => 'An error message',
+
+	'spserror-date-startdatemissing' => 'An error message',
+	'spserror-date-internalerror' => 'An error message',
+	
+	'spserror-count-startvaluemalformed' => 'An error message',
+	'spserror-count-endvaluemalformed' => 'An error message',
+	'spserror-count-stepvaluemalformed' => 'An error message',
+	'spserror-count-digitsvaluemalformed' => 'An error message',
 );
 
 /** German (Deutsch)

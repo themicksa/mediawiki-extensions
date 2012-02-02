@@ -5,7 +5,7 @@
  *
  * @defgroup SemanticPageSeries Semantic Page Series
  * @author Stephan Gambke
- * @version 0.1
+ * @version 0.2 alpha
  */
 /**
  * The main file of the SemanticPageSeries extension
@@ -30,7 +30,7 @@ if ( !defined( 'SF_VERSION' ) ) {
 /**
  * The Semantic Page Series version
  */
-define( 'SPS_VERSION', '0.1 alpha' );
+define( 'SPS_VERSION', '0.2 alpha' );
 
 // register the extension
 $wgExtensionCredits[defined( 'SEMANTIC_EXTENSION_TYPE' ) ? 'semantic' : 'other'][] = array(
@@ -59,6 +59,7 @@ $wgAutoloadClasses['SPSPageCreationJob'] = $dir . '/includes/SPSPageCreationJob.
 
 $wgAutoloadClasses['SPSIterator'] = $dir . '/includes/iterators/SPSIterator.php';
 $wgAutoloadClasses['SPSDateIterator'] = $dir . '/includes/iterators/SPSDateIterator.php';
+$wgAutoloadClasses['SPSCountIterator'] = $dir . '/includes/iterators/SPSCountIterator.php';
 
 
 // register Special page
@@ -74,7 +75,8 @@ define('SPS_NOLIMIT', PHP_INT_MAX);
 
 // register iterators
 $spsgIterators = array (
-	'date' => 'SPSDateIterator'
+	'date' => 'SPSDateIterator',
+	'count' => 'SPSCountIterator',
 );
 
 $spsgPageGenerationLimits = array(

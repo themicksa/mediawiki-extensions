@@ -66,5 +66,38 @@ class SPSUtils {
 		// http://jimbojw.com/wiki/index.php?title=Raw_HTML_Output_from_a_MediaWiki_Parser_Function
 		return $parser->insertStripItem( SFUtils::createFormLink( $parser, 'SeriesEdit', $params ), $parser->mStripState );
 	}
+	
+	
+	/**
+	 * Returns a value from an array if the $key exists, else returns the default.
+	 * 
+	 * The value is trimmed.
+	 * 
+	 * @param array $array
+	 * @param mixed $key
+	 * @param mixed $default
+	 * @return mixed 
+	 */
+	static public function fromArray( &$array, $key, $default = null ) {
+		if ( array_key_exists( $key, $array ) ) {
+			return trim( $array[$key] );
+		} else {
+			return $default;
+		}
+	}
 
+	/**
+	 * Returns the parsed message for the given key and params
+	 * @param string $key
+	 * @return string
+	 */
+	static public function buildMessage ( $key ) {
+
+		$args = func_get_args();
+		array_shift($args);
+		
+		$msg= new Message($key,$args);
+		
+		return $msg->inContentLanguage()->parse();
+	}
 }

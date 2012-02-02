@@ -26,7 +26,7 @@ class SPSException extends MWException {
 	 * @return String html to output
 	 */
 	function getHTML() {
-		return Html::rawElement( 'p', array('class' => 'spserror'), nl2br( htmlspecialchars( $this->getMessage() ) ) );
+		return Html::rawElement( 'p', array('class' => 'spserror'), nl2br( $this->getMessage() ) ) ;
 	}
 
 	/**
