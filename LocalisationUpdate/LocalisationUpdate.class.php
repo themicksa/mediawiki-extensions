@@ -410,14 +410,16 @@ class LocalisationUpdate {
 		$changedStrings = array_diff_assoc( $base_messages, $compare_messages );
 
 		// If we want to save the differences.
-		if ( $saveResults && !empty( $changedStrings ) && is_array( $changedStrings ) ) {
+		// HACK: because of the hack in saveChanges(), we need to call that function
+		// even if $changedStrings is empty. So comment out the $changedStrings checks below.
+		if ( $saveResults /* && !empty( $changedStrings ) && is_array( $changedStrings )*/ ) {
 			self::myLog( "--Checking languagecode {$langcode}--", $verbose );
 			// Save the differences.
 			$updates = self::saveChanges( $changedStrings, $forbiddenKeys, $compare_messages, $base_messages, $langcode, $verbose );
 			self::myLog( "{$updates} messages updated for {$langcode}.", $verbose );
-		} elseif ( $saveResults ) {
+		} /*elseif ( $saveResults ) {
 			self::myLog( "--{$langcode} hasn't changed--", $verbose );
-		}
+		}*/
 
 		self::saveHash( $basefile, $basehash );
 
@@ -629,14 +631,16 @@ class LocalisationUpdate {
 			$changedStrings = array_diff_assoc( $messages, $compare_messages[$language] );
 
 			// If we want to save the changes.
-			if ( $saveResults === true && !empty( $changedStrings ) && is_array( $changedStrings ) ) {
+			// HACK: because of the hack in saveChanges(), we need to call that function
+			// even if $changedStrings is empty. So comment out the $changedStrings checks below.
+			if ( $saveResults === true /*&& !empty( $changedStrings ) && is_array( $changedStrings )*/ ) {
 				self::myLog( "--Checking languagecode {$language}--", $verbose );
 				// The save them
 				$updates = self::saveChanges( $changedStrings, $forbiddenKeys, $compare_messages[$language], $messages, $language, $verbose );
 				self::myLog( "{$updates} messages updated for {$language}.", $verbose );
-			} elseif($saveResults === true) {
+			}/* elseif($saveResults === true) {
 				self::myLog( "--{$language} hasn't changed--", $verbose );
-			}
+			}*/
 		}
 
 		// And log some stuff.
