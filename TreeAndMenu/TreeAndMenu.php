@@ -14,7 +14,7 @@
 
 if( !defined( 'MEDIAWIKI' ) ) die( 'Not an entry point.' );
 
-define( 'TREEANDMENU_VERSION','2.0.0, 2012-01-28' );
+define( 'TREEANDMENU_VERSION','2.0.1, 2012-01-28' );
 
 // Set any unset images to default titles
 if( !isset( $wgTreeViewImages ) || !is_array( $wgTreeViewImages ) ) $wgTreeViewImages = array();
@@ -104,7 +104,7 @@ class TreeAndMenu {
 	 * Expand #star parser-functions
 	 */
 	public function expandStar( &$parser, $text ) {
-		return "<div class=\"tam-star\">\n$text\n</div>";
+		return "Star menu coming soon!<br /><div class=\"tam-star\">\n$text\n</div>";
 	}
 
 	/**
