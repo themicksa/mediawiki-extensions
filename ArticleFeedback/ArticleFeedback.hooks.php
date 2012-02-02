@@ -13,6 +13,7 @@ class ArticleFeedbackHooks {
 			'scripts' => 'ext.articleFeedback/ext.articleFeedback.startup.js',
 			'dependencies' => array(
 				'mediawiki.util',
+				'mediawiki.user',
 			),
 		),
 		'ext.articleFeedback' => array(
@@ -95,6 +96,7 @@ class ArticleFeedbackHooks {
 				'jquery.ui.button',
 				'jquery.cookie',
 				'jquery.clickTracking',
+				'mediawiki.language',
 			),
 		),
 	);
