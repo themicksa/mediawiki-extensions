@@ -198,7 +198,7 @@ class SPSSpecialSeriesEdit extends SpecialPage {
 				}
 				
 				if ( array_key_exists( 'targetfield', $value ) ) {
-						$targetFieldName = $value['iterator'];
+						$targetFieldName = $value['targetfield'];
 				}
 				
 				if ( array_key_exists( 'origin', $value ) ) {
@@ -241,7 +241,7 @@ class SPSSpecialSeriesEdit extends SpecialPage {
 			$job = new SPSPageCreationJob( $targetFormTitle, $requestValues );
 			$job->insert();
 		}
-
+		
 		if ( isset( $_SESSION ) ) {
 			// cookies enabled
 			$request->setSessionData( 'spsResult', $iteratorValuesCount );

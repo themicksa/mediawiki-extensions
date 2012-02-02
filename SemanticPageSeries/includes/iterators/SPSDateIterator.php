@@ -40,6 +40,17 @@ class SPSDateIterator extends SPSIterator {
 			);
 
 		$values = SMWSetRecurringEvent::getDatesForRecurringEvent($params);
+
+		// if the first date did not contain a time, remove the time from all
+		// generated dates
+		if ( preg_match( '/.:../', $values[1][0] ) === 0 ) {
+			foreach ( $values[1] as $key => $value ) {
+				$values[1][$key] = trim( preg_replace( '/..:..:../', '', $value ) );
+			}
+		}
+
+		var_dump($values);
+		die();
 		
 		return $values[1];
 	}
