@@ -26,8 +26,7 @@ class SPSException extends MWException {
 	 * @return String html to output
 	 */
 	function getHTML() {
-		return '<p>' . nl2br( htmlspecialchars( $this->getMessage() ) ) .
-			"</p>\n";
+		return Html::rawElement( 'p', array('class' => 'spserror'), nl2br( htmlspecialchars( $this->getMessage() ) ) );
 	}
 
 	/**
@@ -48,7 +47,7 @@ class SPSException extends MWException {
 	 */
 	function getPageTitle() {
 		if ( $this->useMessageCache() ) {
-			return wfMsg( 'spserror' );
+			return wfMsgForContent( 'spserror' );
 		} else {
 			global $wgSitename;
 			return "$wgSitename error";

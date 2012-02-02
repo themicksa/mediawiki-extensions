@@ -65,7 +65,7 @@ class SPSUtils {
 			$count++;
 		}
 		
-		$params[] = "origin$count=" . $wgTitle->getArticleId();
+		$params[] = "origin$count=" . $parser->getTitle()->getArticleId();
 		
 		// hack to remove newline from beginning of output, thanks to
 		// http://jimbojw.com/wiki/index.php?title=Raw_HTML_Output_from_a_MediaWiki_Parser_Function

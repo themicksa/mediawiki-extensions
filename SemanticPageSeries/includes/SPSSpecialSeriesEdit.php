@@ -30,12 +30,12 @@ class SPSSpecialSeriesEdit extends SpecialPage {
 		if ( $wgRequest->getCheck( 'wpDiff' ) ) {
 			
 			// no support for the diff action
-			throw new SPSException( $this->msg( 'spserror_diffnotsupported' ) );
+			throw new SPSException( $this->buildMessage( 'spserror-diffnotsupported' ) );
 			
 		} elseif ( $wgRequest->getCheck( 'wpPreview' ) ) {
 
 			// no support for the preview action
-			throw new SPSException( $this->msg( 'spserror_previewnotsupported' ) );
+			throw new SPSException( $this->buildMessage( 'spserror-previewnotsupported' ) );
 			
 		} elseif ( $wgRequest->getCheck( 'wpSave' ) ) {
 
@@ -88,14 +88,14 @@ class SPSSpecialSeriesEdit extends SpecialPage {
 
 			// if the form name wasn't in the URL either, throw an error
 			if ( is_null( $formName ) || $formName === '' ) {
-				throw new SPSException( $this->msg( 'spserror_noformname' ) );
+				throw new SPSException( $this->buildMessage( 'spserror-noformname' ) );
 			}
 		}
 
 		$formTitle = Title::makeTitleSafe( SF_NS_FORM, $formName );
 
 		if ( !$formTitle->exists() ) {
-			throw new SPSException( $this->msg( 'spserror_formunknown', $formName ) );
+			throw new SPSException( $this->buildMessage( 'spserror-formunknown', $formName ) );
 		}
 
 		$formArticle = new Article( $formTitle );
@@ -140,7 +140,7 @@ class SPSSpecialSeriesEdit extends SpecialPage {
 		if ( $formPageTitle != null ) {
 			$wgOut->setPageTitle( $formPageTitle );
 		} else {
-			$wgOut->setPageTitle( $this->msg( 'sf_formedit_createtitlenotarget', $formTitle->getText() ) );
+			$wgOut->setPageTitle( $this->buildMessage( 'sf_formedit_createtitlenotarget', $formTitle->getText() ) );
 		}
 
 		$preFormHtml = '';
@@ -173,11 +173,11 @@ class SPSSpecialSeriesEdit extends SpecialPage {
 			$iteratorData = FormatJson::decode( $requestValues['iteratordata'], true );
 			unset( $requestValues['iteratordata'] );
 		} else {
-			throw new SPSException(  $this->msg( 'spserror_noiteratordata' ) );
+			throw new SPSException(  $this->buildMessage( 'spserror-noiteratordata' ) );
 		}
 
 		if ( !array_key_exists( 'general', $iteratorData ) ) {
-			throw new SPSException(  $this->msg( 'spserror_noiteratordata' ) );
+			throw new SPSException(  $this->buildMessage( 'spserror-noiteratordata' ) );
 		}
 		
 		$iteratorName = null;
@@ -211,11 +211,11 @@ class SPSSpecialSeriesEdit extends SpecialPage {
 		}
 
 		if ( is_null( $iteratorName ) || $iteratorName === '' ) {
-			throw new SPSException( $this->msg( 'spserror_noiteratorname' ) );
+			throw new SPSException( $this->buildMessage( 'spserror-noiteratorname' ) );
 		}
 
 		if ( !array_key_exists( $iteratorName, $spsgIterators ) ) {
-			throw new SPSException( $this->msg( 'spserror_iteratorunknown', $iteratorName ) );
+			throw new SPSException( $this->buildMessage( 'spserror-iteratorunknown', $iteratorName ) );
 		}
 
 		// iterator
@@ -227,7 +227,7 @@ class SPSSpecialSeriesEdit extends SpecialPage {
 		
 		// check userlimit
 		if ( $iteratorValuesCount > $userlimit ) {
-			throw new SPSException( $this->msg( 'spserror_pagegenerationlimitexeeded', $iteratorValuesCount, $userlimit ) );
+			throw new SPSException( $this->buildMessage( 'spserror-pagegenerationlimitexeeded', $iteratorValuesCount, $userlimit ) );
 		}
 		
 		$targetFormTitle = Title::makeTitleSafe( SF_NS_FORM, $targetFormName );
@@ -258,15 +258,15 @@ class SPSSpecialSeriesEdit extends SpecialPage {
 	}
 
 	private function printSuccessPage( $formId, $createdPages, $originId ) {
-		global $wgOut, $wgMessageCache;
+		global $wgOut;
 
 		$originTitle = Title::newFromID( $originId );
 				
-		$wgOut->setPageTitle( $this->msg( 'spssuccesstitle', Title::newFromID( $formId )->getText() ));
+		$wgOut->setPageTitle( $this->buildMessage( 'spssuccesstitle', Title::newFromID( $formId )->getText() ));
 		$wgOut->addHTML(
-			Html::rawElement( 'p', array( 'class' => 'spssuccess' ), $this->msg( 'spssuccess', $createdPages ) ) .
-			Html::rawElement( 'p', array( 'class' => 'spssuccess_returntoorigin' ), $this->msg(
-					'spssuccess_returntoorigin', '[[' . $originTitle->getPrefixedText() . ']]'
+			Html::rawElement( 'p', array( 'class' => 'spssuccess' ), $this->buildMessage( 'spssuccess', $createdPages ) ) .
+			Html::rawElement( 'p', array( 'class' => 'spssuccess-returntoorigin' ), $this->buildMessage(
+					'spssuccess-returntoorigin', '[[' . $originTitle->getPrefixedText() . ']]'
 				)
 			)
 		);
@@ -285,11 +285,11 @@ class SPSSpecialSeriesEdit extends SpecialPage {
 		$iteratorName = $request->getVal( 'iterator' );
 
 		if ( is_null( $iteratorName ) ) {
-			throw new SPSException( $this->msg( 'spserror_noiteratorname' ) );
+			throw new SPSException( $this->buildMessage( 'spserror-noiteratorname' ) );
 		}
 
 		if ( !array_key_exists( $iteratorName, $spsgIterators ) ) {
-			throw new SPSException( $this->msg( 'spserror_iteratorunknown', $iteratorName ) );
+			throw new SPSException( $this->buildMessage( 'spserror-iteratorunknown', $iteratorName ) );
 		}
 
 		// iterator
@@ -299,7 +299,7 @@ class SPSSpecialSeriesEdit extends SpecialPage {
 		$targetFormName = $request->getVal( 'target_form' );
 
 		if ( is_null( $targetFormName ) ) {
-			throw new SPSException( $this->msg( 'spserror_notargetformname' ) );
+			throw new SPSException( $this->buildMessage( 'spserror-notargetformname' ) );
 		}
 
 		// targetFormTitle is not really needed at this stage,
@@ -307,14 +307,14 @@ class SPSSpecialSeriesEdit extends SpecialPage {
 		$targetFormTitle = Title::makeTitleSafe( SF_NS_FORM, $targetFormName );
 
 		if ( !$targetFormTitle->exists() ) {
-			throw new SPSException( $this->msg( 'spserror_formunknown', $targetFormName ) );
+			throw new SPSException( $this->buildMessage( 'spserror-formunknown', $targetFormName ) );
 		}
 
 		// targetFieldName
 		$targetFieldName = $request->getVal( 'target_field' );
 
 		if ( is_null( $targetFieldName ) ) {
-			throw new SPSException( $this->msg( 'spserror_notargetfieldname' ) );
+			throw new SPSException( $this->buildMessage( 'spserror-notargetfieldname' ) );
 		}
 
 		$params = array(
@@ -349,7 +349,7 @@ class SPSSpecialSeriesEdit extends SpecialPage {
 		}
 
 		if ( $errors !== '' ) {
-			throw new SPSException( $this->msg( 'spserror_iteratorparammissing', $errors ) );
+			throw new SPSException( $this->buildMessage( 'spserror-iteratorparammissing', $errors ) );
 		}
 
 		return FormatJson::encode( $params );
@@ -416,8 +416,7 @@ class SPSSpecialSeriesEdit extends SpecialPage {
 		return $limit;
 	}
 	
-	public function msg ( $key ) {
-		global $wgMessageCache;
+	public function buildMessage ( $key ) {
 
 		$args = func_get_args();
 		array_shift($args);
