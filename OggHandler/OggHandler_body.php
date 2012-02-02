@@ -20,11 +20,8 @@ class OggHandler extends MediaHandler {
 
 	function validateParam( $name, $value ) {
 		if ( in_array( $name, array( 'width', 'height' ) ) ) {
-                        if ( $value <= 0 ) {
-                                return false;
-                        }
-			return true;
-                }
+			return $value > 0;
+		}
 		if ( $name == 'thumbtime' ) {
 			$time = $this->parseTimeString( $value );
 			if ( $time === false || $time <= 0 ) {
@@ -32,10 +29,7 @@ class OggHandler extends MediaHandler {
 			}
 			return true;
 		}
-		if ( $name == 'noicon' ) {
-			return true;
-		}
-		return false;
+		return $name == 'noicon';
 	}
 
 	function parseTimeString( $seekString, $length = false ) {
@@ -211,9 +205,9 @@ class OggHandler extends MediaHandler {
 	}
 
 	function doTransform( $file, $dstPath, $dstUrl, $params, $flags = 0 ) {
-                if ( !$this->normaliseParams( $file, $params ) ) {
-                        return new TransformParameterError( $params );
-                }
+		if ( !$this->normaliseParams( $file, $params ) ) {
+			return new TransformParameterError( $params );
+		}
 
 		$width = $params['width'];
 		$height = $params['height'];
@@ -253,7 +247,6 @@ class OggHandler extends MediaHandler {
 		if ( $flags & self::TRANSFORM_LATER ) {
 			return new OggVideoDisplay( $file, $targetFileUrl, $dstUrl, $width, $height, $length, $dstPath, $noIcon );
 		}
-
 
 		$thumbTime = false;
 		if ( isset( $params['thumbtime'] ) ) {
@@ -430,7 +423,7 @@ class OggHandler extends MediaHandler {
 			$wgLang->formatBitrate( $bitrate ),
 			$wgLang->formatNum( $file->getWidth() ),
 			$wgLang->formatNum( $file->getHeight() )
-	   	);
+		);
 	}
 
 	function getDimensionsString( $file ) {
