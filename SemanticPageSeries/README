@@ -3,6 +3,8 @@ from one Semantic Form.
 
 For details see https://www.mediawiki.org/Extension:Semantic_Page_Series
 
+The development of this extension was sponsored by Prescient Software
+(www.prescientsoftware.co.uk).
 
 == Dependencies ==
 
@@ -39,5 +41,3 @@ The following settings may be used:
 
 If you want to use these settings, just include them in LocalSettings.php AFTER
 the require_once("$IP/extensions/SemanticPageSeries/SemanticPageSeries.php");
-
-
