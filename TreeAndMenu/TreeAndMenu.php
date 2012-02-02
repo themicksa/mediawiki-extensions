@@ -73,6 +73,15 @@ class TreeAndMenu {
 			$v = ( is_object( $image ) && $image->exists() ) ? $image->getURL() : $wgTreeViewImages[$k];
 			$this->images .= "tree.icon['$k'] = '$v';";
 		}
+
+		// Set up JavaScript and CSS resources
+		$wgResourceModules['ext.treeandmenu'] = array(
+			'scripts'       => array( 'star.js' ),
+			'styles'        => array( 'treeandmenu.css' ),
+			'localBasePath' => dirname( __FILE__ ),
+			'remoteExtPath' => basename( dirname( __FILE__ ) ),
+		);
+		$wgOut->addModules( 'ext.treeandmenu' );
 	}
 
 	/**
@@ -94,9 +103,8 @@ class TreeAndMenu {
 	/**
 	 * Expand #star parser-functions
 	 */
-	public function expandStar() {
-		$args = func_get_args();
-		return 'star menus coming soon!';
+	public function expandStar( &$parser, $text ) {
+		return "<div class=\"tam-star\">\n$text\n</div>";
 	}
 
 	/**
