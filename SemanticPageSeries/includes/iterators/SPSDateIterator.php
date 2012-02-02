@@ -49,9 +49,6 @@ class SPSDateIterator extends SPSIterator {
 			}
 		}
 
-		var_dump($values);
-		die();
-		
 		return $values[1];
 	}
 }
