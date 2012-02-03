@@ -354,6 +354,13 @@ $messages['gsw'] = array(
 	'assert_edit_message' => 'Dr Aaspruch ($1), wu aagee woren isch, isch fählgschla.',
 );
 
+/** Gujarati (ગુજરાતી)
+ * @author Dsvyas
+ */
+$messages['gu'] = array(
+	'assert_edit_message' => 'ચોક્કસ દાવો ($1) નિષ્ફળ.',
+);
+
 /** Hebrew (עברית)
  * @author Rotem Liss
  */

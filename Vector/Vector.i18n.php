@@ -751,6 +751,13 @@ Wänn Du aagmäldet bisch, chasch s Anzeige vu däre Warnig im „Tekscht-Ygab�
 	'vector-noexperiments-preference' => 'Mi uusschließe vu dr Dailnahm Feature-Experimänt',
 );
 
+/** Gujarati (ગુજરાતી)
+ * @author KartikMistry
+ */
+$messages['gu'] = array(
+	'vector-collapsiblenav-more' => 'વધુ ભાષાઓ',
+);
+
 /** Manx (Gaelg)
  * @author Shimmin Beg
  */

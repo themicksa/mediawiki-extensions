@@ -7964,7 +7964,7 @@ Ang pangkat ng {{SITENAME}}',
  * @author Stultiwikia
  */
 $messages['tr'] = array(
-	'articlefeedback' => 'Madde değerlendirmesi',
+	'articlefeedback' => 'Madde geri bildirimi gösterge paneli',
 	'articlefeedback-desc' => 'Madde geribildirimi',
 	'articlefeedback-survey-question-origin' => 'Bu ankete başladığında hangi sayfadaydınız?',
 	'articlefeedback-survey-question-whyrated' => 'Lütfen bu sayfayı oylayarak bize geribildirimde bulunun (size uygun olanı işaretleyin):',
@@ -7996,7 +7996,7 @@ $messages['tr'] = array(
 	'articlefeedback-form-panel-helpimprove' => "Vikipedi'yi geliştirmede yardımcı olmak istiyorum, bana e-posta gönderebilirsiniz (isteğe bağlı)",
 	'articlefeedback-form-panel-helpimprove-note' => 'Size bir onay e-postası gönderilecektir. $1 e-posta adresiniz proje dışında üçüncü şahıslar ile paylaşılmayacaktır .',
 	'articlefeedback-form-panel-helpimprove-email-placeholder' => 'email@example.org',
-	'articlefeedback-form-panel-helpimprove-privacy' => 'Gizlilik ilkesi',
+	'articlefeedback-form-panel-helpimprove-privacy' => 'Geri bildirim gizlilik açıklaması',
 	'articlefeedback-form-panel-submit' => 'Değerlendirmeleri kaydet',
 	'articlefeedback-form-panel-pending' => 'Değerlendirmeleriniz henüz kaydedilmedi',
 	'articlefeedback-form-panel-success' => 'Başarıyla kaydedildi',

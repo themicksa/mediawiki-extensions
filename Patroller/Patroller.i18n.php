@@ -609,6 +609,7 @@ $messages['eo'] = array(
 );
 
 /** Spanish (Español)
+ * @author Armando-Martin
  * @author Crazymadlover
  * @author Dferg
  * @author Manuelt15
@@ -637,7 +638,7 @@ $messages['es'] = array(
 	'patrol-stopped' => 'Has optado no marcar otra edición como verificada. $1',
 	'patrol-resume' => 'Haz click aquí para continuar.',
 	'group-patroller' => 'Patrulleros',
-	'group-patroller-member' => 'patrullero',
+	'group-patroller-member' => '{{GENDER:$1|patrullero}}',
 	'grouppage-patroller' => '{{ns:project}}:Verificador',
 	'right-patroller' => 'Verificar páginas',
 );

@@ -55,6 +55,14 @@ $messages['de'] = array(
 	'sii-imageinput-loading' => 'Das Bild wird gerade geladen …',
 );
 
+/** Lower Sorbian (Dolnoserbski)
+ * @author Michawiki
+ */
+$messages['dsb'] = array(
+	'sii-desc' => 'Zmóžnja zapódaśe wobrazow, kótarež śěgnjo wobraze z Wikipedije do [https://www.mediawiki.org/wiki/Extension:Semantic_Forms Semantic Forms]',
+	'sii-imageinput-loading' => 'Wobraz se zacytujo...',
+);
+
 /** French (Français)
  * @author Gomoko
  */

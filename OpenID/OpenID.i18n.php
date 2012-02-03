@@ -576,14 +576,14 @@ Consulta con un [[Special:ListUsers/sysop|alministrador]].",
 	'openidfailure' => 'Falló la comprobación',
 	'openidfailuretext' => "Falló la comprobación de la URL d'OpenID. Mensaxe d'error: «$1»",
 	'openidsuccess' => 'Comprobación correuta',
-	'openidsuccesstext' => "'''Verificación y aniciu de sesión como usuariu $1 correutos.'''
+	'openidsuccesstext' => "'''Comprobación y aniciu de sesión como usuariu $1 correutos.'''
 
 La to OpenID ye $2.
 
 Esti y otros OpenID opcionales se puen xestionar na [[Special:Preferences#prefsection-openid|llingüeta OpenID]] de les preferencies.<br />
-Se pue amestar una contraseña de cuenta opcional nel [[Special:Preferences#prefsection-personal|perfil d'usuariu]].",
+Se pue amestar una conseña de cuenta opcional nel [[Special:Preferences#prefsection-personal|perfil d'usuariu]].",
 	'openidusernameprefix' => 'Usuariu OpenID',
-	'openidserverlogininstructions' => "$3 pide qu'escribas la to contraseña de la páxina $1 pal usuariu $2 (esta ye la URL del to OpenID)",
+	'openidserverlogininstructions' => "$3 pide qu'escribas la to conseña de la páxina $1 pal usuariu $2 (esta ye la URL del to OpenID)",
 	'openidtrustinstructions' => 'Comprueba si quies compartir datos con $1.',
 	'openidallowtrust' => "Permitir a $1 confiar nesta cuenta d'usuariu.",
 	'openidnopolicy' => "El sitiu nun conseñó la so política d'intimidá.",
@@ -605,7 +605,7 @@ pues escoyer unu ente les opciones d'abaxo.",
 	'openidchoosemanual' => 'Un nome escoyíu por ti:',
 	'openidchooseexisting' => 'Una cuenta esistente nesta wiki',
 	'openidchooseusername' => "Nome d'usuariu:",
-	'openidchoosepassword' => 'Contraseña:',
+	'openidchoosepassword' => 'Conseña:',
 	'openidconvertinstructions' => "Esti formulariu te permite camudar la to cuenta d'usuariu pa usar una URL d'OpenID o amestar más URLs d'OpenID.",
 	'openidconvertoraddmoreids' => 'Convertir a OpenID o amestar otra URL OpenID',
 	'openidconvertsuccess' => 'Convertida correutamente a OpenID',

@@ -69,8 +69,8 @@ $messages['arc'] = array(
  * @author Xuacu
  */
 $messages['ast'] = array(
-	'ajaxlogin-desc' => 'Caxa dinámica que permite a los usuarios/es entrar y recordar la contraseña',
-	'ajaxLogin1' => "Pa completar el rexistru, tienes d'escribir una contraseña nueva.
+	'ajaxlogin-desc' => 'Cuadru dinámicu que permite a los usuarios entrar y recuperar la conseña per corréu',
+	'ajaxLogin1' => "Pa completar el rexistru, tienes d'escribir una conseña nueva.
 Esto te sacará d'esta páxina d'edición y podríes perder lo editao anguaño.",
 	'ajaxLogin2' => "¿Tas seguru?
 Pues perder los cambios fechos nesta páxina si sales d'ella agora.",
@@ -79,7 +79,7 @@ Pues perder los cambios fechos nesta páxina si sales d'ella agora.",
 Los nomes d\'usuariu distinguen ente mayúscules y minúscules.
 Comprueba la escritura.',
 	'al-createblocked' => 'La to direición IP tien bloquiada la creación de cuentes.',
-	'al-throttled' => "Ficisti demasiaos intentos siguíos de contraseña. Tienes d'esperar $1 {{PLURAL:$1|segundu|segundos}} enantes de volver a probar.",
+	'al-throttled' => "Ficisti demasiaes pruebes de conseña siguíes. Tienes d'esperar $1 {{PLURAL:$1|segundu|segundos}} enantes de volver a probar.",
 );
 
 /** Azerbaijani (Azərbaycanca)

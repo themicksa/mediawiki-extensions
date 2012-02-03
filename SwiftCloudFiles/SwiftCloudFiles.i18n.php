@@ -43,6 +43,13 @@ $messages['gl'] = array(
 	'swiftcloudfiles-desc' => "Inclúe e rexistra a API ''php-cloudfiles'' (https://github.com/rackspace/php-cloudfiles), o que permite a MediaWiki interactuar cunha infraestrutura de almacenamento OpenStack Swift.",
 );
 
+/** Hebrew (עברית)
+ * @author Amire80
+ */
+$messages['he'] = array(
+	'swiftcloudfiles-desc' => "הכללה ורישום את ה־API של ''php-cloudfiles'' (https://github.com/rackspace/php-cloudfiles) שמאפשרים למדיה־ויקי להתממשק עם אחסון OpenStack Swift.",
+);
+
 /** Upper Sorbian (Hornjoserbsce)
  * @author Michawiki
  */

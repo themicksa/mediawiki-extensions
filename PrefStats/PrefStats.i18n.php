@@ -1209,6 +1209,19 @@ Druck uf eini go Statischtike iber si aaluege.',
 	'prefstats-legend-in' => 'Aagmäldet',
 );
 
+/** Gujarati (ગુજરાતી)
+ * @author KartikMistry
+ */
+$messages['gu'] = array(
+	'prefstats-xaxis' => 'અવધિ (કલાકો)',
+	'prefstats-factor-hour' => 'કલાક',
+	'prefstats-factor-sixhours' => 'છ કલાકો',
+	'prefstats-factor-day' => 'દિવસ',
+	'prefstats-factor-week' => 'અઠવાડિયું',
+	'prefstats-factor-twoweeks' => 'બે અઠવાડિયાં',
+	'prefstats-factor-fourweeks' => 'ચાર અઠવાડિયાં',
+);
+
 /** Manx (Gaelg)
  * @author Shimmin Beg
  */

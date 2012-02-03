@@ -14928,6 +14928,7 @@ $messages['nl'] = array(
 	'configure-setting-wgDebugRedirects' => 'Bestemming van doorverwijzing weergeven in plaats van doorverwijzen naar de URL van de bestemming',
 	'configure-setting-wgDebugPrintHttpHeaders' => 'HTTP-headers voor ieder verzoek in de debuginformatie weergeven',
 	'configure-setting-wgDebugTimestamps' => 'Debugberichten relatief tijdstempel als voorvoegsel geven',
+	'configure-setting-wgDebugToolbar' => 'De debugwerkbalk weergeven',
 	'configure-setting-wgDevelopmentWarnings' => 'PHP-meldingen weergeven voor mogelijke foutcondities en verouderde functies',
 	'configure-setting-wgShowExceptionDetails' => 'Bij exceptions een complete stack trace weergeven',
 	'configure-setting-wgShowDBErrorBacktrace' => 'Complete stacktrace uitvoeren bij databasefouten',

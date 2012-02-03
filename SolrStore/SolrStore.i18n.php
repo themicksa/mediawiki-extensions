@@ -145,6 +145,7 @@ $messages['mk'] = array(
 $messages['nl'] = array(
 	'solrstore-desc' => 'Semantische eigenschappen doorzoeken met de kracht van een fulltext zoekmachine',
 	'solrsearch' => 'SolrSearch',
+	'solrsearch-title' => 'Zoeken',
 	'solrstore-error' => 'Fout: Controleer uw query.',
 	'solrstore-searchFieldSets' => 'SolrSearch',
 	'solrstore-searchFieldSets-select' => 'Selecteer een SearchSet',

@@ -57,10 +57,8 @@ $messages['qqq'] = array(
 	'spserror-iteratorparammissing' => 'An error message. See the [[wikipedia:Iterator | wikipedia page]] for the meaning of iterator. Do not translate <code>#serieslink</code>.',
 	'spserror-noiteratordata' => 'An error message. See the [[wikipedia:Iterator | wikipedia page]] for the meaning of iterator.',
 	'spserror-pagegenerationlimitexeeded' => 'An error message',
-
 	'spserror-date-startdatemissing' => 'An error message',
 	'spserror-date-internalerror' => 'An error message',
-	
 	'spserror-count-startvaluemalformed' => 'An error message',
 	'spserror-count-endvaluemalformed' => 'An error message',
 	'spserror-count-stepvaluemalformed' => 'An error message',
@@ -69,6 +67,7 @@ $messages['qqq'] = array(
 
 /** German (Deutsch)
  * @author Kghbln
+ * @author Metalhead64
  */
 $messages['de'] = array(
 	'semanticpageseries-desc' => 'Ermöglicht das Erstellen einer Abfolge von Seiten mit einem von [https://www.mediawiki.org/wiki/Extension:Semantic_Forms Semantic Forms] bereitgestellten Formular',
@@ -88,6 +87,12 @@ $messages['de'] = array(
 $1',
 	'spserror-noiteratordata' => 'Die gesendeten Daten enthalten keine Parameter zum Seitenfolgebezeichner.',
 	'spserror-pagegenerationlimitexeeded' => 'Es {{PLURAL:$1|sollte eine Seite|sollten $1 Seiten}} erstellt werden. Diese Anzahl übertrifft den zulässigen Grenzwert von {{PLURAL:$2|einer Seite|$2 Seiten}}.',
+	'spserror-date-startdatemissing' => 'Es fehlt das Startdatum.',
+	'spserror-date-internalerror' => 'Beim Erstellen der Daten ist ein Fehler aufgetreten. Der Grund könnte ein falsches Start- oder Enddatum sein.',
+	'spserror-count-startvaluemalformed' => 'Der Startwert ist keine Zahl.',
+	'spserror-count-endvaluemalformed' => 'Der Endwert ist keine Zahl.',
+	'spserror-count-stepvaluemalformed' => 'Der Schrittwert ist keine Zahl.',
+	'spserror-count-digitsvaluemalformed' => 'Der Ziffernwert ist keine Zahl.',
 );
 
 /** French (Français)
@@ -97,6 +102,7 @@ $messages['fr'] = array(
 	'semanticpageseries-desc' => 'Créer une série de pages depuis un [https://www.mediawiki.org/wiki/Extension:Semantic_Forms formulaire sémantique]',
 	'spssuccesstitle' => 'Créer $1 pages',
 	'spssuccess' => '{{PLURAL:$1|Une page sera créée|$1 pages seront créées}}.',
+	'spssuccess-returntoorigin' => 'Revenir à $1',
 	'spserror' => 'Une erreur est survenue',
 	'spserror-diffnotsupported' => "L'action diff n'est pas supportée pour les séries de page.",
 	'spserror-previewnotsupported' => "L'action de prévisualisation n'est pas supportée pour les séries de page.",
@@ -110,6 +116,12 @@ $messages['fr'] = array(
 $1",
 	'spserror-noiteratordata' => "Aucun paramètre de l'itérateur n'a été trouvé dans les données envoyées.",
 	'spserror-pagegenerationlimitexeeded' => 'Vous avez essayé de générer {{PLURAL:$1|une page|$1 pages}}. Cela dépasse votre limite autorisée de {{PLURAL:$2|une page|$2 pages}}.',
+	'spserror-date-startdatemissing' => 'La date de début est manquante.',
+	'spserror-date-internalerror' => "Une erreur s'est produite lors de la création des dates. Cela pourrait être dû à une date de début ou de fin mal formée.",
+	'spserror-count-startvaluemalformed' => "La valeur de départ n'est pas un nombre.",
+	'spserror-count-endvaluemalformed' => "La valeur de fin n'est pas un nombre.",
+	'spserror-count-stepvaluemalformed' => "La valeur de l'incrément n'est pas un nombre.",
+	'spserror-count-digitsvaluemalformed' => "La valeur des chiffres n'est pas un nombre.",
 );
 
 /** Galician (Galego)
@@ -154,6 +166,12 @@ $messages['hsb'] = array(
 	'spserror-iteratorparammissing' => 'Slědowace iteratorowe parametry při wołanju funkcije #serieslink faluja: $1',
 	'spserror-noiteratordata' => 'Žane iteratorowe parametry w pósłanych datach namakane.',
 	'spserror-pagegenerationlimitexeeded' => 'Sy spytał {{PLURAL:$1|jednu stronu|$1 stronje|$1 strony|$1 stronow}} płodźić. To překročuje dowoleny limit wot {{PLURAL:$2|jedneje strony|$2 stronow|$2 stronow|$1 stronow}}.',
+	'spserror-date-startdatemissing' => 'Startowy datum faluje.',
+	'spserror-date-internalerror' => 'Při wutworjenju datumow je zmylk wustupił. Přičina móhła njepłaćiwy startowy abo kónčny datum  być.',
+	'spserror-count-startvaluemalformed' => 'Startowa hódnota ličba njeje.',
+	'spserror-count-endvaluemalformed' => 'Kónčna hódnota ličba njeje.',
+	'spserror-count-stepvaluemalformed' => 'Kročelowa hódnota ličba njeje.',
+	'spserror-count-digitsvaluemalformed' => 'Cyfrowa hódnota ličba njeje.',
 );
 
 /** Interlingua (Interlingua)
@@ -163,6 +181,7 @@ $messages['ia'] = array(
 	'semanticpageseries-desc' => 'Crea un serie de paginas ab un sol [https://www.mediawiki.org/wiki/Extension:Semantic_Forms formulario semantic]',
 	'spssuccesstitle' => 'Crea $1 paginas',
 	'spssuccess' => '{{PLURAL:$1|Un pagina|$1 paginas}} essera create.',
+	'spssuccess-returntoorigin' => 'Retornar a $1',
 	'spserror' => 'Un error ha occurrite',
 	'spserror-diffnotsupported' => 'Le action "diff" non es supportate pro series de paginas.',
 	'spserror-previewnotsupported' => 'Le action de previsualisation non es supportate pro series de paginas.',
@@ -176,6 +195,12 @@ $messages['ia'] = array(
 $1',
 	'spserror-noiteratordata' => 'Nulle parametro de iterator trovate in le datos inviate.',
 	'spserror-pagegenerationlimitexeeded' => 'Tu tentava generar {{PLURAL:$1|un pagina|$1 paginas}}. Isto excede tu limite autorisate de {{PLURAL:$2|un pagina|$2 paginas}}.',
+	'spserror-date-startdatemissing' => 'Le data de initio es mancante.',
+	'spserror-date-internalerror' => 'Un error occurreva durante le creation del datas. Isto pote esser causate per un data de initio o de fin mal formate.',
+	'spserror-count-startvaluemalformed' => 'Le valor de initio non es un numero.',
+	'spserror-count-endvaluemalformed' => 'Le valor de fin non es un numero.',
+	'spserror-count-stepvaluemalformed' => 'Le valor de incremento non es un numero.',
+	'spserror-count-digitsvaluemalformed' => 'Le valor de cifras non es un numero.',
 );
 
 /** Macedonian (Македонски)
@@ -185,6 +210,7 @@ $messages['mk'] = array(
 	'semanticpageseries-desc' => 'Создавање на низа страници од еден [https://www.mediawiki.org/wiki/Extension:Semantic_Forms?uselang=mk Семантички образец]',
 	'spssuccesstitle' => 'Создате $1 страници',
 	'spssuccess' => '{{PLURAL:$1|Ќе биде создадена една страница|Ќе бидат создадени $1 страници}}',
+	'spssuccess-returntoorigin' => 'Назад на $1',
 	'spserror' => 'Се појави грешка',
 	'spserror-diffnotsupported' => 'Функцијата „разлика“ не е достапна за цели низи од страници.',
 	'spserror-previewnotsupported' => 'Функцијата „преглед“ не е достапна за цели низи од страници.',
@@ -198,12 +224,26 @@ $messages['mk'] = array(
 $1',
 	'spserror-noiteratordata' => 'Не пронајдов параметри за повторувачот во испратените податоци.',
 	'spserror-pagegenerationlimitexeeded' => 'Се обидовте да создадете {{PLURAL:$1|една страница|$1 страници}}. Со тоа ја надминувате дозволената граница од {{PLURAL:$2|една страница|$2 страници}}.',
+	'spserror-date-startdatemissing' => 'Недостасува почетниот датум.',
+	'spserror-date-internalerror' => 'Се појави грешка при создавањето на датумите. Ова може да се должи на погрешно внесен почетен или краен датум.',
+	'spserror-count-startvaluemalformed' => 'Почетната вредност не е број.',
+	'spserror-count-endvaluemalformed' => 'Крајната вредност не е број.',
+	'spserror-count-stepvaluemalformed' => 'Вредноста на чекорот не е број.',
+	'spserror-count-digitsvaluemalformed' => 'Вредноста на цифрите не е број.',
 );
 
 /** Dutch (Nederlands)
  * @author SPQRobin
  */
 $messages['nl'] = array(
+	'semanticpageseries-desc' => "Een reeks pagina's aanmaken vanuit één [https://www.mediawiki.org/wiki/Extension:Semantic_Forms semantisch formulier]",
+	'spssuccesstitle' => "$1 pagina's aanmaken",
+	'spssuccess' => "{{PLURAL:$1|Eén pagina zal|$1 pagina's zullen}} aangemaakt worden.",
+	'spssuccess-returntoorigin' => 'Terugkeren naar $1',
+	'spserror' => 'Er is een fout opgetreden',
 	'spserror-formunknown' => 'Formulier "$1" bestaat niet.',
+	'spserror-date-startdatemissing' => 'De begindatum ontbreekt.',
+	'spserror-count-startvaluemalformed' => 'De beginwaarde is geen getal.',
+	'spserror-count-endvaluemalformed' => 'De eindwaarde is geen getal.',
 );
 

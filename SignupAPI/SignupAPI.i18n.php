@@ -352,10 +352,12 @@ $messages['pt'] = array(
 );
 
 /** Russian (Русский)
+ * @author Eleferen
  * @author Александр Сигачёв
  */
 $messages['ru'] = array(
 	'signupapi-desc' => 'Очищает Special:UserLogin от элементов, связанных с регистрацией, добавляет API для регистрации',
+	'signupapi-passwordtooshort' => 'Пароль слишком короткий',
 );
 
 /** Turkish (Türkçe)

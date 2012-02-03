@@ -795,6 +795,7 @@ $messages['roa-tara'] = array(
 );
 
 /** Russian (Русский)
+ * @author Eleferen
  * @author F.trott
  * @author MaxSem
  * @author Александр Сигачёв
@@ -808,6 +809,10 @@ $messages['ru'] = array(
 	'semanticformsinputs-next' => 'Следующая',
 	'semanticformsinputs-today' => 'Сегодня',
 	'semanticformsinputs-firstdayofweek' => '1',
+	'semanticformsinputs-datepicker-firstdate' => 'Первая дата, которая может быть выбрана (в формате yyyy/mm/dd).',
+	'semanticformsinputs-datepicker-lastdate' => 'Последняя дата, которая может быть выбрана (в формате yyyy/mm/dd).',
+	'semanticformsinputs-datepicker-disabledaysofweek' => 'Список дней, которые не могут быть выбраны (например, выходные: 6, 0).',
+	'semanticformsinputs-datepicker-highlightdaysofweek' => 'Список дней, которые должны подсвечиваться (например, выходные: 6, 0).',
 );
 
 /** Serbian (Cyrillic script) (‪Српски (ћирилица)‬)

@@ -1417,6 +1417,22 @@ $messages['gsw'] = array(
 	'ogg-oggThumb-failed' => 'oggThumb het kei Miniaturbild chenne aalege.',
 );
 
+/** Gujarati (ગુજરાતી)
+ * @author KartikMistry
+ */
+$messages['gu'] = array(
+	'ogg-play' => 'ચાલુ કરો',
+	'ogg-pause' => 'ઊભું રાખો',
+	'ogg-stop' => 'બંધ કરો',
+	'ogg-play-video' => 'વિડીઓ ચલાવો',
+	'ogg-play-sound' => 'ધ્વનિ ચલાવો',
+	'ogg-player-oggPlugin' => 'બ્રાઉઝર પ્લગઈન',
+	'ogg-more' => 'વધુ...',
+	'ogg-dismiss' => 'બંધ કરો',
+	'ogg-download' => 'ફાઈલ ડાઉનલોડ કરો',
+	'ogg-desc-link' => 'આ ફાઈલ વિષે',
+);
+
 /** Manx (Gaelg)
  * @author MacTire02
  */
