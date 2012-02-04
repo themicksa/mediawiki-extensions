@@ -1163,16 +1163,14 @@ ENDTEXT;
 			$this->udpProfileInit = true;
 			$this->udpProfileCounter = 0;
 		} elseif ( $this->udpProfileCounter == 1 % $this->udpProfile ) {
-			wfProfileOut( '-total' );
-			Profiler::instance()->getFunctionReport();
-			Profiler::setInstance( new DumpHTML_ProfilerStub );
+			Profiler::instance()->logData();
+			Profiler::setInstance( new ProfilerStub( array() ) );
 		}
 		if ( $this->udpProfileCounter == 0 ) {
-			Profiler::setInstance( new ProfilerSimpleUDP );
-			Profiler::instance()->setProfileID( 'dumpHTML' );
 			$wgRequestTime = microtime( true );
 			$wgRUstart = getrusage();
-			wfProfileIn( '-total' );
+			Profiler::setInstance( new ProfilerSimpleUDP( array() ) );
+			Profiler::instance()->setProfileID( 'dumpHTML' );
 		}
 		$this->udpProfileCounter = ( $this->udpProfileCounter + 1 ) % $this->udpProfile;
 	}
@@ -1190,15 +1188,6 @@ ENDTEXT;
 			return true;
 		}*/
 	}
-}
-
-class DumpHTML_ProfilerStub extends Profiler {
-	function profileIn() {}
-	function profileOut() {}
-	function getOutput() {}
-	function close() {}
-	function getFunctionReport() {}
-	function getCurrentSection() { return '';}
 }
 
 class DumpHTML_ProxyRepoGroup extends RepoGroup {
