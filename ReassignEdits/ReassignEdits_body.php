@@ -13,7 +13,7 @@
 */
 
 if (!defined('MEDIAWIKI')) {
-	echo "THIS IS NOT VALID ENTRY POINT";
+	echo "ReassignEdits extension";
 	exit(1);
 }
 
@@ -146,11 +146,10 @@ class SpecialReassignEdits extends SpecialPage {
 		}
 
 		// Get usernames by id
-		$olduser = User::newFromName( $oldusername->getText() );
 		$newuser = User::newFromName( $newusername->getText() );
 
 		// It won't be an object if for instance "|" is supplied as a value
-		if ( !is_object( $olduser ) ) {
+		if ( !is_string( $oldusername->getText() ) ) {
 			$wgOut->addWikiText( "<div class=\"errorbox\">" . wfMsg( 'reassignedits-error-invalid',
 				$oldusername->getText() ) . "</div>" );
 			return;
@@ -159,27 +158,6 @@ class SpecialReassignEdits extends SpecialPage {
 			$wgOut->addWikiText( "<div class=\"errorbox\">" . wfMsg( 'reassignedits-error-invalid',
 				$newusername->getText() ) . "</div>" );
 			return;
-		}
-
-		// Check for the existence of lowercase oldusername in database
-		if ( $oldusername->getText() !== $wgContLang->ucfirst( $oldusername->getText() ) ) {
-			// oldusername was entered as lowercase -> check for existence in table 'user'
-			$dbr = wfGetDB( DB_SLAVE );
-			$uid = $dbr->selectField( 'user', 'user_id',
-				array( 'user_name' => $oldusername->getText() ),
-				__METHOD__ );
-			if ( $uid === false ) {
-				if ( !$wgCapitalLinks ) {
-					$uid = 0; // We are on a lowercase wiki but lowercase username does not exists
-				} else {
-					// We are on a standard uppercase wiki, use normal
-					$uid = $olduser->idForName();
-					$oldusername = Title::makeTitleSafe( NS_USER, $olduser->getName() );
-				}
-			}
-		} else {
-			// oldusername was entered as upperase -> standard procedure
-			$uid = $olduser->idForName();
 		}
 
 		// Do the heavy lifting...
