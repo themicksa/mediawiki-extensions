@@ -52,6 +52,22 @@ class MobileTemplate extends BaseTemplate {
 	</head>
 	<body>
 	<!-- search/header -->
+	<div id="header">
+		<div id="searchbox">
+			<img src="<?php $this->text( 'mobilelogopath' ) ?>" alt="Logo" id="logo" width="35" height="22" />
+			<form action="<?php $this->text( 'wgScript' ) ?>" class="search_bar" method="get">
+				<input type="hidden" name="title" value="Special:Search" />
+
+				<div id="sq" class="divclearable">
+					<input type="text" name="search" id="search" size="22" value="" autocorrect="off" autocomplete="off" autocapitalize="off" maxlength="1024" />
+					<div class="clearlink" id="clearsearch"></div>
+				</div>
+				<button id="goButton" type="submit"></button>
+			</form>
+		</div>
+	</div>
+
+	<!-- content -->
 	<div class="show" id="content_wrapper">
 		<?php $this->html( 'bodycontent' ) ?>
 	</div>

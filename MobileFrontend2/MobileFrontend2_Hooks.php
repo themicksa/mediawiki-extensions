@@ -23,4 +23,31 @@ class MobileFrontend2_Hooks {
 		// Be a dick and halt the hook
 		return false;
 	}
+
+	/**
+	 * Makes modifications to the mobile skin template
+	 *
+	 * @param $skin SkinTemplate
+	 * @param $tpl QuickTemplate
+	 * @return bool
+	 */
+	public static function modifyTemplate( SkinTemplate &$skin, &$tpl ) {
+		if ( get_class( $skin ) !== 'SkinMobile' ) {
+			return true;
+		}
+
+		global $wgMobileFrontend2Logo;
+
+		$tpl->setRef( 'mobilelogopath', $wgMobileFrontend2Logo );
+
+		return true;
+	}
+
+	public static function setup() {
+		global $wgMobileFrontend2Logo, $wgExtensionAssetsPath;
+
+		if ( $wgMobileFrontend2Logo === null ) {
+			$wgMobileFrontend2Logo = $wgExtensionAssetsPath . '/MobileFrontend2/modules/ext.mobileFrontend2/images/mw.png';
+		}
+	}
 }

@@ -33,6 +33,8 @@ $wgAutoloadClasses['SkinMobile'] = $dir . 'skins/Mobile.php';
 
 // Hooks
 $wgHooks['RequestContextCreateSkin'][] = 'MobileFrontend2_Hooks::createSkin';
+$wgHooks['SkinTemplateOutputPageBeforeExec'][] = 'MobileFrontend2_Hooks::modifyTemplate';
+$wgExtensionFunctions[] = 'MobileFrontend2_Hooks::setup';
 
 // Modules
 $commonModuleInfo = array(
@@ -44,3 +46,11 @@ $commonModuleInfo = array(
 $wgResourceModules['ext.mobileFrontend2'] = array(
 	'styles' => 'ext.mobileFrontend2/ext.mobileFrontend2.css',
 ) + $commonModuleInfo;
+
+// Config
+/**
+ * Logo used on MobileFrontend2
+ *
+ * @var $wgMobileFrontend2Logo string
+ */
+$wgMobileFrontend2Logo = null;
