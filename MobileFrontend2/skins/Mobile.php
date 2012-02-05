@@ -28,6 +28,19 @@ class SkinMobile extends SkinTemplate {
 	function setupSkinUserCss( OutputPage $out ) {
 		$out->addModuleStyles( 'ext.mobileFrontend2' );
 	}
+
+	/**
+	 * We're too cool for edit links, don't output them
+	 *
+	 * @param Title $nt
+	 * @param $section
+	 * @param null $tooltip
+	 * @param bool $lang
+	 * @return string
+	 */
+	public function doEditSectionLink( Title $nt, $section, $tooltip = null, $lang = false ) {
+		return '';
+	}
 }
 
 class MobileTemplate extends BaseTemplate {
@@ -71,6 +84,23 @@ class MobileTemplate extends BaseTemplate {
 	<div class="show" id="content_wrapper">
 		<?php $this->html( 'bodycontent' ) ?>
 	</div>
+
+	<!-- footer -->
+	<div id="footer">
+		<div class="nav" id="footmenu">
+			<div class="mwm-notice">
+				<a href="#"><?php $this->msg( 'mobile-frontend2-regular-site' ) ?></a> | <a href="#"><?php $this->msg( 'mobile-frontend2-disable-images' ) ?></a>
+
+				<div id="perm">
+					<a href="#"><?php $this->msg( 'mobile-frontend2-perm-stop-redirect' ) ?></a>
+				</div>
+			</div>
+			<div id="copyright">
+				<?php $this->msg( 'mobile-frontend2-copyright' ) ?>
+			</div>
+		</div>
+	</div>
+
 	</body>
 	</html>
 <?php
