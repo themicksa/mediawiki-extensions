@@ -17,11 +17,17 @@ class MobileFrontend2_Detection {
 	 *
 	 * @return bool
 	 */
-	public static function shouldEnable() {
+	public static function isEnabled() {
 		if ( self::$enabled !== null ) {
 			return self::$enabled;
 		}
 
+		self::detect();
+
+		return self::$enabled;
+	}
+
+	private static function detect() {
 		$request = RequestContext::getMain()->getRequest();
 		$useFormat = $request->getText( 'useformat' );
 

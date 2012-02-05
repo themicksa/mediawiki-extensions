@@ -39,7 +39,7 @@ class SkinMobile extends SkinTemplate {
 	 * @return string
 	 */
 	public function doEditSectionLink( Title $nt, $section, $tooltip = null, $lang = false ) {
-		return '';
+		return '<span id="section_' . $section . '"></span>';
 	}
 }
 
@@ -82,7 +82,19 @@ class MobileTemplate extends BaseTemplate {
 
 	<!-- content -->
 	<div class="show" id="content_wrapper">
-		<?php $this->html( 'bodycontent' ) ?>
+		<!-- firstHeading -->
+		<h1 id="firstHeading" class="firstHeading">
+			<span dir="auto"><?php $this->html( 'title' ) ?></span>
+		</h1>
+		<!-- /firstHeading -->
+		<!-- bodyContent -->
+		<div id="bodyContent">
+			<?php $this->html( 'bodycontent' ) ?>
+			<!-- debughtml -->
+			<?php $this->html( 'debughtml' ); ?>
+			<!-- /debughtml -->
+		</div>
+		<!-- /bodyContent -->
 	</div>
 
 	<!-- footer -->

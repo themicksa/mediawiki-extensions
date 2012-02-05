@@ -25,8 +25,9 @@ $wgExtensionCredits['other'][] = array(
 $dir = dirname( __FILE__ ) . '/';
 $wgExtensionMessagesFiles['MobileFrontend2'] = $dir . 'MobileFrontend2.i18n.php';
 
-$wgAutoloadClasses['MobileFrontend2_Hooks'] = $dir . 'MobileFrontend2_Hooks.php';
 $wgAutoloadClasses['MobileFrontend2_Detection'] = $dir . 'MobileFrontend2_Detection.php';
+$wgAutoloadClasses['MobileFrontend2_Hooks'] = $dir . 'MobileFrontend2_Hooks.php';
+$wgAutoloadClasses['MobileFrontend2_Parser'] = $dir . 'MobileFrontend2_Parser.php';
 
 // Skins
 $wgAutoloadClasses['SkinMobile'] = $dir . 'skins/Mobile.php';
@@ -34,6 +35,8 @@ $wgAutoloadClasses['SkinMobile'] = $dir . 'skins/Mobile.php';
 // Hooks
 $wgHooks['RequestContextCreateSkin'][] = 'MobileFrontend2_Hooks::createSkin';
 $wgHooks['SkinTemplateOutputPageBeforeExec'][] = 'MobileFrontend2_Hooks::modifyTemplate';
+$wgHooks['PageRenderingHash'][] = 'MobileFrontend2_Hooks::renderHash';
+$wgHooks['ParserSectionCreate'][] = 'MobileFrontend2_Hooks::parserSectionCreate';
 $wgExtensionFunctions[] = 'MobileFrontend2_Hooks::setup';
 
 // Modules
