@@ -33,3 +33,14 @@ $wgAutoloadClasses['SkinMobile'] = $dir . 'skins/Mobile.php';
 
 // Hooks
 $wgHooks['RequestContextCreateSkin'][] = 'MobileFrontend2_Hooks::createSkin';
+
+// Modules
+$commonModuleInfo = array(
+	'localBasePath' => dirname( __FILE__ ) . '/modules',
+	'remoteExtPath' => 'CodeReview/modules',
+);
+
+// Main style
+$wgResourceModules['ext.mobileFrontend2'] = array(
+	'styles' => 'ext.mobileFrontend2/ext.mobileFrontend2.css',
+) + $commonModuleInfo;
